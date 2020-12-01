@@ -18,4 +18,4 @@ Route::get('/', [PageCtr::class, 'home']);
 Route::get('/{id_produk}', [PageCtr::class, 'listproduk']);
 
 // Produk 
-
+Route::get('/produk/list',[PageCtr::class, 'produk']);
