@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -17,13 +17,9 @@
 
     <!-- All Vendor & plugins CSS include -->
     <link href="{{ asset('ladun/homepage/css_asset/vendor.css') }}" rel="stylesheet">
+
     <!-- Main Style CSS -->
     <link href="{{ asset('ladun/homepage/css_asset/style.css') }}" rel="stylesheet">
-
-    <!--[if lt IE 9]>
-<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
 
 </head>
 

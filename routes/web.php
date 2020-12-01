@@ -22,5 +22,6 @@ Route::get('/login', [PageCtr::class, 'home']);
 // Produk 
 Route::get('/produk/list',[PageCtr::class, 'produk']);
 Route::get('/produk/{tipeproduk}/list', [PageCtr::class, 'listproduk']);
+
 // Pembelian 
 Route::get('/pembelian',[PageCtr::class, 'listproduk']);

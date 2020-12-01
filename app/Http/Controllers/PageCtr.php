@@ -1,8 +1,13 @@
 <?php
 
+// import namespace 
 namespace App\Http\Controllers;
-
+// import lib 
 use Illuminate\Http\Request;
+// import model 
+
+// import another class 
+
 
 class PageCtr extends Controller
 {
@@ -14,7 +19,7 @@ class PageCtr extends Controller
 
     public function listproduk($id_produk)
     {
-        echo $id_produk;
+        $dr = ['status' => 'sukses'];
     }
 
 }
