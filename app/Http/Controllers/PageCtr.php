@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 // import model 
 
 // import another class 
+use App\Http\Controllers\DaerahCtr;
 
 
 class PageCtr extends Controller
