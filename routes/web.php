@@ -15,3 +15,7 @@ use App\Http\Controllers\PageCtr;
 
 // Halaman utama 
 Route::get('/', [PageCtr::class, 'home']);
+Route::get('/{id_produk}', [PageCtr::class, 'listproduk']);
+
+// Produk 
+
