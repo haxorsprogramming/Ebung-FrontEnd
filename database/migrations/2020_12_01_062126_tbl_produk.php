@@ -13,7 +13,17 @@ class TblProduk extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_produk', function (Blueprint $table) {
+            $table -> id();
+            $table -> char('kd_produk', 5);
+            $table -> char('nama_produk', 100);
+            $table -> text('deks_produk');
+            $table -> char('kategori', 100);
+            $table -> integer('harga');
+            $table -> integer('stok');
+            $table -> char('foto_utama', 100);
+            $table -> char('active', 1);
+        });
     }
 
     /**
@@ -23,6 +33,6 @@ class TblProduk extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_produk');
     }
 }

@@ -13,7 +13,17 @@ class TblBankAccount extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_bank_account', function (Blueprint $table) {
+            $table -> id();
+            $table -> char('kd_bank_account', 50);
+            $table -> char('tipe_user', 100);
+            $table -> char('id_user', 100);
+            $table -> char('kd_bank', 10);
+            $table -> char('account_name', 100);
+            $table -> char('account_number', 100);
+            $table -> char('main', 1);
+            $table -> char('active', 1);
+        });
     }
 
     /**
@@ -23,6 +33,6 @@ class TblBankAccount extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_bank_account');
     }
 }
