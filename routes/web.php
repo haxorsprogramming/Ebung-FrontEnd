@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PageCtr;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Halaman utama 
-Route::get('/', 'PageCtr@home');
+Route::get('/', [PageCtr::class, 'home']);
