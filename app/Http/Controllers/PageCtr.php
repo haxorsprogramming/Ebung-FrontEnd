@@ -9,7 +9,7 @@ class PageCtr extends Controller
 
     public function home()
     {
-        echo "Halo ...";
+        return view('home.home');
     }
 
     public function listproduk($id_produk)

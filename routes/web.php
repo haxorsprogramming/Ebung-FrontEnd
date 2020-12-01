@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageCtr;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +20,6 @@ Route::get('/{id_produk}', [PageCtr::class, 'listproduk']);
 
 // Produk 
 Route::get('/produk/list',[PageCtr::class, 'produk']);
+Route::get('/produk/{tipeproduk}/list', [PageCtr::class, 'listproduk']);
+// Pembelian 
+Route::get('/pembelian',[PageCtr::class, 'listproduk']);
