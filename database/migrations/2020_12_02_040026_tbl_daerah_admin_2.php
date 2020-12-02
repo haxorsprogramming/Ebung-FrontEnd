@@ -17,7 +17,7 @@ class TblDaerahAdmin2 extends Migration
             $table -> id();
             $table -> char('kd_daerah', 10);
             $table -> char('nama_daerah', 100);
-            $table -> char('kode_pos');
+            $table -> char('kode_pos', 10);
         });
     
     }

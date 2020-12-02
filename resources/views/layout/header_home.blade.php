@@ -1,436 +1,174 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html>
 
 <head>
+    <title>Ebunga - Homepage</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- bootstrap vs fontawesome-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="meta description">
-    <title>E-Bunga</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Google fonts include -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,900%7CYesteryear" rel="stylesheet">
-
-    <!-- All Vendor & plugins CSS include -->
-    <link href="{{ asset('ladun/homepage/css_asset/vendor.css') }}" rel="stylesheet">
-
-    <!-- Main Style CSS -->
-    <link href="{{ asset('ladun/homepage/css_asset/style.css') }}" rel="stylesheet">
-
+    <!-- <link rel="stylesheet" type="text/css" href="css/style-homev3.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-homev3.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-res-v3.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-fix-nav.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-form-search-mobile.css') }}">
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/slick-theme.css') }}">
+    <!-- GG FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
 
 <body>
+    <header class="container" id="header-v3">
 
-    <!-- Start Header Area -->
-    <header class="header-area">
-        <!-- main header start -->
-        <div class="main-header d-none d-lg-block">
-            <!-- header top start -->
-            <div class="header-top bdr-bottom">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div class="welcome-message">
-                                <p>Welcome to Floda online store</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 text-right">
-                            <div class="header-top-settings">
-                                <ul class="nav align-items-center justify-content-end">
-                                    <li class="language">
-                                        <span>Language:</span>
-                                        <img src="assets/img/icon/en.png" alt="flag"> English
-                                        <i class="fa fa-angle-down"></i>
-                                        <ul class="dropdown-list">
-                                            <li><a href="#"><img src="assets/img/icon/en.png" alt="flag"> english</a></li>
-                                            <li><a href="#"><img src="assets/img/icon/fr.png" alt="flag"> french</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="curreny-wrap">
-                                        <span>Currency:</span>
-                                        $ USD
-                                        <i class="fa fa-angle-down"></i>
-                                        <ul class="dropdown-list curreny-list">
-                                            <li><a href="#">$ usd</a></li>
-                                            <li><a href="#"> € EURO</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- header top end -->
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 logo"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/logo/logo.png') }}" alt="holiwood"></a></div>
+            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 menu-mobile">
+                <div class=" collapse navbar-collapse" id="myNavbar">
 
-            <!-- header middle area start -->
-            <div class="header-main-area sticky">
-                <div class="container">
-                    <div class="row align-items-center position-relative">
+                    <form class="hidden-lg hidden-md form-group form-search-mobile">
+                        <input type="text" name="search" placeholder="Search here..." class="form-control">
+                        <button type="submit"><img src="{{ asset('ladun/homepage/pic_asset/util/Search.png') }}" alt="search" class="img-responsive"></button>
+                    </form>
+                    <ul class="nav navbar-nav menu-main">
 
-                        <!-- start logo area -->
-                        <div class="col-lg-3">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img src="assets/img/logo/logo.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- start logo area -->
+                        <li class="dropdown menu-home">
+                            <a href="#" id="home-menu" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                            <ul class="menu-home-lv2 dropdown-menu">
+                                <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="homev1.html">Home 1</a></li>
+                                <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="homev2.html">Home 2</a></li>
+                                <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="homev3.html">Home 3</a></li>
 
-                        <!-- main menu area start -->
-                        <div class="col-lg-6 position-static">
-                            <div class="main-menu-area">
-                                <div class="main-menu">
-                                    <!-- main menu navbar start -->
-                                    <nav class="desktop-menu">
-                                        <ul>
-                                            <li class="active"><a href="index.html">Home <i class="fa fa-angle-down"></i></a>
-                                                <ul class="dropdown">
-                                                    <li><a href="index.html">Home version 01</a></li>
-                                                    <li><a href="index-2.html">Home version 02</a></li>
-                                                    <li><a href="index-3.html">Home version 03</a></li>
-                                                    <li><a href="index-4.html">Home version 04</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="static"><a href="#">pages <i class="fa fa-angle-down"></i></a>
-                                                <ul class="megamenu dropdown">
-                                                    <li class="mega-title"><a href="#">column 01</a>
-                                                        <ul>
-                                                            <li><a href="shop.html">shop grid left
-                                                                    sidebar</a></li>
-                                                            <li><a href="shop-grid-right-sidebar.html">shop grid right
-                                                                    sidebar</a></li>
-                                                            <li><a href="shop-list-left-sidebar.html">shop list left sidebar</a></li>
-                                                            <li><a href="shop-list-right-sidebar.html">shop list right sidebar</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="mega-title"><a href="#">column 02</a>
-                                                        <ul>
-                                                            <li><a href="product-details.html">product details</a></li>
-                                                            <li><a href="product-details-affiliate.html">product
-                                                                    details
-                                                                    affiliate</a></li>
-                                                            <li><a href="product-details-variable.html">product details
-                                                                    variable</a></li>
-                                                            <li><a href="product-details-group.html">product details
-                                                                    group</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="mega-title"><a href="#">column 03</a>
-                                                        <ul>
-                                                            <li><a href="cart.html">cart</a></li>
-                                                            <li><a href="checkout.html">checkout</a></li>
-                                                            <li><a href="compare.html">compare</a></li>
-                                                            <li><a href="wishlist.html">wishlist</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="mega-title"><a href="#">column 04</a>
-                                                        <ul>
-                                                            <li><a href="my-account.html">my-account</a></li>
-                                                            <li><a href="login-register.html">login-register</a></li>
-                                                            <li><a href="contact-us.html">contact us</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="megamenu-banners d-none d-lg-block">
-                                                        <a href="product-details.html">
-                                                            <img src="assets/img/banner/img-bottom-menu.jpg" alt="">
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="shop.html">shop <i class="fa fa-angle-down"></i></a>
-                                                <ul class="dropdown">
-                                                    <li><a href="#">shop grid layout <i class="fa fa-angle-right"></i></a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="shop.html">shop grid left sidebar</a></li>
-                                                            <li><a href="shop-grid-right-sidebar.html">shop grid right sidebar</a></li>
-                                                            <li><a href="shop-grid-full-3-col.html">shop grid full 3 col</a></li>
-                                                            <li><a href="shop-grid-full-4-col.html">shop grid full 4 col</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">shop list layout <i class="fa fa-angle-right"></i></a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="shop-list-left-sidebar.html">shop list left sidebar</a></li>
-                                                            <li><a href="shop-list-right-sidebar.html">shop list right sidebar</a></li>
-                                                            <li><a href="shop-list-full-width.html">shop list full width</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">products details <i class="fa fa-angle-right"></i></a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="product-details.html">product details</a></li>
-                                                            <li><a href="product-details-affiliate.html">product details affiliate</a></li>
-                                                            <li><a href="product-details-variable.html">product details variable</a></li>
-                                                            <li><a href="product-details-group.html">product details group</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="blog-left-sidebar.html">Blog <i class="fa fa-angle-down"></i></a>
-                                                <ul class="dropdown">
-                                                    <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
-                                                    <li><a href="blog-right-sidebar.html">blog right sidebar</a></li>
-                                                    <li><a href="blog-grid-full-width.html">blog grid no sidebar</a></li>
-                                                    <li><a href="blog-details.html">blog details</a></li>
-                                                    <li><a href="blog-details-left-sidebar.html">blog details left sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact-us.html">Contact us</a></li>
-                                        </ul>
-                                    </nav>
-                                    <!-- main menu navbar end -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- main menu area end -->
+                            </ul>
+                        </li>
+                        <li class="shop-menu dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop +</a>
+                            <figure id="shop-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+                            <div class="dropdown-menu">
+                                <div class="container container-menu">
+                                    <ul class="row">
+                                        <li class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                            <ul>
+                                                <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-lv2">
+                                                    <ul>
+                                                        <li><a href="#">SHOP PAGE</a> </li>
+                                                        <li class="li-home li-one"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="shop-right-sidebar.html">Right sidebar</a></li>
+                                                        <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="shop-left-sidebar.html">Left sidebar</a></li>
+                                                        <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="shop-full-screen.html">Full screen</a></li>
+                                                        <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="shop-full-width.html">Full width</a></li>
+                                                        <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="singel-detail.html">Singel detail</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-lv2">
+                                                    <ul>
+                                                        <li><a href="#">CHECKING PAGE</a></li>
+                                                        <li class="li-home li-one"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="shopping-cart.html">Shopping Cart</a></li>
+                                                        <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="checkout.html">Checkout</a></li>
+                                                        <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="order.html">Order</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="col-lg-4 col-md-4 col-sm-12 col-xs-12 menu-home-lv2">
+                                                    <ul>
+                                                        <li><a href="#">OTHER PAGE</a></li>
+                                                        <li class="li-home li-one"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="FAQ.html">FAQ</a></li>
+                                                        <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="login_register.html">Login/Register</a></li>
+                                                        <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="page404.html">Page404</a></li>
+                                                        <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="tracking.html">Tracking</a></li>
+                                                        <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="wishlist.html">Wishlist</a></li>
+                                                    </ul>
+                                                </li>
 
-                        <!-- mini cart area start -->
-                        <div class="col-lg-3">
-                            <div class="header-configure-wrapper">
-                                <div class="header-configure-area">
-                                    <ul class="nav justify-content-end">
-                                        <li>
-                                            <a href="#" class="offcanvas-btn">
-                                                <i class="lnr lnr-magnifier"></i>
-                                            </a>
-                                        </li>
-                                        <li class="user-hover">
-                                            <a href="#">
-                                                <i class="lnr lnr-user"></i>
-                                            </a>
-                                            <ul class="dropdown-list">
-                                                <li><a href="login-register.html">login</a></li>
-                                                <li><a href="login-register.html">register</a></li>
-                                                <li><a href="my-account.html">my account</a></li>
                                             </ul>
                                         </li>
-                                        <li>
-                                            <a href="wishlist.html">
-                                                <i class="lnr lnr-heart"></i>
-                                                <div class="notification">0</div>
-                                            </a>
+                                        <li class="col-lg-4 col-md-4 hidden-sm hidden-xs li-banner">
+                                            <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/Shop-now-banner.png" alt="banner"></a>
                                         </li>
-                                        <li>
-                                            <a href="#" class="minicart-btn">
-                                                <i class="lnr lnr-cart"></i>
-                                                <div class="notification">2</div>
-                                            </a>
-                                        </li>
+
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                        <!-- mini cart area end -->
-
-                    </div>
-                </div>
-            </div>
-            <!-- header middle area end -->
-        </div>
-        <!-- main header start -->
-
-        <!-- mobile header start -->
-        <div class="mobile-header d-lg-none d-md-block sticky">
-            <!--mobile header top start -->
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12">
-                        <div class="mobile-main-header">
-                            <div class="mobile-logo">
-                                <a href="index.html">
-                                    <img src="assets/img/logo/logo.png" alt="Brand Logo">
-                                </a>
-                            </div>
-                            <div class="mobile-menu-toggler">
-                                <div class="mini-cart-wrap">
-                                    <a href="cart.html">
-                                        <i class="lnr lnr-cart"></i>
-                                    </a>
-                                </div>
-                                <div class="mobile-menu-btn">
-                                    <div class="off-canvas-btn">
-                                        <i class="lnr lnr-menu"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- mobile header top start -->
-        </div>
-        <!-- mobile header end -->
-    </header>
-    <!-- end Header Area -->
-
-    <!-- off-canvas menu start -->
-    <aside class="off-canvas-wrapper">
-        <div class="off-canvas-overlay"></div>
-        <div class="off-canvas-inner-content">
-            <div class="btn-close-off-canvas">
-                <i class="lnr lnr-cross"></i>
-            </div>
-
-            <div class="off-canvas-inner">
-                <!-- search box start -->
-                <div class="search-box-offcanvas">
-                    <form>
-                        <input type="text" placeholder="Search Here...">
-                        <button class="search-btn"><i class="lnr lnr-magnifier"></i></button>
-                    </form>
-                </div>
-                <!-- search box end -->
-
-                <!-- mobile menu start -->
-                <div class="mobile-navigation">
-
-                    <!-- mobile menu navigation start -->
-                    <nav>
-                        <ul class="mobile-menu">
-                            <li class="menu-item-has-children"><a href="index.html">Home</a>
-                                <ul class="dropdown">
-                                    <li><a href="index.html">Home version 01</a></li>
-                                    <li><a href="index-2.html">Home version 02</a></li>
-                                    <li><a href="index-3.html">Home version 03</a></li>
-                                    <li><a href="index-4.html">Home version 04</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="#">pages</a>
-                                <ul class="megamenu dropdown">
-                                    <li class="mega-title menu-item-has-children"><a href="#">column 01</a>
-                                        <ul class="dropdown">
-                                            <li><a href="shop.html">shop grid left
-                                                    sidebar</a></li>
-                                            <li><a href="shop-grid-right-sidebar.html">shop grid right
-                                                    sidebar</a></li>
-                                            <li><a href="shop-list-left-sidebar.html">shop list left sidebar</a></li>
-                                            <li><a href="shop-list-right-sidebar.html">shop list right sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="mega-title menu-item-has-children"><a href="#">column 02</a>
-                                        <ul class="dropdown">
-                                            <li><a href="product-details.html">product details</a></li>
-                                            <li><a href="product-details-affiliate.html">product
-                                                    details
-                                                    affiliate</a></li>
-                                            <li><a href="product-details-variable.html">product details
-                                                    variable</a></li>
-                                            <li><a href="product-details-group.html">product details
-                                                    group</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="mega-title menu-item-has-children"><a href="#">column 03</a>
-                                        <ul class="dropdown">
-                                            <li><a href="cart.html">cart</a></li>
-                                            <li><a href="checkout.html">checkout</a></li>
-                                            <li><a href="compare.html">compare</a></li>
-                                            <li><a href="wishlist.html">wishlist</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="mega-title menu-item-has-children"><a href="#">column 04</a>
-                                        <ul class="dropdown">
-                                            <li><a href="my-account.html">my-account</a></li>
-                                            <li><a href="login-register.html">login-register</a></li>
-                                            <li><a href="contact-us.html">contact us</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children "><a href="#">shop</a>
-                                <ul class="dropdown">
-                                    <li class="menu-item-has-children"><a href="#">shop grid layout</a>
-                                        <ul class="dropdown">
-                                            <li><a href="shop.html">shop grid left sidebar</a></li>
-                                            <li><a href="shop-grid-right-sidebar.html">shop grid right sidebar</a></li>
-                                            <li><a href="shop-grid-full-3-col.html">shop grid full 3 col</a></li>
-                                            <li><a href="shop-grid-full-4-col.html">shop grid full 4 col</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children"><a href="#">shop list layout</a>
-                                        <ul class="dropdown">
-                                            <li><a href="shop-list-left-sidebar.html">shop list left sidebar</a></li>
-                                            <li><a href="shop-list-right-sidebar.html">shop list right sidebar</a></li>
-                                            <li><a href="shop-list-full-width.html">shop list full width</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children"><a href="#">products details</a>
-                                        <ul class="dropdown">
-                                            <li><a href="product-details.html">product details</a></li>
-                                            <li><a href="product-details-affiliate.html">product details affiliate</a></li>
-                                            <li><a href="product-details-variable.html">product details variable</a></li>
-                                            <li><a href="product-details-group.html">product details group</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children "><a href="#">Blog</a>
-                                <ul class="dropdown">
-                                    <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
-                                    <li><a href="blog-right-sidebar.html">blog right sidebar</a></li>
-                                    <li><a href="blog-grid-full-width.html">blog grid no sidebar</a></li>
-                                    <li><a href="blog-details.html">blog details</a></li>
-                                    <li><a href="blog-details-left-sidebar.html">blog details left sidebar</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact-us.html">Contact us</a></li>
-                        </ul>
-                    </nav>
-                    <!-- mobile menu navigation end -->
-                </div>
-                <!-- mobile menu end -->
-
-                <div class="mobile-settings">
-                    <ul class="nav">
-                        <li>
-                            <div class="dropdown mobile-top-dropdown">
-                                <a href="#" class="dropdown-toggle" id="currency" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Currency
-                                    <i class="fa fa-angle-down"></i>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="currency">
-                                    <a class="dropdown-item" href="#">$ USD</a>
-                                    <a class="dropdown-item" href="#">$ EURO</a>
-                                </div>
-                            </div>
                         </li>
+                        <li class="wedding-menu"><a href="about.html">About Us</a>
+                            <figure id="wedding-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+                        </li>
+                        <li class="blog-menu dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog</a>
+                            <figure id="blog-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+                            <ul class="menu-home-lv2 dropdown-menu">
+                                <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="blog.html">Blog right sidebar</a></li>
+                                <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="blog-left-sidebar.html">Blog Left sidebar</a></li>
+                                <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="blog-no-sidebar.html">Blog no sidebar</a></li>
+                                <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="singel-post-left-sidebar.html">Singel post left sidebar</a></li>
+                                <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="singel-post-right-sidebar.html">Singel post right sidebar</a></li>
+                                <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="singel-post-no-sidebar.html">Singel post no sidebar</a></li>
+                            </ul>
+                        </li>
+                        <li class="contact-menu"><a href="contact.html">Contact</a>
+                            <figure id="contact-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+                        </li>
+                        <li class="hidden-lg hidden-md"><a href="#"><i class="far fa-user"></i> My Account</a></li>
                         <li>
-                            <div class="dropdown mobile-top-dropdown">
-                                <a href="#" class="dropdown-toggle" id="myaccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    My Account
-                                    <i class="fa fa-angle-down"></i>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="myaccount">
-                                    <a class="dropdown-item" href="my-account.html">my account</a>
-                                    <a class="dropdown-item" href="login-register.html"> login</a>
-                                    <a class="dropdown-item" href="login-register.html">register</a>
-                                </div>
-                            </div>
+                            <figure id="btn-close-menu" class="hidden-lg hidden-md"><i class="far fa-times-circle"></i></figure>
                         </li>
                     </ul>
                 </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-10 col-xs-9">
+                <ul class="nav navbar-nav navbar-right icon-menu">
 
-                <!-- offcanvas widget area start -->
-                <div class="offcanvas-widget-area">
-                    <div class="off-canvas-contact-widget">
-                        <ul>
-                            <li><i class="fa fa-mobile"></i>
-                                <a href="#">0123456789</a>
-                            </li>
-                            <li><i class="fa fa-envelope-o"></i>
-                                <a href="#">info@yourdomain.com</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="off-canvas-social-widget">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-youtube-play"></i></a>
-                    </div>
-                </div>
-                <!-- offcanvas widget area end -->
+
+                    <li id="input-search" class="hidden-sm hidden-xs">
+                        <a href="#"><img id="search-img" src="{{ asset('ladun/homepage/pic_asset/util/Search.png') }}" alt="search"></a>
+
+                    </li>
+                    <li class="icon-user hidden-sm hidden-xs"><a href="#"><i class="far fa-user"></i></a></li>
+                    <li class="dropdown cart-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="http://landing.engotheme.com/html/jenstore/demo/img/cart.png" id="img-cart" alt="cart"></a>
+                        <div class="dropdown-menu">
+                            <div class="cart-1">
+                                <div class="img-cart"><img src="http://landing.engotheme.com/html/jenstore/demo/img/collec-1.jpg" class="img-responsive" alt="holiwood"></div>
+                                <div class="info-cart">
+                                    <h1>Pink roses</h1>
+                                    <span class="number">x1</span>
+                                    <span class="prince-cart">$207.2</span>
+                                </div>
+                            </div>
+                            <div class="cart-1">
+                                <div class="img-cart"><img src="http://landing.engotheme.com/html/jenstore/demo/img/collec-1.jpg" class="img-responsive" alt="holiwood"></div>
+                                <div class="info-cart">
+                                    <h1>Eleganr by BloomNation</h1>
+                                    <span class="number">x1</span>
+                                    <span class="prince-cart">$207.2</span>
+                                </div>
+                            </div>
+                            <div class="cart-1">
+                                <div class="img-cart"><img src="http://landing.engotheme.com/html/jenstore/demo/img/collec-1.jpg" class="img-responsive" alt="holiwood"></div>
+                                <div class="info-cart">
+                                    <h1>Queen Rose - Yellow</h1>
+                                    <span class="number">x1</span>
+                                    <span class="prince-cart">$207.2</span>
+                                </div>
+                            </div>
+                            <div class="total">
+                                <span>Total:</span>
+                                <span>$621.6</span>
+                            </div>
+                            <div id="div-cart-menu">
+                                <a href="#">ADD TO CART</a>
+                                <a href="#" class="check">CHECK VIEW</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-header mobile-menu">
+                <button type="button" class="navbar-toggle btn-menu-mobile" data-toggle="collapse" data-target="#myNavbar">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
-    </aside>
-    <!-- off-canvas menu end -->
+
+    </header>

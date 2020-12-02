@@ -25,4 +25,9 @@ class PageCtr extends Controller
         return \Response::json($dr);
     }
 
+    public function contact()
+    {
+        return view('home.contact');
+    }
+
 }
