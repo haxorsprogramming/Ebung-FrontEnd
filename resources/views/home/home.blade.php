@@ -358,23 +358,16 @@
             <!-- --------------------------- -->
             <div class="container">
                 <h1>Category of Product EBunga</h1>
+                <div style="text-align: center;">
                 <ul class="nav nav-tabs menu-category">
-                    <li class="new-menu active"><a data-toggle="tab" href="#menu-tab-new" id="new-menu">New Arrivals</a>
-                        <figure id="new-2" class="hidden-xs"></figure>
-                    </li>
-                    <li class="shop-menu"><a data-toggle="tab" href="#menu-tab-shop">Shop</a>
+                    @foreach($kategori as $kat)
+                    <li class="shop-menu"><a data-toggle="tab" href="#menu-tab-shop">{{$kat -> nama_kategori}}</a>
                         <figure id="shop-2" class="hidden-xs"></figure>
                     </li>
-                    <li class="wedding-menu"><a data-toggle="tab" href="#menu-tab-wedding">Wedding</a>
-                        <figure id="wedding-2" class="hidden-xs"></figure>
-                    </li>
-                    <li class="holiday-menu"><a data-toggle="tab" href="#menu-tab-holiday">Holiday</a>
-                        <figure id="holiday-2" class="hidden-xs"></figure>
-                    </li>
-                    <li class="other-menu"><a data-toggle="tab" href="#menu-tab-other">Other</a>
-                        <figure id="other-2" class="hidden-xs"></figure>
-                    </li>
+                    @endforeach
                 </ul>
+                </div>
+                
                 <div class="row">
                     <div class="tab-content">
 
