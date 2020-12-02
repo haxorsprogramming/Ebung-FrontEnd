@@ -7,7 +7,6 @@
     <!-- bootstrap vs fontawesome-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
 
     <!-- <link rel="stylesheet" type="text/css" href="css/style-homev3.css"> -->
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-homev3.css') }}">
@@ -27,13 +26,13 @@
     <header class="container" id="header-v3">
 
         <div class="row">
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 logo"><a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/logo.png" alt="holiwood"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 logo"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/logo/logo.png') }}" alt="holiwood"></a></div>
             <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 menu-mobile">
                 <div class=" collapse navbar-collapse" id="myNavbar">
 
                     <form class="hidden-lg hidden-md form-group form-search-mobile">
                         <input type="text" name="search" placeholder="Search here..." class="form-control">
-                        <button type="submit"><img src="img/Search.png" alt="search" class="img-responsive"></button>
+                        <button type="submit"><img src="{{ asset('ladun/homepage/pic_asset/util/Search.png') }}" alt="search" class="img-responsive"></button>
                     </form>
                     <ul class="nav navbar-nav menu-main">
 
@@ -85,7 +84,7 @@
                                             </ul>
                                         </li>
                                         <li class="col-lg-4 col-md-4 hidden-sm hidden-xs li-banner">
-                                            <a href="#"><img src="img/Shop-now-banner.png" alt="banner"></a>
+                                            <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/Shop-now-banner.png" alt="banner"></a>
                                         </li>
 
                                     </ul>
@@ -122,12 +121,12 @@
 
 
                     <li id="input-search" class="hidden-sm hidden-xs">
-                        <a href="#"><img id="search-img" src="img/Search.png" alt="search"></a>
+                        <a href="#"><img id="search-img" src="{{ asset('ladun/homepage/pic_asset/util/Search.png') }}" alt="search"></a>
 
                     </li>
                     <li class="icon-user hidden-sm hidden-xs"><a href="#"><i class="far fa-user"></i></a></li>
                     <li class="dropdown cart-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/cart.png" id="img-cart" alt="cart"></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="http://landing.engotheme.com/html/jenstore/demo/img/cart.png" id="img-cart" alt="cart"></a>
                         <div class="dropdown-menu">
                             <div class="cart-1">
                                 <div class="img-cart"><img src="img/collec-1.jpg" class="img-responsive" alt="holiwood"></div>
@@ -296,7 +295,7 @@
                                             </figure>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                            <img src="img/wedding-1.jpg" class="img-responsive" alt="holiwood">
+                                            <img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 detail">
@@ -559,7 +558,7 @@
 
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <figure class="sale"><a href="#"><img src="img/wedding-1.jpg" class="img-responsive" alt="holiwood"></a></figure>
+                                    <figure class="sale"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
                                     <div class="product-icon-category">
                                         <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
 
@@ -575,7 +574,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <a href="#"><img src="img/wedding-2.jpg" class="img-responsive" alt="holiwood"></a>
+                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
                                     <div class="product-icon-category">
                                         <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -590,7 +589,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="img/holiday-1.jpg" class="img-responsive" alt="holiwood"></a></figure>
+                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
                                     <div class="product-icon-category">
                                         <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -605,7 +604,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <a href="#"><img src="img/wedding-4.jpg" class="img-responsive" alt="holiwood"></a>
+                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
                                     <div class="product-icon-category">
                                         <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -621,7 +620,7 @@
                             <!-- ------------------------------------------------ -->
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <a href="#"><img src="img/collec-2.jpg" class="img-responsive" alt="holiwood"></a>
+                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
                                     <div class="product-icon-category">
                                         <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -636,7 +635,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="img/holiday-3.jpg" class="img-responsive" alt="holiwood"></a></figure>
+                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
                                     <div class="product-icon-category">
                                         <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -651,7 +650,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <a href="#"><img src="img/holiday-2.jpg" class="img-responsive" alt="holiwood"></a>
+                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
                                     <div class="product-icon-category">
                                         <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -666,7 +665,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="img/cate-1.jpg" class="img-responsive" alt="holiwood"></a></figure>
+                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
                                     <div class="product-icon-category">
                                         <a href="#"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -687,7 +686,7 @@
 
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <figure class="sale"><a href="#"><img src="img/wedding-3.jpg" class="img-responsive" alt="holiwood"></a></figure>
+                                    <figure class="sale"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
                                     <div class="product-icon-category">
                                         <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -702,7 +701,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <a href="#"><img src="img/holiday-2.jpg" class="img-responsive" alt="holiwood"></a>
+                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
                                     <div class="product-icon-category">
                                         <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -717,7 +716,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="img/holiday-3.jpg" class="img-responsive" alt="holiwood"></a></figure>
+                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
                                     <div class="product-icon-category">
                                         <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -732,7 +731,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <a href="#"><img src="img/wedding-1.jpg" class="img-responsive" alt="holiwood"></a>
+                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
                                     <div class="product-icon-category">
                                         <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -748,7 +747,7 @@
                             <!-- ------------------------------------------------ -->
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <a href="#"><img src="img/collec-3.jpg" class="img-responsive" alt="holiwood"></a>
+                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
                                     <div class="product-icon-category">
                                         <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -763,7 +762,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="img/wedding-1.jpg" class="img-responsive" alt="holiwood"></a></figure>
+                                    <figure class="hot"><a href="#"><img src="i{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
                                     <div class="product-icon-category">
                                         <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -778,7 +777,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <a href="#"><img src="img/holiday-1.jpg" class="img-responsive" alt="holiwood"></a>
+                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
                                     <div class="product-icon-category">
                                         <a href="#"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -793,7 +792,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="img/cate-1.jpg" class="img-responsive" alt="holiwood"></a></figure>
+                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
                                     <div class="product-icon-category">
                                         <a href="#"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -812,7 +811,7 @@
                         <div id="menu-tab-wedding" class="tab-pane fade">
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <figure class="sale"><a href="#"><img src="img/wedding-1.jpg" class="img-responsive" alt="holiwood"></a></figure>
+                                    <figure class="sale"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
                                     <div class="product-icon-category">
                                         <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
 
@@ -828,7 +827,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <a href="#"><img src="img/wedding-2.jpg" class="img-responsive" alt="holiwood"></a>
+                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
                                     <div class="product-icon-category">
                                         <a href="#"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -843,7 +842,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="img/holiday-1.jpg" class="img-responsive" alt="holiwood"></a></figure>
+                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
                                     <div class="product-icon-category">
                                         <a href="#"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -858,7 +857,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <a href="#"><img src="img/wedding-4.jpg" class="img-responsive" alt="holiwood"></a>
+                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
                                     <div class="product-icon-category">
                                         <a href="#"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -874,7 +873,7 @@
                             <!-- ------------------------------------------------ -->
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <a href="#"><img src="img/collec-2.jpg" class="img-responsive" alt="holiwood"></a>
+                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
                                     <div class="product-icon-category">
                                         <a href="#"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -889,7 +888,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="img/holiday-3.jpg" class="img-responsive" alt="holiwood"></a></figure>
+                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
                                     <div class="product-icon-category">
                                         <a href="#"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -904,7 +903,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <a href="#"><img src="img/holiday-2.jpg" class="img-responsive" alt="holiwood"></a>
+                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
                                     <div class="product-icon-category">
                                         <a href="#"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -919,7 +918,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                 <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="img/cate-1.jpg" class="img-responsive" alt="holiwood"></a></figure>
+                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
                                     <div class="product-icon-category">
                                         <a href="#"><i class="far fa-eye"></i></a>
                                         <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -1395,7 +1394,7 @@
                         <div class="item active">
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,<br class="hidden-sm hidden-xs hidden-md"> when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap<br class="hidden-sm hidden-xs hidden-md"> into electronic typesetting, remaining essentially unchanged</p>
                             <div class="img-customer">
-                                <img src="img/avatar-feedback.png" alt="holiwood">
+                                <img src="{{ asset('ladun/homepage/pic_asset/testi_user_pic/avatar-feedback.png') }}" alt="holiwood">
                                 <h1>Laura Ellie - <span>Customers</span></h1>
                             </div>
                         </div>
@@ -1404,7 +1403,7 @@
 
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,<br class="hidden-sm hidden-xs hidden-md"> when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap<br class="hidden-sm hidden-xs hidden-md"> into electronic typesetting, remaining essentially unchanged</p>
                             <div class="img-customer">
-                                <img src="img/avatar-feedback.png" alt="holiwood">
+                                <img src="{{ asset('ladun/homepage/pic_asset/testi_user_pic/avatar-feedback.png') }}" alt="holiwood">
                                 <h1>Laura Ellie - <span>Customers</span></h1>
                             </div>
                         </div>
@@ -1413,7 +1412,7 @@
 
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,<br class="hidden-sm hidden-xs hidden-md"> when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap<br class="hidden-sm hidden-xs hidden-md"> into electronic typesetting, remaining essentially unchanged</p>
                             <div class="img-customer">
-                                <img src="img/avatar-feedback.png" alt="holiwood">
+                                <img src="{{ asset('ladun/homepage/pic_asset/testi_user_pic/avatar-feedback.png') }}" alt="holiwood">
                                 <h1>Laura Ellie - <span>Customers</span></h1>
                             </div>
                         </div>
@@ -1518,7 +1517,7 @@
                         <h2>Sign up for our mailing list to get latest updates and offers</h2>
                         <form class="form-group" action="mail" method="post">
                             <input type="text" name="input-mail" placeholder="Your mail here" class="input-lg">
-                            <button type="submit"><img src="img/Send.png" alt="holiwood"></button>
+                            <button type="submit"><img src="{{ asset('ladun/homepage/pic_asset/util/Send.png') }}" alt="holiwood"></button>
                         </form>
                     </div>
                 </div>
@@ -1532,10 +1531,10 @@
                     <a href="#" class="logo-bot"></a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 copy">
-                    <span>Copyright</span><i class="far fa-copyright"></i><span class="engo">2018 by EngoTheme</span>
+                    <span>Copyright</span><i class="far fa-copyright"></i><span class="engo">2020 PT Ebunga Sukses Makmur</span>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gmail-footer">
-                    <span id="gmail-footer"><a href="#">E: Jenstore@gmail.com</a></span>
+                    <span id="gmail-footer"><a href="#">hi@ebunga.co.id</a></span>
                 </div>
             </div>
         </div>
