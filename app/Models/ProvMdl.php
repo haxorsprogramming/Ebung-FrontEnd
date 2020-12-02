@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DesaCtr extends Model
+class ProvMdl extends Model
 {
-    protected $table = 'tbl_kelurahan';
+    use HasFactory;
 }
