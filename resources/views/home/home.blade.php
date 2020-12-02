@@ -5,7 +5,7 @@
 
             <div class="container container-100">
                 <i class="far fa-times-circle" id="close-search"></i>
-                <h3 class="text-center">what are your looking for ?</h3>
+                <h3 class="text-center">What are your looking for ?</h3>
                 <form method="get" action="/search" role="search" style="position: relative;">
                     <input type="text" class="form-control control-search" value="" autocomplete="off" placeholder="Enter Search ..." aria-label="SEARCH" name="q">
 
@@ -36,16 +36,15 @@
                     </div>
 
                     <div class="item slide2">
-                        <img src="http://landing.engotheme.com/html/jenstore/demo/img/homev3-slider1.jpg" alt="holiwood">
+                        <img src="{{ asset('ladun/homepage/pic_asset/slide_show/slider_2.jpg') }}" alt="holiwood">
                         <div class="carousel-caption">
                             <h1>New<br>Collections</h1>
-                            <h2>A PERPECT BOUQUET</h2>
                             <a href="#">Shop now</a>
                         </div>
                     </div>
 
                     <div class="item slide1">
-                        <img src="http://landing.engotheme.com/html/jenstore/demo/img/homev3-slider1.jpg" alt="holiwood">
+                        <img src="{{ asset('ladun/homepage/pic_asset/slide_show/slider_3.jpg') }}" alt="holiwood">
                         <div class="carousel-caption">
                             <h3>IT'S YOUR DAY !</h3>
                             <h1>Happy<br>Birthday.</h1>
@@ -53,10 +52,9 @@
                         </div>
                     </div>
                     <div class="item slide2">
-                        <img src="http://landing.engotheme.com/html/jenstore/demo/img/homev3-slider1.jpg" alt="holiwood">
+                        <img src="{{ asset('ladun/homepage/pic_asset/slide_show/slider_1.jpg') }}" alt="holiwood">
                         <div class="carousel-caption">
                             <h1>New<br>Collections</h1>
-                            <h2>A PERPECT BOUQUET</h2>
                             <a href="#">Shop now</a>
                         </div>
                     </div>
@@ -359,7 +357,7 @@
             </div>
             <!-- --------------------------- -->
             <div class="container">
-                <h1>Category of Jenstore</h1>
+                <h1>Category of Product EBunga</h1>
                 <ul class="nav nav-tabs menu-category">
                     <li class="new-menu active"><a data-toggle="tab" href="#menu-tab-new" id="new-menu">New Arrivals</a>
                         <figure id="new-2" class="hidden-xs"></figure>
