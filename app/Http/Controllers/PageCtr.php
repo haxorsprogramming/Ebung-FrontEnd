@@ -21,6 +21,8 @@ class PageCtr extends Controller
     public function listproduk($id_produk)
     {
         $dr = ['status' => 'sukses'];
+
+        return \Response::json($dr);
     }
 
 }
