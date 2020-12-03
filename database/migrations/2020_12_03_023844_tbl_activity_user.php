@@ -13,7 +13,14 @@ class TblActivityUser extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_activity_user', function (Blueprint $table) {
+            $table -> id();
+            $table -> char('kd_activity', 100);
+            $table -> char('user', 100);
+            $table -> char('tipe', 50);
+            $table -> text('desc');
+            $table -> char('to_subject', 100);
+        });
     }
 
     /**
@@ -23,6 +30,6 @@ class TblActivityUser extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_activity_user');
     }
 }

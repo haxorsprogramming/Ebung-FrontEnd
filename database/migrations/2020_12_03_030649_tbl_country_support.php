@@ -13,7 +13,13 @@ class TblCountrySupport extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_country_support', function (Blueprint $table) {
+            $table -> id();
+            $table -> char('kd_country', 10);
+            $table -> char('name_country', 100);
+            $table -> char('status', 100);
+            $table -> char('active', 1);
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ class TblCountrySupport extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_country_support');
     }
 }

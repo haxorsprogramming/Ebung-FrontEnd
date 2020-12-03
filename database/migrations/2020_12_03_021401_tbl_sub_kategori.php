@@ -13,7 +13,6 @@ class TblSubKategori extends Migration
      */
     public function up()
     {
-        
         Schema::create('tbl_sub_kategori', function (Blueprint $table) {
             $table -> id();
             $table -> char('kd_sub_kategori', 100);
