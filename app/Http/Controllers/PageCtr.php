@@ -16,7 +16,9 @@ class PageCtr extends Controller
     public function home()
     {
         $kategori = KategoriMdl::all();
+
         $dr = ['kategori' => $kategori ];
+        
         return view('home.home', $dr);
     }
 

@@ -38,6 +38,5 @@ class DatabaseSeeder extends Seeder
             'deksripsi' => 'Kategori cake',
             'active' => '1'
         ]);
-
     }
 }
