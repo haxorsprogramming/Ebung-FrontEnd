@@ -1,6 +1,6 @@
 // ROUTE 
 var rToDetailProduct = server + "product/detail/";
-var rToCheckArea = server + "product/checkarea/";
+var rToCheckArea = server + "product/checkarea";
 // VUE OBJECT 
 var div_product_depan = new Vue({
     el : '#div_product_depan',
@@ -41,15 +41,41 @@ $.ajaxSetup({
 $('#loaderLokasi').hide();
 $('#txtTabelArea').hide();
 
-$('#txtLokasi').keyup(function(){
-    let lokasi = $('#txtLokasi').val();
-    $('#loaderLokasi').show();
-    if(lokasi === ''){
 
+// FUNCTION 
+function searchArea()
+{
+    clearArea();
+    let lokasi = $('#txtLokasi').val();
+    $('#txtTabelArea').hide();
+    if(lokasi === ''){
+        $('#loaderLokasi').hide();
+        $('#txtTabelArea').hide();
     }else{
-        $.get(rToCheckArea+lokasi, function(data){
-            console.log(data);
-            $('#loaderLokasi').hide();
-        });
+        if(lokasi.length > 4){
+            $('#loaderLokasi').show();
+            console.clear();
+            
+            $.post(rToCheckArea,{'slug':lokasi}, function(data){
+                let area = data.area;
+                area.forEach(looping_daerah);
+                function looping_daerah(item, index){
+                    console.log(area[index].nama);
+                    div_modal_product.listDaerah.push({'nama':area[index].nama});
+                }
+                $('#txtTabelArea').show();
+                $('#loaderLokasi').hide();
+            });
+        }else{
+        }
     }
-});
+}
+
+function clearArea()
+{
+    let panjang = div_modal_product.listDaerah.length;
+    var i;
+    for(i = 0; i < panjang; i++){
+        div_modal_product.listDaerah.splice(0,1);
+    }
+}

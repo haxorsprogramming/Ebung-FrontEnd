@@ -4,10 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageCtr;
 use App\Http\Controllers\RestProduct;
 use App\Http\Controllers\ProdukCtr;
+
 /*
-|--------------------------------------------------------------------------
+| --------------------------------------------------------------------------
 | Web Routes
-|--------------------------------------------------------------------------
+| --------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
@@ -32,10 +33,9 @@ Route::get('/pembelian', [PageCtr::class, 'listproduk']);
 // About 
 Route::get('/contact', [PageCtr::class, 'contact']);
 // Coverage area 
-Route::get('/product/checkarea/{slug}', [ProdukCtr::class, 'checkarea']);
+Route::post('/product/checkarea', [ProdukCtr::class, 'checkarea']);
 
 // Halaman admin 
-
 
 // Rest 
 // Produk detail

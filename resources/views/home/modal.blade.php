@@ -30,15 +30,20 @@
                                         </figure>
                                         
                                         <div class="select-custom">
-                                            <input type="text" class="input-text required-entry validate-email input-lg" id="txtLokasi">
+                                            <input type="text" class="input-text required-entry validate-email input-lg" id="txtLokasi" onkeyup="searchArea()">
                                             <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;" id="loaderLokasi">
                                             <hr/>
-                                            <table class="table" id="txtTabelArea">
+                                            <table class="table" id="txtTabelArea" style="font-family:Poppins;">
                                                 <thead>
                                                     <tr>
                                                         <td>Area</td><td>Coverage</td>
                                                     </tr>
                                                 </thead>
+                                                <tbody>
+                                                    <tr v-for="ld in listDaerah">
+                                                        <td>@{{ ld.nama }}</td><td>Area</td>
+                                                    </tr>
+                                                </tbody>
                                             </table>
                                             <p class="require">Required Fields <span>*</span></p>
                                             <div class="Quality">

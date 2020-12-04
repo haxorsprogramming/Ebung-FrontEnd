@@ -16,9 +16,11 @@ class ProdukCtr extends Controller
                 
     }
 
-    public function checkarea($slug)
+    public function checkarea(Request $request)
     {
-        $dr = ['area' => '51'];
+        $slug = $request -> slug;
+        $daerah = DesaMdl::where('nama', 'like', '%'.$slug.'%') -> take(5) -> get();
+        $dr = ['area' => $daerah];
         return \Response::json($dr);
     }
 }
