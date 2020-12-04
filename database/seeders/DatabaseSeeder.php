@@ -60,6 +60,32 @@ class DatabaseSeeder extends Seeder
             'kd_kategori' => 'BUNGA',
             'active' => '1'
         ]);
+        // user 
+        DB::table('tbl_user') -> insert([
+            'username' => 'admin',
+            'tipe' => 'super-admin',
+            'password' => password_hash('admin', PASSWORD_DEFAULT),
+            'active' => '1'
+        ]);
+        DB::table('tbl_user') -> insert([
+            'username' => 'ebunga-seller',
+            'tipe' => 'seller',
+            'password' => password_hash('admin', PASSWORD_DEFAULT),
+            'active' => '1'
+        ]);
+        DB::table('tbl_user') -> insert([
+            'username' => 'ebunga-seller',
+            'tipe' => 'buyer',
+            'password' => password_hash('admin', PASSWORD_DEFAULT),
+            'active' => '1'
+        ]);
+        // seller 
+        DB::table('tbl_user') -> insert([
+            'username' => 'ebunga-seller',
+            'tipe' => 'buyer',
+            'password' => password_hash('admin', PASSWORD_DEFAULT),
+            'active' => '1'
+        ]);
         
     }
 }

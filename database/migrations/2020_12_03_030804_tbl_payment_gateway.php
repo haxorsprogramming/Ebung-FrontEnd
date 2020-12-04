@@ -13,7 +13,12 @@ class TblPaymentGateway extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_payment_gateway', function (Blueprint $table) {
+            $table -> id();
+            $table -> char('kd_payment', 100);
+            $table -> char('nama_payment', 100);
+            $table -> char('scope', 100);
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class TblPaymentGateway extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_payment_gateway');
     }
 }

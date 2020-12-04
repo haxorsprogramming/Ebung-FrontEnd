@@ -13,7 +13,17 @@ class TblRegistrasiUser extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_registrasi_user', function (Blueprint $table) {
+            $table -> id();
+            $table -> char('kd_registrasi', 100);
+            $table -> char('token_registrasi', 100);
+            $table -> char('email'. 100);
+            $table -> char('password', 200);
+            $table -> timestamp('waktu_registrasi', 0);
+            $table -> char('tipe', 30);
+            $table -> char('status_aktivasi', 10);
+            $table -> datetime('waktu_aktivasi', 0);
+        });
     }
 
     /**
@@ -23,6 +33,6 @@ class TblRegistrasiUser extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_registrasi_user');
     }
 }

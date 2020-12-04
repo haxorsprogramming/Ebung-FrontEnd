@@ -31,3 +31,7 @@ Route::get('/pembelian', [PageCtr::class, 'listproduk']);
 // About 
 Route::get('/contact', [PageCtr::class, 'contact']);
 
+
+// Halaman admin 
+
+
