@@ -100,36 +100,36 @@ class DatabaseSeeder extends Seeder
         ]);
         // produk
         DB::table('tbl_produk') -> insert([
-            'kd_produk' => 'EBUNGA-891233',
+            'kd_produk' => 'EBUNGA891233',
             'nama_produk' => 'Buket bunga & snack sedang',
             'deks_produk' => '-',
             'kategori' => 'BUNGA',
             'sub_kategori' => 'BOUQET',
             'harga' => '200000',
             'stok' => '10',
-            'foto_utama' => 'EBUNGA-891233.jpg',
+            'foto_utama' => 'EBUNGA891233.jpg',
             'active' => 'y'
         ]);
         DB::table('tbl_produk') -> insert([
-            'kd_produk' => 'EBUNGA-891290',
+            'kd_produk' => 'EBUNGA891290',
             'nama_produk' => 'Papan bunga biasa',
             'deks_produk' => '-',
             'kategori' => 'PAPANBUNGA',
             'sub_kategori' => 'PAPANBUNGAKONVENSIONAL',
             'harga' => '150000',
             'stok' => '10',
-            'foto_utama' => 'EBUNGA-891290.jpg',
+            'foto_utama' => 'EBUNGA891290.jpg',
             'active' => 'y'
         ]);
         DB::table('tbl_produk') -> insert([
-            'kd_produk' => 'EBUNGA-78900',
+            'kd_produk' => 'EBUNGA78900',
             'nama_produk' => 'Papan bunga biasa',
             'deks_produk' => '-',
             'kategori' => 'PAPANBUNGA',
             'sub_kategori' => 'PAPANBUNGAKONVENSIONAL',
             'harga' => '150000',
             'stok' => '10',
-            'foto_utama' => 'EBUNGA-78900.jpg',
+            'foto_utama' => 'EBUNGA78900.jpg',
             'active' => 'y'
         ]);
     }

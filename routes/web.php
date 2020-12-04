@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageCtr;
-
+use App\Http\Controllers\RestProduct;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,3 +35,6 @@ Route::get('/contact', [PageCtr::class, 'contact']);
 // Halaman admin 
 
 
+// Rest 
+// Produk detail
+Route::get('/product/detail/{id_product}', [RestProduct::class, 'detailproduct']);

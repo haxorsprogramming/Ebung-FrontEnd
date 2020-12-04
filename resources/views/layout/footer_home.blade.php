@@ -96,6 +96,9 @@
     <script src="{{ asset('ladun/homepage/js_asset/function-sidebar.js') }}"></script>
     <script src="{{ asset('ladun/homepage/js_asset/funtion-header-v3.js') }}"></script>
     <script src="{{ asset('ladun/homepage/js_asset/function-search-v2.js') }}"></script>
+    <script>
+        const server = "{{ url('') }}/";
+    </script>
     <script src="{{ asset('ladun/homepage/js_custom/ebunga.js') }}"></script>
 
 </body>

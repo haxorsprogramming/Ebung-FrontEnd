@@ -153,7 +153,7 @@
                                     <div class="product-image-category">
                                         <figure class="sale"><a href="#"><img src="{{ asset('ladun/ebunga_asset/image/product/'.$prod -> foto_utama) }}" class="img-responsive" alt="holiwood"></a></figure>
                                         <div class="product-icon-category">
-                                            <a href="#!"  @click="detailAtc" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
+                                            <a href="#!"  v-on:click="detailAtc('{{ $prod -> kd_produk }}')" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
 
                                             <a href="#!"><i class="fas fa-shopping-basket"></i></a>
                                             <a href="#!"><i class="far fa-heart"></i></a>
@@ -177,7 +177,7 @@
                                     <div class="product-image-category">
                                         <figure class="sale"><a href="#"><img src="{{ asset('ladun/ebunga_asset/image/product/'.$prod -> foto_utama) }}" class="img-responsive" alt="holiwood"></a></figure>
                                         <div class="product-icon-category">
-                                            <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
+                                            <a href="#" v-on:click="detailAtc('{{ $prod -> kd_produk }}')" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
 
                                             <a href="#"><i class="fas fa-shopping-basket"></i></a>
                                             <a href="#"><i class="far fa-heart"></i></a>

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 // import model 
 use App\Models\KategoriMdl;
 use App\Models\ProdukMdl;
-// import another class 
+// import another controller
 use App\Http\Controllers\DaerahCtr;
 
 
