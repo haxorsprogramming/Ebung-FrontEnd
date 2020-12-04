@@ -18,6 +18,7 @@
     <!-- slick -->
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/slick.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/slick-theme.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
     <!-- GG FONT -->
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">

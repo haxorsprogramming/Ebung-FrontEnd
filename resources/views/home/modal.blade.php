@@ -24,21 +24,22 @@
                                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                             <span>10 Rating(s) | Add Your Rating</span>
                                         </div>
-                                        <div class="prince"><span>$250.9</span><s class="strike">$300.02</s></div>
+                                        <div class="prince"><span>@{{ currency }} @{{ Number(price).toLocaleString() }}</span><s class="strike">$300.02</s></div>
                                         <figure class="fi-option">
-                                            <p class="option">Option</p>
+                                            <p class="option">Check your location (Kelurahan)</p>
                                         </figure>
-                                        <div class="size">
-                                            <span class="lb-size">Size <span class="sta-red">*</span></span><span class="lb-color">Color <span class="sta-red">*</span></span>
-                                        </div>
+                                        
                                         <div class="select-custom">
-                                            <select>
-                                                <option>S</option>
-                                                <option>M</option>
-                                                <option>L</option>
-                                                <option>XL</option>
-                                            </select>
-                                            <a href="#"><span class="color-1"></span></a> <a href="#"><span class="color-2"></span></a> <a href="#"><span class="color-3"></span></a> <a href="#"><span class="color-4"></span></a>
+                                            <input type="text" class="input-text required-entry validate-email input-lg" id="txtLokasi">
+                                            <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;" id="loaderLokasi">
+                                            <hr/>
+                                            <table class="table" id="txtTabelArea">
+                                                <thead>
+                                                    <tr>
+                                                        <td>Area</td><td>Coverage</td>
+                                                    </tr>
+                                                </thead>
+                                            </table>
                                             <p class="require">Required Fields <span>*</span></p>
                                             <div class="Quality">
 
@@ -197,11 +198,12 @@
                                             <span>10 Rating(s) | Add Your Rating</span>
                                         </div>
                                         <div class="prince"><span>$300.02</span><s class="strike">$250.9</s></div>
+                                        
                                         <figure class="fi-option">
-                                            <p class="option">Option</p>
+                                            <p class="option">Choose your location</p>
                                         </figure>
                                         <div class="size">
-                                            <span class="lb-size">Size <span class="sta-red">*</span></span><span class="lb-color">Color <span class="sta-red">*</span></span>
+                                            <span class="lb-size">Province  <span class="sta-red">*</span></span><span class="lb-color">Color <span class="sta-red">*</span></span>
                                         </div>
                                         <div class="select-custom">
                                             <select>
@@ -210,7 +212,7 @@
                                                 <option>L</option>
                                                 <option>XL</option>
                                             </select>
-                                            <a href="#"><span class="color-1"></span></a> <a href="#"><span class="color-2"></span></a> <a href="#"><span class="color-3"></span></a> <a href="#"><span class="color-4"></span></a>
+                                            
                                             <p class="require">Required Fields <span>*</span></p>
                                             <div class="Quality">
 
@@ -237,10 +239,18 @@
                                 </div>
                             </div>
                             <ul class="nav nav-pills col-lg-6 col-md-6 col-sm-6 col-xs-12 img-pill">
-                                <li class="active col-lg-4 col-md-4 col-sm-4 col-xs-12"><a data-toggle="pill" href="http://landing.engotheme.com/html/jenstore/demo/img/wedding-1.jpg"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></li>
-                                <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><a data-toggle="pill" href="http://landing.engotheme.com/html/jenstore/demo/img/wedding-1.jpg"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></li>
-                                <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><a data-toggle="pill" href="http://landing.engotheme.com/html/jenstore/demo/img/wedding-1.jpg"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></li>
-                                <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><a data-toggle="pill" href="http://landing.engotheme.com/html/jenstore/demo/img/wedding-1.jpg"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></li>
+                                <li class="active col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <a href="#!"><img src="{{ asset('ladun/ebunga_asset/image/product/EBUNGA891233.jpg') }}" class="img-responsive" alt="holiwood"></a>
+                                </li>
+                                <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <a href="#!"><img src="{{ asset('ladun/ebunga_asset/image/product/EBUNGA891233.jpg') }}" class="img-responsive" alt="holiwood"></a>
+                                </li>
+                                <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <a href="#!"><img src="{{ asset('ladun/ebunga_asset/image/product/EBUNGA891233.jpg') }}" class="img-responsive" alt="holiwood"></a>
+                                </li>
+                                <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <a href="#!"><img src="{{ asset('ladun/ebunga_asset/image/product/EBUNGA891233.jpg') }}" class="img-responsive" alt="holiwood"></a>
+                                </li>
                             </ul>
                         </div>
 

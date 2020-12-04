@@ -155,8 +155,8 @@
                                         <div class="product-icon-category">
                                             <a href="#!"  v-on:click="detailAtc('{{ $prod -> kd_produk }}')" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
 
-                                            <a href="#!"><i class="fas fa-shopping-basket"></i></a>
-                                            <a href="#!"><i class="far fa-heart"></i></a>
+                                            <a href="{{ url('product/details/'.$prod -> kd_produk) }}" target="_new"><i class="fas fa-shopping-basket"></i></a>
+                                            <a href="javascript:void(0)"><i class="far fa-heart"></i></a>
                                         </div>
                                     </div>
                                     <div class="product-title-category">

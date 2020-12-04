@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageCtr;
 use App\Http\Controllers\RestProduct;
+use App\Http\Controllers\ProdukCtr;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,12 +26,13 @@ Route::get('/seller/profile', [PageCtr::class, 'listproduk']);
 Route::get('/seller/update-profile',[PageCtr::class, 'listproduk']);
 // Produk 
 Route::get('/produk/list', [PageCtr::class, 'produk']);
-Route::get('/produk/{tipeproduk}/list', [PageCtr::class, 'listproduk']);
+Route::get('/product/details/{id_product}', [ProdukCtr::class, 'detailproduct']);
 // Pembelian 
 Route::get('/pembelian', [PageCtr::class, 'listproduk']);
 // About 
 Route::get('/contact', [PageCtr::class, 'contact']);
-
+// Coverage area 
+Route::get('/product/checkarea/{slug}', [ProdukCtr::class, 'checkarea']);
 
 // Halaman admin 
 
