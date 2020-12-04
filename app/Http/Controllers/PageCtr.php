@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // import model 
 use App\Models\KategoriMdl;
+use App\Models\ProdukMdl;
 // import another class 
 use App\Http\Controllers\DaerahCtr;
 
@@ -16,8 +17,8 @@ class PageCtr extends Controller
     public function home()
     {
         $kategori = KategoriMdl::all();
-
-        $dr = ['kategori' => $kategori ];
+        $produk = ProdukMdl::all();
+        $dr = ['kategori' => $kategori, 'produk' => $produk];
         
         return view('home.home', $dr);
     }

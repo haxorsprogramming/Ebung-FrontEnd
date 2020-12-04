@@ -15,10 +15,11 @@ class TblProduk extends Migration
     {
         Schema::create('tbl_produk', function (Blueprint $table) {
             $table -> id();
-            $table -> char('kd_produk', 5);
+            $table -> char('kd_produk', 100);
             $table -> char('nama_produk', 100);
             $table -> text('deks_produk');
             $table -> char('kategori', 100);
+            $table -> char('sub_kategori', 100);
             $table -> integer('harga');
             $table -> integer('stok');
             $table -> char('foto_utama', 100);

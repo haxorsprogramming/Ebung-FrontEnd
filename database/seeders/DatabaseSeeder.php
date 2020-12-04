@@ -80,12 +80,46 @@ class DatabaseSeeder extends Seeder
             'active' => '1'
         ]);
         // seller 
-        DB::table('tbl_user') -> insert([
+        DB::table('tbl_seller') -> insert([
             'username' => 'ebunga-seller',
-            'tipe' => 'buyer',
-            'password' => password_hash('admin', PASSWORD_DEFAULT),
-            'active' => '1'
+            'full_name' => 'Ebunga Sukses Makmur Seller',
+            'email' => 'admin@ebunga.co.id',
+            'phone' => '082272177022',
+            'country' => 'id',
+            'provinsi' => '12',
+            'kabupaten' => '1207',
+            'kecamatan' => '120726',
+            'kelurahan' => '1207262006',
+            'alamat' => 'Medan tembung, jln. padang no. 12',
+            'postal_code' => '-',
+            'ktp' => '-',
+            'npwp' => '-',
+            'siup' => '-',
+            'status' => '-',
+            'suspend' => 'n'
         ]);
-        
+        // produk
+        DB::table('tbl_produk') -> insert([
+            'kd_produk' => 'EBUNGA-891233',
+            'nama_produk' => 'Buket bunga & snack sedang',
+            'deks_produk' => '-',
+            'kategori' => 'BUNGA',
+            'sub_kategori' => 'BOUQET',
+            'harga' => '200000',
+            'stok' => '10',
+            'foto_utama' => '',
+            'active' => 'y'
+        ]);
+        DB::table('tbl_produk') -> insert([
+            'kd_produk' => 'EBUNGA-891290',
+            'nama_produk' => 'Papan bunga biasa',
+            'deks_produk' => '-',
+            'kategori' => 'PAPANBUNGA',
+            'sub_kategori' => 'PAPANBUNGAKONVENSIONAL',
+            'harga' => '150000',
+            'stok' => '10',
+            'foto_utama' => '',
+            'active' => 'y'
+        ]);
     }
 }

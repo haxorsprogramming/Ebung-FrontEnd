@@ -356,805 +356,98 @@
                 </div>
             </div>
             <!-- --------------------------- -->
-            <div class="container">
-                <h1>Category of Product EBunga</h1>
-                <div style="text-align: center;">
+            <div class="container" >
+                <h1>Product of EBunga</h1>
+                <div>
                 <ul class="nav nav-tabs menu-category">
+                    <?php  
+                        $icon_kategori = array('local_florist','event_note', 'grass', 'cake', );
+                        $no = 0;
+                    ?>
                     @foreach($kategori as $kat)
-                    <li class="shop-menu"><a data-toggle="tab" href="#menu-tab-shop">{{$kat -> nama_kategori}}</a>
+                    <li class="{{$kat -> kd_kategori}}-menu" >
+                        <a data-toggle="tab" href="#menu-tab-{{$kat -> kd_kategori}}">
+                            <span class="material-icons">{{ $icon_kategori[$no] }}</span> <h5>{{$kat -> nama_kategori}}</h5>
+                        </a>
                         <figure id="shop-2" class="hidden-xs"></figure>
                     </li>
+                    <?php $no++; ?>
                     @endforeach
+                    <li class="all-menu">
+                        <a data-toggle="tab" href="#menu-tab-all">
+                            <span class="material-icons">apps</span> <h5>All</h5>
+                        </a>
+                        <figure id="shop-2" class="hidden-xs"></figure>
+                    </li>
                 </ul>
                 </div>
                 
                 <div class="row">
                     <div class="tab-content">
+                        <?php
+                            $produk_bunga = DB::table('tbl_produk') -> where('kategori', 'BUNGA') -> get();
+                            $produk_papan_bunga = DB::table('tbl_produk') -> where('kategori', 'PAPANBUNGA') -> get();
+                            $produk_parcel = DB::table('tbl_produk') -> where('kategori', 'PARCEL') -> get();
+                            $produk_cake = DB::table('tbl_produk') -> where('kategori', 'CAKE') -> get();
+                        ?>
+                        <!-- ------tab bunga---------------- -->
+                        <div id="menu-tab-BUNGA" class="tab-pane fade in active">
 
-                        <!-- ------tab new---------------- -->
-                        <div id="menu-tab-new" class="tab-pane fade in active">
+                            @foreach($produk_bunga as $prod)
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
+                                    <div class="product-image-category">
+                                        <figure class="sale"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
+                                        <div class="product-icon-category">
+                                            <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
 
-
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="sale"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
-
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
+                                            <a href="#"><i class="fas fa-shopping-basket"></i></a>
+                                            <a href="#"><i class="far fa-heart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-title-category">
+                                        <h5><a href="#">{{ $prod -> nama_produk }} - Pink</a></h5>
+                                        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                        <div class="prince">Rp. {{ number_format($prod -> harga) }}<s class="strike">$250.9</s></div>
                                     </div>
                                 </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Queen Rose - Pink</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                    <div class="prince">$300.2<s class="strike">$250.9</s></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Bouquet Lavender</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$160.8</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Fun & Flirty By BloomNation</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$200.7</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Bouquet Rose</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$350.4</div>
-                                </div>
-                            </div>
+                            @endforeach
                             <!-- ------------------------------------------------ -->
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Elegant by BloomNation</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                    <div class="prince">$300.2<s class="strike">$250.9</s></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Tulipa Floriade - Red</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$160.8</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Winter White Bouquet</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$200.7</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Rose - Red</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$350.4</div>
-                                </div>
-                            </div>
                         </div>
-                        <!-- ------------end new arrial---- -->
-                        <!-- ------------tab shop----------------- -->
-                        <div id="menu-tab-shop" class="tab-pane fade">
+                        <!-- ------------end tab bunga ------>
+                        <!-- ------tab papan bunga---------------- -->
+                        <div id="menu-tab-PAPANBUNGA" class="tab-pane">
+                        @foreach($produk_papan_bunga as $prod)
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
+                                    <div class="product-image-category">
+                                        <figure class="sale"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
+                                        <div class="product-icon-category">
+                                            <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
 
-
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="sale"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
+                                            <a href="#"><i class="fas fa-shopping-basket"></i></a>
+                                            <a href="#"><i class="far fa-heart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-title-category">
+                                        <h5><a href="#">{{ $prod -> nama_produk }} - Pink</a></h5>
+                                        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                        <div class="prince">$300.2<s class="strike">$250.9</s></div>
                                     </div>
                                 </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Queen Rose - Pink</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                    <div class="prince">$300.2<s class="strike">$250.9</s></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Bouquet Lavender</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$160.8</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Fun & Flirty By BloomNation</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$200.7</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Bouquet Rose</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$350.4</div>
-                                </div>
-                            </div>
-                            <!-- ------------------------------------------------ -->
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Elegant by BloomNation</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                    <div class="prince">$300.2<s class="strike">$250.9</s></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Tulipa Floriade - Red</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$160.8</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Winter White Bouquet</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$200.7</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Rose - Red</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$350.4</div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
-                        <!-- -------------------------end tab shop--------------------- -->
-                        <!-- ------tab wedding---------------- -->
-                        <div id="menu-tab-wedding" class="tab-pane fade">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="sale"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
-
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Queen Rose - Pink</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                    <div class="prince">$300.2<s class="strike">$250.9</s></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Bouquet Lavender</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$160.8</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Fun & Flirty By BloomNation</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$200.7</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Bouquet Rose</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$350.4</div>
-                                </div>
-                            </div>
-                            <!-- ------------------------------------------------ -->
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Elegant by BloomNation</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                    <div class="prince">$300.2<s class="strike">$250.9</s></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Tulipa Floriade - Red</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$160.8</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Winter White Bouquet</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$200.7</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Rose - Red</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$350.4</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ------------end wedding---- -->
-                        <!-- ------------tab holiday----------------- -->
-                        <div id="menu-tab-holiday" class="tab-pane fade">
-
-
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="sale"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Queen Rose - Pink</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                    <div class="prince">$300.2<s class="strike">$250.9</s></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Bouquet Lavender</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$160.8</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Fun & Flirty By BloomNation</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$200.7</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Bouquet Rose</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$350.4</div>
-                                </div>
-                            </div>
-                            <!-- ------------------------------------------------ -->
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Elegant by BloomNation</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                    <div class="prince">$300.2<s class="strike">$250.9</s></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Tulipa Floriade - Red</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$160.8</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Winter White Bouquet</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$200.7</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Rose - Red</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$350.4</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- -------------------------end tab holiday--------------------- -->
-                        <!-- ------------tab other----------------- -->
-                        <div id="menu-tab-other" class="tab-pane fade">
-
-
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="sale"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Queen Rose - Pink</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                    <div class="prince">$300.2<s class="strike">$250.9</s></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Bouquet Lavender</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$160.8</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Fun & Flirty By BloomNation</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$200.7</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Bouquet Rose</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$350.4</div>
-                                </div>
-                            </div>
-                            <!-- ------------------------------------------------ -->
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Elegant by BloomNation</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                    <div class="prince">$300.2<s class="strike">$250.9</s></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Tulipa Floriade - Red</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$160.8</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Winter White Bouquet</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$200.7</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
-                                <div class="product-image-category">
-                                    <figure class="hot"><a href="#"><img src="{{ asset('ladun/homepage/pic_asset/product/wedding-1.jpg') }}" class="img-responsive" alt="holiwood"></a></figure>
-                                    <div class="product-icon-category">
-                                        <a href="#"><i class="far fa-eye"></i></a>
-                                        <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-title-category">
-                                    <h5><a href="#">Rose - Red</a></h5>
-                                    <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                                    <div class="prince">$350.4</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- -------------------------end tab other--------------------- -->
+                         <!-- ------------end tab papan bunga ------>
                     </div><!-- end tab content -->
 
                 </div><!-- end row -->
 
             </div>
         </div>
-        <!-- ------------------------- -->
-        <div class="deal-day count">
-            <h1>Deal of the day</h1>
-            <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum<br class="hidden-xs"> passages and more recently with desktop publishing software</p>
-            <div id="countdown">
-                <div id='tiles'></div>
-                <ul class="labels">
-                    <li>Days</li>
-                    <li>Hours</li>
-                    <li>Mins</li>
-                    <li>Secs</li>
-                </ul>
-            </div>
-        </div>
+        
 
+        <!-- Promo of the week  -->
+        @include('home.promo_of_the_week');
+        
 
-        <div class="container">
-            <div class="row">
-                <div class="product-slick slider">
-                    <div class="product-slic">
-                        <div class="product-image-slic">
-                            <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/wedding-2.jpg" class="img-responsive" alt="holiwood"></a>
-                            <div class="product-icon-slic">
-                                <a href="#"><i class="far fa-eye"></i></a>
-                                <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                <a href="#"><i class="far fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-title-slic">
-                            <h5><a href="#">Bouquet Lavender</a></h5>
-                            <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                            <div class="prince">$160.8</div>
-                        </div>
-                    </div>
-                    <div class="product-slic">
-                        <div class="product-image-slic">
-                            <figure class="hot"><a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/wedding-2.jpg" class="img-responsive" alt="holiwood"></a></figure>
-                            <div class="product-icon-slic">
-                                <a href="#"><i class="far fa-eye"></i></a>
-                                <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                <a href="#"><i class="far fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-title-slic">
-                            <h5><a href="#">Fun & Flirty By BloomNation</a></h5>
-                            <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-                            <div class="prince">$200.7</div>
-                        </div>
-                    </div>
-                    <div class="product-slic">
-                        <div class="product-image-slic">
-                            <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/wedding-2.jpg" class="img-responsive" alt="holiwood"></a>
-                            <div class="product-icon-slic">
-                                <a href="#"><i class="far fa-eye"></i></a>
-                                <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                <a href="#"><i class="far fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-title-slic">
-                            <h5><a href="#">Bouquet Rose</a></h5>
-                            <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                            <div class="prince">$350.4</div>
-                        </div>
-                    </div>
-                    <div class="product-slic">
-                        <div class="product-image-slic">
-                            <figure class="hot"><a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/wedding-2.jpg" class="img-responsive" alt="holiwood"></a></figure>
-                            <div class="product-icon-slic">
-                                <a href="#"><i class="far fa-eye"></i></a>
-                                <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                <a href="#"><i class="far fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-title-slic">
-                            <h5><a href="#">Fun & Flirty By BloomNation</a></h5>
-                            <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-                            <div class="prince">$200.7</div>
-                        </div>
-                    </div>
-                    <div class="product-slic">
-                        <div class="product-image-slic">
-                            <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/wedding-2.jpg" class="img-responsive" alt="holiwood"></a>
-                            <div class="product-icon-slic">
-                                <a href="#"><i class="far fa-eye"></i></a>
-                                <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                <a href="#"><i class="far fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-title-slic">
-                            <h5><a href="#">Bouquet Lavender</a></h5>
-                            <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                            <div class="prince">$160.8</div>
-                        </div>
-                    </div>
-                    <div class="product-slic">
-                        <div class="product-image-slic">
-                            <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/wedding-2.jpg" class="img-responsive" alt="holiwood"></a>
-                            <div class="product-icon-slic">
-                                <a href="#"><i class="far fa-eye"></i></a>
-                                <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                <a href="#"><i class="far fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-title-slic">
-                            <h5><a href="#">Bouquet Lavender</a></h5>
-                            <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                            <div class="prince">$160.8</div>
-                        </div>
-                    </div>
-                    <div class="product-slic">
-                        <div class="product-image-slic">
-                            <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/wedding-2.jpg" class="img-responsive" alt="holiwood"></a>
-                            <div class="product-icon-slic">
-                                <a href="#"><i class="far fa-eye"></i></a>
-                                <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                <a href="#"><i class="far fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-title-slic">
-                            <h5><a href="#">Bouquet Lavender</a></h5>
-                            <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                            <div class="prince">$160.8</div>
-                        </div>
-                    </div>
-                    <div class="product-slic">
-                        <div class="product-image-slic">
-                            <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/wedding-2.jpg" class="img-responsive" alt="holiwood"></a>
-                            <div class="product-icon-slic">
-                                <a href="#"><i class="far fa-eye"></i></a>
-                                <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                <a href="#"><i class="far fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-title-slic">
-                            <h5><a href="#">Bouquet Lavender</a></h5>
-                            <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                            <div class="prince">$160.8</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
         <div class="blog">
             <h1>Latest Blogs</h1>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
