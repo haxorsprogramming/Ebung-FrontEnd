@@ -88,7 +88,7 @@
     <script src="{{ asset('ladun/homepage/js_asset/bootstrap.min_0028.js') }}"></script>
     <script src="{{ asset('ladun/homepage/js_asset/slick.js') }}"></script>
     <!-- js file -->
-    <script src="{{ asset('ladun/homepage/js_asset/function-time-counter.js') }}"></script>
+    
     <script src="{{ asset('ladun/homepage/js_asset/function-slick.js') }}"></script>
     <script src="{{ asset('ladun/homepage/js_asset/function-input-number.js') }}"></script>
     <script src="{{ asset('ladun/homepage/js_asset/function-select-custom.js') }}"></script>
