@@ -132,5 +132,11 @@ class DatabaseSeeder extends Seeder
             'foto_utama' => 'EBUNGA78900.jpg',
             'active' => 'y'
         ]);
+        // coverage area 
+        DB::table('tbl_coverage_area') -> insert([
+            'kd_coverage' => 'aqwl1239012jmn',
+            'kd_produk' => 'EBUNGA891233',
+            'kd_area' => '1101012016'
+        ]);
     }
 }

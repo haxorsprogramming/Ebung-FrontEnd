@@ -36,12 +36,16 @@
                                             <table class="table" id="txtTabelArea" style="font-family:Poppins;">
                                                 <thead>
                                                     <tr>
-                                                        <td>Area</td><td>Coverage</td>
+                                                        <td>Area</td><td>Coverage status</td>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr v-for="ld in listDaerah">
-                                                        <td>@{{ ld.nama }}</td><td>Area</td>
+                                                        <td>@{{ ld.nama }}</td>
+                                                        <td>
+                                                            <span v-if="ld.cover === 'yes'" class="material-icons">check_circle_outline</span>
+                                                            <span v-else>Not available</span>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
