@@ -1,3 +1,5 @@
+// ROUTE 
+
 // VUE OBJECT 
 var divRegister = new Vue({
     el : '#divRegister',
@@ -16,7 +18,11 @@ var divRegister = new Vue({
                 pesanUmumApp('warning', 'Isi field!!', 'Harap isi field!!');
             }else{
                 var checkEmail = ValidateEmail(email);
-                console.log(checkEmail);
+                if(checkEmail === false){
+                    pesanUmumApp('warning', 'Format email wrong !!!', 'Please use email format ..');
+                }else{
+
+                }
             }
         }
     }
