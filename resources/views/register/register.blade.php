@@ -29,10 +29,24 @@
         <div class="page-login box space-50">
             <div class="row">
                 <div class="col-md-6 sign-in space-30">
-                    <h3>sign in</h3>
-                    
+                <h3>Create A New Account</h3>
                     <!-- End social -->
-                    <form class="form-horizontal">
+                        <form class="form-horizontal">
+                            <div class="group box space-20">
+                                <label class="control-label" for="txtEmailRegistrasi">Email Adress *</label>
+                                <input class="form-control" type="text" placeholder="Your email" id="txtEmailRegistrasi">
+                                <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;" id="loaderLokasi">
+                            </div>
+                            <button type="button" class="link-v1 rt" @click="daftarAtc">Sign Up</button>
+                        </form>
+                   
+                    <!-- End form -->
+                </div>
+                <!-- End col-md-6 -->
+                <div class="col-md-6">
+                    <div class="register box space-50">
+                    <h3>Already have account? go <strong>sign in</string></h3>
+                        <form class="form-horizontal">
                         <div class="group box space-20">
                             <label class="control-label" for="inputemail">EMAIL ADDRESS *</label>
                             <input class="form-control" type="text" placeholder="Your email" id="inputemail">
@@ -46,22 +60,8 @@
                             <label for="remeber" class="label-check">remember me!</label>
                             <a class="help" href="#" title="help ?">Fogot your password?</a>
                         </div>
-                        <button class="link-v1 rt">LOGIN NOW</button>
+                        <button class="link-v1 rt" type="button" @click="loginAtc">LOGIN NOW</button>
                     </form>
-                    <!-- End form -->
-                </div>
-                <!-- End col-md-6 -->
-                <div class="col-md-6">
-                    <div class="register box space-50">
-                        <h3>Create A New Account</h3>
-                        <p>Create your own Rimbus account.</p>
-                        <form class="form-horizontal" method="POST">
-                            <div class="group box space-20">
-                                <label class="control-label" for="inputemailres">Email Adress *</label>
-                                <input class="form-control" type="text" placeholder="Your email" id="inputemailres">
-                            </div>
-                            <button type="submit" class="link-v1 rt">Sign Up</button>
-                        </form>
                     </div>
                     <!-- End register -->
                    

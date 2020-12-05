@@ -83,7 +83,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 	<script src="{{ asset('ladun/registerpage/js/jquery.min_af.js') }}"></script>
 	<script src="{{ asset('ladun/registerpage/js/bootstrap.min_0028.js') }}"></script>
-	
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 	<!-- js file -->
 	<script src="{{ asset('ladun/registerpage/js/function-back-top.js') }}"></script>
 	<script src="{{ asset('ladun/registerpage/js/function-sidebar.js') }}"></script>
