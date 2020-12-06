@@ -92,6 +92,7 @@
     <script>
         const server = "{{ url('') }}/";
     </script>
+     {!! NoCaptcha::renderJs() !!}
     <script src="{{ asset('ladun/homepage/js_custom/ebunga-register.js') }}"></script>
 </body>
 </html>

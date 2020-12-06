@@ -37,6 +37,12 @@
                                 <input class="form-control" type="text" placeholder="Your email" id="txtEmailRegistrasi">
                                 <label class="control-label" for="txtPasswordRegistrasi">Password</label>
                                 <input class="form-control" type="password" onkeyup="checkPassword()" placeholder="Your password" id="txtPasswordRegistrasi">
+                                <label for="inputcountry1" class=" control-label">TYPE ACCOUNT<span class="color">*</span></label>
+                                <select id="inputcountry1" name="inputcountry1" class="country form-control">
+                                        <option>BUYER</option>
+                                        <option>SELLER</option>
+                                    </select>
+                                    {!! NoCaptcha::display(['data-theme' => 'white', 'data-callback' => 'recaptcha_callback']) !!}
                                 <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;" id="loaderLokasi">
                                 <div id="capNotifIsiField" style="padding-top:20px;color:red;font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;">
                                     @{{ capMessage }}

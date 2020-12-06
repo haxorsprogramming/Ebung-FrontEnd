@@ -1,4 +1,5 @@
 // ROUTE 
+const rToRegister = '';
 
 // WEB WORKER 
 const ebungaWorkers = new Worker(server + "ladun/homepage/js_custom/ebunga_registrasi_worker.js");
@@ -70,6 +71,11 @@ $('#txtPasswordRegistrasi').click(function(){
 });
 
 // FUNCTION 
+function recaptcha_callback()
+{
+    console.log("Data");
+}
+
 function pesanUmumApp(icon, title, text)
 {
   Swal.fire({

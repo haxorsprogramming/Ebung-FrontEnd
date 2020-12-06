@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-fix-nav.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-form-search-mobile.css') }}">
 		<!-- slick -->
-	
+		<script src="https://www.google.com/recaptcha/api.js"></script>
 	<!-- GG FONT -->
 	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">

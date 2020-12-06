@@ -12,6 +12,9 @@ Route::get('/', [PageCtr::class, 'home']);
 Route::get('/login', [PageCtr::class, 'home']);
 Route::get('/register', [RegisterCtr::class, 'registerpage']);
 
+// Registrasi 
+Route::post('/register/proses', [RegisterCtr::class, 'registerproses']);
+
 // Customer 
 Route::get('/customer/profile', [PageCtr::class, 'listproduk']);
 Route::get('/customer/update-profile', [PageCtr::class, 'listproduk']);
