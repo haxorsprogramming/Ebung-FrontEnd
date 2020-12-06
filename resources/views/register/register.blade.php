@@ -35,12 +35,14 @@
                             <div class="group box space-20">
                                 <label class="control-label" for="txtEmailRegistrasi">Email Adress *</label>
                                 <input class="form-control" type="text" placeholder="Your email" id="txtEmailRegistrasi">
+                                <label class="control-label" for="txtPasswordRegistrasi">Password</label>
+                                <input class="form-control" type="password" placeholder="Your password" id="txtPasswordRegistrasi">
                                 <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;" id="loaderLokasi">
                                 <div id="capNotifIsiField" style="padding-top:20px;color:red;font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;">
                                     @{{ capMessage }}
                                 </div>
                             </div>
-                            <button type="button" class="link-v1 rt" @click="daftarAtc">Sign Up</button>
+                            <button type="button" class="link-v1 rt" @click="daftarAtc">SIGN UP</button>
                         </form>
                    
                     <!-- End form -->
@@ -48,8 +50,11 @@
                 <!-- End col-md-6 -->
                 <div class="col-md-6">
                     <div class="register box space-50">
-                    <h3>Already have account? go <strong>sign in</string></h3>
-                        <form class="form-horizontal">
+                        <div id="capNotifToLogin">
+                        <h3>Already have account? go <a href="javascript:void(0)" @click="tampilFormLoginAtc"><strong>sign in</string></a></h3>
+                        </div>
+                    
+                        <form class="form-horizontal" style="display: none;" id="formLogin">
                         <div class="group box space-20">
                             <label class="control-label" for="inputemail">EMAIL ADDRESS *</label>
                             <input class="form-control" type="text" placeholder="Your email" id="inputemail">

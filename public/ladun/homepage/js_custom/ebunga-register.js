@@ -1,5 +1,10 @@
 // ROUTE 
 
+// WEB WORKER 
+const ebungaWorkers = new Worker(server+"ladun/homepage/js_custom/ebunga_worker.js");
+
+ebungaWorkers.addEventListener("message", function(event){});
+
 // VUE OBJECT 
 var divRegister = new Vue({
     el : '#divRegister',
@@ -17,7 +22,7 @@ var divRegister = new Vue({
             let email = document.querySelector('#txtEmailRegistrasi').value;
             if(email === ''){
                 $('#capNotifIsiField').show();
-                divRegister.capMessage = 'Please fill the email!!';
+                divRegister.capMessage = 'Please fill the email & password!!';
             }else{
                 var checkEmail = ValidateEmail(email);
                 if(checkEmail === false){
@@ -27,6 +32,12 @@ var divRegister = new Vue({
                     
                 }
             }
+        },
+        tampilFormLoginAtc : function()
+        {
+            ebungaWorkers.postMessage("Haloo");
+            $('#capNotifToLogin').hide();
+            $('#formLogin').show();
         }
     }
 });
