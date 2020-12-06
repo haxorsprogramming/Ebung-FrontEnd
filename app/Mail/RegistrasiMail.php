@@ -28,6 +28,6 @@ class RegistrasiMail extends Mailable
      */
     public function build()
     {
-        return $this->from('addydr@ebunga.co.id')->view('emailku')->with(['nama' => 'Aditia Darma', 'website' => 'ebunga.co.id']);
+        return $this->from('addydr@ebunga.co.id') -> view('layout_email.mail_registrasi_view') -> with(['nama' => 'Aditia Darma', 'website' => 'ebunga.co.id']);
     }
 }

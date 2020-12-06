@@ -5,6 +5,7 @@ use App\Http\Controllers\PageCtr;
 use App\Http\Controllers\RestProduct;
 use App\Http\Controllers\ProdukCtr;
 use App\Http\Controllers\RegisterCtr;
+use App\Http\Controllers\TestingCtr;
 
 // Halaman utama 
 Route::get('/', [PageCtr::class, 'home']);
@@ -39,5 +40,8 @@ Route::post('/product/checkarea', [ProdukCtr::class, 'checkarea']);
 // Produk detail
 Route::get('/product/detail/{id_product}', [RestProduct::class, 'detailproduct']);
 
-// Testing 
+// Testing kirim email
 Route::get('/tes-kirim-email', [PageCtr::class, 'teskirimemail']);
+
+// Cek view mail registrasi 
+Route::get('/cek-view-email-registrasi', [TestingCtr::class, 'viewemailregistrasi']);
