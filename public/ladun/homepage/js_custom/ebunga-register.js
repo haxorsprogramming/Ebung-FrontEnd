@@ -10,7 +10,8 @@ var divRegister = new Vue({
     el : '#divRegister',
     data : {
         username : '',
-        capMessage : '-'
+        capMessage : '-',
+        statePassword : false
     },
     methods : {
         loginAtc : function()
@@ -31,7 +32,17 @@ var divRegister = new Vue({
                     $('#capNotifIsiField').show();
                     divRegister.capMessage = 'Wrong email format!!! please input again!!';
                 }else{
-                    
+                    if(password.length === 0){
+                        $('#capNotifIsiField').show();
+                        divRegister.capMessage = 'Please fill the email & password!!';
+                    }else{
+                        if(this.statePassword === false){
+                            
+                        }else{
+                            // start registration proses 
+                            console.log("start!!");
+                        }
+                    }
                 }
             }
         },
@@ -54,6 +65,10 @@ $('#txtEmailRegistrasi').click(function(){
     $('#capNotifIsiField').hide();
 });
 
+$('#txtPasswordRegistrasi').click(function(){
+    $('#capNotifIsiField').hide();
+});
+
 // FUNCTION 
 function pesanUmumApp(icon, title, text)
 {
@@ -70,12 +85,16 @@ function checkPassword()
 
     if(password.length <= 6){
         document.querySelector("#passReg_1").style.textDecoration  = "none";
+        divRegister.statePassword = false;
     }else{
         document.querySelector("#passReg_1").style.textDecoration  = "line-through";
+        
         if((password.match(/[a-z]/) && password.match(/\d+/))){
             document.querySelector("#passReg_2").style.textDecoration  = "line-through";
+            divRegister.statePassword = true;
         }else{
             document.querySelector("#passReg_2").style.textDecoration  = "none";
+            divRegister.statePassword = false;
         }
     }
 

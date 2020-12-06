@@ -18,8 +18,8 @@
         <div class="container">
             <figure id="banner-about"><a href="#"><img src="{{ asset('ladun/ebunga_asset/image/others/cs.jpg') }}" class="img-responsive" alt="img-holiwood"></a></figure>
             <div class="title-banner">
-                <h1>Login/Register</h1>
-                <p><a href="#" title="Home">Home</a><i class="fa fa-caret-right"></i>Login/Register</p>
+                <h1>Create account at Ebunga</h1>
+                <p><a href="#!" title="Home">Home</a><i class="fa fa-caret-right"></i>Register</p>
             </div>
 
         </div>
@@ -48,7 +48,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <button type="button" disabled class="link-v1 rt" @click="daftarAtc" id="btnSignUp">SIGN UP</button>
+                            <button type="button" class="link-v1 rt" @click="daftarAtc" id="btnSignUp">SIGN UP</button>
                         </form>
                    
                     <!-- End form -->
