@@ -10,15 +10,15 @@ use Illuminate\Queue\SerializesModels;
 class RegistrasiMail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $dr;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($dr)
     {
-        //
+        $this -> dr = $dr;
     }
 
     /**
@@ -28,6 +28,7 @@ class RegistrasiMail extends Mailable
      */
     public function build()
     {
-        return $this->from('addydr@ebunga.co.id') -> view('layout_email.mail_registrasi_view') -> with(['nama' => 'Aditia Darma', 'website' => 'ebunga.co.id']);
+        $nama = $this -> dr['nama'];
+        return $this->from('addydr@ebunga.co.id') -> view('layout_email.mail_registrasi_view') -> with(['nama' => $nama, 'website' => 'ebunga.co.id']);
     }
 }

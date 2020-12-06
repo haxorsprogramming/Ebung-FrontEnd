@@ -40,7 +40,9 @@ class PageCtr extends Controller
 
     public function teskirimemail()
     {
-        Mail::to('alditha.forum@gmail.com') -> send(new RegistrasiMail());
+        $dr = ['nama' => 'dindananinda@gmail.com'];
+
+        Mail::to('alditha.forum@gmail.com') -> send(new RegistrasiMail($dr));
 
         echo "Email telah terkirim";
     }
