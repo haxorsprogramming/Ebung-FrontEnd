@@ -36,13 +36,19 @@
                                 <label class="control-label" for="txtEmailRegistrasi">Email Adress *</label>
                                 <input class="form-control" type="text" placeholder="Your email" id="txtEmailRegistrasi">
                                 <label class="control-label" for="txtPasswordRegistrasi">Password</label>
-                                <input class="form-control" type="password" placeholder="Your password" id="txtPasswordRegistrasi">
+                                <input class="form-control" type="password" onkeyup="checkPassword()" placeholder="Your password" id="txtPasswordRegistrasi">
                                 <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;" id="loaderLokasi">
                                 <div id="capNotifIsiField" style="padding-top:20px;color:red;font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;">
                                     @{{ capMessage }}
                                 </div>
+                                <div id="capPasswordStrength" style="padding-top:20px;font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;">
+                                    <ul>
+                                        <li id="passReg_1">Password length must greater than 6 character</li>
+                                        <li id="passReg_2">Password must contain alphabet & number combination</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <button type="button" class="link-v1 rt" @click="daftarAtc">SIGN UP</button>
+                            <button type="button" disabled class="link-v1 rt" @click="daftarAtc" id="btnSignUp">SIGN UP</button>
                         </form>
                    
                     <!-- End form -->

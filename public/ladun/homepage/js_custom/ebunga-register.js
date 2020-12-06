@@ -1,9 +1,9 @@
 // ROUTE 
 
 // WEB WORKER 
-const ebungaWorkers = new Worker(server+"ladun/homepage/js_custom/ebunga_worker.js");
+const ebungaWorkers = new Worker(server + "ladun/homepage/js_custom/ebunga_registrasi_worker.js");
 
-ebungaWorkers.addEventListener("message", function(event){});
+ebungaWorkers.onmessage = function(e) {}
 
 // VUE OBJECT 
 var divRegister = new Vue({
@@ -20,6 +20,8 @@ var divRegister = new Vue({
         daftarAtc : function()
         {
             let email = document.querySelector('#txtEmailRegistrasi').value;
+            let password = document.querySelector('#txtPasswordRegistrasi').value;
+
             if(email === ''){
                 $('#capNotifIsiField').show();
                 divRegister.capMessage = 'Please fill the email & password!!';
@@ -35,8 +37,9 @@ var divRegister = new Vue({
         },
         tampilFormLoginAtc : function()
         {
-            ebungaWorkers.postMessage("Haloo");
-            $('#capNotifToLogin').hide();
+            let dataSend = {'nama':'aditia'}
+            ebungaWorkers.postMessage(dataSend);
+            // $('#capNotifToLogin').hide();
             $('#formLogin').show();
         }
     }
@@ -59,6 +62,23 @@ function pesanUmumApp(icon, title, text)
     title : title,
     text : text
   });
+}
+
+function checkPassword()
+{
+    let password = document.querySelector('#txtPasswordRegistrasi').value;
+
+    if(password.length <= 6){
+        document.querySelector("#passReg_1").style.textDecoration  = "none";
+    }else{
+        document.querySelector("#passReg_1").style.textDecoration  = "line-through";
+        if((password.match(/[a-z]/) && password.match(/\d+/))){
+            document.querySelector("#passReg_2").style.textDecoration  = "line-through";
+        }else{
+            document.querySelector("#passReg_2").style.textDecoration  = "none";
+        }
+    }
+
 }
 
 function ValidateEmail(mail) 

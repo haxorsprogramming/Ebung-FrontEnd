@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Register</title>
+	<title>Register - Ebunga</title>
 	<meta charset="utf-8">
 	<!-- bootstrap vs fontawesome-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
