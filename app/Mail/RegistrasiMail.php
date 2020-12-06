@@ -29,6 +29,9 @@ class RegistrasiMail extends Mailable
     public function build()
     {
         $email = $this -> dr['email'];
-        return $this->from('addydr@ebunga.co.id') -> view('layout_email.mail_registrasi_view') -> with(['email' => $email, 'website' => 'ebunga.co.id']);
+        $token_aktivasi = $this -> dr['token_aktivasi'];
+        return $this -> from('addydr@ebunga.co.id') 
+                    -> view('layout_email.mail_registrasi_view') 
+                    -> with(['email' => $email, 'website' => 'ebunga.co.id', 'token_aktivasi' => $token_aktivasi]);
     }
 }

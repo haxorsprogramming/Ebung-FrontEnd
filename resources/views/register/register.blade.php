@@ -42,10 +42,10 @@
                                     <option>BUYER</option>
                                     <option>SELLER</option>
                                 </select>
-                                <div style="margin-top:20px;">
+                                <div style="margin-top:20px;" id="capchaGoogle">
                                     {!! NoCaptcha::display(['data-theme' => 'white', 'data-callback' => 'recaptcha_callback']) !!}
                                 </div>   
-                                <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;" id="loaderLokasi">
+                               
                                 <div id="capNotifIsiField" style="padding-top:20px;color:red;font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;">
                                     @{{ capMessage }}
                                 </div>
@@ -56,6 +56,10 @@
                                     </ul>
                                 </div>
                             </div>
+                            <div style="font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;" id="loaderLokasi">
+                                <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;"> Registering .. 
+                            </div>
+                            
                             <button type="button" class="link-v1 rt" @click="daftarAtc" id="btnSignUp">SIGN UP</button>
                         </form>
                    

@@ -42,9 +42,14 @@ var divRegister = new Vue({
                         }else{
                             // start registration proses
                             let dataSend = {'email':email, 'password':password} 
-                            $.post(rToRegister, dataSend, function(data){
-                                console.log(data);
-                            });
+                            $('#loaderLokasi').show();
+                            document.querySelector('#txtEmailRegistrasi').setAttribute("disabled", "disabled");
+                            document.querySelector('#txtPasswordRegistrasi').setAttribute("disabled", "disabled");
+                            document.querySelector('#txtTipeUser').setAttribute("disabled","disabled");
+                            $('#capchaGoogle').hide();
+                            // $.post(rToRegister, dataSend, function(data){
+                            //     console.log(data);
+                            // });
                         }
                     }
                 }
@@ -71,6 +76,7 @@ document.querySelector('#txtEmailRegistrasi').focus();
 $('#loaderLokasi').hide();
 $('#capNotifIsiField').hide();
 $('#btnSignUp').hide();
+$('#loaderLokasi').hide();
 
 $('#txtEmailRegistrasi').click(function(){
     $('#capNotifIsiField').hide();

@@ -33,13 +33,7 @@
         div[style*="margin: 16px 0"] {
             margin: 0 !important;
         }
-
-        /* What it does: Stops Outlook from adding extra spacing to tables. */
-        table,
-        td {
-            mso-table-lspace: 0pt !important;
-            mso-table-rspace: 0pt !important;
-        }
+      
 
         /* What it does: Fixes webkit padding issue. */
         table {
@@ -200,7 +194,6 @@
             color: #30e3ca;
         }
 
-        table {}
 
         /*LOGO*/
 
@@ -245,8 +238,7 @@
 
 
         /*HEADING SECTION*/
-        .heading-section {}
-
+        
         .heading-section h2 {
             color: #000000;
             font-size: 28px;
@@ -342,9 +334,9 @@
 
 </head>
 
-<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f1f1f1;">
+<body width="100%" style="margin: 0; padding: 0 !important; background-color: #f1f1f1;">
     <center style="width: 100%; background-color: #f1f1f1;">
-        <div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+        <div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;font-family: sans-serif;">
             &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
         </div>
         <div style="max-width: 600px; margin: 0 auto;" class="email-container">
@@ -355,7 +347,7 @@
                         <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <td class="logo" style="text-align: center;">
-                                    <img src="{{ asset('ladun/ebunga_asset/image/others/logo.png') }}">
+                                    <img src="https://media.publit.io/file/ebungaasset/logo.png" style="width:150px;">
                                 </td>
                             </tr>
                         </table>
@@ -363,7 +355,7 @@
                 </tr><!-- end tr -->
                 <tr>
                     <td valign="middle" class="hero bg_white" style="padding: 3em 0 2em 0;">
-                        <img src="{{ asset('ladun/ebunga_asset/image/others/thank-you.png') }}" alt="" style="width: 200px; max-width: 600px; height: auto; margin: auto; display: block;">
+                        <img src="https://media.publit.io/file/ebungaasset/thank-you.png" alt="" style="width: 200px; max-width: 600px; height: auto; margin: auto; display: block;">
                     </td>
                 </tr><!-- end tr -->
                 <tr>
@@ -373,9 +365,9 @@
                                 <td>
                                     <div class="text" style="padding: 0 2.5em; text-align: center;">
                                     <h3>Hi {{ $email }}</h3>
-                                        <h4>For register at Ebunga</h4>
+                                        <h4>Congratulations you have registered at ebunga</h4>
                                         <h5>Please activate your account & start great deal with us .. :)</h5>
-                                        <p><a href="#" class="btn btn-primary">Confirm account</a></p>
+                                        <p><a href="{{ url('aktivasi-akun/'.$token_aktivasi) }}" class="btn btn-primary" target="new">Confirm account</a></p>
                                     </div>
                                 </td>
                             </tr>

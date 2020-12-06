@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Mail;
 // import model 
 use App\Models\RegistrasiUserMdl;
@@ -27,7 +26,6 @@ class RegisterCtr extends Controller
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         $kd_registrasi = Str::random(20);
         $token_registrasi = Str::upper(Str::random(3)."-".Str::random(3)."-".Str::random(3)."-".Str::random(5));
-        $waktu = now();
         DB::table('tbl_registrasi_user') -> insert([
             'kd_registrasi' => $kd_registrasi,
             'token_registrasi' => $token_registrasi,
@@ -37,8 +35,14 @@ class RegisterCtr extends Controller
             'status_aktivasi' => 'pending'
         ]);
         
-        $dr = ['email' => $email];
+        $dr = ['email' => $email, 'token_aktivasi' => $token_registrasi];
         Mail::to('alditha.forum@gmail.com') -> send(new RegistrasiMail($dr));
         return \Response::json($dr);
     }
+
+    public function aktivasiakun($kodeaktivasi)
+    {
+        echo $kodeaktivasi;
+    }
+
 }

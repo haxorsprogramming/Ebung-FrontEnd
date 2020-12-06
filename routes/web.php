@@ -15,6 +15,9 @@ Route::get('/register', [RegisterCtr::class, 'registerpage']);
 // Registrasi 
 Route::post('/register/proses', [RegisterCtr::class, 'registerproses']);
 
+// Aktivasi akun 
+Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']);
+
 // Customer 
 Route::get('/customer/profile', [PageCtr::class, 'listproduk']);
 Route::get('/customer/update-profile', [PageCtr::class, 'listproduk']);
