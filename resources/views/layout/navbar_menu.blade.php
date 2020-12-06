@@ -48,7 +48,7 @@
                     </ul>
                 </li>
                 <li class="col-lg-4 col-md-4 hidden-sm hidden-xs li-banner">
-                    <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/Shop-now-banner.png" alt="banner"></a>
+                    <a href="#"><img src="https://media.publit.io/file/ebungaasset/offer-topmenu.png" alt="banner"></a>
                 </li>
 
             </ul>

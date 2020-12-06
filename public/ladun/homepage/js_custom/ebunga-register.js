@@ -47,9 +47,10 @@ var divRegister = new Vue({
                             document.querySelector('#txtPasswordRegistrasi').setAttribute("disabled", "disabled");
                             document.querySelector('#txtTipeUser').setAttribute("disabled","disabled");
                             $('#capchaGoogle').hide();
-                            // $.post(rToRegister, dataSend, function(data){
-                            //     console.log(data);
-                            // });
+                            $('#btnSignUp').hide();
+                            $.post(rToRegister, dataSend, function(data){
+                                console.log(data);
+                            });
                         }
                     }
                 }

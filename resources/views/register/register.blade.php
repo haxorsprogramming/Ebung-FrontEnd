@@ -57,7 +57,7 @@
                                 </div>
                             </div>
                             <div style="font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;" id="loaderLokasi">
-                                <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;"> Registering .. 
+                                <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;"> Registering ... dont close this windows after complete registration 
                             </div>
                             
                             <button type="button" class="link-v1 rt" @click="daftarAtc" id="btnSignUp">SIGN UP</button>
