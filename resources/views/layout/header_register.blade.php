@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Register - Ebunga</title>
+	<meta name="csrf-token" content="{{ csrf_token() }}" />
 	<meta charset="utf-8">
 	<!-- bootstrap vs fontawesome-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">

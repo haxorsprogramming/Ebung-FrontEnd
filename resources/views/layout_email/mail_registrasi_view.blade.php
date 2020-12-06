@@ -372,7 +372,7 @@
                             <tr>
                                 <td>
                                     <div class="text" style="padding: 0 2.5em; text-align: center;">
-                                    <h3>Hi {{ $nama }}</h3>
+                                    <h3>Hi {{ $email }}</h3>
                                         <h4>For register at Ebunga</h4>
                                         <h5>Please activate your account & start great deal with us .. :)</h5>
                                         <p><a href="#" class="btn btn-primary">Confirm account</a></p>

@@ -1,5 +1,5 @@
 // ROUTE 
-const rToRegister = '';
+const rToRegister = server + 'register/proses';
 
 // WEB WORKER 
 const ebungaWorkers = new Worker(server + "ladun/homepage/js_custom/ebunga_registrasi_worker.js");
@@ -40,8 +40,11 @@ var divRegister = new Vue({
                         if(this.statePassword === false){
                             
                         }else{
-                            // start registration proses 
-                            console.log("start!!");
+                            // start registration proses
+                            let dataSend = {'email':email, 'password':password} 
+                            $.post(rToRegister, dataSend, function(data){
+                                console.log(data);
+                            });
                         }
                     }
                 }
@@ -58,9 +61,16 @@ var divRegister = new Vue({
 });
 
 // INISIALISASI 
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
 document.querySelector('#txtEmailRegistrasi').focus();
 $('#loaderLokasi').hide();
 $('#capNotifIsiField').hide();
+$('#btnSignUp').hide();
 
 $('#txtEmailRegistrasi').click(function(){
     $('#capNotifIsiField').hide();
@@ -73,7 +83,7 @@ $('#txtPasswordRegistrasi').click(function(){
 // FUNCTION 
 function recaptcha_callback()
 {
-    console.log("Data");
+    $('#btnSignUp').show();
 }
 
 function pesanUmumApp(icon, title, text)
