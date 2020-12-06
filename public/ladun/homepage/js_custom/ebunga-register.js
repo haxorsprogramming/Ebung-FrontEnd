@@ -4,7 +4,8 @@
 var divRegister = new Vue({
     el : '#divRegister',
     data : {
-        username : ''
+        username : '',
+        capMessage : '-'
     },
     methods : {
         loginAtc : function()
@@ -15,13 +16,15 @@ var divRegister = new Vue({
         {
             let email = document.querySelector('#txtEmailRegistrasi').value;
             if(email === ''){
-                pesanUmumApp('warning', 'Isi field!!', 'Harap isi field!!');
+                $('#capNotifIsiField').show();
+                divRegister.capMessage = 'Please fill the email!!';
             }else{
                 var checkEmail = ValidateEmail(email);
                 if(checkEmail === false){
-                    pesanUmumApp('warning', 'Format email wrong !!!', 'Please use email format ..');
+                    $('#capNotifIsiField').show();
+                    divRegister.capMessage = 'Wrong email format!!! please input again!!';
                 }else{
-
+                    
                 }
             }
         }
@@ -31,6 +34,11 @@ var divRegister = new Vue({
 // INISIALISASI 
 document.querySelector('#txtEmailRegistrasi').focus();
 $('#loaderLokasi').hide();
+$('#capNotifIsiField').hide();
+
+$('#txtEmailRegistrasi').click(function(){
+    $('#capNotifIsiField').hide();
+});
 
 // FUNCTION 
 function pesanUmumApp(icon, title, text)

@@ -59,18 +59,17 @@ function searchArea()
             $('#loaderLokasi').show();
             console.clear();
             
-            $.post(rToCheckArea,{'slug':lokasi, 'kd_produk':kd_produk}, function(data){
-                let area = data.temp_coverage;
-                
-                area.forEach(looping_daerah);
-                function looping_daerah(item, index){
-                    console.table(area[index]);
-                    let coverage = area[index].status_coverage;
-                    div_modal_product.listDaerah.push({'nama':area[index].nama, 'cover':coverage});
-                }
-                $('#txtTabelArea').show();
-                $('#loaderLokasi').hide();
-            });
+                $.post(rToCheckArea,{'slug':lokasi, 'kd_produk':kd_produk}, function(data){
+                    let area = data.temp_coverage;
+                    area.forEach(looping_daerah);
+                    function looping_daerah(item, index){
+                        console.table(area[index]);
+                        let coverage = area[index].status_coverage;
+                        div_modal_product.listDaerah.push({'nama':area[index].nama, 'cover':coverage});
+                    }
+                    $('#txtTabelArea').show();
+                    $('#loaderLokasi').hide();
+                });
         }else{
         }
     }

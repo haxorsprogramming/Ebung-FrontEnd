@@ -36,7 +36,9 @@
                                 <label class="control-label" for="txtEmailRegistrasi">Email Adress *</label>
                                 <input class="form-control" type="text" placeholder="Your email" id="txtEmailRegistrasi">
                                 <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;" id="loaderLokasi">
-                                <label>remember me!</label>
+                                <div id="capNotifIsiField" style="padding-top:20px;color:red;font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;">
+                                    @{{ capMessage }}
+                                </div>
                             </div>
                             <button type="button" class="link-v1 rt" @click="daftarAtc">Sign Up</button>
                         </form>

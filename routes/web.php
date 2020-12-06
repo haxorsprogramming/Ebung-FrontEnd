@@ -6,8 +6,6 @@ use App\Http\Controllers\RestProduct;
 use App\Http\Controllers\ProdukCtr;
 use App\Http\Controllers\RegisterCtr;
 
-
-
 // Halaman utama 
 Route::get('/', [PageCtr::class, 'home']);
 Route::get('/login', [PageCtr::class, 'home']);
