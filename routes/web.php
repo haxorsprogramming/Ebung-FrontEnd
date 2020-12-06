@@ -38,3 +38,6 @@ Route::post('/product/checkarea', [ProdukCtr::class, 'checkarea']);
 
 // Produk detail
 Route::get('/product/detail/{id_product}', [RestProduct::class, 'detailproduct']);
+
+// Testing 
+Route::get('/tes-kirim-email', [PageCtr::class, 'teskirimemail']);

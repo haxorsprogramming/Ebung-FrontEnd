@@ -4,6 +4,9 @@
 namespace App\Http\Controllers;
 // import lib 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
+use App\Mail\RegistrasiMail;
 // import model 
 use App\Models\KategoriMdl;
 use App\Models\ProdukMdl;
@@ -33,6 +36,13 @@ class PageCtr extends Controller
     public function contact()
     {
         return view('home.contact');
+    }
+
+    public function teskirimemail()
+    {
+        Mail::to('alditha.forum@gmail.com') -> send(new RegistrasiMail());
+
+        echo "Email telah terkirim";
     }
 
 }
