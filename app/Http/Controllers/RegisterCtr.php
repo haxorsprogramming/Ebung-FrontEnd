@@ -23,6 +23,7 @@ class RegisterCtr extends Controller
         // {'email':email, 'password':password} 
         $email = $request -> email;
         $password = $request -> password;
+        $tipe = $request -> tipe;
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         $kd_registrasi = Str::random(20);
         $token_registrasi = Str::upper(Str::random(3)."-".Str::random(3)."-".Str::random(3)."-".Str::random(5));
@@ -31,7 +32,7 @@ class RegisterCtr extends Controller
             'token_registrasi' => $token_registrasi,
             'email' => $email,
             'password' => $password_hash,
-            'tipe' => 'BUYER',
+            'tipe' => $tipe,
             'status_aktivasi' => 'pending'
         ]);
         

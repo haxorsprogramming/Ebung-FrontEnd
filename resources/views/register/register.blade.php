@@ -39,8 +39,8 @@
                                 <input class="form-control" type="password" onkeyup="checkPassword()" placeholder="Your password" id="txtPasswordRegistrasi">
                                 <label for="txtTipeUser" class=" control-label">TYPE ACCOUNT<span class="color">*</span></label>
                                 <select id="txtTipeUser" name="txtTipeUser" class="country form-control">
-                                    <option>BUYER</option>
-                                    <option>SELLER</option>
+                                    <option value="BUYER">BUYER</option>
+                                    <option value="SELLER">SELLER</option>
                                 </select>
                                 <div style="margin-top:20px;" id="capchaGoogle">
                                     {!! NoCaptcha::display(['data-theme' => 'white', 'data-callback' => 'recaptcha_callback']) !!}
