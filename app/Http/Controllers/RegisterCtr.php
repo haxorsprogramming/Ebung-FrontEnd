@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Carbon;
 // import model 
 use App\Models\RegistrasiUserMdl;
 // import mail 
@@ -55,7 +56,17 @@ class RegisterCtr extends Controller
 
     public function aktivasiakun($kodeaktivasi)
     {
-        return view('register.aktivasi_akun');
+        $cekJumlahKode = RegistrasiUserMdl::where('token_registrasi', $kodeaktivasi) -> where('status_aktivasi', 'pending') -> count();
+        $now = now();
+        if($cekJumlahKode < 1){
+            echo "<pre>Activation code failed</pre>";
+        }else{
+            $dataRegistrasi = RegistrasiUserMdl::where('token_registrasi', $kodeaktivasi) -> first();
+            // update status aktivasi & waktu aktivasi
+            DB::table('tbl_registrasi_user') -> where('token_registrasi', $kodeaktivasi) -> update(['status_aktivasi' => 'done', 'waktu_aktivasi' => $now]);
+            echo "done";
+        }
+        // return view('register.aktivasi_akun');
     }
 
 }

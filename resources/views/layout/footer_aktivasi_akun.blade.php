@@ -64,9 +64,9 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 logo-footer">
+                <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 logo-footer">
                     <a href="#" class="logo-bot"></a>
-                </div>
+                </div> -->
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 copy">
                     <span>Copyright</span><i class="far fa-copyright"></i><span class="engo">2020 PT Ebunga Sukses Makmur</span>
                 </div>
@@ -94,6 +94,6 @@
         const server = "{{ url('') }}/";
     </script>
      {!! NoCaptcha::renderJs() !!}
-    <script src="{{ asset('ladun/homepage/js_custom/ebunga-register.js') }}"></script>
+    <script src="{{ asset('ladun/homepage/js_custom/ebunga-aktivasi-akun.js') }}"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-about.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-res-about.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-faq.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-404.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-login.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-fix-nav.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-form-search-mobile.css') }}">
