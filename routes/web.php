@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterCtr;
 use App\Http\Controllers\TestingCtr;
 use App\Http\Controllers\WithdrawCtr;
 use App\Http\Controllers\CustomerCtr;
+use App\Http\Controllers\LoginCtr;
 
 // Halaman utama 
 Route::get('/', [PageCtr::class, 'home']);
@@ -17,6 +18,9 @@ Route::get('/login', [PageCtr::class, 'login']);
 Route::get('/register', [RegisterCtr::class, 'registerpage']);
 // Register with referral 
 Route::get('/register/ref/{referral_id}', [RegisterCtr::class, 'registerwithreferral']);
+
+// Login proses 
+Route::post('/login/proses', [LoginCtr::class, 'loginproses']);
 
 // Register proses
 Route::post('/register/proses', [RegisterCtr::class, 'registerproses']);

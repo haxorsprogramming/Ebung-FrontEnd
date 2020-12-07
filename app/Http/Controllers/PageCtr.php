@@ -20,7 +20,7 @@ class PageCtr extends Controller
     {
         $kategori = KategoriMdl::all();
         $produk = ProdukMdl::all();
-        $dr = ['kategori' => $kategori, 'produk' => $produk];
+        $dr = ['kategori' => $kategori, 'produk' => $produk, 'page' => 'Home'];
         
         return view('home.home', $dr);
     }

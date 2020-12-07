@@ -1,4 +1,4 @@
-@include('layout.header_home')
+@include('layout.header')
 
     <main>
         <div class="content-search">
