@@ -13,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-login.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-fix-nav.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-form-search-mobile.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/intlTelInput.css') }}">
 		<!-- slick -->
 		<script src="https://www.google.com/recaptcha/api.js"></script>
 	<!-- GG FONT -->

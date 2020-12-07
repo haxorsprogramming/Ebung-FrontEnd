@@ -89,6 +89,7 @@
 	<script src="{{ asset('ladun/registerpage/js/function-sidebar.js') }}"></script>
 	<script src="{{ asset('ladun/registerpage/js/funtion-header-v3.js') }}"></script>
     <script src="{{ asset('ladun/registerpage/js/function-search-v2.js') }}"></script>
+    <script src="{{ asset('ladun/registerpage/js/intlTelInput.js') }}"></script>
     <script>
         const server = "{{ url('') }}/";
     </script>

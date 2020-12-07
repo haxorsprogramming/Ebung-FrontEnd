@@ -23,7 +23,8 @@ var divRegister = new Vue({
         {
             let email = document.querySelector('#txtEmailRegistrasi').value;
             let password = document.querySelector('#txtPasswordRegistrasi').value;
-            
+            let fullname = document.querySelector('#txtFullName').value;
+
             if(email === ''){
                 $('#capNotifIsiField').show();
                 divRegister.capMessage = 'Please fill the email & password!!';
@@ -75,12 +76,37 @@ $.ajaxSetup({
     }
 });
 
-document.querySelector('#txtEmailRegistrasi').focus();
+document.querySelector('#txtFullName').focus();
+var input = document.querySelector("#txtPhoneNumber");
 $('#loaderLokasi').hide();
 $('#capNotifIsiField').hide();
 $('#btnSignUp').hide();
 $('#loaderLokasi').hide();
 $('#divCompleteRegistration').hide();
+
+window.intlTelInput(input, {
+    // allowDropdown: false,
+    // autoHideDialCode: false,
+    // autoPlaceholder: "off",
+    // dropdownContainer: document.body,
+    // excludeCountries: ["us"],
+    // formatOnDisplay: false,
+    // geoIpLookup: function(callback) {
+    //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+    //     var countryCode = (resp && resp.country) ? resp.country : "";
+    //     callback(countryCode);
+    //   });
+    // },
+    // hiddenInput: "full_number",
+    // initialCountry: "auto",
+    // localizedCountries: { 'de': 'Deutschland' },
+    // nationalMode: false,
+    // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+    // placeholderNumberType: "MOBILE",
+    // preferredCountries: ['cn', 'jp'],
+    // separateDialCode: true,
+    utilsScript: "http://127.0.0.1:8000/ladun/registerpage/js/utils.js",
+  });
 
 $('#txtEmailRegistrasi').click(function(){
     $('#capNotifIsiField').hide();

@@ -15,12 +15,14 @@ class RegisterCtr extends Controller
 {
     public function registerpage()
     {
-        return view('register.register');
+        $dr = ['referral_status' => 'no'];
+        return view('register.register', $dr);
     }
 
     public function registerwithreferral($referral_id)
     {
-        return view('register.register');
+        $dr = ['referral_status' => 'yes', 'id_referral' => $referral_id];
+        return view('register.register', $dr);
     }
 
     public function registerproses(Request $request)

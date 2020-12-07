@@ -17,6 +17,8 @@ class TblRegistrasiUser extends Migration
             $table -> id();
             $table -> char('kd_registrasi', 100);
             $table -> char('token_registrasi', 100);
+            $table -> char('full_name', 200);
+            $table -> char('phone_number', 50);
             $table -> char('email', 100);
             $table -> char('password', 200);
             $table -> timestamp('waktu_registrasi', 0);

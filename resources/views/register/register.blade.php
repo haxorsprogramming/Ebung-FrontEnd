@@ -33,12 +33,20 @@
                     <!-- End social -->
                         <form class="form-horizontal">
                             <div class="group box space-20">
+                                <label class="control-label" for="txtFullName">Full Name</label>
+                                <input class="form-control" type="text" placeholder="Your full name" id="txtFullName">
+                                <label class="control-label" for="txtPhoneNumber">Phone Number *</label>
+                                <input class="form-control" type="text" placeholder="Your phone number" id="txtPhoneNumber">
                                 <label class="control-label" for="txtEmailRegistrasi">Email Adress *</label>
                                 <input class="form-control" type="text" placeholder="Your email" id="txtEmailRegistrasi">
                                 <label class="control-label" for="txtPasswordRegistrasi">Password *</label>
                                 <input class="form-control" type="password" onkeyup="checkPassword()" placeholder="Your password" id="txtPasswordRegistrasi">
-                                <label for="txtReferralCode" class=" control-label">Referral Code</label>
-                                <input class="form-control" type="text" placeholder="Your referral code" id="txtReferralCode">
+                                @if($referral_status == 'yes')
+
+                                @else 
+                                    <label for="txtReferralCode" class=" control-label">Referral Code</label>
+                                    <input class="form-control" type="text" placeholder="Your referral code" id="txtReferralCode">
+                                @endif
                                 <div style="margin-top:20px;" id="capchaGoogle">
                                     {!! NoCaptcha::display(['data-theme' => 'white', 'data-callback' => 'recaptcha_callback']) !!}
                                 </div>   
