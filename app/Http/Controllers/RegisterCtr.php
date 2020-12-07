@@ -27,19 +27,23 @@ class RegisterCtr extends Controller
 
     public function registerproses(Request $request)
     {
-        // {'email':email, 'password':password} 
+        // 'email':email, 'password':password, 'fullname':fullname,'phoneNumber':phoneNumber
         $email = $request -> email;
         $password = $request -> password;
-        $tipe = $request -> tipe;
+        $full_name = $request -> fullname;
+        $phone_number = $request -> phoneNumber;
+        $referral_code = $request -> referralCode;
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         $kd_registrasi = Str::random(20);
         $token_registrasi = Str::upper(Str::random(3)."-".Str::random(3)."-".Str::random(3)."-".Str::random(5));
         DB::table('tbl_registrasi_user') -> insert([
             'kd_registrasi' => $kd_registrasi,
             'token_registrasi' => $token_registrasi,
+            'full_name' => $full_name,
+            'phone_number' => $phone_number,
             'email' => $email,
             'password' => $password_hash,
-            'tipe' => $tipe,
+            'referral_code' => $referral_code,
             'status_aktivasi' => 'pending'
         ]);
         
@@ -51,7 +55,7 @@ class RegisterCtr extends Controller
 
     public function aktivasiakun($kodeaktivasi)
     {
-        echo $kodeaktivasi;
+        return view('register.aktivasi_akun');
     }
 
 }

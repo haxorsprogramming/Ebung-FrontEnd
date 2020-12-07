@@ -42,7 +42,7 @@
                                 <label class="control-label" for="txtPasswordRegistrasi">Password *</label>
                                 <input class="form-control" type="password" onkeyup="checkPassword()" placeholder="Your password" id="txtPasswordRegistrasi">
                                 @if($referral_status == 'yes')
-
+                                    <input type="hidden" value="{{ $id_referral }}" id="txtReferralCode">
                                 @else 
                                     <label for="txtReferralCode" class=" control-label">Referral Code</label>
                                     <input class="form-control" type="text" placeholder="Your referral code" id="txtReferralCode">

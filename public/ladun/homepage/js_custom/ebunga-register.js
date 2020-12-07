@@ -26,6 +26,7 @@ var divRegister = new Vue({
             let password = document.querySelector('#txtPasswordRegistrasi').value;
             let fullname = document.querySelector('#txtFullName').value;
             let phoneNumber = document.querySelector('#txtPhoneNumber').value;
+            let referralCode = document.querySelector('#txtReferralCode').value;
 
             if(email === ''){
                 $('#capNotifIsiField').show();
@@ -51,19 +52,17 @@ var divRegister = new Vue({
                                     divRegister.capMessage = 'Please fill the full name!!';
                                 }else{
                                     // start registration proses
-                                    let dataSend = {'email':email, 'password':password, 'fullname':fullname,'phoneNumber':phoneNumber} 
-                                    console.log(phoneNumber);
-                                    // $('#loaderLokasi').show();
-                                    // document.querySelector('#txtEmailRegistrasi').setAttribute("disabled", "disabled");
-                                    // document.querySelector('#txtPasswordRegistrasi').setAttribute("disabled", "disabled");
-                                    // document.querySelector('#txtTipeUser').setAttribute("disabled","disabled");
-                                    // $('#capchaGoogle').hide();
-                                    // $('#btnSignUp').hide();
+                                    let dataSend = {'email':email, 'password':password, 'fullname':fullname,'phoneNumber':phoneNumber, 'referralCode':referralCode} 
+                                    $('#loaderLokasi').show();
+                                    document.querySelector('#txtEmailRegistrasi').setAttribute("disabled", "disabled");
+                                    document.querySelector('#txtPasswordRegistrasi').setAttribute("disabled", "disabled");
+                                    $('#capchaGoogle').hide();
+                                    $('#btnSignUp').hide();
 
-                                    // $.post(rToRegister, dataSend, function(data){
-                                    //     $('#divFormRegistrasi').hide();
-                                    //     $('#divCompleteRegistration').show();
-                                    // });
+                                    $.post(rToRegister, dataSend, function(data){
+                                        $('#divFormRegistrasi').hide();
+                                        $('#divCompleteRegistration').show();
+                                    });
                                 }
                                 
                             }
