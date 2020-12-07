@@ -28,20 +28,17 @@
     <div class="container container-ver2">
         <div class="page-login box space-50">
             <div class="row">
-                <div class="col-md-6 sign-in space-30">
+                <div class="col-md-6 sign-in space-30" id="divFormRegistrasi">
                 <h3>Create A New Account</h3>
                     <!-- End social -->
                         <form class="form-horizontal">
                             <div class="group box space-20">
                                 <label class="control-label" for="txtEmailRegistrasi">Email Adress *</label>
                                 <input class="form-control" type="text" placeholder="Your email" id="txtEmailRegistrasi">
-                                <label class="control-label" for="txtPasswordRegistrasi">Password</label>
+                                <label class="control-label" for="txtPasswordRegistrasi">Password *</label>
                                 <input class="form-control" type="password" onkeyup="checkPassword()" placeholder="Your password" id="txtPasswordRegistrasi">
-                                <label for="txtTipeUser" class=" control-label">TYPE ACCOUNT<span class="color">*</span></label>
-                                <select id="txtTipeUser" name="txtTipeUser" class="country form-control">
-                                    <option value="BUYER">BUYER</option>
-                                    <option value="SELLER">SELLER</option>
-                                </select>
+                                <label for="txtReferralCode" class=" control-label">Referral Code</label>
+                                <input class="form-control" type="text" placeholder="Your referral code" id="txtReferralCode">
                                 <div style="margin-top:20px;" id="capchaGoogle">
                                     {!! NoCaptcha::display(['data-theme' => 'white', 'data-callback' => 'recaptcha_callback']) !!}
                                 </div>   
@@ -55,6 +52,7 @@
                                         <li id="passReg_2">Password must contain alphabet & number combination</li>
                                     </ul>
                                 </div>
+                                
                             </div>
                             <div style="font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;" id="loaderLokasi">
                                 <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;"> Registering ... dont close this windows after complete registration 
@@ -65,6 +63,10 @@
                    
                     <!-- End form -->
                 </div>
+                <div id="divCompleteRegistration">
+                                <h2>Registering complete</h2>
+                                <h3>Thanks for register ... please check your mailbox to activate account.. </h3>
+                                </div>
                 <!-- End col-md-6 -->
                 <div class="col-md-6">
                     <div class="register box space-50">

@@ -20,7 +20,7 @@ class TblRegistrasiUser extends Migration
             $table -> char('email', 100);
             $table -> char('password', 200);
             $table -> timestamp('waktu_registrasi', 0);
-            $table -> char('tipe', 30);
+            $table -> char('referral_code', 30) -> nullable(); 
             $table -> char('status_aktivasi', 10);
             $table -> datetime('waktu_aktivasi', 0) -> nullable();
         });

@@ -367,7 +367,7 @@
                                     <h3>Hi {{ $email }}</h3>
                                         <h4>Congratulations you have registered at ebunga</h4>
                                         <h5>Please activate your account & start great deal with us .. :)</h5>
-                                        <p><a href="{{ url('aktivasi-akun/'.$token_aktivasi) }}" class="btn btn-primary" target="new">Confirm account</a></p>
+                                        <p><a href="{{ url('aktivasi-akun/'.$token_aktivasi) }}" class="btn btn-primary" target="new">Acivate account</a></p>
                                     </div>
                                 </td>
                             </tr>

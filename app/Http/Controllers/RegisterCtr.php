@@ -18,6 +18,11 @@ class RegisterCtr extends Controller
         return view('register.register');
     }
 
+    public function registerwithreferral($referral_id)
+    {
+        return view('register.register');
+    }
+
     public function registerproses(Request $request)
     {
         // {'email':email, 'password':password} 
@@ -39,7 +44,7 @@ class RegisterCtr extends Controller
         $dr = ['email' => $email, 'token_aktivasi' => $token_registrasi];
         $sr = ['status' => 'sukses'];
         Mail::to('alditha.forum@gmail.com') -> send(new RegistrasiMail($dr));
-        return \Response::json($dr);
+        return \Response::json($sr);
     }
 
     public function aktivasiakun($kodeaktivasi)

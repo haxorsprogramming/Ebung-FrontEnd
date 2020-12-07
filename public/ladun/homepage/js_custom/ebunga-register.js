@@ -23,7 +23,7 @@ var divRegister = new Vue({
         {
             let email = document.querySelector('#txtEmailRegistrasi').value;
             let password = document.querySelector('#txtPasswordRegistrasi').value;
-            let tipe = document.querySelector('#txtTipeUser').value;
+            
             if(email === ''){
                 $('#capNotifIsiField').show();
                 divRegister.capMessage = 'Please fill the email & password!!';
@@ -41,15 +41,17 @@ var divRegister = new Vue({
                             
                         }else{
                             // start registration proses
-                            let dataSend = {'email':email, 'password':password, 'tipe':tipe} 
+                            let dataSend = {'email':email, 'password':password} 
                             $('#loaderLokasi').show();
                             document.querySelector('#txtEmailRegistrasi').setAttribute("disabled", "disabled");
                             document.querySelector('#txtPasswordRegistrasi').setAttribute("disabled", "disabled");
                             document.querySelector('#txtTipeUser').setAttribute("disabled","disabled");
                             $('#capchaGoogle').hide();
                             $('#btnSignUp').hide();
+                            
                             $.post(rToRegister, dataSend, function(data){
-                                console.log(data);
+                                $('#divFormRegistrasi').hide();
+                                $('#divCompleteRegistration').show();
                             });
                         }
                     }
@@ -78,6 +80,7 @@ $('#loaderLokasi').hide();
 $('#capNotifIsiField').hide();
 $('#btnSignUp').hide();
 $('#loaderLokasi').hide();
+$('#divCompleteRegistration').hide();
 
 $('#txtEmailRegistrasi').click(function(){
     $('#capNotifIsiField').hide();

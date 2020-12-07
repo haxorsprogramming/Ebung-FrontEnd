@@ -11,8 +11,9 @@ use App\Http\Controllers\TestingCtr;
 Route::get('/', [PageCtr::class, 'home']);
 Route::get('/login', [PageCtr::class, 'home']);
 Route::get('/register', [RegisterCtr::class, 'registerpage']);
+Route::get('/register/ref/{referral_id}', [RegisterCtr::class, 'registerwithreferral']);
 
-// Registrasi 
+// Registrasi proses
 Route::post('/register/proses', [RegisterCtr::class, 'registerproses']);
 
 // Aktivasi akun 
