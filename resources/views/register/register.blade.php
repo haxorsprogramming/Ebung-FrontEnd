@@ -65,7 +65,12 @@
                             <div style="font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;" id="loaderLokasi">
                                 <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;"> Registering ... dont close this windows after complete registration 
                             </div>
-                            
+                            <div id="divAgree" style="display: none;">
+                            <input id="chkAgree" type="checkbox" name="check" @click="changeAgree">
+                            <label class="label-check" for="chkAgree"> I hereby agree to the 
+                                <a target="_blank" href="https://www.ebunga.com/halaman/form/Term-and-Condition.html"> terms and conditions </a> of Ebunga
+                            </label>
+                            </div>
                             <button type="button" class="link-v1 rt" @click="daftarAtc" id="btnSignUp">SIGN UP</button>
                         </form>
                    

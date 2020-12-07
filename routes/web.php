@@ -6,18 +6,25 @@ use App\Http\Controllers\RestProduct;
 use App\Http\Controllers\ProdukCtr;
 use App\Http\Controllers\RegisterCtr;
 use App\Http\Controllers\TestingCtr;
+use App\Http\Controllers\WithdrawCtr;
+use App\Http\Controllers\CustomerCtr;
 
 // Halaman utama 
 Route::get('/', [PageCtr::class, 'home']);
+// Login page 
 Route::get('/login', [PageCtr::class, 'home']);
+// Register page 
 Route::get('/register', [RegisterCtr::class, 'registerpage']);
+// Register with referral 
 Route::get('/register/ref/{referral_id}', [RegisterCtr::class, 'registerwithreferral']);
 
-// Registrasi proses
+// Register proses
 Route::post('/register/proses', [RegisterCtr::class, 'registerproses']);
 
-// Aktivasi akun 
+// Aktivasi akun link
 Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']);
+
+// Aktivasi akun proses 
 
 // Customer 
 Route::get('/customer/profile', [PageCtr::class, 'listproduk']);

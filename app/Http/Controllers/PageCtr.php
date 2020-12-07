@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 // import lib 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-
 use App\Mail\RegistrasiMail;
 // import model 
 use App\Models\KategoriMdl;
