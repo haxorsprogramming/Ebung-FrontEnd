@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-res-v3.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-fix-nav.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-form-search-mobile.css') }}">
-    
+
     <!-- slick -->
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/slick.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/slick-theme.css') }}">
@@ -45,12 +45,34 @@
             <div class="col-lg-3 col-md-3 col-sm-10 col-xs-9">
                 <ul class="nav navbar-nav navbar-right icon-menu">
 
-
                     <li id="input-search" class="hidden-sm hidden-xs">
                         <a href="#"><img id="search-img" src="{{ asset('ladun/homepage/pic_asset/util/Search.png') }}" alt="search"></a>
 
                     </li>
-                    <li class="icon-user hidden-sm hidden-xs"><a href="#"><i class="far fa-user"></i></a></li>
+                    <li class="icon-user hidden-sm hidden-xs"><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="far fa-user"></i></a>
+                        <div class="dropdown-menu">
+                            <div id="div-cart-menu" style="margin: 20px;">
+                                <div style="margin:10px;">
+                                    <div class="form-group">
+                                        <label for="txtEmail" style="font-family: Poppins;font-weight:600;">Email</label>
+                                        <input type="text" id="txtEmail" style="border:1px solid #cfcfcf;border-radius:40px;" placeholder="Your mail" class="input-lg">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtPassword" style="font-family: Poppins;font-weight:600;">Password</label>
+                                        <input type="password" id="txtPassword" style="border:1px solid #cfcfcf;border-radius:40px;" placeholder="Your password" class="input-lg">
+                                    </div>
+                                    <div class="form-group">
+                                        <a href='#!' class="btn btn-primary" style="font-family:Abril Fatface;font-weight:400;font-size:18px;background-color:black;">Login</a>
+                                        <div style="margin-top:12px;">
+                                            <span style="padding-top:20px;font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;">
+                                            Don't have an account? go <a href="{{ url('/register') }}">SIGN UP</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li class="dropdown cart-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="http://landing.engotheme.com/html/jenstore/demo/img/cart.png" id="img-cart" alt="cart"></a>
                         <div class="dropdown-menu">
