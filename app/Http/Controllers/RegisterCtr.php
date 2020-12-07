@@ -61,12 +61,26 @@ class RegisterCtr extends Controller
         if($cekJumlahKode < 1){
             echo "<pre>Activation code failed</pre>";
         }else{
-            $dataRegistrasi = RegistrasiUserMdl::where('token_registrasi', $kodeaktivasi) -> first();
+            $dr = RegistrasiUserMdl::where('token_registrasi', $kodeaktivasi) -> first();
             // update status aktivasi & waktu aktivasi
             DB::table('tbl_registrasi_user') -> where('token_registrasi', $kodeaktivasi) -> update(['status_aktivasi' => 'done', 'waktu_aktivasi' => $now]);
-            echo "done";
+            // create user 
+            DB::table('tbl_user') -> insert([
+                'username' => $dr -> email,
+                'tipe' => 'buyer',
+                'password' => $dr -> password,
+                'active' => '1'
+            ]);
+            // create customer data 
+            DB::table('tbl_customer') -> insert([
+                'email' => $dr -> email,
+                'full_name' => $dr -> full_name,
+                'phone' => $dr -> phone_number,
+                'active' => '1'
+            ]);
+            return view('register.aktivasi_akun');
         }
-        // return view('register.aktivasi_akun');
+        
     }
 
 }

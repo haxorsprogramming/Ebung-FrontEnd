@@ -18,13 +18,13 @@ class TblCustomer extends Migration
             $table -> char('email', 100);
             $table -> char('full_name', 100);
             $table -> char('phone', 30);
-            $table -> date('birth_date');
-            $table -> char('gender', 20);
-            $table -> text('alamat');
-            $table -> char('kelurahan', 10);
-            $table -> char('kecamatan', 10);
-            $table -> char('kabupaten', 10);
-            $table -> char('provinsi', 10);
+            $table -> date('birth_date') -> nullable();
+            $table -> char('gender', 20) -> nullable();
+            $table -> text('alamat') -> nullable();
+            $table -> char('kelurahan', 10) -> nullable();
+            $table -> char('kecamatan', 10) -> nullable();
+            $table -> char('kabupaten', 10) -> nullable();
+            $table -> char('provinsi', 10) -> nullable();
             $table -> char('active', 1);
         });
     }
