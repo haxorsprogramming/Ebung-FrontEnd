@@ -12,7 +12,7 @@ use App\Http\Controllers\CustomerCtr;
 // Halaman utama 
 Route::get('/', [PageCtr::class, 'home']);
 // Login page 
-Route::get('/login', [PageCtr::class, 'home']);
+Route::get('/login', [PageCtr::class, 'login']);
 // Register page 
 Route::get('/register', [RegisterCtr::class, 'registerpage']);
 // Register with referral 

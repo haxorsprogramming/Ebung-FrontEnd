@@ -34,6 +34,20 @@ var div_modal_product = new Vue({
     }
 });
 
+// var divFormRegisterTop = new Vue({
+//     el : '#divFormRegisterTop',
+//     data : {
+
+//     },
+//     methods : {
+//         tesAtc : function()
+//         {
+//             console.log('1mdb');
+//             document.querySelector('#txtEmailLoginTop').focus();
+//         }
+//     }
+// });
+
 // INISIALISASI 
 $.ajaxSetup({
     headers: {
