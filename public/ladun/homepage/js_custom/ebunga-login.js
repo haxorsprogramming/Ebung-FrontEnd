@@ -18,7 +18,11 @@ var divFormLogin = new Vue({
             }else{
                 let dataSend = {'username':username, 'password':password}
                 $.post(rToLogin, dataSend, function(data){
-                    console.log(data);
+                    if(data.status === 'success'){
+                        window.location.assign(server + "account/dashboard");
+                    }else{
+
+                    }
                 });
             }
         }

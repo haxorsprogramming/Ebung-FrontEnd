@@ -7,8 +7,8 @@ use App\Http\Controllers\ProdukCtr;
 use App\Http\Controllers\RegisterCtr;
 use App\Http\Controllers\TestingCtr;
 use App\Http\Controllers\WithdrawCtr;
-use App\Http\Controllers\CustomerCtr;
 use App\Http\Controllers\LoginCtr;
+use App\Http\Controllers\DashboardCtr;
 
 // Halaman utama 
 Route::get('/', [PageCtr::class, 'home']);
@@ -27,10 +27,8 @@ Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']
 
 // Aktivasi akun proses 
 
-// Customer 
-Route::get('/customer/profile', [PageCtr::class, 'listproduk']);
-Route::get('/customer/update-profile', [PageCtr::class, 'listproduk']);
-
+// Customer (Buyer) 
+Route::get('/account', [DashboardCtr::class, 'dashboard']);
 // Seller 
 Route::get('/seller/profile', [PageCtr::class, 'listproduk']);
 Route::get('/seller/update-profile',[PageCtr::class, 'listproduk']);

@@ -38,9 +38,12 @@ class LoginCtr extends Controller
             $password_user_db = $data_user -> password;
             // cek password input & from database 
             $cek_password = password_verify($password, $password_user_db);
-            $dr = ['status' => $cek_password];
+            if($cek_password == true){
+                $dr = ['status' => 'success'];
+            }else{
+                $dr = ['status' => 'wrong_password'];
+            }
         }
-        
         return \Response::json($dr);
     }
 }
