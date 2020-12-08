@@ -18,9 +18,10 @@ class DashboardCtr extends Controller
 
     public function sellerdashboard(Request $request)
     {
+        $user_login = $request -> session() -> get('user_login');
         $page_title = 'Dashboard Seller';
         $page = 'seller_dashboard';
-        $dr = ['page' => $page, 'page_title' => $page_title];
+        $dr = ['user_login' => $user_login,'page' => $page, 'page_title' => $page_title];
         return view('account.dashboard_seller', $dr);
     }
 }

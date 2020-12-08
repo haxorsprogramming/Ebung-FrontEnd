@@ -140,9 +140,9 @@
     </script>
     <script src="{{ asset('ladun/account_asset/js/main.js') }}"></script>
     @if($page == 'customer_dashboard')
-    <script src="{{ asset('ladun/account_asset/js_custom/dashboard.js') }}"></script> 
+    <script src="{{ asset('ladun/account_asset/js_custom/dashboard_customer.js') }}"></script> 
     @else
-
+    <script src="{{ asset('ladun/account_asset/js_custom/dashboard_seller.js') }}"></script> 
     @endif
 
 </body>
