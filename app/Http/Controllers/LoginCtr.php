@@ -39,6 +39,8 @@ class LoginCtr extends Controller
             // cek password input & from database 
             $cek_password = password_verify($password, $password_user_db);
             if($cek_password == true){
+                // set session 
+                session(['user_login' => $username]);
                 $dr = ['status' => 'success'];
             }else{
                 $dr = ['status' => 'wrong_password'];

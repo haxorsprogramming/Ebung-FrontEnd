@@ -49,4 +49,11 @@ class PageCtr extends Controller
         echo "Email telah terkirim";
     }
 
+    public function logout(Request $request)
+    {
+        // clear session 
+        $request -> session() -> flush();
+        return redirect('/');
+    }
+
 }

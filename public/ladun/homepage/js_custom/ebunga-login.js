@@ -19,7 +19,7 @@ var divFormLogin = new Vue({
                 let dataSend = {'username':username, 'password':password}
                 $.post(rToLogin, dataSend, function(data){
                     if(data.status === 'success'){
-                        window.location.assign(server + "account/dashboard");
+                        window.location.assign(server + "account");
                     }else{
 
                     }

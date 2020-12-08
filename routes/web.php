@@ -24,7 +24,6 @@ Route::get('/register/ref/{referral_id}', [RegisterCtr::class, 'registerwithrefe
 Route::post('/register/proses', [RegisterCtr::class, 'registerproses']);
 // Aktivasi akun link
 Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']);
-
 // Aktivasi akun proses 
 
 // Customer (Buyer) 
@@ -32,6 +31,9 @@ Route::get('/account', [DashboardCtr::class, 'dashboard']);
 // Seller 
 Route::get('/seller/profile', [PageCtr::class, 'listproduk']);
 Route::get('/seller/update-profile',[PageCtr::class, 'listproduk']);
+
+// Logout 
+Route::get('/logout', [PageCtr::class, 'logout']);
 
 // Produk 
 Route::get('/produk/list', [PageCtr::class, 'produk']);

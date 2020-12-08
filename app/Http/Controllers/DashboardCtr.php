@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 
 class DashboardCtr extends Controller
 {
-    public function dashboard()
+    public function dashboard(Request $request)
     {
-        return view('account.dashboard');
+        $user_login = $request -> session()->get('user_login');
+        $dr = ['user_login' => $user_login];
+        return view('account.dashboard', $dr);
     }
 }
