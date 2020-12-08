@@ -5,7 +5,7 @@
     
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Fultala - Flower Shop eCommerce Template </title>
+    <title>{{ $page_title }} - Ebunga.co.id</title>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
@@ -14,8 +14,9 @@
     <!-- <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico"> -->
 
     <!-- CSS
-	============================================ -->
-
+    ============================================ -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('ladun/account_asset/css/vendor/bootstrap.min.css') }}">
     <!-- Icon Font CSS -->
@@ -26,7 +27,6 @@
     <link rel="stylesheet" href="{{ asset('ladun/account_asset/css/plugins/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('ladun/account_asset/css/plugins/animation.css') }}">
     <link rel="stylesheet" href="{{ asset('ladun/account_asset/css/plugins/jqueryui.min.css') }}">
-
     <!-- <link rel="stylesheet" href="assets/css/plugins/slick.css">
     <link rel="stylesheet" href="assets/css/plugins/animation.css">
     <link rel="stylesheet" href="assets/css/plugins/jqueryui.min.css"> -->
@@ -38,7 +38,10 @@
     -->
 
     <!-- Main Style CSS (Please use minify version for better website load performance) -->
+    <!-- <link rel="stylesheet" href="https://demo.getstisla.com/assets/css/components.css"> -->
+    <link rel="stylesheet" href="https://demo.getstisla.com/assets/css/style.css">
     <link rel="stylesheet" href="{{ asset('ladun/account_asset/css/style.css') }}">
+    
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
 
@@ -72,7 +75,7 @@
                                             <ul class="top-info">
                                                 <li>Mon - Fri : 9am to 5pm </li>
                                                 <li><a href="#">+88012345678</a></li>
-                                                <li><a href="#">fultalashop@gmail.com</a></li>
+                                                <li><a href="#">hi@ebunga.co.id</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -156,12 +159,13 @@
 
                         <div class="col-lg-2 col-md-8 col-7">
                             <div class="right-blok-box d-flex">
-                                <div class="search-wrap">
-                                    <a href="#" class="trigger-search"><i class="ion-ios-search-strong"></i></a>
-                                </div>
 
                                 <div class="user-wrap">
-                                    <a href="wishlist.html"><i class="ion-android-favorite-outline"></i></a>
+                                    <a href="wishlist.html">
+                                        <span class="material-icons">
+                                        assistant
+                                        </span>
+                                    </a>
                                 </div>
 
 
@@ -170,7 +174,7 @@
                                     <ul class="mini-cart">
                                         <li class="cart-item">
                                             <div class="cart-image">
-                                                <a href="product-details.html"><img alt="" src="{{ $link_pic }}"></a>
+                                                <a href="product-details.html"><img alt="" src="https://demo.hasthemes.com/fultala-preview-v2/fultala/assets/images/product/product-01.jpg"></a>
                                             </div>
                                             <div class="cart-title">
                                                 <a href="product-details.html">
@@ -183,7 +187,7 @@
                                         </li>
                                         <li class="cart-item">
                                             <div class="cart-image">
-                                                <a href="product-details.html"><img alt="" src="{{ $link_pic }}"></a>
+                                                <a href="product-details.html"><img alt="" src="https://demo.hasthemes.com/fultala-preview-v2/fultala/assets/images/product/product-01.jpg"></a>
                                             </div>
                                             <div class="cart-title">
                                                 <a href="product-details.html">

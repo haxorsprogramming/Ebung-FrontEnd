@@ -89,7 +89,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="copy-right-text text-center">
-                                <p>Copyright &copy; <a href="#">Fultala</a> 2019. All Right Reserved</p>
+                                    <span>Copyright</span><i class="far fa-copyright"></i><span class="engo">2020 PT Ebunga Sukses Makmur</span>
                             </div>
                         </div>
                     </div>
@@ -139,7 +139,11 @@
         const server = "{{ url('') }}/";
     </script>
     <script src="{{ asset('ladun/account_asset/js/main.js') }}"></script>
+    @if($page == 'customer_dashboard')
     <script src="{{ asset('ladun/account_asset/js_custom/dashboard.js') }}"></script> 
+    @else
+
+    @endif
 
 </body>
 

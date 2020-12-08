@@ -26,27 +26,33 @@
                         <div class="account-dashboard">
                             <div class="dashboard-upper-info">
                                 <div class="row align-items-center no-gutters">
-                                    <div class="col-lg-3 col-md-12">
+                                    <div class="col-lg-4 col-md-12">
                                         <div class="d-single-info">
-                                            <p class="user-name">Hi, <span>{{ $user_login }}</span></p>
-                                            <p>( you? please <a href="{{ url('/logout') }}">Log Out</a>)</p>
+                                            <table>
+                                                <tr>
+                                                    <td><img src="{{ asset('ladun/ebunga_asset/image/user/user-cat.jpg') }}" style="width: 60px;"></td>
+                                                    <td>
+                                                    <p class="user-name">Hi, <span>{{ $user_login }}</span></p>
+                                                    <p>( not you? please <a href="{{ url('/logout') }}">Log Out</a>)</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-12">
                                         <div class="d-single-info">
-                                            <p>Need Assistance? Customer service at.</p>
-                                            <p>admin@devitems.com.</p>
+                                            <div class="card card-hero" style="margin-bottom:-12px;">
+                                                <div class="card-header" style="text-align: center;">
+                                                    <h4 style="color:#dff9fb;">1400</h4>
+                                                    <strong>Total E-Cash</strong>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-12">
-                                        <div class="d-single-info">
-                                            <p>E-mail them at </p>
-                                            <p>support@yoursite.com</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-12">
-                                        <div class="d-single-info text-lg-center">
-                                            <a href="cart.html" class="view-cart"><i class="fa fa-cart-plus"></i>view cart</a>
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="d-single-info" style="padding-left:20px;">
+                                            <p>Want to sell a product? </p>
+                                            <a href="{{ url('/account/seller') }}" class="view-cart">Go to seller page</a>
                                         </div>
                                     </div>
                                 </div>
@@ -57,9 +63,8 @@
                                     <ul role="tablist" class="nav flex-column dashboard-list">
                                         <li><a href="#!" data-toggle="tab" @click="dashboardAtc" class="nav-link active">Dashboard</a></li>
                                         <li> <a href="#!" data-toggle="tab" class="nav-link">Orders</a></li>
-                                        <li><a href="#!" data-toggle="tab" class="nav-link">Downloads</a></li>
+                                        <li><a href="#!" data-toggle="tab" class="nav-link">My Profile</a></li>
                                         <li><a href="#!" data-toggle="tab" class="nav-link">Addresses</a></li>
-                                        <li><a href="#!" data-toggle="tab" class="nav-link">Account details</a></li>
                                         <li><a href="{{ url('/logout') }}" class="nav-link">logout</a></li>
                                     </ul>
                                 </div>
