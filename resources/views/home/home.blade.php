@@ -328,4 +328,4 @@
             </div>
         </div>
 
-@include('layout.footer_home')
+@include('layout.footer')

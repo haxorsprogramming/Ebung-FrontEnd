@@ -16,7 +16,10 @@ class RegisterCtr extends Controller
 {
     public function registerpage()
     {
-        $dr = ['referral_status' => 'no'];
+        $css_file = 'style-about.css';
+        $js_file = 'ebunga-register.js';
+        $page = 'Register';
+        $dr = ['referral_status' => 'no', 'css_file' => $css_file, 'js_file' => $js_file, 'page' => $page];
         return view('register.register', $dr);
     }
 

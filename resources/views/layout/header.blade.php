@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- <link rel="stylesheet" type="text/css" href="css/style-homev3.css"> -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-homev3.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/'.$css_file) }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-res-v3.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-fix-nav.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-form-search-mobile.css') }}">
@@ -28,7 +28,10 @@
     <header class="container" id="header-v3">
 
         <div class="row">
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 logo"><a href="{{ url('') }}"><img src="{{ asset('ladun/homepage/pic_asset/logo/logo.png') }}" alt="holiwood"></a></div>
+            
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 logo">
+                
+            </div>
             <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 menu-mobile">
                 <div class=" collapse navbar-collapse" id="myNavbar">
 

@@ -52,10 +52,8 @@ Route::get('/contact', [PageCtr::class, 'contact']);
 Route::post('/product/checkarea', [ProdukCtr::class, 'checkarea']);
 
 // Halaman admin 
-
-// Rest 
-
-// Produk detail
+    
+// ResT Produk detail
 Route::get('/product/detail/{id_product}', [RestProduct::class, 'detailproduct']);
 
 // Testing kirim email

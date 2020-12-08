@@ -100,7 +100,7 @@
     <script>
         const server = "{{ url('') }}/";
     </script>
-    <script src="{{ asset('ladun/homepage/js_custom/ebunga.js') }}"></script>
+    <script src="{{ asset('ladun/homepage/js_custom/'.$js_file) }}"></script>
 
 </body>
 

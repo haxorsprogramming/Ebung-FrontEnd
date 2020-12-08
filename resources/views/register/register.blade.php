@@ -1,4 +1,4 @@
-@include('layout.header_register')
+@include('layout.header')
 
 <main id="divRegister">
     <div class="content-search">
@@ -114,4 +114,4 @@
     
 </main>
 
-@include('layout.footer_register')
+@include('layout.footer')
