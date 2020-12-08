@@ -1,4 +1,4 @@
-@include('layout.header_aktivasi_akun')
+@include('layout.header')
 
 <main>
 	<div class="content-search">
@@ -34,4 +34,4 @@
 </main>
 
 
-@include('layout.footer_aktivasi_akun')
+@include('layout.footer')

@@ -59,31 +59,34 @@ class RegisterCtr extends Controller
 
     public function aktivasiakun($kodeaktivasi)
     {
-        $cekJumlahKode = RegistrasiUserMdl::where('token_registrasi', $kodeaktivasi) -> where('status_aktivasi', 'pending') -> count();
-        $now = now();
-        if($cekJumlahKode < 1){
-            echo "<pre>Activation code failed</pre>";
-        }else{
-            $dr = RegistrasiUserMdl::where('token_registrasi', $kodeaktivasi) -> first();
-            // update status aktivasi & waktu aktivasi
-            DB::table('tbl_registrasi_user') -> where('token_registrasi', $kodeaktivasi) -> update(['status_aktivasi' => 'done', 'waktu_aktivasi' => $now]);
-            // create user 
-            DB::table('tbl_user') -> insert([
-                'username' => $dr -> email,
-                'tipe' => 'buyer',
-                'password' => $dr -> password,
-                'active' => '1'
-            ]);
-            // create customer data 
-            DB::table('tbl_customer') -> insert([
-                'email' => $dr -> email,
-                'full_name' => $dr -> full_name,
-                'phone' => $dr -> phone_number,
-                'active' => '1'
-            ]);
-            return view('register.aktivasi_akun');
-        }
-        
+        // $cekJumlahKode = RegistrasiUserMdl::where('token_registrasi', $kodeaktivasi) -> where('status_aktivasi', 'pending') -> count();
+        // $now = now();
+        // if($cekJumlahKode < 1){
+        //     echo "<pre>Activation code failed</pre>";
+        // }else{
+        //     $dr = RegistrasiUserMdl::where('token_registrasi', $kodeaktivasi) -> first();
+        //     // update status aktivasi & waktu aktivasi
+        //     DB::table('tbl_registrasi_user') -> where('token_registrasi', $kodeaktivasi) -> update(['status_aktivasi' => 'done', 'waktu_aktivasi' => $now]);
+        //     // create user 
+        //     DB::table('tbl_user') -> insert([
+        //         'username' => $dr -> email,
+        //         'tipe' => 'buyer',
+        //         'password' => $dr -> password,
+        //         'active' => '1'
+        //     ]);
+        //     // create customer data 
+        //     DB::table('tbl_customer') -> insert([
+        //         'email' => $dr -> email,
+        //         'full_name' => $dr -> full_name,
+        //         'phone' => $dr -> phone_number,
+        //         'active' => '1'
+        //     ]);
+        //     return view('register.aktivasi_akun');
+        // }
+        $css_file = 'style-about.css';
+        $js_file = 'ebunga-aktivasi-akun.js';
+        $dr = ['page' => 'Success activation', 'css_file' => $css_file, 'js_file' => $js_file];
+        return view('register.aktivasi_akun', $dr);
     }
 
 }

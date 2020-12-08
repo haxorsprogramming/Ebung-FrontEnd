@@ -1,3 +1,3 @@
-@include('layout.header_login')
+@include('layout.header')
 
-@include('layout.footer_login')
+@include('layout.footer')

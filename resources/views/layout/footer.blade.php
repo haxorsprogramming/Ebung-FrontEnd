@@ -97,6 +97,7 @@
     <script src="{{ asset('ladun/homepage/js_asset/funtion-header-v3.js') }}"></script>
     <script src="{{ asset('ladun/homepage/js_asset/function-search-v2.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <script src="{{ asset('ladun/registerpage/js/intlTelInput.js') }}"></script>
     <script>
         const server = "{{ url('') }}/";
     </script>

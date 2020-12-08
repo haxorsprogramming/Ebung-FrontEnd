@@ -113,5 +113,8 @@
     </div>
     
 </main>
+<!-- render google capcha js  -->
+
+{!! NoCaptcha::renderJs() !!}
 
 @include('layout.footer')

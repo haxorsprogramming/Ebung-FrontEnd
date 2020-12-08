@@ -11,9 +11,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/'.$css_file) }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-res-about.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-faq.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-login.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-404.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-res-v3.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-fix-nav.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-form-search-mobile.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/intlTelInput.css') }}">
     <!-- slick -->
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/slick.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/slick-theme.css') }}">
@@ -23,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
-
+AIzaSyCgp5nkbd1bH4NTIzK-h-fsSs9JyM-AoEw
 <body>
     <header class="container" id="header-v3">
 
