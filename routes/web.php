@@ -31,7 +31,7 @@ Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']
 Route::get('/account', [DashboardCtr::class, 'dashboard']);
 Route::get('/account/dashboard', [CustomerCtr::class, 'dashboard']);
 // Seller 
-Route::get('/seller/profile', [PageCtr::class, 'listproduk']);
+Route::get('/account/seller', [PageCtr::class, 'sellerdashboard']);
 Route::get('/seller/update-profile',[PageCtr::class, 'listproduk']);
 
 // Logout 

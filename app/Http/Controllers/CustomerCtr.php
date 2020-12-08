@@ -12,6 +12,6 @@ class CustomerCtr extends Controller
 {
     public function dashboard()
     {
-        echo "Running";
+        return view('account.customer.dashboard');
     }
 }

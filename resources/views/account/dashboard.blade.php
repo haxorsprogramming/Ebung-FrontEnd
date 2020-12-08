@@ -65,8 +65,14 @@
                                 </div>
                                 <div class="col-md-12 col-lg-10">
                                     <!-- Tab panes -->
-                                    <div class="tab-content dashboard-content" id="divContainerUtama">
+                                    
+                                    <div class="tab-content dashboard-content">
+                                        <div style="font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;display:none;" id="loaderPage">
+                                            <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;"> loading page ...
+                                        </div>
+                                        <div id="divContainerUtama">
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>

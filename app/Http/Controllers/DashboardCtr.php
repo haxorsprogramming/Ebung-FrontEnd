@@ -13,4 +13,9 @@ class DashboardCtr extends Controller
         $dr = ['user_login' => $user_login, 'link_pic' => $link_pic_temp];
         return view('account.dashboard', $dr);
     }
+
+    public function sellerdashboard(Request $request)
+    {
+        
+    }
 }

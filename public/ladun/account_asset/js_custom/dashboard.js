@@ -10,7 +10,8 @@ var divUtama = new Vue({
     methods : {
         dashboardAtc : function()
         {
-            renderPage(rToDashboard, 'Dashboard 2', 'Dashboard page');
+            console.log("yushuu");
+            renderPage(rToDashboard, 'Customer Dashboard', '');
         }
     }
 });
@@ -22,9 +23,16 @@ var divBreadcumb = new Vue({
     }
 });
 // Inisialisasi 
+renderPage(rToDashboard, 'Customer Dashboard', '');
 
 // Function
 function renderPage(page, titleForm, subTitle){
-    divBreadcumb.titleForm = titleForm;
-    $('#divContainerUtama').load(page);
+    $('#divContainerUtama').html("");
+    $('#loaderPage').show();
+    setTimeout(function(){
+        divBreadcumb.titleForm = titleForm;
+        $('#divContainerUtama').load(page);
+        $('#loaderPage').hide();
+    }, 300);
+    
 }
