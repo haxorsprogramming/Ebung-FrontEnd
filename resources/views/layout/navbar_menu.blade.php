@@ -1,13 +1,7 @@
 <ul class="nav navbar-nav menu-main">
 
-<li class="dropdown menu-home">
-    <a href="#" id="home-menu" class="dropdown-toggle" data-toggle="dropdown">Home</a>
-    <ul class="menu-home-lv2 dropdown-menu">
-        <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="homev1.html">Home 1</a></li>
-        <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="homev2.html">Home 2</a></li>
-        <li class="li-home"><i class="fas fa-long-arrow-alt-right hidden-sm hidden-md hidden-xs"></i><a href="homev3.html">Home 3</a></li>
-
-    </ul>
+<li class="contact-menu"><a href="{{ url('/') }}">Home</a>
+    <figure id="contact-1" class=" hidden-sm hidden-md hidden-xs"></figure>
 </li>
 <li class="shop-menu dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop +</a>
     <figure id="shop-1" class=" hidden-sm hidden-md hidden-xs"></figure>

@@ -13,7 +13,7 @@ use App\Http\Controllers\LoginCtr;
 // Halaman utama 
 Route::get('/', [PageCtr::class, 'home']);
 // Login page 
-Route::get('/login', [PageCtr::class, 'login']);
+Route::get('/login', [LoginCtr::class, 'loginpage']);
 // Register page 
 Route::get('/register', [RegisterCtr::class, 'registerpage']);
 // Register with referral 

@@ -27,10 +27,6 @@ class PageCtr extends Controller
         return view('home.home', $dr);
     }
 
-    public function login()
-    {
-        return view('login.login');
-    }
 
     public function listproduk($id_produk)
     {
