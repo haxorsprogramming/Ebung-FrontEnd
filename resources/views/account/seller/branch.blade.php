@@ -2,10 +2,14 @@
     <h3>List of my branch</h3>
 </div>
 
-<div class="row">
+<div class="row" id="divTambahBranch">
+
+</div>
+
+<div class="row" id="divBranch">
 
     <div class="" style="margin-bottom:12px;">
-        <a href="#!" class="view"><i class="fas fa-plus-circle"></i> Add branch</a>
+        <a href="#!" class="view" @click="tampilFormTambahAtc"><i class="fas fa-plus-circle"></i> Add branch</a>
     </div>
 
     <div class="table-responsive">
@@ -20,15 +24,19 @@
                 </tr>
             </thead>
             <tbody>
+            @foreach($databranch as $branch)
                 <tr>
-                    <td>1</td>
+                    <td>{{ $branch -> nama_branch }}</td>
                     <td>May 10, 2018</td>
                     <td>Processing</td>
                     <td>$25.00 for 1 item </td>
-                    <td><a href="cart.html" class="view">Details</a></td>
+                    <td><a href="#!" class="view">Details</a></td>
                 </tr>
+            @endforeach
             </tbody>
         </table>
     </div>
 
 </div>
+
+<script src="{{ asset('ladun/account_asset/js_custom/seller/branch.js') }}"></script>

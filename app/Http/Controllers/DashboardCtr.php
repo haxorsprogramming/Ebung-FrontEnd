@@ -1,8 +1,12 @@
 <?php
 
+// import namespace 
 namespace App\Http\Controllers;
-
+// import lib 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+// import model 
+
 
 class DashboardCtr extends Controller
 {

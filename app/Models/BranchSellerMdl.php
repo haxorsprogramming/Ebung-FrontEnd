@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class BranchSellerMdl extends Model
 {
-    use HasFactory;
+    protected $table = 'tbl_branch_seller';
 }
