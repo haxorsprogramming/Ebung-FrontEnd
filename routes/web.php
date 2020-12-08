@@ -14,17 +14,14 @@ use App\Http\Controllers\LoginCtr;
 Route::get('/', [PageCtr::class, 'home']);
 // Login page 
 Route::get('/login', [LoginCtr::class, 'loginpage']);
+// Login proses 
+Route::post('/login/proses', [LoginCtr::class, 'loginproses']);
 // Register page 
 Route::get('/register', [RegisterCtr::class, 'registerpage']);
 // Register with referral 
 Route::get('/register/ref/{referral_id}', [RegisterCtr::class, 'registerwithreferral']);
-
-// Login proses 
-Route::post('/login/proses', [LoginCtr::class, 'loginproses']);
-
 // Register proses
 Route::post('/register/proses', [RegisterCtr::class, 'registerproses']);
-
 // Aktivasi akun link
 Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']);
 
