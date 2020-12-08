@@ -5,7 +5,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="widget-footer mt-20">
                                 <div class="footer-logo">
-                                    <a href="index.html"><img src="assets/images/logo/logo.png" alt=""></a>
+                                    <a href="index.html"><img src="{{ asset('ladun/homepage/pic_asset/logo/logo.png') }}" alt=""></a>
                                 </div>
                                 <p>long established fact that a reader will be distracted by the readable content by the readable content established fact that</p>
                                 <div class="newsletter-footer">
@@ -55,7 +55,7 @@
                                     <li>
                                         <div class="widget-blog-wrap">
                                             <div class="widget-blog-image">
-                                                <a href="#"><img src="assets/images/blog/small-blog.jpg" alt=""></a>
+                                                <a href="#"><img src="https://demo.hasthemes.com/fultala-preview-v2/fultala/assets/images/blog/small-blog.jpg" alt=""></a>
                                             </div>
                                             <div class="widget-blog-content">
                                                 <h6><a href="#">Some patience for the modern market</a></h6>
@@ -68,7 +68,7 @@
                                     <li>
                                         <div class="widget-blog-wrap">
                                             <div class="widget-blog-image">
-                                                <a href="#"><img src="assets/images/blog/small-blog-02.jpg" alt=""></a>
+                                                <a href="#"><img src="https://demo.hasthemes.com/fultala-preview-v2/fultala/assets/images/blog/small-blog.jpg" alt=""></a>
                                             </div>
                                             <div class="widget-blog-content">
                                                 <h6><a href="#">Modern market Some patience for the </a></h6>
@@ -101,9 +101,8 @@
 
     </div>
 
-    <!-- JS
-============================================ -->
-
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- Modernizer JS -->
     <script src="{{ asset('ladun/account_asset/js/vendor/modernizr-3.6.0.min.js') }}"></script>
     <!-- <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script> -->
@@ -131,13 +130,16 @@
 
     <!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
     <!--
-<script src="assets/js/vendor/vendor.min.js"></script>
-<script src="assets/js/plugins/plugins.min.js"></script>
--->
+    <script src="assets/js/vendor/vendor.min.js"></script>
+    <script src="assets/js/plugins/plugins.min.js"></script>
+    -->
 
     <!-- Main JS -->
+    <script>
+        const server = "{{ url('') }}/";
+    </script>
     <script src="{{ asset('ladun/account_asset/js/main.js') }}"></script>
-    <!-- <script src="assets/js/main.js"></script> -->
+    <script src="{{ asset('ladun/account_asset/js_custom/dashboard.js') }}"></script> 
 
 </body>
 

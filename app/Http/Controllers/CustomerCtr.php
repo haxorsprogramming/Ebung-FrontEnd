@@ -10,5 +10,8 @@ use App\Models\ProdukMdl;
 
 class CustomerCtr extends Controller
 {
-    //
+    public function dashboard()
+    {
+        echo "Running";
+    }
 }

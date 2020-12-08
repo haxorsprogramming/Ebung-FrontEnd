@@ -9,6 +9,7 @@ use App\Http\Controllers\TestingCtr;
 use App\Http\Controllers\WithdrawCtr;
 use App\Http\Controllers\LoginCtr;
 use App\Http\Controllers\DashboardCtr;
+use App\Http\Controllers\CustomerCtr;
 
 // Halaman utama 
 Route::get('/', [PageCtr::class, 'home']);
@@ -28,6 +29,7 @@ Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']
 
 // Customer (Buyer) 
 Route::get('/account', [DashboardCtr::class, 'dashboard']);
+Route::get('/account/dashboard', [CustomerCtr::class, 'dashboard']);
 // Seller 
 Route::get('/seller/profile', [PageCtr::class, 'listproduk']);
 Route::get('/seller/update-profile',[PageCtr::class, 'listproduk']);

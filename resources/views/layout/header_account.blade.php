@@ -1,10 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 
 <head>
+    
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Fultala - Flower Shop eCommerce Template </title>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -168,7 +170,7 @@
                                     <ul class="mini-cart">
                                         <li class="cart-item">
                                             <div class="cart-image">
-                                                <a href="product-details.html"><img alt="" src="assets/images/product/product-01.jpg"></a>
+                                                <a href="product-details.html"><img alt="" src="{{ $link_pic }}"></a>
                                             </div>
                                             <div class="cart-title">
                                                 <a href="product-details.html">
@@ -181,7 +183,7 @@
                                         </li>
                                         <li class="cart-item">
                                             <div class="cart-image">
-                                                <a href="product-details.html"><img alt="" src="assets/images/product/product-02.jpg"></a>
+                                                <a href="product-details.html"><img alt="" src="{{ $link_pic }}"></a>
                                             </div>
                                             <div class="cart-title">
                                                 <a href="product-details.html">
