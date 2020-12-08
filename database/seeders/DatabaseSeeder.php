@@ -74,7 +74,7 @@ class DatabaseSeeder extends Seeder
             'active' => '1'
         ]);
         DB::table('tbl_user') -> insert([
-            'username' => 'ebunga-seller',
+            'username' => 'ebunga-buyer',
             'tipe' => 'buyer',
             'password' => password_hash('admin', PASSWORD_DEFAULT),
             'active' => '1'
@@ -132,10 +132,18 @@ class DatabaseSeeder extends Seeder
             'foto_utama' => 'EBUNGA78900.jpg',
             'active' => 'y'
         ]);
+        // branch
+        DB::table('tbl_branch_seller') -> insert([
+            'kd_branch' => 'BRANCH0001',
+            'nama_branch' => 'PT NADHA BUNGA SERASI',
+            'id_seller' => 'ebunga-seller',
+            'alamat' => 'Medan perjuangan',
+            'phone' => '082272177022'
+        ]);
         // coverage area 
         DB::table('tbl_coverage_area') -> insert([
             'kd_coverage' => 'aqwl1239012jmn',
-            'kd_produk' => 'EBUNGA891233',
+            'kd_branch' => 'BRANCH0001',
             'kd_area' => '1101012016'
         ]);
     }

@@ -10,6 +10,7 @@ use App\Http\Controllers\WithdrawCtr;
 use App\Http\Controllers\LoginCtr;
 use App\Http\Controllers\DashboardCtr;
 use App\Http\Controllers\CustomerCtr;
+use App\Http\Controllers\SellerCtr;
 
 // Halaman utama 
 Route::get('/', [PageCtr::class, 'home']);
@@ -32,6 +33,9 @@ Route::get('/account', [DashboardCtr::class, 'dashboard']);
 Route::get('/account/dashboard', [CustomerCtr::class, 'dashboard']);
 // Seller 
 Route::get('/account/seller', [DashboardCtr::class, 'sellerdashboard']);
+Route::get('/account/seller/dashboard', [SellerCtr::class, 'sellerdashboard']);
+Route::get('/account/seller/sellerbranch', [SellerCtr::class, 'sellerbranch']);
+
 Route::get('/seller/update-profile',[PageCtr::class, 'listproduk']);
 
 // Logout 

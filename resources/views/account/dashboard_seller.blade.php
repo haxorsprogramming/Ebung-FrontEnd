@@ -51,8 +51,8 @@
                                     </div>
                                     <div class="col-lg-4 col-md-12">
                                         <div class="d-single-info" style="padding-left:20px;">
-                                            <p>Want to sell a product? </p>
-                                            <a href="{{ url('/account/seller') }}" class="view-cart">Go to seller page</a>
+                                            <p>Want to buy a product? </p>
+                                            <a href="{{ url('/account') }}" class="view-cart">Go to buyer page</a>
                                         </div>
                                     </div>
                                 </div>
@@ -62,8 +62,10 @@
                                     <!-- Nav tabs -->
                                     <ul role="tablist" class="nav flex-column dashboard-list">
                                         <li><a href="#!" data-toggle="tab" @click="dashboardAtc" class="nav-link active">Dashboard</a></li>
-                                        <li> <a href="#!" data-toggle="tab" class="nav-link">My Store</a></li>
-                                        <li><a href="#!" data-toggle="tab" class="nav-link">My Orders</a></li>
+                                        <li><a href="#!" data-toggle="tab" @click="myBranchAtc" class="nav-link">My Branch</a></li>
+                                        <li><a href="#!" data-toggle="tab" class="nav-link">My Product</a></li>
+                                        <li><a href="#!" data-toggle="tab" class="nav-link">Orders</a></li>
+                                        <li><a href="#!" data-toggle="tab" class="nav-link">E-Cash</a></li>
                                         <li><a href="#!" data-toggle="tab" class="nav-link">Settings</a></li>
                                         <li><a href="{{ url('/logout') }}" class="nav-link">logout</a></li>
                                     </ul>
@@ -87,6 +89,5 @@
             </div>
         </div>
         <!-- main-content-wrap end -->
-
 
 @include('layout.footer_account')

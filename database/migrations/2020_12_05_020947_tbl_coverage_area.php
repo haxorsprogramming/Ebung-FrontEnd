@@ -16,7 +16,7 @@ class TblCoverageArea extends Migration
         Schema::create('tbl_coverage_area', function (Blueprint $table) {
             $table -> id();
             $table -> char('kd_coverage', 20);
-            $table -> char('kd_produk', 50);
+            $table -> char('kd_branch', 50);
             $table -> char('kd_area', 10);
         });
     }
