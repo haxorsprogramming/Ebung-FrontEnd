@@ -32,7 +32,7 @@
                                                 <tr>
                                                     <td><img src="{{ asset('ladun/ebunga_asset/image/user/user-cat.jpg') }}" style="width: 60px;"></td>
                                                     <td>
-                                                    <p class="user-name">Hi, <span>{{ $user_login }}</span></p>
+                                                    <p class="user-name">Hi, <span>{{ $userLogin }}</span></p>
                                                     <p>( not you? please <a href="{{ url('/logout') }}">Log Out</a>)</p>
                                                     </td>
                                                 </tr>

@@ -27,10 +27,21 @@
                 @endforeach
             </select>
         </div>
-        <div class="form-group" id="txtRegionIndonesia">
-          Region indonesia
+        <div id="txtRegionIndonesia">
+            <div class="form-group" id="divProvinsi">
+                <label>Provinsi</label>
+                <select class="form-control" onchange="provinsiPilih()" id="txtProvinsi">
+                    <option v-for="pv in provinsi" v-bind:value="pv.id_prov">@{{pv.nama}}</option>
+                </select>
+            </div>
+            <div class="form-group" id="divKabupaten">
+                <label>Kabupaten</label>
+                <select class="form-control">
+                
+                </select>
+            </div>
         </div>
-        <div class="form-group" id="txtRegionMalaysia">
+        <div id="txtRegionMalaysia">
           Region malaysia
         </div>
     </div>

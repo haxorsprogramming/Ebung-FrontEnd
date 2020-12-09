@@ -68,3 +68,4 @@ Route::get('/cek-view-email-registrasi', [TestingCtr::class, 'viewemailregistras
 
 // ResT daerah 
 Route::get('/get-provinsi-all', [DaerahCtr::class, 'getProvinsiAll']);
+Route::get('/get-kabupaten/{id_prov}', [DaerahCtr::class, 'getKabupaten']);
