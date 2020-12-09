@@ -5,7 +5,7 @@
     
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{ $page_title }} - Ebunga.co.id</title>
+    <title>{{ $pageTitle }} - Ebunga.co.id</title>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">

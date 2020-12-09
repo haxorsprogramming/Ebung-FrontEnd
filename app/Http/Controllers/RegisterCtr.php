@@ -16,16 +16,19 @@ class RegisterCtr extends Controller
 {
     public function registerpage()
     {
-        $css_file = 'style-about.css';
-        $js_file = 'ebunga-register.js';
+        $cssFile = 'style-about.css';
+        $jsFile = 'ebunga-register.js';
         $page = 'Register';
-        $dr = ['referral_status' => 'no', 'css_file' => $css_file, 'js_file' => $js_file, 'page' => $page];
+        $dr = ['referralStatus' => 'no', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'page' => $page];
         return view('register.register', $dr);
     }
 
     public function registerwithreferral($referral_id)
     {
-        $dr = ['referral_status' => 'yes', 'id_referral' => $referral_id];
+        $cssFile = 'style-about.css';
+        $jsFile = 'ebunga-register.js';
+        $page = 'Register';
+        $dr = ['referralStatus' => 'yes', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'page' => $page, 'idReferral' => $referral_id];
         return view('register.register', $dr);
     }
 

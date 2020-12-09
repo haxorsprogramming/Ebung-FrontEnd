@@ -14,10 +14,10 @@ class LoginCtr extends Controller
 {
     public function loginpage()
     {
-        $css_file = 'style-about.css';
-        $js_file = 'ebunga-login.js';
-        $page = 'Register';
-        $dr = ['css_file' => $css_file, 'js_file' => $js_file, 'page' => $page];
+        $cssFile = 'style-about.css';
+        $jsFile = 'ebunga-login.js';
+        $page = 'Login';
+        $dr = ['cssFile' => $cssFile, 'jsFile' => $jsFile, 'page' => $page];
         return view('login.login', $dr);
     }
 

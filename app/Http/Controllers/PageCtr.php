@@ -20,9 +20,9 @@ class PageCtr extends Controller
     {
         $kategori = KategoriMdl::all();
         $produk = ProdukMdl::all();
-        $css_file = 'style-homev3.css';
-        $js_file = 'ebunga.js';
-        $dr = ['kategori' => $kategori, 'produk' => $produk, 'page' => 'Home', 'css_file' => $css_file, 'js_file' => $js_file];
+        $cssFile = 'style-homev3.css';
+        $jsFile = 'ebunga.js';
+        $dr = ['kategori' => $kategori, 'produk' => $produk, 'page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile];
         
         return view('home.home', $dr);
     }
