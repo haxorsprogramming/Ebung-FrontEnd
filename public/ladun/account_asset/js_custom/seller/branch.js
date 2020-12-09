@@ -1,4 +1,4 @@
-// Vue object 
+// Vue object
 var divBranch = new Vue({
     el : '#divBranch',
     data : {
@@ -15,5 +15,23 @@ var divBranch = new Vue({
     }
 });
 
-// Inisialisasi 
+// Inisialisasi
 $('#divTambahBranch').hide();
+$('#txtRegionIndonesia').hide();
+$('#txtRegionMalaysia').hide();
+
+// Function
+function checkCountry()
+{
+    let kdCountry = document.querySelector('#txtKdCountry').value;
+    if(kdCountry === 'id'){
+      $('#txtRegionIndonesia').show();
+      $('#txtRegionMalaysia').hide();
+    }else if(kdCountry === 'my'){
+      $('#txtRegionIndonesia').hide();
+      $('#txtRegionMalaysia').show();
+    }else{
+      $('#txtRegionIndonesia').hide();
+      $('#txtRegionMalaysia').hide();
+    }
+}

@@ -20,11 +20,18 @@
     <div class="col-6 col-md-6 col-lg-6">
         <div class="form-group">
             <label>Country</label>
-            <select class="form-control">
-                @foreach($contry_support as $cs)
-                    <option>{{ $cs -> name_country }}</option>
+            <select class="form-control" onchange="checkCountry()" id="txtKdCountry">
+                    <option value="none">--- Choose country ---</option>
+                @foreach($countrySupport as $cs)
+                    <option value="{{ $cs -> kd_country }}">{{ $cs -> name_country }}</option>
                 @endforeach
             </select>
+        </div>
+        <div class="form-group" id="txtRegionIndonesia">
+          Region indonesia
+        </div>
+        <div class="form-group" id="txtRegionMalaysia">
+          Region malaysia
         </div>
     </div>
     <div style="margin-top:12px;">
@@ -50,7 +57,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($databranch as $branch)
+                @foreach($dataBranch as $branch)
                 <tr>
                     <td>{{ $branch -> nama_branch }}</td>
                     <td>May 10, 2018</td>

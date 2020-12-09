@@ -1,13 +1,13 @@
 <?php
 
-// import namespace 
+// import namespace
 namespace App\Http\Controllers;
-// import lib 
+// import lib
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
-// import model 
+// import model
 use App\Models\UserMdl;
 
 class LoginCtr extends Controller
@@ -27,21 +27,21 @@ class LoginCtr extends Controller
         $username = $request -> username;
         $password = $request -> password;
         // cek username ada atau tidak
-        $jlh_username = UserMdl::where('username', $username) -> count();
-        if($jlh_username < 1){
-            $dr = ['status' => 'no_username'];
+        $jlhUsername = UserMdl::where('username', $username) -> count();
+        if($jlhUsername < 1){
+            $dr = ['status' => 'noUsername'];
         }else{
-            // get password from db 
-            $data_user = UserMdl::where('username', $username) -> first(); 
-            $password_user_db = $data_user -> password;
-            // cek password input & from database 
-            $cek_password = password_verify($password, $password_user_db);
-            if($cek_password == true){
-                // set session 
-                session(['user_login' => $username]);
+            // get password from db
+            $dataUser = UserMdl::where('username', $username) -> first();
+            $passwordUserDb = $dataUser -> password;
+            // cek password input & from database
+            $cekPassword = password_verify($password, $passwordUserDb);
+            if($cekPassword == true){
+                // set session
+                session(['userLogin' => $username]);
                 $dr = ['status' => 'success'];
             }else{
-                $dr = ['status' => 'wrong_password'];
+                $dr = ['status' => 'wrongPassword'];
             }
         }
         return \Response::json($dr);
