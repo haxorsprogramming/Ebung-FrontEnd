@@ -138,7 +138,10 @@ class DatabaseSeeder extends Seeder
             'nama_branch' => 'PT NADHA BUNGA SERASI',
             'id_seller' => 'ebunga-seller',
             'alamat' => 'Medan perjuangan',
-            'phone' => '082272177022'
+            'phone' => '082272177022',
+            'email' => 'ebungaseller@yahoo.com',
+            'active' => '1',
+            'status_branch' => 'active'
         ]);
         // coverage area 
         DB::table('tbl_coverage_area') -> insert([

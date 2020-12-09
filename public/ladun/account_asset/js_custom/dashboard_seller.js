@@ -27,7 +27,7 @@ var divBreadcumb = new Vue({
 });
 
 // Inisialisasi 
-renderPage(rToDashboard, 'Customer Dashboard', '');
+renderPage(rToDashboard, 'Seller Dashboard', '');
 
 // Function 
 function renderPage(page, titleForm, subTitle){

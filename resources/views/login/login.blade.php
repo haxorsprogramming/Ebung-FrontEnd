@@ -38,7 +38,7 @@
                                 <label class="control-label" for="txtPassword">Password *</label>
                                 <input class="form-control" type="password" placeholder="Your password" id="txtPassword">
                             </div>
-                            <div style="margin-top:20px;" id="capchaGoogle">
+                            <div style="margin-top:20px;margin-bottom:20px;" id="capchaGoogle">
                                     {!! NoCaptcha::display(['data-theme' => 'white', 'data-callback' => 'recaptcha_callback']) !!}
                                 </div> 
                             <div style="font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;display:none;" id="loaderLokasi">

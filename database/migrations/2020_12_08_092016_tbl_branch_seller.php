@@ -20,8 +20,11 @@ class TblBranchSeller extends Migration
             $table -> char('id_seller', 30);
             $table -> text('alamat');
             $table -> char('phone', 20);
+            $table -> char('email', 50);
             $table -> timestamp('waktu_pengajuan', 0);
             $table -> datetime('waktu_approve') -> nullable();
+            $table -> char('status_branch', 50);
+            $table -> char('active', 1);
         });
     }
 

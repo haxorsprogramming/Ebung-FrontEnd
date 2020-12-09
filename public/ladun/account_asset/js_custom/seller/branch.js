@@ -7,7 +7,10 @@ var divBranch = new Vue({
     methods : {
         tampilFormTambahAtc : function()
         {
-            console.log("lah");
+            document.querySelector('#titlePanel').innerHTML = "Add new branch";
+            document.querySelector('#divBranch').style.display = "none";
+            $('#divTambahBranch').show();
+            document.querySelector('#txtNameBranch').focus();
         }
     }
 });
