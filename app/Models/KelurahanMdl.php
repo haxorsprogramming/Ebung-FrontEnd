@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProvMdl extends Model
+class KelurahanMdl extends Model
 {
-    use HasFactory;
+    protected $table = 'tbl_kelurahan';
 }

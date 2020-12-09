@@ -11,6 +11,7 @@ use App\Http\Controllers\LoginCtr;
 use App\Http\Controllers\DashboardCtr;
 use App\Http\Controllers\CustomerCtr;
 use App\Http\Controllers\SellerCtr;
+use App\Http\Controllers\DaerahCtr;
 
 // Halaman utama
 Route::get('/', [PageCtr::class, 'home']);
@@ -64,3 +65,6 @@ Route::get('/tes-kirim-email', [PageCtr::class, 'teskirimemail']);
 
 // Cek view mail registrasi
 Route::get('/cek-view-email-registrasi', [TestingCtr::class, 'viewemailregistrasi']);
+
+// ResT daerah 
+Route::get('/get-provinsi-all', [DaerahCtr::class, 'getProvinsiAll']);
