@@ -139,7 +139,7 @@
         const server = "{{ url('') }}/";
     </script>
     <script src="{{ asset('ladun/account_asset/js/main.js') }}"></script>
-    @if($page == 'customer_dashboard')
+    @if($page == 'customerDashboard')
     <script src="{{ asset('ladun/account_asset/js_custom/dashboard_customer.js') }}"></script> 
     @else
     <script src="{{ asset('ladun/account_asset/js_custom/dashboard_seller.js') }}"></script> 

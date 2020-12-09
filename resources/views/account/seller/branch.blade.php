@@ -31,13 +31,26 @@
             <div class="form-group" id="divProvinsi">
                 <label>Provinsi</label>
                 <select class="form-control" onchange="provinsiPilih()" id="txtProvinsi">
+                    <option value="none">--- Choose provinsi ---</option>
                     <option v-for="pv in provinsi" v-bind:value="pv.id_prov">@{{pv.nama}}</option>
                 </select>
             </div>
             <div class="form-group" id="divKabupaten">
                 <label>Kabupaten</label>
-                <select class="form-control">
-                
+                <select class="form-control" onchange="kabupatenPilih()" id="txtKabupaten">
+                    <option v-for="kb in kabupaten" v-bind:value="kb.id_kab">@{{ kb.nama }}</option>
+                </select>
+            </div>
+            <div class="form-group" id="divKecamatan">
+                <label>Kecamatan</label>
+                <select class="form-control" onchange="kecamatanPilih()" id="txtKecamatan">
+                    <option v-for="kec in kecamatan" v-bind:value="kec.id_kec">@{{ kec.nama }}</option>
+                </select>
+            </div>
+            <div class="form-group" id="divKelurahan">
+                <label>Kelurahan</label>
+                <select class="form-control" id="txtKelurahan">
+                    <option v-for="kel in kelurahan" v-bind:value="kel.id_kel">@{{ kel.nama }}</option>
                 </select>
             </div>
         </div>

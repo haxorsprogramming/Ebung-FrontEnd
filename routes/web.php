@@ -32,6 +32,7 @@ Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']
 // Customer (Buyer)
 Route::get('/account', [DashboardCtr::class, 'dashboard']);
 Route::get('/account/dashboard', [CustomerCtr::class, 'dashboard']);
+
 // Seller
 Route::get('/account/seller', [DashboardCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/dashboard', [SellerCtr::class, 'sellerdashboard']);
@@ -68,4 +69,6 @@ Route::get('/cek-view-email-registrasi', [TestingCtr::class, 'viewemailregistras
 
 // ResT daerah 
 Route::get('/get-provinsi-all', [DaerahCtr::class, 'getProvinsiAll']);
-Route::get('/get-kabupaten/{id_prov}', [DaerahCtr::class, 'getKabupaten']);
+Route::get('/get-kabupaten/{id_provinsi}', [DaerahCtr::class, 'getKabupaten']);
+Route::get('/get-kecamatan/{id_kabupaten}', [DaerahCtr::class, 'getKecamatan']);
+Route::get('/get-kelurahan/{id_kecamatan}', [DaerahCtr::class, 'getKelurahan']);
