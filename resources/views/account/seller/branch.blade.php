@@ -4,18 +4,31 @@
 
 <div class="row" id="divTambahBranch">
     <div class="col-6 col-md-6 col-lg-6">
-        <label>Name Branch</label>
-        <input type="text" class="form-control" id="txtNameBranch">
-        <label>Email</label>
-        <input type="text" class="form-control" id="txtEmail">
-        <label>Phone Number</label>
-        <input type="text" class="form-control" id="txtPhoneNumber">
+        <div class="form-group">
+            <label>Name Branch</label>
+            <input type="text" class="form-control" id="txtNameBranch">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" id="txtEmailBranch">
+        </div>
+        <div class="form-group">
+            <label>Phone</label>
+            <input type="text" class="form-control" id="txtPhoneBranch">
+        </div>
     </div>
     <div class="col-6 col-md-6 col-lg-6">
-        sss
+        <div class="form-group">
+            <label>Country</label>
+            <select class="form-control">
+                @foreach($contry_support as $cs)
+                    <option>{{ $cs -> name_country }}</option>
+                @endforeach
+            </select>
+        </div>
     </div>
     <div style="margin-top:12px;">
-        <a href="#!" class="view"><i class="fas fa-plus-circle"></i> Add new branch</a>
+        <a href="#!" class="view"><i class="fas fa-file-upload"></i> Apply for a new branch</a>
     </div>
 </div>
 

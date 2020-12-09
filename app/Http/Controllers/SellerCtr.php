@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 // import lib 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 // import model 
 use App\Models\BranchSellerMdl;
 
@@ -19,7 +20,8 @@ class SellerCtr extends Controller
     {
         $user_login = $request -> session() -> get('user_login');
         $branch = BranchSellerMdl::where('id_seller', $user_login) -> get();
-        $dr = ['databranch' => $branch];
+        $country_support = DB::table('tbl_country_support') -> get();
+        $dr = ['databranch' => $branch, 'contry_support' => $country_support];
         return view('account.seller.branch', $dr);
     }
 }

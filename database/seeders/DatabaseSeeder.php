@@ -149,5 +149,18 @@ class DatabaseSeeder extends Seeder
             'kd_branch' => 'BRANCH0001',
             'kd_area' => '1101012016'
         ]);
+        // country support 
+        DB::table('tbl_country_support') -> insert([
+            'kd_country' => 'id',
+            'name_country' => 'Indonesia',
+            'status' => 'available',
+            'active' => '1'
+        ]);
+        DB::table('tbl_country_support') -> insert([
+            'kd_country' => 'my',
+            'name_country' => 'Malaysia',
+            'status' => 'available',
+            'active' => '1'
+        ]);
     }
 }
