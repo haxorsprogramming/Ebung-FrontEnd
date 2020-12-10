@@ -24,4 +24,10 @@ class SellerCtr extends Controller
         $dr = ['dataBranch' => $branch, 'countrySupport' => $countrySupport];
         return view('account.seller.branch', $dr);
     }
+
+    public function applynewbranch(Request $request)
+    {
+        $dr = ['status' => 'sukses'];
+        return view('account.seller.branch', $dr);
+    }
 }

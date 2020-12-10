@@ -27,6 +27,12 @@ var divBreadcumb = new Vue({
 });
 
 // Inisialisasi 
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
 renderPage(rToDashboard, 'Seller Dashboard', '');
 
 // Function 
@@ -39,4 +45,13 @@ function renderPage(page, titleForm, subTitle){
         $('#loaderPage').hide();
     }, 300);
     
+}
+
+function pesanUmumApp(icon, title, text)
+{
+  Swal.fire({
+    icon : icon,
+    title : title,
+    text : text
+  });
 }

@@ -125,6 +125,7 @@
     <!--  Scrollup JS -->
     <script src="{{ asset('ladun/account_asset/js/plugins/scrollup.min.js') }}"></script>
     <script src="{{ asset('ladun/account_asset/js/plugins/ajax-contact.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <!-- <script src="assets/js/plugins/scrollup.min.js"></script> -->
     <!-- <script src="assets/js/plugins/ajax-contact.js"></script> -->
 

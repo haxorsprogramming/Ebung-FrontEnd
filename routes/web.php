@@ -37,8 +37,7 @@ Route::get('/account/dashboard', [CustomerCtr::class, 'dashboard']);
 Route::get('/account/seller', [DashboardCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/dashboard', [SellerCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/sellerbranch', [SellerCtr::class, 'sellerbranch']);
-
-Route::get('/seller/update-profile',[PageCtr::class, 'listproduk']);
+Route::post('/account-seller/apply-new-branch', [SellerCtr::class, 'applynewbranch']);
 
 // Logout
 Route::get('/logout', [PageCtr::class, 'logout']);
