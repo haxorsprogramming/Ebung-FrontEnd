@@ -18,6 +18,10 @@ var divBranch = new Vue({
             document.querySelector('#divBranch').style.display = "none";
             $('#divTambahBranch').show();
             document.querySelector('#txtNameBranch').focus();
+        },
+        detailAtc : function()
+        {
+          console.log("data");
         }
     }
 });
@@ -44,8 +48,14 @@ var divTambahBranch = new Vue({
       if(nameBranch === '' || emailBranch === '' || phoneBranch === '' || country === 'none' || provinsi === 'none' || kabupaten === 'none' || kecamatan === 'none' || kelurahan === 'none'){
         pesanUmumApp('warning', 'Isi field!!!', 'Please fill the all field!!');
       }else{
-        $.post(rToApplyNewBranch, function(data){
-          console.log(data);
+        let dataSend = {'nameBranch':nameBranch, 'emailBranch':emailBranch, 'phoneBranch':phoneBranch, 'country':country, 'provinsi':provinsi, 'kabupaten':kabupaten, 'kecamatan':kecamatan, 'kelurahan':kelurahan}
+        $.post(rToApplyNewBranch, dataSend, function(data){
+          if(data.status === 'name_duplicate'){
+            pesanUmumApp('warning', 'Name failed', 'Name of new branch is exist .. ');
+          }else{
+            pesanUmumApp('success', 'Success', 'New branch applied ...');
+            divUtama.myBranchAtc();
+          }
         });
       }
     }

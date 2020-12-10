@@ -12,6 +12,7 @@ use App\Http\Controllers\DashboardCtr;
 use App\Http\Controllers\CustomerCtr;
 use App\Http\Controllers\SellerCtr;
 use App\Http\Controllers\DaerahCtr;
+use App\Http\Controllers\ProductSellerCtr;
 
 // Halaman utama
 Route::get('/', [PageCtr::class, 'home']);
@@ -38,7 +39,7 @@ Route::get('/account/seller', [DashboardCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/dashboard', [SellerCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/sellerbranch', [SellerCtr::class, 'sellerbranch']);
 Route::post('/account-seller/apply-new-branch', [SellerCtr::class, 'applynewbranch']);
-
+Route::get('/account-seller/product', []);
 // Logout
 Route::get('/logout', [PageCtr::class, 'logout']);
 

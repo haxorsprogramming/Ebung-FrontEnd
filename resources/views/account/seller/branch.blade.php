@@ -87,10 +87,14 @@
                 @foreach($dataBranch as $branch)
                 <tr>
                     <td>{{ $branch -> nama_branch }}</td>
-                    <td>May 10, 2018</td>
-                    <td>Processing</td>
-                    <td>$25.00 for 1 item </td>
-                    <td><a href="#!" class="view">Details</a></td>
+                    @if($branch -> status_branch == 'active')
+                    <td>Active</td>
+                    @else
+                    <td>Pending</td>
+                    @endif
+                    <td></td>
+                    <td> </td>
+                    <td><a href="#!" class="view" @click="detailAtc">Details</a></td>
                 </tr>
                 @endforeach
             </tbody>
