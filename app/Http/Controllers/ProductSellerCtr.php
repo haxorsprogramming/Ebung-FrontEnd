@@ -16,10 +16,12 @@ class ProductSellerCtr extends Controller
 {
     public function productlist(Request $request)
     {
+        
         $userLogin = $request -> session() -> get('userLogin');
         $kategoriProduct = KategoriMdl::all();
+        $dataBranch = BranchSellerMdl::where('id_seller', $userLogin) -> where('status_branch', 'active') -> get();
         $dataProduct = ProdukMdl::where('id_seller', $userLogin) -> get();
-        $dr = ['dataProduct' => $dataProduct, 'kategoriProduct' => $kategoriProduct];
+        $dr = ['dataProduct' => $dataProduct, 'kategoriProduct' => $kategoriProduct, 'dataBranch' => $dataBranch];
         return view('account.seller.product.product_list', $dr);
     }
 }

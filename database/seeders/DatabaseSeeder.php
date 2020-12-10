@@ -60,6 +60,30 @@ class DatabaseSeeder extends Seeder
             'kd_kategori' => 'BUNGA',
             'active' => '1'
         ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'PAPANBUNGAKONVENSIONAL',
+            'nama_kategori' => 'Papan Bunga Konvensional',
+            'kd_kategori' => 'PAPANBUNGA',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'PAPANBUNGADIGITAL',
+            'nama_kategori' => 'Papan Bunga Digital',
+            'kd_kategori' => 'PAPANBUNGA',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'PARCELSNACK',
+            'nama_kategori' => 'Parcel Snack',
+            'kd_kategori' => 'PARCEL',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'TARTCAKE',
+            'nama_kategori' => 'Tart Cake',
+            'kd_kategori' => 'CAKE',
+            'active' => '1'
+        ]);
         // user 
         DB::table('tbl_user') -> insert([
             'username' => 'admin',
