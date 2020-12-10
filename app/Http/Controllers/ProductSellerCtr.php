@@ -10,14 +10,16 @@ use Illuminate\Support\Carbon;
 // import model
 use App\Models\BranchSellerMdl;
 use App\Models\ProdukMdl;
+use App\Models\KategoriMdl;
 
 class ProductSellerCtr extends Controller
 {
     public function productlist(Request $request)
     {
         $userLogin = $request -> session() -> get('userLogin');
+        $kategoriProduct = KategoriMdl::all();
         $dataProduct = ProdukMdl::where('id_seller', $userLogin) -> get();
-        $dr = ['dataProduct' => $dataProduct];
+        $dr = ['dataProduct' => $dataProduct, 'kategoriProduct' => $kategoriProduct];
         return view('account.seller.product.product_list', $dr);
     }
 }

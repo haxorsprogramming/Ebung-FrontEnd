@@ -73,3 +73,6 @@ Route::get('/get-provinsi-all', [DaerahCtr::class, 'getProvinsiAll']);
 Route::get('/get-kabupaten/{id_provinsi}', [DaerahCtr::class, 'getKabupaten']);
 Route::get('/get-kecamatan/{id_kabupaten}', [DaerahCtr::class, 'getKecamatan']);
 Route::get('/get-kelurahan/{id_kecamatan}', [DaerahCtr::class, 'getKelurahan']);
+
+// ResT sub-kategori
+// Route::get('/', []);
