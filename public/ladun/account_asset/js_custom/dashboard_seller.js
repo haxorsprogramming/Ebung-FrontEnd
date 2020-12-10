@@ -1,6 +1,8 @@
 // Route 
 var rToDashboard = server + "account/seller/dashboard";
 var rToMyBranch = server + "account/seller/sellerbranch";
+var rToProductList = server + "account-seller/product-list";
+
 // Vue object 
 var divUtama = new Vue({
     el : '#divUtama',
@@ -15,6 +17,10 @@ var divUtama = new Vue({
         myBranchAtc : function()
         {
             renderPage(rToMyBranch, 'List Branch', '');
+        },
+        myProductAtc : function()
+        {
+            renderPage(rToProductList, 'List Product', '');
         }
     }
 });

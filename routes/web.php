@@ -39,7 +39,8 @@ Route::get('/account/seller', [DashboardCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/dashboard', [SellerCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/sellerbranch', [SellerCtr::class, 'sellerbranch']);
 Route::post('/account-seller/apply-new-branch', [SellerCtr::class, 'applynewbranch']);
-Route::get('/account-seller/product', []);
+Route::get('/account-seller/detail-branch/{id_branch}', [SellerCtr::class, 'detailbranch']);
+Route::get('/account-seller/product-list', [ProductSellerCtr::class, 'productlist']);
 // Logout
 Route::get('/logout', [PageCtr::class, 'logout']);
 

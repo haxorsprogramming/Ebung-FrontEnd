@@ -94,7 +94,7 @@
                     @endif
                     <td></td>
                     <td> </td>
-                    <td><a href="#!" class="view" @click="detailAtc">Details</a></td>
+                    <td><a href="#!" class="view" @click="detailAtc('{{ $branch -> kd_branch }}')">Details</a></td>
                 </tr>
                 @endforeach
             </tbody>

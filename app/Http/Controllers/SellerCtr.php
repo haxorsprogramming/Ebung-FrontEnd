@@ -56,11 +56,17 @@ class SellerCtr extends Controller
                 'active' => '1'
             ]);
         }else{
-            $dr = ['status' => 'name_duplicate'];
-            
+            $dr = ['status' => 'name_duplicate'];     
         }
-       
-       
         return \Response::json($dr);
     }
+
+    public function detailbranch($idBranch)
+    {
+        $userLogin = session('userLogin');
+        $dataBranch = BranchSellerMdl::where('kd_branch', $idBranch) -> first();
+        $dr = ['idBranch' => $idBranch, 'userLogin' => $userLogin, 'dataBranch' => $dataBranch];
+        return view('account.seller.branch_detail', $dr);
+    }
+
 }

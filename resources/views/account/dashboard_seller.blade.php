@@ -63,7 +63,7 @@
                                     <ul role="tablist" class="nav flex-column dashboard-list">
                                         <li><a href="#!" data-toggle="tab" @click="dashboardAtc" class="nav-link active">Dashboard</a></li>
                                         <li><a href="#!" data-toggle="tab" @click="myBranchAtc" class="nav-link">My Branch</a></li>
-                                        <li><a href="#!" data-toggle="tab" class="nav-link">My Product</a></li>
+                                        <li><a href="#!" data-toggle="tab" @click="myProductAtc" class="nav-link">My Product</a></li>
                                         <li><a href="#!" data-toggle="tab" class="nav-link">Orders</a></li>
                                         <li><a href="#!" data-toggle="tab" class="nav-link">E-Cash</a></li>
                                         <li><a href="#!" data-toggle="tab" class="nav-link">Settings</a></li>

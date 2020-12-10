@@ -4,6 +4,7 @@ var rToGetKabupaten = server + "get-kabupaten/";
 var rToGetKecamatan = server + "get-kecamatan/";
 var rToGetKelurahan = server + "get-kelurahan/";
 var rToApplyNewBranch = server + "account-seller/apply-new-branch";
+var rToDetailBranch = server + "account-seller/detail-branch/";
 
 // Vue object
 var divBranch = new Vue({
@@ -19,9 +20,9 @@ var divBranch = new Vue({
             $('#divTambahBranch').show();
             document.querySelector('#txtNameBranch').focus();
         },
-        detailAtc : function()
+        detailAtc : function(idBranch)
         {
-          console.log("data");
+            renderPage(rToDetailBranch+idBranch,'Detail Branch', '');
         }
     }
 });
