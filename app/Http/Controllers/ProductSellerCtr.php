@@ -18,6 +18,6 @@ class ProductSellerCtr extends Controller
         $userLogin = $request -> session() -> get('userLogin');
         $dataProduct = ProdukMdl::where('id_seller', $userLogin) -> get();
         $dr = ['dataProduct' => $dataProduct];
-        echo $dr;
+        return view('account.seller.product.product_list', $dr);
     }
 }

@@ -24,7 +24,7 @@ class SellerCtr extends Controller
         $branch = BranchSellerMdl::where('id_seller', $userLogin) -> get();
         $countrySupport = DB::table('tbl_country_support') -> get();
         $dr = ['dataBranch' => $branch, 'countrySupport' => $countrySupport];
-        return view('account.seller.branch', $dr);
+        return view('account.seller.branch.branch', $dr);
     }
 
     public function applynewbranch(Request $request)
@@ -66,7 +66,7 @@ class SellerCtr extends Controller
         $userLogin = session('userLogin');
         $dataBranch = BranchSellerMdl::where('kd_branch', $idBranch) -> first();
         $dr = ['idBranch' => $idBranch, 'userLogin' => $userLogin, 'dataBranch' => $dataBranch];
-        return view('account.seller.branch_detail', $dr);
+        return view('account.seller.branch.branch_detail', $dr);
     }
 
 }

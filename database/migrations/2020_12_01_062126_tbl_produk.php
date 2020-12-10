@@ -20,6 +20,8 @@ class TblProduk extends Migration
             $table -> text('deks_produk');
             $table -> char('kategori', 100);
             $table -> char('sub_kategori', 100);
+            $table -> char('id_branch', 50);
+            $table -> char('id_seller', 50);
             $table -> integer('harga');
             $table -> integer('stok');
             $table -> char('foto_utama', 100);
