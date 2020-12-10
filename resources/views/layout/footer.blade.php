@@ -44,7 +44,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 social">
                         <p>Payment Method</p>
                         <img src="https://www.ebunga.com/assets/images/media/bank_transfer-512.png" style="width: 70px;">
-                        <img src="https://www.ebunga.com/assets/images/media/logo-gopay.jpg" style="width: 70px;">
+                        <img src="https://ebungabucket.s3-ap-southeast-1.amazonaws.com/ebunga-asset/logo-gopay.jpg" style="width: 70px;">
                         <img src="https://www.ebunga.com/assets/images/media/VisaLogo.jpg" style="width: 70px;">
                         <br/>
                         <img src="https://www.ebunga.com/assets/images/media/mastercard-logo-400x400.png" style="width: 70px;">

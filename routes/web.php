@@ -13,6 +13,7 @@ use App\Http\Controllers\CustomerCtr;
 use App\Http\Controllers\SellerCtr;
 use App\Http\Controllers\DaerahCtr;
 use App\Http\Controllers\ProductSellerCtr;
+use App\Http\Controllers\HelperCtr;
 
 // Halaman utama
 Route::get('/', [PageCtr::class, 'home']);
@@ -75,4 +76,4 @@ Route::get('/get-kecamatan/{id_kabupaten}', [DaerahCtr::class, 'getKecamatan']);
 Route::get('/get-kelurahan/{id_kecamatan}', [DaerahCtr::class, 'getKelurahan']);
 
 // ResT sub-kategori
-// Route::get('/', []);
+Route::get('/get-sub-kategori/{id_kategori}', [HelperCtr::class, 'getsubkategori']);

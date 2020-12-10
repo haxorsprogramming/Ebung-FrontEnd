@@ -1,3 +1,6 @@
+// Route 
+var rToGetSubKategori = server + "get-sub-kategori/";
+
 // Vue object 
 var divProductList = new Vue({
     el : '#divProductList',
@@ -33,3 +36,10 @@ var divTambahProduct = new Vue({
 });
 
 // Inisialisasi 
+function kategoriPilih()
+{
+    let kdKategori = document.querySelector('#txtKategori').value;
+    $.get(rToGetSubKategori+kdKategori, function(data){
+        console.log(data);
+    });
+}

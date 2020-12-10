@@ -47,9 +47,10 @@
                 <input type="text" class="form-control" id="txtProductName">
             </div>
             <div class="form-group">
-                <select class="form-control">
+                <select class="form-control" onchange="kategoriPilih()" id="txtKategori">
+                    <option value="none">--- Choose Kategori ---</option>
                 @foreach($kategoriProduct as $kategori)
-                    <option>{{ $kategori -> nama_kategori }}</option>
+                    <option value="{{ $kategori -> kd_kategori }}">{{ $kategori -> nama_kategori }}</option>
                 @endforeach
                 </select>
             </div>
