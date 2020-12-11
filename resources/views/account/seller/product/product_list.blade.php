@@ -45,7 +45,7 @@
             <div class="col-6 col-md-6 col-lg-6">
                 <div class="form-group">
                     <label>Product Name</label>
-                    <input type="text" class="form-control" id="txtProductName">
+                    <input type="text" class="form-control" id="txtProductName" v-model="productName">
                 </div>
                 <div class="form-group">
                     <label>Kategori</label>
@@ -72,19 +72,21 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="txtPic">
                     <label>Main photos of product</label><br/>
-                    <div class="cropme" style="width: 200px;height:200px;" id="divUpload"> Choose image</div>
+                    <div class="cropme" style="width: 200px;height:200px;"> Choose image</div>
                 </div>
             </div>
             <div class="col-6 col-md-6 col-lg-6">
                 <div class="form-group">
-                    <label>Variant</label><br/>
-                    <img id="divHasilCrop">
+                    <label>Deskripsi product</label><br/>
+                    <textarea id="konten" class="form-control" name="konten" rows="10" cols="50"></textarea>
                 </div>
             </div>
         </div>
-
+            <div style="text-align:center;margin-top:20px;">
+                <a href='#!' class='view'>Submit new product</a>
+            </div>
     </div>
 </div>
 

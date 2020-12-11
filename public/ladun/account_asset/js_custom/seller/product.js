@@ -24,15 +24,29 @@ var divTambahProduct = new Vue({
     el: "#divTambahProduct",
     data: {
         subKategori: [],
+        variantProduct : [],
+        productName : '',
+        numVariant : 0
     },
     methods: {
+        addVariant : function ()
+        {
+            this.numVariant ++;
+            console.log(this.numVariant);
+            this.variantProduct.push({name : 'Variant', id_variant:'variant_'+this.numVariant});
+        },
         backAtc: function () {
             divUtama.myProductAtc();
         },
     },
 });
 
-// Inisialisasi
+// Inisialisasi 
+var konten = document.getElementById("konten");
+    CKEDITOR.replace(konten,{
+    language:'en-gb'
+  });
+  CKEDITOR.config.allowedContent = false;
 $('.cropme').simpleCropper();
 
 // Function
