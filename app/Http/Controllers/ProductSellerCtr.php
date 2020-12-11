@@ -26,7 +26,31 @@ class ProductSellerCtr extends Controller
 
     public function addproductproses(Request $request)
     {
-        $dr = ['sukses' => 'sukses'];
+        // {'name':productName, 'deks':deksripsiProduk, 'kategori':kategori, 'subKategori':subKategori, 'branch':branch, 'price':price, 'stock':stock}
+        $userLogin = $request -> session() -> get('userLogin');
+        $kdProduk = "EBUNGA".rand(1000,10000);
+        $name = $request -> name;
+        $deks = $request -> deks;
+        $kategori = $request -> kategori;
+        $subKategori = $request -> subKategori;
+        $branch = $request -> branch;
+        $price = $request -> price;
+        $stock = $request -> stock;
+        $pic = $request -> pic;
+        DB::table('tbl_produk') -> insert ([
+            'kd_produk' => $kdProduk,
+            'nama_produk' => $name,
+            'deks_produk' => $deks,
+            'kategori' => $kategori,
+            'sub_kategori' => $subKategori,
+            'id_branch' => $branch,
+            'id_seller' => $userLogin,
+            'harga' => $price,
+            'stok' => $stock,
+            'foto_utama' => $pic,
+            'active' => '1'
+        ]);
+        $dr = ['sukses' => $name];
         return \Response::json($dr);
     }
 }

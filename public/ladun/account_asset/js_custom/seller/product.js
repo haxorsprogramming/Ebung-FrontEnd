@@ -58,7 +58,9 @@ function submitProduct()
     let branch = document.querySelector('#txtBranch').value;
     let price = document.querySelector('#txtPrice').value;
     let stock = document.querySelector('#txtStock').value;
-    $.post(rToAddProduct, function(data){
+    let pic = $('#txtFotoUtama img').attr('src');
+    let dataSend = {'name':productName, 'deks':deksripsiProduk, 'kategori':kategori, 'subKategori':subKategori, 'branch':branch, 'price':price, 'stock':stock, 'pic':pic}
+    $.post(rToAddProduct, dataSend, function(data){
         console.log(data);
     });
 }

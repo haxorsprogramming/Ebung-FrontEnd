@@ -68,13 +68,13 @@
                     <select class="form-control" id="txtBranch">
                         <option value="none">--- Choose Branch ---</option>
                         @foreach($dataBranch as $branch)
-                        <option>{{ $branch -> nama_branch }}</option>
+                        <option value="{{ $branch -> kd_branch }}">{{ $branch -> nama_branch }}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="form-group" id="txtPic">
                     <label>Main photos of product</label><br/>
-                    <div class="cropme" style="width: 400px;height:400px;"></div>
+                    <div class="cropme" style="width: 400px;height:400px;" id="txtFotoUtama"></div>
                 </div>
             </div>
             <div class="col-6 col-md-6 col-lg-6">

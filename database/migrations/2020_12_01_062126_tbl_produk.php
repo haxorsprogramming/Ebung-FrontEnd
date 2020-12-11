@@ -24,7 +24,7 @@ class TblProduk extends Migration
             $table -> char('id_seller', 50);
             $table -> integer('harga');
             $table -> integer('stok');
-            $table -> char('foto_utama', 100);
+            $table -> longText('foto_utama');
             $table -> char('active', 1);
         });
     }
