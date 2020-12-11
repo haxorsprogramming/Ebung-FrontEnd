@@ -126,7 +126,8 @@
     <script src="{{ asset('ladun/account_asset/js/plugins/scrollup.min.js') }}"></script>
     <script src="{{ asset('ladun/account_asset/js/plugins/ajax-contact.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="https://unpkg.com/cropperjs@1.5.9/dist/cropper.js"></script>
+    <script type="text/javascript" src="{{ asset('ladun/account_asset/cropper/scripts/jquery.Jcrop.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('ladun/account_asset/cropper/scripts/jquery.SimpleCropper.js') }}"></script>
     <!-- <script src="assets/js/plugins/scrollup.min.js"></script> -->
     <!-- <script src="assets/js/plugins/ajax-contact.js"></script> -->
 

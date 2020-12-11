@@ -73,19 +73,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Main photos of product</label>
-                    <input type="file" id="fileInput" name="txtFoto" image/* />
-                    <hr/>
-                    <canvas id="canvas">
-                        Your browser does not support the HTML5 canvas element.
-                    </canvas>
-                    <input type="button" id="btnCrop" value="Crop" />
-		            <input type="button" id="btnRestore" value="Restore" />
-                </div>
-                
-                <div>
-                <div id="result"></div>
-                    <a href="#!" class="view" id="txtCrop">Crop</a>
+                    <label>Main photos of product</label><br/>
+                    <div class="cropme" style="width: 200px;height:200px;" id="divUpload"> Choose image</div>
                 </div>
             </div>
             <div class="col-6 col-md-6 col-lg-6">

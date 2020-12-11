@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="{{ asset('ladun/account_asset/css/plugins/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('ladun/account_asset/css/plugins/animation.css') }}">
     <link rel="stylesheet" href="{{ asset('ladun/account_asset/css/plugins/jqueryui.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/account_asset/cropper/css/style.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/account_asset/cropper/css/style-example.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/account_asset/cropper/css/jquery.Jcrop.css') }}"/>
     <!-- <link rel="stylesheet" href="assets/css/plugins/slick.css">
     <link rel="stylesheet" href="assets/css/plugins/animation.css">
     <link rel="stylesheet" href="assets/css/plugins/jqueryui.min.css"> -->
