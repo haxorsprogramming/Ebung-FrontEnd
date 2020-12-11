@@ -42,51 +42,55 @@
     </div>
     <div class="card-body">
         <div class="row">
-        <div class="col-6 col-md-6 col-lg-6">
-            <div class="form-group">
-                <label>Product Name</label>
-                <input type="text" class="form-control" id="txtProductName">
+            <div class="col-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" class="form-control" id="txtProductName">
+                </div>
+                <div class="form-group">
+                    <label>Kategori</label>
+                    <select class="form-control" onchange="kategoriPilih()" id="txtKategori">
+                        <option value="none">--- Choose Kategori ---</option>
+                        @foreach($kategoriProduct as $kategori)
+                        <option value="{{ $kategori -> kd_kategori }}">{{ $kategori -> nama_kategori }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Sub-Kategori</label>
+                    <select class="form-control" id="txtSubKategori">
+                        <option value="none">--- Choose Sub-Kategori ---</option>
+                        <option v-for="sk in subKategori">@{{ sk.nama }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Branch</label>
+                    <select class="form-control">
+                        <option value="none">--- Choose Branch ---</option>
+                        @foreach($dataBranch as $branch)
+                        <option>{{ $branch -> nama_branch }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Main photos of product</label>
+                    <input type="file">
+                    <hr/>
+                    <img id="image" src="{{ asset('ladun/ebunga_asset/image/product/EBUNGA891233.jpg') }}" style="max-width: 100%;" alt="Picture">
+                    <img id="image2">
+                </div>
+                
+                <div>
+                    <a href="#!" class="view" onclick="saveProduct()">Save</a>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Kategori</label>
-                <select class="form-control" onchange="kategoriPilih()" id="txtKategori">
-                    <option value="none">--- Choose Kategori ---</option>
-                @foreach($kategoriProduct as $kategori)
-                    <option value="{{ $kategori -> kd_kategori }}">{{ $kategori -> nama_kategori }}</option>
-                @endforeach
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Sub-Kategori</label>
-                <select class="form-control" id="txtSubKategori">
-                    <option value="none">--- Choose Sub-Kategori ---</option>
-                    <option v-for="sk in subKategori">@{{ sk.nama }}</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Branch</label>
-                <select class="form-control">
-                    <option value="none">--- Choose Branch ---</option>
-                @foreach($dataBranch as $branch)
-                    <option>{{ $branch -> nama_branch }}</option>
-                @endforeach
-                </select>
-            </div>
-            <div>
-            <img id="image" src="https://fengyuanchen.github.io/cropperjs/images/picture.jpg" alt="Picture">
-            <img id="image2">
-            </div>
-            <div>
-                <a href="#!" class="view" onclick="saveProduct()">Save</a>
+            <div class="col-6 col-md-6 col-lg-6">
+                <div class="form-group">
+                    <label>Variant</label>
+                </div>
             </div>
         </div>
-        <div class="col-6 col-md-6 col-lg-6">
-            <div class="form-group">
-                <label>Variant</label>
-            </div>
-        </div>
-        </div>
-        
+
     </div>
 </div>
 

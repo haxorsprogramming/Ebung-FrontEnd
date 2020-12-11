@@ -14,6 +14,9 @@ var divProductList = new Vue({
             $("#divProductList").hide();
             $("#divTambahProduct").show();
             document.querySelector("#txtProductName").focus();
+            // $('.cropper-container').hide();
+            $('.cropper-container').attr("width","1500px");
+            
         },
     },
 });
@@ -35,6 +38,9 @@ var image = document.querySelector("#image");
 var minAspectRatio = 0.5;
 var maxAspectRatio = 1.5;
 var cropper = new Cropper(image, {
+    aspectRatio: 1 / 1,
+    cropBoxMovable: true,
+    cropBoxResizable: false,
     ready: function () {
         var cropper = this.cropper;
         var containerData = cropper.getContainerData();
