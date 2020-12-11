@@ -15,6 +15,7 @@ class SellerCtr extends Controller
 
     public function sellerdashboard()
     {
+        
         return view('account.seller.dashboard');
     }
 

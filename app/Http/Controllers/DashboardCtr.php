@@ -22,6 +22,7 @@ class DashboardCtr extends Controller
 
     public function sellerdashboard(Request $request)
     {
+        // abort(404);
         $userLogin = $request -> session() -> get('userLogin');
         $pageTitle = 'Dashboard Seller';
         $page = 'sellerDashboard';
