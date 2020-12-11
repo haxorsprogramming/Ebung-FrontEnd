@@ -1,5 +1,6 @@
 // Route
 var rToGetSubKategori = server + "get-sub-kategori/";
+var rToAddProduct = server + "account-seller/product/add/proses";
 
 // Vue object
 var divProductList = new Vue({
@@ -42,21 +43,24 @@ var divTambahProduct = new Vue({
 });
 
 // Inisialisasi 
-var konten = document.getElementById("konten");
-    CKEDITOR.replace(konten,{
-    language:'en-gb'
-  });
-  CKEDITOR.config.allowedContent = false;
+var konten = document.getElementById("txtDeksripsiProduct");
+CKEDITOR.replace(konten,{language:'id-gb'});
+CKEDITOR.config.allowedContent = true;
 $('.cropme').simpleCropper();
 
 // Function
-function getImg() {
-    let img = $('#divUpload img').attr('src');
-    console.log(img);
-}
-
-function saveProduct() {
-    
+function submitProduct()
+{
+    let deksripsiProduk = CKEDITOR.instances['txtDeksripsiProduct'].getData();
+    let productName = document.querySelector('#txtProductName').value;
+    let kategori = document.querySelector('#txtKategori').value;
+    let subKategori = document.querySelector('#txtSubKategori').value;
+    let branch = document.querySelector('#txtBranch').value;
+    let price = document.querySelector('#txtPrice').value;
+    let stock = document.querySelector('#txtStock').value;
+    $.post(rToAddProduct, function(data){
+        console.log(data);
+    });
 }
 
 function kategoriPilih() {

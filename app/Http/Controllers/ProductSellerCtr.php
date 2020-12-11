@@ -23,4 +23,10 @@ class ProductSellerCtr extends Controller
         $dr = ['dataProduct' => $dataProduct, 'kategoriProduct' => $kategoriProduct, 'dataBranch' => $dataBranch];
         return view('account.seller.product.product_list', $dr);
     }
+
+    public function addproductproses(Request $request)
+    {
+        $dr = ['sukses' => 'sukses'];
+        return \Response::json($dr);
+    }
 }

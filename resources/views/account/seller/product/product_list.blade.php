@@ -65,7 +65,7 @@
                 </div>
                 <div class="form-group">
                     <label>Branch</label>
-                    <select class="form-control">
+                    <select class="form-control" id="txtBranch">
                         <option value="none">--- Choose Branch ---</option>
                         @foreach($dataBranch as $branch)
                         <option>{{ $branch -> nama_branch }}</option>
@@ -74,18 +74,26 @@
                 </div>
                 <div class="form-group" id="txtPic">
                     <label>Main photos of product</label><br/>
-                    <div class="cropme" style="width: 200px;height:200px;"> Choose image</div>
+                    <div class="cropme" style="width: 400px;height:400px;"></div>
                 </div>
             </div>
             <div class="col-6 col-md-6 col-lg-6">
                 <div class="form-group">
                     <label>Deskripsi product</label><br/>
-                    <textarea id="konten" class="form-control" name="konten" rows="10" cols="50"></textarea>
+                    <textarea id="txtDeksripsiProduct" class="form-control" name="txtDeksripsiProduct" rows="10" cols="50"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="number" class="form-control" id="txtPrice">
+                </div>
+                <div class="form-group">
+                    <label>Stock</label>
+                    <input type="text" class="form-control" id="txtStock">
                 </div>
             </div>
         </div>
             <div style="text-align:center;margin-top:20px;">
-                <a href='#!' class='view'>Submit new product</a>
+                <a href='#!' class='view' onclick="submitProduct()"><i class="fas fa-plus-circle"></i> Submit new product</a>
             </div>
     </div>
 </div>

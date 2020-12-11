@@ -42,6 +42,7 @@ Route::get('/account/seller/sellerbranch', [SellerCtr::class, 'sellerbranch']);
 Route::post('/account-seller/apply-new-branch', [SellerCtr::class, 'applynewbranch']);
 Route::get('/account-seller/detail-branch/{id_branch}', [SellerCtr::class, 'detailbranch']);
 Route::get('/account-seller/product-list', [ProductSellerCtr::class, 'productlist']);
+Route::post('/account-seller/product/add/proses', [ProductSellerCtr::class, 'addproductproses']);
 // Logout
 Route::get('/logout', [PageCtr::class, 'logout']);
 
