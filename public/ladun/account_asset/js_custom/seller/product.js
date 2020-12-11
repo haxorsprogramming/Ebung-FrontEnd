@@ -15,8 +15,7 @@ var divProductList = new Vue({
             $("#divTambahProduct").show();
             document.querySelector("#txtProductName").focus();
             // $('.cropper-container').hide();
-            $('.cropper-container').attr("width","1500px");
-            
+            $(".cropper-container").attr("width", "1500px");
         },
     },
 });
@@ -34,58 +33,76 @@ var divTambahProduct = new Vue({
 });
 
 // Inisialisasi
-var image = document.querySelector("#image");
-var minAspectRatio = 0.5;
-var maxAspectRatio = 1.5;
-var cropper = new Cropper(image, {
-    aspectRatio: 1 / 1,
-    cropBoxMovable: true,
-    cropBoxResizable: false,
-    ready: function () {
-        var cropper = this.cropper;
-        var containerData = cropper.getContainerData();
-        var cropBoxData = cropper.getCropBoxData();
-        var aspectRatio = cropBoxData.width / cropBoxData.height;
-        var newCropBoxWidth;
-
-        if (aspectRatio < minAspectRatio || aspectRatio > maxAspectRatio) {
-            newCropBoxWidth =
-                cropBoxData.height * ((minAspectRatio + maxAspectRatio) / 2);
-
-            cropper.setCropBoxData({
-                left: (containerData.width - newCropBoxWidth) / 2,
-                width: newCropBoxWidth,
-            });
-        }
-    },
-
-    cropmove: function () {
-        var cropper = this.cropper;
-        var cropBoxData = cropper.getCropBoxData();
-        var aspectRatio = cropBoxData.width / cropBoxData.height;
-
-        if (aspectRatio < minAspectRatio) {
-            cropper.setCropBoxData({
-                width: cropBoxData.height * minAspectRatio,
-            });
-        } else if (aspectRatio > maxAspectRatio) {
-            cropper.setCropBoxData({
-                width: cropBoxData.height * maxAspectRatio,
-            });
-        }
-    },
-});
-
 
 // Function
-function saveProduct()
-{
-    var croppedimage = cropper.getCroppedCanvas({
-        width: 160,
-        height: 160,
-      });
-    document.querySelector('#image2').setAttribute("src", croppedimage.toDataURL());
-    // console.log(croppedimage);
+function getImg() {
+    var sampul = document.querySelector("#txtFoto");
+    var imgPrev = document.querySelector("#image");
+    var fileGambar = new FileReader();
+    fileGambar.readAsDataURL(sampul.files[0]);
+
+    fileGambar.onload = function (e) {
+        let hasil = e.target.result;
+        imgPrev.src = hasil;
+        $('#image').show();
+        var image = document.querySelector("#image");
+        var minAspectRatio = 0.5;
+        var maxAspectRatio = 1.5;
+        var cropper = new Cropper(image, {
+            aspectRatio: 1 / 1,
+            cropBoxMovable: true,
+            cropBoxResizable: false,
+            ready: function () {
+                var cropper = this.cropper;
+                var containerData = cropper.getContainerData();
+                var cropBoxData = cropper.getCropBoxData();
+                var aspectRatio = cropBoxData.width / cropBoxData.height;
+                var newCropBoxWidth;
+
+                if (
+                    aspectRatio < minAspectRatio ||
+                    aspectRatio > maxAspectRatio
+                ) {
+                    newCropBoxWidth =
+                        cropBoxData.height *
+                        ((minAspectRatio + maxAspectRatio) / 2);
+
+                    cropper.setCropBoxData({
+                        left: (containerData.width - newCropBoxWidth) / 2,
+                        width: newCropBoxWidth,
+                    });
+                }
+            },
+
+            cropmove: function () {
+                var cropper = this.cropper;
+                var cropBoxData = cropper.getCropBoxData();
+                var aspectRatio = cropBoxData.width / cropBoxData.height;
+
+                if (aspectRatio < minAspectRatio) {
+                    cropper.setCropBoxData({
+                        width: cropBoxData.height * minAspectRatio,
+                    });
+                } else if (aspectRatio > maxAspectRatio) {
+                    cropper.setCropBoxData({
+                        width: cropBoxData.height * maxAspectRatio,
+                    });
+                }
+                var croppedimage = cropper.getCroppedCanvas({width: 160, height: 160});
+                document.querySelector('#image2').setAttribute("src", croppedimage.toDataURL());
+            },
+        });
+    };
+}
+
+function saveProduct() {
+    var sampul = $('#image2').attr('src');
+    // $('#divHasilCrop').
+    document.querySelector("#divHasilCrop").setAttribute("src", sampul);
+    // var fileGambar = new FileReader();
+    // var gambar = fileGambar.readAsDataURL(sampul.value);
+    
+    console.log(sampul);
 }
 
 function kategoriPilih() {

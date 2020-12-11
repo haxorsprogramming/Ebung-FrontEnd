@@ -74,19 +74,20 @@
                 </div>
                 <div class="form-group">
                     <label>Main photos of product</label>
-                    <input type="file">
+                    <input type="file" id="txtFoto" onchange="getImg()">
                     <hr/>
-                    <img id="image" src="{{ asset('ladun/ebunga_asset/image/product/EBUNGA891233.jpg') }}" style="max-width: 100%;" alt="Picture">
-                    <img id="image2">
+                    <img id="image" src="{{ asset('ladun/ebunga_asset/image/product/EBUNGA891233.jpg') }}" style="max-width: 100%;display:none;" alt="Picture">
                 </div>
                 
                 <div>
-                    <a href="#!" class="view" onclick="saveProduct()">Save</a>
+                    <img id="image2">
+                    <a href="#!" class="view" onclick="saveProduct()">Crop</a>
                 </div>
             </div>
             <div class="col-6 col-md-6 col-lg-6">
                 <div class="form-group">
                     <label>Variant</label>
+                    <img id="divHasilCrop">
                 </div>
             </div>
         </div>
