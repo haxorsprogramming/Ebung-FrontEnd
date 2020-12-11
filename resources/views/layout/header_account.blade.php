@@ -30,7 +30,6 @@
     <!-- <link rel="stylesheet" href="assets/css/plugins/slick.css">
     <link rel="stylesheet" href="assets/css/plugins/animation.css">
     <link rel="stylesheet" href="assets/css/plugins/jqueryui.min.css"> -->
-    <link rel="stylesheet" href="https://fengyuanchen.github.io/cropperjs/css/cropper.css">
     <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from avobe) -->
     <!--
     <script src="assets/js/vendor/vendor.min.js"></script>

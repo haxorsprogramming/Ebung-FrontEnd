@@ -74,19 +74,23 @@
                 </div>
                 <div class="form-group">
                     <label>Main photos of product</label>
-                    <input type="file" id="txtFoto" onchange="getImg()">
+                    <input type="file" id="fileInput" name="txtFoto" image/* />
                     <hr/>
-                    <img id="image" src="{{ asset('ladun/ebunga_asset/image/product/EBUNGA891233.jpg') }}" style="max-width: 100%;display:none;" alt="Picture">
+                    <canvas id="canvas">
+                        Your browser does not support the HTML5 canvas element.
+                    </canvas>
+                    <input type="button" id="btnCrop" value="Crop" />
+		            <input type="button" id="btnRestore" value="Restore" />
                 </div>
                 
                 <div>
-                    <img id="image2">
-                    <a href="#!" class="view" onclick="saveProduct()">Crop</a>
+                <div id="result"></div>
+                    <a href="#!" class="view" id="txtCrop">Crop</a>
                 </div>
             </div>
             <div class="col-6 col-md-6 col-lg-6">
                 <div class="form-group">
-                    <label>Variant</label>
+                    <label>Variant</label><br/>
                     <img id="divHasilCrop">
                 </div>
             </div>

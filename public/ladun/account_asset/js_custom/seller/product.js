@@ -33,66 +33,63 @@ var divTambahProduct = new Vue({
 });
 
 // Inisialisasi
+var canvas  = $("#canvas"),context = canvas.get(0).getContext("2d"),$result = $('#result');
+
+$('#fileInput').on( 'change', function(){
+    if (this.files && this.files[0]) {
+      if ( this.files[0].type.match(/^image\//) ) {
+        var reader = new FileReader();
+        reader.onload = function(evt) {
+           var img = new Image();
+           img.onload = function() {
+             context.canvas.height = img.height;
+             context.canvas.width  = img.width;
+             context.drawImage(img, 0, 0);
+             var cropper = canvas.cropper({
+               aspectRatio: 16 / 9
+             });
+             $('#btnCrop').click(function() {
+                // Get a string base 64 data url
+                var croppedImageDataURL = canvas.cropper('getCroppedCanvas').toDataURL("image/png"); 
+                $result.append( $('<img>').attr('src', croppedImageDataURL) );
+             });
+             $('#btnRestore').click(function() {
+               canvas.cropper('reset');
+               $result.empty();
+             });
+           };
+           img.src = evt.target.result;
+				};
+        reader.readAsDataURL(this.files[0]);
+      }
+      else {
+        alert("Invalid file type! Please select an image file.");
+      }
+    }
+    else {
+      alert('No file(s) selected.');
+    }
+});
 
 // Function
 function getImg() {
-    var sampul = document.querySelector("#txtFoto");
-    var imgPrev = document.querySelector("#image");
-    var fileGambar = new FileReader();
-    fileGambar.readAsDataURL(sampul.files[0]);
-
-    fileGambar.onload = function (e) {
-        let hasil = e.target.result;
-        imgPrev.src = hasil;
-        $('#image').show();
-        var image = document.querySelector("#image");
-        var minAspectRatio = 0.5;
-        var maxAspectRatio = 1.5;
-        var cropper = new Cropper(image, {
-            aspectRatio: 1 / 1,
-            cropBoxMovable: true,
-            cropBoxResizable: false,
-            ready: function () {
-                var cropper = this.cropper;
-                var containerData = cropper.getContainerData();
-                var cropBoxData = cropper.getCropBoxData();
-                var aspectRatio = cropBoxData.width / cropBoxData.height;
-                var newCropBoxWidth;
-
-                if (
-                    aspectRatio < minAspectRatio ||
-                    aspectRatio > maxAspectRatio
-                ) {
-                    newCropBoxWidth =
-                        cropBoxData.height *
-                        ((minAspectRatio + maxAspectRatio) / 2);
-
-                    cropper.setCropBoxData({
-                        left: (containerData.width - newCropBoxWidth) / 2,
-                        width: newCropBoxWidth,
-                    });
-                }
-            },
-
-            cropmove: function () {
-                var cropper = this.cropper;
-                var cropBoxData = cropper.getCropBoxData();
-                var aspectRatio = cropBoxData.width / cropBoxData.height;
-
-                if (aspectRatio < minAspectRatio) {
-                    cropper.setCropBoxData({
-                        width: cropBoxData.height * minAspectRatio,
-                    });
-                } else if (aspectRatio > maxAspectRatio) {
-                    cropper.setCropBoxData({
-                        width: cropBoxData.height * maxAspectRatio,
-                    });
-                }
-                var croppedimage = cropper.getCroppedCanvas({width: 160, height: 160});
-                document.querySelector('#image2').setAttribute("src", croppedimage.toDataURL());
-            },
-        });
-    };
+    var image = document.querySelector('#image1');
+      var cropper = new Cropper(image, {
+        dragMode: 'move',
+        aspectRatio: 10 / 10,
+        autoCropArea: 0.65,
+        restore: false,
+        guides: false,
+        center: false,
+        highlight: false,
+        cropBoxMovable: false,
+        cropBoxResizable: false,
+        toggleDragModeOnDblclick: false,
+        cropmove: function () {
+            console.log("ubah");
+        },
+      });
+      
 }
 
 function saveProduct() {
@@ -102,7 +99,7 @@ function saveProduct() {
     // var fileGambar = new FileReader();
     // var gambar = fileGambar.readAsDataURL(sampul.value);
     
-    console.log(sampul);
+    // console.log(sampul);
 }
 
 function kategoriPilih() {

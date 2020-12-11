@@ -16,7 +16,6 @@ class ProductSellerCtr extends Controller
 {
     public function productlist(Request $request)
     {
-        
         $userLogin = $request -> session() -> get('userLogin');
         $kategoriProduct = KategoriMdl::all();
         $dataBranch = BranchSellerMdl::where('id_seller', $userLogin) -> where('status_branch', 'active') -> get();

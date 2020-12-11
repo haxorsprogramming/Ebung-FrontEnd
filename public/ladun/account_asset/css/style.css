@@ -10647,6 +10647,14 @@ ul.minicart-pricing-box li:last-child {
   margin-left: 15px;
 }
 
+#canvas {
+  height: 600px;
+  width: 600px;
+  background-color: #ffffff;
+  cursor: default;
+  border: 1px solid black;
+}
+
 .mobile-main-header .mobile-menu-toggler .mobile-menu-btn .off-canvas-btn {
   font-size: 30px;
   cursor: pointer;
