@@ -22,7 +22,8 @@ class ProductSellerCtr extends Controller
         $dataBranch = BranchSellerMdl::where('id_seller', $userLogin) -> where('status_branch', 'active') -> get();
         $dataProduct = ProdukMdl::where('id_seller', $userLogin) -> get();
         $divInvalid = 'form-text text-warning';
-        $dr = ['dataProduct' => $dataProduct, 'kategoriProduct' => $kategoriProduct, 'dataBranch' => $dataBranch, 'divError' => $divInvalid];
+        $dn = 'display:none;';
+        $dr = ['dataProduct' => $dataProduct, 'kategoriProduct' => $kategoriProduct, 'dataBranch' => $dataBranch, 'divError' => $divInvalid, 'dn' => $dn];
         return view('account.seller.product.product_list', $dr);
     }
 

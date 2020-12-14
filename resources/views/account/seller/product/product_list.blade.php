@@ -35,6 +35,9 @@
     <div class="card-header">
         <h4>Add New Product</h4>
         <div class="card-header-action">
+        <a href="#!" class="btn btn-danger" style="border:0px solid white;color:#fff;" onclick="submitProduct()">
+                <i class="fas fa-save"></i> Save new product
+            </a>
             <a href="#!" class="btn btn-primary" style="border:0px solid white;color:#fff;" @click="backAtc">
                 <i class="fas fa-arrow-circle-left"></i> Back
             </a>
@@ -46,8 +49,8 @@
                 <div class="form-group">
                     <label>Product Name</label>
                     <input type="text" class="form-control" id="txtProductName" v-model="productName">
-                    <small id="helpProductName" class="{{ $divError }}" style="">
-                        Name product already exist !!
+                    <small id="helpProductName" class="{{ $divError }}" style="<?=$dn; ?>">
+                        @{{ messageHelp[0].productName }}
                     </small>
                 </div>
                 <div class="form-group">
@@ -58,6 +61,9 @@
                         <option value="{{ $kategori -> kd_kategori }}">{{ $kategori -> nama_kategori }}</option>
                         @endforeach
                     </select>
+                    <small id="helpKategori" class="{{ $divError }}" style="<?=$dn; ?>">
+                        @{{ messageHelp[0].kategori }}
+                    </small>
                 </div>
                 <div class="form-group">
                     <label>Sub-Kategori</label>
@@ -65,6 +71,9 @@
                         <option value="none">--- Choose Sub-Kategori ---</option>
                         <option v-for="sk in subKategori">@{{ sk.nama }}</option>
                     </select>
+                    <small id="helpSubKategori" class="{{ $divError }}" style="<?=$dn; ?>">
+                        @{{ messageHelp[0].subKategori }}
+                    </small>
                 </div>
                 <div class="form-group">
                     <label>Branch</label>
@@ -74,11 +83,17 @@
                         <option value="{{ $branch -> kd_branch }}">{{ $branch -> nama_branch }}</option>
                         @endforeach
                     </select>
+                    <small id="helpBranch" class="{{ $divError }}" style="<?=$dn; ?>">
+                        @{{ messageHelp[0].kategori }}
+                    </small>
                 </div>
                 <div class="form-group" id="txtPic">
                     <div style="text-align: center;">
                     <label>Main photos of product</label><br/>
                     <div class="cropme" style="width: 400px;height:400px;" id="txtFotoUtama"></div>
+                    <small id="helpMainPhotos" class="{{ $divError }}" style="<?=$dn; ?>">
+                        @{{ messageHelp[0].kategori }}
+                    </small>
                     </div>
                     <table>
                         <tr>
@@ -100,21 +115,30 @@
                 <div class="form-group">
                     <label>Deskripsi product</label><br/>
                     <textarea id="txtDeksripsiProduct" class="form-control" name="txtDeksripsiProduct" rows="10" cols="50"></textarea>
+                    <small id="helpDeksripsi" class="{{ $divError }}" style="<?=$dn; ?>">
+                        @{{ messageHelp[0].kategori }}
+                    </small>
                 </div>
                 <div class="form-group">
                     <label>Price</label>
                     <input type="number" class="form-control" id="txtPrice">
+                    <small id="helpPrice" class="{{ $divError }}" style="<?=$dn; ?>">
+                        @{{ messageHelp[0].kategori }}
+                    </small>
                 </div>
                 <div class="form-group">
                     <label>Stock</label>
                     <input type="text" class="form-control" id="txtStock">
+                    <small id="helpStok" class="{{ $divError }}" style="<?=$dn; ?>">
+                        @{{ messageHelp[0].kategori }}
+                    </small>
                 </div>
                 <div class="form-group">
                 </div>
             </div>
         </div>
             <div style="text-align:center;margin-top:20px;">
-                <a href='#!' class='view' onclick="submitProduct()"><i class="fas fa-plus-circle"></i> Add new product</a>
+                <a href='#!' class='view' onclick="submitProduct()"><i class="fas fa-plus-circle"></i> Save new product</a>
             </div>
     </div>
 </div>

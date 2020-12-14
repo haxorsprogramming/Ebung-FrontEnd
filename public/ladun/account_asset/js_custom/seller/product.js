@@ -27,15 +27,19 @@ var divTambahProduct = new Vue({
         subKategori: [],
         variantProduct : [],
         productName : '',
-        numVariant : 0
+        numVariant : 0,
+        messageHelp : [
+            {
+                productName : '', kategori : '', subKategori : '', branch : '', deksripsi : '', price : '', stok : ''
+            } 
+        ],
+        stateSave : [
+            { 
+                productName : false, kategori : false, subKategori : false, branch : false, deksripsi : false, price : false, stok : false
+            }
+        ]
     },
     methods: {
-        addVariantAtc : function ()
-        {
-            this.numVariant++;
-            console.log(this.numVariant);
-            this.variantProduct.push({name: "Variant "+ this.numVariant});
-        },
         backAtc: function () {
             divUtama.myProductAtc();
         },
@@ -46,11 +50,7 @@ var divTambahProduct = new Vue({
 var konten = document.getElementById("txtDeksripsiProduct");
 CKEDITOR.replace(konten, {language:'id-gb'});
 CKEDITOR.config.allowedContent = true;
-
-$(document).ready(function(){
-    $('.cropme').simpleCropper();
-});
-
+$('.cropme').simpleCropper();
 
 // Function
 function submitProduct()
@@ -71,9 +71,45 @@ function submitProduct()
     
     // if()
     if(productName === ''){
+        divTambahProduct.messageHelp[0].productName = 'Please fill the field ...!!!';
         $('#helpProductName').show();
+        divTambahProduct.stateSave[0].productName = false;
+    }else{
+        divTambahProduct.stateSave[0].productName = true;
+    }
+    if(kategori === 'none'){
+        divTambahProduct.messageHelp[0].kategori = 'Choose kategory ...!!!';
+        $('#helpKategori').show();
+        divTambahProduct.stateSave[0].kategori = false;
+    }else{
+        divTambahProduct.stateSave[0].kategori = true;
+        $('#helpKategori').hide();
     }
 
+    if(subKategori === 'none'){
+        divTambahProduct.messageHelp[0].subKategori = 'Choose sub-kategory ...!!!';
+        $('#helpSubKategori').show();
+        divTambahProduct.stateSave[0].subKategori = false;
+    }else{
+        divTambahProduct.stateSave[0].subKategori = true;
+        $('#helpSubKategori').hide();
+    }
+    
+    if(branch === 'none'){
+        divTambahProduct.messageHelp[0].branch = 'Choose branch ...!!!';
+        $('#helpBranch').show();
+        divTambahProduct.stateSave[0].branch = false;
+    }else{
+        divTambahProduct.stateSave[0].branch = true;
+        $('#helpBranch').hide();
+    }
+
+    if(picUtama === undefined){
+        pesanUmumApp('warning', 'Choose pic', 'Please upload new picture ...');
+    }else{
+
+    }
+    // console.log(divTambahProduct.stateSave[0]);
     // $.post(rToAddProduct, dataSend, function(data){
     //     let status = data.status;
     //     if(status === 'success'){
