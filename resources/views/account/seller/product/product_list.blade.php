@@ -92,7 +92,7 @@
                     <label>Main photos of product</label><br/>
                     <div class="cropme" style="width: 400px;height:400px;" id="txtFotoUtama"></div>
                     <small id="helpMainPhotos" class="{{ $divError }}" style="<?=$dn; ?>">
-                        @{{ messageHelp[0].kategori }}
+                        @{{ messageHelp[0].mainPhotos }}
                     </small>
                     </div>
                     <table>
@@ -116,21 +116,21 @@
                     <label>Deskripsi product</label><br/>
                     <textarea id="txtDeksripsiProduct" class="form-control" name="txtDeksripsiProduct" rows="10" cols="50"></textarea>
                     <small id="helpDeksripsi" class="{{ $divError }}" style="<?=$dn; ?>">
-                        @{{ messageHelp[0].kategori }}
+                        @{{ messageHelp[0].deksripsi }}
                     </small>
                 </div>
                 <div class="form-group">
                     <label>Price</label>
                     <input type="number" class="form-control" id="txtPrice">
                     <small id="helpPrice" class="{{ $divError }}" style="<?=$dn; ?>">
-                        @{{ messageHelp[0].kategori }}
+                        @{{ messageHelp[0].price }}
                     </small>
                 </div>
                 <div class="form-group">
                     <label>Stock</label>
                     <input type="text" class="form-control" id="txtStock">
                     <small id="helpStok" class="{{ $divError }}" style="<?=$dn; ?>">
-                        @{{ messageHelp[0].kategori }}
+                        @{{ messageHelp[0].stok }}
                     </small>
                 </div>
                 <div class="form-group">

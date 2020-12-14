@@ -30,12 +30,12 @@ var divTambahProduct = new Vue({
         numVariant : 0,
         messageHelp : [
             {
-                productName : '', kategori : '', subKategori : '', branch : '', deksripsi : '', price : '', stok : ''
+                productName : '', kategori : '', subKategori : '', branch : '', deksripsi : '', price : '', stok : '', mainPhotos : ''
             } 
         ],
         stateSave : [
             { 
-                productName : false, kategori : false, subKategori : false, branch : false, deksripsi : false, price : false, stok : false
+                productName : false, kategori : false, subKategori : false, branch : false, deksripsi : false, price : false, stok : false, mainPic : false
             }
         ]
     },
@@ -75,8 +75,10 @@ function submitProduct()
         $('#helpProductName').show();
         divTambahProduct.stateSave[0].productName = false;
     }else{
+        $('#helpProductName').hide();
         divTambahProduct.stateSave[0].productName = true;
     }
+
     if(kategori === 'none'){
         divTambahProduct.messageHelp[0].kategori = 'Choose kategory ...!!!';
         $('#helpKategori').show();
@@ -105,19 +107,55 @@ function submitProduct()
     }
 
     if(picUtama === undefined){
-        pesanUmumApp('warning', 'Choose pic', 'Please upload new picture ...');
+        divTambahProduct.messageHelp[0].mainPhotos = 'Choose pic of main product ...!!!';
+        $('#helpMainPhotos').show();
+        divTambahProduct.stateSave[0].picUtama = false;
     }else{
-
+        $('#helpMainPhotos').hide();
+        divTambahProduct.stateSave[0].picUtama = true;
     }
-    // console.log(divTambahProduct.stateSave[0]);
-    // $.post(rToAddProduct, dataSend, function(data){
-    //     let status = data.status;
-    //     if(status === 'success'){
-    //         pesanUmumApp('success', 'Success', 'New branch applied ...');
-    //     }else{
 
-    //     }
-    // });
+
+    if(price === ''){
+        divTambahProduct.messageHelp[0].price = 'Please fill the field ...!!!';
+        $('#helpPrice').show();
+        divTambahProduct.stateSave[0].price = false;
+    }else{
+        divTambahProduct.stateSave[0].price = true;
+        $('#helpPrice').hide();
+    }
+
+    if(stock === ''){
+        divTambahProduct.messageHelp[0].stok = 'Please fill the field ...!!!';
+        $('#helpStok').show();
+        divTambahProduct.stateSave[0].stok = false;
+    }else{
+        divTambahProduct.stateSave[0].stok = true;
+        $('#helpStok').hide();
+    }
+
+    let stProductName = divTambahProduct.stateSave[0].productName;
+    let stKategori = divTambahProduct.stateSave[0].kategori;
+    let stSubKategori = divTambahProduct.stateSave[0].subKategori;
+    let stBranch = divTambahProduct.stateSave[0].branch;
+    let stPicUtama = divTambahProduct.stateSave[0].picUtama;
+    let stPrice = divTambahProduct.stateSave[0].price;
+    let stStock = divTambahProduct.stateSave[0].stok;
+    if(stProductName === true && stKategori === true && stSubKategori === true && stBranch === true && stPicUtama === true && stPrice === true && stStock === true){
+        $.post(rToAddProduct, dataSend, function(data){
+            let status = data.status;
+            if(status === 'success'){
+                pesanUmumApp('success', 'Success', 'New branch applied ...');
+            }else{
+
+            }
+        });
+        console.log("are you ready?...");
+    }else{
+        console.log("not yet?...");
+    }
+    console.log(divTambahProduct.stateSave[0]);
+    
 
 }
 

@@ -75,7 +75,13 @@ class ProductSellerCtr extends Controller
             $data_var1 = base64_decode($imgData1[1]);
             $namaVariantPic = $kdProduk."VAR1.jpg";
             file_put_contents('ladun/ebunga_asset/image/product/variant/'.$namaVariantPic, $data_var1);
-            
+            DB::table('tbl_variant_product') -> insert([
+                'kd_variant' => Str::upper(Str::random(3)."-".Str::random(3)."-".Str::random(3)."-".Str::random(5)),
+                'kd_product' => $kdProduk,
+                'nama_variant' => '1',
+                'deks_variant' => '',
+                'active' => '1'
+            ]);
             $dr = ['status' => 'success'];
         }else{
             $dr = ['status' => 'error_name_product'];
