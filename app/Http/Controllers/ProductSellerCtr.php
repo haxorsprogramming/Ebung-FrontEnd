@@ -38,25 +38,32 @@ class ProductSellerCtr extends Controller
         $pic = $request -> pic;
         $namaPic = $kdProduk.".jpg";
         
-        DB::table('tbl_produk') -> insert ([
-            'kd_produk' => $kdProduk,
-            'nama_produk' => $name,
-            'deks_produk' => $deks,
-            'kategori' => $kategori,
-            'sub_kategori' => $subKategori,
-            'id_branch' => $branch,
-            'id_seller' => $userLogin,
-            'harga' => $price,
-            'stok' => $stock,
-            'foto_utama' => $namaPic,
-            'active' => '1'
-        ]);
-        $image_array_1 = explode(";", $pic);
-        $image_array_2 = explode(",", $image_array_1[1]);
-        $data = base64_decode($image_array_2[1]);
-        $imageName = time() . '.jpg';
-        file_put_contents('ladun/ebunga_asset/image/product/'.$namaPic, $data);
-        $dr = ['sukses' => $pic];
+        $cekNamaBunga = ProdukMdl::where('nama_produk', $name) -> count();
+
+        if($cekNamaBunga < 1){
+            DB::table('tbl_produk') -> insert ([
+                'kd_produk' => $kdProduk,
+                'nama_produk' => $name,
+                'deks_produk' => $deks,
+                'kategori' => $kategori,
+                'sub_kategori' => $subKategori,
+                'id_branch' => $branch,
+                'id_seller' => $userLogin,
+                'harga' => $price,
+                'stok' => $stock,
+                'foto_utama' => $namaPic,
+                'active' => '1'
+            ]);
+
+            $image_array_1 = explode(";", $pic);
+            $image_array_2 = explode(",", $image_array_1[1]);
+            $data = base64_decode($image_array_2[1]);
+            file_put_contents('ladun/ebunga_asset/image/product/'.$namaPic, $data);
+            $dr = ['status' => 'success'];
+        }else{
+            $dr = ['status' => 'error_name_product'];
+        }
+       
         return \Response::json($dr);
     }
 }

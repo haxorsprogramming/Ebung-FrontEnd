@@ -44,7 +44,7 @@ var divTambahProduct = new Vue({
 
 // Inisialisasi 
 var konten = document.getElementById("txtDeksripsiProduct");
-CKEDITOR.replace(konten,{language:'id-gb'});
+CKEDITOR.replace(konten, {language:'id-gb'});
 CKEDITOR.config.allowedContent = true;
 $('.cropme').simpleCropper();
 
@@ -61,7 +61,12 @@ function submitProduct()
     let pic = $('#txtFotoUtama img').attr('src');
     let dataSend = {'name':productName, 'deks':deksripsiProduk, 'kategori':kategori, 'subKategori':subKategori, 'branch':branch, 'price':price, 'stock':stock, 'pic':pic}
     $.post(rToAddProduct, dataSend, function(data){
-        console.log(data);
+        let status = data.status;
+        if(status === 'success'){
+            pesanUmumApp('success', 'Success', 'New branch applied ...');
+        }else{
+            
+        }
     });
 }
 

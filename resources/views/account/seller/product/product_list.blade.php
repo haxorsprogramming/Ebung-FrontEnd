@@ -90,10 +90,13 @@
                     <label>Stock</label>
                     <input type="text" class="form-control" id="txtStock">
                 </div>
+                <div>
+                    <div class="cropme" style="width: 100px;height:100px;"></div>
+                </div>
             </div>
         </div>
             <div style="text-align:center;margin-top:20px;">
-                <a href='#!' class='view' onclick="submitProduct()"><i class="fas fa-plus-circle"></i> Submit new product</a>
+                <a href='#!' class='view' onclick="submitProduct()"><i class="fas fa-angle-double-right"></i> Next (Add variant)</a>
             </div>
     </div>
 </div>
