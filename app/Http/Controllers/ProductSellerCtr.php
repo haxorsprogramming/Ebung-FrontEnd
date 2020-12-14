@@ -26,7 +26,6 @@ class ProductSellerCtr extends Controller
 
     public function addproductproses(Request $request)
     {
-        // {'name':productName, 'deks':deksripsiProduk, 'kategori':kategori, 'subKategori':subKategori, 'branch':branch, 'price':price, 'stock':stock}
         $userLogin = $request -> session() -> get('userLogin');
         $kdProduk = "EBUNGA".rand(1000,10000);
         $name = $request -> name;
@@ -38,6 +37,7 @@ class ProductSellerCtr extends Controller
         $stock = $request -> stock;
         $pic = $request -> pic;
         $namaPic = $kdProduk.".jpg";
+        
         DB::table('tbl_produk') -> insert ([
             'kd_produk' => $kdProduk,
             'nama_produk' => $name,

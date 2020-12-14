@@ -34,7 +34,6 @@ Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']
 // Customer (Buyer)
 Route::get('/account', [DashboardCtr::class, 'dashboard']);
 Route::get('/account/dashboard', [CustomerCtr::class, 'dashboard']);
-
 // Seller
 Route::get('/account/seller', [DashboardCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/dashboard', [SellerCtr::class, 'sellerdashboard']);

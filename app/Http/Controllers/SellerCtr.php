@@ -3,6 +3,7 @@
 // import namespace
 namespace App\Http\Controllers;
 // import lib
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
