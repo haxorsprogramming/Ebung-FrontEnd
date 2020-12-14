@@ -138,7 +138,7 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('tbl_produk') -> insert([
             'kd_produk' => 'EBUNGA891290',
-            'nama_produk' => 'Papan bunga biasa',
+            'nama_produk' => 'Papan bunga biasa 2',
             'deks_produk' => '-',
             'kategori' => 'PAPANBUNGA',
             'sub_kategori' => 'PAPANBUNGAKONVENSIONAL',

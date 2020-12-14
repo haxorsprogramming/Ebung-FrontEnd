@@ -30,11 +30,11 @@ var divTambahProduct = new Vue({
         numVariant : 0
     },
     methods: {
-        addVariant : function ()
+        addVariantAtc : function ()
         {
-            this.numVariant ++;
+            this.numVariant++;
             console.log(this.numVariant);
-            this.variantProduct.push({name : 'Variant', id_variant:'variant_'+this.numVariant});
+            this.variantProduct.push({name: "Variant "+ this.numVariant});
         },
         backAtc: function () {
             divUtama.myProductAtc();
@@ -46,7 +46,11 @@ var divTambahProduct = new Vue({
 var konten = document.getElementById("txtDeksripsiProduct");
 CKEDITOR.replace(konten, {language:'id-gb'});
 CKEDITOR.config.allowedContent = true;
-$('.cropme').simpleCropper();
+
+$(document).ready(function(){
+    $('.cropme').simpleCropper();
+});
+
 
 // Function
 function submitProduct()
@@ -58,16 +62,27 @@ function submitProduct()
     let branch = document.querySelector('#txtBranch').value;
     let price = document.querySelector('#txtPrice').value;
     let stock = document.querySelector('#txtStock').value;
-    let pic = $('#txtFotoUtama img').attr('src');
-    let dataSend = {'name':productName, 'deks':deksripsiProduk, 'kategori':kategori, 'subKategori':subKategori, 'branch':branch, 'price':price, 'stock':stock, 'pic':pic}
-    $.post(rToAddProduct, dataSend, function(data){
-        let status = data.status;
-        if(status === 'success'){
-            pesanUmumApp('success', 'Success', 'New branch applied ...');
-        }else{
-            
-        }
-    });
+    let picUtama = $('#txtFotoUtama img').attr('src');
+    let var1 = $('#txtVariant1 img').attr('src');
+    let var2 = $('#txtVariant2 img').attr('src');
+    let var3 = $('#txtVariant3 img').attr('src');
+    let var4 = $('#txtVariant4 img').attr('src');
+    let dataSend = {'var1':var1, 'var2':var2, 'var3':var3, 'var4':var4, 'name':productName, 'deks':deksripsiProduk, 'kategori':kategori, 'subKategori':subKategori, 'branch':branch, 'price':price, 'stock':stock, 'picUtama':picUtama}
+    
+    // if()
+    if(productName === ''){
+        $('#helpProductName').show();
+    }
+
+    // $.post(rToAddProduct, dataSend, function(data){
+    //     let status = data.status;
+    //     if(status === 'success'){
+    //         pesanUmumApp('success', 'Success', 'New branch applied ...');
+    //     }else{
+
+    //     }
+    // });
+
 }
 
 function kategoriPilih() {

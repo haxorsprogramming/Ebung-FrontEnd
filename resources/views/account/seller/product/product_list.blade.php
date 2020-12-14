@@ -46,6 +46,9 @@
                 <div class="form-group">
                     <label>Product Name</label>
                     <input type="text" class="form-control" id="txtProductName" v-model="productName">
+                    <small id="helpProductName" class="{{ $divError }}" style="">
+                        Name product already exist !!
+                    </small>
                 </div>
                 <div class="form-group">
                     <label>Kategori</label>
@@ -73,8 +76,24 @@
                     </select>
                 </div>
                 <div class="form-group" id="txtPic">
+                    <div style="text-align: center;">
                     <label>Main photos of product</label><br/>
                     <div class="cropme" style="width: 400px;height:400px;" id="txtFotoUtama"></div>
+                    </div>
+                    <table>
+                        <tr>
+                            <td>Varian 1</td>
+                            <td><div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant1"></div></td>
+                            <td>Varian 2</td>
+                            <td><div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant2"></div></td>
+                        </tr>
+                        <tr>
+                            <td>Varian 3</td>
+                            <td><div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant3"></div></td>
+                            <td>Varian 4</td>
+                            <td><div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant4"></div></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <div class="col-6 col-md-6 col-lg-6">
@@ -90,13 +109,12 @@
                     <label>Stock</label>
                     <input type="text" class="form-control" id="txtStock">
                 </div>
-                <div>
-                    <div class="cropme" style="width: 100px;height:100px;"></div>
+                <div class="form-group">
                 </div>
             </div>
         </div>
             <div style="text-align:center;margin-top:20px;">
-                <a href='#!' class='view' onclick="submitProduct()"><i class="fas fa-angle-double-right"></i> Next (Add variant)</a>
+                <a href='#!' class='view' onclick="submitProduct()"><i class="fas fa-plus-circle"></i> Add new product</a>
             </div>
     </div>
 </div>
