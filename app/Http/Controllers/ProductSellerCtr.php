@@ -77,17 +77,68 @@ class ProductSellerCtr extends Controller
                 $imgVaArr1 = explode(";", $picVar1);
                 $imgData1 = explode(",", $imgVaArr1[1]);
                 $data_var1 = base64_decode($imgData1[1]);
-                $namaVariantPic = $kdProduk."_VAR1.jpg";
-                file_put_contents('ladun/ebunga_asset/image/product/variant/'.$namaVariantPic, $data_var1);
+                $namaVariantPic1 = $kdProduk."_VAR1.jpg";
+                file_put_contents('ladun/ebunga_asset/image/product/variant/'.$namaVariantPic1, $data_var1);
                 DB::table('tbl_variant_product') -> insert([
                     'kd_variant' => Str::upper(Str::random(3)."-".Str::random(3)."-".Str::random(3)."-".Str::random(5)),
                     'kd_product' => $kdProduk,
                     'nama_variant' => '1',
-                    'deks_variant' => '',
+                    'deks_variant' => 'Variant produk 1',
                     'active' => '1'
                 ]);
             }
-           
+            // Variant 2 
+            if($picVar2 == null){
+
+            }else{
+                $imgVaArr2 = explode(";", $picVar2);
+                $imgData2 = explode(",", $imgVaArr2[1]);
+                $data_var2 = base64_decode($imgData2[1]);
+                $namaVariantPic2 = $kdProduk."_VAR2.jpg";
+                file_put_contents('ladun/ebunga_asset/image/product/variant/'.$namaVariantPic2, $data_var2);
+                DB::table('tbl_variant_product') -> insert([
+                    'kd_variant' => Str::upper(Str::random(3)."-".Str::random(3)."-".Str::random(3)."-".Str::random(5)),
+                    'kd_product' => $kdProduk,
+                    'nama_variant' => '2',
+                    'deks_variant' => 'Variant produk 2',
+                    'active' => '1'
+                ]);
+            }
+            // Variant 3 
+            if($picVar3 == null){
+
+            }else{
+                $imgVaArr3 = explode(";", $picVar3);
+                $imgData3 = explode(",", $imgVaArr3[1]);
+                $data_var3 = base64_decode($imgData3[1]);
+                $namaVariantPic3 = $kdProduk."_VAR3.jpg";
+                file_put_contents('ladun/ebunga_asset/image/product/variant/'.$namaVariantPic3, $data_var3);
+                DB::table('tbl_variant_product') -> insert([
+                    'kd_variant' => Str::upper(Str::random(3)."-".Str::random(3)."-".Str::random(3)."-".Str::random(5)),
+                    'kd_product' => $kdProduk,
+                    'nama_variant' => '3',
+                    'deks_variant' => 'Variant produk 3',
+                    'active' => '1'
+                ]);
+            }
+            // Variant 4
+            if($picVar4 == null){
+
+            }else{
+                $imgVaArr4 = explode(";", $picVar4);
+                $imgData4 = explode(",", $imgVaArr4[1]);
+                $data_var4 = base64_decode($imgData4[1]);
+                $namaVariantPic4 = $kdProduk."_VAR4.jpg";
+                file_put_contents('ladun/ebunga_asset/image/product/variant/'.$namaVariantPic4, $data_var4);
+                DB::table('tbl_variant_product') -> insert([
+                    'kd_variant' => Str::upper(Str::random(3)."-".Str::random(3)."-".Str::random(3)."-".Str::random(5)),
+                    'kd_product' => $kdProduk,
+                    'nama_variant' => '4',
+                    'deks_variant' => 'Variant produk 4',
+                    'active' => '1'
+                ]);
+            }
+
             $dr = ['status' => 'success'];
         }else{
             $dr = ['status' => 'error_name_product'];
