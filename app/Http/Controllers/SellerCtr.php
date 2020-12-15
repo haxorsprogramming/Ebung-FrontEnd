@@ -71,4 +71,9 @@ class SellerCtr extends Controller
         return view('account.seller.branch.branch_detail', $dr);
     }
 
+    public function coverageareabranch()
+    {
+        
+    }
+
 }
