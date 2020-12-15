@@ -145,4 +145,9 @@
     </div>
 </div>
 
+
+<script>
+    var idBranch = "{{ $idBranch }}";
+</script>
+
 <script src="{{ asset('ladun/account_asset/js_custom/seller/detailBranch.js') }}"></script>

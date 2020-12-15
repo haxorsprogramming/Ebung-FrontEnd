@@ -11,6 +11,7 @@ use Illuminate\Support\Carbon;
 // import model
 use App\Models\BranchSellerMdl;
 use App\Models\ProvinsiMdl;
+use App\Models\KelurahanMdl;
 
 class SellerCtr extends Controller
 {
@@ -78,6 +79,18 @@ class SellerCtr extends Controller
         $provinsi = ProvinsiMdl::all();
         $dr = ['dataProvinsi' => $provinsi];
         return view('account.seller.branch.coverage_area', $dr);
+    }
+
+    public function cekbranchlocation($idBranch)
+    {
+        $dataBranch = BranchSellerMdl::where('kd_branch', $idBranch) -> first();
+        $alamat = $dataBranch -> alamat;
+        $exAlamat = explode("-", $alamat);
+        $kelurahanId = $exAlamat[0];
+        $dataKelurahan = KelurahanMdl::where('id_kel', $kelurahanId) -> first();
+        $kelurahanCap = $dataKelurahan -> nama;
+        $dr = ['kelurahan' => $kelurahanCap];
+        return \Response::json($dr);
     }
 
 }

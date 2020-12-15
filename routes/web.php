@@ -39,6 +39,8 @@ Route::get('/account/seller', [DashboardCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/dashboard', [SellerCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/sellerbranch', [SellerCtr::class, 'sellerbranch']);
 Route::get('/account/seller/sellerbranch/coverage-area', [SellerCtr::class, 'coverageareabranch']);
+// Cek lokasi branch 
+Route::get('/account/seller/sellerbranch/cek-branch-location/{idBranch}', [SellerCtr::class, 'cekbranchlocation']);
 Route::post('/account-seller/apply-new-branch', [SellerCtr::class, 'applynewbranch']);
 Route::get('/account-seller/detail-branch/{id_branch}', [SellerCtr::class, 'detailbranch']);
 Route::get('/account-seller/product-list', [ProductSellerCtr::class, 'productlist']);
@@ -58,7 +60,6 @@ Route::get('/contact', [PageCtr::class, 'contact']);
 
 // Coverage area
 Route::post('/product/checkarea', [ProdukCtr::class, 'checkarea']);
-
 // Halaman admin
 
 // ResT Produk detail

@@ -1,60 +1,13 @@
 // Route
-var rToGetCordinateVillage = "https://maps.googleapis.com/maps/api/geocode/json?address=Medan+Estate&key="+pathEbunga;
-var rToGetCordinateVillage2 = "https://maps.googleapis.com/maps/api/geocode/json?address=Tanjung+Morawa&key="+pathEbunga;
+
 var rToGetKabupaten = server + "get-kabupaten/";
 var rToGetKecamatan = server + "get-kecamatan/";
 var rToGetKelurahan = server + "get-kelurahan/";
-
-var mapProp = { center:new google.maps.LatLng(3.634085,98.7030042), zoom:11 };
-var map = new google.maps.Map(document.getElementById("maps"),  mapProp);
-
-axios.get(rToGetCordinateVillage).then(function (response) {
-    // handle success
-    // console.log(response);
-    let lat = response.data.results[0].geometry.location.lat;
-    let lng = response.data.results[0].geometry.location.lng;
-    let myLatLng = { lat: lat, lng: lng };
-    new google.maps.Marker({position: myLatLng, map, title: "Medan Estate"});
-    var circle = new google.maps.Circle({
-        radius: 60*60, 
-        center: myLatLng,
-        map: map,
-        fillColor: '#FF0000',
-        fillOpacity: 0.2,
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.6
-        }); 
-    // console.log(lat);
-}).catch(function (error) {
-    // handle error
-    console.log(error);
-});
+var rToCekBranchLocation = server + "account/seller/sellerbranch/cek-branch-location/";
 
 
 
-axios.get(rToGetCordinateVillage2).then(function (response) {
-    // handle success
-    // console.log(response);
-    let lat = response.data.results[0].geometry.location.lat;
-    let lng = response.data.results[0].geometry.location.lng;
-    let myLatLng = { lat: lat, lng: lng };
-    new google.maps.Marker({position: myLatLng, map, title: "Lubuk Pakam"});
-    var circle = new google.maps.Circle({
-        radius: 60*60, 
-        center: myLatLng,
-        map: map,
-        fillColor: '#FF0000',
-        fillOpacity: 0.2,
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.6
-        }); 
-    // console.log(lat);
-}).catch(function (error) {
-    // handle error
-    console.log(error);
-});
-
-
+var dataKelurahan = [];
 // Vue Object 
 var divAddCoverage = new Vue({
     el : '#divAddCoverage',
@@ -68,9 +21,13 @@ var divAddCoverage = new Vue({
         addKel : function(idKel)
         {
             let dataKelRec = idKel.split("-");
-            this.kelurahanDipilih.push({
-                nama : dataKelRec[1], idKel : dataKelRec[0]
-            });
+            let kdKel = dataKelRec[0];
+            let namaKel = dataKelRec[1];
+            this.kelurahanDipilih.push({ nama : namaKel, idKel : kdKel});
+            let cekArray = dataKelurahan.includes(kdKel);
+            let letakKel = dataKelurahan.indexOf(kdKel);
+            dataKelurahan.splice(letakKel, 1);
+            this.kelurahan.splice(letakKel, 1);
         }
     }
 });
@@ -80,8 +37,22 @@ $('#divProvinsi').hide();
 $('#divKabupaten').hide();
 $('#divKecamatan').hide();
 $('#divKelurahan').hide();
-
+axios.get(rToCekBranchLocation+idBranch).then(function (res) {
+    let kelurahanData = res.data;
+    let namaKelurahan = kelurahanData.kelurahan; 
+    setFirstMap(namaKelurahan);
+});
 // Function 
+function setFirstMap(kelSearch)
+{
+    var rToGetCordinateVillage = "https://maps.googleapis.com/maps/api/geocode/json?address="+kelSearch+"&key="+pathEbunga;
+    axios.get(rToGetCordinateVillage).then(function(res){
+        let lat = res.data.results[0].geometry.location.lat;
+        let lng = res.data.results[0].geometry.location.lng;
+        var mapProp = { center:new google.maps.LatLng(lat,lng), zoom:13 };
+        var map = new google.maps.Map(document.getElementById("maps"),  mapProp);
+    }); 
+}
 function countryPilih()
 {
     let kdCountry = document.querySelector('#txtCountry').value;
@@ -149,6 +120,7 @@ function getKelurahan(idKecamatan)
     kelurahan.forEach(renderKelurahan);
     function renderKelurahan(item, index){
         divAddCoverage.kelurahan.push({nama:kelurahan[index].nama, id_kel:kelurahan[index].id_kel});
+        dataKelurahan.push(kelurahan[index].id_kel);
     }
   });
 }

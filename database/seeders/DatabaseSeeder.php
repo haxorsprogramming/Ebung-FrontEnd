@@ -167,7 +167,7 @@ class DatabaseSeeder extends Seeder
             'kd_branch' => 'BRANCH0001',
             'nama_branch' => 'PT NADHA BUNGA SERASI',
             'id_seller' => 'ebunga-seller',
-            'alamat' => 'Medan perjuangan',
+            'alamat' => '1271181001-127118-1271-12',
             'phone' => '082272177022',
             'email' => 'ebungaseller@yahoo.com',
             'active' => '1',
