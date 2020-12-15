@@ -120,7 +120,7 @@
     <div class="card-header">
         <h4>Coverage Area</h4>
         <div class="card-header-action">
-            <a href="#!" class="btn btn-primary" style="<?=$cssBtn; ?>"> <i class="fas fa-map-marker-alt"> </i> Edit coverage area</a>
+            <a href="#!" class="btn btn-primary" style="<?=$cssBtn; ?>" id="btnEditCoverageArea"> <i class="fas fa-map-marker-alt"> </i> Edit coverage area</a>
         </div>
     </div>
     <div class="card-body">

@@ -1,21 +1,10 @@
 // Route 
 var rToGetCordinateVillage = "https://maps.googleapis.com/maps/api/geocode/json?address=Medan+Estate&key="+pathEbunga;
-
+var rToCoverageArea = server + "account/seller/sellerbranch/coverage-area";
 // Maps 
 var mapProp = { center:new google.maps.LatLng(3.634085,98.7030042), zoom:12 };
 var map = new google.maps.Map(document.getElementById("maps"),  mapProp);
-
 // Vue Object 
-// var divCoverageArea = new Vue({
-//     el : '#divCoverageArea',
-//     data : {
-
-//     },
-//     methods : {
-        
-//     }
-// });
-
 // Inisialisasi 
 axios.get(rToGetCordinateVillage).then(function (response) {
     // handle success
@@ -28,4 +17,10 @@ axios.get(rToGetCordinateVillage).then(function (response) {
 }).catch(function (error) {
     // handle error
     console.log(error);
+});
+
+
+
+document.querySelector('#btnEditCoverageArea').addEventListener('click', function(){
+    renderPage(rToCoverageArea, 'Edit coverage area', '');
 });

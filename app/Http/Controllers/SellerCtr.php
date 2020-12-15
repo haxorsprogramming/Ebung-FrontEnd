@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 // import model
 use App\Models\BranchSellerMdl;
+use App\Models\ProvinsiMdl;
 
 class SellerCtr extends Controller
 {
@@ -74,7 +75,9 @@ class SellerCtr extends Controller
 
     public function coverageareabranch()
     {
-        
+        $provinsi = ProvinsiMdl::all();
+        $dr = ['dataProvinsi' => $provinsi];
+        return view('account.seller.branch.coverage_area', $dr);
     }
 
 }
