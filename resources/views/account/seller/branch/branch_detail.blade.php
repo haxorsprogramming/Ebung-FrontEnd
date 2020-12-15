@@ -2,7 +2,7 @@
     <div class="card-header">
         <h4>Statistic Branch {{ $dataBranch -> nama_branch }}</h4>
         <div class="card-header-action">
-            <a href="#!" class="btn btn-primary" style="border:0px solid white;color:#fff;">All statistics <i class="fas fa-poll"></i></a>
+            <a href="#!" class="btn btn-primary" style="border:0px solid white;color:#fff;"><i class="fas fa-poll"></i> All statistics</a>
         </div>
     </div>
     <div class="card-body">
@@ -78,7 +78,7 @@
     <div class="card-header">
         <h4>History Orders</h4>
         <div class="card-header-action">
-            <a href="#!" class="btn btn-primary" style="border:0px solid white;color:#fff;">All orders <i class="fas fa-funnel-dollar"></i></a>
+            <a href="#!" class="btn btn-primary" style="border:0px solid white;color:#fff;"><i class="fas fa-funnel-dollar"></i> All orders</a>
         </div>
     </div>
     <div class="card-body">
@@ -108,7 +108,7 @@
     <div class="card-header">
         <h4>List Product</h4>
         <div class="card-header-action">
-            <a href="#!" class="btn btn-primary" style="border:0px solid white;color:#fff;">All products <i class="fas fa-gifts"></i></a>
+            <a href="#!" class="btn btn-primary" style="border:0px solid white;color:#fff;"><i class="fas fa-gifts"></i> All products</a>
         </div>
     </div>
     <div class="card-body">
@@ -116,17 +116,29 @@
     </div>
 </div>
 
-<div class="card card-primarya">
+<div class="card card-primarya" id="divCoverageArea">
     <div class="card-header">
         <h4>Coverage Area</h4>
         <div class="card-header-action">
-            <a href="#!" class="btn btn-primary" style="border:0px solid white;color:#fff;">Set coverage area <i class="fas fa-map-marker-alt"></i></a>
+            <a href="#!" class="btn btn-primary" style="<?=$cssBtn; ?>"> <i class="fas fa-map-marker-alt"> </i> Edit coverage area</a>
         </div>
     </div>
     <div class="card-body">
         <div class="row">
-            <div class="col-lg-12 col-md-6 col-sm-6 col-6">
-                <div id="maps" style="width:100%px;height:400px;">aa</div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-6">
+                <div id="maps" style="width:100%px;height:400px;"></div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-6">
+                <div class="form-group">
+                    <label>List Coverage Area</label>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>Village</td><td>Status</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
             </div>
         </div>
 

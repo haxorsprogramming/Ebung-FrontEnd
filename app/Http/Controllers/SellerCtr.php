@@ -67,7 +67,8 @@ class SellerCtr extends Controller
     {
         $userLogin = session('userLogin');
         $dataBranch = BranchSellerMdl::where('kd_branch', $idBranch) -> first();
-        $dr = ['idBranch' => $idBranch, 'userLogin' => $userLogin, 'dataBranch' => $dataBranch];
+        $cssBtn = 'border:0px solid white;color:#fff;';
+        $dr = ['idBranch' => $idBranch, 'userLogin' => $userLogin, 'dataBranch' => $dataBranch, 'cssBtn' => $cssBtn];
         return view('account.seller.branch.branch_detail', $dr);
     }
 

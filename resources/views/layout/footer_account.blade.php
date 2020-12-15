@@ -103,6 +103,7 @@
 
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
     <!-- Modernizer JS -->
     <script src="{{ asset('ladun/account_asset/js/vendor/modernizr-3.6.0.min.js') }}"></script>
     <!-- <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script> -->
@@ -142,6 +143,8 @@
     <!-- Main JS -->
     <script>
         const server = "{{ url('') }}/";
+        const pathEbunga = "{{ env('MAPS_API_KEY') }}";
+        
     </script>
     <script src="{{ asset('ladun/account_asset/js/main.js') }}"></script>
     @if($page == 'customerDashboard')
