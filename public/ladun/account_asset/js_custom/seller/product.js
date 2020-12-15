@@ -52,8 +52,10 @@ var konten = document.getElementById("txtDeksripsiProduct");
 CKEDITOR.replace(konten, {language:'id-gb'});
 CKEDITOR.config.allowedContent = true;
 $('.cropme').simpleCropper();
+$('#txtPrice').mask('000.000.000.000.000', {reverse: true});
 
 // Function
+
 function submitProduct()
 {
     let deksripsiProduk = CKEDITOR.instances['txtDeksripsiProduct'].getData();
@@ -165,8 +167,9 @@ function submitProduct()
             // console.log(data);
         });
         console.log("are you ready?...");
+        console.log(price);
     }else{
-        console.log("not yet?...");
+        // console.log("not yet?...");
     }
     
 }

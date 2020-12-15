@@ -108,6 +108,7 @@
     <!-- <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script> -->
     <!-- jQuery JS -->
     <script src="{{ asset('ladun/account_asset/js/vendor/jquery-3.3.1.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
     <!-- <script src="assets/js/vendor/jquery-3.3.1.min.js"></script> -->
     <!-- Bootstrap JS -->
     <script src="{{ asset('ladun/account_asset/js/vendor/popper.min.js') }}"></script>

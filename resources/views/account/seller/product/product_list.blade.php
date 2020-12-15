@@ -123,14 +123,14 @@
                     </small>
                 </div>
                 <div class="form-group">
-                    <label>Price</label>
-                    <input type="number" class="form-control" id="txtPrice">
+                    <label>Price (IDR)</label>
+                    <input type="text" class="form-control" id="txtPrice">
                     <small id="helpPrice" class="{{ $divError }}" style="<?=$dn; ?>">
                         @{{ messageHelp[0].price }}
                     </small>
                 </div>
                 <div class="form-group">
-                    <label>Stock</label>
+                    <label>Stock per Day</label>
                     <input type="text" class="form-control" id="txtStock">
                     <small id="helpStok" class="{{ $divError }}" style="<?=$dn; ?>">
                         @{{ messageHelp[0].stok }}

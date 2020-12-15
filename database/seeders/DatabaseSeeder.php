@@ -123,45 +123,45 @@ class DatabaseSeeder extends Seeder
             'suspend' => 'n'
         ]);
         // produk
-        DB::table('tbl_produk') -> insert([
-            'kd_produk' => 'EBUNGA891233',
-            'nama_produk' => 'Buket bunga & snack sedang',
-            'deks_produk' => '-',
-            'kategori' => 'BUNGA',
-            'sub_kategori' => 'BOUQET',
-            'id_branch' => 'BRANCH0001',
-            'id_seller' => 'ebunga-seller',
-            'harga' => '200000',
-            'stok' => '10',
-            'foto_utama' => 'EBUNGA891233.jpg',
-            'active' => 'y'
-        ]);
-        DB::table('tbl_produk') -> insert([
-            'kd_produk' => 'EBUNGA891290',
-            'nama_produk' => 'Papan bunga biasa 2',
-            'deks_produk' => '-',
-            'kategori' => 'PAPANBUNGA',
-            'sub_kategori' => 'PAPANBUNGAKONVENSIONAL',
-            'id_branch' => 'BRANCH0001',
-            'id_seller' => 'ebunga-seller',
-            'harga' => '150000',
-            'stok' => '10',
-            'foto_utama' => 'EBUNGA891290.jpg',
-            'active' => 'y'
-        ]);
-        DB::table('tbl_produk') -> insert([
-            'kd_produk' => 'EBUNGA78900',
-            'nama_produk' => 'Papan bunga biasa',
-            'deks_produk' => '-',
-            'kategori' => 'PAPANBUNGA',
-            'sub_kategori' => 'PAPANBUNGAKONVENSIONAL',
-            'id_branch' => 'BRANCH0001',
-            'id_seller' => 'ebunga-seller',
-            'harga' => '150000',
-            'stok' => '10',
-            'foto_utama' => 'EBUNGA78900.jpg',
-            'active' => 'y'
-        ]);
+        // DB::table('tbl_produk') -> insert([
+        //     'kd_produk' => 'EBUNGA891233',
+        //     'nama_produk' => 'Buket bunga & snack sedang',
+        //     'deks_produk' => '-',
+        //     'kategori' => 'BUNGA',
+        //     'sub_kategori' => 'BOUQET',
+        //     'id_branch' => 'BRANCH0001',
+        //     'id_seller' => 'ebunga-seller',
+        //     'harga' => '200000',
+        //     'stok' => '10',
+        //     'foto_utama' => 'EBUNGA891233.jpg',
+        //     'active' => 'y'
+        // ]);
+        // DB::table('tbl_produk') -> insert([
+        //     'kd_produk' => 'EBUNGA891290',
+        //     'nama_produk' => 'Papan bunga biasa 2',
+        //     'deks_produk' => '-',
+        //     'kategori' => 'PAPANBUNGA',
+        //     'sub_kategori' => 'PAPANBUNGAKONVENSIONAL',
+        //     'id_branch' => 'BRANCH0001',
+        //     'id_seller' => 'ebunga-seller',
+        //     'harga' => '150000',
+        //     'stok' => '10',
+        //     'foto_utama' => 'EBUNGA891290.jpg',
+        //     'active' => 'y'
+        // ]);
+        // DB::table('tbl_produk') -> insert([
+        //     'kd_produk' => 'EBUNGA78900',
+        //     'nama_produk' => 'Papan bunga biasa',
+        //     'deks_produk' => '-',
+        //     'kategori' => 'PAPANBUNGA',
+        //     'sub_kategori' => 'PAPANBUNGAKONVENSIONAL',
+        //     'id_branch' => 'BRANCH0001',
+        //     'id_seller' => 'ebunga-seller',
+        //     'harga' => '150000',
+        //     'stok' => '10',
+        //     'foto_utama' => 'EBUNGA78900.jpg',
+        //     'active' => 'y'
+        // ]);
         // branch
         DB::table('tbl_branch_seller') -> insert([
             'kd_branch' => 'BRANCH0001',
