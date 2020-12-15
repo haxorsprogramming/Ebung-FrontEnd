@@ -68,6 +68,7 @@ $('#divTambahBranch').hide();
 $('#txtRegionIndonesia').hide();
 $('#txtRegionMalaysia').hide();
 
+
 // Function
 function checkCountry()
 {

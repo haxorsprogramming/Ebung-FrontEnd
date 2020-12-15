@@ -132,13 +132,13 @@
     <script type="text/javascript" src="{{ asset('ladun/account_asset/ckeditor/ckeditor.js') }}"></script>
     <!-- <script src="assets/js/plugins/scrollup.min.js"></script> -->
     <!-- <script src="assets/js/plugins/ajax-contact.js"></script> -->
-
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ env('MAPS_API_KEY') }}"></script>
     <!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
     <!--
     <script src="assets/js/vendor/vendor.min.js"></script>
     <script src="assets/js/plugins/plugins.min.js"></script>
     -->
-
+    
     <!-- Main JS -->
     <script>
         const server = "{{ url('') }}/";

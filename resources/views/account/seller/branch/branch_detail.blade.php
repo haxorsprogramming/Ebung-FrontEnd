@@ -72,7 +72,7 @@
     </div>
 </div>
 
-<hr/>
+<hr />
 
 <div class="card card-primarya">
     <div class="card-header">
@@ -101,7 +101,7 @@
     </div>
 </div>
 
-<hr/>
+<hr />
 
 
 <div class="card card-primarya">
@@ -112,6 +112,25 @@
         </div>
     </div>
     <div class="card-body">
-        
+
     </div>
 </div>
+
+<div class="card card-primarya">
+    <div class="card-header">
+        <h4>Coverage Area</h4>
+        <div class="card-header-action">
+            <a href="#!" class="btn btn-primary" style="border:0px solid white;color:#fff;">Set coverage area <i class="fas fa-map-marker-alt"></i></a>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-12 col-md-6 col-sm-6 col-6">
+                <div id="maps" style="width:100%px;height:400px;">aa</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="{{ asset('ladun/account_asset/js_custom/seller/detailBranch.js') }}"></script>
