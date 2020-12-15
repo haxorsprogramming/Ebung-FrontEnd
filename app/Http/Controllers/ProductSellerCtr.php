@@ -50,19 +50,19 @@ class ProductSellerCtr extends Controller
         $cekNamaBunga = ProdukMdl::where('nama_produk', $name) -> count();
 
         if($cekNamaBunga < 1){
-            // DB::table('tbl_produk') -> insert ([
-            //     'kd_produk' => $kdProduk,
-            //     'nama_produk' => $name,
-            //     'deks_produk' => $deks,
-            //     'kategori' => $kategori,
-            //     'sub_kategori' => $subKategori,
-            //     'id_branch' => $branch,
-            //     'id_seller' => $userLogin,
-            //     'harga' => $price,
-            //     'stok' => $stock,
-            //     'foto_utama' => $namaPic,
-            //     'active' => '1'
-            // ]); 
+            DB::table('tbl_produk') -> insert ([
+                'kd_produk' => $kdProduk,
+                'nama_produk' => $name,
+                'deks_produk' => $deks,
+                'kategori' => $kategori,
+                'sub_kategori' => $subKategori,
+                'id_branch' => $branch,
+                'id_seller' => $userLogin,
+                'harga' => $price,
+                'stok' => $stock,
+                'foto_utama' => $namaPic,
+                'active' => '1'
+            ]); 
             
             // Foto utama 
             $image_array_1 = explode(";", $picUtama);

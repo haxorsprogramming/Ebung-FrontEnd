@@ -1,6 +1,7 @@
 // Route
 var rToGetSubKategori = server + "get-sub-kategori/";
 var rToAddProduct = server + "account-seller/product/add/proses";
+var rToProductList = server + "account-seller/product-list";
 
 // Vue object
 var divProductList = new Vue({
@@ -143,13 +144,14 @@ function submitProduct()
     let stStock = divTambahProduct.stateSave[0].stok;
     if(stProductName === true && stKategori === true && stSubKategori === true && stBranch === true && stPicUtama === true && stPrice === true && stStock === true){
         $.post(rToAddProduct, dataSend, function(data){
-            // let status = data.status;
-            // if(status === 'success'){
-            //     pesanUmumApp('success', 'Success', 'New branch applied ...');
-            // }else{
+            let status = data.status;
+            if(status === 'success'){
+                pesanUmumApp('success', 'Success', 'New product applied ...');
+                renderPage(rToProductList, 'List Product', '');
+            }else{
 
-            // }
-            console.log(data);
+            }
+            // console.log(data);
         });
         console.log("are you ready?...");
     }else{
