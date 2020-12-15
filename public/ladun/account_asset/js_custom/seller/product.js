@@ -31,12 +31,12 @@ var divTambahProduct = new Vue({
         numVariant : 0,
         messageHelp : [
             {
-                productName : '', kategori : '', subKategori : '', branch : '', deksripsi : '', price : '', stok : '', mainPhotos : ''
+                productName : '', kategori : '', subKategori : '', branch : '', deksripsi : '', price : '', stok : '', mainPhotos : '', minPic : ''
             } 
         ],
         stateSave : [
             { 
-                productName : false, kategori : false, subKategori : false, branch : false, deksripsi : false, price : false, stok : false, mainPic : false
+                productName : false, kategori : false, subKategori : false, branch : false, deksripsi : false, price : false, stok : false, mainPic : false, minPic : false
             }
         ]
     },
@@ -135,6 +135,15 @@ function submitProduct()
         $('#helpStok').hide();
     }
 
+    if(var1 === undefined){
+        divTambahProduct.messageHelp[0].minPic = 'Add min 1 variant product ... !!!';
+        $('#helpMinPic').show();
+        divTambahProduct.stateSave[0].minPic = false;
+    }else{
+        $('#helpMinPic').hide();
+        divTambahProduct.stateSave[0].minPic = true;
+    }
+
     let stProductName = divTambahProduct.stateSave[0].productName;
     let stKategori = divTambahProduct.stateSave[0].kategori;
     let stSubKategori = divTambahProduct.stateSave[0].subKategori;
@@ -142,7 +151,9 @@ function submitProduct()
     let stPicUtama = divTambahProduct.stateSave[0].picUtama;
     let stPrice = divTambahProduct.stateSave[0].price;
     let stStock = divTambahProduct.stateSave[0].stok;
-    if(stProductName === true && stKategori === true && stSubKategori === true && stBranch === true && stPicUtama === true && stPrice === true && stStock === true){
+    let stMinPic = divTambahProduct.stateSave[0].minPic;
+
+    if(stProductName === true && stKategori === true && stSubKategori === true && stBranch === true && stPicUtama === true && stPrice === true && stStock === true && stMinPic === true){
         $.post(rToAddProduct, dataSend, function(data){
             let status = data.status;
             if(status === 'success'){
@@ -157,9 +168,7 @@ function submitProduct()
     }else{
         console.log("not yet?...");
     }
-    console.log(divTambahProduct.stateSave[0]);
     
-
 }
 
 function kategoriPilih() {

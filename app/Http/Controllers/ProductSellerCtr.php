@@ -76,7 +76,7 @@ class ProductSellerCtr extends Controller
                 $imgVaArr1 = explode(";", $picVar1);
                 $imgData1 = explode(",", $imgVaArr1[1]);
                 $data_var1 = base64_decode($imgData1[1]);
-                $namaVariantPic = $kdProduk."VAR1.jpg";
+                $namaVariantPic = $kdProduk."_VAR1.jpg";
                 file_put_contents('ladun/ebunga_asset/image/product/variant/'.$namaVariantPic, $data_var1);
                 DB::table('tbl_variant_product') -> insert([
                     'kd_variant' => Str::upper(Str::random(3)."-".Str::random(3)."-".Str::random(3)."-".Str::random(5)),

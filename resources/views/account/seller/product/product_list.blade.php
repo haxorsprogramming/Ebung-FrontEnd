@@ -109,6 +109,9 @@
                             <td><div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant4"></div></td>
                         </tr>
                     </table>
+                    <small id="helpMinPic" class="{{ $divError }}" style="<?=$dn; ?>">
+                        @{{ messageHelp[0].minPic }}
+                    </small>
                 </div>
             </div>
             <div class="col-6 col-md-6 col-lg-6">
