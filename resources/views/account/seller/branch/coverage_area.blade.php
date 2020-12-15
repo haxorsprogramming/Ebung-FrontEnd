@@ -24,6 +24,13 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            <tr v-for="kel in kelurahanDipilih">
+                                <td>@{{ kel.nama }}</td>
+                                <td></td>
+                                <td><a href="#!" class="view"><i class="fas fa-trash-alt"></i> Remove</a></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -54,9 +61,21 @@
                 </div>
                 <div class="form-group" id="divKecamatan">
                     <label>Sub-District</label>
-                    <select class="form-control">
-                    <option v-for="kec in kecamatan" v-bind:value="kec.id_kec">@{{ kec.nama }}</option>
+                    <select class="form-control" id="txtKecamatan" onchange="kecamatanPilih()">
+                        <option value='none'>--- Choose sub-district ---</option>
+                        <option v-for="kec in kecamatan" v-bind:value="kec.id_kec">@{{ kec.nama }}</option>
                     </select>
+                </div>
+                <div class="form-group" id="divKelurahan">
+                    <label>Choode Urban Village (Keluarahan)</label>
+                    <table class="table table-bordered">
+                        <tr v-for="kel in kelurahan">
+                            <td>@{{ kel.nama }}</td>
+                            <td>
+                                <a class="view btnAdd" href='#!' v-bind:data-id="kel.id_kel" @click="addKel(kel.id_kel+'-'+kel.nama)"><i class="fas fa-plus-circle"></i> Add</a>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 
             </div>
