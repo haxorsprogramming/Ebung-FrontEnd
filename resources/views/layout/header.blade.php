@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/'.$cssFile) }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-res-about.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-flower.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-faq.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-login.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-404.css') }}">

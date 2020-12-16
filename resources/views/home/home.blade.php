@@ -120,7 +120,7 @@
                     <?php $no++; ?>
                     @endforeach
                     <li class="all-menu">
-                        <a data-toggle="tab" href="#menu-tab-all">
+                        <a href="{{ url('product/all') }}">
                             <span class="material-icons">apps</span> <h5>All</h5>
                         </a>
                         <figure id="shop-2" class="hidden-xs"></figure>

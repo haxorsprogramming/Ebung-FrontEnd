@@ -11,11 +11,14 @@ use App\Models\KecamatanMdl;
 use App\Models\CoverageAreaMdl;
 // import another controller 
 
-class ProdukCtr extends Controller
+class ProductCtr extends Controller
 {
-    public function detailproduct()
+    public function productall()
     {
-                
+        $cssFile = 'style-homev3.css';
+        $jsFile = 'ebunga-product.js';
+        $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile];
+       return view('product.all', $dr);      
     }
 
     public function checkarea(Request $request)

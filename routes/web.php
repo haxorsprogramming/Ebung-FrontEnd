@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageCtr;
 use App\Http\Controllers\RestProduct;
-use App\Http\Controllers\ProdukCtr;
+use App\Http\Controllers\ProductCtr;
 use App\Http\Controllers\RegisterCtr;
 use App\Http\Controllers\TestingCtr;
 use App\Http\Controllers\WithdrawCtr;
@@ -14,6 +14,7 @@ use App\Http\Controllers\SellerCtr;
 use App\Http\Controllers\DaerahCtr;
 use App\Http\Controllers\ProductSellerCtr;
 use App\Http\Controllers\HelperCtr;
+use App\Models\ProdukMdl;
 
 // Halaman utama
 Route::get('/', [PageCtr::class, 'home']);
@@ -30,6 +31,9 @@ Route::post('/register/proses', [RegisterCtr::class, 'registerproses']);
 // Aktivasi akun link
 Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']);
 // Aktivasi akun proses
+
+// Product list 
+Route::get('/product/all', [ProductCtr::class, 'productall']);
 
 // Customer (Buyer)
 Route::get('/account', [DashboardCtr::class, 'dashboard']);
@@ -53,17 +57,14 @@ Route::post('/account-seller/product/add/proses', [ProductSellerCtr::class, 'add
 // Logout
 Route::get('/logout', [PageCtr::class, 'logout']);
 
-// Produk
-Route::get('/produk/list', [PageCtr::class, 'produk']);
-
 // Pembelian
 Route::get('/pembelian', [PageCtr::class, 'listproduk']);
 
 // About
 Route::get('/contact', [PageCtr::class, 'contact']);
 
-// Coverage area
-Route::post('/product/checkarea', [ProdukCtr::class, 'checkarea']);
+// Cek coverage area product
+Route::post('/product/checkarea', [ProductCtr::class, 'checkarea']);
 // Halaman admin
 
 // ResT Produk detail

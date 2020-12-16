@@ -89,7 +89,12 @@
     <script src="{{ asset('ladun/homepage/js_asset/bootstrap.min_0028.js') }}"></script>
     <script src="{{ asset('ladun/homepage/js_asset/slick.js') }}"></script>
     <!-- js file -->
-    
+
+    <script src="{{ asset('ladun/homepage/js_asset/function-flower.js') }}"></script>
+	<script src="{{ asset('ladun/homepage/js_asset/function-show-sidebar.js') }}"></script>
+	
+	<script src="{{ asset('ladun/homepage/js_asset/function-shop.js') }}"></script>
+	<script src="{{ asset('ladun/homepage/js_asset/function-range.js') }}"></script>
     <script src="{{ asset('ladun/homepage/js_asset/function-slick.js') }}"></script>
     <script src="{{ asset('ladun/homepage/js_asset/function-input-number.js') }}"></script>
     <script src="{{ asset('ladun/homepage/js_asset/function-select-custom.js') }}"></script>
