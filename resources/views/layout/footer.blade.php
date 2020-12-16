@@ -84,6 +84,7 @@
 
     <!-- boostrap & jquery -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
     <script src="{{ asset('ladun/homepage/js_asset/jquery.min_af.js') }}"></script>
     <script src="{{ asset('ladun/homepage/js_asset/bootstrap.min_0028.js') }}"></script>
     <script src="{{ asset('ladun/homepage/js_asset/slick.js') }}"></script>

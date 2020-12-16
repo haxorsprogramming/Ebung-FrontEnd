@@ -1,19 +1,9 @@
 @include('layout.header')
 
     <main>
-        <div class="content-search">
+    
+    @include('home.content_search');
 
-            <div class="container container-100">
-                <i class="far fa-times-circle" id="close-search"></i>
-                <h3 class="text-center">What are your looking for ?</h3>
-                <form method="get" action="/search" role="search" style="position: relative;">
-                    <input type="text" class="form-control control-search" value="" autocomplete="off" placeholder="Enter Search ..." aria-label="SEARCH" name="q">
-
-                    <button class="button_search" type="submit">search</button>
-                </form>
-            </div>
-
-        </div>
         <div class="slider-banner">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
@@ -113,6 +103,7 @@
 
             <div class="container" id="div_product_depan">
                 <h1>@{{ cap_div }}</h1>
+                <h3 style="font-family: Abril Fatface;">Bestseller for you</h3>
                 <div>
                 <ul class="nav nav-tabs menu-category">
                     <?php  
@@ -162,7 +153,7 @@
                                     <div class="product-title-category">
                                         <h5><a href="#">{{ $prod -> nama_produk }} - Pink</a></h5>
                                         <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                        <div class="prince">Rp. {{ number_format($prod -> harga) }}<s class="strike">$250.9</s></div>
+                                        <div class="prince">Rp. {{ number_format($prod -> harga) }}</div>
                                     </div>
                                 </div>
                             @endforeach
@@ -186,12 +177,35 @@
                                     <div class="product-title-category">
                                         <h5><a href="#">{{ $prod -> nama_produk }} - Pink</a></h5>
                                         <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                        <div class="prince">Rp. {{ number_format($prod -> harga) }}<s class="strike">$250.9</s></div>
+                                        <div class="prince">Rp. {{ number_format($prod -> harga) }}</div>
                                     </div>
                                 </div>
                             @endforeach
                         </div>
                          <!-- ------------end tab papan bunga ------>
+
+                         <!-- ------tab parcel---------------- -->
+                        <div id="menu-tab-PARCEL" class="tab-pane">
+                        @foreach($produk_parcel as $prod)
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
+                                    <div class="product-image-category">
+                                        <figure class="sale"><a href="#"><img src="{{ asset('ladun/ebunga_asset/image/product/'.$prod -> foto_utama) }}" class="img-responsive" alt="holiwood"></a></figure>
+                                        <div class="product-icon-category">
+                                            <a href="#" v-on:click="detailAtc('{{ $prod -> kd_produk }}')" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
+
+                                            <a href="#"><i class="fas fa-shopping-basket"></i></a>
+                                            <a href="#"><i class="far fa-heart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-title-category">
+                                        <h5><a href="#">{{ $prod -> nama_produk }} - Pink</a></h5>
+                                        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                        <div class="prince">Rp. {{ number_format($prod -> harga) }}</div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                         <!-- ------------end tab cake ------>
 
                          <!-- ------tab cake---------------- -->
                         <div id="menu-tab-CAKE" class="tab-pane">
@@ -209,7 +223,7 @@
                                     <div class="product-title-category">
                                         <h5><a href="#">{{ $prod -> nama_produk }} - Pink</a></h5>
                                         <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                        <div class="prince">Rp. {{ number_format($prod -> harga) }}<s class="strike">$250.9</s></div>
+                                        <div class="prince">Rp. {{ number_format($prod -> harga) }}</div>
                                     </div>
                                 </div>
                             @endforeach
@@ -224,132 +238,10 @@
         </div>
         
 
-        <!-- Promo of the week  -->
-        @include('home.promo_of_the_week');
-        
+        @include('home.promo_of_the_week')
+        @include('home.latest_blog')
+        @include('home.testimoni')
+        @include('home.instagram_feed')
 
-        <div class="blog">
-            <h1>Latest Blogs</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 product-blog">
-                        <h2><a href="#">Choose for yourself the Flobal<br class="hidden-sm hidden-xs hidden-md"> chiffon dress</a></h2>
-                        <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/blog-1.jpg" class="img-responsive" title="img-blog" alt="holiwood"></a>
-                        <div class="time-blog">
-                            <span class="time"><i class="far fa-calendar-alt"></i><span>May, 12 2018</span></span>
-                            <span class="time"><i class="far fa-edit"></i><span>Pixel-Creative</span></span>
-                        </div>
-
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 product-blog">
-                        <h2><a href="#">Choose for yourself the Flobal<br class="hidden-sm hidden-xs hidden-md"> chiffon dress</a></h2>
-                        <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/blog-1.jpg" class="img-responsive" title="img-blog" alt="holiwood"></a>
-                        <div class="time-blog">
-                            <span class="time"><i class="far fa-calendar-alt"></i><span>May, 12 2018</span></span>
-                            <span class="time"><i class="far fa-edit"></i><span>Pixel-Creative</span></span>
-                        </div>
-
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 product-blog">
-                        <h2><a href="#">Choose for yourself the Flobal<br class="hidden-sm hidden-xs hidden-md"> chiffon dress</a></h2>
-                        <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/blog-1.jpg" class="img-responsive" title="img-blog" alt="holiwood"></a>
-                        <div class="time-blog">
-                            <span class="time"><i class="far fa-calendar-alt"></i><span>May, 12 2018</span></span>
-                            <span class="time"><i class="far fa-edit"></i><span>Pixel-Creative</span></span>
-                        </div>
-
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="feedback">
-            <div class="container">
-                <h1>Customers say</h1>
-                <h2>,,</h2>
-                <div id="myCarousel1" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel1" data-slide-to="1"></li>
-                        <li data-target="#myCarousel1" data-slide-to="2"></li>
-                    </ol>
-
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,<br class="hidden-sm hidden-xs hidden-md"> when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap<br class="hidden-sm hidden-xs hidden-md"> into electronic typesetting, remaining essentially unchanged</p>
-                            <div class="img-customer">
-                                <img src="{{ asset('ladun/homepage/pic_asset/testi_user_pic/avatar-feedback.png') }}" alt="holiwood">
-                                <h1>Laura Ellie - <span>Customers</span></h1>
-                            </div>
-                        </div>
-
-                        <div class="item">
-
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,<br class="hidden-sm hidden-xs hidden-md"> when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap<br class="hidden-sm hidden-xs hidden-md"> into electronic typesetting, remaining essentially unchanged</p>
-                            <div class="img-customer">
-                                <img src="{{ asset('ladun/homepage/pic_asset/testi_user_pic/avatar-feedback.png') }}" alt="holiwood">
-                                <h1>Laura Ellie - <span>Customers</span></h1>
-                            </div>
-                        </div>
-
-                        <div class="item">
-
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,<br class="hidden-sm hidden-xs hidden-md"> when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap<br class="hidden-sm hidden-xs hidden-md"> into electronic typesetting, remaining essentially unchanged</p>
-                            <div class="img-customer">
-                                <img src="{{ asset('ladun/homepage/pic_asset/testi_user_pic/avatar-feedback.png') }}" alt="holiwood">
-                                <h1>Laura Ellie - <span>Customers</span></h1>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-        <div class="img-link">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 colum-img">
-                        <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/img-link-insta1.jpg" class="img-responsive" alt="holiwood"></a>
-                        <a href="#" class="img-insta"><i class="fab fa-instagram"></i>
-                            <h1>Instagram</h1>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 colum-img">
-                        <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/img-link-insta1.jpg" class="img-responsive" alt="holiwood"></a>
-                        <a href="#" class="img-insta"><i class="fab fa-instagram"></i>
-                            <h1>Instagram</h1>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 colum-img">
-                        <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/img-link-insta1.jpg" class="img-responsive" alt="holiwood"></a>
-                        <a href="#" class="img-insta"><i class="fab fa-instagram"></i>
-                            <h1>Instagram</h1>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 colum-img">
-                        <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/img-link-insta1.jpg" class="img-responsive" alt="holiwood"></a>
-                        <a href="#" class="img-insta"><i class="fab fa-instagram"></i>
-                            <h1>Instagram</h1>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 colum-img">
-                        <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/img-link-insta1.jpg" class="img-responsive" alt="holiwood"></a>
-                        <a href="#" class="img-insta"><i class="fab fa-instagram"></i>
-                            <h1>Instagram</h1>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
 
 @include('layout.footer')

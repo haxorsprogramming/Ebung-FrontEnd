@@ -8,13 +8,15 @@ var div_product_depan = new Vue({
         cap_div : 'Product of Ebunga'
     },
     methods : {
-        detailAtc : function(id_product)
+        detailAtc : function(idProduct)
         {
-            $.get(rToDetailProduct+id_product, function(data){
-                div_modal_product.title_modal = data.product.nama_produk;
-                div_modal_product.deks_produk = data.product.deks_produk;
-                div_modal_product.price = data.product.harga;
-                div_modal_product.kd_produk = data.product.kd_produk;
+            axios.get(rToDetailProduct+idProduct).then(function(res){
+                let dataProduct = res.data.product;
+                div_modal_product.title_modal = dataProduct.nama_produk;
+                div_modal_product.deks_produk = dataProduct.deks_produk;
+                div_modal_product.price = dataProduct.harga;
+                div_modal_product.kd_produk = dataProduct.kd_produk;
+                document.querySelector('#picMain').setAttribute("src", server+"ladun/ebunga_asset/image/product/"+dataProduct.foto_utama);
                 $('#txtLokasi').focus();
             });
             
@@ -30,6 +32,7 @@ var div_modal_product = new Vue({
         kd_produk : '',
         currency : 'Rp.',
         price : 'loading ...',
+        mainPicProduct : '',
         listDaerah : []
     }
 });
@@ -80,7 +83,7 @@ function searchArea()
                         console.table(area[index]);
                         let coverage = area[index].status_coverage;
                         div_modal_product.listDaerah.push({'nama':area[index].nama, 'cover':coverage});
-                        
+
                     }
                     $('#txtTabelArea').show();
                     $('#loaderLokasi').hide();

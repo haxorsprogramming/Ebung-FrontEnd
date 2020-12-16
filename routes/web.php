@@ -55,7 +55,6 @@ Route::get('/logout', [PageCtr::class, 'logout']);
 
 // Produk
 Route::get('/produk/list', [PageCtr::class, 'produk']);
-Route::get('/product/details/{id_product}', [ProdukCtr::class, 'detailproduct']);
 
 // Pembelian
 Route::get('/pembelian', [PageCtr::class, 'listproduk']);
