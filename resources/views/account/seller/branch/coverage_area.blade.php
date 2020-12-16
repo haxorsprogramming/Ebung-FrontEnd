@@ -11,11 +11,11 @@
                 <div id="maps" style="width:100%px;height:400px;"></div>
             </div>
         </div>
-        <hr/>
+        <hr />
         <div class="row" id="divAddCoverage">
             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="form-group">
-                    <label>List coverage area</label>
+                    <label>List coverage area <a href="#!" class="view" @click="clearKelDipilih"><i class="fas fa-redo"></i> Clear all</a></label>
                     <table class="table">
                         <thead>
                             <tr>
@@ -28,7 +28,7 @@
                             <tr v-for="kel in kelurahanDipilih">
                                 <td>@{{ kel.nama }}</td>
                                 <td></td>
-                                <td><a href="#!" class="view"><i class="fas fa-trash-alt"></i> Remove</a></td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
@@ -47,9 +47,9 @@
                     <label>Province</label>
                     <select class="form-control" id="txtProvinsi" onchange="provinsiPilih()">
                         <option value='none'>--- Choose province ---</option>
-                    @foreach($dataProvinsi as $provinsi)
+                        @foreach($dataProvinsi as $provinsi)
                         <option value="{{ $provinsi -> id_prov }}">{{ $provinsi -> nama }}</option>
-                    @endforeach
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group" id="divKabupaten">
@@ -76,8 +76,14 @@
                             </td>
                         </tr>
                     </table>
+                    <small>if you want to add a sub-district in another sub-district, please save it in the previously selected sub-district, and add it back</small>
                 </div>
-                
+
+            </div>
+        </div>
+        <div class="row" style="margin-top:30px;">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12" style="text-align: center;">
+                <a href='#!' class="view" onclick="saveArea()"><i class="fas fa-save"></i> Save coverage area</a>
             </div>
         </div>
     </div>

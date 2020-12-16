@@ -174,11 +174,11 @@ class DatabaseSeeder extends Seeder
             'status_branch' => 'active'
         ]);
         // coverage area 
-        DB::table('tbl_coverage_area') -> insert([
-            'kd_coverage' => 'aqwl1239012jmn',
-            'kd_branch' => 'BRANCH0001',
-            'kd_area' => '1101012016'
-        ]);
+        // DB::table('tbl_coverage_area') -> insert([
+        //     'kd_coverage' => 'aqwl1239012jmn',
+        //     'kd_branch' => 'BRANCH0001',
+        //     'kd_area' => '1101012016'
+        // ]);
         // country support 
         DB::table('tbl_country_support') -> insert([
             'kd_country' => 'id',

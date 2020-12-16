@@ -7,6 +7,7 @@ var rToCekLocationForMarker = server + "account/seller/get-data-kelurahan-for-ma
 var rToSaveLocation = server + "";
 
 var dataKelurahan = [];
+var markers = [];
 // Vue Object 
 var divAddCoverage = new Vue({
     el : '#divAddCoverage',
@@ -35,13 +36,34 @@ var divAddCoverage = new Vue({
                 let lat = res.data.results[0].geometry.location.lat;
                 let lng = res.data.results[0].geometry.location.lng;
                 let myLatLng = { lat: lat, lng: lng };
-                new google.maps.Marker({
-                  position: myLatLng,
-                  map,
-                  title: "Hello World!",
-                });
+                let marker = new google.maps.Marker({ position: myLatLng, map, animation: google.maps.Animation.DROP, title: namaKel });
+                new google.maps.Circle({ radius: 40*40, center: myLatLng, map: map, fillColor: '#3498db', fillOpacity: 0.2, strokeColor: '#FF0000', strokeOpacity: 0.6 });
+                markers.push(marker);
               });
             });
+        },
+        clearKelDipilih : function()
+        {
+          let cArrKelDipilih = this.kelurahanDipilih.length;
+          var i;
+          for(i = 0; i < cArrKelDipilih; i++){
+            this.kelurahanDipilih.splice(0,1);
+          }
+          let cArrKel = this.kelurahan.length;
+          var h;
+          for(h = 0; h < cArrKel; h++){
+            this.kelurahan.splice(0,1);
+          }
+          var rToGetCordinateVillage = "https://maps.googleapis.com/maps/api/geocode/json?address="+namaKel+"+"+namaKec+"&key="+pathEbunga;
+          axios.get(rToGetCordinateVillage).then(function(res){
+            let lat = res.data.results[0].geometry.location.lat;
+            let lng = res.data.results[0].geometry.location.lng;
+            var mapProp = { center:new google.maps.LatLng(lat,lng), zoom:13 };
+            map = new google.maps.Map(document.getElementById("maps"), mapProp);  
+          }); 
+          document.querySelector('#txtCountry').selectedIndex = "0";
+          document.querySelector('#txtProvinsi').selectedIndex = "0";
+          $('#divKelurahan').hide();
         }
     }
 });
@@ -51,8 +73,6 @@ $('#divProvinsi').hide();
 $('#divKabupaten').hide();
 $('#divKecamatan').hide();
 $('#divKelurahan').hide();
-
-var rToGetCordinateVillage = "https://maps.googleapis.com/maps/api/geocode/json?address="+namaKel+"+"+namaKec+"&key="+pathEbunga;
 
 var map;
 
@@ -64,6 +84,17 @@ axios.get(rToGetCordinateVillage).then(function(res){
 }); 
 
 // Function 
+function saveArea()
+{
+  let dataKelurahan = divAddCoverage.kelurahanDipilih;
+  console.log(dataKelurahan);
+  dataKelurahan.forEach(renderKelurahan);
+  function renderKelurahan(item, index){
+    let idKel = dataKelurahan[index].idKel;
+    let dataSend = {}
+  }
+}
+
 function countryPilih()
 {
     let kdCountry = document.querySelector('#txtCountry').value;
