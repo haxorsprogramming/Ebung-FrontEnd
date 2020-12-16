@@ -3,7 +3,7 @@
 <li class="contact-menu"><a href="{{ url('/') }}">Home</a>
     <figure id="contact-1" class=" hidden-sm hidden-md hidden-xs"></figure>
 </li>
-<li class="shop-menu dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop +</a>
+<li class="shop-menu dropdown"><a href="{{ url('/product/all') }}" class="dropdown-toggle" data-toggle="dropdown">Shop +</a>
     <figure id="shop-1" class=" hidden-sm hidden-md hidden-xs"></figure>
     <div class="dropdown-menu">
         <div class="container container-menu">

@@ -15,9 +15,10 @@ class ProductCtr extends Controller
 {
     public function productall()
     {
+        $dataProduct = ProdukMdl::take(5) -> get();
         $cssFile = 'style-homev3.css';
         $jsFile = 'ebunga-product.js';
-        $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile];
+        $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataproduct' => $dataProduct];
        return view('product.all', $dr);      
     }
 

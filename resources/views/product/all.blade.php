@@ -124,18 +124,7 @@
                     </ul>
                     <!--  -->
                     <ul class="list-group list-4">
-                        <li class="list-group-item">
-                            PRINCE
-
-                        </li>
-                        <li class="list-group-item list-item-4">
-                            <div id="slider-3"></div>
-                            <p class="range-p">
-                                <input type="text" id="price">
-                                <button>Filter</button>
-                            </p>
-                            <figure class="bg-input"></figure>
-                        </li>
+                        
                     </ul>
                     <!--  -->
                     <ul class="list-group list-3">
@@ -158,10 +147,10 @@
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 content-flower">
 
 
-
+                @foreach($dataproduct as $product)
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 product-flower">
                     <div class="product-image-flower">
-                        <figure class="sale"><a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/wedding-1.jpg" class="img-responsive" alt="img-holiwood"></a></figure>
+                        <figure class="sale"><a href="#"><img src="{{ asset('ladun/ebunga_asset/image/product/'.$product -> foto_utama) }}" class="img-responsive" alt="img-holiwood"></a></figure>
                         <div class="product-icon-flower">
                             <a href="#"><i class="far fa-eye"></i></a>
                             <a href="#"><i class="fas fa-shopping-basket"></i></a>
@@ -169,7 +158,7 @@
                         </div>
                     </div>
                     <div class="product-title-flower">
-                        <h5><a href="#">Queen Rose - Pink</a></h5>
+                        <h5><a href="#">{{ $product -> nama_produk }}</a></h5>
                         <p class="p-title">It is a long established fact that a reader will be distracted by the readable content of a<br class="hidden-sm hidden-xs"> page when looking at its layout.</p>
                         <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <span class="rating">3 Reating(s) | Add Your Reating(s)</span>
@@ -182,52 +171,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 product-flower">
-                    <div class="product-image-flower">
-                        <a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/wedding-1.jpg" class="img-responsive" alt="img-holiwood"></a>
-                        <div class="product-icon-flower">
-                            <a href="#"><i class="far fa-eye"></i></a>
-                            <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                            <a href="#"><i class="far fa-heart"></i></a>
-                        </div>
-                    </div>
-                    <div class="product-title-flower">
-                        <h5><a href="#">Bouquet Lavender</a></h5>
-                        <p class="p-title">It is a long established fact that a reader will be distracted by the readable content of a<br class="hidden-sm hidden-xs"> page when looking at its layout.</p>
-                        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-                            <span class="rating">3 Reating(s) | Add Your Reating(s)</span>
-                        </div>
-                        <div class="prince">$160.8</div>
-                        <div class="add-cart">
-                            <a href="#" class="btn-add-cart">Add to cart</a>
-                            <a href="#" class="list-icon icon-1"><i class="far fa-eye"></i></a>
-                            <a href="#" class="list-icon icon-2"><i class="far fa-heart"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 product-flower">
-                    <div class="product-image-flower">
-                        <figure class="hot"><a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/wedding-1.jpg" class="img-responsive" alt="img-holiwood"></a></figure>
-                        <div class="product-icon-flower">
-                            <a href="#"><i class="far fa-eye"></i></a>
-                            <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                            <a href="#"><i class="far fa-heart"></i></a>
-                        </div>
-                    </div>
-                    <div class="product-title-flower">
-                        <h5><a href="#">Fun & Flirty By BloomNation</a></h5>
-                        <p class="p-title">It is a long established fact that a reader will be distracted by the readable content of a<br class="hidden-sm hidden-xs"> page when looking at its layout.</p>
-                        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <span class="rating">3 Reating(s) | Add Your Reating(s)</span>
-                        </div>
-                        <div class="prince">$240.98</div>
-                        <div class="add-cart">
-                            <a href="#" class="btn-add-cart">Add to cart</a>
-                            <a href="#" class="list-icon icon-1"><i class="far fa-eye"></i></a>
-                            <a href="#" class="list-icon icon-2"><i class="far fa-heart"></i></a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
                 <!--  -->
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pagi">
                     <ul class="pagination">
