@@ -189,16 +189,16 @@
                         @foreach($produk_parcel as $prod)
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                     <div class="product-image-category">
-                                        <figure class="sale"><a href="#"><img src="{{ asset('ladun/ebunga_asset/image/product/'.$prod -> foto_utama) }}" class="img-responsive" alt="holiwood"></a></figure>
+                                        <figure class="sale"><a href="javascript:void(0)"><img src="{{ asset('ladun/ebunga_asset/image/product/'.$prod -> foto_utama) }}" class="img-responsive" alt="holiwood"></a></figure>
                                         <div class="product-icon-category">
-                                            <a href="#" v-on:click="detailAtc('{{ $prod -> kd_produk }}')" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
+                                            <a href="javascript:void(0)" v-on:click="detailAtc('{{ $prod -> kd_produk }}')" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
 
-                                            <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                                            <a href="#"><i class="far fa-heart"></i></a>
+                                            <a href="javascript:void(0)"><i class="fas fa-shopping-basket"></i></a>
+                                            <a href="javascript:void(0)"><i class="far fa-heart"></i></a>
                                         </div>
                                     </div>
                                     <div class="product-title-category">
-                                        <h5><a href="#">{{ $prod -> nama_produk }} - Pink</a></h5>
+                                        <h5><a href="javascript:void(0)">{{ $prod -> nama_produk }} - Pink</a></h5>
                                         <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                                         <div class="prince">Rp. {{ number_format($prod -> harga) }}</div>
                                     </div>

@@ -10,6 +10,8 @@ var div_product_depan = new Vue({
     methods : {
         detailAtc : function(idProduct)
         {
+            document.querySelector('#txtLokasi').value = '';
+            document.querySelector('#result-box').innerHTML = '';
             axios.get(rToDetailProduct+idProduct).then(function(res){
                 let dataProduct = res.data.product;
                 div_modal_product.title_modal = dataProduct.nama_produk;
@@ -37,36 +39,21 @@ var div_modal_product = new Vue({
     }
 });
 
-// var divFormRegisterTop = new Vue({
-//     el : '#divFormRegisterTop',
-//     data : {
-
-//     },
-//     methods : {
-//         tesAtc : function()
-//         {
-//             console.log('1mdb');
-//             document.querySelector('#txtEmailLoginTop').focus();
-//         }
-//     }
-// });
-
 // Inisialisasi
 $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
+
 $('#loaderLokasi').hide();
 $('#txtTabelArea').hide();
 
-var statusLoading = false;
-$('#loaderLokasi').autocomplete({
-    serviceUrl: '/autocomplete/countries',
-    onSelect: function (suggestion) {
-        alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
-    }
-});
+// Function
+function selectArea(idKel)
+{
+    console.log(idKel);
+}
 
 function getArea()
 {
@@ -81,10 +68,4 @@ function getArea()
     }else{
         $("#result-box").html("");
     }
-}
-
-// Function
-function selectArea()
-{
-    console.log("dipilih ...");
 }

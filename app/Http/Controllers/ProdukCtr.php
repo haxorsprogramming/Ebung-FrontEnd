@@ -27,7 +27,7 @@ class ProdukCtr extends Controller
         $dataProduk = ProdukMdl::where('kd_produk', $kdProduk) -> first();
         $idBranch = $dataProduk -> id_branch;
 
-        $daerah = KelurahanMdl::where('nama', 'like', '%'.$slug.'%') -> take(10) -> get();
+        $daerah = KelurahanMdl::where('nama', 'like', '%'.$slug.'%') -> take(7) -> get();
         $resultView = "<table class='table table-home-coverage-area'>";
         foreach($daerah as $da){
             $idKel = $da -> id_kel;
@@ -38,7 +38,7 @@ class ProdukCtr extends Controller
             //cek apakah id kel & produk ada di coverage area
             $cekArea = CoverageAreaMdl::where('kd_area', $idKel) -> where('kd_branch', $idBranch) -> count();
             if($cekArea == 1){
-                $status_cover = "<a href='#!' class='btn-pilih-coverage' onclick='selectArea()'>Select</a>";
+                $status_cover = "<a href='javascript:void(0)' class='btn-pilih-coverage' onclick='selectArea(\"".$idKel."\")'>Select</a>";
             }else{
                 $status_cover = '<small>Sorry, this area not coverage ...</small> ';
             }
