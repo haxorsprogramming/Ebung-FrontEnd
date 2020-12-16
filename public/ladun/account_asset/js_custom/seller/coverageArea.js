@@ -4,7 +4,7 @@ var rToGetKecamatan = server + "get-kecamatan/";
 var rToGetKelurahan = server + "get-kelurahan/";
 var rToCekBranchLocation = server + "account/seller/sellerbranch/cek-branch-location/";
 var rToCekLocationForMarker = server + "account/seller/get-data-kelurahan-for-marker/";
-var rToSaveLocation = server + "";
+var rToSaveCoverageLocation = server + "account/seller/save-coverage-area";
 
 var dataKelurahan = [];
 var markers = [];
@@ -91,7 +91,18 @@ function saveArea()
   dataKelurahan.forEach(renderKelurahan);
   function renderKelurahan(item, index){
     let idKel = dataKelurahan[index].idKel;
-    let dataSend = {}
+    let dataSend = {'idKel':idKel, 'idBranch':idBranch}
+    axios.post(rToSaveCoverageLocation, dataSend).then(function(res){
+      document.querySelector('#txtCountry').selectedIndex = "0";
+      document.querySelector('#txtProvinsi').selectedIndex = "0";
+      $('#divKelurahan').hide();
+    });
+  }
+  pesanUmumApp('success', 'Update', 'Coverage area are updated ..');
+  let cArrKel = divAddCoverage.kelurahan.length;
+  var h;
+  for(h = 0; h < cArrKel; h++){
+    divAddCoverage.kelurahan.splice(0,1);
   }
 }
 

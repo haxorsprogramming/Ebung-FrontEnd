@@ -43,6 +43,8 @@ Route::get('/account/seller/sellerbranch/coverage-area', [SellerCtr::class, 'cov
 Route::get('/account/seller/sellerbranch/cek-branch-location/{idBranch}', [SellerCtr::class, 'cekbranchlocation']);
 Route::post('/account-seller/apply-new-branch', [SellerCtr::class, 'applynewbranch']);
 Route::get('/account-seller/detail-branch/{id_branch}', [SellerCtr::class, 'detailbranch']);
+// Save coverage area 
+Route::post('/account/seller/save-coverage-area', [SellerCtr::class, 'savecoveragearea']);
 // Cek nama kecamatan & kelurahan dari id kel 
 Route::get('/account/seller/get-data-kelurahan-for-marker/{id_kelurahan}', [SellerCtr::class, 'getdatakelurahanformarker']);
 
