@@ -19,7 +19,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 detail">
                                         <h1>@{{ title_modal }}</h1>
-                                        <p class="p1">@{{ deks_produk }}</p>
+                                        <p class="p1" v-html="deks_produk"></p>
                                         <div class="star">
                                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                             <span>10 Rating(s) | Add Your Rating</span>
