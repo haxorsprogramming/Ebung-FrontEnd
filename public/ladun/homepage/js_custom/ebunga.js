@@ -48,7 +48,7 @@ var div_modal_product = new Vue({
 //     }
 // });
 
-// INISIALISASI 
+// Inisialisasi
 $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -58,7 +58,7 @@ $('#loaderLokasi').hide();
 $('#txtTabelArea').hide();
 
 
-// FUNCTION 
+// Function
 function searchArea()
 {
     clearArea();
@@ -80,6 +80,7 @@ function searchArea()
                         console.table(area[index]);
                         let coverage = area[index].status_coverage;
                         div_modal_product.listDaerah.push({'nama':area[index].nama, 'cover':coverage});
+                        
                     }
                     $('#txtTabelArea').show();
                     $('#loaderLokasi').hide();
