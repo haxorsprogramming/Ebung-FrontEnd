@@ -3,6 +3,7 @@ var rToGetKabupaten = server + "get-kabupaten/";
 var rToGetKecamatan = server + "get-kecamatan/";
 var rToGetKelurahan = server + "get-kelurahan/";
 var rToCekBranchLocation = server + "account/seller/sellerbranch/cek-branch-location/";
+var rToCekLocationForMarker = server + "account/seller/get-data-kelurahan-for-marker/";
 var rToSaveLocation = server + "";
 
 var dataKelurahan = [];
@@ -26,7 +27,21 @@ var divAddCoverage = new Vue({
             let letakKel = dataKelurahan.indexOf(kdKel);
             dataKelurahan.splice(letakKel, 1);
             this.kelurahan.splice(letakKel, 1);
-            
+            axios.get(rToCekLocationForMarker+kdKel).then(function(res){
+              let namaKec = res.data.namaKec;
+              let namaKel = res.data.namaKel;
+              var rToGetCordinateVillage = "https://maps.googleapis.com/maps/api/geocode/json?address="+namaKel+"+"+namaKec+"&key="+pathEbunga;
+              axios.get(rToGetCordinateVillage).then(function(res){
+                let lat = res.data.results[0].geometry.location.lat;
+                let lng = res.data.results[0].geometry.location.lng;
+                let myLatLng = { lat: lat, lng: lng };
+                new google.maps.Marker({
+                  position: myLatLng,
+                  map,
+                  title: "Hello World!",
+                });
+              });
+            });
         }
     }
 });
@@ -39,11 +54,13 @@ $('#divKelurahan').hide();
 
 var rToGetCordinateVillage = "https://maps.googleapis.com/maps/api/geocode/json?address="+namaKel+"+"+namaKec+"&key="+pathEbunga;
 
+var map;
+
 axios.get(rToGetCordinateVillage).then(function(res){
   let lat = res.data.results[0].geometry.location.lat;
   let lng = res.data.results[0].geometry.location.lng;
   var mapProp = { center:new google.maps.LatLng(lat,lng), zoom:13 };
-  var map = new google.maps.Map(document.getElementById("maps"),  mapProp);
+  map = new google.maps.Map(document.getElementById("maps"),  mapProp);
 }); 
 
 // Function 

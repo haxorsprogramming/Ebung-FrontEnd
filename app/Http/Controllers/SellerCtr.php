@@ -107,4 +107,15 @@ class SellerCtr extends Controller
         return \Response::json($dr);
     }
 
+    public function getdatakelurahanformarker($idKel)
+    {
+        $dataKel = KelurahanMdl::where('id_kel', $idKel) -> first();
+        $namaKel = $dataKel -> nama;
+        $idKec = $dataKel -> id_kec;
+        $dataKec = KecamatanMdl::where('id_kec', $idKec) -> first();
+        $namaKec = $dataKec -> nama;
+        $dr = ['namaKel' => $namaKel, 'namaKec' => $namaKec];
+        return \Response::json($dr);
+    }
+
 }

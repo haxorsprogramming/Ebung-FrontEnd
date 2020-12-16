@@ -12,6 +12,6 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        '/account/seller/get-data-kelurahan-for-marker/',
     ];
 }
