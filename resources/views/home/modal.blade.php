@@ -30,9 +30,9 @@
                                         </figure>
                                         
                                         <div class="select-custom">
-                                            <input type="text" class="input-text input-lg" id="txtLokasi" onkeyup="getArea()">
+                                            <input type="text" class="form-control" id="txtLokasi" onkeyup="getArea()">
                                             <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}"  style="width: 40px;" id="loaderLokasi">
-                                            <div id="result-box"></div>
+                                            <div id="result-box" class="ebunga-style-pt-10"></div>
                                             <p class="require">Required Fields <span>*</span></p>
                                             <div class="Quality">
 

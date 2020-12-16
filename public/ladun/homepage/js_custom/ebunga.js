@@ -73,51 +73,18 @@ function getArea()
     let lokasi = $('#txtLokasi').val();
     let kd_produk = div_modal_product.kd_produk;
     if(lokasi.length > 5){
-       axios.post(rToCheckArea, {slug:lokasi, kd_produk:kd_produk}).then(function(res){
-        $("#result-box").html(res.data);
-       });
+        $('#loaderLokasi').show()
+        axios.post(rToCheckArea, {slug:lokasi, kd_produk:kd_produk}).then(function(res){
+            $("#result-box").html(res.data);
+        });
+        $('#loaderLokasi').hide()
     }else{
         $("#result-box").html("");
     }
 }
 
 // Function
-function searchArea()
+function selectArea()
 {
-    clearArea();
-    let lokasi = $('#txtLokasi').val();
-    let kd_produk = div_modal_product.kd_produk;
-    $('#txtTabelArea').hide();
-    if(lokasi === ''){
-        $('#loaderLokasi').hide();
-        $('#txtTabelArea').hide();
-    }else{
-        if(lokasi.length > 4){
-            $('#loaderLokasi').show();
-            console.clear();
-                $.post(rToCheckArea,{'slug':lokasi, 'kd_produk':kd_produk}, function(data){
-                    let area = data.temp_coverage;
-                    area.forEach(looping_daerah);
-                    function looping_daerah(item, index){
-                        console.table(area[index]);
-                        let coverage = area[index].status_coverage;
-                        div_modal_product.listDaerah.push({'nama':area[index].nama, 'cover':coverage});
-
-                    }
-                    statusLoading = true;
-                    $('#txtTabelArea').show();
-                    $('#loaderLokasi').hide();
-                });
-        }else{
-        }
-    }
-}
-
-function clearArea()
-{
-    let panjang = div_modal_product.listDaerah.length;
-    var i;
-    for(i = 0; i < panjang; i++){
-        div_modal_product.listDaerah.splice(0,1);
-    }
+    console.log("dipilih ...");
 }

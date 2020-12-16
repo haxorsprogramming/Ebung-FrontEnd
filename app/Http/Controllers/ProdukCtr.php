@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 // import model 
 use App\Models\ProdukMdl;
 use App\Models\KelurahanMdl;
+use App\Models\KecamatanMdl;
 use App\Models\CoverageAreaMdl;
 // import another controller 
 
@@ -26,23 +27,22 @@ class ProdukCtr extends Controller
         $dataProduk = ProdukMdl::where('kd_produk', $kdProduk) -> first();
         $idBranch = $dataProduk -> id_branch;
 
-        $daerah = KelurahanMdl::where('nama', 'like', '%'.$slug.'%') -> take(5) -> get();
-        $resultView = "<table class='table'>";
+        $daerah = KelurahanMdl::where('nama', 'like', '%'.$slug.'%') -> take(10) -> get();
+        $resultView = "<table class='table table-home-coverage-area'>";
         foreach($daerah as $da){
             $idKel = $da -> id_kel;
+            $idKec = $da -> id_kec;
+            //cari nama kecamatan, kabupaten, provinsi 
+            $dataKec = KecamatanMdl::where('id_kec', $idKec) -> first();
+            $namaKec = $dataKec -> nama;
             //cek apakah id kel & produk ada di coverage area
             $cekArea = CoverageAreaMdl::where('kd_area', $idKel) -> where('kd_branch', $idBranch) -> count();
             if($cekArea == 1){
-                $status_cover = 'yes';
+                $status_cover = "<a href='#!' class='btn-pilih-coverage' onclick='selectArea()'>Select</a>";
             }else{
-                $status_cover = 'no';
+                $status_cover = '<small>Sorry, this area not coverage ...</small> ';
             }
-            $arrTemp['nama'] = $da -> nama;
-            $arrTemp['id_kel'] = $idKel;
-            $arrTemp['kd_produk'] = $kdProduk;
-            $arrTemp['status_coverage'] = $status_cover;
-            $dr['temp_coverage'][] = $arrTemp;
-            $resultView .= "<tr><td>". $da -> nama."</td><td>".$status_cover."</td></tr>";
+            $resultView .= "<tr><td>". $da -> nama."<br/><small>".$namaKec."</small></td><td>".$status_cover."</td></tr>";
         }
         $resultView .= "</table>";
         return $resultView;

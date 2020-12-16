@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-fix-nav.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-form-search-mobile.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/intlTelInput.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_custom/ebunga.css') }}">
     <!-- slick -->
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/slick.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/slick-theme.css') }}">

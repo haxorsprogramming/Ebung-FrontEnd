@@ -1,6 +1,56 @@
-.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
-.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
-.autocomplete-selected { background: #F0F0F0; }
-.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
-.autocomplete-group { padding: 2px 5px; }
-.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+.table-home-coverage-area {
+    padding-top: 11px;
+    font-family: Poppins;
+    font-weight: 350;
+    font-size: 14px;
+    color: black;
+}
+
+.ebunga-style-mt-10 {
+    margin-top:10px;
+}
+
+.ebunga-style-mt-20 {
+    margion-top:20px;
+}
+
+.ebunga-style-pt-10 {
+    padding-top:10px;
+}
+
+.btn-pilih-coverage {
+    display: inline-block;
+    font-family: Abril Fatface;
+    font-weight: 350;
+    font-size: 14px;
+    padding-left : 7px;
+    padding-right: 7px;
+    color: black;
+    background: black;
+    color: #fff;
+    transition: all .3s ease;
+    border: 1px solid black;
+    border-radius: 7px;
+}
+
+.btn-pilih-coverage:hover{
+    text-decoration: none;
+}
+
+.search-box-coverage-area{
+    border-color: #e5e5e5;
+    box-shadow: none;
+    font-size: 16px;
+    font-family: "Poppins";
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    color: #888888;
+    padding: 9px 20px;
+    line-height: 1.625;
+    height: 47px;
+    display: block;
+    width: 100%;
+    font: 400 16px "Poppins";
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
