@@ -129,6 +129,7 @@
                 <div id="maps" style="width:100%px;height:400px;"></div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-6">
+                
                 <div class="form-group">
                     <label>List Coverage Area</label>
                     <table class="table">
@@ -148,6 +149,8 @@
 
 <script>
     var idBranch = "{{ $idBranch }}";
+    var namaKec = "{{ $namaKec }}";
+    var namaKel = "{{ $namaKel }}";
 </script>
 
 <script src="{{ asset('ladun/account_asset/js_custom/seller/detailBranch.js') }}"></script>

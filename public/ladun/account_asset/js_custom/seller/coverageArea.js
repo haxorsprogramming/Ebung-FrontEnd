@@ -1,11 +1,9 @@
 // Route
-
 var rToGetKabupaten = server + "get-kabupaten/";
 var rToGetKecamatan = server + "get-kecamatan/";
 var rToGetKelurahan = server + "get-kelurahan/";
 var rToCekBranchLocation = server + "account/seller/sellerbranch/cek-branch-location/";
-
-
+var rToSaveLocation = server + "";
 
 var dataKelurahan = [];
 // Vue Object 
@@ -28,6 +26,7 @@ var divAddCoverage = new Vue({
             let letakKel = dataKelurahan.indexOf(kdKel);
             dataKelurahan.splice(letakKel, 1);
             this.kelurahan.splice(letakKel, 1);
+            
         }
     }
 });
@@ -37,22 +36,17 @@ $('#divProvinsi').hide();
 $('#divKabupaten').hide();
 $('#divKecamatan').hide();
 $('#divKelurahan').hide();
-axios.get(rToCekBranchLocation+idBranch).then(function (res) {
-    let kelurahanData = res.data;
-    let namaKelurahan = kelurahanData.kelurahan; 
-    setFirstMap(namaKelurahan);
-});
+
+var rToGetCordinateVillage = "https://maps.googleapis.com/maps/api/geocode/json?address="+namaKel+"+"+namaKec+"&key="+pathEbunga;
+
+axios.get(rToGetCordinateVillage).then(function(res){
+  let lat = res.data.results[0].geometry.location.lat;
+  let lng = res.data.results[0].geometry.location.lng;
+  var mapProp = { center:new google.maps.LatLng(lat,lng), zoom:13 };
+  var map = new google.maps.Map(document.getElementById("maps"),  mapProp);
+}); 
+
 // Function 
-function setFirstMap(kelSearch)
-{
-    var rToGetCordinateVillage = "https://maps.googleapis.com/maps/api/geocode/json?address="+kelSearch+"&key="+pathEbunga;
-    axios.get(rToGetCordinateVillage).then(function(res){
-        let lat = res.data.results[0].geometry.location.lat;
-        let lng = res.data.results[0].geometry.location.lng;
-        var mapProp = { center:new google.maps.LatLng(lat,lng), zoom:13 };
-        var map = new google.maps.Map(document.getElementById("maps"),  mapProp);
-    }); 
-}
 function countryPilih()
 {
     let kdCountry = document.querySelector('#txtCountry').value;
