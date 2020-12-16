@@ -60,6 +60,26 @@ $.ajaxSetup({
 $('#loaderLokasi').hide();
 $('#txtTabelArea').hide();
 
+var statusLoading = false;
+$('#loaderLokasi').autocomplete({
+    serviceUrl: '/autocomplete/countries',
+    onSelect: function (suggestion) {
+        alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+    }
+});
+
+function getArea()
+{
+    let lokasi = $('#txtLokasi').val();
+    let kd_produk = div_modal_product.kd_produk;
+    if(lokasi.length > 5){
+       axios.post(rToCheckArea, {slug:lokasi, kd_produk:kd_produk}).then(function(res){
+        $("#result-box").html(res.data);
+       });
+    }else{
+        $("#result-box").html("");
+    }
+}
 
 // Function
 function searchArea()
@@ -75,7 +95,6 @@ function searchArea()
         if(lokasi.length > 4){
             $('#loaderLokasi').show();
             console.clear();
-            
                 $.post(rToCheckArea,{'slug':lokasi, 'kd_produk':kd_produk}, function(data){
                     let area = data.temp_coverage;
                     area.forEach(looping_daerah);
@@ -85,6 +104,7 @@ function searchArea()
                         div_modal_product.listDaerah.push({'nama':area[index].nama, 'cover':coverage});
 
                     }
+                    statusLoading = true;
                     $('#txtTabelArea').show();
                     $('#loaderLokasi').hide();
                 });

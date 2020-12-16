@@ -27,7 +27,7 @@ class ProdukCtr extends Controller
         $idBranch = $dataProduk -> id_branch;
 
         $daerah = KelurahanMdl::where('nama', 'like', '%'.$slug.'%') -> take(5) -> get();
-        
+        $resultView = "<table class='table'>";
         foreach($daerah as $da){
             $idKel = $da -> id_kel;
             //cek apakah id kel & produk ada di coverage area
@@ -42,8 +42,9 @@ class ProdukCtr extends Controller
             $arrTemp['kd_produk'] = $kdProduk;
             $arrTemp['status_coverage'] = $status_cover;
             $dr['temp_coverage'][] = $arrTemp;
+            $resultView .= "<tr><td>". $da -> nama."</td><td>".$status_cover."</td></tr>";
         }
-
-        return \Response::json($dr);
+        $resultView .= "</table>";
+        return $resultView;
     }
 }

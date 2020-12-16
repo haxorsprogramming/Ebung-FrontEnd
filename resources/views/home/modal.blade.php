@@ -30,25 +30,9 @@
                                         </figure>
                                         
                                         <div class="select-custom">
-                                            <input type="text" class="input-text required-entry validate-email input-lg" id="txtLokasi" onkeyup="searchArea()">
-                                            <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;" id="loaderLokasi">
-                                            <hr/>
-                                            <table class="table" id="txtTabelArea" style="font-family:Poppins;">
-                                                <thead>
-                                                    <tr>
-                                                        <td>Area</td><td>Coverage status</td>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr v-for="ld in listDaerah">
-                                                        <td>@{{ ld.nama }}</td>
-                                                        <td>
-                                                            <span v-if="ld.cover === 'yes'" class="material-icons">check_circle_outline</span>
-                                                            <span v-else>Not available</span>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                            <input type="text" class="input-text input-lg" id="txtLokasi" onkeyup="getArea()">
+                                            <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}"  style="width: 40px;" id="loaderLokasi">
+                                            <div id="result-box"></div>
                                             <p class="require">Required Fields <span>*</span></p>
                                             <div class="Quality">
 
