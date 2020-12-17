@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/'.$cssFile) }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-res-product-detail.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-res-about.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-flower.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-faq.css') }}">
