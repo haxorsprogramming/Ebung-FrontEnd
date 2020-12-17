@@ -9,6 +9,7 @@ use App\Models\ProdukMdl;
 use App\Models\KelurahanMdl;
 use App\Models\KecamatanMdl;
 use App\Models\CoverageAreaMdl;
+use App\Models\KategoriMdl;
 // import another controller 
 
 class ProductCtr extends Controller
@@ -16,9 +17,10 @@ class ProductCtr extends Controller
     public function productall()
     {
         $dataProduct = ProdukMdl::take(5) -> get();
+        $kategoriProduct = KategoriMdl::all();
         $cssFile = 'style-homev3.css';
-        $jsFile = 'ebunga-product.js';
-        $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataproduct' => $dataProduct];
+        $jsFile = 'ebunga-product-all.js';
+        $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataproduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
        return view('product.all', $dr);      
     }
 
@@ -50,5 +52,10 @@ class ProductCtr extends Controller
         }
         $resultView .= "</table>";
         return $resultView;
+    }
+
+    public function productdetails($idProduct)
+    {
+        echo $idProduct;
     }
 }

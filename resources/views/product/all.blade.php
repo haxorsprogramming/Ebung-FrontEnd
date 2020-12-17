@@ -60,67 +60,43 @@
                 <div class="collapse navbar-collapse" id="mysidebar">
                     <ul class="list-group list-1">
                         <li class="list-group-item">CATEGORIES</li>
+                        @foreach($dataKategori as $kategori)
+                        <?php 
+                            $idKategori = $kategori -> kd_kategori;
+                            $dataSubKategori = DB::table('tbl_sub_kategori') -> where('kd_kategori', $idKategori) -> get();
+                        ?>
                         <li class="list-group-item">
-                            <a href="#">NEW NOW</a><button class="accordion"></button>
+                            <a href="#!">{{ $kategori -> nama_kategori }}</a><button class="accordion"></button>
                             <ul class="panel">
-                                <li><a href="#">Tuylip</a></li>
-                                <li><a href="#">lavender</a></li>
-                                <li><a href="#">Rose</a></li>
+                                @foreach($dataSubKategori as $subKategori)
+                                <li><a href="#">{{ $subKategori -> nama_kategori }}</a></li>
+                                @endforeach
                             </ul>
                         </li>
-                        <li class="list-group-item">
-                            <a href="flower.html">FLOWER</a><button class="accordion"></button>
-                            <ul class="panel">
-                                <li><a href="product-detail.html">Rose</a></li>
-                                <li><a href="#">Tulips</a></li>
-                                <li><a href="#">Daisy</a></li>
-                                <li><a href="#">Carnation</a></li>
-                                <li><a href="#">Gerbera</a></li>
-                                <li><a href="#">Other</a></li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">PLANT</a><button class="accordion"></button>
-                            <ul class="panel">
-                                <li><a href="#">Tuylip</a></li>
-                                <li><a href="#">lavender</a></li>
-                                <li><a href="#">Rose</a></li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">RING OF PROFESSION</a><button class="accordion"></button>
-                            <ul class="panel">
-                                <li><a href="#">Tuylip</a></li>
-                                <li><a href="#">lavender</a></li>
-                                <li><a href="#">Rose</a></li>
-                            </ul>
-                        </li>
+                        @endforeach
                     </ul>
                     <!--  -->
                     <ul class="list-group list-2">
-                        <li class="list-group-item">COLOR OPTIONS</li>
+                        <li class="list-group-item">Coverage Area</li>
                         <li class="list-group-item list-item-2">
-                            <div class="color-item">
-                                <a href="#"><span id="color-1"></span></a>
-                                <a href="#"><span id="color-2"></span></a>
-                                <a href="#"><span id="color-3"></span></a>
-                                <a href="#"><span id="color-4"></span></a>
-                                <a href="#"><span id="color-5"></span></a>
-                                <a href="#"><span id="color-6"></span></a>
-                                <a href="#"><span id="color-7"></span></a>
-                                <a href="#"><span id="color-8"></span></a>
+                            <div class="color-item" style="margin-bottom:15px;">
+                                <label>Search area</label>
+                                <input type="text" class="form-control" id="txtLokasi">
+                                <div id="resultSearchArea" style="margin-top:10px;">
+                                    <table class="table">
+                                        <tr>
+                                            <td>Sei Kera Hilir II, Medan perjuangan</td><td><a href="#!"><span class="material-icons">search</span></a></td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
-
                         </li>
-
                     </ul>
                     <!--  -->
                     <ul class="list-group list-3">
-                        <li class="list-group-item">SIZE OPTIONS</li>
-                        <li class="list-group-item list-item-3"><a href="#">L</a><span>(15)</span></li>
-                        <li class="list-group-item list-item-3"><a href="#">M</a><span>(09)</span></li>
-                        <li class="list-group-item list-item-3"><a href="#">S</a><span>(12)</span></li>
-                        <li class="list-group-item list-item-3"><a href="#">XL</a><span>(16)</span></li>
+                        <li class="list-group-item">Price Category</li>
+                        <li class="list-group-item list-item-3"><a href="#">Economic</a><span>(15)</span></li>
+                        <li class="list-group-item list-item-3"><a href="#">Premium</a><span>(09)</span></li>
                     </ul>
                     <!--  -->
                     <ul class="list-group list-4">
@@ -152,9 +128,7 @@
                     <div class="product-image-flower">
                         <figure class="sale"><a href="#"><img src="{{ asset('ladun/ebunga_asset/image/product/'.$product -> foto_utama) }}" class="img-responsive" alt="img-holiwood"></a></figure>
                         <div class="product-icon-flower">
-                            <a href="#"><i class="far fa-eye"></i></a>
-                            <a href="#"><i class="fas fa-shopping-basket"></i></a>
-                            <a href="#"><i class="far fa-heart"></i></a>
+                            <a href="{{ url('product/'.$product -> kd_produk.'/details') }}"><i class="far fa-eye"></i></a>
                         </div>
                     </div>
                     <div class="product-title-flower">
@@ -165,9 +139,7 @@
                         </div>
                         <div class="prince">$207.2<s class="strike">$250.9</s></div>
                         <div class="add-cart">
-                            <a href="#" class="btn-add-cart">Add to cart</a>
-                            <a href="#" class="list-icon icon-1"><i class="far fa-eye"></i></a>
-                            <a href="#" class="list-icon icon-2"><i class="far fa-heart"></i></a>
+                            <a href="{{ url('product/bunga1233/details') }}" class="list-icon icon-1"><i class="far fa-eye"></i></a>
                         </div>
                     </div>
                 </div>
