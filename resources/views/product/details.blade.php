@@ -1,3 +1,8 @@
+<?php
+    $kdProduk = $dataProduct->kd_produk;
+    $dataVariant = DB::table('tbl_variant_product')->where('kd_product', $kdProduk)->get();
+?>
+
 @include('layout.header')
 
 <main>
@@ -19,9 +24,11 @@
 
             <div class="row">
                 <div class="slider-for">
+
+
                     <div class="product-content">
                         <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 img-content">
-                            <img src="http://landing.engotheme.com/html/jenstore/demo/img/wedding-1.jpg" class="img-responsive" alt="img-holiwood">
+                            <img src="{{ asset('ladun/ebunga_asset/image/product/'.$dataProduct -> foto_utama) }}" class="img-responsive" alt="img-holiwood">
                         </div>
                         <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 detail">
                             <h1>{{ $dataProduct -> nama_produk }}</h1>
@@ -30,12 +37,12 @@
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 <span>10 Rating(s) | Add Your Rating</span>
                             </div>
-                            <div class="prince"><span>$250.9</span><s class="strike">$300.02</s></div>
+                            <div class="prince"><span>{{ $dataProduct -> harga }}</span><s class="strike">$300.02</s></div>
                             <figure class="fi-option">
                                 <p class="option">Option</p>
                             </figure>
                             <div class="size col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                <span class="lb-size">Size <span class="sta-red">*</span></span>
+                                <span class="lb-size">Variant <span class="sta-red">*</span></span>
                                 <div class="select-custom">
                                     <select>
                                         <option>S</option>
@@ -68,7 +75,7 @@
 
                             </div>
                             <div class="add-cart">
-                                <a href="#" class="btn-add-cart">Add to cart</a>
+                                <a href="#" class="btn-add-cart">Order Now</a>
                                 <a href="#" class="list-icon icon-1"><i class="far fa-eye"></i></a>
                                 <a href="#" class="list-icon icon-2"><i class="far fa-heart"></i></a>
                             </div>
@@ -76,189 +83,17 @@
                         </div>
                     </div>
                     <!-- ------ end content 1----- -->
-                    <div class="product-content">
-                        <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 img-content">
-                            <img src="http://landing.engotheme.com/html/jenstore/demo/img/holiday-1.jpg" class="img-responsive" alt="img-holiwood">
-                        </div>
-                        <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 detail">
-                            <h1>Queen Rose - Pink</h1>
-                            <p class="p1">It is a long established fact that a reader will be distracted by the readable<br class="hidden-md hidden-sm hidden-xs"> content of a page when looking at its layout.</p>
-                            <div class="star">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                <span>10 Rating(s) | Add Your Rating</span>
-                            </div>
-                            <div class="prince"><span>$250.9</span><s class="strike">$300.02</s></div>
-                            <figure class="fi-option">
-                                <p class="option">Option</p>
-                            </figure>
-                            <div class="size col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                <span class="lb-size">Size <span class="sta-red">*</span></span>
-                                <div class="select-custom">
-                                    <select>
-                                        <option>S</option>
-                                        <option>M</option>
-                                        <option>L</option>
-                                        <option>XL</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="color col-lg-8 col-md-6 col-sm-12 col-xs-12">
-                                <div class="div-color"><span class="lb-color">Color <span class="sta-red">*</span></span></div>
-                                <a href="#"><span class="color-1"></span></a> <a href="#"><span class="color-2"></span></a> <a href="#"><span class="color-3"></span></a>
-                                <a href="#"><span class="color-4"></span></a> <a href="#"><span class="color-5"></span></a>
-                            </div>
-                            <p class="require">Required Fields <span>*</span></p>
-                            <div class="Quality">
 
-                                <div class="input-group input-number-group">
-                                    <span class="text-qua">Quanty:</span>
-                                    <div class="input-group-button">
-                                        <span class="input-number-decrement">-</span>
-                                    </div>
-                                    <input class="input-number" type="number" min="0" max="1000" value="01">
-                                    <div class="input-group-button">
-                                        <span class="input-number-increment">+</span>
-                                    </div>
-                                    <span class="dola">$ </span><span class="total-prince">250.9</span>
-                                </div>
-
-                            </div>
-                            <div class="add-cart">
-                                <a href="#" class="btn-add-cart">Add to cart</a>
-                                <a href="#" class="list-icon icon-1"><i class="far fa-eye"></i></a>
-                                <a href="#" class="list-icon icon-2"><i class="far fa-heart"></i></a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- ------ end content 2----- -->
-                    <div class="product-content">
-                        <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 img-content">
-                            <img src="http://landing.engotheme.com/html/jenstore/demo/img/holiday-1.jpg" class="img-responsive" alt="img-holiwood">
-                        </div>
-                        <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 detail">
-                            <h1>Queen Rose - Pink</h1>
-                            <p class="p1">It is a long established fact that a reader will be distracted by the readable<br class="hidden-md hidden-sm hidden-xs"> content of a page when looking at its layout.</p>
-                            <div class="star">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                <span>10 Rating(s) | Add Your Rating</span>
-                            </div>
-                            <div class="prince"><span>$250.9</span><s class="strike">$300.02</s></div>
-                            <figure class="fi-option">
-                                <p class="option">Option</p>
-                            </figure>
-                            <div class="size col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                <span class="lb-size">Size <span class="sta-red">*</span></span>
-                                <div class="select-custom">
-                                    <select>
-                                        <option>S</option>
-                                        <option>M</option>
-                                        <option>L</option>
-                                        <option>XL</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="color col-lg-8 col-md-6 col-sm-12 col-xs-12">
-                                <div class="div-color"><span class="lb-color">Color <span class="sta-red">*</span></span></div>
-                                <a href="#"><span class="color-1"></span></a> <a href="#"><span class="color-2"></span></a> <a href="#"><span class="color-3"></span></a>
-                                <a href="#"><span class="color-4"></span></a> <a href="#"><span class="color-5"></span></a>
-                            </div>
-                            <p class="require">Required Fields <span>*</span></p>
-                            <div class="Quality">
-
-                                <div class="input-group input-number-group">
-                                    <span class="text-qua">Quanty:</span>
-                                    <div class="input-group-button">
-                                        <span class="input-number-decrement">-</span>
-                                    </div>
-                                    <input class="input-number" type="number" min="0" max="1000" value="01">
-                                    <div class="input-group-button">
-                                        <span class="input-number-increment">+</span>
-                                    </div>
-                                    <span class="dola">$ </span><span class="total-prince">250.9</span>
-                                </div>
-
-                            </div>
-                            <div class="add-cart">
-                                <a href="#" class="btn-add-cart">Add to cart</a>
-                                <a href="#" class="list-icon icon-1"><i class="far fa-eye"></i></a>
-                                <a href="#" class="list-icon icon-2"><i class="far fa-heart"></i></a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- ------ end content 3----- -->
-                    <div class="product-content">
-                        <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 img-content">
-                            <img src="http://landing.engotheme.com/html/jenstore/demo/img/holiday-1.jpg" class="img-responsive" alt="img-holiwood">
-                        </div>
-                        <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 detail">
-                            <h1>Queen Rose - Pink</h1>
-                            <p class="p1">It is a long established fact that a reader will be distracted by the readable<br class="hidden-md hidden-sm hidden-xs"> content of a page when looking at its layout.</p>
-                            <div class="star">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                <span>10 Rating(s) | Add Your Rating</span>
-                            </div>
-                            <div class="prince"><span>$250.9</span><s class="strike">$300.02</s></div>
-                            <figure class="fi-option">
-                                <p class="option">Option</p>
-                            </figure>
-                            <div class="size col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                <span class="lb-size">Size <span class="sta-red">*</span></span>
-                                <div class="select-custom">
-                                    <select>
-                                        <option>S</option>
-                                        <option>M</option>
-                                        <option>L</option>
-                                        <option>XL</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="color col-lg-8 col-md-6 col-sm-12 col-xs-12">
-                                <div class="div-color"><span class="lb-color">Color <span class="sta-red">*</span></span></div>
-                                <a href="#"><span class="color-1"></span></a> <a href="#"><span class="color-2"></span></a> <a href="#"><span class="color-3"></span></a>
-                                <a href="#"><span class="color-4"></span></a> <a href="#"><span class="color-5"></span></a>
-                            </div>
-                            <p class="require">Required Fields <span>*</span></p>
-                            <div class="Quality">
-
-                                <div class="input-group input-number-group">
-                                    <span class="text-qua">Quanty:</span>
-                                    <div class="input-group-button">
-                                        <span class="input-number-decrement">-</span>
-                                    </div>
-                                    <input class="input-number" type="number" min="0" max="1000" value="01">
-                                    <div class="input-group-button">
-                                        <span class="input-number-increment">+</span>
-                                    </div>
-                                    <span class="dola">$ </span><span class="total-prince">250.9</span>
-                                </div>
-
-                            </div>
-                            <div class="add-cart">
-                                <a href="#" class="btn-add-cart">Add to cart</a>
-                                <a href="#" class="list-icon icon-1"><i class="far fa-eye"></i></a>
-                                <a href="#" class="list-icon icon-2"><i class="far fa-heart"></i></a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- ------ end content 4----- -->
                 </div>
-                <div class="slider-nav col-lg-5 col-md-6 col-sm-12 col-xs-12">
-                    <div><img src="http://landing.engotheme.com/html/jenstore/demo/img/holiday-1.jpg" class="img-responsive" alt="img-holiwood"></div>
-                    <div><img src="http://landing.engotheme.com/html/jenstore/demo/img/holiday-1.jpg" class="img-responsive" alt="img-holiwood"></div>
-                    <div><img src="http://landing.engotheme.com/html/jenstore/demo/img/holiday-1.jpg" class="img-responsive" alt="img-holiwood"></div>
-                    <div><img src="http://landing.engotheme.com/html/jenstore/demo/img/holiday-1.jpg" class="img-responsive" alt="img-holiwood"></div>
-                </div>
+                <div class="slider-nav col-lg-5 col-md-6 col-sm-12 col-xs-12" id="divVariantFoto">
 
-                <div class="col-lg-7 connect-us col-md-6 col-sm-12 col-xs-12">
-                    <a href="#" id="like-fb">1</a>
-                    <a href="#" id="like-tw"></a>
-                    <a href="#" id="like-gg"></a>
-                    <a href="#" id="like-share"></a>
+                    @foreach($dataVariant as $variant)
+                    @php
+                    $namaVariant = $kdProduk."_VAR".$variant -> nama_variant.".jpg";
+                    @endphp
+                    <div><img src="{{ asset('ladun/ebunga_asset/image/product/variant/'.$namaVariant) }}" class="img-responsive" alt="img-holiwood"></div>
+                    @endforeach
                 </div>
-
 
             </div>
 

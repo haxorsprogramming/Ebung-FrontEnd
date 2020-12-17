@@ -54,3 +54,8 @@
     font: 400 16px "Poppins";
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 }
+
+@media screen and (max-width: 768px) {
+
+    #divVariantFoto {display: none;}
+}
