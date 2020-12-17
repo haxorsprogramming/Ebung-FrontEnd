@@ -58,7 +58,8 @@ class ProductCtr extends Controller
     {
         $cssFile = 'style-product-detail.css';
         $jsFile = 'ebunga-product-details.js';
-        $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile];
+        $dataProduct = ProdukMdl::where('kd_produk', $idProduct) -> first();
+        $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataProduct];
         return view('product.details', $dr);
     }
 }
