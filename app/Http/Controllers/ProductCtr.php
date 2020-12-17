@@ -56,6 +56,9 @@ class ProductCtr extends Controller
 
     public function productdetails($idProduct)
     {
-        echo $idProduct;
+        $cssFile = 'style-homev3.css';
+        $jsFile = 'ebunga-product-all.js';
+        $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile];
+        return view('product.details', $dr);
     }
 }
