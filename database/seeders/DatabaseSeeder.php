@@ -43,45 +43,159 @@ class DatabaseSeeder extends Seeder
         ]);
         // Sub kategori 
         DB::table('tbl_sub_kategori') -> insert([
-            'kd_sub_kategori' => 'BUNGASEGAR',
-            'nama_kategori' => 'Bunga Segar',
-            'kd_kategori' => 'BUNGA',
-            'active' => '1'
-        ]);
-        DB::table('tbl_sub_kategori') -> insert([
-            'kd_sub_kategori' => 'BUNGAPLASTIK',
-            'nama_kategori' => 'Bunga Plastik',
-            'kd_kategori' => 'BUNGA',
-            'active' => '1'
-        ]);
-        DB::table('tbl_sub_kategori') -> insert([
-            'kd_sub_kategori' => 'BOUQET',
-            'nama_kategori' => 'Bunga BOUQUET',
-            'kd_kategori' => 'BUNGA',
-            'active' => '1'
-        ]);
-        DB::table('tbl_sub_kategori') -> insert([
-            'kd_sub_kategori' => 'PAPANBUNGAKONVENSIONAL',
-            'nama_kategori' => 'Papan Bunga Konvensional',
+            'kd_sub_kategori' => 'PAPANBUNGAKONV1SIDE',
+            'nama_kategori' => 'Papan Bunga Konvensional 1 side', 
             'kd_kategori' => 'PAPANBUNGA',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
-            'kd_sub_kategori' => 'PAPANBUNGADIGITAL',
-            'nama_kategori' => 'Papan Bunga Digital',
+            'kd_sub_kategori' => 'PAPANBUNGAKONV2SIDE',
+            'nama_kategori' => 'Papan Bunga Konvensional 2 side', 
             'kd_kategori' => 'PAPANBUNGA',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
-            'kd_sub_kategori' => 'PARCELSNACK',
-            'nama_kategori' => 'Parcel Snack',
+            'kd_sub_kategori' => 'PAPANBUNGADIGMINI',
+            'nama_kategori' => 'Papan Bunga Digital Mini', 
+            'kd_kategori' => 'PAPANBUNGA',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'PAPANBUNGADIGBESAR',
+            'nama_kategori' => 'Papan Bunga Digital Besar', 
+            'kd_kategori' => 'PAPANBUNGA',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'BUNGABUKETSEGAR',
+            'nama_kategori' => 'Bunga Buket Segar', 
+            'kd_kategori' => 'BUNGA',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'BUNGAMEJABERDIRI',
+            'nama_kategori' => 'Bunga Meja Berdiri', 
+            'kd_kategori' => 'BUNGA',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'BUNGABERDIRISEGAR',
+            'nama_kategori' => 'Bunga Berdiri Segar', 
+            'kd_kategori' => 'BUNGA',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'BUNGABUKETART',
+            'nama_kategori' => 'Bunga Buket Artificial', 
+            'kd_kategori' => 'BUNGA',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'BUNGAMEJAART',
+            'nama_kategori' => 'Bunga Meja Artificial', 
+            'kd_kategori' => 'BUNGA',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'BUNGABERDIRIART',
+            'nama_kategori' => 'Bunga Berdiri Artificial', 
+            'kd_kategori' => 'BUNGA',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'BUNGABUKETKOMBINASI',
+            'nama_kategori' => 'Bunga Buket Kombinasi', 
+            'kd_kategori' => 'BUNGA',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'KUEULANGTAHUN',
+            'nama_kategori' => 'Kue Ulang Tahun', 
+            'kd_kategori' => 'CAKE',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'KUEACARA',
+            'nama_kategori' => 'Kue Acara Perayaan', 
+            'kd_kategori' => 'CAKE',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'KUEMANGKOK',
+            'nama_kategori' => 'Kue Mangkok', 
+            'kd_kategori' => 'CAKE',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'KUEKERING',
+            'nama_kategori' => 'Kue Kering', 
+            'kd_kategori' => 'CAKE',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'PARCELSEMBAKO',
+            'nama_kategori' => 'Parcel Sembako', 
             'kd_kategori' => 'PARCEL',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
-            'kd_sub_kategori' => 'TARTCAKE',
-            'nama_kategori' => 'Tart Cake',
-            'kd_kategori' => 'CAKE',
+            'kd_sub_kategori' => 'PARCELPERLENGKAPANBAYI',
+            'nama_kategori' => 'Parcel Perlengkapan Bayi', 
+            'kd_kategori' => 'PARCEL',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'PARCELKOMBINASI',
+            'nama_kategori' => 'Parcel Kombinasi', 
+            'kd_kategori' => 'PARCEL',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'PARCELBUAH',
+            'nama_kategori' => 'Parcel Buah', 
+            'kd_kategori' => 'PARCEL',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'PARCELWADAHPLASTIK',
+            'nama_kategori' => 'Parcel Wadah Plastik', 
+            'kd_kategori' => 'PARCEL',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'PARCELPECAHBELAH',
+            'nama_kategori' => 'Parcel Pecah Belah', 
+            'kd_kategori' => 'PARCEL',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'PARCELELEKTRONIK',
+            'nama_kategori' => 'Parcel Elekronik', 
+            'kd_kategori' => 'PARCEL',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'PARCELMAKANANKESEHATAN',
+            'nama_kategori' => 'Parcel Makanan Kesehatan', 
+            'kd_kategori' => 'PARCEL',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'PARCELMAKEUP',
+            'nama_kategori' => 'Parcel Make Up', 
+            'kd_kategori' => 'PARCEL',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'PARCELPERAWATANWAJAH',
+            'nama_kategori' => 'Parcel Perawatan Wajah', 
+            'kd_kategori' => 'PARCEL',
+            'active' => '1'
+        ]);
+        DB::table('tbl_sub_kategori') -> insert([
+            'kd_sub_kategori' => 'PARCELPERAWATANKESEHATAN',
+            'nama_kategori' => 'Parcel Perawatan Kesehatan', 
+            'kd_kategori' => 'PARCEL',
             'active' => '1'
         ]);
         // user 
