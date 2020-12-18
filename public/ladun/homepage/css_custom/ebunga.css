@@ -11,7 +11,7 @@
 }
 
 .ebunga-style-mt-20 {
-    margion-top:20px;
+    margin-top:20px;
 }
 
 .ebunga-style-pt-10 {
@@ -33,11 +33,11 @@
     border-radius: 7px;
 }
 
-.btn-pilih-coverage:hover{
+.btn-pilih-coverage:hover {
     text-decoration: none;
 }
 
-.search-box-coverage-area{
+.search-box-coverage-area {
     border-color: #e5e5e5;
     box-shadow: none;
     font-size: 16px;
@@ -56,6 +56,5 @@
 }
 
 @media screen and (max-width: 768px) {
-
     #divVariantFoto {display: none;}
 }

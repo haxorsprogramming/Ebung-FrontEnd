@@ -1,18 +1,6 @@
 @include('layout.header')
 <main>
-    <div class="content-search">
-
-        <div class="container container-100">
-            <i class="far fa-times-circle" id="close-search"></i>
-            <h3 class="text-center">what are your looking for ?</h3>
-            <form method="get" action="/search" role="search" style="position: relative;">
-                <input type="text" class="form-control control-search" value="" autocomplete="off" placeholder="Enter Search ..." aria-label="SEARCH" name="q">
-
-                <button class="button_search" type="submit">search</button>
-            </form>
-        </div>
-
-    </div>
+    @include('home.content_search');
     <div class="container banner">
         <figure id="banner-figure"><a href="#"><img src="http://landing.engotheme.com/html/jenstore/demo/img/banner-shop.jpg" class="img-responsive" alt="img-holiwood"></a></figure>
         <div class="text-banner">
@@ -59,9 +47,9 @@
                     <ul class="list-group list-1">
                         <li class="list-group-item">CATEGORIES</li>
                         @foreach($dataKategori as $kategori)
-                        <?php 
-                            $idKategori = $kategori -> kd_kategori;
-                            $dataSubKategori = DB::table('tbl_sub_kategori') -> where('kd_kategori', $idKategori) -> get();
+                        <?php
+                        $idKategori = $kategori->kd_kategori;
+                        $dataSubKategori = DB::table('tbl_sub_kategori')->where('kd_kategori', $idKategori)->get();
                         ?>
                         <li class="list-group-item">
                             <a href="#!">{{ $kategori -> nama_kategori }}</a><button class="accordion"></button>
@@ -83,7 +71,8 @@
                                 <div id="resultSearchArea" style="margin-top:10px;">
                                     <table class="table">
                                         <tr>
-                                            <td>Sei Kera Hilir II, Medan perjuangan</td><td><a href="#!"><span class="material-icons">search</span></a></td>
+                                            <td>Sei Kera Hilir II, Medan perjuangan</td>
+                                            <td><a href="#!"><span class="material-icons">search</span></a></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -98,7 +87,7 @@
                     </ul>
                     <!--  -->
                     <ul class="list-group list-4">
-                        
+
                     </ul>
                     <!--  -->
                     <ul class="list-group list-3">

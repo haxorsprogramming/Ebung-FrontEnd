@@ -1,11 +1,12 @@
 <?php
-    $kdProduk = $dataProduct->kd_produk;
-    $dataVariant = DB::table('tbl_variant_product')->where('kd_product', $kdProduk)->get();
+$kdProduk = $dataProduct->kd_produk;
+$dataVariant = DB::table('tbl_variant_product')->where('kd_product', $kdProduk)->get();
 ?>
 
 @include('layout.header')
 
 <main>
+
     @include('home.content_search');
 
     <div class="container">
@@ -19,12 +20,10 @@
     </div>
     <div class="product-detail">
 
-
         <div class="container">
 
             <div class="row">
                 <div class="slider-for">
-
 
                     <div class="product-content">
                         <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 img-content">
@@ -32,12 +31,12 @@
                         </div>
                         <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 detail">
                             <h1>{{ $dataProduct -> nama_produk }}</h1>
-                            <p class="p1">It is a long established fact that a reader will be distracted by the readable<br class="hidden-md hidden-sm hidden-xs"> content of a page when looking at its layout.</p>
+                            <p class="p1" style="text-align: center;"><?= $dataProduct->deks_produk; ?></p>
                             <div class="star">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                <span>10 Rating(s) | Add Your Rating</span>
+                                <span>10 Rating(s)</span>
                             </div>
-                            <div class="prince"><span>{{ $dataProduct -> harga }}</span><s class="strike">$300.02</s></div>
+                            <div class="prince"><span>Rp. {{ number_format($dataProduct -> harga) }}</span><s class="strike">$300.02</s></div>
                             <figure class="fi-option">
                                 <p class="option">Option</p>
                             </figure>
@@ -51,11 +50,6 @@
                                         <option>XL</option>
                                     </select>
                                 </div>
-                            </div>
-                            <div class="color col-lg-8 col-md-6 col-sm-6 col-xs-12">
-                                <div class="div-color"><span class="lb-color">Color <span class="sta-red">*</span></span></div>
-                                <a href="#"><span class="color-1"></span></a> <a href="#"><span class="color-2"></span></a> <a href="#"><span class="color-3"></span></a>
-                                <a href="#"><span class="color-4"></span></a> <a href="#"><span class="color-5"></span></a>
                             </div>
 
                             <p class="require">Required Fields <span>*</span></p>
@@ -86,7 +80,6 @@
 
                 </div>
                 <div class="slider-nav col-lg-5 col-md-6 col-sm-12 col-xs-12" id="divVariantFoto">
-
                     @foreach($dataVariant as $variant)
                     @php
                     $namaVariant = $kdProduk."_VAR".$variant -> nama_variant.".jpg";
