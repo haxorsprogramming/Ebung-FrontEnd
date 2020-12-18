@@ -48,7 +48,7 @@ class ProductCtr extends Controller
             }else{
                 $status_cover = '<small>Sorry, this area not coverage ...</small> ';
             }
-            $resultView .= "<tr><td>". $da -> nama."<br/><small>".$namaKec."</small></td><td>".$status_cover."</td></tr>";
+            $resultView .= "<tr><td>".$da -> nama."<br/><small>".$namaKec."</small></td><td>".$status_cover."</td></tr>";
         }
         $resultView .= "</table>";
         return $resultView;

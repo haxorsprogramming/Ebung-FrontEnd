@@ -35,7 +35,7 @@
     <div class="card-header">
         <h4>Add New Product</h4>
         <div class="card-header-action">
-        <a href="#!" class="btn btn-danger" style="border:0px solid white;color:#fff;" onclick="submitProduct()">
+            <a href="#!" class="btn btn-danger" style="border:0px solid white;color:#fff;" onclick="submitProduct()">
                 <i class="fas fa-save"></i> Save new product
             </a>
             <a href="#!" class="btn btn-primary" style="border:0px solid white;color:#fff;" @click="backAtc">

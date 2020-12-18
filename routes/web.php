@@ -14,7 +14,6 @@ use App\Http\Controllers\SellerCtr;
 use App\Http\Controllers\DaerahCtr;
 use App\Http\Controllers\ProductSellerCtr;
 use App\Http\Controllers\HelperCtr;
-use App\Models\ProdukMdl;
 
 // Halaman utama
 Route::get('/', [PageCtr::class, 'home']);
