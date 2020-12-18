@@ -46,7 +46,7 @@ class ProductCtr extends Controller
             if($cekArea == 1){
                 $status_cover = "<a href='javascript:void(0)' class='btn-pilih-coverage' onclick='selectArea(\"".$idKel."\")'>Select</a>";
             }else{
-                $status_cover = '<small>Sorry, this area not coverage ...</small> ';
+                $status_cover = "<small>Sorry, this area not coverage ...</small>";
             }
             $resultView .= "<tr><td>".$da -> nama."<br/><small>".$namaKec."</small></td><td>".$status_cover."</td></tr>";
         }

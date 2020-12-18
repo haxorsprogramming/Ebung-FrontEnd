@@ -33,7 +33,6 @@
                         <option>8</option>
                         <option>9</option>
                     </select>
-
                     <select id="select-defaul">
                         <option>Defaul sorting</option>
                         <option>Defaul sorting</option>
@@ -109,7 +108,6 @@
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 content-flower">
 
-
                 @foreach($dataproduct as $product)
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 product-flower">
                     <div class="product-image-flower">
@@ -122,7 +120,7 @@
                         <h5><a href="#">{{ $product -> nama_produk }}</a></h5>
                         <p class="p-title">It is a long established fact that a reader will be distracted by the readable content of a<br class="hidden-sm hidden-xs"> page when looking at its layout.</p>
                         <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <span class="rating">3 Reating(s) | Add Your Reating(s)</span>
+                            <span class="rating">3 Rating(s) | Add Your Rating(s)</span>
                         </div>
                         <div class="prince">$207.2<s class="strike">$250.9</s></div>
                         <div class="add-cart">
