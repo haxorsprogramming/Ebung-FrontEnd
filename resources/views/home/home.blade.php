@@ -159,7 +159,7 @@
                     <!-- End tab bunga  -->
 
                      <!-- Tab bunga  -->
-                     <div id="menu-tab-PAPANBUNGA" class="tab-pane fade in active">
+                     <div id="menu-tab-PAPANBUNGA" class="tab-pane fade in">
                         @foreach($subProdukPapanBunga as $prod)
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                             <div class="product-image-category">
