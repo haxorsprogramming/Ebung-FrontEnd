@@ -62,4 +62,10 @@ class ProductCtr extends Controller
         $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataProduct];
         return view('product.details', $dr);
     }
+
+    public function productkategory($idKategori)
+    {
+        echo $idKategori;
+    }
+
 }

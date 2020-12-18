@@ -35,6 +35,7 @@ Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']
 // Product list 
 Route::get('/product/all', [ProductCtr::class, 'productall']);
 Route::get('/product/{id_product}/details', [ProductCtr::class, 'productdetails']);
+Route::get('/product/kategory/{id_kategori}', [ProductCtr::class, 'productkategory']);
 
 // Customer (Buyer)
 Route::get('/account', [DashboardCtr::class, 'dashboard']);

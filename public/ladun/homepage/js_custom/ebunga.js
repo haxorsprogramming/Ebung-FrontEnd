@@ -26,19 +26,6 @@ var div_product_depan = new Vue({
     }
 });
 
-var div_modal_product = new Vue({
-    el : '#div_modal_product',
-    data : {
-        title_modal : 'loading ...',
-        deks_produk : 'loading ...',
-        kd_produk : '',
-        currency : 'Rp.',
-        price : 'loading ...',
-        mainPicProduct : '',
-        listDaerah : []
-    }
-});
-
 // Inisialisasi
 $.ajaxSetup({
     headers: {
@@ -50,22 +37,3 @@ $('#loaderLokasi').hide();
 $('#txtTabelArea').hide();
 
 // Function
-function selectArea(idKel)
-{
-    console.log(idKel);
-}
-
-function getArea()
-{
-    let lokasi = $('#txtLokasi').val();
-    let kd_produk = div_modal_product.kd_produk;
-    if(lokasi.length > 5){
-        $('#loaderLokasi').show()
-        axios.post(rToCheckArea, {slug:lokasi, kd_produk:kd_produk}).then(function(res){
-            $("#result-box").html(res.data);
-        });
-        $('#loaderLokasi').hide()
-    }else{
-        $("#result-box").html("");
-    }
-}
