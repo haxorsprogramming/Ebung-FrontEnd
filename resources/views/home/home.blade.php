@@ -131,7 +131,7 @@
                 <div class="row">
                     <div class="tab-content">
                         <?php
-                            $produk_bunga = DB::table('tbl_produk') -> where('kategori', 'BUNGA') -> get();
+                            $subProdukBunga = DB::table('tbl_sub_kategori') -> where('kd_kategori', 'BUNGA') -> get();
                             $produk_papan_bunga = DB::table('tbl_produk') -> where('kategori', 'PAPANBUNGA') -> get();
                             $produk_parcel = DB::table('tbl_produk') -> where('kategori', 'PARCEL') -> get();
                             $produk_cake = DB::table('tbl_produk') -> where('kategori', 'CAKE') -> get();
@@ -139,21 +139,21 @@
                         <!-- ------tab bunga---------------- -->
                         <div id="menu-tab-BUNGA" class="tab-pane fade in active">
 
-                            @foreach($produk_bunga as $prod)
+                            @foreach($subProdukBunga as $prod)
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                                     <div class="product-image-category">
-                                        <figure class="sale"><a href="#"><img src="{{ asset('ladun/ebunga_asset/image/product/'.$prod -> foto_utama) }}" class="img-responsive" alt="holiwood"></a></figure>
+                                        <figure class="sale"><a href="#"><img src="{{ asset('ladun/ebunga_asset/image/subkategoripic/'.$prod -> kd_sub_kategori.'.jpeg') }}" class="img-responsive" alt="holiwood"></a></figure>
                                         <div class="product-icon-category">
-                                            <a href="#!"  v-on:click="detailAtc('{{ $prod -> kd_produk }}')" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
+                                            <a href="#!"  v-on:click="detailAtc('{{ $prod -> kd_sub_kategori }}')" data-toggle="modal" data-target="#myModal"><i class="far fa-eye"></i></a>
 
-                                            <a href="{{ url('product/details/'.$prod -> kd_produk) }}" target="_new"><i class="fas fa-shopping-basket"></i></a>
+                                            <a href="{{ url('product/details/'.$prod -> kd_sub_kategori) }}" target="_new"><i class="fas fa-shopping-basket"></i></a>
                                             <a href="javascript:void(0)"><i class="far fa-heart"></i></a>
                                         </div>
                                     </div>
                                     <div class="product-title-category">
-                                        <h5><a href="#">{{ $prod -> nama_produk }} - Pink</a></h5>
+                                        <h5><a href="#">{{ $prod -> nama_kategori }} - Pink</a></h5>
                                         <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                        <div class="prince">Rp. {{ number_format($prod -> harga) }}</div>
+                                        
                                     </div>
                                 </div>
                             @endforeach
