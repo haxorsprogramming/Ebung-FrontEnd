@@ -21,7 +21,7 @@ class ProductCtr extends Controller
         $cssFile = 'style-homev3.css';
         $jsFile = 'ebunga-product-all.js';
         $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataproduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
-       return view('product.all', $dr);      
+        return view('product.all', $dr);      
     }
 
     public function checkarea(Request $request)
@@ -65,7 +65,12 @@ class ProductCtr extends Controller
 
     public function productkategory($idKategori)
     {
-        echo $idKategori;
+        $dataProduct = ProdukMdl::where('sub_kategori', $idKategori) -> get();
+        $kategoriProduct = KategoriMdl::all();
+        $cssFile = 'style-homev3.css';
+        $jsFile = 'ebunga-product-all.js';
+        $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataproduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
+        return view('product.all', $dr);      
     }
 
 }

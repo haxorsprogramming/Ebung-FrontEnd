@@ -186,18 +186,6 @@ class DatabaseSeeder extends Seeder
             'kd_kategori' => 'PARCEL',
             'active' => '1'
         ]);
-        DB::table('tbl_sub_kategori') -> insert([
-            'kd_sub_kategori' => 'PARCELPERAWATANWAJAH',
-            'nama_kategori' => 'Parcel Perawatan Wajah', 
-            'kd_kategori' => 'PARCEL',
-            'active' => '1'
-        ]);
-        DB::table('tbl_sub_kategori') -> insert([
-            'kd_sub_kategori' => 'PARCELPERAWATANKESEHATAN',
-            'nama_kategori' => 'Parcel Perawatan Kesehatan', 
-            'kd_kategori' => 'PARCEL',
-            'active' => '1'
-        ]);
         // user 
         DB::table('tbl_user') -> insert([
             'username' => 'admin',

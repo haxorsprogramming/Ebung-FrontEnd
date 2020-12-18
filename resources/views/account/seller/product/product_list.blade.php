@@ -69,7 +69,7 @@
                     <label>Sub-Kategori</label>
                     <select class="form-control" id="txtSubKategori">
                         <option value="none">--- Choose Sub-Kategori ---</option>
-                        <option v-for="sk in subKategori">@{{ sk.nama }}</option>
+                        <option v-for="sk in subKategori" v-bind:value="sk.idSubKategori">@{{ sk.nama }}</option>
                     </select>
                     <small id="helpSubKategori" class="{{ $divError }}" style="<?=$dn; ?>">
                         @{{ messageHelp[0].subKategori }}

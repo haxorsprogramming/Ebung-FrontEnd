@@ -171,7 +171,7 @@
                             <div class="product-title-category">
                                 <h5><a href="#">{{ $prod -> nama_kategori }}</a></h5>
                                 <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                                <small>2 Product Sale</small>
+                                <h5>100 Total product</h5>
                             </div>
                         </div>
                         @endforeach

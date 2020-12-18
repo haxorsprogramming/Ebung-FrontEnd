@@ -182,7 +182,7 @@ function kategoriPilih() {
         subKategori.forEach(renderSubKategori);
         function renderSubKategori(item, index) {
             divTambahProduct.subKategori.push({
-                nama: subKategori[index].nama_kategori,
+                nama: subKategori[index].nama_kategori, idSubKategori : subKategori[index].kd_sub_kategori
             });
         }
     });
