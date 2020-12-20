@@ -1,26 +1,52 @@
 <?php
-// import namespace
+/**
+ * @license MIT, http://opensource.org/licenses/MIT
+ * @copyright Ebunga (ebunga.co.id), 2020
+ * @package laravel
+ * @subpackage Controller
+ */
+
+/**
+ * Import namespace & library
+ */
 namespace App\Http\Controllers;
-// import lib 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-// import model 
+/**
+ * Import library
+ */
 use App\Models\ProdukMdl;
 use App\Models\KelurahanMdl;
 use App\Models\KecamatanMdl;
 use App\Models\CoverageAreaMdl;
 use App\Models\KategoriMdl;
-// import another controller 
-
+/**
+ * Import another controller
+ */
 class ProductCtr extends Controller
 {
     public function productall()
     {
+        /**
+         * Get data product from database with model
+         */
         $dataProduct = ProdukMdl::take(5) -> get();
+        /**
+         * Get data kategori from database with model
+         */
         $kategoriProduct = KategoriMdl::all();
-        $cssFile = 'style-homev3.css';
-        $jsFile = 'ebunga-product-all.js';
+        /**
+         * Create data css, js 
+         */
+        $cssFile    = 'style-homev3.css';
+        $jsFile     = 'ebunga-product-all.js';
+        /**
+         * Create variable to send the respons
+         */
         $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataproduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
+        /**
+         * Return view
+         */
         return view('product.all', $dr);      
     }
 

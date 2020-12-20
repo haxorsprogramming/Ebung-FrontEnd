@@ -1,15 +1,15 @@
 <?php
-// import namespace 
+// import namespace
 namespace App\Http\Controllers;
-// import lib 
+// import lib
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Carbon;
-// import model 
+// import model
 use App\Models\RegistrasiUserMdl;
-// import mail 
+// import mail
 use App\Mail\RegistrasiMail;
 
 class RegisterCtr extends Controller
@@ -43,6 +43,7 @@ class RegisterCtr extends Controller
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         $kd_registrasi = Str::random(20);
         $token_registrasi = Str::upper(Str::random(3)."-".Str::random(3)."-".Str::random(3)."-".Str::random(5));
+        
         DB::table('tbl_registrasi_user') -> insert([
             'kd_registrasi' => $kd_registrasi,
             'token_registrasi' => $token_registrasi,
@@ -53,7 +54,7 @@ class RegisterCtr extends Controller
             'referral_code' => $referral_code,
             'status_aktivasi' => 'pending'
         ]);
-        
+
         $dr = ['email' => $email, 'token_aktivasi' => $token_registrasi];
         $sr = ['status' => 'sukses'];
         Mail::to('alditha.forum@gmail.com') -> send(new RegistrasiMail($dr));
@@ -70,14 +71,14 @@ class RegisterCtr extends Controller
             $dr = RegistrasiUserMdl::where('token_registrasi', $kodeaktivasi) -> first();
             // update status aktivasi & waktu aktivasi
             DB::table('tbl_registrasi_user') -> where('token_registrasi', $kodeaktivasi) -> update(['status_aktivasi' => 'done', 'waktu_aktivasi' => $now]);
-            // create user 
+            // create user
             DB::table('tbl_user') -> insert([
                 'username' => $dr -> email,
                 'tipe' => 'buyer',
                 'password' => $dr -> password,
                 'active' => '1'
             ]);
-            // create customer data 
+            // create customer data
             DB::table('tbl_customer') -> insert([
                 'email' => $dr -> email,
                 'full_name' => $dr -> full_name,
@@ -89,7 +90,7 @@ class RegisterCtr extends Controller
             $dr = ['page' => 'Success activation', 'css_file' => $css_file, 'js_file' => $js_file];
             return view('register.aktivasi_akun', $dr);
         }
-       
+
     }
 
 }

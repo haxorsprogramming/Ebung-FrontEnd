@@ -1,7 +1,7 @@
-// ROUTE 
+// Route
 var rToDetailProduct = server + "product/detail/";
 var rToCheckArea = server + "product/checkarea";
-// VUE OBJECT 
+// Vue object 
 var div_product_depan = new Vue({
     el : '#div_product_depan',
     data : {
@@ -25,14 +25,12 @@ var div_product_depan = new Vue({
         }
     }
 });
-
 // Inisialisasi
 $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
-
 $('#loaderLokasi').hide();
 $('#txtTabelArea').hide();
 
