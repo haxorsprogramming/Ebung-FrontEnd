@@ -1,49 +1,89 @@
 <?php
+/**
+ * @license MIT, http://opensource.org/licenses/MIT
+ * @copyright Ebunga (ebunga.co.id), 2020
+ * @package laravel
+ * @subpackage Controller
+ */
 
-// import namespace
+/**
+ * Import namespace & library
+ */
 namespace App\Http\Controllers;
-// import lib
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
-// import model
+/**
+ * Import model
+ */
 use App\Models\UserMdl;
 
 class LoginCtr extends Controller
 {
     public function loginpage()
     {
-        $cssFile = 'style-about.css';
-        $jsFile = 'ebunga-login.js';
-        $page = 'Login';
+        /**
+         * Create data for header & footer layout
+         */
+        $cssFile    = 'style-about.css';
+        $jsFile     = 'ebunga-login.js';
+        $page       = 'Login';
+        /**
+         * Create variable to response data
+         */
         $dr = ['cssFile' => $cssFile, 'jsFile' => $jsFile, 'page' => $page];
+        /**
+         * Render to view
+         */
         return view('login.login', $dr);
     }
 
     public function loginproses(Request $request)
     {
-        // {'username':username, 'password':password}
+        /**
+         * Get data from POST
+         */
         $username = $request -> username;
         $password = $request -> password;
-        // cek username ada atau tidak
+        /**
+         * Check total user
+         */
         $jlhUsername = UserMdl::where('username', $username) -> count();
+        /**
+         * Check & give result if user total < 1
+         */
         if($jlhUsername < 1){
             $dr = ['status' => 'noUsername'];
         }else{
-            // get password from db
+            /**
+             * Get password from database with model
+             */
             $dataUser = UserMdl::where('username', $username) -> first();
             $passwordUserDb = $dataUser -> password;
-            // cek password input & from database
+            /**
+             * Get password verify with native php
+             */
             $cekPassword = password_verify($password, $passwordUserDb);
+            /**
+             * Check if password true or false
+             */
             if($cekPassword == true){
-                // set session
+                /**
+                 * if true, create session & status success of respond
+                 */
                 session(['userLogin' => $username]);
                 $dr = ['status' => 'success'];
             }else{
+                /**
+                 * if false, create status error of respond
+                 */
                 $dr = ['status' => 'wrongPassword'];
             }
         }
+        /**
+         * Return respon json to client
+         */
         return \Response::json($dr);
     }
 }

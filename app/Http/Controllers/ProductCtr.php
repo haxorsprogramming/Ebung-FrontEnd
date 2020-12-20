@@ -13,7 +13,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 /**
- * Import library
+ * Import model
  */
 use App\Models\ProdukMdl;
 use App\Models\KelurahanMdl;
