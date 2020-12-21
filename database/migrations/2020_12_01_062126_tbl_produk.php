@@ -17,6 +17,7 @@ class TblProduk extends Migration
             $table -> id();
             $table -> char('kd_produk', 100);
             $table -> char('nama_produk', 100);
+            $table -> char('slug', 200);
             $table -> text('deks_produk');
             $table -> char('kategori', 100);
             $table -> char('sub_kategori', 100);

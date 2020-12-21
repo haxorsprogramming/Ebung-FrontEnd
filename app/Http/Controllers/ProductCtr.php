@@ -12,6 +12,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 /**
  * Import model
  */
@@ -114,6 +115,22 @@ class ProductCtr extends Controller
         /**
          * Send response to html
          */
+        return $resultView;
+    }
+
+    public function checkslugonly(Request $request)
+    {
+        $slug = $request -> slug;
+        $dataKel = KelurahanMdl::where('nama', 'like', '%'.$slug.'%') -> take(7) -> get();
+        $resultView = "<table class='table table-home-coverage-area'>";
+        foreach($dataKel as $kel){
+            $converted = Str::kebab($kel -> nama);
+            $resultView .= "<tr>";
+            $resultView .= "<td>".$converted."</td>";
+            $resultView .= "<td><a href='".url('product/area/'.$kel -> id_kel)."'><i class='fas fa-search'></i></a></td>";
+            $resultView .= "</tr>";
+        }
+        $resultView .= "</table>";
         return $resultView;
     }
 

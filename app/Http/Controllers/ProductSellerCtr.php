@@ -54,6 +54,7 @@ class ProductSellerCtr extends Controller
             DB::table('tbl_produk') -> insert ([
                 'kd_produk' => $kdProduk,
                 'nama_produk' => $name,
+                'slug' => Str::kebab($name),
                 'deks_produk' => $deks,
                 'kategori' => $kategori,
                 'sub_kategori' => $subKategori,

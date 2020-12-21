@@ -44,9 +44,15 @@ Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']
 // Aktivasi akun proses
 
 // Product list 
-Route::get('/product/all', [ProductCtr::class, 'productall']);
+/**
+ * Product prefix
+ * product/kat-all/area-all/tipe-all
+ */
+Route::get('/product/{kategory}/{area}/{tipe}', [ProductCtr::class, 'productall']);
+
 Route::get('/product/kategory/{id_kategori}', [ProductCtr::class, 'productkategory']);
 Route::get('/product/{id_product}/details', [ProductCtr::class, 'productdetails']);
+
 
 
 // Customer (Buyer)
@@ -77,8 +83,15 @@ Route::get('/pembelian', [PageCtr::class, 'listproduk']);
 // About
 Route::get('/contact', [PageCtr::class, 'contact']);
 
-// Cek coverage area product
+/**
+ * Cek coverage area with slug & kd produk
+ */
 Route::post('/product/checkarea', [ProductCtr::class, 'checkarea']);
+/**
+ * Cek area only slug
+ */
+Route::post('/product/check-area-slug-only', [ProductCtr::class, 'checkslugonly']);
+
 // Halaman admin
 
 // ResT Produk detail
