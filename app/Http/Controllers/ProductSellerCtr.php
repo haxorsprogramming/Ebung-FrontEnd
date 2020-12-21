@@ -47,14 +47,14 @@ class ProductSellerCtr extends Controller
         // clear currency format 
         $priceFinal = str_replace(".","",$price);
         $namaPic = $kdProduk.".jpg";
-        
+        $tipeSlug = rand(0,50);
         $cekNamaBunga = ProdukMdl::where('nama_produk', $name) -> count();
 
         if($cekNamaBunga < 1){
             DB::table('tbl_produk') -> insert ([
                 'kd_produk' => $kdProduk,
                 'nama_produk' => $name,
-                'slug' => Str::kebab($name),
+                'slug' => Str::kebab($name).'-'.$tipeSlug,
                 'deks_produk' => $deks,
                 'kategori' => $kategori,
                 'sub_kategori' => $subKategori,

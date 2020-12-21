@@ -45,144 +45,168 @@ class DatabaseSeeder extends Seeder
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'PAPANBUNGAKONV1SIDE',
             'nama_kategori' => 'Papan Bunga Konvensional 1 side', 
+            'slug' => 'papan-bunga-konvensional-1-side',
             'kd_kategori' => 'PAPANBUNGA',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'PAPANBUNGAKONV2SIDE',
             'nama_kategori' => 'Papan Bunga Konvensional 2 side', 
+            'slug' => 'papan-bunga-konvensional-2-side',
             'kd_kategori' => 'PAPANBUNGA',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'PAPANBUNGADIGMINI',
             'nama_kategori' => 'Papan Bunga Digital Mini', 
+            'slug' => 'papan-bunga-digital-mini',
             'kd_kategori' => 'PAPANBUNGA',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'PAPANBUNGADIGBESAR',
             'nama_kategori' => 'Papan Bunga Digital Besar', 
+            'slug' => 'papan-bunga-digital-besar',
             'kd_kategori' => 'PAPANBUNGA',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'BUNGABUKETSEGAR',
-            'nama_kategori' => 'Bunga Buket Segar', 
+            'nama_kategori' => 'Bunga Buket Segar',
+            'slug' => 'bunga-buket-segar', 
             'kd_kategori' => 'BUNGA',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'BUNGAMEJABERDIRI',
             'nama_kategori' => 'Bunga Meja Berdiri', 
+            'slug' => 'bunga-meja-berdiri',
             'kd_kategori' => 'BUNGA',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'BUNGABERDIRISEGAR',
-            'nama_kategori' => 'Bunga Berdiri Segar', 
+            'nama_kategori' => 'Bunga Berdiri Segar',
+            'slug' => 'bunga-meja-berdiri-segar', 
             'kd_kategori' => 'BUNGA',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'BUNGABUKETART',
-            'nama_kategori' => 'Bunga Buket Artificial', 
+            'nama_kategori' => 'Bunga Buket Artificial',
+            'slug' => 'bunga-buket-artificial', 
             'kd_kategori' => 'BUNGA',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'BUNGAMEJAART',
             'nama_kategori' => 'Bunga Meja Artificial', 
+            'slug' => 'bunga-meja-artificial',
             'kd_kategori' => 'BUNGA',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'BUNGABERDIRIART',
             'nama_kategori' => 'Bunga Berdiri Artificial', 
+            'slug' => 'bunga-berdiri-artificial',
             'kd_kategori' => 'BUNGA',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'BUNGABUKETKOMBINASI',
             'nama_kategori' => 'Bunga Buket Kombinasi', 
+            'slug' => 'bunga-buket-kombinasi',
             'kd_kategori' => 'BUNGA',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'KUEULANGTAHUN',
             'nama_kategori' => 'Kue Ulang Tahun', 
+            'slug' => 'kue-ulang-tahun',
             'kd_kategori' => 'CAKE',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'KUEACARA',
             'nama_kategori' => 'Kue Acara Perayaan', 
+            'slug' => 'kue-acara-perayaan',
             'kd_kategori' => 'CAKE',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'KUEMANGKOK',
             'nama_kategori' => 'Kue Mangkok', 
+            'slug' => 'kue-mangkok',
             'kd_kategori' => 'CAKE',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'KUEKERING',
             'nama_kategori' => 'Kue Kering', 
+            'slug' => 'kue-kering',
             'kd_kategori' => 'CAKE',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'PARCELSEMBAKO',
             'nama_kategori' => 'Parcel Sembako', 
+            'slug' => 'parcel-sembako',
             'kd_kategori' => 'PARCEL',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'PARCELPERLENGKAPANBAYI',
             'nama_kategori' => 'Parcel Perlengkapan Bayi', 
+            'slug' => 'parcel-perlengkapan-bayi',
             'kd_kategori' => 'PARCEL',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'PARCELKOMBINASI',
-            'nama_kategori' => 'Parcel Kombinasi', 
+            'nama_kategori' => 'Parcel Kombinasi',
+            'slug' => 'parcel-kombinasi', 
             'kd_kategori' => 'PARCEL',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'PARCELBUAH',
-            'nama_kategori' => 'Parcel Buah', 
+            'nama_kategori' => 'Parcel Buah',
+            'slug' => 'parce-buah', 
             'kd_kategori' => 'PARCEL',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'PARCELWADAHPLASTIK',
             'nama_kategori' => 'Parcel Wadah Plastik', 
+            'slug' => 'parcel-wadah-plastik',
             'kd_kategori' => 'PARCEL',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'PARCELPECAHBELAH',
             'nama_kategori' => 'Parcel Pecah Belah', 
+            'slug' => 'parcel-pecah-belah',
             'kd_kategori' => 'PARCEL',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'PARCELELEKTRONIK',
             'nama_kategori' => 'Parcel Elekronik', 
+            'slug' => 'parcel-elektronik',
             'kd_kategori' => 'PARCEL',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'PARCELMAKANANKESEHATAN',
             'nama_kategori' => 'Parcel Makanan Kesehatan', 
+            'slug' => 'papan-makanan-kesehatan',
             'kd_kategori' => 'PARCEL',
             'active' => '1'
         ]);
         DB::table('tbl_sub_kategori') -> insert([
             'kd_sub_kategori' => 'PARCELMAKEUP',
             'nama_kategori' => 'Parcel Make Up', 
+            'slug' => 'parcel-makeup',
             'kd_kategori' => 'PARCEL',
             'active' => '1'
         ]);

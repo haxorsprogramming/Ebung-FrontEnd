@@ -120,7 +120,7 @@
                     <?php $no++; ?>
                     @endforeach
                     <li class="all-menu">
-                        <a href="{{ url('product/all') }}">
+                        <a href="{{ url('product') }}">
                             <span class="material-icons">apps</span>
                             <h5>All</h5>
                         </a>

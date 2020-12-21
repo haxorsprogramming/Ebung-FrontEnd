@@ -26,7 +26,15 @@ use App\Models\KategoriMdl;
  */
 class ProductCtr extends Controller
 {
-    public function productall()
+    public function productview($kategory, $area, $tipe)
+    {
+        $kategori = $kategory;
+        $area = $area;
+        $tipe = $tipe;
+        echo $kategori.$area.$tipe;
+    }
+
+    public function all()
     {
         /**
          * Get data product from database with model

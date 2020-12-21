@@ -17,6 +17,7 @@ class TblSubKategori extends Migration
             $table -> id();
             $table -> char('kd_sub_kategori', 100);
             $table -> char('nama_kategori', 100);
+            $table -> char('slug', 200);
             $table -> char('kd_kategori', 100);
             $table -> char('active', 1);
         });
