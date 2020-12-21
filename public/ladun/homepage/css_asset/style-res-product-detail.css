@@ -1326,3 +1326,6 @@ figure.bg-input::after {
         display: none; } }
 
 /*# sourceMappingURL=style-res-product-detail.css.map */
+.slider-nav:hover{
+  cursor: pointer;
+}

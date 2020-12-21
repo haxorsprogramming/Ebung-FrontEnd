@@ -21,3 +21,16 @@ var divProduct = new Vue({
         }
     }
 });
+
+var divVariantFoto = new Vue({
+    el : '#divVariantFoto',
+    data : {
+
+    },
+    methods : {
+        changeVariantAtc : function(idVariant)
+        {
+            console.log(idVariant);
+        }
+    }
+})
