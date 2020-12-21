@@ -22,33 +22,51 @@ use App\Models\KecamatanMdl;
 use App\Models\CoverageAreaMdl;
 use App\Models\KategoriMdl;
 use App\Models\SubKategoriMdl;
+use App\Models\BranchSellerMdl;
 /**
  * Import another controller
  */
 class ProductCtr extends Controller
 {
-    public function productview($kategory, $area, $tipe)
+    public function productview($kategory, $area)
     {
         $catEx = Str::of($kategory) -> explode('cat-');
         $categorySlug = $catEx[1];
         $areaEx = Str::of($area) -> explode('area-');
         $areaSlug = $areaEx[1];
-        $tipeEx = Str::of($tipe) -> explode('tipe-');
-        $tipeSlug = $tipeEx[1];
-        if($categorySlug == 'all' && $areaSlug === 'all' && $tipeSlug == 'all'){
+        if($categorySlug == 'all' && $areaSlug === 'all'){
             return redirect('product');
         }else{
-            // get data kategori name
-            $dataSubKategori = SubKategoriMdl::where('slug', $categorySlug) -> first();
-            $kategoriProduct = KategoriMdl::all();
-            $kdSubKategori = $dataSubKategori -> kd_sub_kategori;
-            // get data product with kd_sub_kategory
-            $dataProduct = ProdukMdl::where('sub_kategori', $kdSubKategori) -> get();
-            $cssFile    = 'style-homev3.css'; 
-            $jsFile     = 'ebunga-product-all.js';
-            $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataproduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
-            return view('product.all', $dr); 
+            if($areaSlug == 'all'){
+                $dataSubKategori = SubKategoriMdl::where('slug', $categorySlug) -> first();
+                $kategoriProduct = KategoriMdl::all();
+                $kdSubKategori = $dataSubKategori -> kd_sub_kategori;
+                // get data product with kd_sub_kategory
+                $dataProduct = ProdukMdl::where('sub_kategori', $kdSubKategori) -> get();
+            }else{
+                // get caption area 
+                $slugClearToNormal = str_replace("-", " ", $areaSlug);
+                $slugToCaps = Str::title($slugClearToNormal);
+                // get kd kel 
+                $dataKel = KelurahanMdl::where('nama', $slugToCaps) -> first();
+                $idKel = $dataKel -> id_kel;
+                // with area
+                // $dataSubKategori = SubKategoriMdl::where('slug', $categorySlug) -> first();
+                // $kategoriProduct = KategoriMdl::all();
+                // $kdSubKategori = $dataSubKategori -> kd_sub_kategori;
+                // get data product with kd_sub_kategory
+                // $dataProduct = ProdukMdl::where('sub_kategori', $kdSubKategori) -> get();
+                // cari id branch berdasarkan alamat 
+                $dataBranch = CoverageAreaMdl::where('kd_area', $idKel) -> get();
+                echo $dataBranch;
+            }
         }
+
+        // $cssFile = 'style-homev3.css'; 
+        // $jsFile = 'ebunga-product-all.js';
+        // $dr = ['page' => 'Kategory Details', 'categorySlug' => $categorySlug, 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataproduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
+        // return view('product.all', $dr);
+
     }
 
     public function all()
@@ -145,14 +163,14 @@ class ProductCtr extends Controller
 
     public function checkslugonly(Request $request)
     {
-        $slug = $request -> slug;
+        $slug = $request -> slugKelurahan;
+        $kdCategory = $request -> kdSlugKategory;
         $dataKel = KelurahanMdl::where('nama', 'like', '%'.$slug.'%') -> take(7) -> get();
         $resultView = "<table class='table table-home-coverage-area'>";
         foreach($dataKel as $kel){
-            $converted = Str::kebab($kel -> nama);
             $resultView .= "<tr>";
-            $resultView .= "<td>".$converted."</td>";
-            $resultView .= "<td><a href='".url('product/area/'.$kel -> id_kel)."'><i class='fas fa-search'></i></a></td>";
+            $resultView .= "<td>".$kel -> nama."</td>";
+            $resultView .= "<td><a href='".url('product/cat-'.$kdCategory.'/area-'.Str::kebab($kel -> nama))."'><i class='fas fa-search'></i></a></td>";
             $resultView .= "</tr>";
         }
         $resultView .= "</table>";

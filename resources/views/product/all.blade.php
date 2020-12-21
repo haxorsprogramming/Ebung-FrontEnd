@@ -9,6 +9,7 @@
             <a href="#">Shop now</a>
         </div>
     </div>
+    <input type="hidden" id="txtHidKdSlug" value="{{$categorySlug}}">
     <div class="container content">
         <div class="row">
 
