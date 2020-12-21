@@ -52,6 +52,7 @@ Route::get('/product/{id_product}', [ProductCtr::class, 'productdetails']);
 // Route::get('/product/kategory/{id_kategori}', [ProductCtr::class, 'productkategory']);
 // Route::get('/product/{id_product}/details', [ProductCtr::class, 'productdetails']);
 
+// Route::get('/product')
 
 
 // Customer (Buyer)
