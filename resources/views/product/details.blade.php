@@ -25,7 +25,7 @@ $dataVariant = DB::table('tbl_variant_product') -> where('kd_product', $kdProduk
             <div class="row">
                 <div class="slider-for">
 
-                    <div class="product-content">
+                    <div class="product-content" id="divProduct">
                         <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 img-content">
                             <img src="{{ asset('ladun/ebunga_asset/image/product/'.$dataProduct -> foto_utama) }}" class="img-responsive" alt="img-holiwood">
                         </div>
@@ -58,20 +58,20 @@ $dataVariant = DB::table('tbl_variant_product') -> where('kd_product', $kdProduk
                                 <div class="input-group input-number-group">
                                     <span class="text-qua">Quanty:</span>
                                     <div class="input-group-button">
-                                        <span class="input-number-decrement">-</span>
+                                        <span class="input-number-decrement" @click="incQtAtc">-</span>
                                     </div>
-                                    <input class="input-number" type="number" min="0" max="1000" value="01">
+                                    <input class="input-number" type="number" min="0" max="1000" value="1">
                                     <div class="input-group-button">
-                                        <span class="input-number-increment">+</span>
+                                        <span class="input-number-increment" @click="addQtAtc">+</span>
                                     </div>
-                                    <span class="dola">$ </span><span class="total-prince">250.9</span>
+                                    <!-- <span class="dola">$ </span><span class="total-prince"></span> -->
                                 </div>
 
                             </div>
                             <div class="add-cart">
                                 <a href="#" class="btn-add-cart">Order Now</a>
-                                <a href="#" class="list-icon icon-1"><i class="far fa-eye"></i></a>
-                                <a href="#" class="list-icon icon-2"><i class="far fa-heart"></i></a>
+                                <!-- <a href="#" class="list-icon icon-1"><i class="far fa-eye"></i></a>
+                                <a href="#" class="list-icon icon-2"><i class="far fa-heart"></i></a> -->
                             </div>
 
                         </div>

@@ -55,7 +55,7 @@
                             <a href="#!">{{ $kategori -> nama_kategori }}</a><button class="accordion"></button>
                             <ul class="panel">
                                 @foreach($dataSubKategori as $subKategori)
-                                <li><a href="{{ url('product/cat-'.$subKategori -> slug.'/area-all/tipe-all')}}">{{ $subKategori -> nama_kategori }}</a></li>
+                                <li><a href="{{ url('product/cat-'.$subKategori -> slug.'/area-all')}}">{{ $subKategori -> nama_kategori }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
@@ -110,7 +110,7 @@
                         <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <span class="rating">3 Rating(s) | Add Your Rating(s)</span>
                         </div>
-                        <div class="prince">$207.2<s class="strike">$250.9</s></div>
+                        <div class="prince">Rp. {{ number_format($product['harga']) }}<s class="strike">{{$product['harga']}}</s></div>
                         <div class="add-cart">
                             <a href="{{ url('product/'.$product['slug']) }}" class="list-icon icon-1"><i class="far fa-eye"></i></a>
                         </div>
