@@ -21,6 +21,7 @@ use App\Models\KelurahanMdl;
 use App\Models\KecamatanMdl;
 use App\Models\CoverageAreaMdl;
 use App\Models\KategoriMdl;
+use App\Models\SubKategoriMdl;
 /**
  * Import another controller
  */
@@ -28,10 +29,26 @@ class ProductCtr extends Controller
 {
     public function productview($kategory, $area, $tipe)
     {
-        $kategori = $kategory;
-        $area = $area;
-        $tipe = $tipe;
-        echo $kategori.$area.$tipe;
+        $catEx = Str::of($kategory) -> explode('cat-');
+        $categorySlug = $catEx[1];
+        $areaEx = Str::of($area) -> explode('area-');
+        $areaSlug = $areaEx[1];
+        $tipeEx = Str::of($tipe) -> explode('tipe-');
+        $tipeSlug = $tipeEx[1];
+        if($categorySlug == 'all' && $areaSlug === 'all' && $tipeSlug == 'all'){
+            return redirect('product');
+        }else{
+            // get data kategori name
+            $dataSubKategori = SubKategoriMdl::where('slug', $categorySlug) -> first();
+            $kategoriProduct = KategoriMdl::all();
+            $kdSubKategori = $dataSubKategori -> kd_sub_kategori;
+            // get data product with kd_sub_kategory
+            $dataProduct = ProdukMdl::where('sub_kategori', $kdSubKategori) -> get();
+            $cssFile    = 'style-homev3.css'; 
+            $jsFile     = 'ebunga-product-all.js';
+            $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataproduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
+            return view('product.all', $dr); 
+        }
     }
 
     public function all()
