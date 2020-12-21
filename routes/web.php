@@ -15,17 +15,29 @@ use App\Http\Controllers\DaerahCtr;
 use App\Http\Controllers\ProductSellerCtr;
 use App\Http\Controllers\HelperCtr;
 
-// Halaman utama
+/**
+ * Main page
+ */
 Route::get('/', [PageCtr::class, 'home']);
-// Login page
+/**
+ * Login page
+ */
 Route::get('/login', [LoginCtr::class, 'loginpage']);
-// Login proses
+/**
+ * Login process
+ */
 Route::post('/login/proses', [LoginCtr::class, 'loginproses']);
-// Register page
+/**
+ * Register page
+ */
 Route::get('/register', [RegisterCtr::class, 'registerpage']);
-// Register with referral
+/**
+ * Register page (with referral)
+ */
 Route::get('/register/ref/{referral_id}', [RegisterCtr::class, 'registerwithreferral']);
-// Register proses
+/**
+ * Register proses
+ */
 Route::post('/register/proses', [RegisterCtr::class, 'registerproses']);
 // Aktivasi akun link
 Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']);
@@ -33,8 +45,9 @@ Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']
 
 // Product list 
 Route::get('/product/all', [ProductCtr::class, 'productall']);
-Route::get('/product/{id_product}/details', [ProductCtr::class, 'productdetails']);
 Route::get('/product/kategory/{id_kategori}', [ProductCtr::class, 'productkategory']);
+Route::get('/product/{id_product}/details', [ProductCtr::class, 'productdetails']);
+
 
 // Customer (Buyer)
 Route::get('/account', [DashboardCtr::class, 'dashboard']);

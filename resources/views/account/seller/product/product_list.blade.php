@@ -49,7 +49,7 @@
                 <div class="form-group">
                     <label>Product Name</label>
                     <input type="text" class="form-control" id="txtProductName" v-model="productName">
-                    <small id="helpProductName" class="{{ $divError }}" style="<?=$dn; ?>">
+                    <small id="helpProductName" class="{{ $divError }}" style="<?= $dn; ?>">
                         @{{ messageHelp[0].productName }}
                     </small>
                 </div>
@@ -61,7 +61,7 @@
                         <option value="{{ $kategori -> kd_kategori }}">{{ $kategori -> nama_kategori }}</option>
                         @endforeach
                     </select>
-                    <small id="helpKategori" class="{{ $divError }}" style="<?=$dn; ?>">
+                    <small id="helpKategori" class="{{ $divError }}" style="<?= $dn; ?>">
                         @{{ messageHelp[0].kategori }}
                     </small>
                 </div>
@@ -71,7 +71,7 @@
                         <option value="none">--- Choose Sub-Kategori ---</option>
                         <option v-for="sk in subKategori" v-bind:value="sk.idSubKategori">@{{ sk.nama }}</option>
                     </select>
-                    <small id="helpSubKategori" class="{{ $divError }}" style="<?=$dn; ?>">
+                    <small id="helpSubKategori" class="{{ $divError }}" style="<?= $dn; ?>">
                         @{{ messageHelp[0].subKategori }}
                     </small>
                 </div>
@@ -83,56 +83,64 @@
                         <option value="{{ $branch -> kd_branch }}">{{ $branch -> nama_branch }}</option>
                         @endforeach
                     </select>
-                    <small id="helpBranch" class="{{ $divError }}" style="<?=$dn; ?>">
+                    <small id="helpBranch" class="{{ $divError }}" style="<?= $dn; ?>">
                         @{{ messageHelp[0].kategori }}
                     </small>
                 </div>
                 <div class="form-group" id="txtPic">
                     <div style="text-align: center;">
-                    <label>Main photos of product</label><br/>
-                    <div class="cropme" style="width: 400px;height:400px;" id="txtFotoUtama"></div>
-                    <small id="helpMainPhotos" class="{{ $divError }}" style="<?=$dn; ?>">
-                        @{{ messageHelp[0].mainPhotos }}
-                    </small>
+                        <label>Main photos of product</label><br />
+                        <div class="cropme" style="width: 400px;height:400px;" id="txtFotoUtama"></div>
+                        <small id="helpMainPhotos" class="{{ $divError }}" style="<?= $dn; ?>">
+                            @{{ messageHelp[0].mainPhotos }}
+                        </small>
                     </div>
                     <table>
                         <tr>
                             <td>Varian 1</td>
-                            <td><div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant1"></div></td>
+                            <td>
+                                <div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant1"></div>
+                            </td>
                             <td>Varian 2</td>
-                            <td><div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant2"></div></td>
+                            <td>
+                                <div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant2"></div>
+                            </td>
                         </tr>
                         <tr>
                             <td>Varian 3</td>
-                            <td><div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant3"></div></td>
+                            <td>
+                                <div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant3"></div>
+                            </td>
                             <td>Varian 4</td>
-                            <td><div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant4"></div></td>
+                            <td>
+                                <div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant4"></div>
+                            </td>
                         </tr>
                     </table>
-                    <small id="helpMinPic" class="{{ $divError }}" style="<?=$dn; ?>">
+                    <small id="helpMinPic" class="{{ $divError }}" style="<?= $dn; ?>">
                         @{{ messageHelp[0].minPic }}
                     </small>
                 </div>
             </div>
             <div class="col-6 col-md-6 col-lg-6">
                 <div class="form-group">
-                    <label>Deskripsi product</label><br/>
+                    <label>Deskripsi product</label><br />
                     <textarea id="txtDeksripsiProduct" class="form-control" name="txtDeksripsiProduct" rows="10" cols="50"></textarea>
-                    <small id="helpDeksripsi" class="{{ $divError }}" style="<?=$dn; ?>">
+                    <small id="helpDeksripsi" class="{{ $divError }}" style="<?= $dn; ?>">
                         @{{ messageHelp[0].deksripsi }}
                     </small>
                 </div>
                 <div class="form-group">
                     <label>Price (IDR)</label>
                     <input type="text" class="form-control" id="txtPrice">
-                    <small id="helpPrice" class="{{ $divError }}" style="<?=$dn; ?>">
+                    <small id="helpPrice" class="{{ $divError }}" style="<?= $dn; ?>">
                         @{{ messageHelp[0].price }}
                     </small>
                 </div>
                 <div class="form-group">
                     <label>Stock per Day</label>
                     <input type="text" class="form-control" id="txtStock">
-                    <small id="helpStok" class="{{ $divError }}" style="<?=$dn; ?>">
+                    <small id="helpStok" class="{{ $divError }}" style="<?= $dn; ?>">
                         @{{ messageHelp[0].stok }}
                     </small>
                 </div>
@@ -140,9 +148,9 @@
                 </div>
             </div>
         </div>
-            <div style="text-align:center;margin-top:20px;">
-                <a href='#!' class='view' onclick="submitProduct()"><i class="fas fa-plus-circle"></i> Save new product</a>
-            </div>
+        <div style="text-align:center;margin-top:20px;">
+            <a href='#!' class='view' onclick="submitProduct()"><i class="fas fa-plus-circle"></i> Save new product</a>
+        </div>
     </div>
 </div>
 

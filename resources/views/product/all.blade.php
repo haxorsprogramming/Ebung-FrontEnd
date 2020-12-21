@@ -54,7 +54,7 @@
                             <a href="#!">{{ $kategori -> nama_kategori }}</a><button class="accordion"></button>
                             <ul class="panel">
                                 @foreach($dataSubKategori as $subKategori)
-                                <li><a href="#">{{ $subKategori -> nama_kategori }}</a></li>
+                                <li><a href="{{ url('product/kategory/'.$subKategori -> kd_sub_kategori)}}">{{ $subKategori -> nama_kategori }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
@@ -63,20 +63,7 @@
                     <!--  -->
                     <ul class="list-group list-2">
                         <li class="list-group-item">Coverage Area</li>
-                        <li class="list-group-item list-item-2">
-                            <div class="color-item" style="margin-bottom:15px;">
-                                <label>Search area</label>
-                                <input type="text" class="form-control" id="txtLokasi">
-                                <div id="resultSearchArea" style="margin-top:10px;">
-                                    <table class="table">
-                                        <tr>
-                                            <td>Sei Kera Hilir II, Medan perjuangan</td>
-                                            <td><a href="#!"><span class="material-icons">search</span></a></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </li>
+                        @include('product.coverage_area')
                     </ul>
                     <!--  -->
                     <ul class="list-group list-3">
