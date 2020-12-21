@@ -1,3 +1,7 @@
+// Route
+var rImgVariantProduct = server + "ladun/ebunga_asset/image/product/variant/";
+var rImgProduct = server + "ladun/ebunga_asset/image/product/";
+
 // Vue object 
 var divProduct = new Vue({
     el : '#divProduct',
@@ -28,9 +32,13 @@ var divVariantFoto = new Vue({
 
     },
     methods : {
-        changeVariantAtc : function(idVariant)
+        changeVariantAtc : function(idVariant, kdProduk)
         {
-            console.log(idVariant);
+            if(idVariant === 'utama'){
+                document.querySelector('#imgUtama').setAttribute("src", rImgProduct+kdProduk+".jpg");
+            }else{
+                document.querySelector('#imgUtama').setAttribute("src", rImgVariantProduct+idVariant);
+            }
         }
     }
 })

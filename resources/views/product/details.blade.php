@@ -27,7 +27,7 @@ $dataVariant = DB::table('tbl_variant_product') -> where('kd_product', $kdProduk
 
                     <div class="product-content" id="divProduct">
                         <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 img-content">
-                            <img src="{{ asset('ladun/ebunga_asset/image/product/'.$dataProduct -> foto_utama) }}" class="img-responsive" alt="img-holiwood">
+                            <img id="imgUtama" src="{{ asset('ladun/ebunga_asset/image/product/'.$dataProduct -> foto_utama) }}" class="img-responsive" alt="img-holiwood">
                         </div>
                         <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 detail">
                             <h1>{{ $dataProduct -> nama_produk }}</h1>
@@ -80,12 +80,12 @@ $dataVariant = DB::table('tbl_variant_product') -> where('kd_product', $kdProduk
 
                 </div>
                 <div class="slider-nav col-lg-5 col-md-6 col-sm-12 col-xs-12" id="divVariantFoto">
-                    <div @click="changeVariantAtc('utama')"><img src="{{ asset('ladun/ebunga_asset/image/product/'.$dataProduct -> foto_utama) }}" style="width: 100px;" class="img-responsive" alt="img-holiwood"></div>
+                    <div @click="changeVariantAtc('utama', '{{ $kdProduk }}')"><img src="{{ asset('ladun/ebunga_asset/image/product/'.$dataProduct -> foto_utama) }}" style="width: 100px;" class="img-responsive" alt="img-holiwood"></div>
                     @foreach($dataVariant as $variant)
                     @php
                     $namaVariant = $kdProduk."_VAR".$variant -> nama_variant.".jpg";
                     @endphp
-                    <div @click="changeVariantAtc('{{ $variant -> nama_variant }}')"><img src="{{ asset('ladun/ebunga_asset/image/product/variant/'.$namaVariant) }}" class="img-responsive" alt="img-holiwood"></div>
+                    <div @click="changeVariantAtc('{{ $namaVariant }}', '{{ $kdProduk }}')"><img src="{{ asset('ladun/ebunga_asset/image/product/variant/'.$namaVariant) }}" class="img-responsive" alt="img-holiwood"></div>
                     @endforeach
                 </div>
 

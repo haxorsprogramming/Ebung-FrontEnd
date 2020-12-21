@@ -41,9 +41,7 @@ Route::get('/register/ref/{referral_id}', [RegisterCtr::class, 'registerwithrefe
 Route::post('/register/proses', [RegisterCtr::class, 'registerproses']);
 // Aktivasi akun link
 Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']);
-// Aktivasi akun proses
-
-// Product list 
+ 
 /**
  * Product prefix
  * product/kat-all/area-all/tipe-all
