@@ -52,31 +52,68 @@ class ProductCtr extends Controller
 
     public function checkarea(Request $request)
     {
-        $slug = $request -> slug;
-        $kdProduk = $request -> kd_produk;
-
-        // Cek kd branch dari kd produk 
+        /**
+         * Get request from POST data
+         */
+        $slug       = $request -> slug;
+        $kdProduk   = $request -> kd_produk;
+        /**
+         * Get id branch from data product
+         */
         $dataProduk = ProdukMdl::where('kd_produk', $kdProduk) -> first();
-        $idBranch = $dataProduk -> id_branch;
-
+        $idBranch   = $dataProduk -> id_branch;
+        /**
+         * Get data kelurahan from tabel kelurahan 
+         */
         $daerah = KelurahanMdl::where('nama', 'like', '%'.$slug.'%') -> take(7) -> get();
+        /**
+         * Create variable header to result
+         */
         $resultView = "<table class='table table-home-coverage-area'>";
+        /**
+         * Foreach data daerah to create result object
+         */
         foreach($daerah as $da){
+            /**
+             * Get id kelurahan & id kecamatan 
+             */
             $idKel = $da -> id_kel;
             $idKec = $da -> id_kec;
-            //cari nama kecamatan, kabupaten, provinsi 
+            /**
+             * Get kecamatan name from database with model
+             */
             $dataKec = KecamatanMdl::where('id_kec', $idKec) -> first();
             $namaKec = $dataKec -> nama;
-            //cek apakah id kel & produk ada di coverage area
+            /**
+             * Get total area from database with model
+             */
             $cekArea = CoverageAreaMdl::where('kd_area', $idKel) -> where('kd_branch', $idBranch) -> count();
+            /**
+             * If total area 1, area will coverage
+             */
             if($cekArea == 1){
+                /**
+                 * Create button for select area
+                 */
                 $status_cover = "<a href='javascript:void(0)' class='btn-pilih-coverage' onclick='selectArea(\"".$idKel."\")'>Select</a>";
             }else{
+                /**
+                 * Caption area not corverage
+                 */
                 $status_cover = "<small>Sorry, this area not coverage ...</small>";
             }
+            /**
+             * Result view data to add name, cover status, kecamatan name
+             */
             $resultView .= "<tr><td>".$da -> nama."<br/><small>".$namaKec."</small></td><td>".$status_cover."</td></tr>";
         }
+        /**
+         * End for result view
+         */
         $resultView .= "</table>";
+        /**
+         * Send response to html
+         */
         return $resultView;
     }
 
