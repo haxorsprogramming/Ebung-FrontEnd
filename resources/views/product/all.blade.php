@@ -96,7 +96,7 @@
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 content-flower">
 
-                @foreach($dataproduct as $product)
+                @foreach($dataProduct as $product)
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 product-flower">
                     <div class="product-image-flower">
                         <figure class="sale"><a href="{{ url('product/'.$product -> slug.'/details') }}"><img src="{{ asset('ladun/ebunga_asset/image/product/'.$product -> foto_utama) }}" class="img-responsive" alt="img-holiwood"></a></figure>

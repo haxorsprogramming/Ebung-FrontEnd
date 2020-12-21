@@ -85,9 +85,9 @@ class RegisterCtr extends Controller
                 'phone' => $dr -> phone_number,
                 'active' => '1'
             ]);
-            $css_file = 'style-about.css';
-            $js_file = 'ebunga-aktivasi-akun.js';
-            $dr = ['page' => 'Success activation', 'css_file' => $css_file, 'js_file' => $js_file];
+            $cssFile = 'style-about.css';
+            $jsFile = 'ebunga-aktivasi-akun.js';
+            $dr = ['page' => 'Success activation', 'cssFile' => $cssFile, 'jsFile' => $jsFile];
             return view('register.aktivasi_akun', $dr);
         }
 

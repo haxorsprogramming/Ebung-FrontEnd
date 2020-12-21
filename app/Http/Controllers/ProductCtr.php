@@ -57,8 +57,34 @@ class ProductCtr extends Controller
                 // get data product with kd_sub_kategory
                 // $dataProduct = ProdukMdl::where('sub_kategori', $kdSubKategori) -> get();
                 // cari id branch berdasarkan alamat 
-                $dataBranch = CoverageAreaMdl::where('kd_area', $idKel) -> get();
-                echo $dataBranch;
+                $dataCoverage = CoverageAreaMdl::where('kd_area', $idKel) -> get();
+                $dataR = array();
+                $kategoriProduct = KategoriMdl::all();
+                foreach($dataCoverage as $coverage){
+                    $kdBranch = $coverage -> kd_branch;
+                    $slugKdKategoriClearToNormal = str_replace("-", "", $categorySlug);
+                    //cari berdasarkan branch dan kd sub kategori 
+                    $kdKategori = Str::upper($slugKdKategoriClearToNormal);
+                    $dataProduct = ProdukMdl::where('sub_kategori', $kdKategori) -> where('id_branch', $kdBranch) -> get();
+                    foreach($dataProduct as $product){
+                        $arrTemp['namaProduk'] = $product -> nama_produk;
+                        $arrTemp['slug'] = $product -> slug;
+                        $arrTemp['deks_produk'] = $product -> deks_produk;
+                        $arrTemp['kategori'] = $product -> kategori;
+                        $arrTemp['sub_kategori'] = $product -> sub_kategori;
+                        $arrTemp['id_branch'] = $product -> id_branch;
+                        $arrTemp['id_seller'] = $product -> id_seller;
+                        $arrTemp['harga'] = $product -> harga;
+                        $arrTemp['stok'] = $product -> stok;
+                        $arrTemp['foto_utama'] = $product -> foto_utama;
+                    }
+                    $dataR[] = $arrTemp;
+                }
+                $cssFile = 'style-homev3.css'; 
+                $jsFile = 'ebunga-product-all.js';
+                $dr = ['page' => 'Kategory Details', 'categorySlug' => $categorySlug, 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataR, 'dataKategori' => $kategoriProduct];
+                return view('product.all', $dr);
+                // return \Response::json($dataR);
             }
         }
 
