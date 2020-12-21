@@ -1,6 +1,6 @@
 <?php
-$kdProduk = $dataProduct->kd_produk;
-$dataVariant = DB::table('tbl_variant_product')->where('kd_product', $kdProduk)->get();
+$kdProduk = $dataProduct -> kd_produk;
+$dataVariant = DB::table('tbl_variant_product') -> where('kd_product', $kdProduk) -> get();
 ?>
 
 @include('layout.header')

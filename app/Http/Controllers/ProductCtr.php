@@ -43,6 +43,10 @@ class ProductCtr extends Controller
                 $kdSubKategori = $dataSubKategori -> kd_sub_kategori;
                 // get data product with kd_sub_kategory
                 $dataProduct = ProdukMdl::where('sub_kategori', $kdSubKategori) -> get();
+                $cssFile = 'style-homev3.css'; 
+                $jsFile = 'ebunga-product-all.js';
+                $dr = ['page' => 'Kategory Details', 'categorySlug' => $categorySlug, 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
+                return view('product.filter', $dr);
             }else{
                 // get caption area 
                 $slugClearToNormal = str_replace("-", " ", $areaSlug);
@@ -67,7 +71,7 @@ class ProductCtr extends Controller
                     $kdKategori = Str::upper($slugKdKategoriClearToNormal);
                     $dataProduct = ProdukMdl::where('sub_kategori', $kdKategori) -> where('id_branch', $kdBranch) -> get();
                     foreach($dataProduct as $product){
-                        $arrTemp['namaProduk'] = $product -> nama_produk;
+                        $arrTemp['nama_produk'] = $product -> nama_produk;
                         $arrTemp['slug'] = $product -> slug;
                         $arrTemp['deks_produk'] = $product -> deks_produk;
                         $arrTemp['kategori'] = $product -> kategori;
@@ -83,7 +87,7 @@ class ProductCtr extends Controller
                 $cssFile = 'style-homev3.css'; 
                 $jsFile = 'ebunga-product-all.js';
                 $dr = ['page' => 'Kategory Details', 'categorySlug' => $categorySlug, 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataR, 'dataKategori' => $kategoriProduct];
-                return view('product.all', $dr);
+                return view('product.filter', $dr);
                 // return \Response::json($dataR);
             }
         }
@@ -113,7 +117,7 @@ class ProductCtr extends Controller
         /**
          * Create variable to send the respons
          */
-        $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataproduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
+        $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'categorySlug' => 'all', 'jsFile' => $jsFile, 'dataproduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
         /**
          * Return view
          */
@@ -205,15 +209,20 @@ class ProductCtr extends Controller
 
     public function productdetails($idProduct)
     {
+        // $slugProductToNormal = str_replace("-", "", $idProduct);
+        //cari berdasarkan branch dan kd sub kategori 
+        // $kdProduct = Str::upper($slugProductToNormal);
         $cssFile = 'style-product-detail.css';
         $jsFile = 'ebunga-product-details.js';
-        $dataProduct = ProdukMdl::where('kd_produk', $idProduct) -> first();
+        $dataProduct = ProdukMdl::where('slug', $idProduct) -> first();
         $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataProduct];
         return view('product.details', $dr);
+        // echo $kdProduct;
     }
 
     public function productkategory($idKategori)
     {
+
         $dataProduct = ProdukMdl::where('sub_kategori', $idKategori) -> get();
         $kategoriProduct = KategoriMdl::all();
         $cssFile = 'style-homev3.css';
