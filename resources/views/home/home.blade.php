@@ -143,7 +143,11 @@
                         @foreach($subProdukBunga as $prod)
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                             <div class="product-image-category">
-                                <figure class="sale"><a href="{{ url('product/cat-'.$prod -> slug.'/area-all') }}"><img src="{{ asset('ladun/ebunga_asset/image/subkategoripic/'.$prod -> kd_sub_kategori.'.jpeg') }}" class="img-responsive" alt="holiwood"></a></figure>
+                                <figure class="sale">
+                                    <a href="{{ url('product/cat-'.$prod -> slug.'/area-all') }}">
+                                    <img src="{{ env('URL_PIC_SUB_KATEGORY').$prod -> kd_sub_kategori.'.jpeg' }}" class="img-responsive" alt="holiwood">
+                                    </a>
+                                </figure>
                                 <div class="product-icon-category">
                                     <a href="{{ url('product/cat-'.$prod -> slug.'/area-all') }}"><i class="far fa-eye"></i></a>
                                 </div>
@@ -163,7 +167,11 @@
                         @foreach($subProdukPapanBunga as $prod)
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                             <div class="product-image-category">
-                                <figure class="sale"><a href="{{ url('product/cat-'.$prod -> slug.'/area-all') }}"><img src="{{ asset('ladun/ebunga_asset/image/subkategoripic/'.$prod -> kd_sub_kategori.'.jpeg') }}" class="img-responsive" alt="holiwood"></a></figure>
+                                <figure class="sale">
+                                    <a href="{{ url('product/cat-'.$prod -> slug.'/area-all') }}">
+                                    <img src="{{ env('URL_PIC_SUB_KATEGORY').$prod -> kd_sub_kategori.'.jpeg' }}" class="img-responsive" alt="holiwood">
+                                    </a>
+                                </figure>
                                 <div class="product-icon-category">
                                     <a href="{{ url('product/cat-'.$prod -> slug.'/area-all') }}"><i class="far fa-eye"></i></a>
                                 </div>
@@ -183,7 +191,11 @@
                         @foreach($subProdukParcel as $prod)
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 product-category">
                             <div class="product-image-category">
-                                <figure class="sale"><a href="{{ url('product/cat-'.$prod -> slug.'/area-all') }}"><img src="{{ asset('ladun/ebunga_asset/image/subkategoripic/'.$prod -> kd_sub_kategori.'.jpeg') }}" class="img-responsive" alt="holiwood"></a></figure>
+                                <figure class="sale">
+                                    <a href="{{ url('product/cat-'.$prod -> slug.'/area-all') }}">
+                                    <img src="{{ env('URL_PIC_SUB_KATEGORY').$prod -> kd_sub_kategori.'.jpeg' }}" class="img-responsive" alt="holiwood">
+                                    </a>
+                                </figure>
                                 <div class="product-icon-category">
                                     <a href="{{ url('product/cat-'.$prod -> slug.'/area-all') }}"><i class="far fa-eye"></i></a>
                                 </div>

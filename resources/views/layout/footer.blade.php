@@ -43,16 +43,13 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 social">
                         <p>Payment Method</p>
-                        <img src="https://www.ebunga.com/assets/images/media/bank_transfer-512.png" style="width: 70px;">
-                        <img src="https://media.publit.io/file/ebungaasset/footerasset/logo-gopay.jpg" style="width: 70px;">
-                        <img src="https://www.ebunga.com/assets/images/media/VisaLogo.jpg" style="width: 70px;">
+                        <img src="{{ env('FOOTER_BANK_TRANSFER') }}" style="width: 70px;">
+                        <img src="{{ env('FOOTER_MASTERCARD') }}" style="width: 70px;">
+                        <img src="{{ env('FOOTER_VISA') }}" style="width: 70px;">
                         <br/>
-                        <img src="https://www.ebunga.com/assets/images/media/mastercard-logo-400x400.png" style="width: 70px;">
-                        <img src="https://www.ebunga.com/assets/images/media/JCB_logo.svg_.png" style="width: 70px;">
-                        <img src="https://www.ebunga.com/assets/images/media/1200px-American_Express_logo_(2018).svg_.png" style="width: 70px;">
-                        <a href="#" id="link-fb"></a>
-                        <a href="#" id="link-tw"></a>
-                        <a href="#" id="link-sky"></a>
+                        <img src="{{ env('FOOTER_GOPAY') }}" style="width: 70px;">
+                        <img src="{{ env('FOOTER_OVO') }}" style="width: 70px;">
+                        <img src="{{ env('FOOTER_DANA') }}" style="width: 70px;">
                         <h1>Newsletter</h1>
                         <h2>Sign up for our mailing list to get latest updates and offers</h2>
                         <form class="form-group" action="mail" method="post">
