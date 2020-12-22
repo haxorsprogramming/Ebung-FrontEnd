@@ -63,16 +63,28 @@ $('#txtPrice').mask('000.000.000.000.000', {reverse: true});
 $('#txtPriceVar2').mask('000.000.000.000.000', {reverse: true});
 
 // Function
-document.querySelector('#btnSetVar1').addEventListener('click', function(){
-    document.querySelector('#txtNamaVar2').setAttribute("disabled", "disabled");
-    document.querySelector('#txtPriceVar2').setAttribute("disabled", "disabled");
-    document.querySelector("#txtStockVar2").setAttribute("disabled", "disabled");
-    let deksVar2 = CKEDITOR.instances['txtDeksVar2'].getData();
-    document.querySelector('#capDeksVar2').innerHTML = deksVar2;
-    edVar1.destroy();
-    $('#txtDeksVar2').hide();
-    $('#capDeksVar2').show();
-    $('#btnSetVar1').hide();
+
+function cekVar2(){
+    let namaVar = document.querySelector('#txtNamaVar2').value;
+    let deksVar = CKEDITOR.instances['txtDeksVar2'].getData();
+    let price = document.querySelector('#txtPriceVar2').value;
+    let stock = document.querySelector('#txtStockVar2').value;
+    
+    return deksVar;
+}
+
+document.querySelector('#btnSetVar2').addEventListener('click', function(){
+    var cobaCekVar2 = cekVar2();
+    console.log(cobaCekVar2);
+    // document.querySelector('#txtNamaVar2').setAttribute("disabled", "disabled");
+    // document.querySelector('#txtPriceVar2').setAttribute("disabled", "disabled");
+    // document.querySelector("#txtStockVar2").setAttribute("disabled", "disabled");
+    // let deksVar2 = CKEDITOR.instances['txtDeksVar2'].getData();
+    // document.querySelector('#capDeksVar2').innerHTML = deksVar2;
+    // edVar1.destroy();
+    // $('#txtDeksVar2').hide();
+    // $('#capDeksVar2').show();
+    // $('#btnSetVar2').hide();
 });
 
 function addVariantAtc()

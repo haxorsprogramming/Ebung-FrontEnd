@@ -28,7 +28,7 @@
                         <label>Image for variant 2</label><br />
                         <div class="cropme" style="width: 450px;height:450px;"></div>
                     </div>
-                    <a href="#!" class="view" id="btnSetVar1" style="margin-top:20px;"><i class="fas fa-cart-arrow-down"></i> Set</a>
+                    <a href="#!" class="view" id="btnSetVar2" style="margin-top:20px;"><i class="fas fa-cart-arrow-down"></i> Set</a>
                 </td>
             </tr>
         </table>
