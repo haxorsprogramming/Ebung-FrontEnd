@@ -7,29 +7,28 @@
                 <td style="vertical-align: top;">
                     <div class="form-group">
                         <label>Name Variant</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" id="txtNamaVar2">
                     </div>
                     <div class="form-group">
                         <label>Deks Variant</label>
-                        <textarea id="txtDeksVar2" class="form-control" name="txtDeksVar2" rows="10" cols="50" v-model="variantProduct[0].desk"></textarea>
+                        <textarea id="txtDeksVar2" class="form-control" name="txtDeksVar2" rows="10" cols="50"></textarea>
+                        <p id="capDeksVar2" style="display: none;"></p>
                     </div>
                     <div class="form-group">
                         <label>Price</label>
-                        <input type="text" class="form-control" v-model="variantProduct[0].price">
+                        <input type="text" class="form-control" id="txtPriceVar2" >
                     </div>
                     <div class="form-group">
                         <label>Stock</label>
-                        <input type="text" class="form-control" v-model="variantProduct[0].stock">
+                        <input type="text" class="form-control" id="txtStockVar2">
                     </div>
                 </td>
-                <td style="vertical-align: top;">
-                    <div class="form-group">
+                <td style="vertical-align: center;">
+                    <div class="form-group" style="margin-top:20px;">
                         <label>Image for variant 2</label><br />
                         <div class="cropme" style="width: 450px;height:450px;"></div>
                     </div>
-                    <br/>
-                    <small>@{{variantProduct[0].deksBot}}</small><br/>
-                    <a href="#!" class="view">Set</a>
+                    <a href="#!" class="view" id="btnSetVar1" style="margin-top:20px;"><i class="fas fa-cart-arrow-down"></i> Set</a>
                 </td>
             </tr>
         </table>

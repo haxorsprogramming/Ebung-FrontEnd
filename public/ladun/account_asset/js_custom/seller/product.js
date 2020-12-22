@@ -28,11 +28,6 @@ var divTambahProduct = new Vue({
     data: {
         capTitleForm : 'Add new product',
         subKategori: [],
-        variantProduct : [
-            {nama:'', desk:'-', price : 0, stock : 0, deksBot : teksSave},
-            {nama:'', desk:'-', price : 0, stock : 0, deksBot : teksSave},
-            {nama:'', desk:'-', price : 0, stock : 0, deksBot : teksSave},
-        ],
         productName : '',
         numVariant : 0,
         messageHelp : [
@@ -59,14 +54,27 @@ var deksVar2 = document.getElementById("txtDeksVar2");
 var deksVar3 = document.getElementById("txtDeksVar3");
 var deksVar4 = document.getElementById("txtDeksVar4");
 CKEDITOR.replace(deksProduct, {language:'id-gb'});
-CKEDITOR.replace(deksVar2, {language:'id-gb'});
+var edVar1 = CKEDITOR.replace(deksVar2, {language:'id-gb'});
 CKEDITOR.replace(deksVar3, {language:'id-gb'});
 CKEDITOR.replace(deksVar4, {language:'id-gb'});
 CKEDITOR.config.allowedContent = true;
 $('.cropme').simpleCropper();
 $('#txtPrice').mask('000.000.000.000.000', {reverse: true});
+$('#txtPriceVar2').mask('000.000.000.000.000', {reverse: true});
 
 // Function
+document.querySelector('#btnSetVar1').addEventListener('click', function(){
+    document.querySelector('#txtNamaVar2').setAttribute("disabled", "disabled");
+    document.querySelector('#txtPriceVar2').setAttribute("disabled", "disabled");
+    document.querySelector("#txtStockVar2").setAttribute("disabled", "disabled");
+    let deksVar2 = CKEDITOR.instances['txtDeksVar2'].getData();
+    document.querySelector('#capDeksVar2').innerHTML = deksVar2;
+    edVar1.destroy();
+    $('#txtDeksVar2').hide();
+    $('#capDeksVar2').show();
+    $('#btnSetVar1').hide();
+});
+
 function addVariantAtc()
 {
     let deksripsiProduk = CKEDITOR.instances['txtDeksripsiProduct'].getData();
