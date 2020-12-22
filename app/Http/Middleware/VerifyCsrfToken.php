@@ -15,6 +15,7 @@ class VerifyCsrfToken extends Middleware
         '/account/seller/get-data-kelurahan-for-marker/',
         '/product/checkarea/',
         '/product/details/',
-        '/'
+        '/',
+        '/tes-s3'
     ];
 }

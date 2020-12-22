@@ -2,6 +2,7 @@
 var rToGetSubKategori = server + "get-sub-kategori/";
 var rToAddProduct = server + "account-seller/product/add/proses";
 var rToProductList = server + "account-seller/product-list";
+var teksSave = "Please fill all field of variant for set active of this variant";
 
 // Vue object
 var divProductList = new Vue({
@@ -27,7 +28,11 @@ var divTambahProduct = new Vue({
     data: {
         capTitleForm : 'Add new product',
         subKategori: [],
-        variantProduct : [],
+        variantProduct : [
+            {nama:'', desk:'-', price : 0, stock : 0, deksBot : teksSave},
+            {nama:'', desk:'-', price : 0, stock : 0, deksBot : teksSave},
+            {nama:'', desk:'-', price : 0, stock : 0, deksBot : teksSave},
+        ],
         productName : '',
         numVariant : 0,
         messageHelp : [
@@ -53,6 +58,7 @@ var deksProduct = document.getElementById("txtDeksripsiProduct");
 var deksVar2 = document.getElementById("txtDeksVar2");
 var deksVar3 = document.getElementById("txtDeksVar3");
 var deksVar4 = document.getElementById("txtDeksVar4");
+
 
 CKEDITOR.replace(deksProduct, {language:'id-gb'});
 CKEDITOR.replace(deksVar2, {language:'id-gb'});

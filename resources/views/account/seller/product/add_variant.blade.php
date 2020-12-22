@@ -11,15 +11,15 @@
                     </div>
                     <div class="form-group">
                         <label>Deks Variant</label>
-                        <textarea id="txtDeksVar2" class="form-control" name="txtDeksVar2" rows="10" cols="50"></textarea>
+                        <textarea id="txtDeksVar2" class="form-control" name="txtDeksVar2" rows="10" cols="50" v-model="variantProduct[0].desk"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Price</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="variantProduct[0].price">
                     </div>
                     <div class="form-group">
-                        <label>Deks Variant</label>
-                        <input type="text" class="form-control">
+                        <label>Stock</label>
+                        <input type="text" class="form-control" v-model="variantProduct[0].stock">
                     </div>
                 </td>
                 <td style="vertical-align: top;">
@@ -27,6 +27,9 @@
                         <label>Image for variant 2</label><br />
                         <div class="cropme" style="width: 450px;height:450px;"></div>
                     </div>
+                    <br/>
+                    <small>@{{variantProduct[0].deksBot}}</small><br/>
+                    <a href="#!" class="view">Set</a>
                 </td>
             </tr>
         </table>
@@ -97,4 +100,8 @@
         <!-- End variant 4 -->
         <hr/>
     </div>
+</div>
+
+<div>
+    <a href="#!" class="view">Save new product</a>
 </div>

@@ -20,6 +20,7 @@ class TblVariantProduct extends Migration
             $table -> char('nama_variant', 100);
             $table -> text('deks_variant');
             $table -> integer('harga');
+            $table -> integer('stock');
             $table -> char('active', 1);
         });
     }

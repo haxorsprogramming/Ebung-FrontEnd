@@ -14,6 +14,7 @@ use App\Http\Controllers\SellerCtr;
 use App\Http\Controllers\DaerahCtr;
 use App\Http\Controllers\ProductSellerCtr;
 use App\Http\Controllers\HelperCtr;
+use Symfony\Component\Console\Helper\Helper;
 
 /**
  * Main page
@@ -111,3 +112,9 @@ Route::get('/get-kelurahan/{id_kecamatan}', [DaerahCtr::class, 'getKelurahan']);
 
 // ResT sub-kategori
 Route::get('/get-sub-kategori/{id_kategori}', [HelperCtr::class, 'getsubkategori']);
+
+
+/**
+ * Tes upload s3
+ */
+Route::post('/tes-s3', [HelperCtr::class, 'tesuploads3']);

@@ -19,5 +19,10 @@ class HelperCtr extends Controller
         $dr = ['dataSubKategori' => $dataSubKategori];
         return \Response::json($dr);
     }
+    
+    public function tesuploads3(Request $request)
+    {
+        
+    }
 
 }
