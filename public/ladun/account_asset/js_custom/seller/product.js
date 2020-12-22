@@ -58,8 +58,6 @@ var deksProduct = document.getElementById("txtDeksripsiProduct");
 var deksVar2 = document.getElementById("txtDeksVar2");
 var deksVar3 = document.getElementById("txtDeksVar3");
 var deksVar4 = document.getElementById("txtDeksVar4");
-
-
 CKEDITOR.replace(deksProduct, {language:'id-gb'});
 CKEDITOR.replace(deksVar2, {language:'id-gb'});
 CKEDITOR.replace(deksVar3, {language:'id-gb'});
@@ -159,6 +157,7 @@ function addVariantAtc()
         $('#divBtnAddVariant').hide();
         divTambahProduct.capTitleForm = "Add variant product";
         $('#btnAddVariant').hide();
+        $('#btnSubmitNewProduct').show();
     }else{
        console.log("Not yet? ...");
     }

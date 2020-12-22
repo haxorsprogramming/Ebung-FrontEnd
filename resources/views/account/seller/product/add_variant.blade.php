@@ -103,5 +103,5 @@
 </div>
 
 <div>
-    <a href="#!" class="view">Save new product</a>
+    <a href="#!" class="view" style="display: none;" id="btnSubmitNewProduct">Save new product</a>
 </div>
