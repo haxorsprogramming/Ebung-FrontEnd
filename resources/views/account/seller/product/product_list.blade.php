@@ -33,10 +33,10 @@
 
 <div class="card card-prim" id="divTambahProduct" style="display: none;">
     <div class="card-header">
-        <h4>Add New Product</h4>
+        <h4>@{{capTitleForm}}</h4>
         <div class="card-header-action">
-            <a href="#!" class="btn btn-danger" style="border:0px solid white;color:#fff;display:none;" onclick="submitProduct()">
-                <i class="fas fa-save"></i> Save new product
+            <a href="#!" class="btn btn-danger" id="btnAddVariant" style="border:0px solid white;color:#fff;" onclick="addVariantAtc()">
+                <i class="fas fa-chevron-circle-right"></i> Next (add variant)
             </a>
             <a href="#!" class="btn btn-primary" style="border:0px solid white;color:#fff;" @click="backAtc">
                 <i class="fas fa-arrow-circle-left"></i> Back
@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="row">
+        <div class="row" id="divDataProduct">
             <div class="col-6 col-md-6 col-lg-6">
                 <div class="form-group">
                     <label>Product Name</label>
@@ -127,9 +127,13 @@
                 </div>
             </div>
         </div>
-        <div style="text-align:center;margin-top:20px;">
+        <div style="text-align:center;margin-top:20px;" id="divBtnAddVariant">
             <a href="#!" class="view" onclick="addVariantAtc()"><i class="fas fa-chevron-circle-right"></i> Next (Add variant)</a>
         </div>
+        
+        <!-- Variant  -->
+        @include('account.seller.product.add_variant')
+
     </div>
 </div>
 

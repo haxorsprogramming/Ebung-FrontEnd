@@ -25,6 +25,7 @@ var divProductList = new Vue({
 var divTambahProduct = new Vue({
     el: "#divTambahProduct",
     data: {
+        capTitleForm : 'Add new product',
         subKategori: [],
         variantProduct : [],
         productName : '',
@@ -48,8 +49,15 @@ var divTambahProduct = new Vue({
 });
 
 // Inisialisasi 
-var konten = document.getElementById("txtDeksripsiProduct");
-CKEDITOR.replace(konten, {language:'id-gb'});
+var deksProduct = document.getElementById("txtDeksripsiProduct");
+var deksVar2 = document.getElementById("txtDeksVar2");
+var deksVar3 = document.getElementById("txtDeksVar3");
+var deksVar4 = document.getElementById("txtDeksVar4");
+
+CKEDITOR.replace(deksProduct, {language:'id-gb'});
+CKEDITOR.replace(deksVar2, {language:'id-gb'});
+CKEDITOR.replace(deksVar3, {language:'id-gb'});
+CKEDITOR.replace(deksVar4, {language:'id-gb'});
 CKEDITOR.config.allowedContent = true;
 $('.cropme').simpleCropper();
 $('#txtPrice').mask('000.000.000.000.000', {reverse: true});
@@ -113,7 +121,6 @@ function addVariantAtc()
         divTambahProduct.stateSave[0].picUtama = true;
     }
 
-
     if(price === ''){
         divTambahProduct.messageHelp[0].price = 'Please fill the field ...!!!';
         $('#helpPrice').show();
@@ -141,7 +148,11 @@ function addVariantAtc()
     let stStock = divTambahProduct.stateSave[0].stok;
 
     if(stProductName === true && stKategori === true && stSubKategori === true && stBranch === true && stPicUtama === true && stPrice === true && stStock === true){
-        console.log("Are you ready? ...");
+        $('#conVariant').show();
+        $('#divDataProduct').hide();
+        $('#divBtnAddVariant').hide();
+        divTambahProduct.capTitleForm = "Add variant product";
+        $('#btnAddVariant').hide();
     }else{
        console.log("Not yet? ...");
     }
