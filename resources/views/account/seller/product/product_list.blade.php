@@ -35,7 +35,7 @@
     <div class="card-header">
         <h4>Add New Product</h4>
         <div class="card-header-action">
-            <a href="#!" class="btn btn-danger" style="border:0px solid white;color:#fff;" onclick="submitProduct()">
+            <a href="#!" class="btn btn-danger" style="border:0px solid white;color:#fff;display:none;" onclick="submitProduct()">
                 <i class="fas fa-save"></i> Save new product
             </a>
             <a href="#!" class="btn btn-primary" style="border:0px solid white;color:#fff;" @click="backAtc">
@@ -89,34 +89,13 @@
                 </div>
                 <div class="form-group" id="txtPic">
                     <div style="text-align: center;">
-                        <label>Main photos of product</label><br />
+                        <label>Main photos of product (Variant 1)</label><br />
                         <div class="cropme" style="width: 400px;height:400px;" id="txtFotoUtama"></div>
                         <small id="helpMainPhotos" class="{{ $divError }}" style="<?= $dn; ?>">
                             @{{ messageHelp[0].mainPhotos }}
                         </small>
                     </div>
-                    <table>
-                        <tr>
-                            <td>Varian 1</td>
-                            <td>
-                                <div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant1"></div>
-                            </td>
-                            <td>Varian 2</td>
-                            <td>
-                                <div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant2"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Varian 3</td>
-                            <td>
-                                <div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant3"></div>
-                            </td>
-                            <td>Varian 4</td>
-                            <td>
-                                <div class="cropme" style="margin-top:15px;width: 100px;height:100px;" id="txtVariant4"></div>
-                            </td>
-                        </tr>
-                    </table>
+                    
                     <small id="helpMinPic" class="{{ $divError }}" style="<?= $dn; ?>">
                         @{{ messageHelp[0].minPic }}
                     </small>
@@ -149,7 +128,7 @@
             </div>
         </div>
         <div style="text-align:center;margin-top:20px;">
-            <a href='#!' class='view' onclick="submitProduct()"><i class="fas fa-plus-circle"></i> Save new product</a>
+            <a href="#!" class="view" onclick="addVariantAtc()"><i class="fas fa-chevron-circle-right"></i> Next (Add variant)</a>
         </div>
     </div>
 </div>

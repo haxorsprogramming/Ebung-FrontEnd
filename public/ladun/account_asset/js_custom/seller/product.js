@@ -55,8 +55,7 @@ $('.cropme').simpleCropper();
 $('#txtPrice').mask('000.000.000.000.000', {reverse: true});
 
 // Function
-
-function submitProduct()
+function addVariantAtc()
 {
     let deksripsiProduk = CKEDITOR.instances['txtDeksripsiProduct'].getData();
     let productName = document.querySelector('#txtProductName').value;
@@ -66,11 +65,7 @@ function submitProduct()
     let price = document.querySelector('#txtPrice').value;
     let stock = document.querySelector('#txtStock').value;
     let picUtama = $('#txtFotoUtama img').attr('src');
-    let var1 = $('#txtVariant1 img').attr('src');
-    let var2 = $('#txtVariant2 img').attr('src');
-    let var3 = $('#txtVariant3 img').attr('src');
-    let var4 = $('#txtVariant4 img').attr('src');
-    let dataSend = {'var1':var1, 'var2':var2, 'var3':var3, 'var4':var4, 'name':productName, 'deks':deksripsiProduk, 'kategori':kategori, 'subKategori':subKategori, 'branch':branch, 'price':price, 'stock':stock, 'picUtama':picUtama}
+    let dataSend = {'name':productName, 'deks':deksripsiProduk, 'kategori':kategori, 'subKategori':subKategori, 'branch':branch, 'price':price, 'stock':stock, 'picUtama':picUtama}
     
     // if()
     if(productName === ''){
@@ -137,15 +132,6 @@ function submitProduct()
         $('#helpStok').hide();
     }
 
-    if(var1 === undefined){
-        divTambahProduct.messageHelp[0].minPic = 'Add min 1 variant product ... !!!';
-        $('#helpMinPic').show();
-        divTambahProduct.stateSave[0].minPic = false;
-    }else{
-        $('#helpMinPic').hide();
-        divTambahProduct.stateSave[0].minPic = true;
-    }
-
     let stProductName = divTambahProduct.stateSave[0].productName;
     let stKategori = divTambahProduct.stateSave[0].kategori;
     let stSubKategori = divTambahProduct.stateSave[0].subKategori;
@@ -153,24 +139,17 @@ function submitProduct()
     let stPicUtama = divTambahProduct.stateSave[0].picUtama;
     let stPrice = divTambahProduct.stateSave[0].price;
     let stStock = divTambahProduct.stateSave[0].stok;
-    let stMinPic = divTambahProduct.stateSave[0].minPic;
 
-    if(stProductName === true && stKategori === true && stSubKategori === true && stBranch === true && stPicUtama === true && stPrice === true && stStock === true && stMinPic === true){
-        $.post(rToAddProduct, dataSend, function(data){
-            let status = data.status;
-            if(status === 'success'){
-                pesanUmumApp('success', 'Success', 'New product applied ...');
-                renderPage(rToProductList, 'List Product', '');
-            }else{
-
-            }
-            // console.log(data);
-        });
-        console.log("are you ready?...");
-        console.log(price);
+    if(stProductName === true && stKategori === true && stSubKategori === true && stBranch === true && stPicUtama === true && stPrice === true && stStock === true){
+        console.log("Are you ready? ...");
     }else{
-        // console.log("not yet?...");
+       console.log("Not yet? ...");
     }
+}
+
+function submitProduct()
+{
+    
     
 }
 
