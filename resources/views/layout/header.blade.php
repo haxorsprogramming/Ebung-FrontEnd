@@ -10,21 +10,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" type="image/jpg" href="https://media.publit.io/file/ebungaasset/fav.png"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/'.$cssFile) }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-res-product-detail.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-res-about.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-flower.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-faq.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-login.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/style-404.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-res-v3.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-fix-nav.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/style-form-search-mobile.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/registerpage/css/intlTelInput.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_custom/ebunga.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-res-product-detail.css">
+    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-about.css">
+    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-res-about.css">
+    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-flower.css">
+    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-faq.css">
+    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-login.css">
+    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-404.css">
+    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-homev3.css">
+    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-fix-nav.css">
+    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-form-search-mobile.css">
+    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/intlTelInput.css">
+    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/ebunga.css">
     <!-- slick -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/slick.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/slick-theme.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/slick-theme.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
     <!-- GG FONT -->
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">

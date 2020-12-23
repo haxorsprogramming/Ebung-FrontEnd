@@ -82,30 +82,30 @@
     <!-- boostrap & jquery -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
-    <script src="{{ asset('ladun/homepage/js_asset/jquery.min_af.js') }}"></script>
-    <script src="{{ asset('ladun/homepage/js_asset/bootstrap.min_0028.js') }}"></script>
-    <script src="{{ asset('ladun/homepage/js_asset/slick.js') }}"></script>
+    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/jquery.min_af.js"></script>
+    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/bootstrap.min_0028.js"></script>
+    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/slick.js"></script>
     <!-- js file -->
 
-    <script src="{{ asset('ladun/homepage/js_asset/function-flower.js') }}"></script>
-	<script src="{{ asset('ladun/homepage/js_asset/function-show-sidebar.js') }}"></script>
+    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-flower.js"></script>
+	<script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-show-sidebar.js"></script>
 	
-	<script src="{{ asset('ladun/homepage/js_asset/function-shop.js') }}"></script>
-	<script src="{{ asset('ladun/homepage/js_asset/function-range.js') }}"></script>
-    <script src="{{ asset('ladun/homepage/js_asset/function-slick.js') }}"></script>
-    <script src="{{ asset('ladun/homepage/js_asset/function-input-number.js') }}"></script>
-    <script src="{{ asset('ladun/homepage/js_asset/function-select-custom.js') }}"></script>
-    <script src="{{ asset('ladun/homepage/js_asset/function-back-top.js') }}"></script>
-    <script src="{{ asset('ladun/homepage/js_asset/function-sidebar.js') }}"></script>
-    <script src="{{ asset('ladun/homepage/js_asset/funtion-header-v3.js') }}"></script>
-    <script src="{{ asset('ladun/homepage/js_asset/function-search-v2.js') }}"></script>
+	<script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-shop.js"></script>
+	<script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-range.js"></script>
+    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-slick.js"></script>
+    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-input-number.js"></script>
+    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-select-custom.js"></script>
+    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-back-top.js"></script>
+    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-sidebar.js"></script>
+    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/funtion-header-v3.js"></script>
+    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-search-v2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
-    <script src="{{ asset('ladun/registerpage/js/intlTelInput.js') }}"></script>
+    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/intlTelInput.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
     <script>
         const server = "{{ url('') }}/";
     </script>
-    <script src="{{ asset('ladun/homepage/js_custom/'.$jsFile) }}"></script>
+    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/{{$jsFile}}"></script>
 
 </body>
 

@@ -26,13 +26,12 @@ class LoginCtr extends Controller
         /**
          * Create data for header & footer layout
          */
-        $cssFile    = 'style-about.css';
         $jsFile     = 'ebunga-login.js';
         $page       = 'Login';
         /**
          * Create variable to response data
          */
-        $dr = ['cssFile' => $cssFile, 'jsFile' => $jsFile, 'page' => $page];
+        $dr = ['jsFile' => $jsFile, 'page' => $page];
         /**
          * Render to view
          */
