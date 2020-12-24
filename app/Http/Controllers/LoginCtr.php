@@ -42,6 +42,7 @@ class LoginCtr extends Controller
     {
         /**
          * Get data from POST
+         * if development mode go add this route -> controller to CSRF whitelist
          */
         $username = $request -> username;
         $password = $request -> password;

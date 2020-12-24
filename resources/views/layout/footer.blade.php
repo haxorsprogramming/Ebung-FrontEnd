@@ -68,7 +68,7 @@
                     <a href="#" class="logo-bot"></a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 copy">
-                    <span>Copyright</span><i class="far fa-copyright"></i><span class="engo">2020 PT Ebunga Sukses Makmur</span>
+                    <span>Copyright</span><i class="far fa-copyright"></i><span class="engo">2020 {{ env('APP_BUSINESS_NAME') }}</span>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gmail-footer">
                     <span id="gmail-footer"><a href="#">hi@ebunga.co.id</a></span>

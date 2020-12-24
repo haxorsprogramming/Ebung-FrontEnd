@@ -1,23 +1,44 @@
 <?php
+/**
+ * @license MIT, http://opensource.org/licenses/MIT
+ * @copyright Ebunga (ebunga.co.id), 2020
+ * @package laravel
+ * @subpackage Controller
+ */
 
-namespace App\Http\Controllers;
-// import lib & helper 
+/**
+ * Import namespace & library
+ */
+namespace App\Http\Controllers; 
 use Illuminate\Http\Request;
-// import model 
+/**
+ * Import model
+ */
 use App\Models\ProvinsiMdl;
 use App\Models\KabupatenMdl;
 use App\Models\KecamatanMdl;
 use App\Models\KelurahanMdl;
 
-// import another controller 
+/**
+ * Import another controller
+ */
 
 class DaerahCtr extends Controller
 {
 
     public function getProvinsiAll()
     {
+        /**
+         * Get data provinsi with model
+         */
         $provinsi = ProvinsiMdl::all();
+        /**
+         * Add data provinsi to variabel
+         */
         $dr = ['provinsi' => $provinsi];
+        /**
+         * Return response json format
+         */
         return \Response::json($dr);
     }
 
