@@ -29,6 +29,7 @@
                         <div id="imgVar2" class="cropme" style="width: 450px;height:450px;"></div>
                     </div>
                     <a href="#!" class="view" id="btnSetVar2" style="margin-top:20px;"><i class="fas fa-cart-arrow-down"></i> Set</a>
+                    <small><i>Please press "set" to add variant before submit new product ..</i></small>
                 </td>
             </tr>
         </table>
@@ -46,6 +47,7 @@
                     <div class="form-group">
                         <label>Deks Variant</label>
                         <textarea id="txtDeksVar3" class="form-control" name="txtDeksVar3" rows="10" cols="50"></textarea>
+                        <p id="capDeksVar3" style="display: none;"></p>
                     </div>
                     <div class="form-group">
                         <label>Price</label>
@@ -62,6 +64,7 @@
                         <div id="imgVar3" class="cropme" style="width: 450px;height:450px;"></div>
                     </div>
                     <a href="#!" class="view" id="btnSetVar3" style="margin-top:20px;"><i class="fas fa-cart-arrow-down"></i> Set</a>
+                    <small><i>Please press "set" to add variant before submit new product ..</i></small>
                 </td>
             </tr>
         </table>
@@ -79,6 +82,7 @@
                     <div class="form-group">
                         <label>Deks Variant</label>
                         <textarea id="txtDeksVar4" class="form-control" name="txtDeksVar4" rows="10" cols="50"></textarea>
+                        <p id="capDeksVar4" style="display: none;"></p>
                     </div>
                     <div class="form-group">
                         <label>Price</label>
@@ -95,6 +99,7 @@
                         <div id="imgVar4" class="cropme" style="width: 450px;height:450px;"></div>
                     </div>
                     <a href="#!" class="view" id="btnSetVar4" style="margin-top:20px;"><i class="fas fa-cart-arrow-down"></i> Set</a>
+                    <small><i>Please press "set" to add variant before submit new product ..</i></small>
                 </td>
             </tr>
         </table>
@@ -103,6 +108,11 @@
     </div>
 </div>
 
-<div>
+<div id="divLoading" style="text-align: center;display:none;">
+    <img src="https://ebunga.s3-ap-southeast-1.amazonaws.com/ebunga-cdn/image/loading_medium_2.svg" style="width: 200px;"><br/>
+    <h5>Saving new product ... </h5>
+</div>
+
+<div id="divBtnSaveProduct">
     <a href="#!" class="view" style="display: none;" id="btnSubmitNewProduct">Save new product</a>
 </div>

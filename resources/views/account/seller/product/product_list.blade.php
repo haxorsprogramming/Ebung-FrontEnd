@@ -47,8 +47,9 @@
         <div class="row" id="divDataProduct">
             <div class="col-6 col-md-6 col-lg-6">
                 <div class="form-group">
-                    <label>Product Name</label>
-                    <input type="text" class="form-control" id="txtProductName" v-model="productName">
+                    <label>Product Name</label><br/>
+                    <small>It is recommended to add the area name to the end of the product name</small>
+                    <input type="text" placeholder="ex.(Bunga Bouqet Wisuda Medan)" class="form-control" id="txtProductName" v-model="productName">
                     <small id="helpProductName" class="{{ $divError }}" style="<?= $dn; ?>">
                         @{{ messageHelp[0].productName }}
                     </small>

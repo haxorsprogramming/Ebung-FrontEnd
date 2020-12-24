@@ -45,9 +45,9 @@ class ProductSellerCtr extends Controller
         $picVar3 = $request -> var3;
         $picVar4 = $request -> var4;
         // clear currency format 
-        $priceFinal = str_replace(".","",$price);
+        $priceFinal = str_replace(".","", $price);
         $namaPic = $kdProduk.".jpg";
-        $tipeSlug = rand(0,50);
+        $tipeSlug = rand(0, 50);
         $cekNamaBunga = ProdukMdl::where('nama_produk', $name) -> count();
 
         if($cekNamaBunga < 1){
@@ -147,4 +147,26 @@ class ProductSellerCtr extends Controller
     //    $dr = ['status' => $picVar1];
         return \Response::json($dr);
     }
+
+    public function addmainproduct(Request $request)
+    {
+        $userLogin = $request -> session() -> get('userLogin');
+        $kdProduk = "EBUNGA".rand(1000,10000);
+        $deksripsi = $request -> deks;
+        $nama = $request -> nama;
+        $kategori = $request -> kategori;
+        $subKategori = $request -> subKategori;
+        $branch = $request -> branch;
+        $price = $request -> price;
+        $stock = $request -> stock;
+        $picUtama = $request -> picUtama;
+        // clear currency format 
+        $priceFinal = str_replace(".","", $price);
+        $namaPic = $kdProduk.".jpg";
+        $tipeSlug = rand(0, 50);
+        // {'deks':deksripsiProduk, 'nama':productName, 'kategori':kategori, 'subKategori':subKategori, 'branch':branch, 'price':price, 'stock':stock, 'picUtama':picUtama}
+        $dr = ['status' => $deksripsi];
+        return \Response::json($dr);
+    }
+
 }

@@ -72,9 +72,11 @@ Route::get('/account-seller/detail-branch/{id_branch}', [SellerCtr::class, 'deta
 Route::post('/account/seller/save-coverage-area', [SellerCtr::class, 'savecoveragearea']);
 // Cek nama kecamatan & kelurahan dari id kel 
 Route::get('/account/seller/get-data-kelurahan-for-marker/{id_kelurahan}', [SellerCtr::class, 'getdatakelurahanformarker']);
-
+/**
+ * Product Seller
+ */
 Route::get('/account-seller/product-list', [ProductSellerCtr::class, 'productlist']);
-Route::post('/account-seller/product/add/proses', [ProductSellerCtr::class, 'addproductproses']);
+Route::post('/account-seller/product/add/main-product', [ProductSellerCtr::class, 'addmainproduct']);
 // Logout
 Route::get('/logout', [PageCtr::class, 'logout']);
 

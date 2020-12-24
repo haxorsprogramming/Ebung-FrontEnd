@@ -1,6 +1,6 @@
 // Route
 var rToGetSubKategori = server + "get-sub-kategori/";
-var rToAddProduct = server + "account-seller/product/add/proses";
+var rToAddMainProcuct = server + "account-seller/product/add/main-product";
 var rToProductList = server + "account-seller/product-list";
 var teksSave = "Please fill all field of variant for set active of this variant";
 
@@ -56,10 +56,14 @@ var deksVar4 = document.getElementById("txtDeksVar4");
 var fieldVar2 = false;
 var fieldVar3 = false;
 var fieldVar4 = false;
+
 CKEDITOR.replace(deksProduct, {language:'id-gb'});
-var edVar1 = CKEDITOR.replace(deksVar2, {language:'id-gb'});
-CKEDITOR.replace(deksVar3, {language:'id-gb'});
-CKEDITOR.replace(deksVar4, {language:'id-gb'});
+// CKEDITOR.replace(deksVar2, {language:'id-gb'});
+// CKEDITOR.replace(deksVar3, {language:'id-gb'});
+// CKEDITOR.replace(deksVar4, {language:'id-gb'});
+var edVar2 = CKEDITOR.replace(deksVar2, {language:'id-gb'});
+var edVar3 = CKEDITOR.replace(deksVar3, {language:'id-gb'});
+var edVar4 = CKEDITOR.replace(deksVar4, {language:'id-gb'});
 CKEDITOR.config.allowedContent = true;
 $('.cropme').simpleCropper();
 $('#txtPrice').mask('000.000.000.000.000', {reverse: true});
@@ -68,13 +72,52 @@ $('#txtPriceVar3').mask('000.000.000.000.000', {reverse: true});
 $('#txtPriceVar4').mask('000.000.000.000.000', {reverse: true});
 
 // Function
-
 function cekVar2(){
     let namaVar = document.querySelector('#txtNamaVar2').value;
     let deksVar = CKEDITOR.instances['txtDeksVar2'].getData();
     let price = document.querySelector('#txtPriceVar2').value;
     let stock = document.querySelector('#txtStockVar2').value;
     let pic = $('#imgVar2 img').attr('src');
+    if(pic === undefined){
+        pesanUmumApp('warning', 'Choose pic ..', 'Please upload picture of this variant ...!!!');
+        return false;
+    }else{
+        if(namaVar === '' || deksVar === '' || price === '' || stock === ''){
+            pesanUmumApp('warning', 'Fill field ...!!!', 'Please fill all field ...!!!');
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
+}
+
+function cekVar3(){
+    let namaVar = document.querySelector('#txtNamaVar3').value;
+    let deksVar = CKEDITOR.instances['txtDeksVar3'].getData();
+    let price = document.querySelector('#txtPriceVar3').value;
+    let stock = document.querySelector('#txtStockVar3').value;
+    let pic = $('#imgVar3 img').attr('src');
+    if(pic === undefined){
+        pesanUmumApp('warning', 'Choose pic ..', 'Please upload picture of this variant ...!!!');
+        return false;
+    }else{
+        if(namaVar === '' || deksVar === '' || price === '' || stock === ''){
+            pesanUmumApp('warning', 'Fill field ...!!!', 'Please fill all field ...!!!');
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
+}
+
+function cekVar4(){
+    let namaVar = document.querySelector('#txtNamaVar4').value;
+    let deksVar = CKEDITOR.instances['txtDeksVar4'].getData();
+    let price = document.querySelector('#txtPriceVar4').value;
+    let stock = document.querySelector('#txtStockVar4').value;
+    let pic = $('#imgVar4 img').attr('src');
     if(pic === undefined){
         pesanUmumApp('warning', 'Choose pic ..', 'Please upload picture of this variant ...!!!');
         return false;
@@ -99,7 +142,7 @@ document.querySelector('#btnSetVar2').addEventListener('click', function(){
         document.querySelector("#txtStockVar2").setAttribute("disabled", "disabled");
         let deksVar2 = CKEDITOR.instances['txtDeksVar2'].getData();
         document.querySelector('#capDeksVar2').innerHTML = deksVar2;
-        edVar1.destroy();
+        edVar2.destroy();
         $('#txtDeksVar2').hide();
         $('#capDeksVar2').show();
         $('#btnSetVar2').hide();
@@ -108,8 +151,92 @@ document.querySelector('#btnSetVar2').addEventListener('click', function(){
     
 });
 
+
+document.querySelector('#btnSetVar3').addEventListener('click', function(){
+    var cobaCekVar3 = cekVar3();
+    if(cobaCekVar3 === false){
+    
+    }else{
+        document.querySelector('#txtNamaVar3').setAttribute("disabled", "disabled");
+        document.querySelector('#txtPriceVar3').setAttribute("disabled", "disabled");
+        document.querySelector("#txtStockVar3").setAttribute("disabled", "disabled");
+        let deksVar3 = CKEDITOR.instances['txtDeksVar3'].getData();
+        document.querySelector('#capDeksVar3').innerHTML = deksVar3;
+        edVar3.destroy();
+        $('#txtDeksVar3').hide();
+        $('#capDeksVar3').show();
+        $('#btnSetVar3').hide();
+        fieldVar3 = true;
+    }
+    
+});
+
+document.querySelector('#btnSetVar4').addEventListener('click', function(){
+    var cobaCekVar4 = cekVar4();
+    if(cobaCekVar4 === false){
+    
+    }else{
+        document.querySelector('#txtNamaVar4').setAttribute("disabled", "disabled");
+        document.querySelector('#txtPriceVar4').setAttribute("disabled", "disabled");
+        document.querySelector("#txtStockVar4").setAttribute("disabled", "disabled");
+        let deksVar4 = CKEDITOR.instances['txtDeksVar4'].getData();
+        document.querySelector('#capDeksVar4').innerHTML = deksVar4;
+        edVar4.destroy();
+        $('#txtDeksVar4').hide();
+        $('#capDeksVar4').show();
+        $('#btnSetVar4').hide();
+        fieldVar4 = true;
+    }
+    
+});
+
 document.querySelector('#btnSubmitNewProduct').addEventListener('click', function(){
-    console.log(fieldVar2);
+    let totalVar = 0;
+    if(fieldVar2 === true){
+        totalVar ++;
+    }
+    if(fieldVar3 === true){
+        totalVar ++;
+    }
+    if(fieldVar4 === true){
+        totalVar ++;
+    }
+
+    Swal.fire({
+        title: "Confirm ... ?",
+        text: "Submit a new product with "+ totalVar +" variant ... ?",
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Ya",
+        cancelButtonText: "Tidak",
+    }).then((result) => {
+        if(result.value) {
+            $('#conVariant').hide();
+            $('#divLoading').show();
+            $('#divBtnSaveProduct').hide();
+            setTimeout(function(){
+                /**
+                 * Upload main product ... 
+                 */
+                let deksripsiProduk = CKEDITOR.instances['txtDeksripsiProduct'].getData();
+                let productName = document.querySelector('#txtProductName').value;
+                let kategori = document.querySelector('#txtKategori').value;
+                let subKategori = document.querySelector('#txtSubKategori').value;
+                let branch = document.querySelector('#txtBranch').value;
+                let price = document.querySelector('#txtPrice').value;
+                let stock = document.querySelector('#txtStock').value;
+                let picUtama = $('#txtFotoUtama img').attr('src');
+                let dataSend = {'deks':deksripsiProduk, 'nama':productName, 'kategori':kategori, 'subKategori':subKategori, 'branch':branch, 'price':price, 'stock':stock, 'picUtama':picUtama}
+                axios.post(rToAddMainProcuct, dataSend).then(function(res){
+                    console.log(res);
+                });
+                console.log("Go save ...");
+            }, 800);
+        }
+    });
+    
 });
 
 function addVariantAtc()
@@ -235,7 +362,6 @@ function clearSubKategori() {
         divTambahProduct.subKategori.splice(0, 1);
     }
 }
-
 
 function pesanUmumApp(icon, title, text)
 {
