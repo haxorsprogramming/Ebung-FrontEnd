@@ -53,6 +53,9 @@ var deksProduct = document.getElementById("txtDeksripsiProduct");
 var deksVar2 = document.getElementById("txtDeksVar2");
 var deksVar3 = document.getElementById("txtDeksVar3");
 var deksVar4 = document.getElementById("txtDeksVar4");
+var fieldVar2 = false;
+var fieldVar3 = false;
+var fieldVar4 = false;
 CKEDITOR.replace(deksProduct, {language:'id-gb'});
 var edVar1 = CKEDITOR.replace(deksVar2, {language:'id-gb'});
 CKEDITOR.replace(deksVar3, {language:'id-gb'});
@@ -61,6 +64,8 @@ CKEDITOR.config.allowedContent = true;
 $('.cropme').simpleCropper();
 $('#txtPrice').mask('000.000.000.000.000', {reverse: true});
 $('#txtPriceVar2').mask('000.000.000.000.000', {reverse: true});
+$('#txtPriceVar3').mask('000.000.000.000.000', {reverse: true});
+$('#txtPriceVar4').mask('000.000.000.000.000', {reverse: true});
 
 // Function
 
@@ -69,22 +74,42 @@ function cekVar2(){
     let deksVar = CKEDITOR.instances['txtDeksVar2'].getData();
     let price = document.querySelector('#txtPriceVar2').value;
     let stock = document.querySelector('#txtStockVar2').value;
+    let pic = $('#imgVar2 img').attr('src');
+    if(pic === undefined){
+        pesanUmumApp('warning', 'Choose pic ..', 'Please upload picture of this variant ...!!!');
+        return false;
+    }else{
+        if(namaVar === '' || deksVar === '' || price === '' || stock === ''){
+            pesanUmumApp('warning', 'Fill field ...!!!', 'Please fill all field ...!!!');
+            return false;
+        }else{
+            return true;
+        }
+    }
     
-    return deksVar;
 }
 
 document.querySelector('#btnSetVar2').addEventListener('click', function(){
     var cobaCekVar2 = cekVar2();
-    console.log(cobaCekVar2);
-    // document.querySelector('#txtNamaVar2').setAttribute("disabled", "disabled");
-    // document.querySelector('#txtPriceVar2').setAttribute("disabled", "disabled");
-    // document.querySelector("#txtStockVar2").setAttribute("disabled", "disabled");
-    // let deksVar2 = CKEDITOR.instances['txtDeksVar2'].getData();
-    // document.querySelector('#capDeksVar2').innerHTML = deksVar2;
-    // edVar1.destroy();
-    // $('#txtDeksVar2').hide();
-    // $('#capDeksVar2').show();
-    // $('#btnSetVar2').hide();
+    if(cobaCekVar2 === false){
+    
+    }else{
+        document.querySelector('#txtNamaVar2').setAttribute("disabled", "disabled");
+        document.querySelector('#txtPriceVar2').setAttribute("disabled", "disabled");
+        document.querySelector("#txtStockVar2").setAttribute("disabled", "disabled");
+        let deksVar2 = CKEDITOR.instances['txtDeksVar2'].getData();
+        document.querySelector('#capDeksVar2').innerHTML = deksVar2;
+        edVar1.destroy();
+        $('#txtDeksVar2').hide();
+        $('#capDeksVar2').show();
+        $('#btnSetVar2').hide();
+        fieldVar2 = true;
+    }
+    
+});
+
+document.querySelector('#btnSubmitNewProduct').addEventListener('click', function(){
+    console.log(fieldVar2);
 });
 
 function addVariantAtc()
@@ -209,4 +234,14 @@ function clearSubKategori() {
     for (i = 0; i < jlhItem; i++) {
         divTambahProduct.subKategori.splice(0, 1);
     }
+}
+
+
+function pesanUmumApp(icon, title, text)
+{
+  Swal.fire({
+    icon : icon,
+    title : title,
+    text : text
+  });
 }
