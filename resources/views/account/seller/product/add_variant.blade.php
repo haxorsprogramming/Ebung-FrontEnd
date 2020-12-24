@@ -114,5 +114,5 @@
 </div>
 
 <div id="divBtnSaveProduct">
-    <a href="#!" class="view" style="display: none;" id="btnSubmitNewProduct">Save new product</a>
+    <a href="#!" class="view" style="display: none;" id="btnSubmitNewProduct"><i class="fas fa-check-circle"></i> Save new product</a>
 </div>

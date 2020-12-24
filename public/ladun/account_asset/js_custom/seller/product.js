@@ -230,9 +230,24 @@ document.querySelector('#btnSubmitNewProduct').addEventListener('click', functio
                 let picUtama = $('#txtFotoUtama img').attr('src');
                 let dataSend = {'deks':deksripsiProduk, 'nama':productName, 'kategori':kategori, 'subKategori':subKategori, 'branch':branch, 'price':price, 'stock':stock, 'picUtama':picUtama}
                 axios.post(rToAddMainProcuct, dataSend).then(function(res){
-                    console.log(res);
+                    let dr = res.data;
+                    if(dr.status === 'sukses'){
+                        /**
+                         * Waktunya upload variant produk
+                         */
+                        pesanUmumApp('success', 'Success', 'Success add new product ...');
+                        divUtama.myProductAtc();
+                    }else{
+                        pesanUmumApp('warning', 'Error', 'The product name already exists, please enter another product name');
+                        $('#divDataProduct').show();
+                        document.querySelector('#txtProductName').value = "";
+                        document.querySelector('#txtProductName').focus();
+                        $('#divBtnAddVariant').show();
+                        $('#divLoading').hide();
+                        $('#btnAddVariant').show();
+                        $('#divBtnSaveProduct').hide();
+                    }
                 });
-                console.log("Go save ...");
             }, 800);
         }
     });
@@ -330,6 +345,7 @@ function addVariantAtc()
         divTambahProduct.capTitleForm = "Add variant product";
         $('#btnAddVariant').hide();
         $('#btnSubmitNewProduct').show();
+        $('#divBtnSaveProduct').show();
     }else{
        console.log("Not yet? ...");
     }

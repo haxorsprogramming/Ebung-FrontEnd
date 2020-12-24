@@ -192,11 +192,10 @@ class ProductSellerCtr extends Controller
             // file_put_contents('ladun/ebunga_asset/image/product/'.$namaPic, $mainPic);
             // $filePicDisk = Storage::url('ladun/ebunga_asset/image/product/'.$namaPic);
             Storage::disk('s3') -> put('product/main-product/'.$namaPic, $mainPic);
+            $dr = ['status' => 'sukses'];
         }else{
-
+            $dr = ['status' => 'error_name_product'];
         }
-        // {'deks':deksripsiProduk, 'nama':productName, 'kategori':kategori, 'subKategori':subKategori, 'branch':branch, 'price':price, 'stock':stock, 'picUtama':picUtama}
-        $dr = ['status' => 'sukses'];
         return \Response::json($dr);
     }
 
