@@ -2,7 +2,7 @@
 var rToGetSubKategori = server + "get-sub-kategori/";
 var rToAddMainProcuct = server + "account-seller/product/add/main-product";
 var rToProductList = server + "account-seller/product-list";
-var teksSave = "Please fill all field of variant for set active of this variant";
+var rToAddVariantProduct = server + "account-seller/product/add/variant";
 
 // Vue object
 var divProductList = new Vue({
@@ -58,9 +58,6 @@ var fieldVar3 = false;
 var fieldVar4 = false;
 
 CKEDITOR.replace(deksProduct, {language:'id-gb'});
-// CKEDITOR.replace(deksVar2, {language:'id-gb'});
-// CKEDITOR.replace(deksVar3, {language:'id-gb'});
-// CKEDITOR.replace(deksVar4, {language:'id-gb'});
 var edVar2 = CKEDITOR.replace(deksVar2, {language:'id-gb'});
 var edVar3 = CKEDITOR.replace(deksVar3, {language:'id-gb'});
 var edVar4 = CKEDITOR.replace(deksVar4, {language:'id-gb'});
@@ -231,10 +228,22 @@ document.querySelector('#btnSubmitNewProduct').addEventListener('click', functio
                 let dataSend = {'deks':deksripsiProduk, 'nama':productName, 'kategori':kategori, 'subKategori':subKategori, 'branch':branch, 'price':price, 'stock':stock, 'picUtama':picUtama}
                 axios.post(rToAddMainProcuct, dataSend).then(function(res){
                     let dr = res.data;
+                    let kdProduct = dr.kdProduct;
                     if(dr.status === 'sukses'){
                         /**
                          * Waktunya upload variant produk
                          */
+                        if(fieldVar2 === true){
+                            let nama = document.querySelector('#txtNamaVar2').value;
+                            let deks = CKEDITOR.instances['txtDeksVar2'].getData();
+                            let harga = document.querySelector('#txtPriceVar2').value;
+                            let stock = document.querySelector('#txtStockVar2').value;
+                            let pic = ('#imgVar2 img').attr('src');
+                            let dataSend = {'kdProduct':kdProduct, 'nama':nama, 'deks':deks, 'harga':harga, 'stock':stock, 'pic':pic}
+                            axios.post(rToAddVariantProduct, dataSend).then(function(res){
+                                let dr = res.data;
+                            });
+                        }
                         pesanUmumApp('success', 'Success', 'Success add new product ...');
                         divUtama.myProductAtc();
                     }else{

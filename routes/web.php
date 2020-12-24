@@ -77,6 +77,7 @@ Route::get('/account/seller/get-data-kelurahan-for-marker/{id_kelurahan}', [Sell
  */
 Route::get('/account-seller/product-list', [ProductSellerCtr::class, 'productlist']);
 Route::post('/account-seller/product/add/main-product', [ProductSellerCtr::class, 'addmainproduct']);
+Route::post('/account-seller/product/add/variant', [ProductSellerCtr::class, 'addvariantproduct']);
 // Logout
 Route::get('/logout', [PageCtr::class, 'logout']);
 

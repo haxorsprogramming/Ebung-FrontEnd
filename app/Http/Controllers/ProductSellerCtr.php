@@ -192,7 +192,7 @@ class ProductSellerCtr extends Controller
             // file_put_contents('ladun/ebunga_asset/image/product/'.$namaPic, $mainPic);
             // $filePicDisk = Storage::url('ladun/ebunga_asset/image/product/'.$namaPic);
             Storage::disk('s3') -> put('product/main-product/'.$namaPic, $mainPic);
-            $dr = ['status' => 'sukses'];
+            $dr = ['status' => 'sukses', 'kdProduct' => $kdProduk];
         }else{
             $dr = ['status' => 'error_name_product'];
         }
