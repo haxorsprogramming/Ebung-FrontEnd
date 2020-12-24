@@ -13,14 +13,14 @@ class TblSettingEbunga extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_setting_ebunga', function (Blueprint $table) {
-            $table -> id();
-            $table -> char('kd_setting', 10);
-            $table -> char('caption', 50);
-            $table -> char('value', 150);
-            $table -> char('tipe', 100);
-            $table -> char('active', 1);
-        });
+        // Schema::create('tbl_setting_ebunga', function (Blueprint $table) {
+        //     $table -> id();
+        //     $table -> char('kd_setting', 10);
+        //     $table -> char('caption', 50);
+        //     $table -> char('value', 150);
+        //     $table -> char('tipe', 100);
+        //     $table -> char('active', 1);
+        // });
     }
 
     /**
@@ -30,6 +30,6 @@ class TblSettingEbunga extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_variant_product');
+        // Schema::dropIfExists('tbl_setting_ebunga');
     }
 }

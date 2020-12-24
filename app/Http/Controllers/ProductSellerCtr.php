@@ -1,13 +1,17 @@
 <?php
 
-// import namespace
+/**
+ * Import namespace & lib
+ */
 namespace App\Http\Controllers;
-// import lib
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
-// import model
+use Illuminate\Support\Facades\Storage;
+/**
+ * Import model
+ */
 use App\Models\BranchSellerMdl;
 use App\Models\ProdukMdl;
 use App\Models\KategoriMdl;
@@ -164,8 +168,35 @@ class ProductSellerCtr extends Controller
         $priceFinal = str_replace(".","", $price);
         $namaPic = $kdProduk.".jpg";
         $tipeSlug = rand(0, 50);
+        $cekNamaBunga = ProdukMdl::where('nama_produk', $nama) -> count();
+        if($cekNamaBunga < 1){
+            DB::table('tbl_produk') -> insert ([
+                'kd_produk' => $kdProduk,
+                'nama_produk' => $nama,
+                'slug' => Str::kebab($nama).'-'.$tipeSlug,
+                'deks_produk' => $deksripsi,
+                'kategori' => $kategori,
+                'sub_kategori' => $subKategori,
+                'id_branch' => $branch,
+                'id_seller' => $userLogin,
+                'harga' => $priceFinal,
+                'stock' => $stock,
+                'foto_utama' => $namaPic,
+                'active' => '1'
+            ]);
+            // Foto utama 
+            $namaPic = $kdProduk.".jpg";
+            $image_array_1 = explode(";", $picUtama);
+            $image_array_2 = explode(",", $image_array_1[1]);
+            $mainPic = base64_decode($image_array_2[1]);
+            // file_put_contents('ladun/ebunga_asset/image/product/'.$namaPic, $mainPic);
+            // $filePicDisk = Storage::url('ladun/ebunga_asset/image/product/'.$namaPic);
+            Storage::disk('s3') -> put('product/main-product/'.$namaPic, $mainPic);
+        }else{
+
+        }
         // {'deks':deksripsiProduk, 'nama':productName, 'kategori':kategori, 'subKategori':subKategori, 'branch':branch, 'price':price, 'stock':stock, 'picUtama':picUtama}
-        $dr = ['status' => $deksripsi];
+        $dr = ['status' => 'sukses'];
         return \Response::json($dr);
     }
 
