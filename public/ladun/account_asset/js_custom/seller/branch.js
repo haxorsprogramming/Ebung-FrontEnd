@@ -3,8 +3,8 @@ var rToGetProvinsi = server + "get-provinsi-all";
 var rToGetKabupaten = server + "get-kabupaten/";
 var rToGetKecamatan = server + "get-kecamatan/";
 var rToGetKelurahan = server + "get-kelurahan/";
-var rToApplyNewBranch = server + "account-seller/apply-new-branch";
-var rToDetailBranch = server + "account-seller/detail-branch/";
+var rToApplyNewBranch = server + "account/seller/apply-new-branch";
+var rToDetailBranch = server + "account/seller/branch/detail/";
 
 // Vue object
 var divBranch = new Vue({

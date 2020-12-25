@@ -71,8 +71,9 @@ Route::get('/account/seller/branch/coverage-area', [BranchCtr::class, 'coveragea
 Route::get('/account/seller/branch/cek-branch-location/{idBranch}', [BranchCtr::class, 'cekbranchlocation']);
 Route::get('/account/seller/branch/detail/{id_branch}', [SellerCtr::class, 'detailbranch']);
 Route::get('/account/seller/branch/get-data-kelurahan-for-marker/{id_kelurahan}', [SellerCtr::class, 'getdatakelurahanformarker']);
-Route::post('/account-seller/apply-new-branch', [SellerCtr::class, 'applynewbranch']);
-Route::post('/account/seller/save-coverage-area', [SellerCtr::class, 'savecoveragearea']);
+
+Route::post('/account/seller/branch/apply-new-branch', [SellerCtr::class, 'applynewbranch']);
+Route::post('/account/seller/branch/save-coverage-area', [SellerCtr::class, 'savecoveragearea']);
 
 
 
