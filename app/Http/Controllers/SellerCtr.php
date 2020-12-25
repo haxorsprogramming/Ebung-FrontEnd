@@ -88,24 +88,8 @@ class SellerCtr extends Controller
         return view('account.seller.branch.branch_detail', $dr);
     }
 
-    public function coverageareabranch()
-    {
-        $provinsi = ProvinsiMdl::all();
-        $dr = ['dataProvinsi' => $provinsi];
-        return view('account.seller.branch.coverage_area', $dr);
-    }
-
-    public function cekbranchlocation($idBranch)
-    {
-        $dataBranch = BranchSellerMdl::where('kd_branch', $idBranch) -> first();
-        $alamat = $dataBranch -> alamat;
-        $exAlamat = explode("-", $alamat);
-        $kelurahanId = $exAlamat[0];
-        $dataKelurahan = KelurahanMdl::where('id_kel', $kelurahanId) -> first();
-        $kelurahanCap = $dataKelurahan -> nama;
-        $dr = ['kelurahan' => $kelurahanCap];
-        return \Response::json($dr);
-    }
+    
+    
 
     public function getdatakelurahanformarker($idKel)
     {

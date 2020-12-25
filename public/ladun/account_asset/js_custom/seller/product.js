@@ -241,10 +241,27 @@ document.querySelector('#btnSubmitNewProduct').addEventListener('click', functio
                             let pic = $('#imgVar2 img').attr('src');
                             let dataSend = {'kdProduct':kdProduct, 'nama':nama, 'deks':deks, 'harga':harga, 'stock':stock, 'pic':pic}
                             // console.log(dataSend);
-                            axios.post(rToAddVariantProduct, dataSend).then(function(res){
-                                let dr = res.data;
-                                console.log(dr);
-                            });
+                            axios.post(rToAddVariantProduct, dataSend).then(function(res){});
+                        }
+                        if(fieldVar3 === true){
+                            let nama = document.querySelector('#txtNamaVar3').value;
+                            let deks = document.querySelector('#capDeksVar3').innerHTML;
+                            let harga = document.querySelector('#txtPriceVar3').value;
+                            let stock = document.querySelector('#txtStockVar3').value;
+                            let pic = $('#imgVar3 img').attr('src');
+                            let dataSend = {'kdProduct':kdProduct, 'nama':nama, 'deks':deks, 'harga':harga, 'stock':stock, 'pic':pic}
+                            // console.log(dataSend);
+                            axios.post(rToAddVariantProduct, dataSend).then(function(res){});
+                        }
+                        if(fieldVar4 === true){
+                            let nama = document.querySelector('#txtNamaVar4').value;
+                            let deks = document.querySelector('#capDeksVar4').innerHTML;
+                            let harga = document.querySelector('#txtPriceVar4').value;
+                            let stock = document.querySelector('#txtStockVar4').value;
+                            let pic = $('#imgVar4 img').attr('src');
+                            let dataSend = {'kdProduct':kdProduct, 'nama':nama, 'deks':deks, 'harga':harga, 'stock':stock, 'pic':pic}
+                            // console.log(dataSend);
+                            axios.post(rToAddVariantProduct, dataSend).then(function(res){});
                         }
                         pesanUmumApp('success', 'Success', 'Success add new product ...');
                         divUtama.myProductAtc();

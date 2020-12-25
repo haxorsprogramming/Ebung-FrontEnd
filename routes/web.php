@@ -14,6 +14,7 @@ use App\Http\Controllers\SellerCtr;
 use App\Http\Controllers\DaerahCtr;
 use App\Http\Controllers\ProductSellerCtr;
 use App\Http\Controllers\HelperCtr;
+use App\Http\Controllers\BranchSellerCtr;
 use Symfony\Component\Console\Helper\Helper;
 
 /**
@@ -40,7 +41,9 @@ Route::get('/register/ref/{referral_id}', [RegisterCtr::class, 'registerwithrefe
  * Register proses
  */
 Route::post('/register/proses', [RegisterCtr::class, 'registerproses']);
-// Aktivasi akun link
+/**
+ * Activation account
+ */
 Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']);
  
 /**
@@ -50,41 +53,43 @@ Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']
 Route::get('/product/{kategory}/{area}', [ProductCtr::class, 'productview']);
 Route::get('/product', [ProductCtr::class, 'all']);
 Route::get('/product/{id_product}', [ProductCtr::class, 'productdetails']);
-// Route::get('/product/kategory/{id_kategori}', [ProductCtr::class, 'productkategory']);
-// Route::get('/product/{id_product}/details', [ProductCtr::class, 'productdetails']);
 
-// Route::get('/product')
-
-
-// Customer (Buyer)
+/**
+ * Customer (Buyer)
+ */
 Route::get('/account', [DashboardCtr::class, 'dashboard']);
 Route::get('/account/dashboard', [CustomerCtr::class, 'dashboard']);
 // Seller
 Route::get('/account/seller', [DashboardCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/dashboard', [SellerCtr::class, 'sellerdashboard']);
-Route::get('/account/seller/sellerbranch', [SellerCtr::class, 'sellerbranch']);
-Route::get('/account/seller/sellerbranch/coverage-area', [SellerCtr::class, 'coverageareabranch']);
-// Cek lokasi branch 
-Route::get('/account/seller/sellerbranch/cek-branch-location/{idBranch}', [SellerCtr::class, 'cekbranchlocation']);
-Route::post('/account-seller/apply-new-branch', [SellerCtr::class, 'applynewbranch']);
-Route::get('/account-seller/detail-branch/{id_branch}', [SellerCtr::class, 'detailbranch']);
-// Save coverage area 
-Route::post('/account/seller/save-coverage-area', [SellerCtr::class, 'savecoveragearea']);
-// Cek nama kecamatan & kelurahan dari id kel 
-Route::get('/account/seller/get-data-kelurahan-for-marker/{id_kelurahan}', [SellerCtr::class, 'getdatakelurahanformarker']);
+Route::get('/account/seller/branch', [SellerCtr::class, 'sellerbranch']);
+
 /**
- * Product Seller
+ * Branch routing
+ */
+Route::get('/account/seller/branch/coverage-area', [BranchCtr::class, 'coverageareabranch']);
+Route::get('/account/seller/branch/cek-branch-location/{idBranch}', [BranchCtr::class, 'cekbranchlocation']);
+Route::get('/account/seller/branch/detail/{id_branch}', [SellerCtr::class, 'detailbranch']);
+Route::get('/account/seller/branch/get-data-kelurahan-for-marker/{id_kelurahan}', [SellerCtr::class, 'getdatakelurahanformarker']);
+Route::post('/account-seller/apply-new-branch', [SellerCtr::class, 'applynewbranch']);
+Route::post('/account/seller/save-coverage-area', [SellerCtr::class, 'savecoveragearea']);
+
+
+
+/**
+ * Product management (Seller)
  */
 Route::get('/account-seller/product-list', [ProductSellerCtr::class, 'productlist']);
 Route::post('/account-seller/product/add/main-product', [ProductSellerCtr::class, 'addmainproduct']);
 Route::post('/account-seller/product/add/variant', [ProductSellerCtr::class, 'addvariantproduct']);
+
 // Logout
 Route::get('/logout', [PageCtr::class, 'logout']);
 
-// Pembelian
-Route::get('/pembelian', [PageCtr::class, 'listproduk']);
 
-// About
+/**
+ * Contact page
+ */
 Route::get('/contact', [PageCtr::class, 'contact']);
 
 /**
@@ -115,9 +120,3 @@ Route::get('/get-kelurahan/{id_kecamatan}', [DaerahCtr::class, 'getKelurahan']);
 
 // ResT sub-kategori
 Route::get('/get-sub-kategori/{id_kategori}', [HelperCtr::class, 'getsubkategori']);
-
-
-/**
- * Tes upload s3
- */
-Route::post('/tes-s3', [HelperCtr::class, 'tesuploads3']);

@@ -1,6 +1,6 @@
 // Route 
 var rToDashboard = server + "account/seller/dashboard";
-var rToMyBranch = server + "account/seller/sellerbranch";
+var rToMyBranch = server + "account/seller/branch";
 var rToProductList = server + "account-seller/product-list";
 
 // Vue object 
