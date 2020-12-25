@@ -67,10 +67,10 @@ Route::get('/account/seller/branch', [SellerCtr::class, 'sellerbranch']);
 /**
  * Branch routing
  */
-Route::get('/account/seller/branch/coverage-area', [BranchCtr::class, 'coverageareabranch']);
-Route::get('/account/seller/branch/cek-branch-location/{idBranch}', [BranchCtr::class, 'cekbranchlocation']);
-Route::get('/account/seller/branch/detail/{id_branch}', [SellerCtr::class, 'detailbranch']);
-Route::get('/account/seller/branch/get-data-kelurahan-for-marker/{id_kelurahan}', [SellerCtr::class, 'getdatakelurahanformarker']);
+Route::get('/account/seller/branch/coverage-area', [BranchSellerCtr::class, 'coverageareabranch']);
+Route::get('/account/seller/branch/cek-branch-location/{idBranch}', [BranchSellerCtr::class, 'cekbranchlocation']);
+Route::get('/account/seller/branch/detail/{id_branch}', [BranchSellerCtr::class, 'detailbranch']);
+Route::get('/account/seller/branch/get-data-kelurahan-for-marker/{id_kelurahan}', [BranchSellerCtr::class, 'getdatakelurahanformarker']);
 
 Route::post('/account/seller/branch/apply-new-branch', [SellerCtr::class, 'applynewbranch']);
 Route::post('/account/seller/branch/save-coverage-area', [SellerCtr::class, 'savecoveragearea']);

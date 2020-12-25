@@ -67,40 +67,7 @@ class SellerCtr extends Controller
         return \Response::json($dr);
     }
 
-    public function detailbranch($idBranch)
-    {
-        $userLogin = session('userLogin');
-        $dataBranch = BranchSellerMdl::where('kd_branch', $idBranch) -> first();
-        // cari alamat branch 
-        $alamat = $dataBranch -> alamat;
-        $exAlamat = explode("-", $alamat);
-        $idKel = $exAlamat[0];
-        $idKec = $exAlamat[1];
-        $idKab = $exAlamat[2];
-        // cari nama kelurahan 
-        $dataKel = KelurahanMdl::where('id_kel', $idKel) -> first();
-        $namaKel = $dataKel -> nama;
-        //cari nama kecamatan 
-        $dataKec = KecamatanMdl::where('id_kec', $idKec) -> first();
-        $namaKec = $dataKec -> nama;
-        $cssBtn = 'border:0px solid white;color:#fff;';
-        $dr = ['idBranch' => $idBranch, 'userLogin' => $userLogin, 'dataBranch' => $dataBranch, 'cssBtn' => $cssBtn, 'namaKel' => $namaKel, 'namaKec' => $namaKec];
-        return view('account.seller.branch.branch_detail', $dr);
-    }
-
     
-    
-
-    public function getdatakelurahanformarker($idKel)
-    {
-        $dataKel = KelurahanMdl::where('id_kel', $idKel) -> first();
-        $namaKel = $dataKel -> nama;
-        $idKec = $dataKel -> id_kec;
-        $dataKec = KecamatanMdl::where('id_kec', $idKec) -> first();
-        $namaKec = $dataKec -> nama;
-        $dr = ['namaKel' => $namaKel, 'namaKec' => $namaKec];
-        return \Response::json($dr);
-    }
 
     public function savecoveragearea(Request $request)
     {
