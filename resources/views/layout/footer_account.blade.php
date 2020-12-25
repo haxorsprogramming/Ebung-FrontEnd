@@ -104,12 +104,14 @@
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
-    <!-- Modernizer JS -->
+        <!-- Modernizer JS -->
     <script src="{{ asset('ladun/account_asset/js/vendor/modernizr-3.6.0.min.js') }}"></script>
     <!-- <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script> -->
     <!-- jQuery JS -->
     <script src="{{ asset('ladun/account_asset/js/vendor/jquery-3.3.1.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous"></script>
+
     <!-- <script src="assets/js/vendor/jquery-3.3.1.min.js"></script> -->
     <!-- Bootstrap JS -->
     <script src="{{ asset('ladun/account_asset/js/vendor/popper.min.js') }}"></script>

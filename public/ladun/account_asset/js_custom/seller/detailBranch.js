@@ -5,7 +5,12 @@ var rToCoverageArea = server + "account/seller/branch/coverage-area";
 var mapProp = { center:new google.maps.LatLng(3.634085,98.7030042), zoom:12 };
 var map = new google.maps.Map(document.getElementById("maps"),  mapProp);
 // Vue Object 
+
 // Inisialisasi 
+$('#tblListCoverage').dataTable({
+    "bLengthChange": false,
+    "searching": false
+});
 axios.get(rToGetCordinateVillage).then(function (response) {
     // handle success
     // console.log(response);

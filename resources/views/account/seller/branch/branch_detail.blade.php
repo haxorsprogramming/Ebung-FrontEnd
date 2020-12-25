@@ -132,12 +132,23 @@
                 
                 <div class="form-group">
                     <label>List Coverage Area</label>
-                    <table class="table">
+                    <table class="table" id="tblListCoverage">
                         <thead>
                             <tr>
-                                <td>Village</td><td>Status</td>
+                                <td>Village</td><td>District</td>
                             </tr>
                         </thead>
+                        <tbody>
+                            @foreach($dataCoverage as $area)
+                            @php 
+                                $kdArea = $area -> kd_area;
+                            @endphp
+                                <tr>
+                                    <td>{{ $kdArea }}</td>
+                                    <td></td>
+                                </tr>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -145,7 +156,6 @@
 
     </div>
 </div>
-
 
 <script>
     var idBranch = "{{ $idBranch }}";

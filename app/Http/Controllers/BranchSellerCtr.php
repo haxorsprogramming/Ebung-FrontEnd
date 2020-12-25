@@ -14,6 +14,7 @@ use App\Models\ProvinsiMdl;
 use App\Models\KabupatenMdl;
 use App\Models\KecamatanMdl;
 use App\Models\KelurahanMdl;;
+use App\Models\CoverageAreaMdl;
 
 class BranchSellerCtr extends Controller
 {
@@ -40,6 +41,7 @@ class BranchSellerCtr extends Controller
     {
         $userLogin = session('userLogin');
         $dataBranch = BranchSellerMdl::where('kd_branch', $idBranch) -> first();
+        $dataCoverage = CoverageAreaMdl::where('kd_branch', $idBranch) -> get();
         // cari alamat branch 
         $alamat = $dataBranch -> alamat;
         $exAlamat = explode("-", $alamat);
@@ -53,7 +55,15 @@ class BranchSellerCtr extends Controller
         $dataKec = KecamatanMdl::where('id_kec', $idKec) -> first();
         $namaKec = $dataKec -> nama;
         $cssBtn = 'border:0px solid white;color:#fff;';
-        $dr = ['idBranch' => $idBranch, 'userLogin' => $userLogin, 'dataBranch' => $dataBranch, 'cssBtn' => $cssBtn, 'namaKel' => $namaKel, 'namaKec' => $namaKec];
+        $dr = [
+            'idBranch' => $idBranch, 
+            'userLogin' => $userLogin, 
+            'dataBranch' => $dataBranch, 
+            'cssBtn' => $cssBtn, 
+            'namaKel' => $namaKel, 
+            'namaKec' => $namaKec,
+            'dataCoverage' => $dataCoverage
+        ];
         return view('account.seller.branch.branch_detail', $dr);
     }
 
