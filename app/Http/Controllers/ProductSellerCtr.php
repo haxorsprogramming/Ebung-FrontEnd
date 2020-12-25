@@ -191,11 +191,39 @@ class ProductSellerCtr extends Controller
             $mainPic = base64_decode($image_array_2[1]);
             // file_put_contents('ladun/ebunga_asset/image/product/'.$namaPic, $mainPic);
             // $filePicDisk = Storage::url('ladun/ebunga_asset/image/product/'.$namaPic);
-            Storage::disk('s3') -> put('product/main-product/'.$namaPic, $mainPic);
+            // Storage::disk('s3') -> put('product/main-product/'.$namaPic, $mainPic);
             $dr = ['status' => 'sukses', 'kdProduct' => $kdProduk];
         }else{
             $dr = ['status' => 'error_name_product'];
         }
+        return \Response::json($dr);
+    }
+
+    public function addvariantproduct(Request $request)
+    {
+        // {'kdProduct':kdProduct, 'nama':nama, 'deks':deks, 'harga':harga, 'stock':stock, 'pic':pic}
+        $kdProduk = $request -> kdProduct;
+        $kdVariant = "EBUNGA_VAR_".$kdProduk."_".rand(100,1000);
+        $nama = $request -> nama;
+        $deks = $request -> deks;
+        $harga = $request -> harga;
+        $stock = $request -> stock;
+        $pic = $request -> pic;
+        $namaPic = $kdVariant.".jpg";
+        $imgVarArray = explode(";", $pic);
+        $image_array_2 = explode(",", $imgVarArray[1]);
+        $varPic = base64_decode($image_array_2[1]);
+        Storage::disk('s3') -> put('product/variant/'.$namaPic, $varPic);
+        DB::table('tbl_variant_product') -> insert ([
+            'kd_variant' => $kdVariant,
+            'kd_product' => $kdProduk,
+            'nama_variant' => $nama,
+            'deks_variant' => $deks,
+            'harga' => $harga,
+            'stock' => $stock,
+            'active' => '1'
+        ]);
+        $dr = ['status' => 'success'];
         return \Response::json($dr);
     }
 

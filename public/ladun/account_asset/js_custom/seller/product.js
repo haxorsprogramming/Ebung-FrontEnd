@@ -235,13 +235,15 @@ document.querySelector('#btnSubmitNewProduct').addEventListener('click', functio
                          */
                         if(fieldVar2 === true){
                             let nama = document.querySelector('#txtNamaVar2').value;
-                            let deks = CKEDITOR.instances['txtDeksVar2'].getData();
+                            let deks = document.querySelector('#capDeksVar2').innerHTML;
                             let harga = document.querySelector('#txtPriceVar2').value;
                             let stock = document.querySelector('#txtStockVar2').value;
-                            let pic = ('#imgVar2 img').attr('src');
+                            let pic = $('#imgVar2 img').attr('src');
                             let dataSend = {'kdProduct':kdProduct, 'nama':nama, 'deks':deks, 'harga':harga, 'stock':stock, 'pic':pic}
+                            // console.log(dataSend);
                             axios.post(rToAddVariantProduct, dataSend).then(function(res){
                                 let dr = res.data;
+                                console.log(dr);
                             });
                         }
                         pesanUmumApp('success', 'Success', 'Success add new product ...');

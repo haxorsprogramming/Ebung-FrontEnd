@@ -15,7 +15,7 @@ class TblVariantProduct extends Migration
     {
         Schema::create('tbl_variant_product', function (Blueprint $table) {
             $table -> id();
-            $table -> char('kd_variant', 30);
+            $table -> char('kd_variant', 50);
             $table -> char('kd_product', 30);
             $table -> char('nama_variant', 100);
             $table -> text('deks_variant');
