@@ -19,14 +19,36 @@ use App\Models\VarianProductMdl;
 
 class ProductSellerCtr extends Controller
 {
+
     public function productlist(Request $request)
     {
+        /**
+         * Get user login session
+         */
         $userLogin = $request -> session() -> get('userLogin');
+        /**
+         * Get kategory from database with model
+         */
         $kategoriProduct = KategoriMdl::all();
+        /**
+         * Get data branch with parameter id_seller & status branch
+         */
         $dataBranch = BranchSellerMdl::where('id_seller', $userLogin) -> where('status_branch', 'active') -> get();
+        /**
+         * Get data product with parameter id_seller
+         */
         $dataProduct = ProdukMdl::where('id_seller', $userLogin) -> get();
+        /**
+         * Devine html output for response
+         */
         $divInvalid = 'form-text text-warning';
+        /**
+         * Create variable
+         */
         $dn = 'display:none;';
+        /**
+         * 
+         */
         $dr = ['dataProduct' => $dataProduct, 'kategoriProduct' => $kategoriProduct, 'dataBranch' => $dataBranch, 'divError' => $divInvalid, 'dn' => $dn];
         return view('account.seller.product.product_list', $dr);
     }

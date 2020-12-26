@@ -142,10 +142,18 @@
                             @foreach($dataCoverage as $area)
                             @php 
                                 $kdArea = $area -> kd_area;
+                                $dataKelurahan = DB::table('tbl_kelurahan') -> where('id_kel', $kdArea) -> first();
+                                $namaKelurahan = $dataKelurahan -> nama;
+                                $idKecamatan = $dataKelurahan -> id_kec;
+                                $dataKecamatan = DB::table('tbl_kecamatan') -> where('id_kec', $idKecamatan) -> first();
+                                $idKabupaten = $dataKecamatan -> id_kab;
+                                $namaKecamatan = $dataKecamatan -> nama;
+                                $dataKabupaten = DB::table('tbl_kabupaten') -> where('id_kab', $idKabupaten) -> first();
+                                $namaKabupaten = $dataKabupaten -> nama;
                             @endphp
                                 <tr>
-                                    <td>{{ $kdArea }}</td>
-                                    <td></td>
+                                    <td>{{ $namaKelurahan }}</td>
+                                    <td>{{ $namaKecamatan }} - {{ $namaKabupaten }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

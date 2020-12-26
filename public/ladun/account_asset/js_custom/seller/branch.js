@@ -1,9 +1,9 @@
 // Route 
-var rToGetProvinsi = server + "get-provinsi-all";
-var rToGetKabupaten = server + "get-kabupaten/";
-var rToGetKecamatan = server + "get-kecamatan/";
-var rToGetKelurahan = server + "get-kelurahan/";
-var rToApplyNewBranch = server + "account/seller/apply-new-branch";
+var rToGetProvinsi = server + "get/location/provinsi-all";
+var rToGetKabupaten = server + "get/location/kabupaten/";
+var rToGetKecamatan = server + "get/location/kecamatan/";
+var rToGetKelurahan = server + "get/location/kelurahan/";
+var rToApplyNewBranch = server + "account/seller/branch/apply-new-branch";
 var rToDetailBranch = server + "account/seller/branch/detail/";
 
 // Vue object

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\Console\Helper\Helper;
 use App\Http\Controllers\PageCtr;
 use App\Http\Controllers\RestProduct;
 use App\Http\Controllers\ProductCtr;
@@ -15,7 +16,7 @@ use App\Http\Controllers\DaerahCtr;
 use App\Http\Controllers\ProductSellerCtr;
 use App\Http\Controllers\HelperCtr;
 use App\Http\Controllers\BranchSellerCtr;
-use Symfony\Component\Console\Helper\Helper;
+
 
 /**
  * Main page
@@ -75,14 +76,12 @@ Route::get('/account/seller/branch/get-data-kelurahan-for-marker/{id_kelurahan}'
 Route::post('/account/seller/branch/apply-new-branch', [SellerCtr::class, 'applynewbranch']);
 Route::post('/account/seller/branch/save-coverage-area', [SellerCtr::class, 'savecoveragearea']);
 
-
-
 /**
  * Product management (Seller)
  */
-Route::get('/account-seller/product-list', [ProductSellerCtr::class, 'productlist']);
-Route::post('/account-seller/product/add/main-product', [ProductSellerCtr::class, 'addmainproduct']);
-Route::post('/account-seller/product/add/variant', [ProductSellerCtr::class, 'addvariantproduct']);
+Route::get('/account/seller/product-list', [ProductSellerCtr::class, 'productlist']);
+Route::post('/account/seller/product/add/variant', [ProductSellerCtr::class, 'addvariantproduct']);
+Route::post('/account/seller/product/add/main-product', [ProductSellerCtr::class, 'addmainproduct']);
 
 // Logout
 Route::get('/logout', [PageCtr::class, 'logout']);
@@ -104,20 +103,17 @@ Route::post('/product/check-area-slug-only', [ProductCtr::class, 'checkslugonly'
 
 // Halaman admin
 
-// ResT Produk detail
-Route::get('/product/detail/{id_product}', [RestProduct::class, 'detailproduct']);
-
 // Testing kirim email
 Route::get('/tes-kirim-email', [PageCtr::class, 'teskirimemail']);
 
 // Cek view mail registrasi
 Route::get('/cek-view-email-registrasi', [TestingCtr::class, 'viewemailregistrasi']);
 
-// ResT daerah 
-Route::get('/get-provinsi-all', [DaerahCtr::class, 'getProvinsiAll']);
-Route::get('/get-kabupaten/{id_provinsi}', [DaerahCtr::class, 'getKabupaten']);
-Route::get('/get-kecamatan/{id_kabupaten}', [DaerahCtr::class, 'getKecamatan']);
-Route::get('/get-kelurahan/{id_kecamatan}', [DaerahCtr::class, 'getKelurahan']);
-
-// ResT sub-kategori
-Route::get('/get-sub-kategori/{id_kategori}', [HelperCtr::class, 'getsubkategori']);
+/**
+ * REST Without csrf
+ */
+Route::get('/get/location/provinsi-all', [DaerahCtr::class, 'getProvinsiAll']);
+Route::get('/get/location/kabupaten/{id_provinsi}', [DaerahCtr::class, 'getKabupaten']);
+Route::get('/get/location/kecamatan/{id_kabupaten}', [DaerahCtr::class, 'getKecamatan']);
+Route::get('/get/location/kelurahan/{id_kecamatan}', [DaerahCtr::class, 'getKelurahan']);
+Route::get('/get/sub-kategori/{id_kategori}', [HelperCtr::class, 'getsubkategori']);
