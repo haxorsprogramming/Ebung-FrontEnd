@@ -20,15 +20,13 @@
                         <thead>
                             <tr>
                                 <th>Village</th>
-                                <th>City</th>
-                                <th>Action</th>
+                                <th>District</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="kel in kelurahanDipilih">
                                 <td>@{{ kel.nama }}</td>
-                                <td></td>
-                                <td></td>
+                                <td>@{{ kel.namaKec }} - @{{ kel.namaKab }}</td>
                             </tr>
                         </tbody>
                     </table>

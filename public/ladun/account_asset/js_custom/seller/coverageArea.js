@@ -6,6 +6,7 @@ var rToCekBranchLocation = server + "account/seller/branch/cek-branch-location/"
 var rToCekLocationForMarker = server + "account/seller/branch/get-data-kelurahan-for-marker/";
 var rToSaveCoverageLocation = server + "account/seller/branch/save-coverage-area";
 var rToGetCoverageAreaOnload = server + "account/seller/branch/get-branch-coverage-area/";
+var rToClearCoverageArea = server + "account/seller/branch/clear-coverage-area";
 
 var dataKelurahan = [];
 var kelurahanDipilih = [];
@@ -67,9 +68,31 @@ var divAddCoverage = new Vue({
             cancelButtonText: "Tidak",
         }).then((result) => {
             if(result.value) {
-              
+              axios.post(rToClearCoverageArea, {'idBranch':idBranch}).then(function(res){
+                pesanUmumApp('success', 'Success', 'Coverage area cleared ..');
+              });
+              let cArrKelDipilih = this.kelurahanDipilih.length;
+              var i;
+              for(i = 0; i < cArrKelDipilih; i++){
+                this.kelurahanDipilih.splice(0,1);
+              }
+              let cArrKel = this.kelurahan.length;
+              var h;
+              for(h = 0; h < cArrKel; h++){
+                this.kelurahan.splice(0,1);
+              }
+              var rToGetCordinateVillage = "https://maps.googleapis.com/maps/api/geocode/json?address="+namaKel+"+"+namaKec+"&key="+pathEbunga;
+              axios.get(rToGetCordinateVillage).then(function(res){
+                let lat = res.data.results[0].geometry.location.lat;
+                let lng = res.data.results[0].geometry.location.lng;
+                var mapProp = { center:new google.maps.LatLng(lat,lng), zoom:13 };
+                map = new google.maps.Map(document.getElementById("maps"), mapProp);  
+              }); 
+              document.querySelector('#txtCountry').selectedIndex = "0";
+              document.querySelector('#txtProvinsi').selectedIndex = "0";
+              $('#divKelurahan').hide();
             }
-        });
+          });
           
         }
     }
@@ -87,7 +110,12 @@ axios.get(rToGetCoverageAreaOnload+idBranch).then(function(res){
   dataCoverage.forEach(renderCoverage);
   function renderCoverage(item, index){
     kelurahanDipilih.push(dataCoverage[index].kdKelurahan);
-    divAddCoverage.kelurahanDipilih.push({nama:dataCoverage[index].namaKelurahan, idKel : 'tes'});
+    divAddCoverage.kelurahanDipilih.push({
+      nama : dataCoverage[index].namaKelurahan,
+      idKel : dataCoverage[index].kdKelurahan,
+      namaKec : dataCoverage[index].namaKecamatan,
+      namaKab : dataCoverage[index].namaKabupaten 
+    });
   }
 });
 var map;

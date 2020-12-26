@@ -75,7 +75,7 @@ Route::get('/account/seller/branch/get-data-kelurahan-for-marker/{id_kelurahan}'
 Route::get('/account/seller/branch/get-branch-coverage-area/{id_branch}', [BranchSellerCtr::class, 'getbranchcoveragearea']);
 Route::post('/account/seller/branch/apply-new-branch', [BranchSellerCtr::class, 'applynewbranch']);
 Route::post('/account/seller/branch/save-coverage-area', [BranchSellerCtr::class, 'savecoveragearea']);
-
+Route::post('/account/seller/branch/clear-coverage-area', [BranchSellerCtr::class, 'clearcoveragearea']);
 /**
  * Product management (Seller)
  */

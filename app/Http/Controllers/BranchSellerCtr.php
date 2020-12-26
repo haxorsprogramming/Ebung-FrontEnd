@@ -86,8 +86,16 @@ class BranchSellerCtr extends Controller
             $kdKelurahan = $area -> kd_area;
             $dataKelurahan = KelurahanMdl::where('id_kel', $kdKelurahan) -> first();
             $namaKelurahan = $dataKelurahan -> nama;
+            $idKecamatan = $dataKelurahan -> id_kec;
+            $dataKecamatan = KecamatanMdl::where('id_kec', $idKecamatan) -> first();
+            $namaKecamatan = $dataKecamatan -> nama;
+            $idKabupaten = $dataKecamatan -> id_kab;
+            $dataKabupaten = KabupatenMdl::where('id_kab', $idKabupaten) -> first();
+            $namaKabupaten = $dataKabupaten -> nama;
             $arrTemp['namaKelurahan'] = $namaKelurahan;
             $arrTemp['kdKelurahan'] = $kdKelurahan;
+            $arrTemp['namaKecamatan'] = $namaKecamatan;
+            $arrTemp['namaKabupaten'] = $namaKabupaten;
             $dataR[]  = $arrTemp;
         }
         $dr = ['dataCoverage' => $dataR];
@@ -106,6 +114,15 @@ class BranchSellerCtr extends Controller
             'kd_area' => $idKel
         ]);
         $dr = ['status' => 'sukses'];
+        return \Response::json($dr);
+    }
+
+    public function clearcoveragearea(Request $request)
+    {
+        // {'idBranch':idBranch}
+        $idBranch = $request -> idBranch;
+        DB::table('tbl_coverage_area') -> where('kd_branch', $idBranch) -> delete();
+        $dr = ['status' => 'success'];
         return \Response::json($dr);
     }
 
