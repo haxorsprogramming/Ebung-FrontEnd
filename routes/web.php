@@ -79,7 +79,7 @@ Route::post('/account/seller/branch/save-coverage-area', [SellerCtr::class, 'sav
 /**
  * Product management (Seller)
  */
-Route::get('/account/seller/product-list', [ProductSellerCtr::class, 'productlist']);
+Route::get('/account/seller/product/list', [ProductSellerCtr::class, 'productlist']);
 Route::post('/account/seller/product/add/variant', [ProductSellerCtr::class, 'addvariantproduct']);
 Route::post('/account/seller/product/add/main-product', [ProductSellerCtr::class, 'addmainproduct']);
 

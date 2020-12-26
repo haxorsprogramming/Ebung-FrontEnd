@@ -1,7 +1,7 @@
 // Route 
 var rToDashboard = server + "account/seller/dashboard";
 var rToMyBranch = server + "account/seller/branch";
-var rToProductList = server + "account-seller/product-list";
+var rToProductList = server + "account/seller/product/list";
 
 // Vue object 
 var divUtama = new Vue({

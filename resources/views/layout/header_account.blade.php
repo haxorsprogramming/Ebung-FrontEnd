@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/account_asset/cropper/css/style.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/account_asset/cropper/css/style-example.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/account_asset/cropper/css/jquery.Jcrop.css') }}"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap4.min.css" integrity="sha512-PT0RvABaDhDQugEbpNMwgYBCnGCiTZMh9yOzUsJHDgl/dMhD9yjHAwoumnUk3JydV3QTcIkNDuN40CJxik5+WQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>
     <!-- <link rel="stylesheet" href="assets/css/plugins/slick.css">
     <link rel="stylesheet" href="assets/css/plugins/animation.css">
     <link rel="stylesheet" href="assets/css/plugins/jqueryui.min.css"> -->

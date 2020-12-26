@@ -97,8 +97,6 @@
             </div>
         </footer>
 
-
-
     </div>
 
     <!-- JS -->
@@ -110,7 +108,7 @@
     <!-- jQuery JS -->
     <script src="{{ asset('ladun/account_asset/js/vendor/jquery-3.3.1.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 
     <!-- <script src="assets/js/vendor/jquery-3.3.1.min.js"></script> -->
     <!-- Bootstrap JS -->

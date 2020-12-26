@@ -1,7 +1,7 @@
 // Route
 var rToGetSubKategori = server + "get/sub-kategori/";
 var rToAddMainProcuct = server + "account/seller/product/add/main-product";
-var rToProductList = server + "account/seller/product-list";
+var rToProductList = server + "account/seller/product/list";
 var rToAddVariantProduct = server + "account/seller/product/add/variant";
 
 // Vue object

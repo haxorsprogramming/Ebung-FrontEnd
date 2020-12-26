@@ -1,7 +1,7 @@
 // Route
-var rToGetKabupaten = server + "get-kabupaten/";
-var rToGetKecamatan = server + "get-kecamatan/";
-var rToGetKelurahan = server + "get-kelurahan/";
+var rToGetKabupaten = server + "get/location/kabupaten/";
+var rToGetKecamatan = server + "get/location/kecamatan/";
+var rToGetKelurahan = server + "get/location/kelurahan/";
 var rToCekBranchLocation = server + "account/seller/branch/cek-branch-location/";
 var rToCekLocationForMarker = server + "account/seller/branch/get-data-kelurahan-for-marker/";
 var rToSaveCoverageLocation = server + "account/seller/branch/save-coverage-area";
