@@ -72,9 +72,9 @@ Route::get('/account/seller/branch/coverage-area', [BranchSellerCtr::class, 'cov
 Route::get('/account/seller/branch/cek-branch-location/{idBranch}', [BranchSellerCtr::class, 'cekbranchlocation']);
 Route::get('/account/seller/branch/detail/{id_branch}', [BranchSellerCtr::class, 'detailbranch']);
 Route::get('/account/seller/branch/get-data-kelurahan-for-marker/{id_kelurahan}', [BranchSellerCtr::class, 'getdatakelurahanformarker']);
-
-Route::post('/account/seller/branch/apply-new-branch', [SellerCtr::class, 'applynewbranch']);
-Route::post('/account/seller/branch/save-coverage-area', [SellerCtr::class, 'savecoveragearea']);
+Route::get('/account/seller/branch/get-branch-coverage-area/{id_branch}', [BranchSellerCtr::class, 'getbranchcoveragearea']);
+Route::post('/account/seller/branch/apply-new-branch', [BranchSellerCtr::class, 'applynewbranch']);
+Route::post('/account/seller/branch/save-coverage-area', [BranchSellerCtr::class, 'savecoveragearea']);
 
 /**
  * Product management (Seller)

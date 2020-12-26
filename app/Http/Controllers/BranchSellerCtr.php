@@ -78,5 +78,35 @@ class BranchSellerCtr extends Controller
         return \Response::json($dr);
     }
 
+    public function getbranchcoveragearea($idBranch)
+    {
+        $dataCoverageArea = CoverageAreaMdl::where('kd_branch', $idBranch) -> get();
+        $dataR = array();
+        foreach($dataCoverageArea as $area){
+            $kdKelurahan = $area -> kd_area;
+            $dataKelurahan = KelurahanMdl::where('id_kel', $kdKelurahan) -> first();
+            $namaKelurahan = $dataKelurahan -> nama;
+            $arrTemp['namaKelurahan'] = $namaKelurahan;
+            $arrTemp['kdKelurahan'] = $kdKelurahan;
+            $dataR[]  = $arrTemp;
+        }
+        $dr = ['dataCoverage' => $dataR];
+        return \Response::json($dr);
+    }
+
+    public function savecoveragearea(Request $request)
+    {
+        // {'idKel':idKel, 'idBranch':idBranch}
+        $idKel = $request -> idKel;
+        $idBranch = $request -> idBranch;
+        $kdCoverage = Str::random(10);
+        DB::table('tbl_coverage_area') -> insert([
+            'kd_coverage' => $kdCoverage,
+            'kd_branch' => $idBranch,
+            'kd_area' => $idKel
+        ]);
+        $dr = ['status' => 'sukses'];
+        return \Response::json($dr);
+    }
 
 }

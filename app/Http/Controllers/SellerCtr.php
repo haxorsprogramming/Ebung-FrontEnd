@@ -69,19 +69,6 @@ class SellerCtr extends Controller
 
     
 
-    public function savecoveragearea(Request $request)
-    {
-        // {'idKel':idKel, 'idBranch':idBranch}
-        $idKel = $request -> idKel;
-        $idBranch = $request -> idBranch;
-        $kdCoverage = Str::random(10);
-        DB::table('tbl_coverage_area') -> insert([
-            'kd_coverage' => $kdCoverage,
-            'kd_branch' => $idBranch,
-            'kd_area' => $idKel
-        ]);
-        $dr = ['status' => 'sukses'];
-        return \Response::json($dr);
-    }
+    
 
 }
