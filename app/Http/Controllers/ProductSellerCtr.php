@@ -223,7 +223,6 @@ class ProductSellerCtr extends Controller
 
     public function addvariantproduct(Request $request)
     {
-        // {'kdProduct':kdProduct, 'nama':nama, 'deks':deks, 'harga':harga, 'stock':stock, 'pic':pic}
         $kdProduk = $request -> kdProduct;
         $kdVariant = "EBUNGA_VAR_".$kdProduk."_".rand(100,10000);
         $nama = $request -> nama;

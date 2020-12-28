@@ -56,12 +56,6 @@ class ProductCtr extends Controller
                 $dataKel = KelurahanMdl::where('nama', $slugToCaps) -> first();
                 $idKel = $dataKel -> id_kel;
                 // with area
-                // $dataSubKategori = SubKategoriMdl::where('slug', $categorySlug) -> first();
-                // $kategoriProduct = KategoriMdl::all();
-                // $kdSubKategori = $dataSubKategori -> kd_sub_kategori;
-                // get data product with kd_sub_kategory
-                // $dataProduct = ProdukMdl::where('sub_kategori', $kdSubKategori) -> get();
-                // cari id branch berdasarkan alamat 
                 $dataCoverage = CoverageAreaMdl::where('kd_area', $idKel) -> get();
                 $dataR = array();
                 $kategoriProduct = KategoriMdl::all();
