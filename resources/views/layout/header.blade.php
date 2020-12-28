@@ -12,6 +12,7 @@
     <link rel="shortcut icon" type="image/jpg" href="https://media.publit.io/file/ebungaasset/fav.png"/>
     <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-res-product-detail.css">
     <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-about.css">
+    <link rel="stylesheet" type="text/css" href="http://landing.engotheme.com/html/jenstore/demo/css/style-product-detail.css">
     <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-res-about.css">
     <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-flower.css">
     <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-faq.css">

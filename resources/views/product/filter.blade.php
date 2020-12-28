@@ -99,7 +99,7 @@
                 @foreach($dataProduct as $product)
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 product-flower">
                     <div class="product-image-flower">
-                        <figure class="sale"><a href="{{ url('product/'.$product['slug']) }}"><img src="{{ asset('ladun/ebunga_asset/image/product/'.$product['foto_utama']) }}" class="img-responsive" alt="img-holiwood"></a></figure>
+                        <figure class="sale"><a href="{{ url('product/'.$product['slug']) }}"><img src="{{ env('EBUNGA_BUCKET') }}product/main-product/{{ $product['foto_utama'] }}" class="img-responsive" alt="img-holiwood"></a></figure>
                         <div class="product-icon-flower">
                             <a href="{{ url('product/'.$product['slug']) }}"><i class="far fa-eye"></i></a>
                         </div>
