@@ -23,6 +23,7 @@ use App\Models\CoverageAreaMdl;
 use App\Models\KategoriMdl;
 use App\Models\SubKategoriMdl;
 use App\Models\BranchSellerMdl;
+use App\Models\VarianProductMdl;
 /**
  * Import another controller
  */
@@ -229,6 +230,14 @@ class ProductCtr extends Controller
         $jsFile = 'ebunga-product-all.js';
         $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataproduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
         return view('product.all', $dr);      
+    }
+
+    public function restvariantproductdetails($idProduct)
+    {
+        $dataProduct = VarianProductMdl::where('kd_variant', $idProduct) -> first();
+
+        $dr = ['dataProduct' => $dataProduct];
+        return \Response::json($dr);
     }
 
 }

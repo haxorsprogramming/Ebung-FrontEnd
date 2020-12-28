@@ -1,31 +1,9 @@
 // Route
-var rImgVariantProduct = server + "ladun/ebunga_asset/image/product/variant/";
-var rImgProduct = server + "ladun/ebunga_asset/image/product/";
+var rImgVariantProduct = "https://ebunga.s3.ap-southeast-1.amazonaws.com/product/variant/";
+var rImgProduct = "https://ebunga.s3.ap-southeast-1.amazonaws.com/product/main-product/";
+var rToGetRestDetailProduct = server + "rest/product/variant/";
 
 // Vue object 
-var divProduct = new Vue({
-    el : '#divProduct',
-    data : {
-        qt : 1
-    },
-    methods : {
-        addQtAtc : function()
-        {
-            this.qt++;
-            console.log(this.qt);
-        },
-        incQtAtc : function()
-        {
-            if(this.qt <= 0){
-                
-            }else{
-                this.qt--;
-                console.log(this.qt);
-            }
-        }
-    }
-});
-
 var divVariantFoto = new Vue({
     el : '#divVariantFoto',
     data : {
@@ -35,10 +13,19 @@ var divVariantFoto = new Vue({
         changeVariantAtc : function(idVariant, kdProduk)
         {
             if(idVariant === 'utama'){
-                document.querySelector('#imgUtama').setAttribute("src", rImgProduct+kdProduk+".jpg");
+                document.querySelector('#imgUtama').setAttribute("src", rImgProduct+kdProduk);
             }else{
-                document.querySelector('#imgUtama').setAttribute("src", rImgVariantProduct+idVariant);
+                axios.get(rToGetRestDetailProduct+kdProduk).then(function(res){
+                    let dr = res.data;
+                    let dataProduk = dr.dataProduct;
+                    var deks = dataProduk.deks_variant;
+                    document.querySelector('#capNamaVariant').innerHTML = dataProduk.nama_variant;
+                    document.querySelector('#capDeks').innerHTML = deks;
+                    console.log(deks);
+                });
+                
+                document.querySelector('#imgUtama').setAttribute("src", rImgVariantProduct+kdProduk+".jpg");
             }
         }
     }
-})
+});

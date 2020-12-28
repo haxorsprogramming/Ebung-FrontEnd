@@ -105,7 +105,7 @@
     <script>
         const server = "{{ url('') }}/";
     </script>
-    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/{{$jsFile}}"></script>
+    <script src="{{ asset('ladun/homepage/js_custom/'.$jsFile) }}"></script>
 
 </body>
 

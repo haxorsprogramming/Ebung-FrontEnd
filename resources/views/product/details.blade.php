@@ -35,54 +35,23 @@ foreach($coverageArea as $cov){
             <div class="row">
                 <div class="slider-for">
 
-                    <div class="product-content" id="divProduct">
+                    <div class="product-content">
                         <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 img-content">
                             <img id="imgUtama" src="{{ env('EBUNGA_BUCKET') }}product/main-product/{{ $dataProduct -> foto_utama }}" class="img-responsive" alt="img-holiwood">
                         </div>
                         <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 detail">
-                            <h1>{{ $dataProduct -> nama_produk }}</h1>
-                            <p class="p1" style="text-align: center;"><?=$dataProduct -> deks_produk; ?></p>
+                            <h1>{{ $dataProduct -> nama_produk }} ( <span id="capNamaVariant">Main variant</span> )</h1>
+                            <div class="p1" id="capDeks"><?=$dataProduct -> deks_produk; ?></div>
                             <div class="star">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 <span>10 Rating(s)</span>
                             </div>
-                            <div class="prince"><span>Rp. {{ number_format($dataProduct -> harga) }}</span><s class="strike">$300.02</s></div>
+                            <div class="prince"><span>Rp. {{ number_format($dataProduct -> harga) }}</span></div>
                             <figure class="fi-option">
                                 <p class="option">Coverage Area</p>
                             </figure>
                             <div class="detail">
                                 <p>{{ $coverageCaps }}</p>
-                            </div>
-                            <figure class="fi-option">
-                                <p class="option">Option</p>
-                            </figure>
-                            <div class="size col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                <span class="lb-size">Variant <span class="sta-red">*</span></span>
-                                <div class="select-custom">
-                                    <select class="form-control" id="txtVariant">
-                                            <option>Main variant</option>
-                                        @foreach($dataVariant as $variant)
-                                            <option>{{ $variant -> nama_variant }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-
-                            <p class="require">Required Fields <span>*</span></p>
-                            <div class="Quality">
-
-                                <div class="input-group input-number-group">
-                                    <span class="text-qua">Quanty:</span>
-                                    <div class="input-group-button">
-                                        <span class="input-number-decrement" @click="incQtAtc">-</span>
-                                    </div>
-                                    <input class="input-number" type="number" min="0" max="1000" value="1">
-                                    <div class="input-group-button">
-                                        <span class="input-number-increment" @click="addQtAtc">+</span>
-                                    </div>
-                                    <!-- <span class="dola">$ </span><span class="total-prince"></span> -->
-                                </div>
-
                             </div>
                             <div class="add-cart">
                                 <a href="#" class="btn-add-cart">Order Now</a>
@@ -94,9 +63,10 @@ foreach($coverageArea as $cov){
                     </div>
                     <!-- ------ end content 1----- -->
 
+
                 </div>
                 <div class="slider-nav col-lg-5 col-md-6 col-sm-12 col-xs-12" id="divVariantFoto">
-                    <div @click="changeVariantAtc('utama', '{{ $kdProduk }}')">
+                    <div @click="changeVariantAtc('utama', '{{ $dataProduct -> foto_utama }}')">
                         <img src="{{ env('EBUNGA_BUCKET') }}product/main-product/{{ $dataProduct -> foto_utama }}" style="width: 100px;" class="img-responsive" alt="img-holiwood">
                     </div>
                     @foreach($dataVariant as $variant)
@@ -104,7 +74,7 @@ foreach($coverageArea as $cov){
                     $picVariant = $variant -> kd_variant.".jpg";
                     $namaVariant = $kdProduk."_VAR".$variant -> nama_variant.".jpg";
                     @endphp
-                    <div @click="changeVariantAtc('{{ $namaVariant }}', '{{ $kdProduk }}')">
+                    <div @click="changeVariantAtc('variant', '{{ $variant -> kd_variant }}')">
                         <img src="{{ env('EBUNGA_BUCKET') }}product/variant/{{ $picVariant }}" class="img-responsive" alt="img-holiwood">
                     </div>
                     @endforeach
