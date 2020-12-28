@@ -126,7 +126,6 @@ function cekVar4(){
             return true;
         }
     }
-    
 }
 
 document.querySelector('#btnSetVar2').addEventListener('click', function(){

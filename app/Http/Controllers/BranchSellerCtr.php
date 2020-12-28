@@ -1,14 +1,16 @@
 <?php
-
-// import namespace
+/**
+ * Import namespace & library
+ */
 namespace App\Http\Controllers;
-// import lib
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
-// import model
+/**
+ * Import model
+ */
 use App\Models\BranchSellerMdl;
 use App\Models\ProvinsiMdl;
 use App\Models\KabupatenMdl;

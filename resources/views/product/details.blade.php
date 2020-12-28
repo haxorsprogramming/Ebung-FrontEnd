@@ -1,7 +1,16 @@
-<?php
+@php
 $kdProduk = $dataProduct -> kd_produk;
 $dataVariant = DB::table('tbl_variant_product') -> where('kd_product', $kdProduk) -> get();
-?>
+$idBranch = $dataProduct -> id_branch;
+$coverageArea = DB::table('tbl_coverage_area') -> where('kd_branch', $idBranch) -> get();
+$coverageCaps = "";
+foreach($coverageArea as $cov){
+    $kdArea = $cov -> kd_area;
+    $dataKelurahan = DB::table('tbl_kelurahan') -> where('id_kel', $kdArea) -> first();
+    $namaKelurahan = $dataKelurahan -> nama;
+    $coverageCaps .= " | ".$namaKelurahan." ";
+}
+@endphp
 
 @include('layout.header')
 
@@ -12,9 +21,10 @@ $dataVariant = DB::table('tbl_variant_product') -> where('kd_product', $kdProduk
     <div class="container">
         <div class="menu-breadcrumb">
             <ul class="breadcrumb">
-                <li><a href="homev3.html">Home</a></li>
-                <li><a href="flower.html">FLOWER</a></li>
-                <li><a href="#">Queen Rose - Pink</a></li>
+                <li><a href="#!">Home</a></li>
+                <li><a href="#!">{{ $dataProduct -> kategori }}</a></li>
+                <li><a href="#!">{{ $dataProduct -> sub_kategori}}</a></li>
+                <li><a href="#!">{{ $dataProduct -> nama_produk }}</a></li>
             </ul>
         </div>
     </div>
@@ -31,23 +41,29 @@ $dataVariant = DB::table('tbl_variant_product') -> where('kd_product', $kdProduk
                         </div>
                         <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 detail">
                             <h1>{{ $dataProduct -> nama_produk }}</h1>
-                            <p class="p1" style="text-align: center;"><?=$dataProduct->deks_produk; ?></p>
+                            <p class="p1" style="text-align: center;"><?=$dataProduct -> deks_produk; ?></p>
                             <div class="star">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 <span>10 Rating(s)</span>
                             </div>
                             <div class="prince"><span>Rp. {{ number_format($dataProduct -> harga) }}</span><s class="strike">$300.02</s></div>
                             <figure class="fi-option">
+                                <p class="option">Coverage Area</p>
+                            </figure>
+                            <div class="detail">
+                                <p>{{ $coverageCaps }}</p>
+                            </div>
+                            <figure class="fi-option">
                                 <p class="option">Option</p>
                             </figure>
                             <div class="size col-lg-4 col-md-6 col-sm-6 col-xs-12">
                                 <span class="lb-size">Variant <span class="sta-red">*</span></span>
                                 <div class="select-custom">
-                                    <select>
-                                        <option>S</option>
-                                        <option>M</option>
-                                        <option>L</option>
-                                        <option>XL</option>
+                                    <select class="form-control" id="txtVariant">
+                                            <option>Main variant</option>
+                                        @foreach($dataVariant as $variant)
+                                            <option>{{ $variant -> nama_variant }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -85,10 +101,11 @@ $dataVariant = DB::table('tbl_variant_product') -> where('kd_product', $kdProduk
                     </div>
                     @foreach($dataVariant as $variant)
                     @php
+                    $picVariant = $variant -> kd_variant.".jpg";
                     $namaVariant = $kdProduk."_VAR".$variant -> nama_variant.".jpg";
                     @endphp
                     <div @click="changeVariantAtc('{{ $namaVariant }}', '{{ $kdProduk }}')">
-                        <img src="{{ env('EBUNGA_BUCKET') }}product/variant/{{ $namaVariant }}" class="img-responsive" alt="img-holiwood">
+                        <img src="{{ env('EBUNGA_BUCKET') }}product/variant/{{ $picVariant }}" class="img-responsive" alt="img-holiwood">
                     </div>
                     @endforeach
                 </div>
