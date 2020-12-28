@@ -89,14 +89,8 @@ class ProductCtr extends Controller
                 $jsFile = 'ebunga-product-all.js';
                 $dr = ['page' => 'Kategory Details', 'categorySlug' => $categorySlug, 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataR, 'dataKategori' => $kategoriProduct];
                 return view('product.filter', $dr);
-                // return \Response::json($dataR);
             }
         }
-
-        // $cssFile = 'style-homev3.css'; 
-        // $jsFile = 'ebunga-product-all.js';
-        // $dr = ['page' => 'Kategory Details', 'categorySlug' => $categorySlug, 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataproduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
-        // return view('product.all', $dr);
 
     }
 
@@ -223,7 +217,6 @@ class ProductCtr extends Controller
 
     public function productkategory($idKategori)
     {
-
         $dataProduct = ProdukMdl::where('sub_kategori', $idKategori) -> get();
         $kategoriProduct = KategoriMdl::all();
         $cssFile = 'style-homev3.css';

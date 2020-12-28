@@ -17,7 +17,6 @@ use App\Http\Controllers\ProductSellerCtr;
 use App\Http\Controllers\HelperCtr;
 use App\Http\Controllers\BranchSellerCtr;
 
-
 /**
  * Main page
  */

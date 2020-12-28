@@ -12,16 +12,21 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($dataVariant as $variant)
+            @php
+            $picVariant = $variant -> kd_variant.".jpg";
+            $namaVariant = $kdProduk."_VAR".$variant -> nama_variant.".jpg";
+            @endphp
             <tr class="item_cart">
-                <td class="product-photo"><img src="http://landing.engotheme.com/html/jenstore/demo/img/collec-2.jpg" alt="Futurelife"></td>
-                <td class="produc-name"><a href="#" title="">Eleganr by BloomNation</a></td>
-                <td class="produc-price"><input value="$69.90" size="4" type="text"></td>
+                <td class="product-photo"><img src="{{ env('EBUNGA_BUCKET') }}product/variant/{{ $picVariant }}" alt="Futurelife"></td>
+                <td class="produc-name"><a href="#" title="">{{ $variant -> nama_variant }}</a></td>
+                <td class="produc-price"><input value="Rp. {{ $variant -> harga }}" size="4" type="text"></td>
                 <td class="product-quantity">
                     <form enctype="multipart/form-data">
                     <div class="product-signle-options product_15 clearfix">
                         <div class="selector-wrapper size">
                             <div class="quantity"><span class="minus"><i class="fa fa-minus"></i></span>
-                                <input data-step="1" value="1" title="Qty" class="qty" size="4" type="text">
+                                <input data-step="1" value="0" title="Qty" class="qty" size="4" type="text">
                             <span class="plus"><i class="fa fa-plus"></i></span></div>
                         </div>
                     </div>
@@ -30,6 +35,8 @@
                 <td class="total-price">$69.90</td>
                 <td class="product-remove"><a class="remove" href="#" title="close"><img src="http://landing.engotheme.com/html/jenstore/demo/img/icon-delete-cart.png" alt="close"></a></td>
             </tr>
+            @endforeach
+            
         </tbody>
     </table>
     <div class="row-total">
