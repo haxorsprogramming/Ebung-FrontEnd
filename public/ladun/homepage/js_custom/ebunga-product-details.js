@@ -18,14 +18,25 @@ var divVariantFoto = new Vue({
                 axios.get(rToGetRestDetailProduct+kdProduk).then(function(res){
                     let dr = res.data;
                     let dataProduk = dr.dataProduct;
-                    var deks = dataProduk.deks_variant;
+                    let deks = dataProduk.deks_variant;
+                    let harga = dataProduk.harga;
+                    let hargaCurrency = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'IDR' }).format(harga);
                     document.querySelector('#capNamaVariant').innerHTML = dataProduk.nama_variant;
                     document.querySelector('#capDeks').innerHTML = deks;
-                    console.log(deks);
+                    document.querySelector('#capHarga').innerHTML = "Rp. "+hargaCurrency;
                 });
                 
                 document.querySelector('#imgUtama').setAttribute("src", rImgVariantProduct+kdProduk+".jpg");
             }
         }
     }
+});
+
+// Inisialisasi
+$('#boxOrderQuantity').hide();
+
+// Function 
+document.querySelector("#btnOrderNow").addEventListener('click', function(){
+    $('.product-text').hide();
+    $('#boxOrderQuantity').show();
 });

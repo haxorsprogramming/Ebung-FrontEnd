@@ -225,10 +225,12 @@ class ProductSellerCtr extends Controller
     {
         // {'kdProduct':kdProduct, 'nama':nama, 'deks':deks, 'harga':harga, 'stock':stock, 'pic':pic}
         $kdProduk = $request -> kdProduct;
-        $kdVariant = "EBUNGA_VAR_".$kdProduk."_".rand(100,1000);
+        $kdVariant = "EBUNGA_VAR_".$kdProduk."_".rand(100,10000);
         $nama = $request -> nama;
         $deks = $request -> deks;
         $harga = $request -> harga;
+        // clear currency format 
+        $priceFinal = str_replace(".","", $harga);
         $stock = $request -> stock;
         $pic = $request -> pic;
         $namaPic = $kdVariant.".jpg";
@@ -241,7 +243,7 @@ class ProductSellerCtr extends Controller
             'kd_product' => $kdProduk,
             'nama_variant' => $nama,
             'deks_variant' => $deks,
-            'harga' => $harga,
+            'harga' => $priceFinal,
             'stock' => $stock,
             'active' => '1'
         ]);

@@ -60,5 +60,8 @@
 }
 
 .contents-details{
-
+    font: 700 18px "Poppins";
+    color: #565656;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }

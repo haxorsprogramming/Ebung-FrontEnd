@@ -46,7 +46,7 @@ foreach($coverageArea as $cov){
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 <span>10 Rating(s)</span>
                             </div>
-                            <div class="prince"><span>Rp. {{ number_format($dataProduct -> harga) }}</span></div>
+                            <div class="prince"><span id="capHarga">Rp. {{ number_format($dataProduct -> harga) }}</span></div>
                             <figure class="fi-option">
                                 <p class="option">Coverage Area</p>
                             </figure>
@@ -54,9 +54,7 @@ foreach($coverageArea as $cov){
                                 <p>{{ $coverageCaps }}</p>
                             </div>
                             <div class="add-cart">
-                                <a href="#" class="btn-add-cart">Order Now</a>
-                                <!-- <a href="#" class="list-icon icon-1"><i class="far fa-eye"></i></a>
-                                <a href="#" class="list-icon icon-2"><i class="far fa-heart"></i></a> -->
+                                <a href="javascript:void(0)" id="btnOrderNow" class="btn-add-cart">Order Now</a>
                             </div>
 
                         </div>
@@ -124,6 +122,9 @@ foreach($coverageArea as $cov){
                 </div>
             </div>
         </div>
+
+        @include('product.order_quantity')
+
         <div class="related">
             <div class="container">
                 <h1>Related Products</h1>
