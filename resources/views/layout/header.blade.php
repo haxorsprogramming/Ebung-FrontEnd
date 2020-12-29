@@ -5,6 +5,7 @@
     <title>Ebunga - {{ $page }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta charset="utf-8">
+    <meta name="description" content="Web site created using create-react-app" />
     <!-- bootstrap vs fontawesome-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -35,6 +36,7 @@
 </head>
 
 <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <header class="container" id="header-v3">
 
         <div class="row">

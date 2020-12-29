@@ -64,7 +64,7 @@ Route::get('/account/seller', [DashboardCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/dashboard', [SellerCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/branch', [SellerCtr::class, 'sellerbranch']);
 
-/**
+/**l./kk
  * Branch routing
  */
 Route::get('/account/seller/branch/coverage-area', [BranchSellerCtr::class, 'coverageareabranch']);

@@ -1,5 +1,11 @@
-<div class="container container-ver2">
+<div class="container container-ver2" style="margin-top:30px;">
+
 <div class="box cart-container" id="boxOrderQuantity">
+    <div>
+        <figure class="fi-option" style="text-align: center;">
+            <p style="font: 700 18px 'Poppins';">Select product</p>
+        </figure>
+    </div>
     <table class="table cart-table space-30">
         <thead>
             <tr>
@@ -19,8 +25,8 @@
             @endphp
             <tr class="item_cart">
                 <td class="product-photo"><img src="{{ env('EBUNGA_BUCKET') }}product/variant/{{ $picVariant }}" alt="Futurelife"></td>
-                <td class="produc-name"><a href="#" title="">{{ $variant -> nama_variant }}</a></td>
-                <td class="produc-price"><input value="Rp. {{ $variant -> harga }}" size="4" type="text"></td>
+                <td class="produc-name"><a href="javascript:void(0)">{{ $variant -> nama_variant }}</a></td>
+                <td class="produc-price"><input value="Rp. {{ number_format($variant -> harga) }}" size="10" type="text"></td>
                 <td class="product-quantity">
                     <form enctype="multipart/form-data">
                     <div class="product-signle-options product_15 clearfix">
@@ -32,8 +38,8 @@
                     </div>
                 </form>
                 </td>
-                <td class="total-price">$69.90</td>
-                <td class="product-remove"><a class="remove" href="#" title="close"><img src="http://landing.engotheme.com/html/jenstore/demo/img/icon-delete-cart.png" alt="close"></a></td>
+                <td style="font: 500 16px 'Poppins';">Rp. </td>
+                <td class="product-remove"></td>
             </tr>
             @endforeach
             

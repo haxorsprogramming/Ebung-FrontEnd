@@ -2,7 +2,7 @@
 var rImgVariantProduct = "https://ebunga.s3.ap-southeast-1.amazonaws.com/product/variant/";
 var rImgProduct = "https://ebunga.s3.ap-southeast-1.amazonaws.com/product/main-product/";
 var rToGetRestDetailProduct = server + "rest/product/variant/";
-
+var messageBeforeOrder = "Please make sure the delivery area is available for this product";
 // Vue object 
 var divVariantFoto = new Vue({
     el : '#divVariantFoto',
@@ -37,6 +37,19 @@ $('#boxOrderQuantity').hide();
 
 // Function 
 document.querySelector("#btnOrderNow").addEventListener('click', function(){
-    $('.product-text').hide();
-    $('#boxOrderQuantity').show();
+    pesanUmumApp("info", "Attention", messageBeforeOrder);
+    setTimeout(function(){
+        $('.product-text').hide();
+        $('#boxOrderQuantity').show();
+        $('#btnOrderNow').hide();
+    }, 1000);
 });
+
+function pesanUmumApp(icon, title, text)
+{
+  Swal.fire({
+    icon : icon,
+    title : title,
+    text : text
+  });
+}
