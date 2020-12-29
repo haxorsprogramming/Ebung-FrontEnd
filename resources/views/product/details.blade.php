@@ -47,6 +47,7 @@ foreach($coverageArea as $cov){
                                 <span>10 Rating(s)</span>
                             </div>
                             <div class="prince"><span id="capHarga">Rp. {{ number_format($dataProduct -> harga) }}</span></div>
+                            <input type="hidden" id="txtHargaDefaultHidden" value="{{ $dataProduct -> harga }}">
                             <figure class="fi-option">
                                 <p class="option">Variant selected (@{{ variantDipilih }})</p>
                             </figure>
@@ -56,6 +57,23 @@ foreach($coverageArea as $cov){
                             <div class="detail">
                                 <p>{{ $coverageCaps }}</p>
                             </div>
+
+                            <div class="Quality">
+										
+                                <div class="input-group input-number-group">
+                                    <span class="text-qua">Quantity:</span>
+                                      <div class="input-group-button">
+                                        <span class="input-number-decrement" v-on:click="remQt('{{ $dataProduct -> harga }}')">-</span>
+                                      </div>
+                                      <input class="input-number" id="txtQt" type="number" min="0" max="1000" value="0" tabindex="0">
+                                      <div class="input-group-button">
+                                        <span class="input-number-increment" v-on:click="addQt('{{ $dataProduct -> harga }}')">+</span>
+                                      </div>
+                                      <span class="dola">Rp. @{{ Number(totalHarga).toLocaleString() }}</span>
+                                </div>
+                                
+                            </div>
+
                             <div class="add-cart">
                                 <a href="javascript:void(0)" id="btnOrderNow" class="btn-add-cart">Order Now</a>
                             </div>
@@ -84,7 +102,8 @@ foreach($coverageArea as $cov){
             </div>
 
         </div>
-        <div class="product-text">
+
+        <div class="product-text" id="divProductDeks">
             <div class="container">
                 <ul class="nav nav-tabs menu-tab">
                     <li class="active"><a data-toggle="tab" href="#decription">Decription</a>
@@ -125,6 +144,8 @@ foreach($coverageArea as $cov){
                 </div>
             </div>
         </div>
+
+        @include('product.order_step_1');
 
         <div class="related">
             <div class="container">

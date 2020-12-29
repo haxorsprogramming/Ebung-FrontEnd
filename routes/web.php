@@ -54,6 +54,7 @@ Route::get('/product/{kategory}/{area}', [ProductCtr::class, 'productview']);
 Route::get('/product', [ProductCtr::class, 'all']);
 Route::get('/product/{id_product}', [ProductCtr::class, 'productdetails']);
 Route::get('/rest/product/variant/{id_product}', [ProductCtr::class, 'restvariantproductdetails']);
+Route::get('/rest/product/main/{id_product}', [ProductCtr::class, 'restmainproductdetails']);
 /**
  * Customer (Buyer)
  */
@@ -64,7 +65,7 @@ Route::get('/account/seller', [DashboardCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/dashboard', [SellerCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/branch', [SellerCtr::class, 'sellerbranch']);
 
-/**l./kk
+/**
  * Branch routing
  */
 Route::get('/account/seller/branch/coverage-area', [BranchSellerCtr::class, 'coverageareabranch']);

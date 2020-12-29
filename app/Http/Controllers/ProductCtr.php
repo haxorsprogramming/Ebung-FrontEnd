@@ -222,7 +222,15 @@ class ProductCtr extends Controller
     public function restvariantproductdetails($idProduct)
     {
         $dataProduct = VarianProductMdl::where('kd_variant', $idProduct) -> first();
+        $dr = ['dataProduct' => $dataProduct];
+        return \Response::json($dr);
+    }
 
+    public function restmainproductdetails($idProduct)
+    {
+        // Clear format
+        $capKdProduk = Str::replaceFirst('.jpg', '', $idProduct);
+        $dataProduct = ProdukMdl::where('kd_produk', $capKdProduk) -> first();
         $dr = ['dataProduct' => $dataProduct];
         return \Response::json($dr);
     }
