@@ -24,10 +24,12 @@ var divVariantFoto = new Vue({
                     let hargaCurrency = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'IDR' }).format(harga);
                     divContent.variantDipilih = "Default";
                     document.querySelector('#capNamaVariant').innerHTML = "Main variant";
+                    document.querySelector('#txtVariantProductOrder').innerHTML = "Main variant";
                     document.querySelector('#capDeks').innerHTML = dataProduk.deks_produk;;
                     document.querySelector('#capHarga').innerHTML = "Rp. " + hargaCurrency;
                 });
                 document.querySelector('#imgUtama').setAttribute("src", rImgProduct+kdProduk);
+                document.querySelector('#txtPicSelected').setAttribute("src", rImgProduct+kdProduk);
             }else{
                 axios.get(rToGetRestDetailProductVariant+kdProduk).then(function(res){
                     let dr = res.data;
@@ -38,10 +40,12 @@ var divVariantFoto = new Vue({
                     let hargaCurrency = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'IDR' }).format(harga);
                     divContent.variantDipilih = dataProduk.nama_variant;
                     document.querySelector('#capNamaVariant').innerHTML = dataProduk.nama_variant;
+                    document.querySelector('#txtVariantProductOrder').innerHTML = dataProduk.nama_variant;
                     document.querySelector('#capDeks').innerHTML = deks;
                     document.querySelector('#capHarga').innerHTML = "Rp. "+hargaCurrency;
                 });
                 document.querySelector('#imgUtama').setAttribute("src", rImgVariantProduct+kdProduk+".jpg");
+                document.querySelector('#txtPicSelected').setAttribute("src", rImgVariantProduct+kdProduk+".jpg");
             }
         }
     }
@@ -87,6 +91,7 @@ document.querySelector("#btnOrderNow").addEventListener('click', function(){
     }else{
         pesanUmumApp('info', 'Attention !!!', messageBeforeOrder);
         document.documentElement.scrollTop = 0;
+        $('#divRelatedProduct').hide();
         $('#divContent').hide();
         $('#divVariantFoto').hide();
         $('#divProductDeks').hide();
