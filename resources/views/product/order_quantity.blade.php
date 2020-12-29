@@ -28,15 +28,14 @@
                 <td class="produc-name"><a href="javascript:void(0)">{{ $variant -> nama_variant }}</a></td>
                 <td class="produc-price"><input value="Rp. {{ number_format($variant -> harga) }}" size="10" type="text"></td>
                 <td class="product-quantity">
-                    <form enctype="multipart/form-data">
                     <div class="product-signle-options product_15 clearfix">
                         <div class="selector-wrapper size">
-                            <div class="quantity"><span class="minus"><i class="fa fa-minus"></i></span>
+                            <div class="quantity">
+                                <span class="minus" v-on:click="decc('{{ $variant -> harga }}', '{{ $variant -> kd_variant }}')"><i class="fa fa-minus"></i></span>
                                 <input data-step="1" value="0" title="Qty" class="qty" size="4" type="text">
-                            <span class="plus"><i class="fa fa-plus"></i></span></div>
+                                <span class="plus" v-on:click="add('{{ $variant -> harga }}', '{{ $variant -> kd_variant }}')"><i class="fa fa-plus"></i></span></div>
                         </div>
                     </div>
-                </form>
                 </td>
                 <td style="font: 500 16px 'Poppins';">Rp. </td>
                 <td class="product-remove"></td>
@@ -51,23 +50,23 @@
         </div>
         <!--End align-left-->
         <div class="float-right">
-            <p>Rp. @{{ totalHarga }}</p>
+            <p>Rp. @{{ Number(totalHarga).toLocaleString() }}</p>
         </div>
         <!--End align-right-->
     </div>
     <div class="box space-30">
-        <div class="float-left">
+        <div class="float-left" style="display: none;">
             <a class="link-v1 lh-50 margin-right-20 space-20" href="#" title="CLEAR SHOPPING CART">CLEAR SHOPPING CART</a>
             <a class="link-v1 lh-50 space-20" href="#" title="UPDATE SHOPPING CART">UPDATE SHOPPING CART</a>
         </div>
         <!-- End float left -->
         <div class="float-right">
-            <a class="link-v1 lh-50 bg-brand" href="#" title="CONTINUS SHOPPING">CONTINUS SHOPPING</a>
+            <a class="link-v1 lh-50 bg-brand" href="#" title="CONTINUS SHOPPING">CONTINUE SHOPPING</a>
         </div>
         <!-- End float-right -->
     </div>
     <!-- End box -->
-    <div class="box cart-total space-30">
+    {{-- <div class="box cart-total space-30">
         <div class="row">
             <div class="col-md-4 space-30">
                 <div class="item coupon-code">
@@ -113,7 +112,7 @@
             </div>
             <!-- End col-md-4 -->
         </div>
-    </div>
+    </div> --}}
     <!-- End box -->
 </div>
 </div>

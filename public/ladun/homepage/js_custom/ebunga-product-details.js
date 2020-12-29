@@ -34,10 +34,22 @@ var divVariantFoto = new Vue({
 var boxOrderQuantity = new Vue({
     el : '#boxOrderQuantity',
     data : {
+        produk : [],
         totalHarga : 0
     },
     methods : {
+        add : function(harga, kdVariant)
+        {
+            this.totalHarga = parseInt(this.totalHarga) + parseInt(harga);
+        },
+        decc : function(harga, kdVariant)
+        {
+            if(parseInt(this.totalHarga) <= 0){
 
+            }else{
+                this.totalHarga = parseInt(this.totalHarga) - parseInt(harga);
+            }
+        }
     }
 })
 
@@ -45,6 +57,11 @@ var boxOrderQuantity = new Vue({
 $('#boxOrderQuantity').hide();
 
 // Function 
+
+function addProduct(harga){
+    console.log(harga);
+}
+
 document.querySelector("#btnOrderNow").addEventListener('click', function(){
     pesanUmumApp("info", "Attention", messageBeforeOrder);
     setTimeout(function(){
