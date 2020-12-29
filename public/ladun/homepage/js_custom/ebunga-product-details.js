@@ -25,12 +25,21 @@ var divVariantFoto = new Vue({
                     document.querySelector('#capDeks').innerHTML = deks;
                     document.querySelector('#capHarga').innerHTML = "Rp. "+hargaCurrency;
                 });
-                
                 document.querySelector('#imgUtama').setAttribute("src", rImgVariantProduct+kdProduk+".jpg");
             }
         }
     }
 });
+
+var boxOrderQuantity = new Vue({
+    el : '#boxOrderQuantity',
+    data : {
+        totalHarga : 0
+    },
+    methods : {
+
+    }
+})
 
 // Inisialisasi
 $('#boxOrderQuantity').hide();

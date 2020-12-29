@@ -51,7 +51,7 @@
         </div>
         <!--End align-left-->
         <div class="float-right">
-            <p>$1,156.00</p>
+            <p>Rp. @{{ totalHarga }}</p>
         </div>
         <!--End align-right-->
     </div>
