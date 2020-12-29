@@ -35,7 +35,7 @@ foreach($coverageArea as $cov){
             <div class="row">
                 <div class="slider-for">
 
-                    <div class="product-content">
+                    <div class="product-content" id="divContent">
                         <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 img-content">
                             <img id="imgUtama" src="{{ env('EBUNGA_BUCKET') }}product/main-product/{{ $dataProduct -> foto_utama }}" class="img-responsive" alt="img-holiwood">
                         </div>
@@ -47,6 +47,9 @@ foreach($coverageArea as $cov){
                                 <span>10 Rating(s)</span>
                             </div>
                             <div class="prince"><span id="capHarga">Rp. {{ number_format($dataProduct -> harga) }}</span></div>
+                            <figure class="fi-option">
+                                <p class="option">Variant selected (@{{ variantDipilih }})</p>
+                            </figure>
                             <figure class="fi-option">
                                 <p class="option">Coverage Area</p>
                             </figure>
@@ -122,8 +125,6 @@ foreach($coverageArea as $cov){
                 </div>
             </div>
         </div>
-
-        @include('product.order_quantity')
 
         <div class="related">
             <div class="container">

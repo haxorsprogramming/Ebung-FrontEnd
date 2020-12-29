@@ -20,8 +20,8 @@
         <tbody>
             @foreach($dataVariant as $variant)
             @php
-            $picVariant = $variant -> kd_variant.".jpg";
-            $namaVariant = $kdProduk."_VAR".$variant -> nama_variant.".jpg";
+                $picVariant = $variant -> kd_variant.".jpg";
+                $namaVariant = $kdProduk."_VAR".$variant -> nama_variant.".jpg";
             @endphp
             <tr class="item_cart">
                 <td class="product-photo"><img src="{{ env('EBUNGA_BUCKET') }}product/variant/{{ $picVariant }}" alt="Futurelife"></td>
@@ -32,7 +32,7 @@
                         <div class="selector-wrapper size">
                             <div class="quantity">
                                 <span class="minus" v-on:click="decc('{{ $variant -> harga }}', '{{ $variant -> kd_variant }}')"><i class="fa fa-minus"></i></span>
-                                <input data-step="1" value="0" title="Qty" class="qty" size="4" type="text">
+                                <input data-step="1" id="qt{{ $variant -> kd_variant }}" value="0" title="Qty" class="qty" size="4" type="text">
                                 <span class="plus" v-on:click="add('{{ $variant -> harga }}', '{{ $variant -> kd_variant }}')"><i class="fa fa-plus"></i></span></div>
                         </div>
                     </div>

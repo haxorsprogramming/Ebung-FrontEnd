@@ -7,7 +7,7 @@ var messageBeforeOrder = "Please make sure the delivery area is available for th
 var divVariantFoto = new Vue({
     el : '#divVariantFoto',
     data : {
-
+        
     },
     methods : {
         changeVariantAtc : function(idVariant, kdProduk)
@@ -31,44 +31,20 @@ var divVariantFoto = new Vue({
     }
 });
 
-var boxOrderQuantity = new Vue({
-    el : '#boxOrderQuantity',
+var divContent = new Vue({
+    el : '#divContent',
     data : {
-        produk : [],
-        totalHarga : 0
-    },
-    methods : {
-        add : function(harga, kdVariant)
-        {
-            this.totalHarga = parseInt(this.totalHarga) + parseInt(harga);
-        },
-        decc : function(harga, kdVariant)
-        {
-            if(parseInt(this.totalHarga) <= 0){
-
-            }else{
-                this.totalHarga = parseInt(this.totalHarga) - parseInt(harga);
-            }
-        }
+        variantDipilih : 'Default'
     }
-})
+});
 
 // Inisialisasi
-$('#boxOrderQuantity').hide();
 
 // Function 
-
-function addProduct(harga){
-    console.log(harga);
-}
-
 document.querySelector("#btnOrderNow").addEventListener('click', function(){
-    pesanUmumApp("info", "Attention", messageBeforeOrder);
-    setTimeout(function(){
-        $('.product-text').hide();
-        $('#boxOrderQuantity').show();
-        $('#btnOrderNow').hide();
-    }, 1000);
+    pesanUmumApp('warning', 'Attention', messageBeforeOrder);
+    $('#divSelectVariant').show();
+
 });
 
 function pesanUmumApp(icon, title, text)
