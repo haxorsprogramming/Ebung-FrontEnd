@@ -109,6 +109,8 @@ Route::get('/tes-kirim-email', [PageCtr::class, 'teskirimemail']);
 // Cek view mail registrasi
 Route::get('/cek-view-email-registrasi', [TestingCtr::class, 'viewemailregistrasi']);
 
+Route::post('/tes-s3-cloudkilat', [HelperCtr::class, 'tesuploads3']);
+
 /**
  * REST Without csrf
  */

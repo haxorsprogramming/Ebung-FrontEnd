@@ -11,4 +11,7 @@ class TestingCtr extends Controller
         $dr =   ['email' => 'tes@gmail.com', 'website' => 'ebunga.co.id', 'token_aktivasi' => '12'];
         return view('layout_email.mail_registrasi_view', $dr);
     }
+
+    
+
 }

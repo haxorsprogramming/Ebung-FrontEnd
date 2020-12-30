@@ -108,8 +108,8 @@
     </div>
 </div>
 
-<div id="divLoading" style="text-align: center;display:none;">
-    <img src="https://ebunga.s3-ap-southeast-1.amazonaws.com/ebunga-cdn/image/loading_medium_2.svg" style="width: 200px;"><br/>
+<div id="divLoading" style="text-align:center;display:none;">
+    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_c9miik7h.json" mode="bounce" background="transparent"  speed="1"  style="width: 300px; height: 300px;margin:auto;"  loop  autoplay></lottie-player>
     <h5>Saving new product ... </h5>
 </div>
 

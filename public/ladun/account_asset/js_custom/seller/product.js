@@ -275,7 +275,7 @@ document.querySelector('#btnSubmitNewProduct').addEventListener('click', functio
                         $('#divBtnSaveProduct').hide();
                     }
                 });
-            }, 800);
+            }, 2000);
         }
     });
     

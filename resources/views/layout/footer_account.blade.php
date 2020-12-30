@@ -131,6 +131,7 @@
     <script type="text/javascript" src="{{ asset('ladun/account_asset/cropper/scripts/jquery.Jcrop.js') }}"></script>
     <script type="text/javascript" src="{{ asset('ladun/account_asset/cropper/scripts/jquery.SimpleCropper.js') }}"></script>
     <script type="text/javascript" src="{{ asset('ladun/account_asset/ckeditor/ckeditor.js') }}"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!-- <script src="assets/js/plugins/scrollup.min.js"></script> -->
     <!-- <script src="assets/js/plugins/ajax-contact.js"></script> -->
     <script src="https://maps.googleapis.com/maps/api/js?key={{ env('MAPS_API_KEY') }}"></script>

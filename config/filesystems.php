@@ -57,13 +57,13 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION'),
-            'bucket' => env('AWS_BUCKET'),
+            'key' => env('EBUNGA_S3_ACCESS_KEY'),
+            'secret' => env('EBUNGA_S3_SECRET_KEY'),
+            'region' => env('EBUNGA_S3_DEFAULT_REGION'),
+            'bucket' => env('EBUNGA_S3_BUCKET_NAME'),
             'visibility' => 'public',
-            'url' => env('AWS_URL'),
-            'endpoint' => env('AWS_ENDPOINT'),
+            'url' => env('EBUNGA_S3_BUCKET'),
+            'endpoint' => env('EBUNGA_S3_ENDPOINT'),
         ],
 
     ],
