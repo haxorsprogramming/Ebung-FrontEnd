@@ -23,19 +23,26 @@ class LoginCtr extends Controller
 {
     public function loginpage()
     {
-        /**
-         * Create data for header & footer layout
-         */
-        $jsFile     = 'ebunga-login.js';
-        $page       = 'Login';
-        /**
-         * Create variable to response data
-         */
-        $dr = ['jsFile' => $jsFile, 'page' => $page];
-        /**
-         * Render to view
-         */
-        return view('login.login', $dr);
+        $userLogin = session('userLogin');
+        if($userLogin === null){
+             /**
+             * Create data for header & footer layout
+             */
+            $jsFile         = 'ebunga-login.js';
+            $page           = 'Login';
+            $sessionUser    = 'no';
+            /**
+             * Create variable to response data
+             */
+            $dr = ['jsFile' => $jsFile, 'page' => $page, 'sessionUser' => $sessionUser];
+            /**
+             * Render to view
+             */
+            return view('login.login', $dr);
+        }else{
+            return redirect('/account');
+        }
+       
     }
 
     public function loginproses(Request $request)

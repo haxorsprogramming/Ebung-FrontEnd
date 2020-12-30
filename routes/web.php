@@ -58,7 +58,11 @@ Route::get('/rest/product/main/{id_product}', [ProductCtr::class, 'restmainprodu
 /**
  * Customer (Buyer)
  */
-Route::get('/account', [DashboardCtr::class, 'dashboard']);
+Route::group(['middleware' => 'CekUser'], function () {
+    Route::get('/account', [DashboardCtr::class, 'dashboard']);
+});
+
+
 Route::get('/account/dashboard', [CustomerCtr::class, 'dashboard']);
 // Seller
 Route::get('/account/seller', [DashboardCtr::class, 'sellerdashboard']);

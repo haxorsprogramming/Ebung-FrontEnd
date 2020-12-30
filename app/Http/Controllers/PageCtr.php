@@ -11,18 +11,25 @@ use App\Models\KategoriMdl;
 use App\Models\ProdukMdl;
 // import another controller
 use App\Http\Controllers\DaerahCtr;
-
+use Mockery\Undefined;
 
 class PageCtr extends Controller
 {
 
     public function home()
     {
+        $userLogin = session('userLogin');
+        if($userLogin === null){
+            $sessionUser = 'no';
+        }else{
+            $sessionUser = 'yes';
+
+        }
         $kategori = KategoriMdl::all();
         $produk = ProdukMdl::all();
         $cssFile = 'style-homev3.css';
         $jsFile = 'ebunga.js';
-        $dr = ['kategori' => $kategori, 'produk' => $produk, 'page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile];
+        $dr = ['userLogin' => $userLogin, 'sessionUser' => $sessionUser,'kategori' => $kategori, 'produk' => $produk, 'page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile];
         
         return view('home.home', $dr);
     }

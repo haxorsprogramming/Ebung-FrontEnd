@@ -66,7 +66,15 @@
 
                     </li>
                     <li class="dropdown cart-menu">
-                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="far fa-user"></i></a>
+                        
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="far fa-user"></i>
+                            
+                        </a>
+                        @if($sessionUser == 'yes')
+                        <span style="font-family:Poppins;font-weight: 500;color:black;">alditha.for...</span>
+                        @else 
+
+                        @endif
                         <div class="dropdown-menu" style="text-align:center;border-top:1px solid #cfcfcf;">
                             <div id="div-cart-menu" >
                                 <a href="{{ url('/login') }}">Login</a>
