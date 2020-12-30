@@ -6,32 +6,34 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta charset="utf-8">
     <meta name="description" content="Web site created using create-react-app" />
-    <!-- bootstrap vs fontawesome-->
+    {{-- Bootstrap  --}}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" type="image/jpg" href="https://media.publit.io/file/ebungaasset/fav.png"/>
-    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-res-product-detail.css">
-    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-about.css">
-    <link rel="stylesheet" type="text/css" href="http://landing.engotheme.com/html/jenstore/demo/css/style-product-detail.css">
-    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-res-about.css">
-    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-flower.css">
-    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-faq.css">
-    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-login.css">
-    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-404.css">
-    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-homev3.css">
-    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-shopping.css">
-    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-fix-nav.css">
-    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/style-form-search-mobile.css">
-    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/intlTelInput.css">
-    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/ebunga.css">
-    <!-- slick -->
-    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/slick.css">
-    <link rel="stylesheet" type="text/css" href="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/css-lib/homepage/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-res-product-detail.css">
+    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-about.css">
+    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-product-detail.css">
+    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-res-about.css">
+    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-flower.css">
+    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-faq.css">
+    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-login.css">
+    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-404.css">
+    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-homev3.css">
+    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-shopping.css">
+    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-fix-nav.css">
+    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-form-search-mobile.css">
+    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/intlTelInput.css">
+    {{-- Ebunga css  --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_custom/ebunga.css') }}">
+    {{-- Slick  --}}
+    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/slick-theme.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
-    <!-- GG FONT -->
+    {{-- Gg font  --}}
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+    {{-- Font awesome  --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
 

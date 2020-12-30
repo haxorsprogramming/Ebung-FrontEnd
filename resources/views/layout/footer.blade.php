@@ -79,30 +79,31 @@
         <div class="BG-menu"></div>
     </footer>
 
-    <!-- boostrap & jquery -->
+    {{-- Bootstrap  --}}
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
-    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/jquery.min_af.js"></script>
-    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/bootstrap.min_0028.js"></script>
-    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/slick.js"></script>
-    <!-- js file -->
+    <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/jquery.min_af.js"></script>
+    <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/bootstrap.min_0028.js"></script>
+    <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/slick.js"></script>
+    
+    {{-- JS File  --}}
 
-    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-flower.js"></script>
-	<script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-show-sidebar.js"></script>
+    <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/function-flower.js"></script>
+	<script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/function-show-sidebar.js"></script>
 	
-	<script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-shop.js"></script>
-	<script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-range.js"></script>
-    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-slick.js"></script>
-    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-input-number.js"></script>
-    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-select-custom.js"></script>
-    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-back-top.js"></script>
-    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-sidebar.js"></script>
-    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/funtion-header-v3.js"></script>
-    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-search-v2.js"></script>
-    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/function-shopping-cart.js"></script>
+	<script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/function-shop.js"></script>
+	<script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/function-range.js"></script>
+    <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/function-slick.js"></script>
+    <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/function-input-number.js"></script>
+    <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/function-select-custom.js"></script>
+    <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/function-back-top.js"></script>
+    <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/function-sidebar.js"></script>
+    <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/funtion-header-v3.js"></script>
+    <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/function-search-v2.js"></script>
+    <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/function-shopping-cart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="https://ebunga.s3.ap-southeast-1.amazonaws.com/ebunga-cdn/js-lib/homepage/intlTelInput.js"></script>
+    <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/intlTelInput.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
     <script>
         const server = "{{ url('') }}/";

@@ -39,9 +39,9 @@
                 <td class="product-photo" style="text-align: center;">
                     <img id="txtPicSelected" src="{{ env('EBUNGA_BUCKET') }}product/main-product/{{ $dataProduct -> foto_utama }}" style="width:200px;" alt="Product Selected">
                     <br/>
-                    <span style="font: 400 18px 'Poppins';text-align:center;">{{ $dataProduct -> nama_produk }}</span>
+                    <span style="font: 400 18px 'Poppins';text-align:center;font-weight: bold;">{{ $dataProduct -> nama_produk }}</span>
                 </td>
-                <td class="produc-name"><a href="javascript:void(0)"  id="txtVariantProductOrder">Main Product</a></td>
+                <td class="produc-name"><a href="javascript:void(0)" id="txtVariantProductOrder">Main Product</a></td>
                 <td class="total-price">$69.90</td>
                 <td class="total-price">$69.90</td>
                 <td class="total-price">$69.90</td>

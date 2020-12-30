@@ -80,7 +80,9 @@ foreach($coverageArea as $cov){
 
                         </div>
                     </div>
-                    <!-- ------ end content 1----- -->
+                    <!-- 
+                        End content
+                     -->
 
 
                 </div>
