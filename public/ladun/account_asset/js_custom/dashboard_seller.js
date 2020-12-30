@@ -49,7 +49,7 @@ function renderPage(page, titleForm, subTitle){
         divBreadcumb.titleForm = titleForm;
         $('#divContainerUtama').load(page);
         $('#loaderPage').hide();
-    }, 300);
+    }, 1000);
     
 }
 

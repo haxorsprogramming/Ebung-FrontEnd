@@ -75,7 +75,7 @@
                                     
                                     <div class="tab-content dashboard-content">
                                         <div style="font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;display:none;" id="loaderPage">
-                                            <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;"> loading page ...
+                                            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_jryyrscd.json" mode="bounce" background="transparent"  speed="1"  style="width: 300px; height: 300px;margin:auto;"  loop  autoplay></lottie-player>
                                         </div>
                                         <div id="divContainerUtama">
 
