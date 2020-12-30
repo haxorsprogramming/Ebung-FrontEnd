@@ -1,9 +1,13 @@
-// Route 
+/**
+ * Route
+ */
 var rToDashboard = server + "account/seller/dashboard";
 var rToMyBranch = server + "account/seller/branch";
 var rToProductList = server + "account/seller/product/list";
 
-// Vue object 
+/**
+ * Vue Object
+ */
 var divUtama = new Vue({
     el : '#divUtama',
     data : {
@@ -32,7 +36,9 @@ var divBreadcumb = new Vue({
     }
 });
 
-// Inisialisasi 
+/**
+ * Inisialisasi
+ */
 $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -41,7 +47,9 @@ $.ajaxSetup({
 
 renderPage(rToDashboard, 'Seller Dashboard', '');
 
-// Function 
+/**
+ * Function
+ */
 function renderPage(page, titleForm, subTitle){
     $('#divContainerUtama').html("");
     $('#loaderPage').show();
@@ -49,7 +57,7 @@ function renderPage(page, titleForm, subTitle){
         divBreadcumb.titleForm = titleForm;
         $('#divContainerUtama').load(page);
         $('#loaderPage').hide();
-    }, 1000);
+    }, 500);
     
 }
 

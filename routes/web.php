@@ -83,7 +83,9 @@ Route::get('/account/seller/product/list', [ProductSellerCtr::class, 'productlis
 Route::post('/account/seller/product/add/variant', [ProductSellerCtr::class, 'addvariantproduct']);
 Route::post('/account/seller/product/add/main-product', [ProductSellerCtr::class, 'addmainproduct']);
 
-// Logout
+/**
+ * Logout
+ */
 Route::get('/logout', [PageCtr::class, 'logout']);
 
 
@@ -101,15 +103,16 @@ Route::post('/product/checkarea', [ProductCtr::class, 'checkarea']);
  */
 Route::post('/product/check-area-slug-only', [ProductCtr::class, 'checkslugonly']);
 
-// Halaman admin
-
-// Testing kirim email
+/**
+ * Tes kirim email
+ */
 Route::get('/tes-kirim-email', [PageCtr::class, 'teskirimemail']);
 
-// Cek view mail registrasi
+/**
+ * Cek email via registrasi
+ */
 Route::get('/cek-view-email-registrasi', [TestingCtr::class, 'viewemailregistrasi']);
 
-Route::post('/tes-s3-cloudkilat', [HelperCtr::class, 'tesuploads3']);
 
 /**
  * REST Without csrf
@@ -119,3 +122,4 @@ Route::get('/get/location/kabupaten/{id_provinsi}', [DaerahCtr::class, 'getKabup
 Route::get('/get/location/kecamatan/{id_kabupaten}', [DaerahCtr::class, 'getKecamatan']);
 Route::get('/get/location/kelurahan/{id_kecamatan}', [DaerahCtr::class, 'getKelurahan']);
 Route::get('/get/sub-kategori/{id_kategori}', [HelperCtr::class, 'getsubkategori']);
+Route::post('/tes-s3-cloudkilat', [HelperCtr::class, 'tesuploads3']);

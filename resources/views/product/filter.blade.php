@@ -47,15 +47,15 @@
                     <ul class="list-group list-1">
                         <li class="list-group-item">CATEGORIES</li>
                         @foreach($dataKategori as $kategori)
-                        <?php
-                        $idKategori = $kategori->kd_kategori;
-                        $dataSubKategori = DB::table('tbl_sub_kategori')->where('kd_kategori', $idKategori)->get();
-                        ?>
+                        @php
+                        $idKategori = $kategori -> kd_kategori;
+                        $dataSubKategori = DB::table('tbl_sub_kategori') -> where('kd_kategori', $idKategori) -> get();
+                        @endphp
                         <li class="list-group-item">
                             <a href="#!">{{ $kategori -> nama_kategori }}</a><button class="accordion"></button>
                             <ul class="panel">
                                 @foreach($dataSubKategori as $subKategori)
-                                <li><a href="{{ url('product/cat-'.$subKategori -> slug.'/area-all')}}">{{ $subKategori -> nama_kategori }}</a></li>
+                                <li><a href="{{ url('product/cat-'. $subKategori -> slug .'/area-all')}}">{{ $subKategori -> nama_kategori }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
@@ -99,7 +99,7 @@
                 @foreach($dataProduct as $product)
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 product-flower">
                     <div class="product-image-flower">
-                        <figure class="sale"><a href="{{ url('product/'.$product['slug']) }}">
+                        <figure class="sale"><a href="{{ url('product/'. $product['slug']) }}">
                             <img src="{{ env('EBUNGA_S3_BUCKET') }}/product/main-product/{{ $product['foto_utama'] }}" class="img-responsive" alt="img-holiwood"></a>
                         </figure>
                         <div class="product-icon-flower">

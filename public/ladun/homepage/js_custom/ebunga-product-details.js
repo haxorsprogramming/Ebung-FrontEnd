@@ -96,6 +96,14 @@ document.querySelector("#btnOrderNow").addEventListener('click', function(){
         $('#divVariantFoto').hide();
         $('#divProductDeks').hide();
         $('#divStepOrder').fadeIn(200);
+        let totalHarga = divContent.totalHarga;
+        let hargaCaps = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'IDR' }).format(totalHarga);
+        let hargaAt = divContent.hargaProduct;
+        let hargaAtCaps = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'IDR' }).format(hargaAt);
+        document.querySelector('#capTotalHarga').innerHTML = "Rp. " + hargaCaps;
+        document.querySelector('#capQt').innerHTML = qt;
+        document.querySelector('#capHargaAt').innerHTML ="Rp. " + hargaAtCaps;
+
     }
 });
 
