@@ -37,7 +37,7 @@ foreach($coverageArea as $cov){
 
                     <div class="product-content" id="divContent">
                         <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 img-content">
-                            <img id="imgUtama" src="{{ env('EBUNGA_BUCKET') }}product/main-product/{{ $dataProduct -> foto_utama }}" class="img-responsive" alt="img-holiwood">
+                            <img id="imgUtama" src="{{ env('EBUNGA_S3_BUCKET') }}/product/main-product/{{ $dataProduct -> foto_utama }}" class="img-responsive" alt="img-holiwood">
                         </div>
                         <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 detail">
                             <h1>{{ $dataProduct -> nama_produk }} ( <span id="capNamaVariant">Main variant</span> )</h1>
@@ -88,7 +88,7 @@ foreach($coverageArea as $cov){
                 </div>
                 <div class="slider-nav col-lg-5 col-md-6 col-sm-12 col-xs-12" id="divVariantFoto">
                     <div @click="changeVariantAtc('utama', '{{ $dataProduct -> foto_utama }}')">
-                        <img src="{{ env('EBUNGA_BUCKET') }}product/main-product/{{ $dataProduct -> foto_utama }}" style="width: 100px;" class="img-responsive" alt="img-holiwood">
+                        <img src="{{ env('EBUNGA_S3_BUCKET') }}/product/main-product/{{ $dataProduct -> foto_utama }}" style="width: 100px;" class="img-responsive" alt="img-holiwood">
                     </div>
                     @foreach($dataVariant as $variant)
                     @php
@@ -96,7 +96,7 @@ foreach($coverageArea as $cov){
                     $namaVariant = $kdProduk."_VAR".$variant -> nama_variant.".jpg";
                     @endphp
                     <div @click="changeVariantAtc('variant', '{{ $variant -> kd_variant }}')">
-                        <img src="{{ env('EBUNGA_BUCKET') }}product/variant/{{ $picVariant }}" class="img-responsive" alt="img-holiwood">
+                        <img src="{{ env('EBUNGA_S3_BUCKET') }}/product/variant/{{ $picVariant }}" class="img-responsive" alt="img-holiwood">
                     </div>
                     @endforeach
                 </div>
