@@ -13,7 +13,16 @@ class TblTempOrder extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_temp_order', function (Blueprint $table) {
+            $table -> id();
+            $table -> char('kd_temp', 20);
+            $table -> char('customer', 100);
+            $table -> char('time', 20);
+            $table -> char('universal_code', 40);
+            $table -> char('account_number', 100);
+            $table -> char('main_account', 1);
+            $table -> char('active', 1);
+        });
     }
 
     /**
@@ -23,6 +32,6 @@ class TblTempOrder extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_temp_order');
     }
 }

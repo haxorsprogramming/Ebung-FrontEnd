@@ -54,24 +54,48 @@
 
 </div>
 
+@php
+    $userLogin = session('userLogin');
+@endphp
+
+@if($userLogin === null)
 <div class="container container-ver2" id="divAccount_Prepare" style="margin-bottom:12px;font-family:Poppins;">
     <div class="row">
         <div class="col-md-12" style="text-align: center;">
-            <h3>Order completed</h3>
+            <h3>Login first</h3>
         </div>
     </div>
 </div>
+@else
+<div class="container container-ver2" id="divAccount_Prepare" style="margin-top:-12px;font-family:Poppins;">
+    <div class="row">
+        <div class="col-md-12" style="text-align: center;">
+            <h4>You have logged in using your account ({{ $userLogin }})</h4>
+        </div>
+    </div>
+</div>
+@endif
 
-<div class="container container-ver2" id="divStep_1">
+<div class="container container-ver2" id="divStep_1" style="margin-top:20px;">
     <div class="row">
         <div class="col-md-6">
-            <div class="form-group col-md-6">
-                <label for="inputfname" class=" control-label">First Name <span class="color">*</span></label>                            
-                <input type="text" placeholder="Enter your first name..." id="inputfname" class="form-control">  
+            <div class="form-group">
+                <label for="inputfname" class=" control-label">Name of receiver <span class="color">*</span></label>                            
+                <input type="text" placeholder="Enter your first name..." id="txtReceiver" class="form-control">  
             </div>
-            <div class="form-group col-md-6">
-                <label for="inputfname" class=" control-label">First Name <span class="color">*</span></label>                            
-                
+            <div class="form-group">
+                <label for="inputfname" class=" control-label">Delivery date <span class="color">*</span></label>  
+                <input type="date" id="txtDeliveryDate" class="form-control">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="inputfname" class=" control-label">Receiver email<span class="color">*</span></label>                            
+                <input type="text" placeholder="Enter your first name..." id="txtReceiverEmail" class="form-control">  
+            </div>
+            <div class="form-group">
+                <label for="inputfname" class=" control-label">Receiver phone<span class="color">*</span></label>  
+                <input type="text" class="form-control" id="txtReceiverPhone">
             </div>
         </div>
     </div>

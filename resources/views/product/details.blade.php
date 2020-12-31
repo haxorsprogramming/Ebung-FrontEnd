@@ -105,7 +105,7 @@ foreach($coverageArea as $cov){
 
         </div>
 
-        <div class="product-text" id="divProductDeks">
+        <div class="product-text" style="margin-bottom:-110px;" id="divProductDeks">
             <div class="container">
                 <ul class="nav nav-tabs menu-tab">
                     <li class="active"><a data-toggle="tab" href="#decription">Decription</a>
