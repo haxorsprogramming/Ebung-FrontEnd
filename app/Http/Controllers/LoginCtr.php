@@ -30,11 +30,10 @@ class LoginCtr extends Controller
              */
             $jsFile         = 'ebunga-login.js';
             $page           = 'Login';
-            $sessionUser    = 'no';
             /**
              * Create variable to response data
              */
-            $dr = ['jsFile' => $jsFile, 'page' => $page, 'sessionUser' => $sessionUser];
+            $dr = ['jsFile' => $jsFile, 'page' => $page];
             /**
              * Render to view
              */

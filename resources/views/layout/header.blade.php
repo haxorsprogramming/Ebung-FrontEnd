@@ -1,3 +1,11 @@
+@php 
+    $userLogin = session('userLogin');
+    if($userLogin === null){
+        $sessionUser = 'no';
+    }else{
+        $sessionUser = 'yes';
+    }
+@endphp
 <!DOCTYPE html>
 <html>
 
@@ -66,24 +74,38 @@
 
                     </li>
                     <li class="dropdown cart-menu">
+                        @php
+                        if($sessionUser == 'yes'){
+                            $linkLogin = "/account";
+                            $propBtn = "";
+                        }else{
+                            $linkLogin = "javascript:void(0)";
+                            $propBtn = "class=dropdown-toggle data-toggle=dropdown";
+                        }
+                        @endphp
                         
-                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="far fa-user"></i>
+                        <a href="{{ $linkLogin }}" {{ $propBtn }}><i class="far fa-user"></i>
                             
                         </a>
                         @if($sessionUser == 'yes')
-                        <span style="font-family:Poppins;font-weight: 500;color:black;">alditha.for...</span>
+                        @php 
+                            $user = $userLogin;
+                            $userCap = substr($user, 0, 5)." ...";
+                        @endphp
+                        <span style="font-family:Poppins;font-weight: 500;color:black;">{{ $userCap }}</span>
                         @else 
-
-                        @endif
                         <div class="dropdown-menu" style="text-align:center;border-top:1px solid #cfcfcf;">
                             <div id="div-cart-menu" >
                                 <a href="{{ url('/login') }}">Login</a>
                                 <a href="{{ url('/register') }}" class="check">Sign Up</a>
                             </div>
                         </div>
+                        @endif
                     </li>
                     <li class="dropdown cart-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="http://landing.engotheme.com/html/jenstore/demo/img/cart.png" id="img-cart" alt="cart"></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/cart.png" id="img-cart" alt="cart">
+                        </a>
                         <div class="dropdown-menu">
                             <div class="cart-1">
                                 <div class="img-cart"><img src="http://landing.engotheme.com/html/jenstore/demo/img/collec-1.jpg" class="img-responsive" alt="holiwood"></div>
