@@ -6,8 +6,9 @@ var rImgProduct = "https://ebunga.s3.ap-southeast-1.amazonaws.com/product/main-p
 var rToGetRestDetailProductVariant = server + "rest/product/variant/";
 var rToGetRestDetailProductMain = server + "rest/product/main/";
 var messageBeforeOrder = "Please make sure the delivery area is available for this product";
+
 /**
- * 
+ * Vue object
  */ 
 var divVariantFoto = new Vue({
     el : '#divVariantFoto',
@@ -46,10 +47,10 @@ var divVariantFoto = new Vue({
                     document.querySelector('#capNamaVariant').innerHTML = dataProduk.nama_variant;
                     document.querySelector('#txtVariantProductOrder').innerHTML = dataProduk.nama_variant;
                     document.querySelector('#capDeks').innerHTML = deks;
-                    document.querySelector('#capHarga').innerHTML = "Rp. "+hargaCurrency;
+                    document.querySelector('#capHarga').innerHTML = "Rp. " + hargaCurrency;
                 });
-                document.querySelector('#imgUtama').setAttribute("src", rImgVariantProduct+kdProduk+".jpg");
-                document.querySelector('#txtPicSelected').setAttribute("src", rImgVariantProduct+kdProduk+".jpg");
+                document.querySelector('#imgUtama').setAttribute("src", rImgVariantProduct + kdProduk + ".jpg");
+                document.querySelector('#txtPicSelected').setAttribute("src", rImgVariantProduct + kdProduk + ".jpg");
             }
         }
     }
@@ -80,13 +81,17 @@ var divContent = new Vue({
     }
 });
 
-// Inisialisasi
+/**
+ * Inisialisasi
+ */
 setTimeout(function(){
     let hargaDef = document.querySelector('#txtHargaDefaultHidden').value;
     divContent.hargaProduct = parseInt(hargaDef);
 }, 300);
 
-// Function 
+/**
+ * Function
+ */
 document.querySelector("#btnOrderNow").addEventListener('click', function(){
     pesanUmumApp('warning', 'Attention', messageBeforeOrder);
     let qt = document.querySelector('.input-number').value;

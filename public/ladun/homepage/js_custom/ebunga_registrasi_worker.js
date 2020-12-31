@@ -7,7 +7,9 @@ onmessage = function (e) {
     postMessage(workerResult);
 };
 
-
+/**
+ * Function
+ */
 function tampilDataNama(nama)
 {
     

@@ -22,7 +22,13 @@ class PageCtr extends Controller
 
     public function home()
     {
+        /**
+         * Get data kategori
+         */
         $kategori = KategoriMdl::all();
+        /**
+         * Get data produk
+         */
         $produk = ProdukMdl::all();
         $cssFile = 'style-homev3.css';
         $jsFile = 'ebunga.js';
