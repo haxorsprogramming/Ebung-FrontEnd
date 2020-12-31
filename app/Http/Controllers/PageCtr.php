@@ -1,15 +1,19 @@
 <?php
-
-// import namespace 
+/**
+ * Import namespace & lib
+ */
 namespace App\Http\Controllers;
-// import lib 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\RegistrasiMail;
-// import model 
+/**
+ * Import model
+ */
 use App\Models\KategoriMdl;
 use App\Models\ProdukMdl;
-// import another controller
+/**
+ * Import another controller
+ */
 use App\Http\Controllers\DaerahCtr;
 use Mockery\Undefined;
 
@@ -51,7 +55,6 @@ class PageCtr extends Controller
 
     public function logout(Request $request)
     {
-        // clear session 
         $request -> session() -> flush();
         return redirect('/');
     }

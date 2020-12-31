@@ -1,10 +1,14 @@
-// Route
+/**
+ * Route
+ */
 var rImgVariantProduct = "https://ebunga.s3.ap-southeast-1.amazonaws.com/product/variant/";
 var rImgProduct = "https://ebunga.s3.ap-southeast-1.amazonaws.com/product/main-product/";
 var rToGetRestDetailProductVariant = server + "rest/product/variant/";
 var rToGetRestDetailProductMain = server + "rest/product/main/";
 var messageBeforeOrder = "Please make sure the delivery area is available for this product";
-// Vue object 
+/**
+ * 
+ */ 
 var divVariantFoto = new Vue({
     el : '#divVariantFoto',
     data : {

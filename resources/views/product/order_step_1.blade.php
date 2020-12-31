@@ -1,4 +1,5 @@
 <div class="container container-ver2 space-padding-tb-30" style="display: none;" id="divStepOrder">
+
     <div class="row head-cart">
         <div class="col-md-4 space-30">
             <div class="item active center">
@@ -53,8 +54,27 @@
 
 </div>
 
-<div id="divStep_1">
+<div class="container container-ver2" id="divAccount_Prepare" style="margin-bottom:12px;font-family:Poppins;">
+    <div class="row">
+        <div class="col-md-12" style="text-align: center;">
+            <h3>Order completed</h3>
+        </div>
+    </div>
+</div>
 
+<div class="container container-ver2" id="divStep_1">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group col-md-6">
+                <label for="inputfname" class=" control-label">First Name <span class="color">*</span></label>                            
+                <input type="text" placeholder="Enter your first name..." id="inputfname" class="form-control">  
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputfname" class=" control-label">First Name <span class="color">*</span></label>                            
+                
+            </div>
+        </div>
+    </div>
 </div>
 
 
