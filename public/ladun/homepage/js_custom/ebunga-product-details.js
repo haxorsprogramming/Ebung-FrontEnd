@@ -6,7 +6,7 @@ var rImgProduct = "https://ebunga.s3.ap-southeast-1.amazonaws.com/product/main-p
 var rToGetRestDetailProductVariant = server + "rest/product/variant/";
 var rToGetRestDetailProductMain = server + "rest/product/main/";
 var messageBeforeOrder = "Please make sure the delivery area is available for this product";
-
+var rToSaveTemp = server + "order/save-temp";
 /**
  * Vue object
  */ 
@@ -115,6 +115,10 @@ document.querySelector("#btnOrderNow").addEventListener('click', function(){
         document.querySelector('#capHargaAt').innerHTML ="Rp. " + hargaAtCaps;
         $('#divAccount_Prepare').show();
         $('#divStep_1').show();
+        let dataSend = {'totalHarga':totalHarga, 'kdProduk':kdProdukGlobal, 'hargaAt':hargaAt, 'qt':qt}
+        axios.post(rToSaveTemp, dataSend).then(function(res){
+            console.log(res.data);
+        });
     }
 });
 

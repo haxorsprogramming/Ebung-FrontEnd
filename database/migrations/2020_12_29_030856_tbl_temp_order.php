@@ -15,12 +15,12 @@ class TblTempOrder extends Migration
     {
         Schema::create('tbl_temp_order', function (Blueprint $table) {
             $table -> id();
-            $table -> char('kd_temp', 20);
+            $table -> char('kd_temp', 50);
             $table -> char('customer', 100);
-            $table -> char('time', 20);
+            $table -> timestamp('waktu', 0);
             $table -> char('kd_product', 40);
             $table -> char('qt', 100);
-            $table -> char('total', 1);
+            $table -> integer('total', 40);
         });
     }
 

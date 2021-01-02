@@ -100,31 +100,25 @@
                         </div>
                         @endif
                     </li>
+                        @php 
+                        $userLogin = session('orderSession');
+                        @endphp
                     <li class="dropdown cart-menu">
                         <a href="#!" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="material-icons" style="color:#2c3e50;">add_shopping_cart</span>
                         </a>
                         <div class="dropdown-menu">
-                            <div class="cart-1">
+                            @php 
+                            if($userLogin === null){
+                            @endphp 
+                                <small style="font-family: Poppins;">You have no shopping items</small>
+                            @php
+                            }else{
+                            @endphp
+                                <div class="cart-1">
                                 <div class="img-cart"><img src="http://landing.engotheme.com/html/jenstore/demo/img/collec-1.jpg" class="img-responsive" alt="holiwood"></div>
                                 <div class="info-cart">
                                     <h1>Pink roses</h1>
-                                    <span class="number">x1</span>
-                                    <span class="prince-cart">$207.2</span>
-                                </div>
-                            </div>
-                            <div class="cart-1">
-                                <div class="img-cart"><img src="http://landing.engotheme.com/html/jenstore/demo/img/collec-1.jpg" class="img-responsive" alt="holiwood"></div>
-                                <div class="info-cart">
-                                    <h1>Eleganr by BloomNation</h1>
-                                    <span class="number">x1</span>
-                                    <span class="prince-cart">$207.2</span>
-                                </div>
-                            </div>
-                            <div class="cart-1">
-                                <div class="img-cart"><img src="http://landing.engotheme.com/html/jenstore/demo/img/collec-1.jpg" class="img-responsive" alt="holiwood"></div>
-                                <div class="info-cart">
-                                    <h1>Queen Rose - Yellow</h1>
                                     <span class="number">x1</span>
                                     <span class="prince-cart">$207.2</span>
                                 </div>
@@ -137,6 +131,10 @@
                                 <a href="#">ADD TO CART</a>
                                 <a href="#" class="check">CHECK VIEW</a>
                             </div>
+                            @php
+                            }
+                            @endphp
+
                         </div>
                     </li>
                 </ul>

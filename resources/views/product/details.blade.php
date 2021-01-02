@@ -146,7 +146,9 @@ foreach($coverageArea as $cov){
                 </div>
             </div>
         </div>
-
+        <script>
+            var kdProdukGlobal = "{{$kdProduk}}";
+        </script>
         @include('product.order_step_1');
         @include('product.related_product');
 

@@ -16,6 +16,7 @@ use App\Http\Controllers\DaerahCtr;
 use App\Http\Controllers\ProductSellerCtr;
 use App\Http\Controllers\HelperCtr;
 use App\Http\Controllers\BranchSellerCtr;
+use App\Http\Controllers\OrderCtr;
 
 /**
  * Main page
@@ -55,6 +56,12 @@ Route::get('/product', [ProductCtr::class, 'all']);
 Route::get('/product/{id_product}', [ProductCtr::class, 'productdetails']);
 Route::get('/rest/product/variant/{id_product}', [ProductCtr::class, 'restvariantproductdetails']);
 Route::get('/rest/product/main/{id_product}', [ProductCtr::class, 'restmainproductdetails']);
+
+/**
+ * Session temp product
+ */
+Route::post('/order/save-temp', [OrderCtr::class, 'savetemporder']);
+
 /**
  * Customer (Buyer)
  */
