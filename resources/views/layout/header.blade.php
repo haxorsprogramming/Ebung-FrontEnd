@@ -19,15 +19,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" type="image/jpg" href="https://media.publit.io/file/ebungaasset/fav.png"/>
-    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-res-product-detail.css">
-    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-about.css">
-    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-product-detail.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/') }}/style-res-product-detail.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/') }}/style-about.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/') }}/style-product-detail.css">
     <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-res-about.css">
-    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-flower.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/') }}/style-flower.css">
     <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-faq.css">
     <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-login.css">
     <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-404.css">
-    <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-homev3.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/') }}/style-homev3.css">
     <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-shopping.css">
     <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-fix-nav.css">
     <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-form-search-mobile.css">
@@ -67,11 +67,9 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-10 col-xs-9">
-                <ul class="nav navbar-nav navbar-right icon-menu">
-
+                <div class="nav navbar-nav navbar-right icon-menu" >
                     <li id="input-search" class="hidden-sm hidden-xs">
                         <a href="#"><img id="search-img" src="{{ asset('ladun/homepage/pic_asset/util/Search.png') }}" alt="search"></a>
-
                     </li>
                     <li class="dropdown cart-menu">
                         @php
@@ -92,7 +90,7 @@
                             $user = $userLogin;
                             $userCap = substr($user, 0, 5)." ...";
                         @endphp
-                        <span style="font-family:Poppins;font-weight: 500;color:black;">{{ $userCap }}</span>
+                        <span style="font-family:Poppins;font-weight: 500;color:#2c3e50;">{{ $userCap }}</span>
                         @else 
                         <div class="dropdown-menu" style="text-align:center;border-top:1px solid #cfcfcf;">
                             <div id="div-cart-menu" >
@@ -103,8 +101,8 @@
                         @endif
                     </li>
                     <li class="dropdown cart-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/cart.png" id="img-cart" alt="cart">
+                        <a href="#!" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="material-icons" style="color:#2c3e50;">add_shopping_cart</span>
                         </a>
                         <div class="dropdown-menu">
                             <div class="cart-1">
@@ -142,6 +140,8 @@
                         </div>
                     </li>
                 </ul>
+                </div>
+
             </div>
             <div class="navbar-header mobile-menu">
                 <button type="button" class="navbar-toggle btn-menu-mobile" data-toggle="collapse" data-target="#myNavbar">

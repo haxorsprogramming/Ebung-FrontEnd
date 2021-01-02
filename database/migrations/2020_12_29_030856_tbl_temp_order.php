@@ -18,10 +18,9 @@ class TblTempOrder extends Migration
             $table -> char('kd_temp', 20);
             $table -> char('customer', 100);
             $table -> char('time', 20);
-            $table -> char('universal_code', 40);
-            $table -> char('account_number', 100);
-            $table -> char('main_account', 1);
-            $table -> char('active', 1);
+            $table -> char('kd_product', 40);
+            $table -> char('qt', 100);
+            $table -> char('total', 1);
         });
     }
 
