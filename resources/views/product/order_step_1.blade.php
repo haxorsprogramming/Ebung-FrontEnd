@@ -59,24 +59,25 @@
 @endphp
 
 @if($userLogin === null)
-<div class="container container-ver2" id="divAccount_Prepare" style="margin-bottom:12px;font-family:Poppins;">
+<div class="container container-ver2" id="divAccount_Prepare" style="margin-bottom:12px;font-family:Poppins;display:none;">
     <div class="row">
         <div class="col-md-12" style="text-align: center;">
-            <h3>Login first</h3>
+            <h3>you have not entered into your ebunga account, please log in to make ordering easier, or order as a guest</h3>
         </div>
     </div>
 </div>
 @else
-<div class="container container-ver2" id="divAccount_Prepare" style="margin-top:-12px;font-family:Poppins;">
+<div class="container container-ver2" id="divAccount_Prepare" style="margin-top:-12px;font-family:Poppins;display:none;">
     <div class="row">
         <div class="col-md-12" style="text-align: center;">
             <h4>You have logged in using your account ({{ $userLogin }})</h4>
+            <h5>If this account not you, please <a href="{{ url('/logout') }}">Logout</a></h5>
         </div>
     </div>
 </div>
 @endif
 
-<div class="container container-ver2" id="divStep_1" style="margin-top:20px;">
+<div class="container container-ver2" id="divStep_1" style="margin-top:20px;display:none;">
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">

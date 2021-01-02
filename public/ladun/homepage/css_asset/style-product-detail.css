@@ -635,7 +635,7 @@ header {
     position: relative;
     padding-top: 20px; }
     header .icon-menu::before {
-      content: "3";
+      content: "0";
       width: 20px;
       height: 20px;
       background-color: black;

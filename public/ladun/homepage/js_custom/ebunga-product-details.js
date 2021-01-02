@@ -88,6 +88,7 @@ setTimeout(function(){
     let hargaDef = document.querySelector('#txtHargaDefaultHidden').value;
     divContent.hargaProduct = parseInt(hargaDef);
 }, 300);
+document.querySelector('header .icon-menu::before').setAttribute("style", "content:'0'");
 
 /**
  * Function
@@ -112,7 +113,8 @@ document.querySelector("#btnOrderNow").addEventListener('click', function(){
         document.querySelector('#capTotalHarga').innerHTML = "Rp. " + hargaCaps;
         document.querySelector('#capQt').innerHTML = qt;
         document.querySelector('#capHargaAt').innerHTML ="Rp. " + hargaAtCaps;
-
+        $('#divAccount_Prepare').show();
+        $('#divStep_1').show();
     }
 });
 

@@ -92,7 +92,6 @@ Route::post('/account/seller/product/add/main-product', [ProductSellerCtr::class
  */
 Route::get('/logout', [PageCtr::class, 'logout']);
 
-
 /**
  * Contact page
  */
@@ -116,7 +115,6 @@ Route::get('/tes-kirim-email', [PageCtr::class, 'teskirimemail']);
  * Cek email via registrasi
  */
 Route::get('/cek-view-email-registrasi', [TestingCtr::class, 'viewemailregistrasi']);
-
 
 /**
  * REST Without csrf
