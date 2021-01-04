@@ -45,10 +45,8 @@ class ProductCtr extends Controller
                 $kdSubKategori = $dataSubKategori -> kd_sub_kategori;
                 // get data product with kd_sub_kategory
                 $dataProduct = ProdukMdl::where('sub_kategori', $kdSubKategori) -> get();
-                $cssFile = 'style-homev3.css'; 
-                $jsFile = 'ebunga-product-all.js';
                 // $dr = ['page' => 'Kategory Details', 'categorySlug' => $categorySlug, 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
-                $dr = ['kategori' => $kategoriProduct, 'page' => 'product_filter'];
+                $dr = ['kategori' => $kategoriProduct, 'page' => 'product_filter', 'dataProduct' => $dataProduct];
                 return view('futala_product.filter', $dr);
             }else{
                 // get caption area 
