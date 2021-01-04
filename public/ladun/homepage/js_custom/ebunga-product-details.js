@@ -88,6 +88,7 @@ setTimeout(function(){
     let hargaDef = document.querySelector('#txtHargaDefaultHidden').value;
     divContent.hargaProduct = parseInt(hargaDef);
 }, 300);
+$('.js-example-basic-single').select2();
 // $('#cartHaram').hide();
 
 /**

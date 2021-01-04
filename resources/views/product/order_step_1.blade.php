@@ -77,33 +77,47 @@ $userLogin = session('userLogin');
 </div>
 @endif
 
-<div class="container container-ver2" id="divStep_1" style="margin-top:20px;display:none;">
+<div class="container container-ver2" id="divStep_1" style="margin-top:20px;display:none;font-family:Poppins;">
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
-                <label for="inputfname" class=" control-label">Name of receiver <span class="color">*</span></label>
+                <label for="inputfname" class="control-label">Name of receiver <span class="color">*</span></label>
                 <input type="text" placeholder="Enter your first name..." id="txtReceiver" class="form-control">
             </div>
             <div class="form-group">
-                <label for="inputfname" class=" control-label">Delivery date <span class="color">*</span></label>
+                <label for="inputfname" class="control-label">Delivery date <span class="color">*</span></label>
                 <input type="date" id="txtDeliveryDate" class="form-control">
             </div>
-            <div class="alert alert-primary" role="alert">
-                A simple primary alert—check it out!
+            <div class="form-group">
+                <label class="control-label">Greeting Card Caption</label>
+                <textarea class="form-control" style="resize: none;"></textarea>
             </div>
             <div class="form-group">
-                <label>Greeting Card Caption</label>
-
+                <label class="control-label">Message for seller</label>
+                <textarea class="form-control" style="resize: none;"></textarea>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                <label for="inputfname" class=" control-label">Receiver email<span class="color">*</span></label>
+                <label for="inputfname" class="control-label">Receiver email<span class="color">*</span></label>
                 <input type="text" placeholder="Enter your first name..." id="txtReceiverEmail" class="form-control">
             </div>
             <div class="form-group">
-                <label for="inputfname" class=" control-label">Receiver phone<span class="color">*</span></label>
+                <label for="inputfname" class="control-label">Receiver phone<span class="color">*</span></label>
                 <input type="text" class="form-control" id="txtReceiverPhone">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Receiver Address</label>
+                <textarea class="form-control" style="resize: none;"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Provinsi</label><br/>
+                <select class="js-example-basic-single">
+                    <option> --- Choose ---</option>
+                    @foreach($dataProvinsi as $provinsi)
+                    <option>{{ $provinsi -> nama }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
     </div>

@@ -13,7 +13,7 @@
     <title>Ebunga - {{ $page }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta charset="utf-8">
-    <meta name="description" content="Web site created using create-react-app" />
+    <meta name="description" content="Ebunga.co.id - Web site created using create-react-app" />
     {{-- Bootstrap  --}}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/bootstrap.min.css">
@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-fix-nav.css">
     <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/style-form-search-mobile.css">
     <link rel="stylesheet" type="text/css" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/intlTelInput.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
     {{-- Ebunga css  --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_custom/ebunga.css') }}">
     {{-- Slick  --}}
