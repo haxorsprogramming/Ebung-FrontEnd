@@ -22,7 +22,9 @@ class PageCtr extends Controller
 
     public function home()
     {   
-        return view('futala_home.home');
+        $kategori = KategoriMdl::all();
+        $dr = ['kategori' => $kategori];
+        return view('futala_home.home', $dr);
     }
 
     public function listproduk($id_produk)
