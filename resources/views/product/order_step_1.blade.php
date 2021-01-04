@@ -39,7 +39,7 @@
             <tr class="item_cart">
                 <td class="product-photo" style="text-align: center;">
                     <img id="txtPicSelected" src="{{ env('EBUNGA_S3_BUCKET') }}/product/main-product/{{ $dataProduct -> foto_utama }}" style="width:200px;border-radius:12px;" alt="Product Selected">
-                    <br/>
+                    <br />
                     <span style="font: 400 18px 'Poppins';text-align:center;font-weight: bold;">{{ $dataProduct -> nama_produk }}</span>
                 </td>
                 <td class="produc-name"><a href="javascript:void(0)" id="txtVariantProductOrder">Main Product</a></td>
@@ -48,14 +48,14 @@
                 <td class="total-price" id="capTotalHarga">-</td>
                 <td class="product-remove"></td>
             </tr>
-            
+
         </tbody>
     </table>
 
 </div>
 
 @php
-    $userLogin = session('userLogin');
+$userLogin = session('userLogin');
 @endphp
 
 @if($userLogin === null)
@@ -81,26 +81,30 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
-                <label for="inputfname" class=" control-label">Name of receiver <span class="color">*</span></label>                            
-                <input type="text" placeholder="Enter your first name..." id="txtReceiver" class="form-control">  
+                <label for="inputfname" class=" control-label">Name of receiver <span class="color">*</span></label>
+                <input type="text" placeholder="Enter your first name..." id="txtReceiver" class="form-control">
             </div>
             <div class="form-group">
-                <label for="inputfname" class=" control-label">Delivery date <span class="color">*</span></label>  
+                <label for="inputfname" class=" control-label">Delivery date <span class="color">*</span></label>
                 <input type="date" id="txtDeliveryDate" class="form-control">
+            </div>
+            <div class="alert alert-primary" role="alert">
+                A simple primary alert—check it out!
+            </div>
+            <div class="form-group">
+                <label>Greeting Card Caption</label>
+
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                <label for="inputfname" class=" control-label">Receiver email<span class="color">*</span></label>                            
-                <input type="text" placeholder="Enter your first name..." id="txtReceiverEmail" class="form-control">  
+                <label for="inputfname" class=" control-label">Receiver email<span class="color">*</span></label>
+                <input type="text" placeholder="Enter your first name..." id="txtReceiverEmail" class="form-control">
             </div>
             <div class="form-group">
-                <label for="inputfname" class=" control-label">Receiver phone<span class="color">*</span></label>  
+                <label for="inputfname" class=" control-label">Receiver phone<span class="color">*</span></label>
                 <input type="text" class="form-control" id="txtReceiverPhone">
             </div>
         </div>
     </div>
 </div>
-
-
-

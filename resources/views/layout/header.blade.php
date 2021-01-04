@@ -16,7 +16,7 @@
     <meta name="description" content="Web site created using create-react-app" />
     {{-- Bootstrap  --}}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/front-home-page/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" type="image/jpg" href="https://media.publit.io/file/ebungaasset/fav.png"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('ladun/homepage/css_asset/') }}/style-res-product-detail.css">
@@ -81,9 +81,7 @@
                             $propBtn = "class=dropdown-toggle data-toggle=dropdown";
                         }
                         @endphp
-                        
                         <a href="{{ $linkLogin }}" {{ $propBtn }}><i class="far fa-user"></i>
-                            
                         </a>
                         @if($sessionUser == 'yes')
                         @php 
@@ -105,7 +103,11 @@
                         @endphp
                     <li class="dropdown cart-menu">
                         <a href="#!" class="dropdown-toggle" data-toggle="dropdown">
+                            @if($userLogin === null)
+                            <span class="material-icons" style="color:#2c3e50;">shopping_cart</span>
+                            @else 
                             <span class="material-icons" style="color:#2c3e50;">add_shopping_cart</span>
+                            @endif 
                         </a>
                         <div class="dropdown-menu">
                             @php 
@@ -128,8 +130,8 @@
                                 <span>$621.6</span>
                             </div>
                             <div id="div-cart-menu">
-                                <a href="#">ADD TO CART</a>
-                                <a href="#" class="check">CHECK VIEW</a>
+                                <a href="#!">Checkout</a>
+                                <a href="#!" class="check">CHECK VIEW</a>
                             </div>
                             @php
                             }
