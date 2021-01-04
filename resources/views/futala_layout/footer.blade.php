@@ -101,9 +101,8 @@
 
     </div>
 
-    <!-- JS
-============================================ -->
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- Modernizer JS -->
     <script src="{{ asset('ladun/futala/') }}/js/vendor/modernizr-3.6.0.min.js"></script>
     <!-- jQuery JS -->
@@ -122,12 +121,13 @@
 
     <!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
     <!--
-<script src="{{ asset('ladun/futala/') }}/js/vendor/vendor.min.js"></script>
-<script src="{{ asset('ladun/futala/') }}/js/plugins/plugins.min.js"></script>
--->
+    <script src="{{ asset('ladun/futala/') }}/js/vendor/vendor.min.js"></script>
+    <script src="{{ asset('ladun/futala/') }}/js/plugins/plugins.min.js"></script>
+    -->
 
     <!-- Main JS -->
     <script src="{{ asset('ladun/futala/') }}/js/main.js"></script>
+    <script src="{{ asset('ladun/custom_js/') }}/ebunga_{{ $page }}.js"></script>
 
 </body>
 

@@ -1,5 +1,5 @@
 <!-- Start Product Area -->
-<div class="porduct-area section-pb">
+<div class="porduct-area section-pb" id="divProduct">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -11,26 +11,32 @@
             </div>
         </div>
         <div class="text-center pt-1 pb-1">
-            <a href="#" class="btn btn-outline-primary btn-round">
+            <a href="javascript:void(0)" class="btn btn-outline-primary btn-round active-btn" style="margin-right: 10px;">
                 <img src="{{ asset('ladun/ebunga_asset/image/front/rose-outline.svg') }}" style="width: 30px;"> Bunga
             </a>
-            <a href="#" class="btn btn-outline-primary btn-round">
+            <a href="javascript:void(0)" class="btn btn-outline-primary btn-round" style="margin-right: 10px;">
                 <img src="{{ asset('ladun/ebunga_asset/image/front/easel-outline.svg') }}" style="width: 30px;"> Papan Bunga
             </a>
-            <a href="#" class="btn btn-outline-primary btn-round">
+            <a href="javascript:void(0)" class="btn btn-outline-primary btn-round" style="margin-right: 10px;">
                 <img src="{{ asset('ladun/ebunga_asset/image/front/gift-outline.svg') }}" style="width: 30px;"> Parcel
             </a>
-            <a href="#" class="btn btn-outline-primary btn-round">
+            <a href="javascript:void(0)" class="btn btn-outline-primary btn-round" style="margin-right: 10px;">
                 <img src="{{ asset('ladun/ebunga_asset/image/front/storefront-outline.svg') }}" style="width: 30px;"> Cake
             </a>
         </div>
+
         <div class="row product-two-row-4">
+            @php 
+            $subKategori = DB::table('tbl_sub_kategori') -> where('kd_kategori', 'BUNGA') -> get();
+            @endphp
+            @foreach($subKategori as $subKategori)
 
             <div class="col-lg-12">
                 <!-- single-product-wrap start -->
                 <div class="single-product-wrap">
                     <div class="product-image">
-                        <a href="product-details.html"><img src="{{ asset('ladun/futala/') }}/images/product/product-09.jpg" alt="Produce Images"></a>
+                        <a href="#!">
+                            <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/sub-kategory-pic/{{ $subKategori -> kd_sub_kategori }}.jpeg" alt="Produce Images"></a>
                         <span class="label">30% Off</span>
                         <div class="product-action">
                             <a href="#" class="add-to-cart"><i class="ion-bag"></i></a>
@@ -39,17 +45,17 @@
                         </div>
                     </div>
                     <div class="product-content">
-                        <h3><a href="product-details.html">Product Title</a></h3>
+                        <h3><a href="product-details.html">{{ $subKategori -> nama_kategori }}</a></h3>
                         <div class="price-box">
-                            <span class="old-price">$56</span>
-                            <span class="new-price">$45</span>
+                            <span class="new-price" style="color:#1e272e;">200 Total product</span>
                         </div>
                     </div>
                 </div>
                 <!-- single-product-wrap end -->
             </div>
-
+            @endforeach
         </div>
+
     </div>
 </div>
 <!-- Start Product End -->

@@ -8543,7 +8543,8 @@ img.mfp-img {
   top: 50%;
   height: 0;
   width: 150%;
-  background-color: #222;
+  color:black;
+  /* background-color: #222; */
   transition: all 0.3s ease 0s;
   content: "";
   transform: translateX(-50%) translateY(-50%) rotate(-30deg);
@@ -8551,10 +8552,11 @@ img.mfp-img {
   z-index: -1;
 }
 .btn:hover, .btn-2:hover {
-  color: #ff5151;
+  color:black;
 }
 .btn:hover::before, .btn-2:hover::before {
   height: 300%;
+  color:black;
   opacity: 1;
 }
 .btn.hover-theme::before, .btn-2.hover-theme::before {
@@ -13698,7 +13700,7 @@ ul.minicart-pricing-box li:last-child {
 
 .dashboard-list li a {
   border-bottom: 1px solid #ebebeb;
-  color: #222222;
+  color: #dff9fb;
   display: block;
   font-size: 14px;
   padding: 12px 0;
@@ -14568,7 +14570,7 @@ justify-content: space-between;*/
 }
 .contact-inner input, .contact-inner textarea {
   border: 1px solid #dddddd;
-  color: #222222;
+  color: #dff9fb;
   font-size: 14px;
   height: 45px;
   padding-left: 15px;
@@ -14649,4 +14651,8 @@ justify-content: space-between;*/
   font-style: italic;
 }
 
+.active-btn{
+  background-color:#6777ef;
+  border:1px white solid;
+}
 /*# sourceMappingURL=style.css.map */

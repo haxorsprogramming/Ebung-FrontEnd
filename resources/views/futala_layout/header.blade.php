@@ -11,9 +11,6 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/jpg" href="https://media.publit.io/file/ebungaasset/fav.png"/>
 
-    <!-- CSS
-	============================================ -->
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('ladun/futala/') }}/css/vendor/bootstrap.min.css">
 
@@ -26,7 +23,6 @@
     <link rel="stylesheet" href="{{ asset('ladun/futala/') }}/css/plugins/animation.css">
     <link rel="stylesheet" href="{{ asset('ladun/futala/') }}/css/plugins/jqueryui.min.css">
     <link rel="stylesheet" href="https://demo.getstisla.com/assets/css/style.css">
-    <link rel="stylesheet" href="{{ asset('ladun/account_asset/css/style.css') }}">
 
     <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from avobe) -->
     <!--

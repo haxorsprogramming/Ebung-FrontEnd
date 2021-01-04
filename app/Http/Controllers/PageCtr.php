@@ -23,7 +23,7 @@ class PageCtr extends Controller
     public function home()
     {   
         $kategori = KategoriMdl::all();
-        $dr = ['kategori' => $kategori];
+        $dr = ['kategori' => $kategori, 'page' => 'home'];
         return view('futala_home.home', $dr);
     }
 
