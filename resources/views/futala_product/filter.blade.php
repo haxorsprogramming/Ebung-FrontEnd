@@ -1,11 +1,11 @@
 @include('futala_layout.header')
 
 <!-- breadcrumb-area start -->
-<div class="breadcrumb-area section-ptb">
+<div class="breadcrumb-area section-ptb" style="background-image:url('https://s3-id-jkt-1.kilatstorage.id/ebunga/cover/cover-bunga.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2 class="breadcrumb-title">Shop Left Sidebar</h2>
+                <h2 class="breadcrumb-title">Bunga</h2>
                 <!-- breadcrumb-list start -->
                 <ul class="breadcrumb-list">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
