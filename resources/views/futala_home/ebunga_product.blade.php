@@ -36,17 +36,15 @@
                 <!-- single-product-wrap start -->
                 <div class="single-product-wrap">
                     <div class="product-image">
-                        <a href="#!">
+                        <a href="{{ url('product/cat-'.$subKategori -> slug.'/area-all') }}">
                             <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/sub-kategory-pic/{{ $subKategori -> kd_sub_kategori }}.jpeg" alt="Produce Images"></a>
                         <span class="label">30% Off</span>
                         <div class="product-action">
-                            <a href="#" class="add-to-cart"><i class="ion-bag"></i></a>
-                            <a href="#" class="wishlist"><i class="ion-android-favorite-outline"></i></a>
-                            <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="ion-ios-search"></i></a>
+                            <a href="{{ url('product/cat-'.$subKategori -> slug.'/area-all') }}" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="ion-ios-search"></i></a>
                         </div>
                     </div>
                     <div class="product-content">
-                        <h3><a href="product-details.html">{{ $subKategori -> nama_kategori }}</a></h3>
+                        <h3><a href="{{ url('product/cat-'.$subKategori -> slug.'/area-all') }}">{{ $subKategori -> nama_kategori }}</a></h3>
                         <div class="price-box">
                             <span class="new-price" style="color:#1e272e;">200 Total product</span>
                         </div>
@@ -68,17 +66,15 @@
                 <!-- single-product-wrap start -->
                 <div class="single-product-wrap">
                     <div class="product-image">
-                        <a href="#!">
+                        <a href="{{ url('product/cat-'.$subKategori -> slug.'/area-all') }}">
                             <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/sub-kategory-pic/{{ $subKategori -> kd_sub_kategori }}.jpeg" alt="Produce Images"></a>
                         <span class="label">30% Off</span>
                         <div class="product-action">
-                            <a href="#" class="add-to-cart"><i class="ion-bag"></i></a>
-                            <a href="#" class="wishlist"><i class="ion-android-favorite-outline"></i></a>
-                            <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="ion-ios-search"></i></a>
+                            <a href="{{ url('product/cat-'.$subKategori -> slug.'/area-all') }}" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="ion-ios-search"></i></a>
                         </div>
                     </div>
                     <div class="product-content">
-                        <h3><a href="product-details.html">{{ $subKategori -> nama_kategori }}</a></h3>
+                        <h3><a href="{{ url('product/cat-'.$subKategori -> slug.'/area-all') }}">{{ $subKategori -> nama_kategori }}</a></h3>
                         <div class="price-box">
                             <span class="new-price" style="color:#1e272e;">200 Total product</span>
                         </div>
@@ -100,17 +96,15 @@
                 <!-- single-product-wrap start -->
                 <div class="single-product-wrap">
                     <div class="product-image">
-                        <a href="#!">
+                        <a href="{{ url('product/cat-'.$subKategori -> slug.'/area-all') }}">
                             <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/sub-kategory-pic/{{ $subKategori -> kd_sub_kategori }}.jpeg" alt="Produce Images"></a>
                         <span class="label">30% Off</span>
                         <div class="product-action">
-                            <a href="#" class="add-to-cart"><i class="ion-bag"></i></a>
-                            <a href="#" class="wishlist"><i class="ion-android-favorite-outline"></i></a>
-                            <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="ion-ios-search"></i></a>
+                            <a href="{{ url('product/cat-'.$subKategori -> slug.'/area-all') }}" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="ion-ios-search"></i></a>
                         </div>
                     </div>
                     <div class="product-content">
-                        <h3><a href="product-details.html">{{ $subKategori -> nama_kategori }}</a></h3>
+                        <h3><a href="{{ url('product/cat-'.$subKategori -> slug.'/area-all') }}">{{ $subKategori -> nama_kategori }}</a></h3>
                         <div class="price-box">
                             <span class="new-price" style="color:#1e272e;">200 Total product</span>
                         </div>
@@ -132,17 +126,15 @@
                 <!-- single-product-wrap start -->
                 <div class="single-product-wrap">
                     <div class="product-image">
-                        <a href="#!">
+                        <a href="{{ url('product/cat-'.$subKategori -> slug.'/area-all') }}">
                             <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/sub-kategory-pic/{{ $subKategori -> kd_sub_kategori }}.jpeg" alt="Produce Images"></a>
                         <span class="label">30% Off</span>
                         <div class="product-action">
-                            <a href="#" class="add-to-cart"><i class="ion-bag"></i></a>
-                            <a href="#" class="wishlist"><i class="ion-android-favorite-outline"></i></a>
-                            <a href="#" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="ion-ios-search"></i></a>
+                            <a href="{{ url('product/cat-'.$subKategori -> slug.'/area-all') }}" class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"><i class="ion-ios-search"></i></a>
                         </div>
                     </div>
                     <div class="product-content">
-                        <h3><a href="product-details.html">{{ $subKategori -> nama_kategori }}</a></h3>
+                        <h3><a href="{{ url('product/cat-'.$subKategori -> slug.'/area-all') }}">{{ $subKategori -> nama_kategori }}</a></h3>
                         <div class="price-box">
                             <span class="new-price" style="color:#1e272e;">200 Total product</span>
                         </div>

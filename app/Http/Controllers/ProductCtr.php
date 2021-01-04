@@ -47,8 +47,9 @@ class ProductCtr extends Controller
                 $dataProduct = ProdukMdl::where('sub_kategori', $kdSubKategori) -> get();
                 $cssFile = 'style-homev3.css'; 
                 $jsFile = 'ebunga-product-all.js';
-                $dr = ['page' => 'Kategory Details', 'categorySlug' => $categorySlug, 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
-                return view('product.filter', $dr);
+                // $dr = ['page' => 'Kategory Details', 'categorySlug' => $categorySlug, 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
+                $dr = ['kategori' => $kategoriProduct, 'page' => 'product_filter'];
+                return view('futala_product.filter', $dr);
             }else{
                 // get caption area 
                 $slugClearToNormal = str_replace("-", " ", $areaSlug);
@@ -82,8 +83,9 @@ class ProductCtr extends Controller
                 }
                 $cssFile = 'style-homev3.css'; 
                 $jsFile = 'ebunga-product-all.js';
-                $dr = ['page' => 'Kategory Details', 'categorySlug' => $categorySlug, 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataR, 'dataKategori' => $kategoriProduct];
-                return view('product.filter', $dr);
+                // $dr = ['page' => 'Kategory Details', 'categorySlug' => $categorySlug, 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataR, 'dataKategori' => $kategoriProduct];
+                $dr = ['kategori' => $kategoriProduct, 'page' => 'product_filter'];
+                return view('futala_product.filter', $dr);
             }
         }
 

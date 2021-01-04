@@ -1,3 +1,11 @@
+@php 
+    $userLogin = session('userLogin');
+    if($userLogin === null){
+        $sessionUser = 'no';
+    }else{
+        $sessionUser = 'yes';
+    }
+@endphp
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -64,7 +72,11 @@
                                             <ul class="top-info">
                                                 <li>Mon - Sat : 9am to 5pm </li>
                                                 <li><a href="#">(+62) 821-6751-1111</a></li>
-                                                <li><a href="#">hi@ebunga.co.id</a></li>
+                                                @if($sessionUser == 'yes')
+                                                    <li><a href="#">hi@ebunga.co.id</a></li>
+                                                @else
+                                                    <li><a href="#">You are not logged in, please login</a></li>
+                                                @endif                                               
                                             </ul>
                                         </div>
                                     </div>
@@ -133,16 +145,19 @@
                         <div class="col-lg-2 col-md-8 col-7">
                             <div class="right-blok-box d-flex">
                                 <div class="search-wrap">
-                                    <a href="#" class="trigger-search"><i class="ion-ios-search-strong"></i></a>
+                                    <a href="#!" class="trigger-search"><i class="ion-ios-search-strong"></i></a>
                                 </div>
 
                                 <div class="user-wrap">
-                                    <a href="wishlist.html"><i class="ion-android-favorite-outline"></i></a>
+                                @if($sessionUser == 'yes')
+                                    <a href="{{ url('/account') }}"><i class="ion-android-contact"></i></a>
+                                @else
+                                    <a href="{{ url('/login') }}"><i class="ion-android-person"></i></a>
+                                @endif  
                                 </div>
 
-
                                 <div class="shopping-cart-wrap">
-                                    <a href="#"><i class="ion-ios-cart-outline"></i> <span id="cart-total">2</span></a>
+                                    <a href="#"><i class="ion-ios-cart-outline"></i> <span id="cart-total">0</span></a>
                                     <ul class="mini-cart">
                                         <li class="cart-item">
                                             <div class="cart-image">
@@ -151,19 +166,6 @@
                                             <div class="cart-title">
                                                 <a href="product-details.html">
                                                     <h4>Product Name 01</h4>
-                                                </a>
-                                                <span class="quantity">1 ×</span>
-                                                <div class="price-box"><span class="new-price">$130.00</span></div>
-                                                <a class="remove_from_cart" href="#"><i class="icon-trash icons"></i></a>
-                                            </div>
-                                        </li>
-                                        <li class="cart-item">
-                                            <div class="cart-image">
-                                                <a href="product-details.html"><img alt="" src="{{ asset('ladun/futala/') }}/images/product/product-02.jpg"></a>
-                                            </div>
-                                            <div class="cart-title">
-                                                <a href="product-details.html">
-                                                    <h4>Product Name 03</h4>
                                                 </a>
                                                 <span class="quantity">1 ×</span>
                                                 <div class="price-box"><span class="new-price">$130.00</span></div>
