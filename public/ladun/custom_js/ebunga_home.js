@@ -4,6 +4,17 @@ var divProduct = new Vue({
 
     },
     methods : {
-        
+        switchProduct : function(btn)
+        {
+            $('.divProduct').hide();
+            $('#divKategori'+btn).fadeIn(300);
+            $('.active-btn').removeClass('active-btn');
+            $('.btnProd'+btn).addClass('active-btn');
+        }
     }
 });
+
+/**
+ * Inisialisasi
+ */
+$('#divKategoriPapanBunga').hide();
