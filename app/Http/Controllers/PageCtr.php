@@ -21,22 +21,9 @@ class PageCtr extends Controller
 {
 
     public function home()
-    {
-        /**
-         * Get data kategori
-         */
-        $kategori = KategoriMdl::all();
-        /**
-         * Get data produk
-         */
-        $produk = ProdukMdl::all();
-        $cssFile = 'style-homev3.css';
-        $jsFile = 'ebunga.js';
-        $dr = ['kategori' => $kategori, 'produk' => $produk, 'page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile];
-        
-        return view('home.home', $dr);
+    {   
+        return view('futala_home.home');
     }
-
 
     public function listproduk($id_produk)
     {

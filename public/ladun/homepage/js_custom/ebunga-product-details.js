@@ -1,3 +1,5 @@
+const { methodOf } = require("lodash");
+
 /**
  * Route
  */
@@ -66,6 +68,7 @@ var divContent = new Vue({
     methods: {
         addQt : function(harga)
         {
+            let h = 2;
             let hargaNow = parseInt(this.totalHarga) + parseInt(this.hargaProduct);
             this.totalHarga = hargaNow;
         },
