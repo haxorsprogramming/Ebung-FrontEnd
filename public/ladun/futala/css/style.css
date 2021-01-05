@@ -12076,8 +12076,10 @@ ul.minicart-pricing-box li:last-child {
 
 .portfolio-full-image {
   border: 1px solid #ddd;
+  margin: auto;
 }
 .portfolio-full-image img {
+  margin-top: 60px;
   width: 100%;
 }
 
@@ -12091,7 +12093,9 @@ ul.minicart-pricing-box li:last-child {
 .product_big_images-right {
   float: right;
   width: calc(100% - 115px);
-  padding-left: 15px;
+  padding: 15px;
+  text-align: center;
+  margin: auto;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .product_big_images-right {

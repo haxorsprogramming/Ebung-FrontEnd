@@ -208,7 +208,7 @@ class ProductCtr extends Controller
         $dataProvinsi = ProvinsiMdl::all();
         $kategoriProduct = KategoriMdl::all();
         // $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataProduct, 'dataProvinsi' => $dataProvinsi];
-        $dr = ['kategori' => $kategoriProduct, 'page' => 'details_product'];
+        $dr = ['kategori' => $kategoriProduct, 'page' => 'details_product', 'dataProduct' => $dataProduct];
         return view('futala_product.details_product', $dr);
         // echo $kdProduct;
     }
