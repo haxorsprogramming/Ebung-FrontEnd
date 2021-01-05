@@ -18,7 +18,7 @@ class TblUser extends Migration
             $table -> char('username', 50);
             $table -> char('tipe', 20);
             $table -> char('password', 100);
-            $table -> timestamp('last_login', 0); 
+            $table -> timestamp('last_login', 0) -> nullable(); 
             $table -> char('active', 1);
         });
     }

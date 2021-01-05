@@ -289,16 +289,16 @@ class DatabaseSeeder extends Seeder
         //     'active' => 'y'
         // ]);
         // branch
-        DB::table('tbl_branch_seller') -> insert([
-            'kd_branch' => 'BRANCH0001',
-            'nama_branch' => 'PT NADHA BUNGA SERASI',
-            'id_seller' => 'ebunga-seller',
-            'alamat' => '1271181001-127118-1271-12',
-            'phone' => '082272177022',
-            'email' => 'ebungaseller@yahoo.com',
-            'active' => '1',
-            'status_branch' => 'active'
-        ]);
+        // DB::table('tbl_branch_seller') -> insert([
+        //     'kd_branch' => 'BRANCH0001',
+        //     'nama_branch' => 'PT NADHA BUNGA SERASI',
+        //     'id_seller' => 'ebunga-seller',
+        //     'alamat' => '1271181001-127118-1271-12',
+        //     'phone' => '082272177022',
+        //     'email' => 'ebungaseller@yahoo.com',
+        //     'active' => '1',
+        //     'status_branch' => 'active'
+        // ]);
         // coverage area 
         // DB::table('tbl_coverage_area') -> insert([
         //     'kd_coverage' => 'aqwl1239012jmn',

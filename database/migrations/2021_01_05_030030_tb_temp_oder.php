@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TblTempOrder extends Migration
+class TbTempOder extends Migration
 {
     /**
      * Run the migrations.
@@ -20,7 +20,7 @@ class TblTempOrder extends Migration
             $table -> timestamp('waktu', 0);
             $table -> char('kd_product', 40);
             $table -> char('qt', 100);
-            $table -> integer('total', 40);
+            $table -> integer('total');
         });
     }
 
