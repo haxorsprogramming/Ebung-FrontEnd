@@ -69,6 +69,43 @@ class BranchSellerCtr extends Controller
         return view('account.seller.branch.branch_detail', $dr);
     }
 
+    public function applynewbranch(Request $request)
+    {
+        // {'nameBranch':nameBranch, 'emailBranch':emailBranch, 'phoneBranch':phoneBranch, 'country':country, 
+            // 'provinsi':provinsi, 'kabupaten':kabupaten, 'kecamatan':kecamatan, 'kelurahan':kelurahan}
+        $kdBranch = Str::upper(Str::random(10));
+        $nameBranch = $request -> nameBranch;
+
+        $emailBranch = $request -> emailBranch;
+        $phoneBranch = $request -> phoneBranch;
+        $country = $request -> country;
+        $provinsi = $request -> provinsi;
+        $kabupaten = $request -> kabupaten;
+        $kecamatan = $request -> kecamatan;
+        $kelurahan = $request -> kelurahan;
+        $userLogin = $request -> session() -> get('userLogin');
+        $now = now();
+        // cek apakah nama branch sudah ada 
+        $cekNamaBranch = DB::table('tbl_branch_seller') -> where('nama_branch', $nameBranch) -> count();
+        if($cekNamaBranch < 1){
+            $dr = ['status' => 'success'];
+            DB::table('tbl_branch_seller') -> insert([
+                'kd_branch' => $kdBranch,
+                'nama_branch' => $nameBranch,
+                'id_seller' => $userLogin,
+                'alamat' => $kelurahan."-".$kecamatan."-".$kabupaten."-".$provinsi,
+                'phone' => $phoneBranch,
+                'email' => $emailBranch,
+                'status_branch' => 'disable',
+                'active' => '1',
+                'waktu_pengajuan' => $now
+            ]);
+        }else{
+            $dr = ['status' => 'name_duplicate'];     
+        }
+        return \Response::json($dr);
+    }
+
     public function getdatakelurahanformarker($idKel)
     {
         $dataKel = KelurahanMdl::where('id_kel', $idKel) -> first();

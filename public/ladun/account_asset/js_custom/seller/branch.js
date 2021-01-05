@@ -50,8 +50,9 @@ var divTambahBranch = new Vue({
         pesanUmumApp('warning', 'Isi field!!!', 'Please fill the all field!!');
       }else{
         let dataSend = {'nameBranch':nameBranch, 'emailBranch':emailBranch, 'phoneBranch':phoneBranch, 'country':country, 'provinsi':provinsi, 'kabupaten':kabupaten, 'kecamatan':kecamatan, 'kelurahan':kelurahan}
-        $.post(rToApplyNewBranch, dataSend, function(data){
-          if(data.status === 'name_duplicate'){
+        axios.post(rToApplyNewBranch, dataSend).then(function(res){
+          let dr = res.data;
+          if(dr.status === 'name_duplicate'){
             pesanUmumApp('warning', 'Name failed', 'Name of new branch is exist .. ');
           }else{
             pesanUmumApp('success', 'Success', 'New branch applied ...');
@@ -89,8 +90,9 @@ function checkCountry()
 
 function getProvinsi()
 {
-  $.get(rToGetProvinsi, function(data){
-    let provinsi = data.provinsi;
+  axios.get(rToGetProvinsi).then(function(res){
+    let dr = res.data;
+    let provinsi = dr.provinsi;
     provinsi.forEach(renderProvinsi);
     function renderProvinsi(item, index){
       divTambahBranch.provinsi.push({nama:provinsi[index].nama, id_prov:provinsi[index].id_prov});
@@ -106,8 +108,9 @@ function provinsiPilih()
 }
 
 function getKabupaten(idProvinsi){
-  $.get(rToGetKabupaten+idProvinsi, function(data){
-    let kabupaten = data.kabupaten;
+  axios.get(rToGetKabupaten+idProvinsi).then(function(res){
+    let dr = res.data;
+    let kabupaten = dr.kabupaten;
     kabupaten.forEach(renderKabupaten);
     function renderKabupaten(item, index){
       divTambahBranch.kabupaten.push({nama:kabupaten[index].nama, id_kab:kabupaten[index].id_kab});
@@ -124,8 +127,9 @@ function kabupatenPilih()
 
 function getKecamatan(idKabupaten)
 {
-  $.get(rToGetKecamatan+idKabupaten, function(data){
-    let kecamatan = data.kecamatan;
+  axios.get(rToGetKecamatan+idKabupaten).then(function(res){
+    let dr = res.data;
+    let kecamatan = dr.kecamatan;
     kecamatan.forEach(renderKecamatan);
     function renderKecamatan(item, index){
       divTambahBranch.kecamatan.push({nama:kecamatan[index].nama, id_kec:kecamatan[index].id_kec});
@@ -141,8 +145,9 @@ function kecamatanPilih()
 
 function getKelurahan(idKecamatan)
 {
-  $.get(rToGetKelurahan+idKecamatan, function(data){
-    let kelurahan = data.kelurahan;
+  axios.get(rToGetKelurahan+idKecamatan).then(function(res){
+    let dr = res.data;
+    let kelurahan = dr.kelurahan;
     kelurahan.forEach(renderKelurahan);
     function renderKelurahan(item, index){
       divTambahBranch.kelurahan.push({nama:kelurahan[index].nama, id_kel:kelurahan[index].id_kel});
