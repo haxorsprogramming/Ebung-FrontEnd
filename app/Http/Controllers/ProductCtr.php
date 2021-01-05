@@ -206,8 +206,10 @@ class ProductCtr extends Controller
         $jsFile = 'ebunga-product-details.js';
         $dataProduct = ProdukMdl::where('slug', $idProduct) -> first();
         $dataProvinsi = ProvinsiMdl::all();
-        $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataProduct, 'dataProvinsi' => $dataProvinsi];
-        return view('product.details', $dr);
+        $kategoriProduct = KategoriMdl::all();
+        // $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataProduct, 'dataProvinsi' => $dataProvinsi];
+        $dr = ['kategori' => $kategoriProduct, 'page' => 'details_product'];
+        return view('futala_product.details_product', $dr);
         // echo $kdProduct;
     }
 

@@ -12,7 +12,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Ebunga - Best solution for give </title>
+    <title>Ebunga - Home</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -95,7 +95,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-2 col-md-4 col-5">
                             <div class="logo-area">
-                                <a href="index.html"><img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/ebunga-logo-small.png" alt=""></a>
+                                <a href="{{ url('/') }}"><img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/ebunga-logo-small.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-8 d-none d-lg-block">

@@ -89,7 +89,7 @@
                                             <!-- single-product-wrap start -->
                                             <div class="single-product-wrap">
                                                 <div class="product-image">
-                                                    <a href="product-details.html">
+                                                    <a href="{{ url('/product/'.$product -> slug) }}">
                                                         <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/{{ $product -> foto_utama }}" alt="{{ $product -> nama_produk }}">
                                                     </a>
                                                     <span class="label">{{ $namaKabupaten }}</span>
