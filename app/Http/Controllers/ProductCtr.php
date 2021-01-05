@@ -183,6 +183,9 @@ class ProductCtr extends Controller
 
     public function checkslugonly(Request $request)
     {
+        /**
+         * Get dat slug
+         */
         $slug = $request -> slugKelurahan;
         $kdCategory = $request -> kdSlugKategory;
         $dataKel = KelurahanMdl::where('nama', 'like', '%'.$slug.'%') -> take(7) -> get();

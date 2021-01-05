@@ -7,6 +7,9 @@ var divProduct = new Vue({
 
     },
     methods : {
-        
+        buyNowAtc : function()
+        {
+            console.log("data");
+        }
     }
 });

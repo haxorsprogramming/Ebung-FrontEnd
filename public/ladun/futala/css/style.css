@@ -12093,7 +12093,6 @@ ul.minicart-pricing-box li:last-child {
 .product_big_images-right {
   float: right;
   width: calc(100% - 115px);
-  padding: 15px;
   text-align: center;
   margin: auto;
 }
@@ -14660,3 +14659,6 @@ justify-content: space-between;*/
   border:1px white solid;
 }
 /*# sourceMappingURL=style.css.map */
+#btnBuyNow{
+  background-color:#ecf0f1;
+}

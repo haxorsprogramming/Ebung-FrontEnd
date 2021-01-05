@@ -71,7 +71,9 @@ Route::group(['middleware' => 'CekUser'], function () {
 
 
 Route::get('/account/dashboard', [CustomerCtr::class, 'dashboard']);
-// Seller
+/**
+ * Seller
+ */
 Route::get('/account/seller', [DashboardCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/dashboard', [SellerCtr::class, 'sellerdashboard']);
 Route::get('/account/seller/branch', [SellerCtr::class, 'sellerbranch']);
