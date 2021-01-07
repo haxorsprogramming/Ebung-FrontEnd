@@ -100,6 +100,7 @@ Route::post('/account/seller/product/add/main-product', [ProductSellerCtr::class
  * Logout
  */
 Route::get('/logout', [PageCtr::class, 'logout']);
+Route::get('/logout/silent', [PageCtr::class, 'logoutsilent']);
 
 /**
  * Contact page

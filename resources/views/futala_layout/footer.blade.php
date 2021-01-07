@@ -120,12 +120,12 @@
     <script src="{{ asset('ladun/futala/') }}/js/plugins/ajax-contact.js"></script>
 
     <!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
-    <!--
-    <script src="{{ asset('ladun/futala/') }}/js/vendor/vendor.min.js"></script>
-    <script src="{{ asset('ladun/futala/') }}/js/plugins/plugins.min.js"></script>
-    -->
+    <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/axios/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <!-- Main JS -->
+    <script>
+        const server = "{{ url('/') }}/";
+    </script>
     <script src="{{ asset('ladun/futala/') }}/js/main.js"></script>
     <script src="{{ asset('ladun/custom_js/') }}/ebunga_{{ $page }}.js"></script>
 

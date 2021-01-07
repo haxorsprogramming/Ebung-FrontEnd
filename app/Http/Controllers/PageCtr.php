@@ -54,4 +54,13 @@ class PageCtr extends Controller
         return redirect('/');
     }
 
+    public function logoutsilent(Request $request)
+    {
+        $request -> session() -> flush();
+        
+        $dr = ['status' => 'sukses'];
+
+        return \Response::json($dr);
+    }
+
 }

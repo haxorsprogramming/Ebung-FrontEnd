@@ -1,4 +1,9 @@
 /**
+ * Route
+ */
+var rToSilentLogout = server + "logout/silent";
+
+/**
  * Vue object
  */
 var divProduct = new Vue({
@@ -12,6 +17,7 @@ var divProduct = new Vue({
             let kategori = document.querySelector('#txtKategoriHidden').value;
             pesanUmumApp('info', 'Reminder', 'Pastikan coverage area produk sesuai dengan jangkauan alamat pengiriman produk ini ..');
             $('#divDescProduct').hide();
+            $('#divOrder').show();
         },
         changeVariantAtc(kd, type, nama)
         {
@@ -29,6 +35,27 @@ var divProduct = new Vue({
         }
     }
 });
+
+var divOrder = new Vue({
+    el : '#divOrder',
+    data : {
+
+    },
+    methods : {
+        silentLogout : function()
+        {
+            axios.get(rToSilentLogout).then(function(res){
+                let dr = res.data;
+                window.location.reload();
+            });
+        }
+    } 
+});
+
+/**
+ * Inisialisasi
+ */
+$('#divOrder').hide();
 
 /**
  * Function

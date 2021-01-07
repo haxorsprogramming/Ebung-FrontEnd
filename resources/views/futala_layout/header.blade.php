@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="{{ asset('ladun/futala/') }}/css/plugins/slick.css">
     <link rel="stylesheet" href="{{ asset('ladun/futala/') }}/css/plugins/animation.css">
     <link rel="stylesheet" href="{{ asset('ladun/futala/') }}/css/plugins/jqueryui.min.css">
-    <link rel="stylesheet" href="https://demo.getstisla.com/assets/css/style.css">
+    <link rel="stylesheet" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/stisla/style.css">
 
     <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from avobe) -->
     <!--
