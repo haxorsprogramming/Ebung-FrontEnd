@@ -3,6 +3,7 @@
  */
 var rToSilentLogout = server + "logout/silent";
 var rToLogin = server + 'login/proses';
+
 /**
  * Vue object
  */
@@ -39,7 +40,8 @@ var divProduct = new Vue({
 var divOrder = new Vue({
     el : '#divOrder',
     data : {
-        capchaState : false
+        capchaState : false,
+        btnBawah : '1'
     },
     methods : {
         loginSilentAtc : function()
@@ -73,7 +75,6 @@ var divOrder = new Vue({
         silentLogout : function()
         {
             axios.get(rToSilentLogout).then(function(res){
-                let dr = res.data;
                 window.location.reload();
             });
         }
@@ -93,10 +94,17 @@ $('#divOrder').hide();
 /**
  * Function
  */
+function kecamatanPilih()
+{
+    let idKec = document.querySelector('#txtKecamatan').value;
+    console.log(idKec);
+}
+
 function nextStep()
 {
     $('#divOrderDetails').hide()
     $('#divShipmentAddress').show();
+    divOrder.btnBawah = '2';
 }
 
 function recaptcha_callback()

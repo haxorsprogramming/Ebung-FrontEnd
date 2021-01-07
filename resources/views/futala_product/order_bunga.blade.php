@@ -135,23 +135,51 @@ $sessionUser = 'yes';
                             </div>
                             <div class="form-group">
                                 <label>Kecamatan</label>
-                                <select class="form-control">
+                                <select class="form-control" id="txtKecamatan" onchange="kecamatanPilih()">
+                                    <option value="nonen">--- Choose Provinsi ---</option>
                                 @foreach($dataAlamat['dataKecamatan'] as $kecamatan)
-                                    <option>{{ $kecamatan -> nama }}</option>
+                                    <option value="{{ $kecamatan -> id_kec }}">{{ $kecamatan -> nama }}</option>
                                 @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Kelurahan</label>
+                                <select class="form-control">
+
                                 </select>
                             </div>
                         </div>
 
                         <div class="col">
-                            <a href="#!" class="btn btn-primary btn-icon icon-left" onclick="nextStep()" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
+                            <a v-if="btnBawah === '1'" href="{{ env('JSVOID') }}" id="btnNextDelivery" class="btn btn-primary btn-icon icon-left" onclick="nextStep()" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
                                 <i class="ion-arrow-right-b"></i> Next (Delivery Address)
                             </a>
+                            <a v-else-if="btnBawah === '2'" href="{{ env('JSVOID') }}" class="btn btn-primary btn-icon icon-left" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
+                                <i class="ion-arrow-right-b"></i> Next (Payment)
+                            </a>
                         </div>
+
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="billing-details-wrap">
                             <h4 class="shoping-checkboxt-title">Order Preview</h4>
+                            <table class="table">
+                            <tr>
+                                <td>Item</td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Sender Name</td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Receiver Name</td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Receiver Email</td><td></td>
+                            </tr>
+                            <tr>
+                                <td>Receiver Phone Number</td><td></td>
+                            </tr>
+                            </table>
                         </div>
                     </div>
                 </div>

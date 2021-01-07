@@ -11,14 +11,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico"> -->
-    <link rel="shortcut icon" type="image/jpg" href="https://media.publit.io/file/ebungaasset/fav.png"/>
-
-    <!-- CSS
-    ============================================ 
-    -->
+    <link rel="shortcut icon" type="image/jpg" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/fav.png"/>
+    <!-- CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/font-awesome/all.min.css" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('ladun/account_asset/css/vendor/bootstrap.min.css') }}">
     <!-- Icon Font CSS -->
