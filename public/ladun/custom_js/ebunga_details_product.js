@@ -2,7 +2,7 @@
  * Route
  */
 var rToSilentLogout = server + "logout/silent";
-
+var rToLogin = server + 'login/proses';
 /**
  * Vue object
  */
@@ -39,9 +39,37 @@ var divProduct = new Vue({
 var divOrder = new Vue({
     el : '#divOrder',
     data : {
-
+        capchaState : false
     },
     methods : {
+        loginSilentAtc : function()
+        {
+            if(this.capchaState == false){
+                pesanUmumApp('warning', 'Security check', 'Please complete the capcha ..');
+            }else{
+                let username = document.querySelector('#txtUsername').value;
+                let password = document.querySelector('#txtPassword').value;
+                let dataSend = {'username':username, 'password':password}
+                $('#divLoading').show();
+                $('#divFormLogin').hide();
+                setTimeout(function(){
+                    axios.post(rToLogin, dataSend).then(function(res){
+                        let dr = res.data;
+                        if(dr.status === 'success'){
+                            window.location.reload();
+                        }else{
+                            pesanUmumApp('warning', 'Invalid login', 'Incorrect username & password ...');
+                            $('#divLoading').hide();
+                            $('#divFormLogin').show();
+                            document.querySelector('#txtPassword').value = "";
+                            document.querySelector('#txtUsername').focus();
+                            grecaptcha.reset();
+                            this.capchaState = false;
+                        }
+                    });
+                }, 1000);
+            }
+        },
         silentLogout : function()
         {
             axios.get(rToSilentLogout).then(function(res){
@@ -55,11 +83,29 @@ var divOrder = new Vue({
 /**
  * Inisialisasi
  */
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+
 $('#divOrder').hide();
 
 /**
  * Function
  */
+function recaptcha_callback()
+{
+    divOrder.capchaState = true;
+}
+
+function showLogin()
+{
+    $('#checkout-login').fadeIn(400);
+    $('#txtUsername').focus();  
+}
+
 function pesanUmumApp(icon, title, text)
 {
   Swal.fire({

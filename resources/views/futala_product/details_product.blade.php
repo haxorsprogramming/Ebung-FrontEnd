@@ -143,5 +143,7 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
 </div>
 <!-- main-content-wrap end -->
 
+<!-- render google capcha js  -->
+{!! NoCaptcha::renderJs() !!}
 
 @include('futala_layout.footer')
