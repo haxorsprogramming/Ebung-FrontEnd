@@ -24,13 +24,14 @@
 
     <!-- Icon Font CSS -->
     <link rel="stylesheet" href="{{ asset('ladun/futala/') }}/css/vendor/ionicons.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{{ asset('ladun/futala/') }}/css/plugins/slick.css">
     <link rel="stylesheet" href="{{ asset('ladun/futala/') }}/css/plugins/animation.css">
     <link rel="stylesheet" href="{{ asset('ladun/futala/') }}/css/plugins/jqueryui.min.css">
     <link rel="stylesheet" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/stisla/style.css">
+    <link rel="stylesheet" href="https://demo.getstisla.com/assets/css/components.css">
 
     <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from avobe) -->
     <!--

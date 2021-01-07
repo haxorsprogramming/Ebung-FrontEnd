@@ -17,6 +17,7 @@ class VerifyCsrfToken extends Middleware
         '/product/details/',
         '/account-seller/product/add/main-product',
         '/tes-s3-cloudkilat',
-        '/account/seller/branch/apply-new-branch'
+        '/account/seller/branch/apply-new-branch',
+        '/tes-kirim-wa'
     ];
 }

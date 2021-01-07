@@ -52,12 +52,51 @@ $sessionUser = 'yes';
             <!-- coupon-accordion end -->
             <!-- coupon-accordion start -->
 
+            <div class="row mt-4">
+                <div class="col-12 col-lg-8 offset-lg-2">
+                    <div class="wizard-steps">
+                        <div class="wizard-step wizard-step-active disabled">
+                            <div class="wizard-step-icon">
+                                <i class="fas fa-cart-plus"></i>
+                            </div>
+                            <div class="wizard-step-label">
+                                Order Placed
+                            </div>
+                        </div>
+                        <div class="wizard-step wizard-step">
+                            <div class="wizard-step-icon">
+                                <i class="fas fa-money-check"></i>
+                            </div>
+                            <div class="wizard-step-label">
+                                Details Order
+                            </div>
+                        </div>
+                        <div class="wizard-step wizard-step">
+                            <div class="wizard-step-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="wizard-step-label">
+                                Payment
+                            </div>
+                        </div>
+                        <div class="wizard-step wizard-step">
+                            <div class="wizard-step-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="wizard-step-label">
+                                Order Complete
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="checkout-details-wrapper">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <div class="billing-details-wrap">
-                            <h3 class="shoping-checkboxt-title">Order Details</h3>
+
+                        <div class="billing-details-wrap" id="divOrderDetails">
+                            <h4 class="shoping-checkboxt-title">Order Details</h4>
                             <div class="form-group">
                                 <label>Sender Name</label>
                                 <input type="text" class="form-control">
@@ -83,11 +122,32 @@ $sessionUser = 'yes';
                                 <input type="date" class="form-control" min="<?php echo date("Y-m-d"); ?>">
                             </div>
                         </div>
+
+                        <div class="billing-details-wrap" id="divShipmentAddress" style="display: none;">
+                            <h4 class="shoping-checkboxt-title">Shipment Address</h4>
+                            <div class="form-group">
+                                <label>Provinsi</label>
+                                <input type="text" class="form-control" disabled value="{{ $dataAlamat['namaProvinsi'] }}">
+                            </div>
+                            <div class="form-group">
+                                <label>Kabupaten</label>
+                                <input type="text" class="form-control" disabled value="{{ $dataAlamat['namaKabupaten'] }}">
+                            </div>
+                            <div class="form-group">
+                                <label>Kecamatan</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <a href="#!" class="btn btn-primary btn-icon icon-left" onclick="nextStep()" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
+                                <i class="ion-arrow-right-b"></i> Next (Delivery Address)
+                            </a>
+                        </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="billing-details-wrap">
-                            <h3 class="shoping-checkboxt-title">Order Preview</h3>
-                            
+                            <h4 class="shoping-checkboxt-title">Order Preview</h4>
                         </div>
                     </div>
                 </div>
@@ -95,7 +155,7 @@ $sessionUser = 'yes';
 
 
             @if($sessionUser == 'yes')
-            <div class="coupon-accordion">
+            <div class="coupon-accordion" style="margin-top:20px;">
                 <h3>Have a coupon? <span class="coupon" id="showcoupon">Click here to enter your code</span></h3>
                 <div class="coupon-content" id="checkout-coupon">
                     <div class="coupon-info">

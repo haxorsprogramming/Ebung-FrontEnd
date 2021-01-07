@@ -88,13 +88,17 @@ $.ajaxSetup({
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
-
-
 $('#divOrder').hide();
 
 /**
  * Function
  */
+function nextStep()
+{
+    $('#divOrderDetails').hide()
+    $('#divShipmentAddress').show();
+}
+
 function recaptcha_callback()
 {
     divOrder.capchaState = true;

@@ -122,6 +122,11 @@ Route::post('/product/check-area-slug-only', [ProductCtr::class, 'checkslugonly'
 Route::get('/tes-kirim-email', [PageCtr::class, 'teskirimemail']);
 
 /**
+ * Tes kirim wa
+ */
+Route::post('/tes-kirim-wa', [HelperCtr::class, 'kirimPesanGuzzle']);
+
+/**
  * Cek email via registrasi
  */
 Route::get('/cek-view-email-registrasi', [TestingCtr::class, 'viewemailregistrasi']);

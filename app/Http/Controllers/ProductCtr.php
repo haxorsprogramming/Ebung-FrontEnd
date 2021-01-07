@@ -23,6 +23,7 @@ use App\Models\CoverageAreaMdl;
 use App\Models\KategoriMdl;
 use App\Models\SubKategoriMdl;
 use App\Models\BranchSellerMdl;
+use App\Models\KabupatenMdl;
 use App\Models\ProvinsiMdl;
 use App\Models\VarianProductMdl;
 /**
@@ -202,16 +203,15 @@ class ProductCtr extends Controller
 
     public function productdetails($idProduct)
     {
-        // $slugProductToNormal = str_replace("-", "", $idProduct);
-        //cari berdasarkan branch dan kd sub kategori 
-        // $kdProduct = Str::upper($slugProductToNormal);
-        $cssFile = 'style-product-detail.css';
-        $jsFile = 'ebunga-product-details.js';
         $dataProduct = ProdukMdl::where('slug', $idProduct) -> first();
         $dataVariant = VarianProductMdl::where('kd_product', $dataProduct -> kd_produk) -> get();
-        $dataProvinsi = ProvinsiMdl::all();
+        $dataBranch = BranchSellerMdl::where('kd_branch', $dataProduct -> id_branch) -> first();
+        $alamatEx = explode("-", $dataBranch -> alamat);
+        $dataProvinsi = ProvinsiMdl::where('id_prov', $alamatEx[3]) -> first();
+        $dataKabupaten = KabupatenMdl::where('id_kab', $alamatEx[2]) -> first();
+        $dataAlamat = ['namaProvinsi' => $dataProvinsi -> nama, 'namaKabupaten' => $dataKabupaten -> nama];
         $kategoriProduct = KategoriMdl::all();
-        $dr = ['kategori' => $kategoriProduct, 'page' => 'details_product', 'dataProduct' => $dataProduct, 'dataVariant' => $dataVariant];
+        $dr = ['kategori' => $kategoriProduct, 'page' => 'details_product', 'dataProduct' => $dataProduct, 'dataVariant' => $dataVariant, 'dataAlamat' => $dataAlamat];
         return view('futala_product.details_product', $dr);
         // echo $kdProduct;
     }
