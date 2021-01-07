@@ -1,3 +1,7 @@
+@php
+$dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduct -> id_branch) -> get();
+@endphp
+
 @include('futala_layout.header')
 
 <!-- breadcrumb-area start -->
@@ -17,7 +21,6 @@
     </div>
 </div>
 <!-- breadcrumb-area end -->
-
 
 <!-- main-content-wrap start -->
 <div class="main-content-wrap section-ptb product-details-page">
@@ -74,11 +77,9 @@
                             <li><span class="ion-android-star-outline"></span></li>
                         </ul>
                         <!-- <span class="rat_qun"> (Based on 0 Ratings) </span> -->
+                        <br/>
                     </div>
-                    <!-- pro_rating end -->
-                    <!-- pro_details start -->
-                    <!-- pro_details end -->
-                    <!-- pro_dtl_prize start -->
+                    <small>This product have 922 view</small>
                     <hr />
                     <div class="form-group">
                         <label>Price</label>
@@ -92,19 +93,16 @@
                         <label>Choose Variant</label>
                         <select class="form-control" style="width: 200px;">
                             <option value="main">Main variant</option>
+                            @foreach($dataVariant as $variant)
+                            <option value="main">{{ $variant -> nama_variant }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <!-- pro_dtl_color end-->
                     <!-- product-quantity-action start -->
                     <div class="form-group">
-                        <div class="prodict-statas"><label>Quantity :</label></div>
-                        <div class="product-quantity">
-                            <div class="product-quantity">
-                                <div class="cart-plus-minus">
-                                    <input type="number" value="1" class="form-control" style="width: 80px;">
-                                </div>
-                            </div>
-                        </div>
+                        <label>Quantity :</label>
+                        <input type="number" value="1" class="form-control" style="width: 80px;">
                     </div>
                     <!-- product-quantity-action end -->
                     <!-- pro_dtl_btn start -->
@@ -129,7 +127,7 @@
             </div>
         </div>
 
-        
+        @include('futala_product.desc_product')
 
 
     </div>
