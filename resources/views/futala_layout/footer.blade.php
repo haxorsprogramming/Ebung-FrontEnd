@@ -124,7 +124,7 @@
     <script src="{{ asset('ladun/futala/') }}/js/vendor/vendor.min.js"></script>
     <script src="{{ asset('ladun/futala/') }}/js/plugins/plugins.min.js"></script>
     -->
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <!-- Main JS -->
     <script src="{{ asset('ladun/futala/') }}/js/main.js"></script>
     <script src="{{ asset('ladun/custom_js/') }}/ebunga_{{ $page }}.js"></script>

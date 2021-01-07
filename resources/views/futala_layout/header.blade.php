@@ -75,7 +75,7 @@
                                                 @if($sessionUser == 'yes')
                                                     <li><a href="#">hi@ebunga.co.id</a></li>
                                                 @else
-                                                    <li><a href="#">You are not logged in, please login</a></li>
+                                                    <li><a href="{{ url('/login')}}">You are not logged in, please login</a></a></li>
                                                 @endif                                               
                                             </ul>
                                         </div>

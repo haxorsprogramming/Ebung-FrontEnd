@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="divDescProduct">
     <div class="col-12">
         <div class="product-details-tab mt-60">
             <ul role="tablist" class="mb-50 nav">

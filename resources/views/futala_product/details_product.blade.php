@@ -32,14 +32,10 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
                         <!-- product_big_images start -->
                         <div class="product_big_images-right">
                             <div class="portfolio-full-image tab-content">
-                                <div role="tabpanel" class="tab-pane active product-image-position" id="img-tab-5">
+                                <div role="tabpanel" class="tab-pane active product-image-position" id="img-tab-main">
                                     <a href="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/EBUNGA9119.jpg" class="img-poppu">
-                                        <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/{{ $dataProduct -> foto_utama }}" alt="#">
-                                    </a>
-                                </div>
-                                <div role="tabpanel" class="tab-pane product-image-position" id="img-tab-6">
-                                    <a href="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/EBUNGA9119.jpg" class="img-poppu">
-                                        <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/EBUNGA9119.jpg" alt="#">
+                                        <img id="divImgProduct" src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/{{ $dataProduct -> foto_utama }}" alt="Nanti ...">
+                                        <span id="divCapProduct">Main variant</span>
                                     </a>
                                 </div>
                             </div>
@@ -47,17 +43,21 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
                         <!-- product_big_images end -->
 
                         <!-- Start Small images -->
-                        <ul class="product_small_images-left vartical-product-active nav" role="tablist">
+                        <ul class="product_small_images-left vartical-product-active nav" role="tablist" style="padding-right:10px;">
                             <li role="presentation" class="pot-small-img active">
-                                <a href="#img-tab-5" role="tab" data-toggle="tab">
-                                    <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/EBUNGA9119.jpg" alt="#">
+                                <a href="{{ env('JSVOID') }}" style="text-align: center;" @click="changeVariantAtc('{{ $dataProduct -> kd_produk }}', 'main', '{{ $dataProduct -> nama_produk }}')">
+                                    <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/{{ $dataProduct -> foto_utama }}" alt="#!">
+                                    <small>Main variant</small>
                                 </a>
                             </li>
+                            @foreach($dataVariant as $variant)
                             <li role="presentation" class="pot-small-img">
-                                <a href="#img-tab-6" role="tab" data-toggle="tab">
-                                    <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/EBUNGA9119.jpg" alt="#">
+                                <a href="{{ env('JSVOID') }}" style="text-align: center;" @click="changeVariantAtc('{{ $variant -> kd_variant }}', 'variant', '{{ $variant -> nama_variant }}')">
+                                    <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/variant/{{ $variant -> kd_variant }}.jpg" alt="#!">
+                                    <small>{{ $variant -> nama_variant }}</small>
                                 </a>
                             </li>
+                            @endforeach
                         </ul>
                         <!-- End Small images -->
                     </div>
@@ -66,7 +66,7 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
             <div class="col-xl-6 col-lg-5 col-md-6">
                 <!-- product_details_info start -->
                 <div class="product_details_info">
-                    <h2>{{ $dataProduct -> nama_produk }}</h2>
+                    <h2>{{ $dataProduct -> nama_produk }} (<span id="capJudulProduct">Main variant</span>)</h2>
                     <!-- pro_rating start -->
                     <div class="pro_rating d-flex">
                         <ul class="product-rating d-flex">
@@ -77,24 +77,24 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
                             <li><span class="ion-android-star-outline"></span></li>
                         </ul>
                         <!-- <span class="rat_qun"> (Based on 0 Ratings) </span> -->
-                        <br/>
+                        <br />
                     </div>
-                    <small>This product have 922 view</small>
+                    <small>This product have 922 view  & 122 rating</small>
                     <hr />
                     <div class="form-group">
                         <label>Price</label>
                         <h5>Rp. {{ number_format($dataProduct -> harga) }}</h5>
                     </div>
-                    
+                    <input type="hidden" value="{{ $dataProduct -> kategori }}" id="txtKategoriHidden">
                     <!-- pro_dtl_prize end -->
                     <!-- pro_dtl_color start-->
-                    <hr/>
+                    <hr />
                     <div class="form-group">
                         <label>Choose Variant</label>
-                        <select class="form-control" style="width: 200px;">
+                        <select class="form-control" style="width: 200px;" id="txtVariant">
                             <option value="main">Main variant</option>
                             @foreach($dataVariant as $variant)
-                            <option value="main">{{ $variant -> nama_variant }}</option>
+                            <option value="{{ $variant -> kd_variant }}">{{ $variant -> nama_variant }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -129,6 +129,15 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
 
         @include('futala_product.desc_product')
 
+        @if($dataProduct -> kategori === 'BUNGA')
+            @include('futala_product.order_bunga')
+        @elseif($dataProduct -> kategori === 'PAPANBUNGA')
+            @include('futala_product.order_papanbunga')
+        @elseif($dataProduct -> kategori === 'PARCEL')
+            @include('futala_product.order_parcel')
+        @elseif($dataProduct -> kategori === 'CAKE')
+            @include('futala_product.order_cake')
+        @endif
 
     </div>
 </div>
