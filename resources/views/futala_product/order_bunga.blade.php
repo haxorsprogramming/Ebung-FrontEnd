@@ -135,7 +135,11 @@ $sessionUser = 'yes';
                             </div>
                             <div class="form-group">
                                 <label>Kecamatan</label>
-                                <input type="text" class="form-control">
+                                <select class="form-control">
+                                @foreach($dataAlamat['dataKecamatan'] as $kecamatan)
+                                    <option>{{ $kecamatan -> nama }}</option>
+                                @endforeach
+                                </select>
                             </div>
                         </div>
 

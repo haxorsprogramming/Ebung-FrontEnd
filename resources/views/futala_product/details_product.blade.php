@@ -60,6 +60,7 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
                             @endforeach
                         </ul>
                         <!-- End Small images -->
+                        
                     </div>
                 </div>
             </div>
@@ -79,7 +80,7 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
                         <!-- <span class="rat_qun"> (Based on 0 Ratings) </span> -->
                         <br />
                     </div>
-                    <small>This product have 922 view  & 122 rating</small>
+                    <small>This product have 922 view & 122 rating</small>
                     <hr />
                     <div class="form-group">
                         <label>Price</label>

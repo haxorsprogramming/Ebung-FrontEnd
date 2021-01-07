@@ -39,14 +39,14 @@ class HelperCtr extends Controller
 
     public function kirimPesanGuzzle(Request $request)
     {
-        $url = 'http://116.203.92.59/api/send_message';
+        $url = env('WOOWA_ENDPOINT');
         $noHp = "082272177022";
         $key = env('WOOWA_API');
         $message = $request -> pesan;
         $data = array("phone_no" => $noHp, "key" => $key, "message" => $message);
         $data_string = json_encode($data);
         $response = Http::withHeaders(['Content-Type' => 'application/json', 'Content-Length' => strlen($data_string)])->post($url, $data);
-        echo $response;
+        echo $response -> body();
     }
 
     public function teskirimwa(Request $request)

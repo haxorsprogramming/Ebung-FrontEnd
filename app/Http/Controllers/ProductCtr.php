@@ -209,7 +209,8 @@ class ProductCtr extends Controller
         $alamatEx = explode("-", $dataBranch -> alamat);
         $dataProvinsi = ProvinsiMdl::where('id_prov', $alamatEx[3]) -> first();
         $dataKabupaten = KabupatenMdl::where('id_kab', $alamatEx[2]) -> first();
-        $dataAlamat = ['namaProvinsi' => $dataProvinsi -> nama, 'namaKabupaten' => $dataKabupaten -> nama];
+        $dataKecamatan = KecamatanMdl::where('id_kab', $alamatEx[2]) -> get();
+        $dataAlamat = ['namaProvinsi' => $dataProvinsi -> nama, 'namaKabupaten' => $dataKabupaten -> nama, 'dataKecamatan' => $dataKecamatan];
         $kategoriProduct = KategoriMdl::all();
         $dr = ['kategori' => $kategoriProduct, 'page' => 'details_product', 'dataProduct' => $dataProduct, 'dataVariant' => $dataVariant, 'dataAlamat' => $dataAlamat];
         return view('futala_product.details_product', $dr);
