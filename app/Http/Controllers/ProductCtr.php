@@ -236,7 +236,9 @@ class ProductCtr extends Controller
 
     public function restmainproductdetails($idProduct)
     {
-        // Clear format
+        /**
+         * Clear format
+         */
         $capKdProduk = Str::replaceFirst('.jpg', '', $idProduct);
         $dataProduct = ProdukMdl::where('kd_produk', $capKdProduk) -> first();
         $dr = ['dataProduct' => $dataProduct];

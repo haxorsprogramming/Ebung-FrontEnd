@@ -29,6 +29,7 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
             <div class="col-xl-6 col-lg-7 col-md-6">
                 <div class="product-details-images">
                     <div class="product_details_container">
+                    
                         <!-- product_big_images start -->
                         <div class="product_big_images-right">
                             <div class="portfolio-full-image tab-content">

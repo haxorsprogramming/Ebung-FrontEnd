@@ -167,7 +167,7 @@
                                 <table class="table" style="font-size: 14px;">
                                     <tr>
                                         <td>Item</td>
-                                        <td></td>
+                                        <td>@{{ item }}</td>
                                     </tr>
                                     <tr>
                                         <td>Sender Name</td>

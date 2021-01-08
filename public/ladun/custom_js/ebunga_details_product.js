@@ -43,7 +43,8 @@ var divOrder = new Vue({
     el : '#divOrder',
     data : {
         capchaState : false,
-        btnBawah : '1'
+        btnBawah : '1',
+        item : 'Nama Itam'
     },
     methods : {
         loginSilentAtc : function()
