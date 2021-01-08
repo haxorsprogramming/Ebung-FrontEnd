@@ -3,6 +3,7 @@
  */
 var rToSilentLogout = server + "logout/silent";
 var rToLogin = server + 'login/proses';
+var rToGetProduct = server;
 
 /**
  * Vue object
@@ -19,6 +20,7 @@ var divProduct = new Vue({
             pesanUmumApp('info', 'Reminder', 'Pastikan coverage area produk sesuai dengan jangkauan alamat pengiriman produk ini ..');
             $('#divDescProduct').hide();
             $('#divOrder').show();
+            let mixKategori = kategori + "/kodepos";
         },
         changeVariantAtc(kd, type, nama)
         {

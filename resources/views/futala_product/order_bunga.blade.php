@@ -1,10 +1,10 @@
 @php
-$userLogin = session('userLogin');
-if($userLogin === null){
-$sessionUser = 'no';
-}else{
-$sessionUser = 'yes';
-}
+    $userLogin = session('userLogin');
+    if($userLogin === null){
+        $sessionUser = 'no';
+    }else{
+        $sessionUser = 'yes';
+    }
 @endphp
 <div class="row" id="divOrder">
     <hr />
@@ -137,9 +137,9 @@ $sessionUser = 'yes';
                                 <label>Kecamatan</label>
                                 <select class="form-control" id="txtKecamatan" onchange="kecamatanPilih()">
                                     <option value="nonen">--- Choose Provinsi ---</option>
-                                @foreach($dataAlamat['dataKecamatan'] as $kecamatan)
+                                    @foreach($dataAlamat['dataKecamatan'] as $kecamatan)
                                     <option value="{{ $kecamatan -> id_kec }}">{{ $kecamatan -> nama }}</option>
-                                @endforeach
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
@@ -161,25 +161,37 @@ $sessionUser = 'yes';
 
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <div class="billing-details-wrap">
-                            <h4 class="shoping-checkboxt-title">Order Preview</h4>
-                            <table class="table">
-                            <tr>
-                                <td>Item</td><td></td>
-                            </tr>
-                            <tr>
-                                <td>Sender Name</td><td></td>
-                            </tr>
-                            <tr>
-                                <td>Receiver Name</td><td></td>
-                            </tr>
-                            <tr>
-                                <td>Receiver Email</td><td></td>
-                            </tr>
-                            <tr>
-                                <td>Receiver Phone Number</td><td></td>
-                            </tr>
-                            </table>
+                        <div class="billing-details-wrap" style="background-color: #dfe6e9;padding:10px;border-radius:10px;">
+                            <h5 class="shoping-checkboxt-title">Order Preview</h5>
+                            <div>
+                                <table class="table" style="font-size: 14px;">
+                                    <tr>
+                                        <td>Item</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sender Name</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Receiver Name</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Receiver Email</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Receiver Phone Number</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Delivery Date</td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </div>
+
                         </div>
                     </div>
                 </div>

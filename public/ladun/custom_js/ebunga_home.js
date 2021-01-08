@@ -1,3 +1,6 @@
+/**
+ * Vue object
+ */
 var divProduct = new Vue({
     el : '#divProduct',
     data : {
@@ -18,3 +21,7 @@ var divProduct = new Vue({
  * Inisialisasi
  */
 $('#divKategoriPapanBunga').hide();
+
+/**
+ * Function
+ */

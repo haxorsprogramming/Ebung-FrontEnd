@@ -5,10 +5,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2 class="breadcrumb-title">Bunga</h2>
+                <h2 class="breadcrumb-title" style="color: #ecf0f1;">Bunga</h2>
                 <!-- breadcrumb-list start -->
                 <ul class="breadcrumb-list">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
                     <li class="breadcrumb-item active">Shop left sidebar</li>
                 </ul>
                 <!-- breadcrumb-list end -->
@@ -17,7 +17,6 @@
     </div>
 </div>
 <!-- breadcrumb-area end -->
-
 
 <!-- main-content-wrap start -->
 <div class="main-content-wrap shop-page section-ptb">
@@ -35,6 +34,32 @@
                             <input type="text" class="form-control" id="txtCoverageArea" placeholder="" aria-label="">
                             <div class="input-group-append">
                                 <a href="#!" class="btn btn-lg btn-icon" style="border:1px #d2dae2 solid;"><i class="ion-ios-search"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Kelurahan</label>
+                                <select class="form-control">
+                                    <option>List provinsi</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                        <div class="form-group">
+                                <label>Kelurahan</label>
+                                <select class="form-control">
+                                    <option>List provinsi</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                        <div class="form-group">
+                                <label>Kelurahan</label>
+                                <select class="form-control">
+                                    <option>List provinsi</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -76,7 +101,7 @@
                                 <div class="shop-product-wrap">
                                     <div class="row">
                                         @foreach($dataProduct as $product)
-                                        @php 
+                                        @php
                                             $kdBranch = $product -> id_branch;
                                             $dataBranch = DB::table('tbl_branch_seller') -> where('kd_branch', $kdBranch) -> first();
                                             $alamat = $dataBranch -> alamat;
@@ -108,7 +133,7 @@
                                             </div>
                                             <!-- single-product-wrap end -->
                                         </div>
-                                        @endforeach                                     
+                                        @endforeach
 
                                     </div>
                                 </div>
@@ -139,7 +164,7 @@
                                                     <span class="old-price">$56</span>
                                                     <span class="new-price">$45</span>
                                                 </div>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis pariatur ipsa sint consectetur velit maiores sit voluptates aut tempora totam, consequatur iste quod suscipit natus. Explicabo facere neque adipisci odio.</p>
+                                                <p><?=$product -> deks_produk; ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -155,7 +180,8 @@
                         <div class="row">
                             <div class="col-lg-12 col-md-12">
                                 <ul class="pagination-box">
-                                    <li><a class="Previous" href="#"><i class="ion-chevron-left"></i></a>
+                                    <li>
+                                        <a class="Previous" href="#"><i class="ion-chevron-left"></i></a>
                                     </li>
                                     <li class="active"><a href="#">1</a></li>
                                     <li><a href="#">2</a></li>
