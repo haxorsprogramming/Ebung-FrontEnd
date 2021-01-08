@@ -15,21 +15,24 @@ var divProduct = new Vue({
     methods : {
         buyNowAtc : function()
         {
-            let kategori = document.querySelector('#txtKategoriHidden').value;
-            pesanUmumApp('info', 'Reminder', 'Pastikan coverage area produk sesuai dengan jangkauan alamat pengiriman produk ini ..');
+            // pesanUmumApp('info', 'Reminder', 'Pastikan coverage area produk sesuai dengan jangkauan alamat pengiriman produk ini ..');
             $('#divDescProduct').hide();
             $('#divOrder').show();
-            let mixKategori = kategori + "/kodepos";
+            $('#divProduct').hide();
+            $('#divModelPayment').show();
+            window.scrollTo({top:800, left:0, behavior : 'smooth'});
         },
         changeVariantAtc(kd, type, nama)
         {
             if(type === 'main'){
                 document.querySelector('#divImgProduct').setAttribute("src", this.urlBucket+"main-product/"+kd+".jpg");
+                divOrder.imgPrevPath = this.urlBucket+"main-product/"+kd+".jpg";
                 document.querySelector('#divCapProduct').innerHTML = "Main variant";
                 document.querySelector('#capJudulProduct').innerHTML = "Main variant";
                 document.querySelector('#txtVariant').value = "main";
             }else{
                 document.querySelector('#divImgProduct').setAttribute("src", this.urlBucket+"variant/"+kd+".jpg");
+                divOrder.imgPrevPath = this.urlBucket+"variant/"+kd+".jpg";
                 document.querySelector('#divCapProduct').innerHTML = nama;
                 document.querySelector('#capJudulProduct').innerHTML = nama;
                 document.querySelector('#txtVariant').value = kd;
@@ -55,7 +58,9 @@ var divOrder = new Vue({
         kabupaten : '',
         kecamatan : '',
         kelurahan : '',
-        detailAddress : ''
+        detailAddress : '',
+        imgPrevState : '0',
+        imgPrevPath : 'https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/EBUNGA1705.jpg'
     },
     methods : {
         loginSilentAtc : function()
@@ -126,6 +131,10 @@ function paymentStep()
             divOrder.btnBawah = "3";
             $('#divStepDetailsOrder').attr("style", "");
             $('#divStepDetailsOrder').addClass('wizard-step-active');
+            $('#divProduct').hide();
+            $('#divModelPayment').show();
+            window.scrollTo({top:400, left:0, behavior : 'smooth'});
+            divOrder.imgPrevState = '1';
         }
     });
 }

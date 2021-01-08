@@ -218,6 +218,10 @@ $sessionUser = 'yes';
                         <div class="billing-details-wrap" style="background-color: #dfe6e9;padding:10px;border-radius:10px;">
                             <h5 class="shoping-checkboxt-title">Order Preview</h5>
                             <div>
+                            <div style="text-align: center;">
+                                <img v-if="imgPrevState === '0'" style="display: none;">
+                                <img v-else-if="imgPrevState === '1'" v-bind:src="imgPrevPath" style="border-radius: 12px;">
+                            </div>
                                 <table class="table" style="font-size: 14px;">
                                     <tr>
                                         <td>Item</td>

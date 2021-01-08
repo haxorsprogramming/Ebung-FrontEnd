@@ -5,7 +5,7 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
 @include('futala_layout.header')
 
 <!-- breadcrumb-area start -->
-<div class="breadcrumb-area section-ptb">
+<div class="breadcrumb-area section-ptb" style="display: none;">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -21,7 +21,9 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
     </div>
 </div>
 <!-- breadcrumb-area end -->
-
+<div class="container">
+<hr/>
+</div>
 <!-- main-content-wrap start -->
 <div class="main-content-wrap section-ptb product-details-page">
     <div class="container">
@@ -29,7 +31,7 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
             <div class="col-xl-6 col-lg-7 col-md-6">
                 <div class="product-details-images">
                     <div class="product_details_container">
-                    
+
                         <!-- product_big_images start -->
                         <div class="product_big_images-right">
                             <div class="portfolio-full-image tab-content">
@@ -109,7 +111,7 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
                     <!-- product-quantity-action end -->
                     <!-- pro_dtl_btn start -->
                     <ul class="pro_dtl_btn">
-                        <li><a href="#!" id="btnBuyNow" class="buy_now_btn" @click="buyNowAtc">BUY NOW</a></li>
+                        <li><a href="{{ env('JSVOID') }}" id="btnBuyNow" class="buy_now_btn" @click="buyNowAtc">BUY NOW</a></li>
                         <li><a href="#!"><i class="ion-heart"></i></a></li>
                     </ul>
                     <!-- pro_dtl_btn end -->
@@ -127,6 +129,10 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
                 </div>
                 <!-- product_details_info end -->
             </div>
+        </div>
+
+        <div id="divModelPayment" style="text-align: center;display:none;margin-top:-50px;">
+            <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/payment-model.png" style="width: 400px;">
         </div>
 
         @include('futala_product.desc_product')
