@@ -1,10 +1,10 @@
 @php
-    $userLogin = session('userLogin');
-    if($userLogin === null){
-        $sessionUser = 'no';
-    }else{
-        $sessionUser = 'yes';
-    }
+$userLogin = session('userLogin');
+if($userLogin === null){
+$sessionUser = 'no';
+}else{
+$sessionUser = 'yes';
+}
 @endphp
 <div class="row" id="divOrder">
     <hr />
@@ -63,7 +63,7 @@
                                 Order Placed
                             </div>
                         </div>
-                        <div class="wizard-step wizard-step">
+                        <div class="wizard-step wizard-step" style="background-color: #fab1a0;" id="divStepDetailsOrder">
                             <div class="wizard-step-icon">
                                 <i class="fas fa-money-check"></i>
                             </div>
@@ -99,27 +99,27 @@
                             <h4 class="shoping-checkboxt-title">Order Details</h4>
                             <div class="form-group">
                                 <label>Sender Name</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" v-model="senderName">
                             </div>
                             <div class="form-group">
                                 <label>Receiver Name</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" v-model="receiverName">
                             </div>
                             <div class="form-group">
                                 <label>Receiver Email</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" v-model="receiverEmail">
                             </div>
                             <div class="form-group">
                                 <label>Receiver Phone Number</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" v-model="receiverPhoneNumber">
                             </div>
                             <div class="form-group">
                                 <label>Caption on greeting card</label>
-                                <textarea class="form-control" style="resize: none;"></textarea>
+                                <textarea class="form-control" style="resize: none;" v-model="captionOnGreetingCard"></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Delivery Date</label>
-                                <input type="date" class="form-control" min="<?php echo date("Y-m-d"); ?>">
+                                <input type="date" class="form-control" id="txtDeliveryDate" onchange="deliveryDateSet()" min="<?php echo date("Y-m-d"); ?>">
                             </div>
                         </div>
 
@@ -127,35 +127,89 @@
                             <h4 class="shoping-checkboxt-title">Shipment Address</h4>
                             <div class="form-group">
                                 <label>Provinsi</label>
-                                <input type="text" class="form-control" disabled value="{{ $dataAlamat['namaProvinsi'] }}">
+                                <input type="text" class="form-control" disabled value="{{ $dataAlamat['namaProvinsi'] }}" id="txtProvinsi">
                             </div>
                             <div class="form-group">
                                 <label>Kabupaten</label>
-                                <input type="text" class="form-control" disabled value="{{ $dataAlamat['namaKabupaten'] }}">
+                                <input type="text" class="form-control" disabled value="{{ $dataAlamat['namaKabupaten'] }}" id="txtKabupaten">
                             </div>
                             <div class="form-group">
                                 <label>Kecamatan</label>
                                 <select class="form-control" id="txtKecamatan" onchange="kecamatanPilih()">
-                                    <option value="nonen">--- Choose Provinsi ---</option>
+                                    <option value="none">--- Choose Provinsi ---</option>
                                     @foreach($dataAlamat['dataKecamatan'] as $kecamatan)
-                                    <option value="{{ $kecamatan -> id_kec }}">{{ $kecamatan -> nama }}</option>
+                                    <option value="{{ $kecamatan -> id_kec }}|{{ $kecamatan -> nama }}">{{ $kecamatan -> nama }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Kelurahan</label>
-                                <select class="form-control">
-
+                                <select class="form-control" id="txtKelurahan" onchange="kelurahanPilih()">
+                                    <option value="none">--- Choose kelurahan ---</option>
+                                    <option v-for="kel in dataKelurahan" v-bind:value="kel.nama">@{{ kel.nama }}</option>
                                 </select>
+                            </div>
+                            <div>
+                                <label>Address Details</label>
+                                <textarea class="form-control" v-model="detailAddress" style="resize: none;" placeholder="etc : roads, district name, building, dll"></textarea>
                             </div>
                         </div>
 
-                        <div class="col">
+                        <div class="billing-details-wrap" id="divPayment" style="display: none;">
+                            <h4 class="shoping-checkboxt-title">Payment</h4>
+                            <h5>Choose payment method</h5>
+                            <div class="col-9 col-lg-9 col-m-9">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="chekout-box">
+                                    </td>
+                                    <td>
+                                        <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/bank-transfer.png" style="width: 100px;">
+                                        Bank Transfer
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="chekout-box" disabled>
+                                    </td>
+                                    <td>
+                                        <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/visa-logo.jpg" style="width: 100px;">
+                                        Credit/Debit Card
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="chekout-box" disabled>
+                                    </td>
+                                    <td>
+                                        <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/paypal-logo.jpg" style="width: 100px;">
+                                        Paypal
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="chekout-box" disabled>
+                                    </td>
+                                    <td>
+                                        <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/bank-transfer.png" style="width: 100px;">
+                                        E-Wallet
+                                    </td>
+                                </tr>
+                            </table>
+                            </div>
+                        </div>
+
+                        <div class="col" style="margin-top:15px;">
                             <a v-if="btnBawah === '1'" href="{{ env('JSVOID') }}" id="btnNextDelivery" class="btn btn-primary btn-icon icon-left" onclick="nextStep()" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
                                 <i class="ion-arrow-right-b"></i> Next (Delivery Address)
                             </a>
-                            <a v-else-if="btnBawah === '2'" href="{{ env('JSVOID') }}" class="btn btn-primary btn-icon icon-left" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
+                            <a v-else-if="btnBawah === '2'" href="{{ env('JSVOID') }}" id="btnNextPayment" onclick="paymentStep()" class="btn btn-primary btn-icon icon-left" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
                                 <i class="ion-arrow-right-b"></i> Next (Payment)
+                            </a>
+
+                            <a v-else-if="btnBawah === '3'" href="{{ env('JSVOID') }}" class="btn btn-primary btn-icon icon-left" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
+                                <i class="ion-card"></i> Process to payment
                             </a>
                         </div>
 
@@ -171,23 +225,37 @@
                                     </tr>
                                     <tr>
                                         <td>Sender Name</td>
-                                        <td></td>
+                                        <td>@{{ senderName }}</td>
                                     </tr>
                                     <tr>
                                         <td>Receiver Name</td>
-                                        <td></td>
+                                        <td>@{{ receiverName }}</td>
                                     </tr>
                                     <tr>
                                         <td>Receiver Email</td>
-                                        <td></td>
+                                        <td>@{{ receiverEmail }}</td>
                                     </tr>
                                     <tr>
                                         <td>Receiver Phone Number</td>
-                                        <td></td>
+                                        <td>@{{ receiverPhoneNumber }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Caption</td>
+                                        <td><b>"<i>@{{ captionOnGreetingCard }}</i>"</b></td>
                                     </tr>
                                     <tr>
                                         <td>Delivery Date</td>
-                                        <td></td>
+                                        <td>@{{ deliveryDate }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Delivery Address</td>
+                                        <td>
+                                            <i>@{{ detailAddress }}</i><br/>
+                                            @{{ kelurahan }}<br/>
+                                            @{{ kecamatan }}<br/>
+                                            @{{ kabupaten }} <br/>
+                                            @{{ provinsi }}
+                                        </td>
                                     </tr>
                                 </table>
                             </div>

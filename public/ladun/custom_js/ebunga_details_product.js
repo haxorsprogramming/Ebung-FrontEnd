@@ -3,8 +3,7 @@
  */
 var rToSilentLogout = server + "logout/silent";
 var rToLogin = server + 'login/proses';
-var rToGetProduct = server;
-
+var rToGetKelurahan = server + "get/location/kelurahan/";
 /**
  * Vue object
  */
@@ -44,7 +43,19 @@ var divOrder = new Vue({
     data : {
         capchaState : false,
         btnBawah : '1',
-        item : 'Nama Itam'
+        item : 'Nama Itam',
+        senderName : '-',
+        receiverName : '-',
+        receiverEmail : '-',
+        receiverPhoneNumber : '-',
+        captionOnGreetingCard : '-',
+        deliveryDate : '',
+        dataKelurahan : [],
+        provinsi : '',
+        kabupaten : '',
+        kecamatan : '',
+        kelurahan : '',
+        detailAddress : ''
     },
     methods : {
         loginSilentAtc : function()
@@ -97,10 +108,63 @@ $('#divOrder').hide();
 /**
  * Function
  */
+function paymentStep()
+{
+    Swal.fire({
+        title: "Confirm?",
+        text: "Apakah data pemesanan sudah benar? Lanjutkan ke pembayaran ... ?",
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Ya",
+        cancelButtonText: "Tidak",
+    }).then((result) => {
+        if (result.value) {
+            $('#divShipmentAddress').hide();
+            $('#divPayment').show();
+            divOrder.btnBawah = "3";
+            $('#divStepDetailsOrder').attr("style", "");
+            $('#divStepDetailsOrder').addClass('wizard-step-active');
+        }
+    });
+}
+
+ function deliveryDateSet()
+{
+    let deliveryDate = document.querySelector('#txtDeliveryDate').value;
+    divOrder.deliveryDate = deliveryDate;
+}
+
+function kelurahanPilih()
+{
+    let kelurahan = document.querySelector('#txtKelurahan').value;
+    divOrder.kelurahan = kelurahan;
+}
+
 function kecamatanPilih()
 {
-    let idKec = document.querySelector('#txtKecamatan').value;
-    console.log(idKec);
+    clearKelurahan();
+    let kecData = document.querySelector('#txtKecamatan').value;
+    let kecDataEx = kecData.split("|");
+    divOrder.kecamatan = kecDataEx[1];
+    axios.get(rToGetKelurahan+kecDataEx[0]).then(function(res){
+        let dr = res.data;
+        let kelurahan = dr.kelurahan;
+        kelurahan.forEach(renderKelurahan);
+        function renderKelurahan(item, index){
+            divOrder.dataKelurahan.push({nama : kelurahan[index].nama});
+        }
+    });
+}
+
+function clearKelurahan()
+{
+    let jlhItem = divOrder.dataKelurahan.length;
+    let i;
+    for(i = 0; i < jlhItem; i++){
+        divOrder.dataKelurahan.splice(0,1);
+    }
 }
 
 function nextStep()
@@ -108,6 +172,12 @@ function nextStep()
     $('#divOrderDetails').hide()
     $('#divShipmentAddress').show();
     divOrder.btnBawah = '2';
+    let provinsi = document.querySelector('#txtProvinsi').value;
+    let kabupaten = document.querySelector('#txtKabupaten').value;
+    divOrder.kabupaten = kabupaten;
+    divOrder.provinsi = provinsi;
+    // $('#divStepDetailsOrder').removeClass('wizard-step');
+    $('#divStepDetailsOrder').addClass('stepOrderPrepare');
 }
 
 function recaptcha_callback()
