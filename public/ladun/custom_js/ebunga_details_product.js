@@ -25,14 +25,14 @@ var divProduct = new Vue({
         changeVariantAtc(kd, type, nama)
         {
             if(type === 'main'){
-                document.querySelector('#divImgProduct').setAttribute("src", this.urlBucket+"main-product/"+kd+".jpg");
-                divOrder.imgPrevPath = this.urlBucket+"main-product/"+kd+".jpg";
+                document.querySelector('#divImgProduct').setAttribute("src", this.urlBucket + "main-product/" + kd + ".jpg");
+                divOrder.imgPrevPath = this.urlBucket + "main-product/" + kd + ".jpg";
                 document.querySelector('#divCapProduct').innerHTML = "Main variant";
                 document.querySelector('#capJudulProduct').innerHTML = "Main variant";
                 document.querySelector('#txtVariant').value = "main";
             }else{
-                document.querySelector('#divImgProduct').setAttribute("src", this.urlBucket+"variant/"+kd+".jpg");
-                divOrder.imgPrevPath = this.urlBucket+"variant/"+kd+".jpg";
+                document.querySelector('#divImgProduct').setAttribute("src", this.urlBucket + "variant/" + kd + ".jpg");
+                divOrder.imgPrevPath = this.urlBucket + "variant/" + kd + ".jpg";
                 document.querySelector('#divCapProduct').innerHTML = nama;
                 document.querySelector('#capJudulProduct').innerHTML = nama;
                 document.querySelector('#txtVariant').value = kd;
@@ -113,6 +113,34 @@ $('#divOrder').hide();
 /**
  * Function
  */
+function paymentProcess()
+{
+    var checkBox = document.querySelector("#chkBankTransfer");
+    if(checkBox.checked === true){
+        Swal.fire({
+            title: "Process ?",
+            text: "Process payment ... ? kamu akan menerima informasi cara pembayaran melalui email ..",
+            icon: "info",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Ya",
+            cancelButtonText: "Tidak",
+        }).then((result) => {
+            if(result.value) {
+                
+            }
+        });
+    }else{
+        pesanUmumApp('warning', 'Choose payment', 'Please choose payment method ...');
+    }
+}
+
+function checkBankTransfer()
+{
+    console.log("Bank");    
+}
+
 function paymentStep()
 {
     Swal.fire({

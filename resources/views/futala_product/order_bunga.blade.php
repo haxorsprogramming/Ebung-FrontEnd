@@ -156,13 +156,17 @@ $sessionUser = 'yes';
                         </div>
 
                         <div class="billing-details-wrap" id="divPayment" style="display: none;">
+
                             <h4 class="shoping-checkboxt-title">Payment</h4>
+                            <h5>Total Payment</h5>
+                            <h3>Rp. 100.000</h3>
+                            <br/>
                             <h5>Choose payment method</h5>
                             <div class="col-9 col-lg-9 col-m-9">
                             <table class="table">
                                 <tr>
                                     <td>
-                                        <input type="checkbox" id="chekout-box">
+                                        <input type="checkbox" id="chkBankTransfer">
                                     </td>
                                     <td>
                                         <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/bank-transfer.png" style="width: 100px;">
@@ -171,7 +175,7 @@ $sessionUser = 'yes';
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="checkbox" id="chekout-box" disabled>
+                                        <input type="checkbox" disabled>
                                     </td>
                                     <td>
                                         <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/visa-logo.jpg" style="width: 100px;">
@@ -180,7 +184,7 @@ $sessionUser = 'yes';
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="checkbox" id="chekout-box" disabled>
+                                        <input type="checkbox" disabled>
                                     </td>
                                     <td>
                                         <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/paypal-logo.jpg" style="width: 100px;">
@@ -189,7 +193,7 @@ $sessionUser = 'yes';
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="checkbox" id="chekout-box" disabled>
+                                        <input type="checkbox" disabled>
                                     </td>
                                     <td>
                                         <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/bank-transfer.png" style="width: 100px;">
@@ -208,7 +212,7 @@ $sessionUser = 'yes';
                                 <i class="ion-arrow-right-b"></i> Next (Payment)
                             </a>
 
-                            <a v-else-if="btnBawah === '3'" href="{{ env('JSVOID') }}" class="btn btn-primary btn-icon icon-left" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
+                            <a v-else-if="btnBawah === '3'" href="{{ env('JSVOID') }}" id="btnProcessPayment" onclick="paymentProcess()" class="btn btn-primary btn-icon icon-left" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
                                 <i class="ion-card"></i> Process to payment
                             </a>
                         </div>

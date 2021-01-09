@@ -20,6 +20,7 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
         </div>
     </div>
 </div>
+
 <!-- breadcrumb-area end -->
 <div class="container">
 <hr/>
