@@ -13,7 +13,15 @@ class TblOrderProduk extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_order_produk', function (Blueprint $table) {
+            $table -> id();
+            $table -> char('kd_order', 50);
+            $table -> char('customer', 100);
+            $table -> timestamp('waktu', 0);
+            $table -> char('kd_product', 40);
+            $table -> char('qt', 100);
+            $table -> integer('total');
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class TblOrderProduk extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_order_produk');
     }
 }

@@ -65,7 +65,7 @@ Route::post('/order/save-temp', [OrderCtr::class, 'savetemporder']);
 /**
  * Order
  */
-Route::post('/order/submit-new-order', [OrderCtr::class, 'submineworder']);
+Route::post('/order/submit-new-order', [OrderCtr::class, 'submitneworder']);
 Route::get('/order/bank-account', [OrderCtr::class, 'bankaccount']);
 
 /**

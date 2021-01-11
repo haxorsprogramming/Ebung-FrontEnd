@@ -4,7 +4,7 @@
 var rToSilentLogout = server + "logout/silent";
 var rToLogin = server + 'login/proses';
 var rToGetKelurahan = server + "get/location/kelurahan/";
-var rToSubmitNewOrder = server + "order/save-temp";
+var rToSubmitNewOrder = server + "order/submit-new-order";
 var imgFigurePayment = "https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/figure/payment_instruction.jpg";
 /**
  * Vue object
@@ -148,8 +148,13 @@ function paymentProcess()
             cancelButtonText: "Tidak",
         }).then((result) => {
             if(result.value) {
-                $('#divPaymentMethod').hide();
-                $('#divPaymentInstruction').show();
+                let ds = {'nama':'ebunga'}
+                axios.post(rToSubmitNewOrder, ds).then(function(res){
+                    let dr = res.data;
+                    console.log(dr);
+                });
+                // $('#divPaymentMethod').hide();
+                // $('#divPaymentInstruction').show();
             }
         });
     }else{

@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 class OrderCtr extends Controller
 {
 
-    public function submineworder(Request $request)
+    public function submitneworder(Request $request)
     {
         $dr = ['status' => 'success'];
         return \Response::json($dr);
