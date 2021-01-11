@@ -71,7 +71,7 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
             <div class="col-xl-6 col-lg-5 col-md-6">
                 <!-- product_details_info start -->
                 <div class="product_details_info">
-                    <h2>{{ $dataProduct -> nama_produk }} (<span id="capJudulProduct">Main variant</span>)</h2>
+                    <h2>{{ $dataProduct -> nama_produk }} <br/>(<span id="capJudulProduct">Main variant</span>)</h2>
                     <!-- pro_rating start -->
                     <div class="pro_rating d-flex">
                         <ul class="product-rating d-flex">
@@ -141,11 +141,11 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
         @if($dataProduct -> kategori === 'BUNGA')
             @include('futala_product.order_bunga')
         @elseif($dataProduct -> kategori === 'PAPANBUNGA')
-            @include('futala_product.order_papanbunga')
+            @include('futala_product.order_bunga')
         @elseif($dataProduct -> kategori === 'PARCEL')
-            @include('futala_product.order_parcel')
+            @include('futala_product.order_bunga')
         @elseif($dataProduct -> kategori === 'CAKE')
-            @include('futala_product.order_cake')
+            @include('futala_product.order_bunga')
         @endif
 
     </div>

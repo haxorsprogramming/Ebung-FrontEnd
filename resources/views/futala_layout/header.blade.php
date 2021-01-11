@@ -22,6 +22,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('ladun/futala/') }}/css/vendor/bootstrap.min.css">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
     <!-- Icon Font CSS -->
     <link rel="stylesheet" href="{{ asset('ladun/futala/') }}/css/vendor/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -45,7 +48,7 @@
 
 </head>
 
-<body>
+<body style="font-family: 'Lato', sans-serif;">
 
     <div class="main-wrapper">
 

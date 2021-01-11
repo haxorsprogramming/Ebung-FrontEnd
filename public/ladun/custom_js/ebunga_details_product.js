@@ -127,6 +127,7 @@ function changeVariantSelectBox()
     let kd = exData[0];
     let type = exData[1];
     let nama = exData[2];
+    console.log(exData);
     divProduct.changeVariantAtc(kd, type, nama);
 }
 

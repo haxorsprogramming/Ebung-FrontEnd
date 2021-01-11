@@ -230,14 +230,20 @@ $sessionUser = 'yes';
                         <div class="billing-details-wrap" style="background-color: white;padding-top:25px;padding-left:20px;border-radius:10px;">
                             <h5 class="shoping-checkboxt-title">Order Preview</h5>
                             <div>
-                                <div style="text-align: center;">
-                                    <img id="imgPrevPath" style="border-radius: 12px;" src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/{{ $dataProduct -> foto_utama }}">
+                                <div class="summary">
+                                    <div class="summary-info">
+                                            <div style="text-align: center;">
+                                            <img id="imgPrevPath" style="border-radius: 5px;width:300px;" src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/{{ $dataProduct -> foto_utama }}">
+                                        </div>
+                                        <h4 id="capProdukPreview">{{ $dataProduct -> nama_produk }}</h4>
+                                        <div class="text-muted">Sold 3 items on 2 customers</div>
+                                        <div class="d-block mt-2">
+                                            <a href="#">View All</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <table class="table" style="font-size: 14px;">
-                                    <tr>
-                                        <td>Item</td>
-                                        <td id="capProdukPreview">{{ $dataProduct -> nama_produk }}</td>
-                                    </tr>
+                                
+                                <table class="table" style="font-size: 12px;font-weight:500;">
                                     <tr>
                                         <td>Sender Name</td>
                                         <td>@{{ senderName }}</td>

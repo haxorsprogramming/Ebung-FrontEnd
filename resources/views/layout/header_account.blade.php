@@ -14,7 +14,7 @@
     <link rel="shortcut icon" type="image/jpg" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/fav.png"/>
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/font-awesome/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('ladun/account_asset/css/vendor/bootstrap.min.css') }}">
     <!-- Icon Font CSS -->
