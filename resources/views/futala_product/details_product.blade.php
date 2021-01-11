@@ -107,7 +107,7 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
                     <!-- product-quantity-action start -->
                     <div class="form-group">
                         <label>Quantity :</label>
-                        <input type="number" value="1" class="form-control" style="width: 80px;">
+                        <input type="number" id="txtQt" value="1" class="form-control" style="width: 80px;">
                     </div>
                     <!-- product-quantity-action end -->
                     <!-- pro_dtl_btn start -->

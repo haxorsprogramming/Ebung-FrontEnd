@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TblSeller extends Migration
+class TblMember extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class TblSeller extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_seller', function (Blueprint $table) {
+        Schema::create('tbl_member', function (Blueprint $table) {
             $table -> id();
             $table -> char('username', 100);
             $table -> char('full_name', 100);
@@ -41,6 +41,6 @@ class TblSeller extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_seller');
+        Schema::dropIfExists('tbl_member');
     }
 }

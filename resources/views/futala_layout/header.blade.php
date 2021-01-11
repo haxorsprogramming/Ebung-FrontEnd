@@ -301,10 +301,10 @@
                                         Mon - Fri : 9am to 5pm
                                     </li>
                                     <li>
-                                        <a href="#">0123456789</a>
+                                        <a href="#!">0123456789</a>
                                     </li>
                                     <li>
-                                        <a href="#">hi@ebunga.co.id</a>
+                                        <a href="#!">{{ $userLogin }}</a>
                                     </li>
                                 </ul>
                             </div>

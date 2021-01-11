@@ -230,9 +230,27 @@ class DatabaseSeeder extends Seeder
             'active' => '1'
         ]);
         // seller 
-        DB::table('tbl_seller') -> insert([
+        DB::table('tbl_member') -> insert([
             'username' => 'ebunga-seller',
             'full_name' => 'Ebunga Sukses Makmur Seller',
+            'email' => 'admin@ebunga.co.id',
+            'phone' => '082272177022',
+            'country' => 'id',
+            'provinsi' => '12',
+            'kabupaten' => '1207',
+            'kecamatan' => '120726',
+            'kelurahan' => '1207262006',
+            'alamat' => 'Medan tembung, jln. padang no. 12',
+            'postal_code' => '-',
+            'ktp' => '-',
+            'npwp' => '-',
+            'siup' => '-',
+            'status' => '-',
+            'suspend' => 'n'
+        ]);
+        DB::table('tbl_member') -> insert([
+            'username' => 'ebunga-buyer',
+            'full_name' => 'Ebunga Sukses Makmur Buyer',
             'email' => 'admin@ebunga.co.id',
             'phone' => '082272177022',
             'country' => 'id',

@@ -37,6 +37,7 @@ var divProduct = new Vue({
                 document.querySelector('#capJudulProduct').innerHTML = "Main variant";
                 document.querySelector('#txtVariant').value = "main";
                 document.querySelector('#capProdukPreview').innerHTML = namaProdukAwal + "(Main variant)";
+                kdProdukAwal = kd;
             }else{
                 document.querySelector('#divImgProduct').setAttribute("src", this.urlBucket + "variant/" + kd + ".jpg");
                 document.querySelector('#imgPrevPath').setAttribute("src", this.urlBucket + "variant/" + kd + ".jpg");
@@ -45,6 +46,7 @@ var divProduct = new Vue({
                 document.querySelector('#capJudulProduct').innerHTML = nama;
                 document.querySelector('#txtVariant').value = kd;
                 document.querySelector('#capProdukPreview').innerHTML = namaProdukAwal + "("+ nama +")";
+                kdProdukAwal = kd;
             }
         }
     }
@@ -109,6 +111,39 @@ var divOrder = new Vue({
     } 
 });
 
+
+function addNewOrder()
+{
+    let sName = divOrder.senderName;
+    let rName = divOrder.receiverName;
+    let rEmail = divOrder.receiverEmail;
+    let rPhone = divOrder.receiverPhoneNumber;
+    let rCapGreetingCard = divOrder.captionOnGreetingCard;
+    let delivery = divOrder.deliveryDate;
+    let kelurahan = divOrder.kelurahan;
+    let kecamatan = divOrder.kecamatan;
+    let kabupaten = divOrder.kabupaten;
+    let provinsi = divOrder.provinsi;
+    let address = divOrder.detailAddress;
+    let qt = document.querySelector('#txtQt').value;
+
+    let ds = {'kdProduk' : kdProdukAwal, 
+    'senderName' : sName, 
+    'recName' : rName,
+    'recEmail' : rEmail,
+    'recPhone' : rPhone,
+    'capGreetingCard' : rCapGreetingCard,
+    'deliveryDate' : delivery,
+    'kelurahan' : kelurahan,
+    'kecamatan' : kecamatan,
+    'kabupaten' : kabupaten,
+    'provinsi' : provinsi,
+    'address' : address,
+    'qt' : qt
+    }
+    console.log(ds);
+}
+
 /**
  * Inisialisasi
  */
@@ -148,11 +183,13 @@ function paymentProcess()
             cancelButtonText: "Tidak",
         }).then((result) => {
             if(result.value) {
-                let ds = {'nama':'ebunga'}
-                axios.post(rToSubmitNewOrder, ds).then(function(res){
-                    let dr = res.data;
-                    console.log(dr);
-                });
+                addNewOrder();
+                
+                // axios.post(rToSubmitNewOrder, ds).then(function(res){
+                //     let dr = res.data;
+                //     console.log(dr);
+
+                // });
                 // $('#divPaymentMethod').hide();
                 // $('#divPaymentInstruction').show();
             }
