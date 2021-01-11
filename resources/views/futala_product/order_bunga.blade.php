@@ -310,7 +310,6 @@ $sessionUser = 'yes';
                 </div>
             </div>
 
-
             @if($sessionUser == 'yes')
             <div class="coupon-accordion" style="margin-top:20px;">
                 <h3>Have a coupon? <span class="coupon" id="showcoupon">Click here to enter your code</span></h3>

@@ -4,7 +4,7 @@
 var rToSilentLogout = server + "logout/silent";
 var rToLogin = server + 'login/proses';
 var rToGetKelurahan = server + "get/location/kelurahan/";
-var rToSubmitNewOrder = server + "order/submit-new-order";
+var rToSubmitNewOrder = server + "order/submit/new-order";
 var imgFigurePayment = "https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/figure/payment_instruction.jpg";
 /**
  * Vue object
@@ -141,7 +141,11 @@ function addNewOrder()
     'address' : address,
     'qt' : qt
     }
-    console.log(ds);
+    axios.post(rToSubmitNewOrder, ds).then(function(res){
+        let dr = res.data;
+        let urlDirect = dr.page;
+        window.location.assign(server+"order/"+urlDirect);
+    });
 }
 
 /**

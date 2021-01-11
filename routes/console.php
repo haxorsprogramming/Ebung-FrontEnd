@@ -3,7 +3,7 @@
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 use Maulana20\GojekID;
-
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | Console Routes
@@ -14,6 +14,13 @@ use Maulana20\GojekID;
 | simple approach to interacting with each command's IO methods.
 |
 */
+
+Artisan::command('ebunga_table_clear', function(){
+    $tableName = $this -> ask("Masukkan nama table : ");
+    DB::table($tableName) -> delete();
+    echo "\n";
+    echo $tableName." berhasil di clear";
+});
 
 Artisan::command('ebunga_test_upload', function(){
     $dr = ['status' => 'success'];

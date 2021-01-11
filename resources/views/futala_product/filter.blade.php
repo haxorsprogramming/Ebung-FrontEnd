@@ -40,7 +40,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <label>Kelurahan</label>
+                                <label>Provinsi</label>
                                 <select class="form-control">
                                     <option>List provinsi</option>
                                 </select>
@@ -48,17 +48,17 @@
                         </div>
                         <div class="col">
                         <div class="form-group">
-                                <label>Kelurahan</label>
+                                <label>Kabupaten</label>
                                 <select class="form-control">
-                                    <option>List provinsi</option>
+                                    <option>List kabupaten</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col">
                         <div class="form-group">
-                                <label>Kelurahan</label>
+                                <label>Kecamatan</label>
                                 <select class="form-control">
-                                    <option>List provinsi</option>
+                                    <option>List kecamatan</option>
                                 </select>
                             </div>
                         </div>
