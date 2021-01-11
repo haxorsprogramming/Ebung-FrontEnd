@@ -131,9 +131,10 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
                 <!-- product_details_info end -->
             </div>
         </div>
-
+        
         <div id="divModelPayment" style="text-align: center;display:none;margin-top:-50px;">
-            <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/payment-model.png" style="width: 400px;">
+            <h4>Product Order</h4>
+            <img id="figureStepOrder" src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/figure/order_step_1.png" style="width: 500px;">
         </div>
 
         @include('futala_product.desc_product')

@@ -164,7 +164,7 @@ $sessionUser = 'yes';
                                     <h4 style="color: #ecf0f1;">Rp. 200.000</h4>
                                     <div class="card-description">Total payment</div>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body" id="divPaymentMethod">
                                     <h5>Choose payment method</h5>
                                     <div class="col-9 col-lg-9 col-m-9">
                                         <table class="table">
@@ -207,7 +207,31 @@ $sessionUser = 'yes';
                                         </table>
                                     </div>
                                 </div>
-                                <br />
+
+                                <div class="card-body" id="divPaymentInstruction" style="display: none;">
+                                    <h5>Payment Instruction</h5>
+                                    <p class="section-lead">
+                                        Silahkan lakukan pembayaran sesuai ke rekening berikut : 
+                                        <table class="table">
+                                            <tr>
+                                                <td>Bank BRI</td>
+                                                <td>08912-2223-12331-0222</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bank Mandiri</td>
+                                                <td>223-22233-122</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bank BCA</td>
+                                                <td>33-2233-122</td>
+                                            </tr>
+                                        </table>
+                                        <p class="section-lead">Semua rekening atas nama "PT Ebunga Sukses Makmur".</p>
+                                        <div>
+
+                                        </div>
+                                    </p>
+                                </div>
 
                             </div>
                         </div>

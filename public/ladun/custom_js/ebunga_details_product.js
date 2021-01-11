@@ -4,6 +4,8 @@
 var rToSilentLogout = server + "logout/silent";
 var rToLogin = server + 'login/proses';
 var rToGetKelurahan = server + "get/location/kelurahan/";
+var rToSubmitNewOrder = server + "order/save-temp";
+var imgFigurePayment = "https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/figure/payment_instruction.jpg";
 /**
  * Vue object
  */
@@ -146,7 +148,8 @@ function paymentProcess()
             cancelButtonText: "Tidak",
         }).then((result) => {
             if(result.value) {
-                
+                $('#divPaymentMethod').hide();
+                $('#divPaymentInstruction').show();
             }
         });
     }else{
@@ -181,7 +184,7 @@ function paymentStep()
             $('#divProduct').hide();
             $('#divModelPayment').show();
             window.scrollTo({top:400, left:0, behavior : 'smooth'});
-            
+            document.querySelector('#figureStepOrder').setAttribute('src', imgFigurePayment);
         }
     });
 }

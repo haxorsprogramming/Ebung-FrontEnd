@@ -10,6 +10,13 @@ use Illuminate\Support\Str;
 
 class OrderCtr extends Controller
 {
+
+    public function submineworder(Request $request)
+    {
+        $dr = ['status' => 'success'];
+        return \Response::json($dr);
+    }
+
     public function savetemporder(Request $request)
     {
         // {'totalHarga':totalHarga, 'kdProduk':kdProdukGlobal, 'hargaAt':hargaAt, 'qt':qt}
