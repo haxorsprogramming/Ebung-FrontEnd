@@ -177,6 +177,7 @@ function paymentStep()
             divOrder.btnBawah = "3";
             $('#divStepDetailsOrder').attr("style", "");
             $('#divStepDetailsOrder').addClass('wizard-step-active');
+            document.querySelector('#divStepPayment').setAttribute('style', 'background-color: #fab1a0;');
             $('#divProduct').hide();
             $('#divModelPayment').show();
             window.scrollTo({top:400, left:0, behavior : 'smooth'});

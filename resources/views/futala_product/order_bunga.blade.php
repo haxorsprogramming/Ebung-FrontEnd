@@ -71,7 +71,7 @@ $sessionUser = 'yes';
                                 Details Order
                             </div>
                         </div>
-                        <div class="wizard-step wizard-step">
+                        <div class="wizard-step wizard-step" id="divStepPayment">
                             <div class="wizard-step-icon">
                                 <i class="fas fa-credit-card"></i>
                             </div>
