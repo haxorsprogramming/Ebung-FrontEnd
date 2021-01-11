@@ -63,6 +63,15 @@ Route::get('/rest/product/main/{id_product}', [ProductCtr::class, 'restmainprodu
 Route::post('/order/save-temp', [OrderCtr::class, 'savetemporder']);
 
 /**
+ * Order
+ */
+Route::get('/order/bank-accoun', [OrderCtr::class, 'bankaccount']);
+
+/**
+ * Payment
+ */
+
+/**
  * Customer (Buyer)
  */
 Route::group(['middleware' => 'CekUser'], function () {

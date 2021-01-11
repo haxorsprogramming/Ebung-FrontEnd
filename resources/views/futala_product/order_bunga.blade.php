@@ -95,7 +95,7 @@ $sessionUser = 'yes';
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
 
-                        <div class="billing-details-wrap" id="divOrderDetails">
+                        <div class="billing-details-wrap" id="divOrderDetails" style="padding-top:20px;">
                             <h4 class="shoping-checkboxt-title">Order Details</h4>
                             <div class="form-group">
                                 <label>Sender Name</label>

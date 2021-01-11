@@ -2,6 +2,7 @@
 
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
+use Maulana20\GojekID;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,19 @@ Artisan::command('ebunga_test_upload', function(){
     $dr = ['status' => 'success'];
     echo \Response::json($dr);
 });
+
+Artisan::command('gojek_start_apps', function(){
+    $gojek = new GojekID();
+    echo "Welcome to CLI - By Aditia Darma Nst";
+    echo "\n";
+    echo "=====================================";
+    $phone = $this -> ask ("Masukkan nomor handphone : ");
+    echo "sending otp ...";
+    $authLogin = $gojek -> loginPhone($phone) -> getLoginToken();
+    echo "Your auth login is : " . $authLogin;
+    echo "===================================";
+    $otp = $this -> ask("Masukkan OTP : ");
+    $authToken = $gojek -> loginAuth($authLogin, $otp) -> getAuthToken();
+    echo $authToken;
+});
+

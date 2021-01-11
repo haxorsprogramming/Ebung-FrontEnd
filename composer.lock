@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9fbc7a78fe70e5524db0f2557ef57d8a",
+    "content-hash": "f0509c7285d05b1fd8748c2ce67309e5",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -1582,6 +1582,52 @@
                 }
             ],
             "time": "2020-10-18T11:50:25+00:00"
+        },
+        {
+            "name": "maulana20/gojekid",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maulana20/gojekid.git",
+                "reference": "c9b7e88c0ca51f840cf01e9ab5075aba3806119f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maulana20/gojekid/zipball/c9b7e88c0ca51f840cf01e9ab5075aba3806119f",
+                "reference": "c9b7e88c0ca51f840cf01e9ab5075aba3806119f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helper/function.php"
+                ],
+                "psr-4": {
+                    "Maulana20\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maulana Saputra",
+                    "email": "maulanasaputra11091082@gmail.com"
+                }
+            ],
+            "description": "Un-Official Gojek API Wrapper",
+            "support": {
+                "issues": "https://github.com/maulana20/gojekid/issues",
+                "source": "https://github.com/maulana20/gojekid/tree/master"
+            },
+            "time": "2020-04-22T07:38:35+00:00"
         },
         {
             "name": "monolog/monolog",
