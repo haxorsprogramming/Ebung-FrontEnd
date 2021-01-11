@@ -156,51 +156,59 @@ $sessionUser = 'yes';
                         </div>
 
                         <div class="billing-details-wrap" id="divPayment" style="display: none;">
+                            <div class="card card-hero">
+                                <div class="card-header">
+                                    <div class="card-icon">
+                                        <i class="fas fa-cash-register"></i>
+                                    </div>
+                                    <h4 style="color: #ecf0f1;">Rp. 200.000</h4>
+                                    <div class="card-description">Total payment</div>
+                                </div>
+                                <div class="card-body">
+                                    <h5>Choose payment method</h5>
+                                    <div class="col-9 col-lg-9 col-m-9">
+                                        <table class="table">
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" id="chkBankTransfer">
+                                                </td>
+                                                <td>
+                                                    <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/bank-transfer.png" style="width: 100px;">
+                                                    Bank Transfer
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" disabled>
+                                                </td>
+                                                <td>
+                                                    <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/visa-logo.jpg" style="width: 100px;">
+                                                    Credit/Debit Card
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" disabled>
+                                                </td>
+                                                <td>
+                                                    <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/paypal-logo.jpg" style="width: 100px;">
+                                                    Paypal
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" disabled>
+                                                </td>
+                                                <td>
+                                                    <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/bank-transfer.png" style="width: 100px;">
+                                                    E-Wallet
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <br />
 
-                            <h4 class="shoping-checkboxt-title">Payment</h4>
-                            <h5>Total Payment</h5>
-                            <h3>Rp. 100.000</h3>
-                            <br/>
-                            <h5>Choose payment method</h5>
-                            <div class="col-9 col-lg-9 col-m-9">
-                            <table class="table">
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" id="chkBankTransfer">
-                                    </td>
-                                    <td>
-                                        <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/bank-transfer.png" style="width: 100px;">
-                                        Bank Transfer
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" disabled>
-                                    </td>
-                                    <td>
-                                        <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/visa-logo.jpg" style="width: 100px;">
-                                        Credit/Debit Card
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" disabled>
-                                    </td>
-                                    <td>
-                                        <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/paypal-logo.jpg" style="width: 100px;">
-                                        Paypal
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" disabled>
-                                    </td>
-                                    <td>
-                                        <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/bank-transfer.png" style="width: 100px;">
-                                        E-Wallet
-                                    </td>
-                                </tr>
-                            </table>
                             </div>
                         </div>
 
@@ -219,17 +227,16 @@ $sessionUser = 'yes';
 
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <div class="billing-details-wrap" style="background-color: #dfe6e9;padding:10px;border-radius:10px;">
+                        <div class="billing-details-wrap" style="background-color: white;padding-top:25px;padding-left:20px;border-radius:10px;">
                             <h5 class="shoping-checkboxt-title">Order Preview</h5>
                             <div>
-                            <div style="text-align: center;">
-                                <img v-if="imgPrevState === '0'" style="display: none;">
-                                <img v-else-if="imgPrevState === '1'" v-bind:src="imgPrevPath" style="border-radius: 12px;">
-                            </div>
+                                <div style="text-align: center;">
+                                    <img id="imgPrevPath" style="border-radius: 12px;" src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/{{ $dataProduct -> foto_utama }}">
+                                </div>
                                 <table class="table" style="font-size: 14px;">
                                     <tr>
                                         <td>Item</td>
-                                        <td>@{{ item }}</td>
+                                        <td id="capProdukPreview">{{ $dataProduct -> nama_produk }}</td>
                                     </tr>
                                     <tr>
                                         <td>Sender Name</td>
@@ -258,10 +265,10 @@ $sessionUser = 'yes';
                                     <tr>
                                         <td>Delivery Address</td>
                                         <td>
-                                            <i>@{{ detailAddress }}</i><br/>
-                                            @{{ kelurahan }}<br/>
-                                            @{{ kecamatan }}<br/>
-                                            @{{ kabupaten }} <br/>
+                                            <i>@{{ detailAddress }}</i><br />
+                                            @{{ kelurahan }}<br />
+                                            @{{ kecamatan }}<br />
+                                            @{{ kabupaten }} <br />
                                             @{{ provinsi }}
                                         </td>
                                     </tr>

@@ -96,10 +96,10 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
                     <hr />
                     <div class="form-group">
                         <label>Choose Variant</label>
-                        <select class="form-control" style="width: 200px;" id="txtVariant">
-                            <option value="main">Main variant</option>
+                        <select class="form-control" style="width: 200px;" id="txtVariant" onchange="changeVariantSelectBox()">
+                            <option value="{{ $dataProduct -> kd_produk }}|main|{{ $dataProduct -> nama_produk }}">Main variant</option>
                             @foreach($dataVariant as $variant)
-                            <option value="{{ $variant -> kd_variant }}">{{ $variant -> nama_variant }}</option>
+                            <option value="{{ $variant -> kd_variant }}|variant|{{ $variant -> nama_variant }}">{{ $variant -> nama_variant }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -154,5 +154,10 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
 
 <!-- render google capcha js  -->
 {!! NoCaptcha::renderJs() !!}
+
+<script>
+    var namaProdukAwal = "{{ $dataProduct -> nama_produk}}";
+    var kdProdukAwal = "{{ $dataProduct -> kd_produk }}";
+</script>
 
 @include('futala_layout.footer')

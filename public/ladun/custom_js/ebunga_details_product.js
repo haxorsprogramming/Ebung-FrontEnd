@@ -21,21 +21,28 @@ var divProduct = new Vue({
             $('#divProduct').hide();
             $('#divModelPayment').show();
             window.scrollTo({top:800, left:0, behavior : 'smooth'});
+            divOrder.item = namaProdukAwal;
+            divOrder.imgPrevState = '1';
         },
         changeVariantAtc(kd, type, nama)
         {
+
             if(type === 'main'){
                 document.querySelector('#divImgProduct').setAttribute("src", this.urlBucket + "main-product/" + kd + ".jpg");
+                document.querySelector('#imgPrevPath').setAttribute("src", this.urlBucket + "main-product/" + kd + ".jpg");
                 divOrder.imgPrevPath = this.urlBucket + "main-product/" + kd + ".jpg";
                 document.querySelector('#divCapProduct').innerHTML = "Main variant";
                 document.querySelector('#capJudulProduct').innerHTML = "Main variant";
                 document.querySelector('#txtVariant').value = "main";
+                document.querySelector('#capProdukPreview').innerHTML = namaProdukAwal + "(Main variant)";
             }else{
                 document.querySelector('#divImgProduct').setAttribute("src", this.urlBucket + "variant/" + kd + ".jpg");
+                document.querySelector('#imgPrevPath').setAttribute("src", this.urlBucket + "variant/" + kd + ".jpg");
                 divOrder.imgPrevPath = this.urlBucket + "variant/" + kd + ".jpg";
                 document.querySelector('#divCapProduct').innerHTML = nama;
                 document.querySelector('#capJudulProduct').innerHTML = nama;
                 document.querySelector('#txtVariant').value = kd;
+                document.querySelector('#capProdukPreview').innerHTML = namaProdukAwal + "("+ nama +")";
             }
         }
     }
@@ -46,7 +53,7 @@ var divOrder = new Vue({
     data : {
         capchaState : false,
         btnBawah : '1',
-        item : 'Nama Itam',
+        item : '-',
         senderName : '-',
         receiverName : '-',
         receiverEmail : '-',
@@ -113,6 +120,16 @@ $('#divOrder').hide();
 /**
  * Function
  */
+function changeVariantSelectBox()
+{
+    let dataSelectBox = document.querySelector('#txtVariant').value;
+    let exData = dataSelectBox.split("|");
+    let kd = exData[0];
+    let type = exData[1];
+    let nama = exData[2];
+    divProduct.changeVariantAtc(kd, type, nama);
+}
+
 function paymentProcess()
 {
     var checkBox = document.querySelector("#chkBankTransfer");
@@ -162,7 +179,7 @@ function paymentStep()
             $('#divProduct').hide();
             $('#divModelPayment').show();
             window.scrollTo({top:400, left:0, behavior : 'smooth'});
-            divOrder.imgPrevState = '1';
+            
         }
     });
 }
