@@ -27,9 +27,33 @@
                 </div>
                 <div class="card-body">
                     <div style="text-align: center;">
-                        <h5>Order Id : </h5>
+                        <h5>Order Id : {{ $orderId }}</h5>
                     </div>
-                    <div class="summary">
+                    <div class="table-content table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>Item</td>
+                                    <td>Details</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img id="imgPrevPath" style="border-radius: 5px;width:300px;" src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/{{ $dataProduk -> foto_utama }}">
+                                        <h4 id="capProdukPreview">{{ $dataProduk -> nama_produk }}</h4>
+                                    </td>
+                                    <td>
+                                        Qt : <br />
+                                        <strong>1 Pcs</strong><br />
+                                        Total : <br />
+                                        <strong>Rp. {{ number_format($dataOrder -> total) }}</strong><br />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="summary" style="display: none;">
                         <div class="summary-info">
                             <div style="text-align: center;margin-bottom:10px;">
                                 <img id="imgPrevPath" style="border-radius: 5px;width:300px;" src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/{{ $dataProduk -> foto_utama }}">
@@ -37,20 +61,35 @@
                             <h4 id="capProdukPreview">{{ $dataProduk -> nama_produk }}</h4>
                             <div class="text-muted">Sold 3 items on 2 customers</div>
                             <div class="d-block mt-2">
-                                <a href="#">View All</a>
+                                <a href="#!" style="font-size: 20px;">Rp. 200.000</a>
                             </div>
                         </div>
                     </div>
-
-                    <address>
-                        Receiver Details :<br>
-                        <strong>Ujang Maman<br>
-                            1234 Main<br>
-                            Apt. 4B<br>
-                            Bogor Barat, Indonesia
-                        </strong>
-                    </address>
-
+                    <div style="margin-top: 20px;text-align:center;" class="table-content table-responsive">
+                        Receiver Details :
+                        <table class="table" style="width: 100%;">
+                            <tr>
+                                <td>Sender Name</td>
+                                <td> {{ $orderDetails -> sender_name }} </td>
+                            </tr>
+                            <tr>
+                                <td>Receiver Name</td>
+                                <td> {{ $orderDetails -> receiver_name }} </td>
+                            </tr>
+                            <tr>
+                                <td>Receiver Email</td>
+                                <td> {{ $orderDetails -> receiver_email }} </td>
+                            </tr>
+                            <tr>
+                                <td>Receiver Phone</td>
+                                <td> {{ $orderDetails -> receiver_phone }} </td>
+                            </tr>
+                            <tr>
+                                <td>Delivery Date</td>
+                                <td> {{ $orderDetails -> delivery_date }} </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,7 +99,9 @@
                 <div class="card-header">
                     <h4>Order Status</h4>
                 </div>
+
                 <div class="card-body">
+
                     <div class="activities">
                         <div class="activity">
                             <div class="activity-icon bg-primary text-white shadow-primary">
@@ -82,7 +123,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p>Have commented on the task of "<a href="#">Responsive design</a>".</p>
+                                <p>Customer submit new orders</p>
                             </div>
                         </div>
                         <div class="activity">
@@ -108,8 +149,8 @@
                                 <p>Moved the task "<a href="#">Fix some features that are bugs in the master module</a>" from Progress to Finish.</p>
                             </div>
                         </div>
-                        
-                        
+
+
                     </div>
                 </div>
             </div>

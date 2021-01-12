@@ -66,8 +66,18 @@ class OrderCtr extends Controller
         $kdOrderFix = $kdOrderEx[0];
         $kategori = KategoriMdl::all();
         $dataOrder = OrderProdukMdl::where('kd_order', $kdOrderFix) -> first();
+        $orderId = "ORDER-19081".$dataOrder -> id;
         $dataProduk = ProdukMdl::where('kd_produk', $dataOrder -> kd_product) -> first();
-        $dr = ['kdOrder' => $kdOrderFix, 'kategori' => $kategori, 'page' => 'orderdetails', 'dataOrder' => $dataOrder, 'dataProduk' => $dataProduk];
+        $orderDetails = OrderProdukDetailsMdl::where('kd_order', $kdOrderFix) -> first();
+        $dr = [
+            'kdOrder' => $kdOrderFix, 
+            'kategori' => $kategori, 
+            'page' => 'orderdetails', 
+            'dataOrder' => $dataOrder, 
+            'dataProduk' => $dataProduk,
+            'orderDetails' => $orderDetails,
+            'orderId' => $orderId
+        ];
         return view('futala_order.orderdetails', $dr);
     }
 
