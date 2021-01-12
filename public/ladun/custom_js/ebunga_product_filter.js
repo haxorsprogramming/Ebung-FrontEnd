@@ -6,10 +6,11 @@
  * Inisialisasi
  */
 $("#txtDaerah").select2({
+    minimumInputLength: 3,
+    allowClear: true,
+    placeholder: 'masukkan nama kelurahan',
     ajax: { 
-        minimumInputLength: 3,
-        placeholder: 'masukkan nama daerah',
-        url: server + "get/location/provinsi",
+        url: server + "get/location/kelurahan",
         type: "post",
         dataType: 'json',
         delay: 250,
@@ -19,14 +20,17 @@ $("#txtDaerah").select2({
          };
         },
         processResults: function (response) {
+            console.log(response);
           return {
              results: response
           };
         },
         cache: true
        }
-      
-});
+}).on('select2:select', function (evt) {
+    let kelurahan = $("#txtDaerah").val();
+    console.log(kelurahan);
+ });;
 /**
  * Function
  */

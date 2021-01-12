@@ -136,7 +136,7 @@ $sessionUser = 'yes';
                             <div class="form-group">
                                 <label>Kecamatan</label>
                                 <select class="form-control" id="txtKecamatan" onchange="kecamatanPilih()">
-                                    <option value="none">--- Choose Provinsi ---</option>
+                                    <option value="none">--- Choose Kecamatan ---</option>
                                     @foreach($dataAlamat['dataKecamatan'] as $kecamatan)
                                     <option value="{{ $kecamatan -> id_kec }}|{{ $kecamatan -> nama }}">{{ $kecamatan -> nama }}</option>
                                     @endforeach
@@ -235,6 +235,11 @@ $sessionUser = 'yes';
 
                             </div>
                         </div>
+                        
+                        <div id="divLoading" style="text-align:center;display:none;">
+                            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_jryyrscd.json" mode="bounce" background="transparent" speed="1" style="width: 300px; height: 300px;margin:auto;" loop autoplay></lottie-player>
+                            <h5>Processing new order ... </h5>
+                        </div>
 
                         <div class="col" style="margin-top:15px;">
                             <a v-if="btnBawah === '1'" href="{{ env('JSVOID') }}" id="btnNextDelivery" class="btn btn-primary btn-icon icon-left" onclick="nextStep()" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
@@ -256,7 +261,7 @@ $sessionUser = 'yes';
                             <div>
                                 <div class="summary">
                                     <div class="summary-info">
-                                            <div style="text-align: center;">
+                                        <div style="text-align: center;">
                                             <img id="imgPrevPath" style="border-radius: 5px;width:300px;" src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/{{ $dataProduct -> foto_utama }}">
                                         </div>
                                         <h4 id="capProdukPreview">{{ $dataProduct -> nama_produk }}</h4>
@@ -266,7 +271,7 @@ $sessionUser = 'yes';
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <table class="table" style="font-size: 12px;font-weight:500;">
                                     <tr>
                                         <td>Sender Name</td>

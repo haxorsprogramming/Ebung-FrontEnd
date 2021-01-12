@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
  * Import model
  */
 use App\Models\ProdukMdl;
+use App\Models\KategoriMdl;
 
 class OrderCtr extends Controller
 {
@@ -64,7 +65,11 @@ class OrderCtr extends Controller
 
     public function orderstatusfront($kdOrder)
     {
-        return view('order');
+        $kdOrderEx = Str::of($kdOrder) -> explode('-');
+        $kdOrderFix = $kdOrderEx[0];
+        $kategori = KategoriMdl::all();
+        $dr = ['kdOrder' => $kdOrderFix, 'kategori' => $kategori, 'page' => 'orderdetails'];
+        return view('futala_order.orderdetails', $dr);
         echo $kdOrder;
     }
 

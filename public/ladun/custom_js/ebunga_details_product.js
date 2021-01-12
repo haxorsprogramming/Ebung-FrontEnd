@@ -141,11 +141,17 @@ function addNewOrder()
     'address' : address,
     'qt' : qt
     }
-    axios.post(rToSubmitNewOrder, ds).then(function(res){
-        let dr = res.data;
-        let urlDirect = dr.page;
-        window.location.assign(server+"order/"+urlDirect);
-    });
+    divOrder.btnBawah = '4';
+    $('#divPayment').hide();
+    $('#divLoading').show();
+    setTimeout(function(){
+        axios.post(rToSubmitNewOrder, ds).then(function(res){
+            let dr = res.data;
+            let urlDirect = dr.page;
+            window.location.assign(server+"order/"+urlDirect);
+        });
+    }, 3500);
+    
 }
 
 /**

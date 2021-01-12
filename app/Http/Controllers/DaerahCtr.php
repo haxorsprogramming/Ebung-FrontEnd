@@ -53,6 +53,18 @@ class DaerahCtr extends Controller
         echo json_encode($data);
     }
 
+    public function getKelurahanPost(Request $request)
+    {
+        $slug = $request -> searchTerm;
+        $kelurahanData = KelurahanMdl::where('nama', 'like', '%'.$slug.'%') -> get();
+        $data = array();
+        foreach($kelurahanData as $kelurahan)
+        {
+            $data[] = array("id" => $kelurahan['id_kel'], "text" => $kelurahan['nama']);
+        }
+        echo json_encode($data);
+    }
+
     public function getKabupaten($id_provinsi)
     {
         $kabupaten = KabupatenMdl::where('id_prov', $id_provinsi) -> get();

@@ -152,5 +152,6 @@ Route::get('/get/location/kelurahan/{id_kecamatan}', [DaerahCtr::class, 'getKelu
 Route::get('/get/sub-kategori/{id_kategori}', [HelperCtr::class, 'getsubkategori']);
 
 Route::post('/get/location/provinsi', [DaerahCtr::class, 'getProvinsiPost']);
+Route::post('/get/location/kelurahan', [DaerahCtr::class, 'getKelurahanPost']);
 
 Route::post('/tes-s3-cloudkilat', [HelperCtr::class, 'tesuploads3']);
