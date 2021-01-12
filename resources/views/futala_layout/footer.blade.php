@@ -101,10 +101,11 @@
 
     
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
     <!-- Modernizer JS -->
     <script src="{{ asset('ladun/futala/') }}/js/vendor/modernizr-3.6.0.min.js"></script>
     <!-- jQuery JS -->
-    <script src="{{ asset('ladun/futala/') }}/js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="{{ asset('ladun/futala/') }}/js/vendor/popper.min.js"></script>
     <script src="{{ asset('ladun/futala/') }}/js/vendor/bootstrap.min.js"></script>
@@ -121,6 +122,7 @@
     <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/axios/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/lottie/lottie-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <!-- Main JS -->
     <script>
         const server = "{{ url('/') }}/";

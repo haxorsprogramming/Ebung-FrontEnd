@@ -22,7 +22,13 @@ class HelperCtr extends Controller
 
     function getsubkategori($idKategori)
     {
+        /**
+         * Get data sub kategori
+         */
         $dataSubKategori = SubKategoriMdl::where('kd_kategori', $idKategori)->get();
+        /**
+         * Respon data
+         */
         $dr = ['dataSubKategori' => $dataSubKategori];
         return \Response::json($dr);
     }
@@ -43,7 +49,7 @@ class HelperCtr extends Controller
         $message = $request -> pesan;
         $data = array("phone_no" => $noHp, "key" => $key, "message" => $message);
         $data_string = json_encode($data);
-        $response = Http::withHeaders(['Content-Type' => 'application/json', 'Content-Length' => strlen($data_string)])->post($url, $data);
+        $response = Http::withHeaders(['Content-Type' => 'application/json', 'Content-Length' => strlen($data_string)]) -> post($url, $data);
         echo $response -> body();
     }
 

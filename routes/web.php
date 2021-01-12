@@ -150,4 +150,7 @@ Route::get('/get/location/kabupaten/{id_provinsi}', [DaerahCtr::class, 'getKabup
 Route::get('/get/location/kecamatan/{id_kabupaten}', [DaerahCtr::class, 'getKecamatan']);
 Route::get('/get/location/kelurahan/{id_kecamatan}', [DaerahCtr::class, 'getKelurahan']);
 Route::get('/get/sub-kategori/{id_kategori}', [HelperCtr::class, 'getsubkategori']);
+
+Route::post('/get/location/provinsi', [DaerahCtr::class, 'getProvinsiPost']);
+
 Route::post('/tes-s3-cloudkilat', [HelperCtr::class, 'tesuploads3']);

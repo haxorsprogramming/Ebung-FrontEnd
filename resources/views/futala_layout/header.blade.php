@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="{{ asset('ladun/futala/') }}/css/plugins/jqueryui.min.css">
     <link rel="stylesheet" href="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/css-lib/stisla/style.css">
     <link rel="stylesheet" href="https://demo.getstisla.com/assets/css/components.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
     <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from avobe) -->
     <!--
     <script src="{{ asset('ladun/futala/') }}/js/vendor/vendor.min.js"></script>

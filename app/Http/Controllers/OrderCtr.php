@@ -64,6 +64,7 @@ class OrderCtr extends Controller
 
     public function orderstatusfront($kdOrder)
     {
+        return view('order');
         echo $kdOrder;
     }
 

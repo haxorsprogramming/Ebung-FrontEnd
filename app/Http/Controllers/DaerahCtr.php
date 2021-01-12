@@ -42,6 +42,17 @@ class DaerahCtr extends Controller
         return \Response::json($dr);
     }
 
+    public function getProvinsiPost(Request $request)
+    {
+        $slug = $request -> searchTerm;
+        $provinsi = ProvinsiMdl::where('nama', 'like', '%'.$slug.'%') -> get();
+        $data = array();
+        foreach($provinsi as $provinsi){
+            $data[] = array("id" => $provinsi['id_prov'], "text" => $provinsi['nama']);
+        }
+        echo json_encode($data);
+    }
+
     public function getKabupaten($id_provinsi)
     {
         $kabupaten = KabupatenMdl::where('id_prov', $id_provinsi) -> get();

@@ -31,7 +31,8 @@
                     <div class="form-group">
                         <label>Untuk memudahkan pencarian, masukkan daerah tujuan pengiriman</label>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" id="txtCoverageArea" placeholder="" aria-label="">
+                        <select class="form-control" id="txtDaerah">
+                        </select>
                             <div class="input-group-append">
                                 <a href="#!" class="btn btn-lg btn-icon" style="border:1px #d2dae2 solid;"><i class="ion-ios-search"></i></a>
                             </div>

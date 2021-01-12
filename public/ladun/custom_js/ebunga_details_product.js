@@ -104,7 +104,7 @@ var divOrder = new Vue({
         },
         silentLogout : function()
         {
-            axios.get(rToSilentLogout).then(function(res){
+            axios.get(rToSilentLogout).then(function(){
                 window.location.reload();
             });
         }
