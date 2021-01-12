@@ -5,7 +5,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="widget-footer mt-20">
                                 <div class="footer-logo">
-                                    <a href="index.html"><img src="{{ asset('ladun/futala/') }}/images/logo/logo.png" alt=""></a>
+                                    <a href="index.html"><img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/ebunga-logo-small.png" alt=""></a>
                                 </div>
                                 <p>long established fact that a reader will be distracted by the readable content by the readable content established fact that</p>
                                 <div class="newsletter-footer">

@@ -12,17 +12,14 @@ use Illuminate\Support\Str;
  */
 use App\Models\ProdukMdl;
 use App\Models\KategoriMdl;
+use App\Models\OrderProdukDetailsMdl;
+use App\Models\OrderProdukMdl;
 
 class OrderCtr extends Controller
 {
 
     public function submitneworder(Request $request)
     {
-        // {'kdProduk' : kdProdukAwal, 'senderName' : sName, 'recName' : rName,
-        //     'recEmail' : rEmail, 'recPhone' : rPhone, 'capGreetingCard' : rCapGreetingCard,
-        //     'deliveryDate' : delivery, 'kelurahan' : kelurahan, 'kecamatan' : kecamatan,
-        //     'kabupaten' : kabupaten, 'provinsi' : provinsi, 'address' : address, 'qt' : qt
-        //     }
         $kdOrder = Str::random(40);
         $userLogin = $request -> session() -> get('userLogin');
         $kdProduk = $request -> kdProduk;
@@ -68,9 +65,10 @@ class OrderCtr extends Controller
         $kdOrderEx = Str::of($kdOrder) -> explode('-');
         $kdOrderFix = $kdOrderEx[0];
         $kategori = KategoriMdl::all();
-        $dr = ['kdOrder' => $kdOrderFix, 'kategori' => $kategori, 'page' => 'orderdetails'];
+        $dataOrder = OrderProdukMdl::where('kd_order', $kdOrderFix) -> first();
+        $dataProduk = ProdukMdl::where('kd_produk', $dataOrder -> kd_product) -> first();
+        $dr = ['kdOrder' => $kdOrderFix, 'kategori' => $kategori, 'page' => 'orderdetails', 'dataOrder' => $dataOrder, 'dataProduk' => $dataProduk];
         return view('futala_order.orderdetails', $dr);
-        echo $kdOrder;
     }
 
     public function savetemporder(Request $request)
@@ -79,7 +77,6 @@ class OrderCtr extends Controller
         $kdSession = Str::random(40);
         $totalHarga = $request -> totalHarga;
         $kdProduk = $request -> kdProduk;
-        $hargaAt = $request -> hargaAt;
         $qt = $request -> qt;
         DB::table('tbl_temp_order') -> insert([
             'kd_temp' => $kdSession,
