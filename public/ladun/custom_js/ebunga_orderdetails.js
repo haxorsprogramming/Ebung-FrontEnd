@@ -1,0 +1,7 @@
+/**
+ * Vue object
+ */
+
+/**
+ * Inisialisasi
+ */

@@ -23,7 +23,7 @@ class OrderCtr extends Controller
         $kdOrder = Str::random(40);
         $userLogin = $request -> session() -> get('userLogin');
         $kdProduk = $request -> kdProduk;
-        //cari total harga 
+        // cari total harga 
         $dataProduk = ProdukMdl::where('kd_produk', $kdProduk) -> first();
         $qt = $request -> qt;
         $total = $dataProduk -> harga * $qt;
