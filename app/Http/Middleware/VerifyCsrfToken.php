@@ -20,6 +20,7 @@ class VerifyCsrfToken extends Middleware
         '/account/seller/branch/apply-new-branch',
         '/tes-kirim-wa',
         '/get/location/provinsi',
-        '/get/location/kelurahan'
+        '/get/location/kelurahan',
+        '/tes-email-notifikasi-pembelian-baru'
     ];
 }

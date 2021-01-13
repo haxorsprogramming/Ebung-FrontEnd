@@ -3,19 +3,19 @@
 /**
  * Import namespace * lib
  */
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
 /**
- * Import model
+ * Import model, mail & other
  */
 use App\Models\SubKategoriMdl;
+use App\Mail\NotifikasiOrderOperator;
 
 class HelperCtr extends Controller
 {
@@ -53,32 +53,10 @@ class HelperCtr extends Controller
         echo $response -> body();
     }
 
-    public function teskirimwa(Request $request)
+    public function newordernotif()
     {
-        $url = 'http://116.203.92.59/api/send_message';
-        $noHp = "082272177022";
-        $key = env('WOOWA_API');
-        $message = $request -> pesan;
-        $data = array("phone_no" => $noHp, "key" => $key, "message" => $message);
-        $data_string = json_encode($data);
-
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_VERBOSE, 0);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 360);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt(
-            $ch,
-            CURLOPT_HTTPHEADER,
-            array(
-                'Content-Type: application/json',
-                'Content-Length: ' . strlen($data_string)
-            )
-        );
-        curl_exec($ch);
+        Mail::to('alditha.forum@gmail.com') -> send(new NotifikasiOrderOperator());
+        // return view('layout_email.notif_new_order');
+        echo "berhasil kirim email";
     }
 }
