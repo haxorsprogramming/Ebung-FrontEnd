@@ -132,7 +132,7 @@ Route::post('/product/check-area-slug-only', [ProductCtr::class, 'checkslugonly'
  */
 Route::get('/tes-kirim-email', [PageCtr::class, 'teskirimemail']);
 
-Route::post('/tes-email-notifikasi-pembelian-baru', [HelperCtr::class,'newordernotif']);
+Route::get('/tes-email-notifikasi-pembelian-baru', [HelperCtr::class,'newordernotif']);
 /**
  * Tes kirim wa
  */

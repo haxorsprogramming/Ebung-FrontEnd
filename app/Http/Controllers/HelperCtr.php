@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Import namespace * lib
+ * Import namespace & lib
  */
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
@@ -36,7 +36,7 @@ class HelperCtr extends Controller
     public function tesuploads3(Request $request)
     {
         $file = $request -> file('avatar');
-        $filename = $request -> nama_file . '.' . $file->getClientOriginalExtension();
+        $filename = $request -> nama_file . '.' . $file -> getClientOriginalExtension();
         Storage::disk('s3') -> put('slider/' . $filename, file_get_contents($file));
         echo "berhasil upload";
     }
@@ -55,8 +55,9 @@ class HelperCtr extends Controller
 
     public function newordernotif()
     {
-        Mail::to('alditha.forum@gmail.com') -> send(new NotifikasiOrderOperator());
-        // return view('layout_email.notif_new_order');
-        echo "berhasil kirim email";
+        $kdOrder = "";
+        // Mail::to('alditha.forum@gmail.com') -> send(new NotifikasiOrderOperator());
+        return view('layout_email.notif_new_order');
+        // echo "berhasil kirim email";
     }
 }

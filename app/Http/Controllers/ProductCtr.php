@@ -44,16 +44,22 @@ class ProductCtr extends Controller
                 $dataSubKategori = SubKategoriMdl::where('slug', $categorySlug) -> first();
                 $kategoriProduct = KategoriMdl::all();
                 $kdSubKategori = $dataSubKategori -> kd_sub_kategori;
-                // get data product with kd_sub_kategory
+                /**
+                 * get data produk with sub kategory
+                 */
                 $dataProduct = ProdukMdl::where('sub_kategori', $kdSubKategori) -> get();
                 // $dr = ['page' => 'Kategory Details', 'categorySlug' => $categorySlug, 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
                 $dr = ['kategori' => $kategoriProduct, 'page' => 'product_filter', 'dataProduct' => $dataProduct];
                 return view('futala_product.filter', $dr);
             }else{
-                // get caption area 
+                /**
+                 * Get slug area 
+                 */ 
                 $slugClearToNormal = str_replace("-", " ", $areaSlug);
                 $slugToCaps = Str::title($slugClearToNormal);
-                // get kd kel 
+                /**
+                 * Get kd kelurahan
+                 * */ 
                 $dataKel = KelurahanMdl::where('nama', $slugToCaps) -> first();
                 $idKel = $dataKel -> id_kel;
                 // with area

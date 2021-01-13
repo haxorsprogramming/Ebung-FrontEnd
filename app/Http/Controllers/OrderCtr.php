@@ -20,10 +20,21 @@ class OrderCtr extends Controller
 
     public function submitneworder(Request $request)
     {
+        /**
+         * create order number
+         */
         $kdOrder = Str::random(40);
+        /**
+         * get session user
+         */
         $userLogin = $request -> session() -> get('userLogin');
+        /**
+         * get post data
+         */
         $kdProduk = $request -> kdProduk;
-        // cari total harga 
+        /**
+         * Get data produk
+         */
         $dataProduk = ProdukMdl::where('kd_produk', $kdProduk) -> first();
         $qt = $request -> qt;
         $total = $dataProduk -> harga * $qt;

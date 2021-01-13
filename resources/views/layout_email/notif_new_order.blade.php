@@ -33,7 +33,6 @@
 
         table {
             border-spacing: 0;
-            border-coll apse: collapse;
         }
 
         .ReadMsgBody {
@@ -217,14 +216,16 @@
                                             <tr>
                                                 <td height="35" align="center" valign="top" style="font-size:35px; line-height:35px;">&nbsp;</td>
                                             </tr>
+
                                         </table>
                                     </td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
+
                 </table>
-                <div>
+                <div style="font-family:'Open Sans', Verdana, Arial;">
                     <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/man_customer.png" width="600px;">
                 </div>
                 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -241,8 +242,14 @@
                                                 <td align="center" valign="top">
                                                     <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                                                         <tr>
+                                                            <td align="center" style="font-family:'Open Sans', Verdana, Arial;color:white;" colspan="3">
+                                                                <h2>We have new order</h2>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
                                                             <td width="225" align="left" valign="top" class="two-left">
                                                                 <table width="100%" border="0" align="right" cellpadding="0" cellspacing="0" class="full">
+
                                                                     <tr>
                                                                         <td align="left" valign="top" style="font-family:'Open Sans', Verdana, Arial; font-size:14px; color:#FFF; font-weight:bold;" mc:edit="tm5-04">
                                                                             <multiline>Order By</multiline>
@@ -622,7 +629,7 @@
                                             </tr>
                                             <tr>
                                                 <td align="center" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:12px; color:#4b4b4c; line-height:30px; font-weight:normal;" mc:edit="tm5-30">
-                                                    <multiline>Ebunga Mail System &copy; <?=date('Y'); ?> Ebunga.co.id</multiline>
+                                                    <multiline>Ebunga Mail System &copy; <?= date('Y'); ?> Ebunga.co.id</multiline>
                                                 </td>
                                             </tr>
                                             <tr>
