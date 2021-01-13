@@ -29,6 +29,6 @@ class NotifikasiOrderOperator extends Mailable
      */
     public function build()
     {
-        return $this -> from('addydr@ebunga.co.id') -> view('layout_email.notif_new_order');
+        return $this -> from('addydr@ebunga.co.id') -> view('layout_email.notif_new_order') -> subject("New Order");
     }
 }

@@ -1,356 +1,661 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Ebunga Mail System</title>
 
-    <head>
-        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <title>Ebunga Notification</title>
-        <style type="text/css">
-            div,
-            p,
-            a,
-            li,
-            td {
-                -webkit-text-size-adjust: none;
-            }
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,500,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700' rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Condiment" rel="stylesheet">
 
-            .ReadMsgBody {
-                width: 100%;
-                background-color: #cecece;
-            }
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            -webkit-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            background: #f0f3f8;
+        }
 
-            .ExternalClass {
-                width: 100%;
-                background-color: #cecece;
-            }
+        span.preheader {
+            display: none;
+            font-size: 1px;
+        }
 
+        html {
+            width: 100%;
+        }
+
+        table {
+            border-spacing: 0;
+            border-coll apse: collapse;
+        }
+
+        .ReadMsgBody {
+            width: 100%;
+            background-color: #FFFFFF;
+        }
+
+        .ExternalClass {
+            width: 100%;
+            background-color: #FFFFFF;
+        }
+
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalCl ass font,
+        .ExternalClass td,
+        .ExternalClass div {
+            line-height: 100%;
+        }
+
+        a,
+        a:hover {
+            text-decoration: none;
+            color: #FFF;
+        }
+
+        img {
+            display: block !important;
+        }
+
+        table td {
+            border-collapse: collapse;
+        }
+
+
+        @media only screen and (max-width:640px) {
             body {
-                width: 100%;
-                height: 100%;
-                background-color: #cecece;
-                margin: 0;
-                padding: 0;
-                -webkit-font-smoothing: antialiased;
+                width: auto !important;
             }
 
-            html {
-                width: 100%;
+            table [class=main] {
+                width: 85% !important;
             }
 
-            img {
-                border: none;
+            table [class=full] {
+                width: 100% !important;
+                margin: 0px auto;
             }
 
-            table td[class=show] {
-                display: none !important;
+            table [class=two-left-inner] {
+                width: 90% !important;
+                margin: 0px auto;
             }
 
-            @media only screen and (max-width: 640px) {
-                body {
-                    width: auto !important;
-                }
-
-                table[class=full] {
-                    width: 100% !important;
-                }
-
-                table[class=devicewidth] {
-                    width: 100% !important;
-                    padding-left: 20px !important;
-                    padding-right: 20px !important;
-                }
-
-                table[class=inner] {
-                    width: 100% !important;
-                    text-align: center !important;
-                    clear: both;
-                }
-
-                table[class=inner-centerd] {
-                    width: 78% !important;
-                    text-align: center !important;
-                    clear: both;
-                    float: none !important;
-                    margin: 0 auto !important;
-                }
-
-                table td[class=hide],
-                .hide {
-                    display: none !important;
-                }
-
-                table td[class=show],
-                .show {
-                    display: block !important;
-                }
-
-                img[class=responsiveimg] {
-                    width: 100% !important;
-                    height: atuo !important;
-                    display: block !important;
-                }
-
-                table[class=btnalign] {
-                    float: left !important;
-                }
-
-                table[class=btnaligncenter] {
-                    float: none !important;
-                    margin: 0 auto !important;
-                }
-
-                table td[class=textalignleft] {
-                    text-align: left !important;
-                    padding: 0 !important;
-                }
-
-                table td[class=textaligcenter] {
-                    text-align: center !important;
-                }
-
-                table td[class=heightsmalldevices] {
-                    height: 45px !important;
-                }
-
-                table td[class=heightSDBottom] {
-                    height: 28px !important;
-                }
-
-                table[class=adjustblock] {
-                    width: 87% !important;
-                }
-
-                table[class=resizeblock] {
-                    width: 92% !important;
-                }
-
-                table td[class=smallfont] {
-                    font-size: 8px !important;
-                }
+            td[class="two-left"] {
+                display: block;
+                width: 100% !important;
             }
 
-            @media only screen and (max-width: 520px) {
-                table td[class=heading] {
-                    font-size: 24px !important;
-                }
-
-                table td[class=heading01] {
-                    font-size: 18px !important;
-                }
-
-                table td[class=heading02] {
-                    font-size: 27px !important;
-                }
-
-                table td[class=text01] {
-                    font-size: 22px !important;
-                }
-
-                table[class="full mhide"],
-                table tr[class=mhide] {
-                    display: none !important;
-                }
+            table [class=menu-icon] {
+                display: none;
             }
 
-            @media only screen and (max-width: 480px) {
-                table {
-                    border-collapse: collapse;
-                }
-
-                table[id=colaps-inhiret01],
-                table[id=colaps-inhiret02],
-                table[id=colaps-inhiret03],
-                table[id=colaps-inhiret04],
-                table[id=colaps-inhiret05],
-                table[id=colaps-inhiret06],
-                table[id=colaps-inhiret07],
-                table[id=colaps-inhiret08],
-                table[id=colaps-inhiret09] {
-                    border-collapse: inherit !important;
-                }
+            img[class="image-full"] {
+                width: 100% !important;
             }
 
-            @media only screen and (max-width: 320px) {}
-        </style>
-    </head>
+            table[class=menu-icon] {
+                display: none;
+            }
 
-<body style="background-color: #cecece;">
-    <!--[if mso]>
-<style type="text/css">
-body, table, td, a, span {font-family: Arial, Helvetica, sans-serif !important;}
-</style>
-<![endif]-->
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="full mhide">
+        }
+
+        @media only screen and (max-width:479px) {
+            body {
+                width: auto !important;
+            }
+
+            table [class=main] {
+                width: 93% !important;
+            }
+
+            table [class=full] {
+                width: 100% !important;
+                margin: 0px auto;
+            }
+
+            td[class="two-left"] {
+                display: block;
+                width: 100% !important;
+            }
+
+            table [class=two-left-inner] {
+                width: 90% !important;
+                margin: 0px auto;
+            }
+
+            table [class=menu-icon] {
+                display: none;
+            }
+
+            img[class="image-full"] {
+                width: 100% !important;
+            }
+
+            table[class=menu-icon] {
+                display: none;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body yahoo="fix" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+    <!--Main Table Start-->
+
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#f0f3f8">
         <tr>
-            <td>
-                <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" class="devicewidth">
+            <td align="center" valign="top">
+
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                     <tr>
-                        <td>
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="full">
+                        <td align="center" valign="top">
+                            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
                                 <tr>
-                                    <td height="64">&nbsp;</td>
+                                    <td height="60" align="center" valign="top" style="font-size:60px; line-height:60px;">&nbsp;</td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
                 </table>
-            </td>
-        </tr>
-    </table>
 
-    <!-- ----------------- Block 1 Start Here ------------------------- -->
-
-    <!-- ----------------- Header Start Here ------------------------- -->
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="full">
-        <tr>
-            <td align="center">
-                <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" class="devicewidth">
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                     <tr>
-                        <td>
-                            <table width="100%" bgcolor="#ffffff" border="0" cellspacing="0" cellpadding="0" align="center" class="full" style="background-color:#ffffff; border-radius:5px 5px 0 0;">
+                        <td align="center" valign="top">
+                            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
                                 <tr>
-                                    <td>
-                                        <table width="265" align="center" border="0" cellspacing="0" cellpadding="0" class="inner" style="text-align:center;">
+                                    <td align="center" valign="top" style="background:#ecf0f1;">
+                                        <table width="500" border="0" cellspacing="0" cellpadding="0" class="two-left-inner">
                                             <tr>
-                                                <td align="center" valign="middle"><a href="#">
-                                                        <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/ebunga-logo-small.png" alt="Ebunga Logo" style="width: 200px;"></a>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-    <!-- ----------------- Header End Here ------------------------- -->
-
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="full">
-        <tr>
-            <td align="center">
-                <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" class="devicewidth">
-                    <tr>
-                        <td>
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="full" style="background: #f8f8f8; text-align:center;  border-bottom:1px solid #dfdfdf;">
-                                <tr>
-                                    <td align="center">
-                                        <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/man_customer.png" style="width: 500px;" alt="Ebunga customer">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center">
-                                        <table width="85%" align="center" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:center; border-bottom:1px solid #dfdfdf;">
-                                            <tr>
-                                                <td height="27">&nbsp;</td>
+                                                <td height="35" align="center" valign="top" style="font-size:35px; line-height:35px;">&nbsp;</td>
                                             </tr>
                                             <tr>
-                                                <td class="heading" style="font:700 37px 'Montserrat', Helvetica, Arial, sans-serif; color:#f27b69; text-transform:uppercase;">Hi Admin</td>
-                                            </tr>
-                                            <tr>
-                                                <td height="28">&nbsp;</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="heading01" style="font:37px  Arial, Helvetica, sans-serif; color:#3a3a3a;">We have new orders</td>
-                                            </tr>
-                                            <tr>
-                                                <td height="41">&nbsp;</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-
-    <!-- ----------------- Footer Start Here ------------------------- -->
-
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="full">
-        <tr>
-            <td align="center">
-                <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" class="devicewidth">
-                    <tr>
-                        <td>
-                            <table width="100%" bgcolor="#b5637e" border="0" cellspacing="0" cellpadding="0" align="center" class="full" style="border-radius:0 0 5px 5px;">
-                                <tr>
-                                    <td height="18">&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <table width="340" border="0" cellspacing="0" cellpadding="0" align="right" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:center;" class="inner">
-                                            <tr>
-                                                <td width="21">&nbsp;</td>
-                                                <td>
-                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                                <td align="center" valign="top">
+                                                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                                                         <tr>
-                                                            <td>
-                                                                <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="full">
+                                                            <td width="50%" align="left" valign="top" class="two-left">
+                                                                <table border="0" align="left" cellpadding="0" cellspacing="0" class="full">
                                                                     <tr>
-                                                                        <td align="center" style="font:11px Helvetica,  Arial, sans-serif; color:#383838;"><a style="color:#ffffff; text-decoration:none;" href="#"> View in browser</a> </td>
-                                                                        <td style="color:#ffffff;"> | </td>
-                                                                        <td align="center" style="font:11px Helvetica,  Arial, sans-serif; color:#383838;"><a style="color:#ffffff; text-decoration:none;" href="#"> Unsubscribe</a> </td>
-                                                                        <td style="color:#ffffff;"> | </td>
-                                                                        <td align="center" style="font:11px Helvetica,  Arial, sans-serif; color:#383838;"><a style="color:#ffffff; text-decoration:none;" href="#"> Send to a friend</a> </td>
-                                                                        <td class="hide" width="40" align="right">&nbsp;</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td height="18">&nbsp;</td>
+                                                                        <td align="center" valign="top">
+                                                                            <a href="#">
+                                                                                <img mc:edit="tm5-01" editable="true" src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/ebunga-logo-small.png" width="110" alt="" />
+                                                                            </a>
+                                                                        </td>
                                                                     </tr>
                                                                 </table>
-
+                                                            </td>
+                                                            <td width="50%" align="right" valign="middle" class="two-left">
+                                                                <table border="0" align="right" cellpadding="0" cellspacing="0" class="full">
+                                                                    <tr>
+                                                                        <td align="center" valign="top">
+                                                                            <table width="190" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                                <tr>
+                                                                                    <td width="30" align="left" valign="middle"><img mc:edit="tm5-02" editable="true" src="images/print.png" width="16" height="16" alt="" /></td>
+                                                                                    <td width="160" align="left" valign="middle" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#FFF; line-height:20px; font-weight:bold;" mc:edit="tm5-03">
+                                                                                        <multiline style="color: #2c3e50;">Notification Order</multiline>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
                                                             </td>
                                                         </tr>
                                                     </table>
-
                                                 </td>
                                             </tr>
-                                        </table>
-                                        <table width="230" border="0" cellspacing="0" cellpadding="0" align="left" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; text-align:center;" class="inner">
                                             <tr>
-                                                <td width="21">&nbsp;</td>
-                                                <td>
-                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
-                                                        <tr>
-                                                            <td align="center" style="font:11px Helvetica,  Arial, sans-serif; color:#ffffff;">Ebunga &copy; 2020, All rights reserved
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td height="18">&nbsp;</td>
-                                                        </tr>
-                                                    </table>
-
-                                                </td>
-                                                <td width="21">&nbsp;</td>
+                                                <td height="35" align="center" valign="top" style="font-size:35px; line-height:35px;">&nbsp;</td>
                                             </tr>
                                         </table>
-
                                     </td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
-                    <tr class="mhide">
-                        <td height="100">&nbsp;</td>
+                </table>
+                <div>
+                    <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/man_customer.png" width="600px;">
+                </div>
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="center" valign="top">
+                            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
+                                <tr>
+                                    <td align="center" valign="top" style="background:#27ae60;">
+                                        <table width="500" border="0" cellspacing="0" cellpadding="0" class="two-left-inner">
+                                            <tr>
+                                                <td height="55" align="center" valign="top" style="font-size:55px; line-height:55px;">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" valign="top">
+                                                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td width="225" align="left" valign="top" class="two-left">
+                                                                <table width="100%" border="0" align="right" cellpadding="0" cellspacing="0" class="full">
+                                                                    <tr>
+                                                                        <td align="left" valign="top" style="font-family:'Open Sans', Verdana, Arial; font-size:14px; color:#FFF; font-weight:bold;" mc:edit="tm5-04">
+                                                                            <multiline>Order By</multiline>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td height="5" align="left" valign="top" style="font-size:5px; line-height:5px;">&nbsp;</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="left" valign="top" style="font-family:'Open Sans', Verdana, Arial; font-size:14px; color:#FFF; font-weight:normal; line-height:24px;" mc:edit="tm5-05">
+                                                                            <multiline>Aditia Darma Nst<br />
+                                                                                New Street, 2895 Line View,
+                                                                                Netherland.</multiline>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td width="150" align="left" valign="top" class="two-left">
+                                                                <table width="100%" border="0" align="right" cellpadding="0" cellspacing="0" class="full">
+
+                                                                    <tr>
+                                                                        <td height="15" align="left" valign="top" style="font-size:15px; line-height:15px;">&nbsp;</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="left" valign="top" style="font-family:'Open Sans', Verdana, Arial; font-size:14px; color:#FFF; font-weight:bold;" mc:edit="tm5-06">
+                                                                            <multiline>Invoice No</multiline>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td height="5" align="left" valign="top" style="font-size:5px; line-height:5px;">&nbsp;</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="left" valign="top" style="font-family:'Open Sans', Verdana, Arial; font-size:14px; color:#FFF; font-weight:normal; line-height:24px;" mc:edit="tm5-07">
+                                                                            <multiline>#215869876</multiline>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="left" valign="top" style="font-family:'Open Sans', Verdana, Arial; font-size:14px; color:#FFF; font-weight:normal; line-height:24px;">&nbsp;</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td width="125" align="left" valign="top" class="two-left">
+                                                                <table width="125" border="0" align="right" cellpadding="0" cellspacing="0" class="full">
+                                                                    <tr>
+                                                                        <td align="left" valign="top">
+                                                                            <table width="125" border="0" align="left" cellpadding="0" cellspacing="0">
+                                                                                <tr>
+                                                                                    <td height="15" align="left" valign="top" style="font-size:15px; line-height:15px;">&nbsp;</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td align="left" valign="top" style="font-family:'Open Sans', Verdana, Arial; font-size:12px; color:#FFF; font-weight:bold;" mc:edit="tm5-08">
+                                                                                        <multiline>Invoice Total</multiline>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td height="5" align="left" valign="top" style="font-size:5px; line-height:5px;">&nbsp;</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td align="left" valign="top" style="font-family:'Open Sans', Verdana, Arial; font-size:30px; color:#FFF; font-weight:bold;" mc:edit="tm5-09">
+                                                                                        <multiline>$240.00</multiline>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="55" align="center" valign="top" style="font-size:55px; line-height:55px;">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
                     </tr>
                 </table>
+
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="menu-icon">
+                    <tr>
+                        <td align="center" valign="top">
+                            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
+                                <tr>
+                                    <td align="center" valign="top" style="background:#FFF;">
+                                        <table width="500" border="0" cellspacing="0" cellpadding="0" class="two-left-inner">
+                                            <tr>
+                                                <td height="65" align="center" valign="top" style="font-size:65px; line-height:65px;">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td height="35" align="center" valign="top" style="font-size:35px; line-height:35px;">
+                                                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td width="155" align="left" valign="top" class="two-left" style="font-family:'Open Sans', sans-serif, Verdana; font-size:15px; color:#333; line-height:22px; font-weight:bold;" mc:edit="tm5-10">
+                                                                <multiline>Description</multiline>
+                                                            </td>
+                                                            <td width="115" align="left" valign="top" class="two-left" style="font-family:'Open Sans', sans-serif, Verdana; font-size:15px; color:#333; line-height:22px; font-weight:bold;" mc:edit="tm5-11">
+                                                                <multiline>Unit Price</multiline>
+                                                            </td>
+                                                            <td width="115" align="left" valign="top" class="two-left" style="font-family:'Open Sans', sans-serif, Verdana; font-size:15px; color:#333; line-height:22px; font-weight:bold;" mc:edit="tm5-12">
+                                                                <multiline>Quantity</multiline>
+                                                            </td>
+                                                            <td width="115" align="left" valign="top" class="two-left" style="font-family:'Open Sans', sans-serif, Verdana; font-size:15px; color:#333; line-height:22px; font-weight:bold;" mc:edit="tm5-13">
+                                                                <multiline>Amount</multiline>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="25" align="center" valign="top" style="font-size:25px; line-height:25px; border-bottom:#CCC solid 1px;">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="center" valign="top">
+                            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
+                                <tr>
+                                    <td align="center" valign="top" style="background:#FFF;">
+                                        <table width="500" border="0" cellspacing="0" cellpadding="0" class="two-left-inner">
+
+                                            <tr>
+                                                <td height="35" align="center" valign="top" style="font-size:35px; line-height:35px;">
+                                                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                                                        <tr>
+                                                            <td colspan="4" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#333; line-height:30px; font-weight:normal;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="155" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:12px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-14">
+                                                                <multiline><b style="font-size:15px;">Prodcut Item # 1</b> <br />Your Item Description</multiline>
+                                                            </td>
+                                                            <td width="115" align="left" valign="bottom" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-15">
+                                                                <multiline>$ 20.00</multiline>
+                                                            </td>
+                                                            <td width="115" align="left" valign="bottom" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-16">
+                                                                <multiline>2</multiline>
+                                                            </td>
+                                                            <td width="115" align="left" valign="bottom" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-17">
+                                                                <multiline>$ 40.00</multiline>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="35" align="center" valign="top" style="font-size:35px; line-height:35px; border-bottom:#CCC solid 1px;">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="center" valign="top">
+                            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
+                                <tr>
+                                    <td align="center" valign="top" style="background:#FFF;">
+                                        <table width="500" border="0" cellspacing="0" cellpadding="0" class="two-left-inner">
+
+                                            <tr>
+                                                <td colspan="4" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#333; line-height:30px; font-weight:normal;">&nbsp;</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td height="35" align="center" valign="top" style="font-size:35px; line-height:35px;">
+                                                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td width="155" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:12px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-18">
+                                                                <multiline><b style="font-size:15px;">Prodcut Item # 2</b> <br />
+                                                                    Your Item Description</multiline>
+                                                            </td>
+                                                            <td width="115" align="left" valign="bottom" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-19">
+                                                                <multiline>$ 30.00</multiline>
+                                                            </td>
+                                                            <td width="115" align="left" valign="bottom" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-20">
+                                                                <multiline>2</multiline>
+                                                            </td>
+                                                            <td width="115" align="left" valign="bottom" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-21">
+                                                                <multiline>$ 60.00</multiline>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="35" align="center" valign="top" style="font-size:35px; line-height:35px; border-bottom:#CCC solid 1px;">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="center" valign="top">
+                            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
+                                <tr>
+                                    <td align="center" valign="top" style="background:#FFF;">
+                                        <table width="500" border="0" cellspacing="0" cellpadding="0" class="two-left-inner">
+
+                                            <tr>
+                                                <td height="35" align="center" valign="top" style="font-size:35px; line-height:35px;">
+                                                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td colspan="4" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#333; line-height:30px; font-weight:normal;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="155" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:12px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-22">
+                                                                <multiline><b style="font-size:15px;">Prodcut Item # 3</b> <br />
+                                                                    Your Item Description</multiline>
+                                                            </td>
+                                                            <td width="115" align="left" valign="bottom" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-23">
+                                                                <multiline>$ 40.00</multiline>
+                                                            </td>
+                                                            <td width="115" align="left" valign="bottom" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-24">
+                                                                <multiline>2</multiline>
+                                                            </td>
+                                                            <td width="115" align="left" valign="bottom" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-25">
+                                                                <multiline>$ 80.00</multiline>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="80" align="center" valign="top" style="font-size:35px; line-height:35px;">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="center" valign="top">
+                            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
+                                <tr>
+                                    <td align="center" valign="top" style="background:#FFF;">
+                                        <table width="500" border="0" cellspacing="0" cellpadding="0" class="two-left-inner">
+
+                                            <tr>
+                                                <td height="35" align="center" valign="top" style="border-top:#CCC solid 1px;">
+                                                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#333; line-height:30px; font-weight:normal;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="right" valign="top" class="two-left">
+                                                                <table border="0" align="right" cellpadding="0" cellspacing="0" class="full">
+                                                                    <tr>
+                                                                        <td align="left" valign="top">
+                                                                            <table width="215" border="0" align="left" cellpadding="0" cellspacing="0">
+                                                                                <tr>
+                                                                                    <td width="100" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:26px; color:#71746f; line-height:22px; font-weight:bold;" class="two-left" mc:edit="tm5-26">
+                                                                                        <multiline>Tax</multiline>
+                                                                                    </td>
+                                                                                    <td width="115" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:20px; color:#71746f; line-height:22px; font-weight:bold;" class="two-left" mc:edit="tm5-27">
+                                                                                        <multiline>$ 60.00</multiline>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="35" align="center" valign="top" style="font-size:35px; line-height:35px;">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="center" valign="top">
+                            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
+                                <tr>
+                                    <td align="center" valign="top" style="background:#FFF;">
+                                        <table width="500" border="0" cellspacing="0" cellpadding="0" class="two-left-inner">
+
+                                            <tr>
+                                                <td height="35" align="center" valign="top" style="border-top:#CCC solid 1px;">
+                                                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td height="40" colspan="2" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#333; line-height:30px; font-weight:normal;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="right" valign="top">
+                                                                <table border="0" align="right" cellpadding="0" cellspacing="0" class="full">
+                                                                    <tr>
+                                                                        <td align="left" valign="top">
+                                                                            <table width="280" border="0" align="left" cellpadding="0" cellspacing="0">
+                                                                                <tr>
+                                                                                    <td width="165" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:26px; color:#333; line-height:22px; font-weight:bold;" class="two-left" mc:edit="tm5-28">
+                                                                                        <multiline>Grand Total</multiline>
+                                                                                    </td>
+                                                                                    <td width="115" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:20px; color:#333; line-height:22px; font-weight:bold;" class="two-left" mc:edit="tm5-29">
+                                                                                        <multiline>$ 240.00</multiline>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="55" align="center" valign="top" style="font-size:55px; line-height:55px;">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="center" valign="top">
+                            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
+                                <tr>
+                                    <td align="center" valign="top" style="background:#ecf0f1">
+                                        <table width="500" border="0" cellspacing="0" cellpadding="0" class="two-left-inner">
+                                            <tr>
+                                                <td height="10" align="center" valign="top" style="font-size:10px; line-height:10px;">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="center" valign="top">
+                            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
+                                <tr>
+                                    <td align="center" valign="top">
+                                        <table width="260" border="0" align="center" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td height="40" align="center" valign="top" style="font-size:40px; line-height:40px;">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:12px; color:#4b4b4c; line-height:30px; font-weight:normal;" mc:edit="tm5-30">
+                                                    <multiline>Ebunga Mail System &copy; <?=date('Y'); ?> Ebunga.co.id</multiline>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#4b4b4c; line-height:20px; font-weight:bold;" mc:edit="tm5-31">
+                                                    <multiline>Jln. Simpang Cemara, No. 56, Cemara Asri, Deli Serdang.</multiline>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="center" valign="top">
+                            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
+                                <tr>
+                                    <td height="55" align="center" valign="top" style="font-size:55px; line-height:55px;">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+
             </td>
         </tr>
     </table>
 
-    <!-- ----------------- Footer End Here ------------------------- -->
-
-    <!-- ----------------- Block 1 End Here ------------------------- -->
-
+    <!--Main Table End-->
 
 </body>
 

@@ -35,9 +35,9 @@ class HelperCtr extends Controller
 
     public function tesuploads3(Request $request)
     {
-        $file = $request->file('avatar');
-        $filename = $request->nama_file . '.' . $file->getClientOriginalExtension();
-        Storage::disk('s3')->put('slider/' . $filename, file_get_contents($file));
+        $file = $request -> file('avatar');
+        $filename = $request -> nama_file . '.' . $file->getClientOriginalExtension();
+        Storage::disk('s3') -> put('slider/' . $filename, file_get_contents($file));
         echo "berhasil upload";
     }
 
