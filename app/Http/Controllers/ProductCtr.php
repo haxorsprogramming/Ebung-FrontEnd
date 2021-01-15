@@ -261,7 +261,16 @@ class ProductCtr extends Controller
     public function restdefaultproduct(Request $request)
     {
         $kategori = ($request -> has('kategori') ? $request -> kategori : 'default');
-        $produk = ProdukMdl::where('sub_kategori', $kategori) -> get();
+        $kelurahan = ($request -> has('kelurahan') ? $request -> kelurahan : 'all');
+
+        if($kategori == 'default'){
+
+        }else{
+            $produk = ProdukMdl::where('sub_kategori', $kategori) -> get();
+        }
+
+        
+        
 
         $dataProduct = array();
 
@@ -277,6 +286,11 @@ class ProductCtr extends Controller
 
         $dr = ['dataProduct' => 'sukses', 'kategori' => $kategori, 'produk' => $dataProduct];
         return \Response::json($dr);
+    }
+
+    public function getproductbykelurahan()
+    {
+
     }
 
 }

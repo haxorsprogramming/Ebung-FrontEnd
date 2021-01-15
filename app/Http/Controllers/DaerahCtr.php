@@ -60,9 +60,13 @@ class DaerahCtr extends Controller
         $data = array();
         foreach($kelurahanData as $kelurahan)
         {
-            $data[] = array("id" => $kelurahan['id_kel'], "text" => $kelurahan['nama']);
+            $kecamatanData = KecamatanMdl::where('id_kec', $kelurahan -> id_kec) -> first();
+            $kabupatenData = KabupatenMdl::where('id_kab', $kecamatanData -> id_kab) -> first();
+            $provinsiData = ProvinsiMdl::where('id_prov', $kabupatenData -> id_prov) -> first();
+            $output = $kelurahan['nama']." , ".$kecamatanData -> nama." , ".$kabupatenData -> nama." , ".$provinsiData -> nama;
+            $data[] = array("id" => $kelurahan['id_kel'], "text" => $output);
         }
-        echo json_encode($data);
+        return \Response::json($data);
     }
 
     public function getKabupaten($id_provinsi)

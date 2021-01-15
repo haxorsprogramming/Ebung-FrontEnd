@@ -2,14 +2,19 @@
  * Route
  */
 var rToDefaultProduct = server + "rest/product/list/default";
-
+var rToGetProductByKelurahan = server + "rest/product/getProductByKelurahan";
 /**
  * Vue object
  */
 var divListProduk = new Vue({
   el : '#divListProduk',
   data : {
-    produk : []
+    provinsiData : [],
+    kabupatenData : [],
+    kecamatanData : [],
+    kelurahanData : [],
+    produk : [],
+    kdKelurahanDipilih : ''
   },
   methods : {
     
@@ -54,7 +59,7 @@ $("#txtDaerah").select2({
         url: server + "get/location/kelurahan",
         type: "post",
         dataType: 'json',
-        delay: 2000,
+        delay: 1000,
         data: function (params) {
          return {
            searchTerm: params.term // search term
@@ -69,10 +74,15 @@ $("#txtDaerah").select2({
         cache: true
        }
 }).on('select2:select', function (evt) {
-    let kelurahan = $("#txtDaerah").val();
-    console.log(kelurahan);
+    let kdKelurahan = $("#txtDaerah").val();
+    divListProduk.kdKelurahanDipilih = kdKelurahan;
+    searchKel(kdKelurahan);
  });
 
 /**
  * Function
  */
+function searchKel(kdKelurahan)
+{
+  
+}

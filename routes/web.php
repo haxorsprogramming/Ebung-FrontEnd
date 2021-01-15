@@ -57,6 +57,7 @@ Route::get('/product/{id_product}', [ProductCtr::class, 'productdetails']);
 Route::get('/rest/product/variant/{id_product}', [ProductCtr::class, 'restvariantproductdetails']);
 Route::get('/rest/product/main/{id_product}', [ProductCtr::class, 'restmainproductdetails']);
 Route::post('/rest/product/list/default', [ProductCtr::class, 'restdefaultproduct']);
+Route::post('/rest/product/getProductByKelurahan', [ProductCtr::class, 'getproductbykelurahan']);
 /**
  * Session temp product
  */
