@@ -24,7 +24,6 @@ var divListProduk = new Vue({
 /**
  * Inisialisasi
  */
-var kategori = "BUNGABUKETSEGAR";
 var ds = { 'kategori':kategori }
 axios.post(rToDefaultProduct, ds).then(function(res){
   let dr = res.data;
@@ -84,5 +83,44 @@ $("#txtDaerah").select2({
  */
 function searchKel(kdKelurahan)
 {
-  
+  clearProduk();
+  $('#divLoading').show();
+  $('#divListProduk').hide();
+
+    var ds = {'kategori':kategori, 'kelurahan':kdKelurahan}
+    axios.post(rToDefaultProduct, ds).then(function(res){
+      let dr = res.data;
+      let produk = dr.produk;
+      console.log(produk);
+      produk.forEach(renderProduk);
+      function renderProduk(item, index){
+        divListProduk.produk.push({
+          nama : produk[index].nama,
+          kd_produk : produk[index].kd,
+          kabupaten :produk[index].kabupaten,
+          foto : produk[index].foto,
+          harga : produk[index].harga,
+          slug : produk[index].slug
+        });
+      }
+    });
+
+    setTimeout(function(){
+      $('#divListProduk').show();
+    }, 500);
+    
+    setTimeout(function(){
+      $('#divLoading').hide();
+    }, 500);
+
+}
+
+function clearProduk()
+{
+  let pjgArray = divListProduk.produk.length;
+  var i;
+  for(i = 0; i < pjgArray; i++)
+  {
+    divListProduk.produk.splice(0,1);
+  }
 }

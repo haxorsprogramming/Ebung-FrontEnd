@@ -21,6 +21,8 @@ class VerifyCsrfToken extends Middleware
         '/tes-kirim-wa',
         '/get/location/provinsi',
         '/get/location/kelurahan',
-        '/tes-email-notifikasi-pembelian-baru'
+        '/tes-email-notifikasi-pembelian-baru',
+        '/rest/product/getProductByKelurahan',
+        '/rest/product/list/default'
     ];
 }

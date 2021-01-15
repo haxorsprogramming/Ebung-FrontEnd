@@ -55,7 +55,7 @@ class ProductCtr extends Controller
                  */
                 $dataProduct = ProdukMdl::where('sub_kategori', $kdSubKategori) -> get();
                 // $dr = ['page' => 'Kategory Details', 'categorySlug' => $categorySlug, 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
-                $dr = ['kategori' => $kategoriProduct, 'page' => 'product_filter', 'dataProduct' => $dataProduct];
+                $dr = ['kategori' => $kategoriProduct, 'page' => 'product_filter', 'dataProduct' => $dataProduct, 'subKategori' => $kdSubKategori];
                 return view('futala_product.filter', $dr);
             }else{
                 /**
@@ -266,11 +266,14 @@ class ProductCtr extends Controller
         if($kategori == 'default'){
 
         }else{
-            $produk = ProdukMdl::where('sub_kategori', $kategori) -> get();
+            if($kelurahan == 'all'){
+                $produk = ProdukMdl::where('sub_kategori', $kategori) -> get();
+            }else{
+                $coverageArea = CoverageAreaMdl::where('kd_area', $kelurahan) -> first();
+                $dataBranch = BranchSellerMdl::where('kd_branch', $coverageArea -> kd_branch) -> first();
+                $produk = ProdukMdl::where('sub_kategori', $kategori) -> where('id_branch', $dataBranch -> kd_branch) -> get();
+            }
         }
-
-        
-        
 
         $dataProduct = array();
 
@@ -284,7 +287,7 @@ class ProductCtr extends Controller
             $dataProduct[] = $tv;
         }
 
-        $dr = ['dataProduct' => 'sukses', 'kategori' => $kategori, 'produk' => $dataProduct];
+        $dr = ['dataProduct' => 'sukses', 'kategori' => $kategori, 'produk' => $dataProduct, 'kelurahan' => $kelurahan];
         return \Response::json($dr);
     }
 

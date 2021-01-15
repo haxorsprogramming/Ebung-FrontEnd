@@ -196,5 +196,8 @@
 </div>
 <!-- main-content-wrap end -->
 
+<script>
+    var kategori = "{{ $subKategori }}";
+</script>
 
 @include('futala_layout.footer')
