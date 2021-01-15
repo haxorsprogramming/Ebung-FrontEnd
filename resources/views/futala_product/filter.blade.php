@@ -92,30 +92,26 @@
                         </div>
                     </div>
 
+                    <div id="divLoading" style="text-align:center;">
+                            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_jryyrscd.json" mode="bounce" background="transparent" speed="1" style="width: 300px; height: 300px;margin:auto;" loop autoplay></lottie-player>
+                            <h5>Loading product ... </h5>
+                    </div>
+
                     <!-- shop-products-wrap start -->
-                    <div class="shop-products-wrap">
-                        <div class="tab-content">
+                    <div class="shop-products-wrap" id="divListProduk" style="display: none;">
+                    <div class="tab-content">
                             <div class="tab-pane active" id="grid">
                                 <div class="shop-product-wrap">
                                     <div class="row">
-                                        @foreach($dataProduct as $product)
-                                        @php
-                                            $kdBranch = $product -> id_branch;
-                                            $dataBranch = DB::table('tbl_branch_seller') -> where('kd_branch', $kdBranch) -> first();
-                                            $alamat = $dataBranch -> alamat;
-                                            $exAlamat = explode("-", $alamat);
-                                            $idKab = $exAlamat[2];
-                                            $dataKabupaten = DB::table('tbl_kabupaten') -> where('id_kab', $idKab) -> first();
-                                            $namaKabupaten = $dataKabupaten -> nama;
-                                        @endphp
-                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                        
+                                        <div v-for="prod in produk" class="col-lg-4 col-md-4 col-sm-6">
                                             <!-- single-product-wrap start -->
                                             <div class="single-product-wrap">
                                                 <div class="product-image">
-                                                    <a href="{{ url('/product/'.$product -> slug) }}">
-                                                        <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/{{ $product -> foto_utama }}" alt="{{ $product -> nama_produk }}">
+                                                    <a v-bind:href="'{{ url('/product/') }}/'+prod.slug">
+                                                        <img v-bind:src="'https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/'+prod.foto" alt="">
                                                     </a>
-                                                    <span class="label">{{ $namaKabupaten }}</span>
+                                                    <span class="label">@{{ prod.kabupaten }}</span>
                                                     <div class="product-action">
                                                         <a href="#" class="add-to-cart"><i class="ion-bag"></i></a>
                                                         <a href="#" class="wishlist"><i class="ion-android-favorite-outline"></i></a>
@@ -123,16 +119,15 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-content">
-                                                    <h3><a href="#!">{{ $product -> nama_produk }}</a></h3>
+                                                    <h3><a href="#!">@{{ prod.nama }}</a></h3>
                                                     <div class="price-box">
-                                                        <span>Rp. {{ number_format($product -> harga) }}</span>
+                                                        <span>@{{ Number(prod.harga).toLocaleString() }} </span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!-- single-product-wrap end -->
                                         </div>
-                                        @endforeach
-
+                                        
                                     </div>
                                 </div>
                             </div>

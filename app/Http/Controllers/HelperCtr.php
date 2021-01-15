@@ -16,9 +16,19 @@ use Illuminate\Support\Facades\Mail;
  */
 use App\Models\SubKategoriMdl;
 use App\Mail\NotifikasiOrderOperator;
+use App\Models\BranchSellerMdl;
+use App\Models\KabupatenMdl;
 
 class HelperCtr extends Controller
 {
+
+    function getKabupatenNameFromBranch($idBranch)
+    {
+        $dataBranch = BranchSellerMdl::where('kd_branch', $idBranch) -> first();
+        $alamatEx = explode("-", $dataBranch -> alamat);
+        $dataKabupaten = KabupatenMdl::where('id_kab', $alamatEx[2]) -> first();
+        return $dataKabupaten -> nama;
+    }
 
     function getsubkategori($idKategori)
     {

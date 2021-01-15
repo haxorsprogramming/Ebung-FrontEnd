@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 /**
- * Import model
+ * Import app
  */
 use App\Models\ProdukMdl;
 use App\Models\KelurahanMdl;
@@ -26,11 +26,17 @@ use App\Models\BranchSellerMdl;
 use App\Models\KabupatenMdl;
 use App\Models\ProvinsiMdl;
 use App\Models\VarianProductMdl;
-/**
- * Import another controller
- */
+use App\Http\Controllers\HelperCtr;
+
 class ProductCtr extends Controller
 {
+    protected $helperCtr;
+
+    public function __construct(helperCtr $helperCtr)
+    {
+        $this -> helperCtr = $helperCtr;
+    }
+
     public function productview($kategory, $area)
     {
         $catEx = Str::of($kategory) -> explode('cat-');
@@ -249,6 +255,27 @@ class ProductCtr extends Controller
         $capKdProduk = Str::replaceFirst('.jpg', '', $idProduct);
         $dataProduct = ProdukMdl::where('kd_produk', $capKdProduk) -> first();
         $dr = ['dataProduct' => $dataProduct];
+        return \Response::json($dr);
+    }
+
+    public function restdefaultproduct(Request $request)
+    {
+        $kategori = ($request -> has('kategori') ? $request -> kategori : 'default');
+        $produk = ProdukMdl::where('sub_kategori', $kategori) -> get();
+
+        $dataProduct = array();
+
+        foreach($produk as $prod){
+            $tv['nama'] = $prod['nama_produk'];
+            $tv['kd'] = $prod['kd_produk'];
+            $tv['foto'] = $prod['foto_utama'];
+            $tv['kabupaten'] = $this -> helperCtr -> getKabupatenNameFromBranch($prod['id_branch']);
+            $tv['harga'] = $prod['harga'];
+            $tv['slug'] = $prod['slug'];
+            $dataProduct[] = $tv;
+        }
+
+        $dr = ['dataProduct' => 'sukses', 'kategori' => $kategori, 'produk' => $dataProduct];
         return \Response::json($dr);
     }
 
