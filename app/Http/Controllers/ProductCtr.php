@@ -93,9 +93,6 @@ class ProductCtr extends Controller
                     }
                     $dataR[] = $arrTemp;
                 }
-                $cssFile = 'style-homev3.css'; 
-                $jsFile = 'ebunga-product-all.js';
-                // $dr = ['page' => 'Kategory Details', 'categorySlug' => $categorySlug, 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataR, 'dataKategori' => $kategoriProduct];
                 $dr = ['kategori' => $kategoriProduct, 'page' => 'product_filter'];
                 return view('futala_product.filter', $dr);
             }

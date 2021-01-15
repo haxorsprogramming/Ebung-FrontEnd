@@ -51,14 +51,14 @@ setTimeout(function(){
 }, 500);
 
 $("#txtDaerah").select2({
-    minimumInputLength: 3,
+    minimumInputLength: 4,
     allowClear: true,
     placeholder: 'masukkan nama kelurahan',
     ajax: {
         url: server + "get/location/kelurahan",
         type: "post",
         dataType: 'json',
-        delay: 1000,
+        delay: 200,
         data: function (params) {
          return {
            searchTerm: params.term // search term

@@ -28,8 +28,8 @@
             <div class="col-lg-9 order-lg-2 order-1">
                 <!-- shop-product-wrapper start -->
                 <div class="shop-product-wrapper">
-                    <div class="form-group">
-                        <label>Untuk memudahkan pencarian, masukkan daerah tujuan pengiriman</label>
+                    <div class="form-group" style="text-align:center;">
+                        <label style="font-size: 20px;">Untuk memudahkan pencarian, masukkan daerah tujuan pengiriman</label>
                         <div class="input-group mb-3">
                         <select class="form-control" id="txtDaerah">
                         </select>

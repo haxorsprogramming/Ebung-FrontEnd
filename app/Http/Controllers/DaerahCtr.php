@@ -44,6 +44,9 @@ class DaerahCtr extends Controller
 
     public function getProvinsiPost(Request $request)
     {
+        /**
+         * Slug data 
+         */
         $slug = $request -> searchTerm;
         $provinsi = ProvinsiMdl::where('nama', 'like', '%'.$slug.'%') -> get();
         $data = array();
