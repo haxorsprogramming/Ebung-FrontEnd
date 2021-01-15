@@ -59,6 +59,7 @@ class ProductCtr extends Controller
                 $slugToCaps = Str::title($slugClearToNormal);
                 /**
                  * Get kd kelurahan
+                 * 
                  * */ 
                 $dataKel = KelurahanMdl::where('nama', $slugToCaps) -> first();
                 $idKel = $dataKel -> id_kel;

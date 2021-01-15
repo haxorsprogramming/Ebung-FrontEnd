@@ -9,11 +9,11 @@ $("#txtDaerah").select2({
     minimumInputLength: 3,
     allowClear: true,
     placeholder: 'masukkan nama kelurahan',
-    ajax: { 
+    ajax: {
         url: server + "get/location/kelurahan",
         type: "post",
         dataType: 'json',
-        delay: 250,
+        delay: 10000,
         data: function (params) {
          return {
            searchTerm: params.term // search term

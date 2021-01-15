@@ -1,15 +1,17 @@
 <?php
-// import namespace
+/**
+* Import namespace & lib
+*/
 namespace App\Http\Controllers;
-// import lib
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Carbon;
-// import model
+/*
+* Import app
+*/
 use App\Models\RegistrasiUserMdl;
-// import mail
 use App\Mail\RegistrasiMail;
 
 class RegisterCtr extends Controller
@@ -43,7 +45,7 @@ class RegisterCtr extends Controller
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         $kd_registrasi = Str::random(20);
         $token_registrasi = Str::upper(Str::random(3)."-".Str::random(3)."-".Str::random(3)."-".Str::random(5));
-        
+
         DB::table('tbl_registrasi_user') -> insert([
             'kd_registrasi' => $kd_registrasi,
             'token_registrasi' => $token_registrasi,

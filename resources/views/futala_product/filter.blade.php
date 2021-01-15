@@ -33,9 +33,6 @@
                         <div class="input-group mb-3">
                         <select class="form-control" id="txtDaerah">
                         </select>
-                            <div class="input-group-append">
-                                <a href="#!" class="btn btn-lg btn-icon" style="border:1px #d2dae2 solid;"><i class="ion-ios-search"></i></a>
-                            </div>
                         </div>
                     </div>
                     <div class="row">
