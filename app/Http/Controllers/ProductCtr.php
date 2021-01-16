@@ -54,19 +54,20 @@ class ProductCtr extends Controller
                  * get data produk with sub kategory
                  */
                 $dataProduct = ProdukMdl::where('sub_kategori', $kdSubKategori) -> get();
+
                 // $dr = ['page' => 'Kategory Details', 'categorySlug' => $categorySlug, 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataProduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
                 $dr = ['kategori' => $kategoriProduct, 'page' => 'product_filter', 'dataProduct' => $dataProduct, 'subKategori' => $kdSubKategori];
                 return view('futala_product.filter', $dr);
             }else{
                 /**
-                 * Get slug area 
-                 */ 
+                 * Get slug area
+                 */
                 $slugClearToNormal = str_replace("-", " ", $areaSlug);
                 $slugToCaps = Str::title($slugClearToNormal);
                 /**
                  * Get kd kelurahan
-                 * 
-                 * */ 
+                 *
+                 * */
                 $dataKel = KelurahanMdl::where('nama', $slugToCaps) -> first();
                 $idKel = $dataKel -> id_kel;
                 // with area
@@ -76,7 +77,7 @@ class ProductCtr extends Controller
                 foreach($dataCoverage as $coverage){
                     $kdBranch = $coverage -> kd_branch;
                     $slugKdKategoriClearToNormal = str_replace("-", "", $categorySlug);
-                    //cari berdasarkan branch dan kd sub kategori 
+                    //cari berdasarkan branch dan kd sub kategori
                     $kdKategori = Str::upper($slugKdKategoriClearToNormal);
                     $dataProduct = ProdukMdl::where('sub_kategori', $kdKategori) -> where('id_branch', $kdBranch) -> get();
                     foreach($dataProduct as $product){
@@ -111,7 +112,7 @@ class ProductCtr extends Controller
          */
         $kategoriProduct = KategoriMdl::all();
         /**
-         * Create data css, js 
+         * Create data css, js
          */
         $cssFile    = 'style-homev3.css';
         $jsFile     = 'ebunga-product-all.js';
@@ -122,7 +123,7 @@ class ProductCtr extends Controller
         /**
          * Return view
          */
-        return view('product.all', $dr);      
+        return view('product.all', $dr);
     }
 
     public function checkarea(Request $request)
@@ -138,7 +139,7 @@ class ProductCtr extends Controller
         $dataProduk = ProdukMdl::where('kd_produk', $kdProduk) -> first();
         $idBranch   = $dataProduk -> id_branch;
         /**
-         * Get data kelurahan from tabel kelurahan 
+         * Get data kelurahan from tabel kelurahan
          */
         $daerah = KelurahanMdl::where('nama', 'like', '%'.$slug.'%') -> take(7) -> get();
         /**
@@ -150,7 +151,7 @@ class ProductCtr extends Controller
          */
         foreach($daerah as $da){
             /**
-             * Get id kelurahan & id kecamatan 
+             * Get id kelurahan & id kecamatan
              */
             $idKel = $da -> id_kel;
             $idKec = $da -> id_kec;
@@ -234,7 +235,7 @@ class ProductCtr extends Controller
         $cssFile = 'style-homev3.css';
         $jsFile = 'ebunga-product-all.js';
         $dr = ['page' => 'Home', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'dataproduct' => $dataProduct, 'dataKategori' => $kategoriProduct];
-        return view('product.all', $dr);      
+        return view('product.all', $dr);
     }
 
     public function restvariantproductdetails($idProduct)
@@ -266,9 +267,16 @@ class ProductCtr extends Controller
             if($kelurahan == 'all'){
                 $produk = ProdukMdl::where('sub_kategori', $kategori) -> get();
             }else{
-                $coverageArea = CoverageAreaMdl::where('kd_area', $kelurahan) -> first();
-                $dataBranch = BranchSellerMdl::where('kd_branch', $coverageArea -> kd_branch) -> first();
-                $produk = ProdukMdl::where('sub_kategori', $kategori) -> where('id_branch', $dataBranch -> kd_branch) -> get();
+                $totalCoverage = CoverageAreaMdl::where('kd_area', $kelurahan) -> count();
+                if($totalCoverage < 1){
+                  $dr = ['status' => 'no_product'];
+                  return \Response::json($dr);
+                  die();
+                }else{
+                  $coverageArea = CoverageAreaMdl::where('kd_area', $kelurahan) -> first();
+                  $dataBranch = BranchSellerMdl::where('kd_branch', $coverageArea -> kd_branch) -> first();
+                  $produk = ProdukMdl::where('sub_kategori', $kategori) -> where('id_branch', $dataBranch -> kd_branch) -> get();
+                }
             }
         }
 
@@ -281,10 +289,11 @@ class ProductCtr extends Controller
             $tv['kabupaten'] = $this -> helperCtr -> getKabupatenNameFromBranch($prod['id_branch']);
             $tv['harga'] = $prod['harga'];
             $tv['slug'] = $prod['slug'];
+            $tv['deks'] = $prod['deks_produk'];
             $dataProduct[] = $tv;
         }
 
-        $dr = ['dataProduct' => 'sukses', 'kategori' => $kategori, 'produk' => $dataProduct, 'kelurahan' => $kelurahan];
+        $dr = ['status' => 'sukses', 'kategori' => $kategori, 'produk' => $dataProduct, 'kelurahan' => $kelurahan];
         return \Response::json($dr);
     }
 

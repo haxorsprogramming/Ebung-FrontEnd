@@ -28,7 +28,7 @@
             <div class="col-lg-9 order-lg-2 order-1">
                 <!-- shop-product-wrapper start -->
                 <div class="shop-product-wrapper">
-                    <div class="form-group" style="text-align:center;">
+                    <div class="form-group">
                         <label style="font-size: 20px;">Untuk memudahkan pencarian, masukkan daerah tujuan pengiriman</label>
                         <div class="input-group mb-3">
                         <select class="form-control" id="txtDaerah">
@@ -97,13 +97,17 @@
                             <h5>Loading product ... </h5>
                     </div>
 
+                    <div id="divNoProduct" style="text-align:center;display:none;">
+                      <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/no_product.jpg" style="width:700px;">
+                    </div>
+
                     <!-- shop-products-wrap start -->
                     <div class="shop-products-wrap" id="divListProduk" style="display: none;">
                     <div class="tab-content">
                             <div class="tab-pane active" id="grid">
                                 <div class="shop-product-wrap">
                                     <div class="row">
-                                        
+
                                         <div v-for="prod in produk" class="col-lg-4 col-md-4 col-sm-6">
                                             <!-- single-product-wrap start -->
                                             <div class="single-product-wrap">
@@ -127,7 +131,7 @@
                                             </div>
                                             <!-- single-product-wrap end -->
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>

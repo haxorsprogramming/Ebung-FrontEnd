@@ -27,7 +27,7 @@
 
         {{-- Kategori bunga --}}
         <div class="row product-two-row-4 divProduct" id="divKategoriBunga">
-            @php 
+            @php
             $subKategori = DB::table('tbl_sub_kategori') -> where('kd_kategori', 'BUNGA') -> get();
             @endphp
             @foreach($subKategori as $subKategori)
@@ -57,7 +57,7 @@
 
         {{-- Kategori papan bunga --}}
         <div class="row product-two-row-4 divProduct" id="divKategoriPapanBunga">
-            @php 
+            @php
             $subKategori = DB::table('tbl_sub_kategori') -> where('kd_kategori', 'PAPANBUNGA') -> get();
             @endphp
             @foreach($subKategori as $subKategori)
@@ -87,7 +87,7 @@
 
         {{-- Kategori parcel --}}
         <div class="row product-two-row-4 divProduct" id="divKategoriParcel">
-            @php 
+            @php
             $subKategori = DB::table('tbl_sub_kategori') -> where('kd_kategori', 'PARCEL') -> get();
             @endphp
             @foreach($subKategori as $subKategori)
@@ -117,7 +117,7 @@
 
         {{-- Kategori cake --}}
         <div class="row product-two-row-4 divProduct" id="divKategoriCake">
-            @php 
+            @php
             $subKategori = DB::table('tbl_sub_kategori') -> where('kd_kategori', 'CAKE') -> get();
             @endphp
             @foreach($subKategori as $subKategori)

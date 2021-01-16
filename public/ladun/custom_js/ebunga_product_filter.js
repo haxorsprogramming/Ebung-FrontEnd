@@ -17,7 +17,7 @@ var divListProduk = new Vue({
     kdKelurahanDipilih : ''
   },
   methods : {
-    
+
   }
 });
 
@@ -90,29 +90,46 @@ function searchKel(kdKelurahan)
     var ds = {'kategori':kategori, 'kelurahan':kdKelurahan}
     axios.post(rToDefaultProduct, ds).then(function(res){
       let dr = res.data;
-      let produk = dr.produk;
-      console.log(produk);
-      produk.forEach(renderProduk);
-      function renderProduk(item, index){
-        divListProduk.produk.push({
-          nama : produk[index].nama,
-          kd_produk : produk[index].kd,
-          kabupaten :produk[index].kabupaten,
-          foto : produk[index].foto,
-          harga : produk[index].harga,
-          slug : produk[index].slug
-        });
+      let status = dr.status;
+      if(status === 'no_product'){
+        pesanUmumApp('warning', 'No product', 'No product available on area');
+        $('#divNoProduct').show();
+      }else{
+        $('#divNoProduct').hide();
+        let produk = dr.produk;
+        console.log(produk);
+        produk.forEach(renderProduk);
+        function renderProduk(item, index){
+          divListProduk.produk.push({
+            nama : produk[index].nama,
+            kd_produk : produk[index].kd,
+            kabupaten :produk[index].kabupaten,
+            foto : produk[index].foto,
+            harga : produk[index].harga,
+            slug : produk[index].slug
+          });
+        }
       }
     });
 
     setTimeout(function(){
       $('#divListProduk').show();
     }, 500);
-    
+
     setTimeout(function(){
       $('#divLoading').hide();
     }, 500);
 
+}
+
+
+function pesanUmumApp(icon, title, text)
+{
+  Swal.fire({
+    icon : icon,
+    title : title,
+    text : text
+  });
 }
 
 function clearProduk()

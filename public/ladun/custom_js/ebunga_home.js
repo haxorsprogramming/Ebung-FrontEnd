@@ -21,7 +21,8 @@ var divProduct = new Vue({
  * Inisialisasi
  */
 $('#divKategoriPapanBunga').hide();
-
+$('#divKategoriParcel').hide();
+$('#divKategoriCake').hide();
 /**
  * Function
  */

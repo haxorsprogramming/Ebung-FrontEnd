@@ -2,42 +2,14 @@
     <!-- shop-sidebar-wrap start -->
     <div class="shop-sidebar-wrap">
 
-        <!-- shop-sidebar start -->
-        <div class="shop-sidebar mb-30">
-            <h4 class="title">FILTER BY PRICE</h4>
-            <!-- filter-price-content start -->
-            <div class="filter-price-content">
-                <form action="#" method="post">
-                    <div id="price-slider" class="price-slider"></div>
-                    <div class="filter-price-wapper">
-                        <div class="filter-price-cont">
-                            <span>Price:</span>
-                            <div class="input-type">
-                                <input type="text" id="min-price" readonly="" />
-                            </div>
-                            <span>—</span>
-                            <div class="input-type">
-                                <input type="text" id="max-price" readonly="" />
-                            </div>
-                            <a class="add-to-cart-button" href="#">
-                                <span>FILTER</span>
-                            </a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <!-- filter-price-content end -->
-        </div>
-        <!-- shop-sidebar end -->
 
         <!-- shop-sidebar start -->
         <div class="shop-sidebar mb-30">
             <h4 class="title">CATEGORIES</h4>
             <ul>
-                <li><a href="shop.html">brothers <span>(18)</span></a></li>
-                <li><a href="shop.html">hatil <span>(16)</span></a></li>
-                <li><a href="shop.html">Men <span>(6)</span></a></li>
-                <li><a href="shop.html">Women <span>(11)</span></a></li>
+              @foreach($kategori as $kat)
+                <li><a href="#!">{{ $kat -> nama_kategori }} <span>(18)</span></a></li>
+              @endforeach
             </ul>
         </div>
         <!-- shop-sidebar end -->
@@ -92,31 +64,7 @@
         </div>
         <!-- shop-sidebar end -->
 
-        <!-- shop-sidebar start -->
-        <div class="shop-sidebar mb-30">
-            <h4 class="title">Color</h4>
-            <ul>
-                <li><a href="shop.html">Red <span>(18)</span></a></li>
-                <li><a href="shop.html">Green <span>(16)</span></a></li>
-                <li><a href="shop.html">Blue <span>(6)</span></a></li>
-                <li><a href="shop.html">Yellow <span>(11)</span></a></li>
-                <li><a href="shop.html">White <span>(11)</span></a></li>
-            </ul>
-        </div>
-        <!-- shop-sidebar end -->
 
-        <!-- shop-sidebar start -->
-        <div class="shop-sidebar mb-30">
-            <h4 class="title">SIZE</h4>
-            <ul>
-                <li><a href="shop.html">S <span>(11)</span></a></li>
-                <li><a href="shop.html">M <span>(13)</span></a></li>
-                <li><a href="shop.html">L <span>(6)</span></a></li>
-                <li><a href="shop.html">XLL <span>(51)</span></a></li>
-                <li><a href="shop.html">XXL <span>(3)</span></a></li>
-            </ul>
-        </div>
-        <!-- shop-sidebar end -->
 
         <!-- shop-sidebar start -->
         <div class="shop-sidebar">
