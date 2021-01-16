@@ -225,7 +225,6 @@ class ProductCtr extends Controller
         $kategoriProduct = KategoriMdl::all();
         $dr = ['kategori' => $kategoriProduct, 'page' => 'details_product', 'dataProduct' => $dataProduct, 'dataVariant' => $dataVariant, 'dataAlamat' => $dataAlamat];
         return view('futala_product.details_product', $dr);
-        // echo $kdProduct;
     }
 
     public function productkategory($idKategori)
@@ -240,6 +239,9 @@ class ProductCtr extends Controller
 
     public function restvariantproductdetails($idProduct)
     {
+        /**
+         * Get data product
+         */
         $dataProduct = VarianProductMdl::where('kd_variant', $idProduct) -> first();
         $dr = ['dataProduct' => $dataProduct];
         return \Response::json($dr);

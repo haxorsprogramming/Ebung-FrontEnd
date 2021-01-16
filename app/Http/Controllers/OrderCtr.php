@@ -38,10 +38,12 @@ class OrderCtr extends Controller
         $dataProduk = ProdukMdl::where('kd_produk', $kdProduk) -> first();
         $qt = $request -> qt;
         $total = $dataProduk -> harga * $qt;
-        // 
+        
         $prefixBelakang = Str::random(100);
         $url = $kdOrder."-ORDER-".$prefixBelakang;
-        // save ke order produk
+        /**
+         * Save order product
+         */
         DB::table('tbl_order_produk') -> insert([
             'kd_order' => $kdOrder,
             'customer' => $userLogin,
