@@ -1,12 +1,5 @@
 <?php
 /**
- * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Ebunga (ebunga.co.id), 2020
- * @package laravel
- * @subpackage Controller
- */
-
-/**
  * Import namespace & library
  */
 namespace App\Http\Controllers;
@@ -15,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 /**
- * Import model
+ * Import app
  */
 use App\Models\UserMdl;
 

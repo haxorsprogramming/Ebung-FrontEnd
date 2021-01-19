@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 /**
- * Import model, mail & other
+ * Import app
  */
 use App\Models\SubKategoriMdl;
 use App\Mail\NotifikasiOrderOperator;

@@ -1,12 +1,5 @@
 <?php
 /**
- * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Ebunga (ebunga.co.id), 2020
- * @package laravel
- * @subpackage Controller
- */
-
-/**
  * Import namespace & library
  */
 namespace App\Http\Controllers; 
@@ -18,7 +11,6 @@ use App\Models\ProvinsiMdl;
 use App\Models\KabupatenMdl;
 use App\Models\KecamatanMdl;
 use App\Models\KelurahanMdl;
-
 /**
  * Import another controller
  */
@@ -53,7 +45,7 @@ class DaerahCtr extends Controller
         foreach($provinsi as $provinsi){
             $data[] = array("id" => $provinsi['id_prov'], "text" => $provinsi['nama']);
         }
-        echo json_encode($data);
+        return \Response::json($data);
     }
 
     public function getKelurahanPost(Request $request)

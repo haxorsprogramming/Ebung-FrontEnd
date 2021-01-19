@@ -1,12 +1,14 @@
 <?php
-// import namespace
+/**
+ * Import namespace & lib
+ */
 namespace App\Http\Controllers;
-// import lib 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-// import model 
+/**
+ * Import app
+ */
 use App\Models\ProdukMdl;
-// import another controller 
 
 class CustomerCtr extends Controller
 {

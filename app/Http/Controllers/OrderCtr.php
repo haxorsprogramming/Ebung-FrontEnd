@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 /**
- * Import model
+ * Import app
  */
 use App\Models\ProdukMdl;
 use App\Models\KategoriMdl;
