@@ -81,11 +81,23 @@ class RegisterCtr extends Controller
                 'active' => '1'
             ]);
             // create customer data
-            DB::table('tbl_customer') -> insert([
-                'email' => $dr -> email,
+            DB::table('tbl_member') -> insert([
+                'username' => $dr -> email,
                 'full_name' => $dr -> full_name,
-                'phone' => $dr -> phone_number,
-                'active' => '1'
+                'email' => $dr -> email,
+                'country' => 'id',
+                'provinsi' => '-',
+                'kabupaten' => '-',
+                'kecamatan' => '-',
+                'kelurahan' => '-',
+                'postal_code' => '-',
+                'phone' => '-',
+                'alamat' => '-',
+                'ktp' => '-',
+                'npwp' => '-',
+                'siup' => '-',
+                'status' => '-',
+                'suspend' => '-'
             ]);
             $cssFile = 'style-about.css';
             $jsFile = 'ebunga-aktivasi-akun.js';

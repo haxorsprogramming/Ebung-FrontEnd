@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
 /**
  * Import app
  */
@@ -14,6 +15,7 @@ use App\Models\ProdukMdl;
 use App\Models\KategoriMdl;
 use App\Models\OrderProdukDetailsMdl;
 use App\Models\OrderProdukMdl;
+use App\Mail\NotifikasiOrderOperator;
 
 class OrderCtr extends Controller
 {
@@ -51,7 +53,9 @@ class OrderCtr extends Controller
             'qt' => $qt,
             'total' => $total
         ]);
-        // save ke order details
+        /**
+         * Save ke order details
+         */
         DB::table('tbl_order_details') -> insert([
             'kd_order' => $kdOrder,
             'kategori' => '-',
@@ -69,6 +73,11 @@ class OrderCtr extends Controller
             'status_payment' => 'pending',
             'status_order' => 'MENUNGGU_PEMBAYARAN'
         ]);
+        /**
+         * Send mail
+         */
+        Mail::to('alditha.forum@gmail.com') -> send(new NotifikasiOrderOperator());
+
         $dr = ['status' => 'success', 'page' => $url];
         return \Response::json($dr);
     }
@@ -96,7 +105,6 @@ class OrderCtr extends Controller
 
     public function savetemporder(Request $request)
     {
-        // {'totalHarga':totalHarga, 'kdProduk':kdProdukGlobal, 'hargaAt':hargaAt, 'qt':qt}
         $kdSession = Str::random(40);
         $totalHarga = $request -> totalHarga;
         $kdProduk = $request -> kdProduk;

@@ -70,23 +70,23 @@
                         <table class="table" style="width: 100%;">
                             <tr>
                                 <td>Sender Name</td>
-                                <td> {{ $orderDetails -> sender_name }} </td>
+                                <td style="text-align: left;"> {{ $orderDetails -> sender_name }} </td>
                             </tr>
                             <tr>
                                 <td>Receiver Name</td>
-                                <td> {{ $orderDetails -> receiver_name }} </td>
+                                <td style="text-align: left;"> {{ $orderDetails -> receiver_name }} </td>
                             </tr>
                             <tr>
                                 <td>Receiver Email</td>
-                                <td> {{ $orderDetails -> receiver_email }} </td>
+                                <td style="text-align: left;"> {{ $orderDetails -> receiver_email }} </td>
                             </tr>
                             <tr>
                                 <td>Receiver Phone</td>
-                                <td> {{ $orderDetails -> receiver_phone }} </td>
+                                <td style="text-align: left;"> {{ $orderDetails -> receiver_phone }} </td>
                             </tr>
                             <tr>
                                 <td>Delivery Date</td>
-                                <td> {{ $orderDetails -> delivery_date }} </td>
+                                <td style="text-align: left;"> {{ $orderDetails -> delivery_date }} </td>
                             </tr>
                         </table>
                     </div>
@@ -105,11 +105,11 @@
                     <div class="activities">
                         <div class="activity">
                             <div class="activity-icon bg-primary text-white shadow-primary">
-                                <i class="fas fa-comment-alt"></i>
+                                <i class="fas fa-shopping-cart"></i>
                             </div>
                             <div class="activity-detail">
                                 <div class="mb-2">
-                                    <span class="text-job text-primary">2 min ago</span>
+                                    <span class="text-job text-primary">{{ $dataOrder -> waktu }}</span>
                                     <span class="bullet"></span>
                                     <a class="text-job" href="#">Order Created</a>
                                     <div class="float-right dropdown">
@@ -128,13 +128,13 @@
                         </div>
                         <div class="activity">
                             <div class="activity-icon bg-primary text-white shadow-primary">
-                                <i class="fas fa-arrows-alt"></i>
+                                <i class="fas fa-scroll"></i>
                             </div>
                             <div class="activity-detail">
                                 <div class="mb-2">
                                     <span class="text-job">1 hour ago</span>
                                     <span class="bullet"></span>
-                                    <a class="text-job" href="#">View</a>
+                                    <a class="text-job" href="#">Invoice Created</a>
                                     <div class="float-right dropdown">
                                         <a href="#" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
                                         <div class="dropdown-menu">
@@ -146,7 +146,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p>Moved the task "<a href="#">Fix some features that are bugs in the master module</a>" from Progress to Finish.</p>
+                                <p>Invoice created & waiting for payment</p>
                             </div>
                         </div>
 

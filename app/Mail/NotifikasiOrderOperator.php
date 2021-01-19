@@ -10,7 +10,7 @@ use Illuminate\Queue\SerializesModels;
 class NotifikasiOrderOperator extends Mailable
 {
     use Queueable, SerializesModels;
-    // public $dr;
+    public $dr;
 
     /**
      * Create a new message instance.

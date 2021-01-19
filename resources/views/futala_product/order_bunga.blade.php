@@ -51,7 +51,9 @@ $sessionUser = 'yes';
             </div>
             <!-- coupon-accordion end -->
             <!-- coupon-accordion start -->
+            @if($sessionUser == 'no')
 
+            @else
             <div class="row mt-4">
                 <div class="col-12 col-lg-8 offset-lg-2">
                     <div class="wizard-steps">
@@ -314,7 +316,7 @@ $sessionUser = 'yes';
                     </div>
                 </div>
             </div>
-
+            @endif
             @if($sessionUser == 'yes')
             <div class="coupon-accordion" style="margin-top:20px;">
                 <h3>Have a coupon? <span class="coupon" id="showcoupon">Click here to enter your code</span></h3>
