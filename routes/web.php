@@ -1,13 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Symfony\Component\Console\Helper\Helper;
+
 use App\Http\Controllers\PageCtr;
-use App\Http\Controllers\RestProduct;
 use App\Http\Controllers\ProductCtr;
 use App\Http\Controllers\RegisterCtr;
 use App\Http\Controllers\TestingCtr;
-use App\Http\Controllers\WithdrawCtr;
 use App\Http\Controllers\LoginCtr;
 use App\Http\Controllers\DashboardCtr;
 use App\Http\Controllers\CustomerCtr;
@@ -18,7 +16,7 @@ use App\Http\Controllers\HelperCtr;
 use App\Http\Controllers\BranchSellerCtr;
 use App\Http\Controllers\OrderCtr;
 use App\Http\Controllers\MailHelperCtr;
-use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\EmailViewHelperCtr;
 
 /**
  * Main page
@@ -103,6 +101,7 @@ Route::get('/account/seller/branch/get-branch-coverage-area/{id_branch}', [Branc
 Route::post('/account/seller/branch/apply-new-branch', [BranchSellerCtr::class, 'applynewbranch']);
 Route::post('/account/seller/branch/save-coverage-area', [BranchSellerCtr::class, 'savecoveragearea']);
 Route::post('/account/seller/branch/clear-coverage-area', [BranchSellerCtr::class, 'clearcoveragearea']);
+
 /**
  * Product management (Seller)
  */
@@ -161,3 +160,8 @@ Route::post('/get/location/provinsi', [DaerahCtr::class, 'getProvinsiPost']);
 Route::post('/get/location/kelurahan', [DaerahCtr::class, 'getKelurahanPost']);
 
 Route::post('/tes-s3-cloudkilat', [HelperCtr::class, 'tesuploads3']);
+
+/**
+ * Email preview
+ */
+Route::get('/emailpreview/registrasiuser', [EmailViewHelperCtr::class, 'registrasiuser']);

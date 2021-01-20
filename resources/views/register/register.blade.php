@@ -84,7 +84,7 @@
                 <div class="col-md-6">
                     <div class="register box space-50">
                         <div id="capNotifToLogin">
-                        <h3>Already have account? go <a href="javascript:void(0)" @click="tampilFormLoginAtc"><strong>sign in</string></a></h3>
+                        <h3>Already have account? go <a href="{{ url('/login') }}"><strong>sign in</string></a></h3>
                         </div>
                     
                         <form class="form-horizontal" style="display: none;" id="formLogin">

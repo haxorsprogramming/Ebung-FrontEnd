@@ -355,7 +355,7 @@
                 </tr><!-- end tr -->
                 <tr>
                     <td valign="middle" class="hero bg_white" style="padding: 3em 0 2em 0;">
-                        <img src="https://media.publit.io/file/ebungaasset/thank-you.png" alt="" style="width: 200px; max-width: 600px; height: auto; margin: auto; display: block;">
+                        <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/figure/kumpul.png" alt="" style="width: 400px; max-width: 600px; height: auto; margin: auto; display: block;">
                     </td>
                 </tr><!-- end tr -->
                 <tr>
@@ -386,7 +386,9 @@
                                         <tr>
                                             <td style="text-align: left; padding-right: 10px;">
                                                 <h3 class="heading">About</h3>
-                                                <p>E-BUNGA is an e-commerce platform that sells flower bouquets, flower boards, parcels and other souvenirs. </p>
+                                                <small>
+                                                E-BUNGA is an e-commerce platform that sells flower bouquets, flower boards, parcels and other souvenirs. 
+                                                </small>
                                             </td>
                                         </tr>
                                     </table>
@@ -397,7 +399,7 @@
                                             <td style="text-align: left; padding-left: 5px; padding-right: 5px;">
                                                 <h3 class="heading">Contact Info</h3>
                                                 <ul>
-                                                    <li><span class="text">Komplek Cemara Asri Jl. Tanjung no.10, Deli Serdang 20371</span></li>
+                                                    <li><small class="text">Komplek Cemara Asri Jl. Tanjung no.10, Deli Serdang 20371</small></li>
                                                     <li><span class="text">ebunga1@yahoo.com</span></a></li>
                                                     <li><span class="text">(+62) 821-6751-1111</span></a></li>
                                                     <li><span class="text">(+62) 821-6068-5555</span></a></li>
@@ -412,9 +414,9 @@
                                             <td style="text-align: left; padding-left: 10px;">
                                                 <h3 class="heading">Useful Links</h3>
                                                 <ul>
-                                                    <li><a href="#">Ebunga Website</a></li>
-                                                    <li><a href="#">Product</a></li>
-                                                    <li><a href="#">Contact</a></li>
+                                                    <li><a href="{{ env('APP_URL') }}">Ebunga Website</a></li>
+                                                    <li><a href="https://www.instagram.com/ebunga_com/">Ebunga Instagram</a></li>
+                                                    <li><a href="">Ebunga Youtube</a></li>
                                                 </ul>
                                             </td>
                                         </tr>
@@ -425,8 +427,8 @@
                     </td>
                 </tr><!-- end: tr -->
                 <tr>
-                    <td class="bg_light" style="text-align: center;">
-                        <p>This email auto-send from ebunga. All asset & concept in this email is copyright with <a href='#!'>Ebunga</a>. All right reserved</p>
+                    <td class="bg_light" style="text-align: center;padding:20px;">
+                        <p>This email auto-send from ebunga. All asset & concept in this email is copyright with <a href='http://www.ebunga.co.id'>Ebunga</a>. All right reserved</p>
                     </td>
                 </tr>
             </table>

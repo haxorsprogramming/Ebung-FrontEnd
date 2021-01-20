@@ -46,6 +46,9 @@ class RegisterCtr extends Controller
         $kd_registrasi = Str::random(20);
         $token_registrasi = Str::upper(Str::random(3)."-".Str::random(3)."-".Str::random(3)."-".Str::random(5));
 
+        /**
+         * Tabel timeline
+         */
         DB::table('tbl_registrasi_user') -> insert([
             'kd_registrasi' => $kd_registrasi,
             'token_registrasi' => $token_registrasi,
@@ -55,6 +58,22 @@ class RegisterCtr extends Controller
             'password' => $password_hash,
             'referral_code' => $referral_code,
             'status_aktivasi' => 'pending'
+        ]);
+
+        /**
+         * Tabel timeline
+         */
+        $kdTimeline = Str::random(50);
+        $caption = "User dengan email ".$email." telah melakukan registrasi";
+        $waktu = Carbon::now();
+        DB::table('tbl_timeline') -> insert([
+            'kd_timeline' => $kdTimeline,
+            'event' => 'registrasi_user',
+            'kd_subject' => $kd_registrasi,
+            'title' => 'Registrasi user baru',
+            'caption' => $caption,
+            'object' => $email,
+            'waktu' => $waktu
         ]);
 
         $dr = ['email' => $email, 'token_aktivasi' => $token_registrasi];
