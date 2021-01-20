@@ -17,6 +17,8 @@ use App\Http\Controllers\ProductSellerCtr;
 use App\Http\Controllers\HelperCtr;
 use App\Http\Controllers\BranchSellerCtr;
 use App\Http\Controllers\OrderCtr;
+use App\Http\Controllers\MailHelperCtr;
+use Illuminate\Support\Facades\Mail;
 
 /**
  * Main page
@@ -133,7 +135,9 @@ Route::post('/product/check-area-slug-only', [ProductCtr::class, 'checkslugonly'
  */
 Route::get('/tes-kirim-email', [PageCtr::class, 'teskirimemail']);
 
-Route::get('/tes-email-notifikasi-pembelian-baru', [HelperCtr::class,'newordernotif']);
+// View email layout 
+Route::get('/tes-email-notifikasi-pembelian-baru', [MailHelperCtr::class,'newordernotif']);
+
 /**
  * Tes kirim wa
  */

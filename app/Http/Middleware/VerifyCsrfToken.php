@@ -23,6 +23,7 @@ class VerifyCsrfToken extends Middleware
         '/get/location/kelurahan',
         '/tes-email-notifikasi-pembelian-baru',
         '/rest/product/getProductByKelurahan',
-        '/rest/product/list/default'
+        '/rest/product/list/default',
+        '/order/submit/new-order'
     ];
 }

@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -202,6 +205,7 @@
                                                                                     <td width="30" align="left" valign="middle"><img mc:edit="tm5-02" editable="true" src="images/print.png" width="16" height="16" alt="" /></td>
                                                                                     <td width="160" align="left" valign="middle" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#FFF; line-height:20px; font-weight:bold;" mc:edit="tm5-03">
                                                                                         <multiline style="color: #2c3e50;">Notification Order</multiline>
+                                                                                        <multiline style="color: #2c3e50;"># {{ $dataOrder -> id }}</multiline>
                                                                                     </td>
                                                                                 </tr>
                                                                             </table>
@@ -260,7 +264,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <td align="left" valign="top" style="font-family:'Open Sans', Verdana, Arial; font-size:14px; color:#FFF; font-weight:normal; line-height:24px;" mc:edit="tm5-05">
-                                                                            <multiline>Aditia Darma Nst<br />
+                                                                            <multiline>{{ $dataOrder -> customer }}<br />
                                                                                 New Street, 2895 Line View,
                                                                                 Netherland.</multiline>
                                                                         </td>
@@ -283,7 +287,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <td align="left" valign="top" style="font-family:'Open Sans', Verdana, Arial; font-size:14px; color:#FFF; font-weight:normal; line-height:24px;" mc:edit="tm5-07">
-                                                                            <multiline>#215869876</multiline>
+                                                                            <multiline>#{{ $dataOrder -> id }}</multiline>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -308,8 +312,8 @@
                                                                                     <td height="5" align="left" valign="top" style="font-size:5px; line-height:5px;">&nbsp;</td>
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td align="left" valign="top" style="font-family:'Open Sans', Verdana, Arial; font-size:30px; color:#FFF; font-weight:bold;" mc:edit="tm5-09">
-                                                                                        <multiline>$240.00</multiline>
+                                                                                    <td align="left" valign="top" style="font-family:'Open Sans', Verdana, Arial; font-size:15px; color:#FFF; font-weight:bold;" mc:edit="tm5-09">
+                                                                                        <multiline>Rp. {{ number_format($dataOrder -> total) }}</multiline>
                                                                                     </td>
                                                                                 </tr>
                                                                             </table>
@@ -416,141 +420,7 @@
                     </tr>
                 </table>
 
-                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-                    <tr>
-                        <td align="center" valign="top">
-                            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
-                                <tr>
-                                    <td align="center" valign="top" style="background:#FFF;">
-                                        <table width="500" border="0" cellspacing="0" cellpadding="0" class="two-left-inner">
-
-                                            <tr>
-                                                <td colspan="4" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#333; line-height:30px; font-weight:normal;">&nbsp;</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td height="35" align="center" valign="top" style="font-size:35px; line-height:35px;">
-                                                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-                                                        <tr>
-                                                            <td width="155" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:12px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-18">
-                                                                <multiline><b style="font-size:15px;">Prodcut Item # 2</b> <br />
-                                                                    Your Item Description</multiline>
-                                                            </td>
-                                                            <td width="115" align="left" valign="bottom" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-19">
-                                                                <multiline>$ 30.00</multiline>
-                                                            </td>
-                                                            <td width="115" align="left" valign="bottom" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-20">
-                                                                <multiline>2</multiline>
-                                                            </td>
-                                                            <td width="115" align="left" valign="bottom" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-21">
-                                                                <multiline>$ 60.00</multiline>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td height="35" align="center" valign="top" style="font-size:35px; line-height:35px; border-bottom:#CCC solid 1px;">&nbsp;</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-
-                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-                    <tr>
-                        <td align="center" valign="top">
-                            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
-                                <tr>
-                                    <td align="center" valign="top" style="background:#FFF;">
-                                        <table width="500" border="0" cellspacing="0" cellpadding="0" class="two-left-inner">
-
-                                            <tr>
-                                                <td height="35" align="center" valign="top" style="font-size:35px; line-height:35px;">
-                                                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-                                                        <tr>
-                                                            <td colspan="4" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#333; line-height:30px; font-weight:normal;">&nbsp;</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="155" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:12px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-22">
-                                                                <multiline><b style="font-size:15px;">Prodcut Item # 3</b> <br />
-                                                                    Your Item Description</multiline>
-                                                            </td>
-                                                            <td width="115" align="left" valign="bottom" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-23">
-                                                                <multiline>$ 40.00</multiline>
-                                                            </td>
-                                                            <td width="115" align="left" valign="bottom" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-24">
-                                                                <multiline>2</multiline>
-                                                            </td>
-                                                            <td width="115" align="left" valign="bottom" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#71746f; line-height:22px; font-weight:normal;" class="two-left" mc:edit="tm5-25">
-                                                                <multiline>$ 80.00</multiline>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td height="80" align="center" valign="top" style="font-size:35px; line-height:35px;">&nbsp;</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-
-                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-                    <tr>
-                        <td align="center" valign="top">
-                            <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" class="main">
-                                <tr>
-                                    <td align="center" valign="top" style="background:#FFF;">
-                                        <table width="500" border="0" cellspacing="0" cellpadding="0" class="two-left-inner">
-
-                                            <tr>
-                                                <td height="35" align="center" valign="top" style="border-top:#CCC solid 1px;">
-                                                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-                                                        <tr>
-                                                            <td align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:13px; color:#333; line-height:30px; font-weight:normal;">&nbsp;</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td align="right" valign="top" class="two-left">
-                                                                <table border="0" align="right" cellpadding="0" cellspacing="0" class="full">
-                                                                    <tr>
-                                                                        <td align="left" valign="top">
-                                                                            <table width="215" border="0" align="left" cellpadding="0" cellspacing="0">
-                                                                                <tr>
-                                                                                    <td width="100" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:26px; color:#71746f; line-height:22px; font-weight:bold;" class="two-left" mc:edit="tm5-26">
-                                                                                        <multiline>Tax</multiline>
-                                                                                    </td>
-                                                                                    <td width="115" align="left" valign="top" style="font-family:'Open Sans', sans-serif, Verdana; font-size:20px; color:#71746f; line-height:22px; font-weight:bold;" class="two-left" mc:edit="tm5-27">
-                                                                                        <multiline>$ 60.00</multiline>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </table>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td height="35" align="center" valign="top" style="font-size:35px; line-height:35px;">&nbsp;</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-
+                
                 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                     <tr>
                         <td align="center" valign="top">
