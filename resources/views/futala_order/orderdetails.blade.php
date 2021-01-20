@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2 class="breadcrumb-title">Order Details</h2>
+                <h2 class="breadcrumb-title" style="color: #2c3e50;">Order Details</h2>
                 <!-- breadcrumb-list start -->
                 <ul class="breadcrumb-list">
                     <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
@@ -100,8 +100,22 @@
                     <h4>Order Status</h4>
                 </div>
 
-                <div class="card-body">
 
+                <div class="card card-hero">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <i class="far fa-question-circle"></i>
+                  </div>
+                  <h4 style="color: #ecf0f1;">Waiting for payment</h4>
+                  <div class="card-description">Customers need help</div>
+                </div>
+                <div class="card-body p-0">
+                  
+                </div>
+              </div>
+
+                <div class="card-body">
+                    <!-- Customer submit order  -->
                     <div class="activities">
                         <div class="activity">
                             <div class="activity-icon bg-primary text-white shadow-primary">
@@ -111,7 +125,7 @@
                                 <div class="mb-2">
                                     <span class="text-job text-primary">{{ $dataOrder -> waktu }}</span>
                                     <span class="bullet"></span>
-                                    <a class="text-job" href="#">Order Created</a>
+                                    <a class="text-job" href="#">Customer</a>
                                     <div class="float-right dropdown">
                                         <a href="#" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
                                         <div class="dropdown-menu">
@@ -126,15 +140,16 @@
                                 <p>Customer submit new orders</p>
                             </div>
                         </div>
+                        <!-- Invoice created  -->
                         <div class="activity">
                             <div class="activity-icon bg-primary text-white shadow-primary">
-                                <i class="fas fa-scroll"></i>
+                                <i class="fas fa-file-invoice"></i>
                             </div>
                             <div class="activity-detail">
                                 <div class="mb-2">
                                     <span class="text-job">1 hour ago</span>
                                     <span class="bullet"></span>
-                                    <a class="text-job" href="#">Invoice Created</a>
+                                    <a class="text-job" href="#">System</a>
                                     <div class="float-right dropdown">
                                         <a href="#" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
                                         <div class="dropdown-menu">
@@ -149,7 +164,102 @@
                                 <p>Invoice created & waiting for payment</p>
                             </div>
                         </div>
-
+                        <!-- Payment success verification  -->
+                        <div class="activity">
+                            <div class="activity-icon bg-primary text-white shadow-primary">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="activity-detail">
+                                <div class="mb-2">
+                                    <span class="text-job">1 hour ago</span>
+                                    <span class="bullet"></span>
+                                    <a class="text-job" href="#">System</a>
+                                    <div class="float-right dropdown">
+                                        <a href="#" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
+                                        <div class="dropdown-menu">
+                                            <div class="dropdown-title">Options</div>
+                                            <a href="#" class="dropdown-item has-icon"><i class="fas fa-eye"></i> View</a>
+                                            <a href="#" class="dropdown-item has-icon"><i class="fas fa-list"></i> Detail</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item has-icon text-danger trigger--fire-modal-2" data-confirm="Wait, wait, wait...|This action can't be undone. Want to take risks?" data-confirm-text-yes="Yes, IDC"><i class="fas fa-trash-alt"></i> Archive</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Payment confirmation success</p>
+                            </div>
+                        </div>
+                        <!-- Order process in seller  -->
+                        <div class="activity">
+                            <div class="activity-icon bg-primary text-white shadow-primary">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="activity-detail">
+                                <div class="mb-2">
+                                    <span class="text-job">1 hour ago</span>
+                                    <span class="bullet"></span>
+                                    <a class="text-job" href="#">Seller</a>
+                                    <div class="float-right dropdown">
+                                        <a href="#" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
+                                        <div class="dropdown-menu">
+                                            <div class="dropdown-title">Options</div>
+                                            <a href="#" class="dropdown-item has-icon"><i class="fas fa-eye"></i> View</a>
+                                            <a href="#" class="dropdown-item has-icon"><i class="fas fa-list"></i> Detail</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item has-icon text-danger trigger--fire-modal-2" data-confirm="Wait, wait, wait...|This action can't be undone. Want to take risks?" data-confirm-text-yes="Yes, IDC"><i class="fas fa-trash-alt"></i> Archive</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Order process on seller</p>
+                            </div>
+                        </div>
+                        <!-- order send by seller  -->
+                        <div class="activity">
+                            <div class="activity-icon bg-primary text-white shadow-primary">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <div class="activity-detail">
+                                <div class="mb-2">
+                                    <span class="text-job">1 hour ago</span>
+                                    <span class="bullet"></span>
+                                    <a class="text-job" href="#">Seller</a>
+                                    <div class="float-right dropdown">
+                                        <a href="#" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
+                                        <div class="dropdown-menu">
+                                            <div class="dropdown-title">Options</div>
+                                            <a href="#" class="dropdown-item has-icon"><i class="fas fa-eye"></i> View</a>
+                                            <a href="#" class="dropdown-item has-icon"><i class="fas fa-list"></i> Detail</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item has-icon text-danger trigger--fire-modal-2" data-confirm="Wait, wait, wait...|This action can't be undone. Want to take risks?" data-confirm-text-yes="Yes, IDC"><i class="fas fa-trash-alt"></i> Archive</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Order send by seller</p>
+                            </div>
+                        </div>
+                        <!-- orders accepted   -->
+                        <div class="activity">
+                            <div class="activity-icon bg-primary text-white shadow-primary">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <div class="activity-detail">
+                                <div class="mb-2">
+                                    <span class="text-job">1 hour ago</span>
+                                    <span class="bullet"></span>
+                                    <a class="text-job" href="#">Seller</a>
+                                    <div class="float-right dropdown">
+                                        <a href="#" data-toggle="dropdown"><i class="fas fa-ellipsis-h"></i></a>
+                                        <div class="dropdown-menu">
+                                            <div class="dropdown-title">Options</div>
+                                            <a href="#" class="dropdown-item has-icon"><i class="fas fa-eye"></i> View</a>
+                                            <a href="#" class="dropdown-item has-icon"><i class="fas fa-list"></i> Detail</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item has-icon text-danger trigger--fire-modal-2" data-confirm="Wait, wait, wait...|This action can't be undone. Want to take risks?" data-confirm-text-yes="Yes, IDC"><i class="fas fa-trash-alt"></i> Archive</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Orders Accepted</p>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

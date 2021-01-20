@@ -17,6 +17,7 @@ use App\Models\OrderProdukDetailsMdl;
 use App\Models\OrderProdukMdl;
 use App\Mail\NotifikasiOrderOperator;
 
+
 class OrderCtr extends Controller
 {
 
@@ -40,7 +41,7 @@ class OrderCtr extends Controller
          */
         $dataProduk = ProdukMdl::where('kd_produk', $kdProduk) -> first();
         $qt = $request -> qt;
-        $total = $dataProduk -> harga * $qt;
+        $total = ($dataProduk -> harga * $qt);
         
         $prefixBelakang = Str::random(100);
         $url = $kdOrder."-ORDER-".$prefixBelakang;
@@ -68,7 +69,7 @@ class OrderCtr extends Controller
             'note_to_seller' => '',
             'greeting_card_note' => $request -> capGreetingCard,
             'delivery_date' => $request -> deliveryDate,
-            'delivery_address' => $request -> address,
+            'delivery_address' => $request -> kelurahan,
             'delivery_details_address' => $request -> address,
             'status_approve' => 'n',
             'status_payment' => 'pending',
@@ -77,7 +78,8 @@ class OrderCtr extends Controller
         /**
          * Send mail
          */
-        Mail::to('alditha.forum@gmail.com') -> send(new NotifikasiOrderOperator());
+        $dre = ['kdOrder' => $kdOrder];
+        Mail::to('alditha.forum@gmail.com') -> send(new NotifikasiOrderOperator($dre));
 
         $dr = ['status' => 'success', 'page' => $url];
         return \Response::json($dr);

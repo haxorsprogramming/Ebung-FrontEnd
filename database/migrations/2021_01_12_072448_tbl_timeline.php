@@ -13,7 +13,16 @@ class TblTimeline extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_timeline', function (Blueprint $table) {
+            $table -> id();
+            $table -> char('kd_timeline', 50);
+            $table -> char('event', 50);
+            $table -> char('kd_subject', 200);
+            $table -> char('title', 50);
+            $table -> text('caption');
+            $table -> char('object');
+            $table -> dateTime('waktu');
+        });
     }
 
     /**
@@ -23,6 +32,6 @@ class TblTimeline extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_timeline');
     }
 }

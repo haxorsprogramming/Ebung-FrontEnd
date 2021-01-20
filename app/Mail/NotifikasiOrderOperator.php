@@ -7,19 +7,22 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
+use App\Models\OrderProdukMdl;
+use App\Models\OrderProdukDetailsMdl;
+
 class NotifikasiOrderOperator extends Mailable
 {
     use Queueable, SerializesModels;
-    public $dr;
+    public $dre;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($dre)
     {
-        //
+        $this -> dre = $dre;
     }
 
     /**
@@ -29,6 +32,11 @@ class NotifikasiOrderOperator extends Mailable
      */
     public function build()
     {
-        return $this -> from('addydr@ebunga.co.id') -> view('layout_email.notif_new_order') -> subject("New Order");
+        $kdOrder = $this -> dre['kdOrder'];;
+        $dataOrder = OrderProdukMdl::where('kd_order', $kdOrder) -> first();
+        $orderDetails = OrderProdukDetailsMdl::where('kd_order', $kdOrder) -> first();
+        
+        $dr = ['kdOrder' => $kdOrder, 'dataOrder' => $dataOrder, 'orderDetails' => $orderDetails];
+        return $this -> from('addydr@ebunga.co.id') -> view('layout_email.notif_new_order') -> subject("New Order") -> with($dr);
     }
 }
