@@ -30,8 +30,8 @@ class OrderCtr extends Controller
         /**
          * get session user
          */
-        // $userLogin = $request -> session() -> get('userLogin');
-        $userLogin = "mutiara.rika@gmail.com";
+        $userLogin = $request -> session() -> get('userLogin');
+        // $userLogin = "mutiara.rika@gmail.com";
         /**
          * get post data
          */
@@ -80,7 +80,21 @@ class OrderCtr extends Controller
          */
         $dre = ['kdOrder' => $kdOrder];
         Mail::to('alditha.forum@gmail.com') -> send(new NotifikasiOrderOperator($dre));
-
+        /**
+         * Save ke timeline
+         */
+        $kdTimeline = Str::random(50);
+        $caption = "User dengan email ".$userLogin." telah melakukan order produk";
+        $waktu = Carbon::now();
+        DB::table('tbl_timeline') -> insert([
+            'kd_timeline' => $kdTimeline,
+            'event' => 'order_product',
+            'kd_subject' => $kdOrder,
+            'title' => 'Customer order product',
+            'caption' => $caption,
+            'object' => $userLogin,
+            'waktu' => $waktu
+        ]);
         $dr = ['status' => 'success', 'page' => $url];
         return \Response::json($dr);
     }

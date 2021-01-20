@@ -9,6 +9,7 @@ use Illuminate\Queue\SerializesModels;
 
 use App\Models\OrderProdukMdl;
 use App\Models\OrderProdukDetailsMdl;
+use App\Models\ProdukMdl;
 
 class NotifikasiOrderOperator extends Mailable
 {
@@ -34,9 +35,9 @@ class NotifikasiOrderOperator extends Mailable
     {
         $kdOrder = $this -> dre['kdOrder'];;
         $dataOrder = OrderProdukMdl::where('kd_order', $kdOrder) -> first();
+        $dataProduk = ProdukMdl::where('kd_produk', $dataOrder -> kd_product) -> first();;
         $orderDetails = OrderProdukDetailsMdl::where('kd_order', $kdOrder) -> first();
-        
-        $dr = ['kdOrder' => $kdOrder, 'dataOrder' => $dataOrder, 'orderDetails' => $orderDetails];
-        return $this -> from('addydr@ebunga.co.id') -> view('layout_email.notif_new_order') -> subject("New Order") -> with($dr);
+        $dr = ['orderDetails' => $orderDetails, 'dataProduk' => $dataProduk];
+        return $this -> from('addydr@ebunga.co.id') -> view('layout_email.notif_new_order_admin') -> subject("Ebunga New Order") -> with($dr);
     }
 }

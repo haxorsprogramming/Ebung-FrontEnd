@@ -165,3 +165,4 @@ Route::post('/tes-s3-cloudkilat', [HelperCtr::class, 'tesuploads3']);
  * Email preview
  */
 Route::get('/emailpreview/registrasiuser', [EmailViewHelperCtr::class, 'registrasiuser']);
+Route::get('/emailpreview/neworderadmin', [EmailViewHelperCtr::class, 'neworderadmin']);
