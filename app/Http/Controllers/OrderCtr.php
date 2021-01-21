@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Carbon;
 /**
  * Import app
  */
@@ -95,6 +96,7 @@ class OrderCtr extends Controller
             'object' => $userLogin,
             'waktu' => $waktu
         ]);
+
         $dr = ['status' => 'success', 'page' => $url];
         return \Response::json($dr);
     }

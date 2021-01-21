@@ -17,34 +17,25 @@ use App\Http\Controllers\BranchSellerCtr;
 use App\Http\Controllers\OrderCtr;
 use App\Http\Controllers\MailHelperCtr;
 use App\Http\Controllers\EmailViewHelperCtr;
+use App\Http\Controllers\AdminOrderCtr;
 
 /**
  * Main page
  */
 Route::get('/', [PageCtr::class, 'home']);
 /**
- * Login page
+ * Login 
  */
 Route::get('/login', [LoginCtr::class, 'loginpage']);
-/**
- * Login process
- */
+
 Route::post('/login/proses', [LoginCtr::class, 'loginproses']);
 /**
- * Register page
+ * Register
  */
 Route::get('/register', [RegisterCtr::class, 'registerpage']);
-/**
- * Register page (with referral)
- */
 Route::get('/register/ref/{referral_id}', [RegisterCtr::class, 'registerwithreferral']);
-/**
- * Register proses
- */
 Route::post('/register/proses', [RegisterCtr::class, 'registerproses']);
-/**
- * Activation account
- */
+
 Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']);
  
 /**
@@ -58,18 +49,15 @@ Route::get('/rest/product/variant/{id_product}', [ProductCtr::class, 'restvarian
 Route::get('/rest/product/main/{id_product}', [ProductCtr::class, 'restmainproductdetails']);
 Route::post('/rest/product/list/default', [ProductCtr::class, 'restdefaultproduct']);
 Route::post('/rest/product/getProductByKelurahan', [ProductCtr::class, 'getproductbykelurahan']);
-/**
- * Session temp product
- */
 Route::post('/order/save-temp', [OrderCtr::class, 'savetemporder']);
 
 /**
  * Order
  */
-Route::post('/order/submit/new-order', [OrderCtr::class, 'submitneworder']);
-Route::get('/order/bank-account', [OrderCtr::class, 'bankaccount']);
+Route::post('/order/submit/new-order', [OrderCtr::class, 'submitneworder']); //submit new order
+Route::get('/order/bank-account', [OrderCtr::class, 'bankaccount']); 
 Route::get('/order/{kd_order}', [OrderCtr::class, 'orderstatusfront']);
-
+Route::post('/order/verify-payment-admin', [AdminOrderCtr::class, 'verifypayment']);
 /**
  * Payment
  */
