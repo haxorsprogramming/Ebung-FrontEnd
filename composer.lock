@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c909ba47c3c7fbc74f7f77761758f44d",
+    "content-hash": "3f1b358a64ceb72e75377515b9850c31",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -128,16 +128,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.171.13",
+            "version": "3.171.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "faa2936a85d83e727e18326a0f036f15855f69bd"
+                "reference": "02aaf7007c5678a6358ea924cd85531300aa1747"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/faa2936a85d83e727e18326a0f036f15855f69bd",
-                "reference": "faa2936a85d83e727e18326a0f036f15855f69bd",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/02aaf7007c5678a6358ea924cd85531300aa1747",
+                "reference": "02aaf7007c5678a6358ea924cd85531300aa1747",
                 "shasum": ""
             },
             "require": {
@@ -212,9 +212,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.171.13"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.171.20"
             },
-            "time": "2021-01-06T19:14:50+00:00"
+            "time": "2021-01-19T19:13:08+00:00"
         },
         {
             "name": "brick/math",
@@ -3254,6 +3254,72 @@
                 }
             ],
             "time": "2020-08-18T17:17:46+00:00"
+        },
+        {
+            "name": "sunaoka/laravel-ses-template-driver",
+            "version": "v2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sunaoka/laravel-ses-template-driver.git",
+                "reference": "8c21b6db2202cbc551b06e5816c946df697bf924"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sunaoka/laravel-ses-template-driver/zipball/8c21b6db2202cbc551b06e5816c946df697bf924",
+                "reference": "8c21b6db2202cbc551b06e5816c946df697bf924",
+                "shasum": ""
+            },
+            "require": {
+                "aws/aws-sdk-php": "^3.36.25",
+                "ext-json": "*",
+                "illuminate/bus": "^7.0 || ^8.0",
+                "illuminate/mail": "^7.0 || ^8.0",
+                "illuminate/queue": "^7.0 || ^8.0",
+                "php": "^7.2.5 || ^8.0"
+            },
+            "require-dev": {
+                "illuminate/config": "^7.0 || ^8.0",
+                "illuminate/container": "^7.0 || ^8.0",
+                "illuminate/contracts": "^7.0 || ^8.0",
+                "phpunit/phpunit": "^8.5 || ^9.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Sunaoka\\LaravelSesTemplateDriver\\SesTemplateTransportServiceProvider"
+                    ],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sunaoka\\LaravelSesTemplateDriver\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "sunaoka",
+                    "email": "sunaoka@pocari.org"
+                }
+            ],
+            "description": "Amazon SES template mail driver for Laravel.",
+            "keywords": [
+                "aws",
+                "driver",
+                "laravel",
+                "mail",
+                "ses"
+            ],
+            "support": {
+                "issues": "https://github.com/sunaoka/laravel-ses-template-driver/issues",
+                "source": "https://github.com/sunaoka/laravel-ses-template-driver/tree/v2.0.3"
+            },
+            "time": "2020-12-04T05:00:21+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

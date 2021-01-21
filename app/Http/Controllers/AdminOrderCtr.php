@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
+use App\Mail\NotifikasiOrderOperator;
+
 class AdminOrderCtr extends Controller
 {
     public function verifypayment(Request $request)
