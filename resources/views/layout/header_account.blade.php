@@ -95,7 +95,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-2 col-md-4 col-5">
                             <div class="logo-area">
-                                <a href="index.html"><img src="{{ asset('ladun/homepage/pic_asset/logo/logo.png') }}" alt=""></a>
+                                <a href="{{ url('/') }}"><img src="{{ asset('ladun/homepage/pic_asset/logo/logo.png') }}" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-8 d-none d-lg-block">
