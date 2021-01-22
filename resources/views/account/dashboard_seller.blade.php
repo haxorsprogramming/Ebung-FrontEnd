@@ -1,7 +1,7 @@
 @include('layout.header_account')
 
 <!-- breadcrumb-area start -->
-<div class="breadcrumb-area section-ptb" id="divBreadcumb">
+<div class="breadcrumb-area section-ptb" id="divBreadcumb" style="display: none;">
     <div class="container">
         <div class="row">
             <div class="col-12">

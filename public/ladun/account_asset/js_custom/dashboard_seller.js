@@ -28,7 +28,7 @@ var divUtama = new Vue({
         },
         myOrderAtc : function()
         {
-            renderPage(rToOrderList, 'Order List');
+            renderPage(rToOrderList, 'Order List', '');
         }
     }
 });

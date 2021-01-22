@@ -19,4 +19,8 @@ class OrderSellerCtr extends Controller
         $dr = ['sellerId' => $userLogin, 'dataOrder' => $dataOrder];
         return view('account.seller.order.order_list', $dr);
     }
+    public function orderdetails($kdOrder)
+    {
+        echo $kdOrder;
+    }
 }

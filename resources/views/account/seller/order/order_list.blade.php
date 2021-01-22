@@ -8,7 +8,7 @@
       <table class="table table-hover">
         <thead>
           <tr>
-            <td>No</td><td>Orders Id</td><td>Product</td><td>Customer</td><td>Status</td><td>Action</td>
+            <th>No</th><th>Orders Id</th><th>Product</th><th>Customer</th><th>Status</th><th>Action</th>
           </tr>
         </thead>
           @php
@@ -18,16 +18,32 @@
           @php
             $kdOrder = $order -> kd_order;
             $kdCap = substr(Str::upper($kdOrder), 0, 5);
+            $detailOrder = DB::table('tbl_order_details') -> where('kd_order', $kdOrder) -> first();
             $dataProduk = DB::table('tbl_produk') -> where('kd_produk', $order -> kd_product) -> first();
+            $dataCustomer = DB::table('tbl_member') -> where('username', $order -> customer) -> first();
           @endphp
             <tr>
               <td>{{ $no }}</td>
               <td>{{ $kdCap }}</td>
               <td>{{ $dataProduk -> nama_produk }}</td>
-              <td>Order</td>
+              <td>{{ $dataCustomer -> full_name }}</td>
+              @if($detailOrder -> status_order == 'MENUNGGU_PEMBAYARAN')
               <td>Waiting Payment</td>
+              @elseif($detailOrder -> status_order == 'WAITING_SELLER_CONFIRMATION')
+              <td>Waiting seller confirmation</td>
+              @elseif($detailOrder -> status_order == 'READY_TO_SEND')
+              <td>Ready to send</td>
+              @elseif($detailOrder -> status_order == 'DELIVERY')
+              <td>Delivery to customer</td>
+              @elseif($detailOrder -> status_order == 'RECEIVED_WAITING')
+              <td>Received by customer, waiting confirmation</td>
+              @elseif($detailOrder -> status_order == 'DONE')
+              <td>Finished</td>
+              @else
+              <td>-</td>
+              @endif
               <td>
-                <a href="{{ env('JSVOID') }}" class="view">Details</a>
+                <a href="{{ env('JSVOID') }}" class="view" @click="detailsAtc('{{ $kdOrder }}')">Details</a>
               </td>
             </tr>
           @php
@@ -40,3 +56,4 @@
   </div>
 
 </div>
+<script src="{{ asset('ladun/account_asset/js_custom/seller/order_list.js') }}"></script>

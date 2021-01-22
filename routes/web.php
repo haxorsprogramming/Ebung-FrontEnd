@@ -102,6 +102,7 @@ Route::post('/account/seller/product/add/main-product', [ProductSellerCtr::class
  * Order management (Seller)
  */
 Route::get('/account/seller/order/list', [OrderSellerCtr::class, 'orderlist']);
+Route::get('/account/seller/order/details/{kdOrder}', [OrderSellerCtr::class, 'orderdetails']);
 
 /**
  * Logout
