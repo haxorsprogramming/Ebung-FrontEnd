@@ -19,13 +19,14 @@ use App\Http\Controllers\MailHelperCtr;
 use App\Http\Controllers\EmailViewHelperCtr;
 use App\Http\Controllers\AdminOrderCtr;
 use App\Http\Controllers\OrderSellerCtr;
+use App\Http\Controllers\BranchAdminCtr;
 
 /**
  * Main page
  */
 Route::get('/', [PageCtr::class, 'home']);
 /**
- * Login 
+ * Login
  */
 Route::get('/login', [LoginCtr::class, 'loginpage']);
 
@@ -38,7 +39,7 @@ Route::get('/register/ref/{referral_id}', [RegisterCtr::class, 'registerwithrefe
 Route::post('/register/proses', [RegisterCtr::class, 'registerproses']);
 
 Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']);
- 
+
 /**
  * Product prefix
  * product/kat-all/area-all/tipe-all
@@ -56,7 +57,7 @@ Route::post('/order/save-temp', [OrderCtr::class, 'savetemporder']);
  * Order
  */
 Route::post('/order/submit/new-order', [OrderCtr::class, 'submitneworder']); //submit new order
-Route::get('/order/bank-account', [OrderCtr::class, 'bankaccount']); 
+Route::get('/order/bank-account', [OrderCtr::class, 'bankaccount']);
 Route::get('/order/{kd_order}', [OrderCtr::class, 'orderstatusfront']);
 Route::post('/order/verify-payment-admin', [AdminOrderCtr::class, 'verifypayment']);
 /**
@@ -69,7 +70,6 @@ Route::post('/order/verify-payment-admin', [AdminOrderCtr::class, 'verifypayment
 Route::group(['middleware' => 'CekUser'], function () {
     Route::get('/account', [DashboardCtr::class, 'dashboard']);
 });
-
 
 Route::get('/account/dashboard', [CustomerCtr::class, 'dashboard']);
 /**
@@ -128,7 +128,7 @@ Route::post('/product/check-area-slug-only', [ProductCtr::class, 'checkslugonly'
  */
 Route::get('/tes-kirim-email', [PageCtr::class, 'teskirimemail']);
 
-// View email layout 
+// View email layout
 Route::get('/tes-email-notifikasi-pembelian-baru', [MailHelperCtr::class,'newordernotif']);
 
 /**
@@ -158,7 +158,7 @@ Route::get('/get/sub-kategori/{id_kategori}', [HelperCtr::class, 'getsubkategori
 Route::post('/get/location/provinsi', [DaerahCtr::class, 'getProvinsiPost']);
 Route::post('/get/location/kelurahan', [DaerahCtr::class, 'getKelurahanPost']);
 
-Route::post('/tes-s3-cloudkilat', [HelperCtr::class, 'tesuploads3']);
+Route::post('/rest/approve-branch-seller', [BranchAdminCtr::class, 'approvebranchseller']);
 
 /**
  * Email preview

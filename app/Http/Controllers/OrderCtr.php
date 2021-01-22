@@ -50,7 +50,7 @@ class OrderCtr extends Controller
          * Save order product
          */
         $dataBranch = DB::table('tbl_branch_seller') -> where('kd_branch', $dataProduk -> id_branch) -> first();
-        $idSeller = $dataBranch -> idSeller;
+        $idSeller = $dataBranch -> id_seller;
         DB::table('tbl_order_produk') -> insert([
             'kd_order' => $kdOrder,
             'customer' => $userLogin,

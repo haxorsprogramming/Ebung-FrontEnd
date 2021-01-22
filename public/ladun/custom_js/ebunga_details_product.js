@@ -108,7 +108,7 @@ var divOrder = new Vue({
                 window.location.reload();
             });
         }
-    } 
+    }
 });
 
 
@@ -127,8 +127,8 @@ function addNewOrder()
     let address = divOrder.detailAddress;
     let qt = document.querySelector('#txtQt').value;
 
-    let ds = {'kdProduk' : kdProdukAwal, 
-    'senderName' : sName, 
+    let ds = {'kdProduk' : kdProdukAwal,
+    'senderName' : sName,
     'recName' : rName,
     'recEmail' : rEmail,
     'recPhone' : rPhone,
@@ -150,8 +150,8 @@ function addNewOrder()
             let urlDirect = dr.page;
             window.location.assign(server+"order/"+urlDirect);
         });
-    }, 3500);
-    
+    }, 500);
+
 }
 
 /**
@@ -194,7 +194,7 @@ function paymentProcess()
         }).then((result) => {
             if(result.value) {
                 addNewOrder();
-                
+
                 // axios.post(rToSubmitNewOrder, ds).then(function(res){
                 //     let dr = res.data;
                 //     console.log(dr);
@@ -211,7 +211,7 @@ function paymentProcess()
 
 function checkBankTransfer()
 {
-    console.log("Bank");    
+    console.log("Bank");
 }
 
 function paymentStep()
@@ -299,7 +299,7 @@ function recaptcha_callback()
 function showLogin()
 {
     $('#checkout-login').fadeIn(400);
-    $('#txtUsername').focus();  
+    $('#txtUsername').focus();
 }
 
 function pesanUmumApp(icon, title, text)

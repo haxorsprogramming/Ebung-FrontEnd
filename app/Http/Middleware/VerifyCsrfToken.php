@@ -25,6 +25,7 @@ class VerifyCsrfToken extends Middleware
         '/rest/product/getProductByKelurahan',
         '/rest/product/list/default',
         '/order/submit/new-order',
-        '/order/verify-payment-admin'
+        '/order/verify-payment-admin',
+        '/rest/approve-branch-seller'
     ];
 }
