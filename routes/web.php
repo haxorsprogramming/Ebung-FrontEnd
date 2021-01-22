@@ -136,6 +136,11 @@ Route::post('/tes-kirim-wa', [HelperCtr::class, 'kirimPesanGuzzle']);
 Route::get('/cek-view-email-registrasi', [TestingCtr::class, 'viewemailregistrasi']);
 
 /**
+ * REST Order Product
+ */
+
+
+/**
  * REST Without csrf
  */
 Route::get('/get/location/provinsi-all', [DaerahCtr::class, 'getProvinsiAll']);
@@ -154,3 +159,4 @@ Route::post('/tes-s3-cloudkilat', [HelperCtr::class, 'tesuploads3']);
  */
 Route::get('/emailpreview/registrasiuser', [EmailViewHelperCtr::class, 'registrasiuser']);
 Route::get('/emailpreview/neworderadmin', [EmailViewHelperCtr::class, 'neworderadmin']);
+Route::get('/email/preview/neworderseller', [EmailViewHelperCtr::class, 'neworderseller']);

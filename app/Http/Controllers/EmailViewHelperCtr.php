@@ -28,4 +28,14 @@ class EmailViewHelperCtr extends Controller
         $dr = ['orderDetails' => $orderDetails, 'dataProduk' => $dataProduk];
         return view('layout_email.notif_new_order_admin', $dr);
     }
+
+    public function neworderseller()
+    {
+        $kdOrder = "QOFPHOu6ilag3wdvMc3OFXHAdXE1qKm5f35tqT5E";
+        $dataOrder = OrderProdukMdl::where('kd_order', $kdOrder) -> first();
+        $dataProduk = ProdukMdl::where('kd_produk', $dataOrder -> kd_product) -> first();;
+        $orderDetails = OrderProdukDetailsMdl::where('kd_order', $kdOrder) -> first();
+        $dr = ['orderDetails' => $orderDetails, 'dataProduk' => $dataProduk];
+        return view('layout_email.notif_new_order_seller', $dr);
+    }
 }
