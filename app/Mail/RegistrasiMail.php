@@ -26,19 +26,12 @@ class RegistrasiMail extends Mailable
      *
      * @return $this
      */
-    // public function build()
-    // {
-    //     $email = $this -> dr['email'];
-    //     $token_aktivasi = $this -> dr['token_aktivasi'];
-    //     $dr = ['email' => $email, 'website' => 'ebunga.co.id', 'token_aktivasi' => $token_aktivasi];
-    //     return $this -> from('addydr@ebunga.co.id') -> view('layout_email.notif_new_registrasi') -> subject("Ebunga Registration") -> with($dr);
-    // }
-
     public function build()
     {
-        // $email = $this -> dr['email'];
-        // $token_aktivasi = $this -> dr['token_aktivasi'];
-        // $dr = ['email' => $email, 'website' => 'ebunga.co.id', 'token_aktivasi' => $token_aktivasi];
-        return $this -> from('hi@ebunga.co.id') -> view('layout_email.blank_email') -> subject("Ebunga Registration");
+        $email = $this -> dr['email'];
+        $token_aktivasi = $this -> dr['token_aktivasi'];
+        $dr = ['email' => $email, 'website' => 'ebunga.co.id', 'token_aktivasi' => $token_aktivasi];
+        return $this -> from('addydr@ebunga.co.id') -> view('layout_email.notif_new_registrasi') -> subject("Ebunga Registration") -> with($dr);
     }
+
 }

@@ -43,7 +43,7 @@ class PageCtr extends Controller
     {
         $dr = ['nama' => 'dindananinda@gmail.com'];
 
-        Mail::to('alditha.forum@gmail.com') -> send(new RegistrasiMail($dr));
+        Mail::to('addydr@ebunga.co.id') -> send(new RegistrasiMail($dr));
 
         echo "Email telah terkirim";
     }
