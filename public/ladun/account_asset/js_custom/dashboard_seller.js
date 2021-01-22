@@ -4,14 +4,14 @@
 var rToDashboard = server + "account/seller/dashboard";
 var rToMyBranch = server + "account/seller/branch";
 var rToProductList = server + "account/seller/product/list";
-
+var rToOrderList = server + "account/seller/order/list";
 /**
  * Vue Object
  */
 var divUtama = new Vue({
     el : '#divUtama',
     data : {
-        
+
     },
     methods : {
         dashboardAtc : function()
@@ -25,6 +25,10 @@ var divUtama = new Vue({
         myProductAtc : function()
         {
             renderPage(rToProductList, 'List Product', '');
+        },
+        myOrderAtc : function()
+        {
+            renderPage(rToOrderList, 'Order List');
         }
     }
 });
@@ -58,7 +62,7 @@ function renderPage(page, titleForm, subTitle){
         $('#divContainerUtama').load(page);
         $('#loaderPage').hide();
     }, 500);
-    
+
 }
 
 function pesanUmumApp(icon, title, text)

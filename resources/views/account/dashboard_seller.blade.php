@@ -64,7 +64,7 @@
                                         <li><a href="#!" data-toggle="tab" @click="dashboardAtc" class="nav-link active">Dashboard</a></li>
                                         <li><a href="#!" data-toggle="tab" @click="myBranchAtc" class="nav-link">My Branch</a></li>
                                         <li><a href="#!" data-toggle="tab" @click="myProductAtc" class="nav-link">My Product</a></li>
-                                        <li><a href="#!" data-toggle="tab" class="nav-link">Orders</a></li>
+                                        <li><a href="#!" data-toggle="tab" @click="myOrderAtc" class="nav-link">Orders</a></li>
                                         <li><a href="#!" data-toggle="tab" class="nav-link">E-Cash</a></li>
                                         <li><a href="#!" data-toggle="tab" class="nav-link">Settings</a></li>
                                         <li><a href="{{ url('/logout') }}" class="nav-link">logout</a></li>
@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="col-md-12 col-lg-10">
                                     <!-- Tab panes -->
-                                    
+
                                     <div class="tab-content dashboard-content">
                                         <div style="font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;display:none;" id="loaderPage">
                                             <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_jryyrscd.json" mode="bounce" background="transparent"  speed="1"  style="width: 300px; height: 300px;margin:auto;"  loop  autoplay></lottie-player>

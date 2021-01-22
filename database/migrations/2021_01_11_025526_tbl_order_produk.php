@@ -19,6 +19,7 @@ class TblOrderProduk extends Migration
             $table -> char('customer', 100);
             $table -> timestamp('waktu', 0);
             $table -> char('kd_product', 40);
+            $table -> char('id_seller', 100);
             $table -> char('qt', 100);
             $table -> integer('total');
         });

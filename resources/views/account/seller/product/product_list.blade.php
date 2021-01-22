@@ -96,7 +96,7 @@
                             @{{ messageHelp[0].mainPhotos }}
                         </small>
                     </div>
-                    
+
                     <small id="helpMinPic" class="{{ $divError }}" style="<?= $dn; ?>">
                         @{{ messageHelp[0].minPic }}
                     </small>
@@ -131,7 +131,7 @@
         <div style="text-align:center;margin-top:20px;" id="divBtnAddVariant">
             <a href="#!" class="view" onclick="addVariantAtc()"><i class="fas fa-chevron-circle-right"></i> Next (Add variant)</a>
         </div>
-        
+
         <!-- Variant  -->
         @include('account.seller.product.add_variant')
 

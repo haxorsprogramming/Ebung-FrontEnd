@@ -18,6 +18,7 @@ use App\Http\Controllers\OrderCtr;
 use App\Http\Controllers\MailHelperCtr;
 use App\Http\Controllers\EmailViewHelperCtr;
 use App\Http\Controllers\AdminOrderCtr;
+use App\Http\Controllers\OrderSellerCtr;
 
 /**
  * Main page
@@ -96,6 +97,11 @@ Route::post('/account/seller/branch/clear-coverage-area', [BranchSellerCtr::clas
 Route::get('/account/seller/product/list', [ProductSellerCtr::class, 'productlist']);
 Route::post('/account/seller/product/add/variant', [ProductSellerCtr::class, 'addvariantproduct']);
 Route::post('/account/seller/product/add/main-product', [ProductSellerCtr::class, 'addmainproduct']);
+
+/**
+ * Order management (Seller)
+ */
+Route::get('/account/seller/order/list', [OrderSellerCtr::class, 'orderlist']);
 
 /**
  * Logout

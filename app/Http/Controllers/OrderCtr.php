@@ -43,16 +43,19 @@ class OrderCtr extends Controller
         $dataProduk = ProdukMdl::where('kd_produk', $kdProduk) -> first();
         $qt = $request -> qt;
         $total = ($dataProduk -> harga * $qt);
-        
+
         $prefixBelakang = Str::random(100);
         $url = $kdOrder."-ORDER-".$prefixBelakang;
         /**
          * Save order product
          */
+        $dataBranch = DB::table('tbl_branch_seller') -> where('kd_branch', $dataProduk -> id_branch) -> first();
+        $idSeller = $dataBranch -> idSeller;
         DB::table('tbl_order_produk') -> insert([
             'kd_order' => $kdOrder,
             'customer' => $userLogin,
             'kd_product' => $kdProduk,
+            'id_seller' => $idSeller,
             'qt' => $qt,
             'total' => $total
         ]);
@@ -111,10 +114,10 @@ class OrderCtr extends Controller
         $dataProduk = ProdukMdl::where('kd_produk', $dataOrder -> kd_product) -> first();
         $orderDetails = OrderProdukDetailsMdl::where('kd_order', $kdOrderFix) -> first();
         $dr = [
-            'kdOrder' => $kdOrderFix, 
-            'kategori' => $kategori, 
-            'page' => 'orderdetails', 
-            'dataOrder' => $dataOrder, 
+            'kdOrder' => $kdOrderFix,
+            'kategori' => $kategori,
+            'page' => 'orderdetails',
+            'dataOrder' => $dataOrder,
             'dataProduk' => $dataProduk,
             'orderDetails' => $orderDetails,
             'orderId' => $orderId
@@ -133,7 +136,7 @@ class OrderCtr extends Controller
             'customer' => '-',
             'kd_product' => $kdProduk,
             'qt' => $qt,
-            'total' => $totalHarga 
+            'total' => $totalHarga
         ]);
         session(['orderSession' => $kdSession]);
         $dr = ['status' => 'success create session'];
