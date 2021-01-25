@@ -77,7 +77,7 @@
                                                 <li>Mon - Sat : 9am to 5pm </li>
                                                 <li><a href="#">(+62) 821-6751-1111</a></li>
                                                 @if($sessionUser == 'yes')
-                                                    <li><a href="#">hi@ebunga.co.id</a></li>
+                                                    <li><a href="#">Login in ({{ $userLogin }})</a></li>
                                                 @else
                                                     <li><a href="{{ url('/login')}}">You are not logged in, please login</a></a></li>
                                                 @endif                                               

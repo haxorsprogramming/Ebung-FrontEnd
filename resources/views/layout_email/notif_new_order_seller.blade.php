@@ -364,7 +364,7 @@
                             <tr>
                                 <td>
                                     <div class="text" style="padding: 0 2.5em; text-align: center;">
-                                    <h3>Hi seller</h3>
+                                    <h3>Hi seller {{ $dataOrder -> id_seller }}</h3>
                                         <h4>You have a order from customer</h4>
                                         <div style="text-align: center;">
                                             <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/variant/EBUNGA_VAR_EBUNGA4280_4410.jpg" style="width: 200px;border-radius:15px;">

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 use App\Mail\NotifikasiOrderOperator;
+use App\Mail\NotifikasiOrderSeller;
 
 class AdminOrderCtr extends Controller
 {
@@ -16,7 +18,8 @@ class AdminOrderCtr extends Controller
         /**
          * Kirim email notifikasi order ke seller
          */
-
-        echo 'sukses';
+        $dre = ['kdOrder' => $kdOrder];
+        Mail::to('alditha.forum@gmail.com') -> send(new NotifikasiOrderSeller($dre));
+        echo "sukses verifikasi";
     }
 }

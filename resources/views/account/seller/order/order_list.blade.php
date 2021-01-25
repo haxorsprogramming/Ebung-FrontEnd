@@ -21,15 +21,22 @@
             $detailOrder = DB::table('tbl_order_details') -> where('kd_order', $kdOrder) -> first();
             $dataProduk = DB::table('tbl_produk') -> where('kd_produk', $order -> kd_product) -> first();
             $dataCustomer = DB::table('tbl_member') -> where('username', $order -> customer) -> first();
+
+            if($detailOrder -> status_order == 'MENUNGGU_PEMBAYARAN'){
+              $rowColor = "#b2bec3";
+            }else{
+              $rowColor = "#55efc4";
+            }
           @endphp
-            <tr>
+
+            <tr style="background-color: {{ $rowColor }};">
               <td>{{ $no }}</td>
               <td>{{ $kdCap }}</td>
               <td>{{ $dataProduk -> nama_produk }}</td>
               <td>{{ $dataCustomer -> full_name }}</td>
               @if($detailOrder -> status_order == 'MENUNGGU_PEMBAYARAN')
               <td>Waiting Payment</td>
-              @elseif($detailOrder -> status_order == 'WAITING_SELLER_CONFIRMATION')
+              @elseif($detailOrder -> status_order == 'MENUNGGU_KONFIRMASI_SELLER')
               <td>Waiting seller confirmation</td>
               @elseif($detailOrder -> status_order == 'READY_TO_SEND')
               <td>Ready to send</td>
