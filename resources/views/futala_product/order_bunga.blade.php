@@ -1,9 +1,9 @@
 @php
 $userLogin = session('userLogin');
 if($userLogin === null){
-$sessionUser = 'no';
+    $sessionUser = 'no';
 }else{
-$sessionUser = 'yes';
+    $sessionUser = 'yes';
 }
 @endphp
 <div class="row" id="divOrder">

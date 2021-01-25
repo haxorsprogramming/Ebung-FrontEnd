@@ -5,6 +5,7 @@ var rToGetKecamatan = server + "get/location/kecamatan/";
 var rToGetKelurahan = server + "get/location/kelurahan/";
 var rToApplyNewBranch = server + "account/seller/branch/apply-new-branch";
 var rToDetailBranch = server + "account/seller/branch/detail/";
+var r_to_get_provinsi = "";
 
 // Vue object
 var divBranch = new Vue({

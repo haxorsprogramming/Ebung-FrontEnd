@@ -267,6 +267,4 @@
     </div>
 </div>
 
-
-
 @include('futala_layout.footer')
