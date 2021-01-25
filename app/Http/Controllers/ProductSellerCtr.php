@@ -72,6 +72,9 @@ class ProductSellerCtr extends Controller
         $picVar4 = $request -> var4;
         // clear currency format 
         $priceFinal = str_replace(".","", $price);
+        // $priceFinalUp = $priceFinal
+        $priceUpBath = $priceFinal * 0.2;
+        $priceFinalFix = $priceFinal + $priceUpBath;
         $namaPic = $kdProduk.".jpg";
         $tipeSlug = rand(0, 50);
         $cekNamaBunga = ProdukMdl::where('nama_produk', $name) -> count();
@@ -86,7 +89,7 @@ class ProductSellerCtr extends Controller
                 'sub_kategori' => $subKategori,
                 'id_branch' => $branch,
                 'id_seller' => $userLogin,
-                'harga' => $priceFinal,
+                'harga' => $priceFinalFix,
                 'stok' => $stock,
                 'foto_utama' => $namaPic,
                 'active' => '1'

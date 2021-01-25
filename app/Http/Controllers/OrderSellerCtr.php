@@ -35,4 +35,10 @@ class OrderSellerCtr extends Controller
         ];
         return view('account.seller.order.order_details', $dr);
     }
+
+    public function getIdKelurahan()
+    {
+        
+    }
+
 }

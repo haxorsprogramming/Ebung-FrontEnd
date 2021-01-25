@@ -42,6 +42,7 @@
     <!-- <link rel="stylesheet" href="https://demo.getstisla.com/assets/css/components.css"> -->
     <link rel="stylesheet" href="https://demo.getstisla.com/assets/css/style.css">
     <link rel="stylesheet" href="{{ asset('ladun/account_asset/css/style.css') }}">
+    <link rel="stylesheet" href="https://demo.getstisla.com/assets/css/components.css">
     
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <!--<link rel="stylesheet" href="assets/css/style.min.css">-->

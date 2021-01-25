@@ -78,7 +78,7 @@ class RegisterCtr extends Controller
 
         $dr = ['email' => $email, 'token_aktivasi' => $token_registrasi];
         $sr = ['status' => 'sukses'];
-        Mail::to('alditha.forum@gmail.com') -> send(new RegistrasiMail($dr));
+        Mail::to($email) -> send(new RegistrasiMail($dr));
         return \Response::json($sr);
     }
 

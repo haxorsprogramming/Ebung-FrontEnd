@@ -23,13 +23,13 @@
             $dataCustomer = DB::table('tbl_member') -> where('username', $order -> customer) -> first();
 
             if($detailOrder -> status_order == 'MENUNGGU_PEMBAYARAN'){
-              $rowColor = "#b2bec3";
+              $rowColor = "background-color:#b2bec3";
             }else{
-              $rowColor = "#55efc4";
+              $rowColor = "background-color:#55efc4";
             }
           @endphp
 
-            <tr style="background-color: {{ $rowColor }};">
+            <tr style="{{ $rowColor }}">
               <td>{{ $no }}</td>
               <td>{{ $kdCap }}</td>
               <td>{{ $dataProduk -> nama_produk }}</td>
