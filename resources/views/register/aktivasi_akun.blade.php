@@ -33,5 +33,4 @@
 	
 </main>
 
-
 @include('layout.footer')

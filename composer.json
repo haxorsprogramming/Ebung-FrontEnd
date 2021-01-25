@@ -19,7 +19,8 @@
         "league/flysystem-aws-s3-v3": "~1.0",
         "maatwebsite/excel": "^3.1",
         "maulana20/gojekid": "^1.2",
-        "sunaoka/laravel-ses-template-driver": "^2.0"
+        "sunaoka/laravel-ses-template-driver": "^2.0",
+        "xendit/xendit-php": "^2.6"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
