@@ -24,7 +24,7 @@ var divProduct = new Vue({
             $('#divModelPayment').show();
             window.scrollTo({top:800, left:0, behavior : 'smooth'});
             divOrder.item = namaProdukAwal;
-            divOrder.imgPrevState = '1';
+            divOrder.imgPrevState = '2';
         },
         changeVariantAtc(kd, type, nama)
         {
@@ -56,7 +56,7 @@ var divOrder = new Vue({
     el : '#divOrder',
     data : {
         capchaState : false,
-        btnBawah : '1',
+        btnBawah : '3',
         item : '-',
         senderName : '-',
         receiverName : '-',
@@ -227,6 +227,7 @@ function paymentStep()
         cancelButtonText: "Tidak",
     }).then((result) => {
         if (result.value) {
+            $('#divOrderDetails').hide();
             $('#divShipmentAddress').hide();
             $('#divPayment').show();
             divOrder.btnBawah = "3";

@@ -10,7 +10,7 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2 class="breadcrumb-title">Product Details {{ $kdKelurahan }}</h2>
+                <h2 class="breadcrumb-title">Product Details</h2>
                 <!-- breadcrumb-list start -->
                 <ul class="breadcrumb-list">
                     <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
@@ -72,7 +72,7 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
             <div class="col-xl-6 col-lg-5 col-md-6">
                 <!-- product_details_info start -->
                 <div class="product_details_info">
-                    <h2>{{ $dataProduct -> nama_produk }} {{ $kdKelurahan }} <br/>(<span id="capJudulProduct">Main variant</span>)</h2>
+                    <h2>{{ $dataProduct -> nama_produk }}  <br/>(<span id="capJudulProduct">Main variant</span>)</h2>
                     <!-- pro_rating start -->
                     <div class="pro_rating d-flex">
                         <ul class="product-rating d-flex">

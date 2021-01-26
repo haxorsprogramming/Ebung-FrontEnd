@@ -94,7 +94,9 @@ if($userLogin === null){
             </div>
 
             <div class="checkout-details-wrapper">
+
                 <div class="row">
+
                     <div class="col-lg-6 col-md-6">
 
                         <div class="billing-details-wrap" id="divOrderDetails" style="padding-top:20px;">
@@ -123,33 +125,9 @@ if($userLogin === null){
                                 <label>Delivery Date</label>
                                 <input type="date" class="form-control" id="txtDeliveryDate" onchange="deliveryDateSet()" min="<?php echo date("Y-m-d"); ?>">
                             </div>
-                        </div>
-
-                        <div class="billing-details-wrap" id="divShipmentAddress" style="display: none;">
-                            <h4 class="shoping-checkboxt-title">Shipment Address</h4>
-                            <div class="form-group">
-                                <label>Provinsi</label>
-                                <input type="text" class="form-control" disabled value="{{ $dataAlamat['namaProvinsi'] }}" id="txtProvinsi">
-                            </div>
-                            <div class="form-group">
-                                <label>Kabupaten</label>
-                                <input type="text" class="form-control" disabled value="{{ $dataAlamat['namaKabupaten'] }}" id="txtKabupaten">
-                            </div>
-                            <div class="form-group">
-                                <label>Kecamatan</label>
-                                <select class="form-control" id="txtKecamatan" onchange="kecamatanPilih()">
-                                    <option value="none">--- Choose Kecamatan ---</option>
-                                    @foreach($dataAlamat['dataKecamatan'] as $kecamatan)
-                                    <option value="{{ $kecamatan -> id_kec }}|{{ $kecamatan -> nama }}">{{ $kecamatan -> nama }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Kelurahan</label>
-                                <select class="form-control" id="txtKelurahan" onchange="kelurahanPilih()">
-                                    <option value="none">--- Choose kelurahan ---</option>
-                                    <option v-for="kel in dataKelurahan" v-bind:value="kel.nama">@{{ kel.nama }}</option>
-                                </select>
+                            <div>
+                              <label>Address Location</label>
+                                <h6>Provinsi {{ $dataAlamat['namaProvinsi'] }}, {{ $dataAlamat['namaKabupaten'] }}, Kecamatan {{ $dataAlamat['namaKecamatan'] }}, Kelurahan {{ $dataAlamat['namaKelurahan'] }}</h6>
                             </div>
                             <div>
                                 <label>Address Details</label>
@@ -213,7 +191,7 @@ if($userLogin === null){
                                 <div class="card-body" id="divPaymentInstruction" style="display: none;">
                                     <h5>Payment Instruction</h5>
                                     <p class="section-lead">
-                                        Silahkan lakukan pembayaran sesuai ke rekening berikut : 
+                                        Silahkan lakukan pembayaran sesuai ke rekening berikut :
                                         <table class="table">
                                             <tr>
                                                 <td>Bank BRI</td>
@@ -234,29 +212,28 @@ if($userLogin === null){
                                         </div>
                                     </p>
                                 </div>
-
-                            </div>
                         </div>
-                        
+
                         <div id="divLoading" style="text-align:center;display:none;">
                             <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_jryyrscd.json" mode="bounce" background="transparent" speed="1" style="width: 300px; height: 300px;margin:auto;" loop autoplay></lottie-player>
                             <h5>Processing new order ... </h5>
                         </div>
 
                         <div class="col" style="margin-top:15px;">
-                            <a v-if="btnBawah === '1'" href="{{ env('JSVOID') }}" id="btnNextDelivery" class="btn btn-primary btn-icon icon-left" onclick="nextStep()" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
+                            <a v-if="btnBawah === '2'" href="{{ env('JSVOID') }}" id="btnNextDelivery" class="btn btn-primary btn-icon icon-left" onclick="nextStep()" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
                                 <i class="ion-arrow-right-b"></i> Next (Delivery Address)
                             </a>
-                            <a v-else-if="btnBawah === '2'" href="{{ env('JSVOID') }}" id="btnNextPayment" onclick="paymentStep()" class="btn btn-primary btn-icon icon-left" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
+                            <a v-else-if="btnBawah === '3'" href="{{ env('JSVOID') }}" id="btnNextPayment" onclick="paymentStep()" class="btn btn-primary btn-icon icon-left" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
                                 <i class="ion-arrow-right-b"></i> Next (Payment)
                             </a>
 
-                            <a v-else-if="btnBawah === '3'" href="{{ env('JSVOID') }}" id="btnProcessPayment" onclick="paymentProcess()" class="btn btn-primary btn-icon icon-left" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
+                            <a v-else-if="btnBawah === '4'" href="{{ env('JSVOID') }}" id="btnProcessPayment" onclick="paymentProcess()" class="btn btn-primary btn-icon icon-left" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
                                 <i class="ion-card"></i> Process to payment
                             </a>
                         </div>
 
                     </div>
+                  </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="billing-details-wrap" style="background-color: white;padding-top:25px;padding-left:20px;border-radius:10px;">
                             <h5 class="shoping-checkboxt-title">Order Preview</h5>
