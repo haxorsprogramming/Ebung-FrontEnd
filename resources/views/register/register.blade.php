@@ -43,14 +43,16 @@
                                 <input class="form-control" type="password" onkeyup="checkPassword()" placeholder="Your password" id="txtPasswordRegistrasi">
                                 @if($referralStatus == 'yes')
                                     <input type="hidden" value="{{ $idReferral }}" id="txtReferralCode">
-                                @else 
-                                    <label for="txtReferralCode" class=" control-label">Referral Code</label>
-                                    <input class="form-control" type="text" placeholder="Your referral code" id="txtReferralCode">
+                                @else
+                                <div>
+                                  <label for="txtReferralCode" class=" control-label">Referral Code</label>
+                                  <input class="form-control" type="text" value="ebunga-seller" placeholder="Your referral code" id="txtReferralCode">
+                                </div>
                                 @endif
                                 <div style="margin-top:20px;" id="capchaGoogle">
                                     {!! NoCaptcha::display(['data-theme' => 'white', 'data-callback' => 'recaptcha_callback']) !!}
-                                </div>   
-                               
+                                </div>
+
                                 <div id="capNotifIsiField" style="padding-top:20px;color:red;font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;">
                                     @{{ capMessage }}
                                 </div>
@@ -60,20 +62,20 @@
                                         <li id="passReg_2">Password must contain alphabet & number combination</li>
                                     </ul>
                                 </div>
-                                
+
                             </div>
                             <div style="font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;" id="loaderLokasi">
-                                <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;"> Registering ... dont close this windows after complete registration 
+                                <img src="{{ asset('ladun/ebunga_asset/others/loading.svg') }}" style="width: 40px;"> Registering ... dont close this windows after complete registration
                             </div>
                             <div id="divAgree" style="display: none;">
                             <input id="chkAgree" type="checkbox" name="check" @click="changeAgree">
-                            <label class="label-check" for="chkAgree"> I hereby agree to the 
+                            <label class="label-check" for="chkAgree"> I hereby agree to the
                                 <a target="_blank" href="https://www.ebunga.com/halaman/form/Term-and-Condition.html"> terms and conditions </a> of Ebunga
                             </label>
                             </div>
                             <button type="button" class="link-v1 rt" @click="daftarAtc" id="btnSignUp">SIGN UP</button>
                         </form>
-                   
+
                     <!-- End form -->
                 </div>
                 <div id="divCompleteRegistration">
@@ -86,7 +88,7 @@
                         <div id="capNotifToLogin">
                         <h3>Already have account? go <a href="{{ url('/login') }}"><strong>sign in</string></a></h3>
                         </div>
-                    
+
                         <form class="form-horizontal" style="display: none;" id="formLogin">
                         <div class="group box space-20">
                             <label class="control-label" for="inputemail">EMAIL ADDRESS *</label>
@@ -105,13 +107,13 @@
                     </form>
                     </div>
                     <!-- End register -->
-                   
+
                 </div>
                 <!-- End col-md-6 -->
             </div>
         </div>
     </div>
-    
+
 </main>
 
 <!-- render google capcha js  -->

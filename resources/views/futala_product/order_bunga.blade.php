@@ -125,6 +125,7 @@ if($userLogin === null){
                                 <label>Delivery Date</label>
                                 <input type="date" class="form-control" id="txtDeliveryDate" onchange="deliveryDateSet()" min="<?php echo date("Y-m-d"); ?>">
                             </div>
+                            <input type="hidden">
                             <div>
                               <label>Address Location</label>
                                 <h6>Provinsi {{ $dataAlamat['namaProvinsi'] }}, {{ $dataAlamat['namaKabupaten'] }}, Kecamatan {{ $dataAlamat['namaKecamatan'] }}, Kelurahan {{ $dataAlamat['namaKelurahan'] }}</h6>

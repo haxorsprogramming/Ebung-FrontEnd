@@ -194,14 +194,6 @@ function paymentProcess()
         }).then((result) => {
             if(result.value) {
                 addNewOrder();
-
-                // axios.post(rToSubmitNewOrder, ds).then(function(res){
-                //     let dr = res.data;
-                //     console.log(dr);
-
-                // });
-                // $('#divPaymentMethod').hide();
-                // $('#divPaymentInstruction').show();
             }
         });
     }else{
@@ -211,7 +203,7 @@ function paymentProcess()
 
 function checkBankTransfer()
 {
-    console.log("Bank");
+    
 }
 
 function paymentStep()
@@ -230,7 +222,7 @@ function paymentStep()
             $('#divOrderDetails').hide();
             $('#divShipmentAddress').hide();
             $('#divPayment').show();
-            divOrder.btnBawah = "3";
+            divOrder.btnBawah = "4";
             $('#divStepDetailsOrder').attr("style", "");
             $('#divStepDetailsOrder').addClass('wizard-step-active');
             document.querySelector('#divStepPayment').setAttribute('style', 'background-color: #fab1a0;');

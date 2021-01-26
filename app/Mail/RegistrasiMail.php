@@ -31,7 +31,7 @@ class RegistrasiMail extends Mailable
         $email = $this -> dr['email'];
         $token_aktivasi = $this -> dr['token_aktivasi'];
         $dr = ['email' => $email, 'website' => 'ebunga.co.id', 'token_aktivasi' => $token_aktivasi];
-        return $this -> from('addydr@ebunga.co.id') -> view('layout_email.notif_new_registrasi') -> subject("Ebunga Registration") -> with($dr);
+        return $this -> from('master@ebunga.co.id', 'Ebunga.co.id') -> view('layout_email.notif_new_registrasi') -> subject("Ebunga Registration") -> with($dr);
     }
 
 }
