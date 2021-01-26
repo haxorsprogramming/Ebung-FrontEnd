@@ -2,7 +2,7 @@
 /**
  * Import namespace & library
  */
-namespace App\Http\Controllers; 
+namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 /**
  * Import model
@@ -37,7 +37,7 @@ class DaerahCtr extends Controller
     public function getProvinsiPost(Request $request)
     {
         /**
-         * Slug data 
+         * Slug data
          */
         $slug = $request -> searchTerm;
         $provinsi = ProvinsiMdl::where('nama', 'like', '%'.$slug.'%') -> get();
@@ -84,5 +84,52 @@ class DaerahCtr extends Controller
         $dr = ['kelurahan' => $kelurahan];
         return \Response::json($dr);
     }
-    
+
+    public function getforkarea($kd_kelurahan)
+    {
+      $dataKelurahan = KelurahanMdl::where('id_kel', $kd_kelurahan) -> first();
+      $dataKecamatan = KecamatanMdl::where('id_kec', $dataKelurahan -> id_kec) -> first();
+      $dataKabupaten = KabupatenMdl::where('id_kab', $dataKecamatan -> id_kab) -> first();
+      // $dataProvinsi = Provinsi::where('id_prov')
+      $dataAllKelurahan = KelurahanMdl::where('id_kec', $dataKelurahan -> id_kec) -> get();
+      $dr = [
+        'status' => 'sukses',
+        'dataKelurahan' => $dataKelurahan,
+        'dataKecamatan' => $dataKecamatan,
+        'dataKelurahanAll' => $dataAllKelurahan,
+        'dataKabupaten' => $dataKabupaten
+      ];
+      return \Response::json($dr);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

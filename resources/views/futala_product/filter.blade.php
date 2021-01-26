@@ -27,7 +27,7 @@
 
             <div class="col-lg-9 order-lg-2 order-1">
                 <!-- shop-product-wrapper start -->
-                <div class="shop-product-wrapper">
+                <div class="shop-product-wrapper" id="divListProduk">
                     <div class="form-group">
                         <label style="font-size: 20px;">Untuk memudahkan pencarian, masukkan daerah tujuan pengiriman</label>
                         <div class="input-group mb-3">
@@ -61,6 +61,14 @@
                             </div>
                         </div>
                     </div>
+                    <div>
+                      <div class="form-group">
+                              <label>Kelurahan</label>
+                              <select class="form-control" id="txtKelurahan">
+                                  <option v-for="kd in kelurahanData" v-bind:value="kd.id_kel">@{{ kd.nama }}</option>
+                              </select>
+                          </div>
+                    </div>
                     <div class="row">
                         <div class="col">
                             <!-- shop-top-bar start -->
@@ -92,17 +100,23 @@
                         </div>
                     </div>
 
-                    <div id="divLoading" style="text-align:center;">
+                    <div id="divSearchCoverage" style="text-align:center;">
+                      <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/figure/search_coverage.png">
+                      <br/>
+                      <h4>Please set area first ...</h4>
+                    </div>
+
+                    <div id="divLoading" style="text-align:center;display:none;">
                             <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_jryyrscd.json" mode="bounce" background="transparent" speed="1" style="width: 300px; height: 300px;margin:auto;" loop autoplay></lottie-player>
                             <h5>Loading product ... </h5>
                     </div>
 
-                    <div id="divNoProduct" style="text-align:center;display:none;">
-                      <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/img-utility/no_product.jpg" style="width:700px;">
+                    <div id="divNoProduct" style="text-align:center;display:none;margin-top:20px;">
+                      <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/figure/kosong_area.jpg" style="width:700px;">
                     </div>
 
                     <!-- shop-products-wrap start -->
-                    <div class="shop-products-wrap" id="divListProduk" style="display: none;">
+                    <div class="shop-products-wrap" style="display: none;">
                     <div class="tab-content">
                             <div class="tab-pane active" id="grid">
                                 <div class="shop-product-wrap">
@@ -173,7 +187,7 @@
                     <!-- shop-products-wrap end -->
 
                     <!-- paginatoin-area start -->
-                    <div class="paginatoin-area">
+                    <div class="paginatoin-area" style="display:none;">
                         <div class="row">
                             <div class="col-lg-12 col-md-12">
                                 <ul class="pagination-box">

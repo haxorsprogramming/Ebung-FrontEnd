@@ -155,6 +155,7 @@ Route::get('/get/location/kabupaten/{id_provinsi}', [DaerahCtr::class, 'getKabup
 Route::get('/get/location/kecamatan/{id_kabupaten}', [DaerahCtr::class, 'getKecamatan']);
 Route::get('/get/location/kelurahan/{id_kecamatan}', [DaerahCtr::class, 'getKelurahan']);
 Route::get('/get/sub-kategori/{id_kategori}', [HelperCtr::class, 'getsubkategori']);
+Route::get('/get/location/fork/{kdKelurahan}', [DaerahCtr::class, 'getforkarea']);
 
 Route::post('/get/location/provinsi', [DaerahCtr::class, 'getProvinsiPost']);
 Route::post('/get/location/kelurahan', [DaerahCtr::class, 'getKelurahanPost']);
