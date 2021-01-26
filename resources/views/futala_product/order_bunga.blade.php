@@ -218,20 +218,18 @@ if($userLogin === null){
                             <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_jryyrscd.json" mode="bounce" background="transparent" speed="1" style="width: 300px; height: 300px;margin:auto;" loop autoplay></lottie-player>
                             <h5>Processing new order ... </h5>
                         </div>
+                    </div>
+                    <div class="col" style="margin-top:15px;">
+                        <a v-if="btnBawah === '2'" href="{{ env('JSVOID') }}" id="btnNextDelivery" class="btn btn-primary btn-icon icon-left" onclick="nextStep()" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
+                            <i class="ion-arrow-right-b"></i> Next (Delivery Address)
+                        </a>
+                        <a v-else-if="btnBawah === '3'" href="{{ env('JSVOID') }}" id="btnNextPayment" onclick="paymentStep()" class="btn btn-primary btn-icon icon-left" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
+                            <i class="ion-arrow-right-b"></i> Next (Payment)
+                        </a>
 
-                        <div class="col" style="margin-top:15px;">
-                            <a v-if="btnBawah === '2'" href="{{ env('JSVOID') }}" id="btnNextDelivery" class="btn btn-primary btn-icon icon-left" onclick="nextStep()" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
-                                <i class="ion-arrow-right-b"></i> Next (Delivery Address)
-                            </a>
-                            <a v-else-if="btnBawah === '3'" href="{{ env('JSVOID') }}" id="btnNextPayment" onclick="paymentStep()" class="btn btn-primary btn-icon icon-left" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
-                                <i class="ion-arrow-right-b"></i> Next (Payment)
-                            </a>
-
-                            <a v-else-if="btnBawah === '4'" href="{{ env('JSVOID') }}" id="btnProcessPayment" onclick="paymentProcess()" class="btn btn-primary btn-icon icon-left" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
-                                <i class="ion-card"></i> Process to payment
-                            </a>
-                        </div>
-
+                        <a v-else-if="btnBawah === '4'" href="{{ env('JSVOID') }}" id="btnProcessPayment" onclick="paymentProcess()" class="btn btn-primary btn-icon icon-left" style="color: #ecf0f1;border-radius:10px;border:#ecf0f1 solid 1px;">
+                            <i class="ion-card"></i> Process to payment
+                        </a>
                     </div>
                   </div>
                     <div class="col-lg-6 col-md-6">
