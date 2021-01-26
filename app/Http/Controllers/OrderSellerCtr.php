@@ -27,7 +27,7 @@ class OrderSellerCtr extends Controller
         $dataProduct = ProdukMdl::where('kd_produk', $dataOrder -> kd_product) -> first();
         $waktu =  date("F jS, Y", strtotime($dataOrder -> waktu));
         $dr = [
-            'kdOrder' => $kdOrder, 
+            'kdOrder' => $kdOrder,
             'dataOrder' => $dataOrder,
             'detailOrder' => $detailOrder,
             'dataProduct' => $dataProduct,
@@ -38,7 +38,7 @@ class OrderSellerCtr extends Controller
 
     public function getIdKelurahan()
     {
-        
+
     }
 
 }

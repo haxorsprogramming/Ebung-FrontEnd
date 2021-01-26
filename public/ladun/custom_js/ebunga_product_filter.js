@@ -4,6 +4,10 @@
 var rToDefaultProduct = server + "rest/product/list/default";
 var rToGetProductByKelurahan = server + "rest/product/getProductByKelurahan";
 var rToGetForkDaerah = server + "get/location/fork/";
+var rToGetKabupaten = server + "get/location/kabupaten/";
+var rToGetKecamatan = server + "get/location/kecamatan/";
+var rToGetKelurahan = server + "get/location/kelurahan/";
+var kelurahanFinal = "";
 /**
  * Vue object
  */
@@ -57,6 +61,46 @@ $("#txtDaerah").select2({
 /**
  * Function
  */
+ function getKabupaten(idProvinsi)
+ {
+   divListProduk.kabupatenData.push({ nama : '--- Pilih kabupaten ---', id_kab : 'none' });
+  axios.get(rToGetKabupaten+idProvinsi).then(function(res){
+    let dr = res.data;
+    let kabupaten = dr.kabupaten;
+    kabupaten.forEach(renderKabupaten);
+
+    function renderKabupaten(item, index){
+      divListProduk.kabupatenData.push({ nama:kabupaten[index].nama, id_kab:kabupaten[index].id_kab });
+    }
+  });
+}
+
+function getKecamatan(idKabupaten)
+{
+  divListProduk.kecamatanData.push({ nama : '--- Pilih kecamatan ---', id_kec : 'none' });
+  axios.get(rToGetKecamatan+idKabupaten).then(function(res){
+    let dr = res.data;
+    let kecamatan = dr.kecamatan;
+    kecamatan.forEach(renderKecamatan);
+    function renderKecamatan(item, index){
+      divListProduk.kecamatanData.push({ nama:kecamatan[index].nama, id_kec:kecamatan[index].id_kec });
+    }
+  });
+}
+
+function getKelurahan(idKecamatan)
+{
+  divListProduk.kelurahanData.push({ nama : '--- Pilih kelurahan ---', id_kel : 'none' });
+  axios.get(rToGetKelurahan+idKecamatan).then(function(res){
+    let dr = res.data;
+    let kelurahan = dr.kelurahan;
+    kelurahan.forEach(renderKelurahan);
+    function renderKelurahan(item, index){
+      divListProduk.kelurahanData.push({ nama:kelurahan[index].nama, id_kel:kelurahan[index].id_kel });
+    }
+  });
+}
+
  function updateArea(kdKelurahan)
  {
    clearProvinsi();
@@ -100,6 +144,36 @@ $("#txtDaerah").select2({
      }, 500);
    });
  }
+
+function provChange()
+{
+  let idProv = document.querySelector('#txtProvinsi').value;
+  clearKabupaten();
+  clearKecamatan();
+  clearKelurahan();
+  getKabupaten(idProv);
+}
+
+function kabChange()
+{
+  let idKab = document.querySelector('#txtKabupaten').value;
+  clearKecamatan();
+  clearKelurahan();
+  getKecamatan(idKab);
+}
+
+function kecChange()
+{
+  let idKec = document.querySelector('#txtKecamatan').value;
+  clearKelurahan();
+  getKelurahan(idKec);
+}
+
+function kelChange()
+{
+  let idKel = document.querySelector('#txtKelurahan').value;
+  searchKel(idKel);
+}
 
 function clearProvinsi()
 {
@@ -152,6 +226,9 @@ function searchKel(kdKelurahan)
         $('#divSearchCoverage').hide();
         $('#divNoProduct').show();
       }else{
+        axios.post(server+"update/kelurahan/order", ds).then(function(res){
+          console.log(res.data);
+        });
         $('#divNoProduct').hide();
         $('#divSearchCoverage').hide();
         let produk = dr.produk;

@@ -159,7 +159,7 @@ Route::get('/get/location/fork/{kdKelurahan}', [DaerahCtr::class, 'getforkarea']
 
 Route::post('/get/location/provinsi', [DaerahCtr::class, 'getProvinsiPost']);
 Route::post('/get/location/kelurahan', [DaerahCtr::class, 'getKelurahanPost']);
-
+Route::post('/update/kelurahan/order', [DaerahCtr::class, 'updatekelurahanorder']);
 Route::post('/rest/approve-branch-seller', [BranchAdminCtr::class, 'approvebranchseller']);
 
 /**

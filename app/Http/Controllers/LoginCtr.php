@@ -34,7 +34,7 @@ class LoginCtr extends Controller
         }else{
             return redirect('/account');
         }
-       
+
     }
 
     public function loginproses(Request $request)

@@ -1,5 +1,6 @@
 @php
 $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduct -> id_branch) -> get();
+
 @endphp
 
 @include('futala_layout.header')
@@ -9,7 +10,7 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2 class="breadcrumb-title">Product Details</h2>
+                <h2 class="breadcrumb-title">Product Details {{ $kdKelurahan }}</h2>
                 <!-- breadcrumb-list start -->
                 <ul class="breadcrumb-list">
                     <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
@@ -39,7 +40,7 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
                                 <div role="tabpanel" class="tab-pane active product-image-position" id="img-tab-main">
                                     <a href="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/EBUNGA9119.jpg" class="img-poppu">
                                         <img id="divImgProduct" src="https://s3-id-jkt-1.kilatstorage.id/ebunga/product/main-product/{{ $dataProduct -> foto_utama }}" alt="Nanti ...">
-                                        <span id="divCapProduct">Main variant</span>
+                                        <span id="divCapProduct">Main variant </span>
                                     </a>
                                 </div>
                             </div>
@@ -64,14 +65,14 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
                             @endforeach
                         </ul>
                         <!-- End Small images -->
-                        
+
                     </div>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-5 col-md-6">
                 <!-- product_details_info start -->
                 <div class="product_details_info">
-                    <h2>{{ $dataProduct -> nama_produk }} <br/>(<span id="capJudulProduct">Main variant</span>)</h2>
+                    <h2>{{ $dataProduct -> nama_produk }} {{ $kdKelurahan }} <br/>(<span id="capJudulProduct">Main variant</span>)</h2>
                     <!-- pro_rating start -->
                     <div class="pro_rating d-flex">
                         <ul class="product-rating d-flex">
@@ -131,9 +132,9 @@ $dataCoverage = DB::table('tbl_coverage_area') -> where('kd_branch', $dataProduc
                 <!-- product_details_info end -->
             </div>
         </div>
-        
+
         <div id="divModelPayment" style="text-align: center;display:none;margin-top:-50px;">
-            <h4>Product Order</h4>
+            <h4>Product Order </h4>
             <img id="figureStepOrder" src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/figure/order_step_1.png" style="width: 500px;">
         </div>
 

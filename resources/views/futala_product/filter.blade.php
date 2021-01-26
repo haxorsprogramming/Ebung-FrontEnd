@@ -35,11 +35,12 @@
                         </select>
                         </div>
                     </div>
+                    <small>Atau cari manual </small>
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
                                 <label>Provinsi</label>
-                                <select class="form-control" id="txtProvinsi">
+                                <select class="form-control" id="txtProvinsi" onchange="provChange()">
                                     <option v-for="prov in provinsiData" v-bind:value="prov.id_prov">@{{ prov.nama }}</option>
                                 </select>
                             </div>
@@ -47,7 +48,7 @@
                         <div class="col">
                         <div class="form-group">
                                 <label>Kabupaten</label>
-                                <select class="form-control" id="txtKabupaten">
+                                <select class="form-control" id="txtKabupaten" onchange="kabChange()">
                                     <option v-for="kab in kabupatenData" v-bind:value="kab.id_kab">@{{ kab.nama }}</option>
                                 </select>
                             </div>
@@ -55,7 +56,7 @@
                         <div class="col">
                         <div class="form-group">
                                 <label>Kecamatan</label>
-                                <select class="form-control" id="txtKecamatan">
+                                <select class="form-control" id="txtKecamatan" onchange="kecChange()">
                                     <option v-for="kec in kecamatanData" v-bind:value="kec.id_kec">@{{ kec.nama }}</option>
                                 </select>
                             </div>
@@ -63,7 +64,7 @@
                         <div class="col">
                           <div class="form-group">
                                   <label>Kelurahan</label>
-                                  <select class="form-control" id="txtKelurahan">
+                                  <select class="form-control" id="txtKelurahan" onchange="kelChange()">
                                       <option v-for="kd in kelurahanData" v-bind:value="kd.id_kel">@{{ kd.nama }}</option>
                                   </select>
                               </div>
@@ -116,6 +117,8 @@
 
                     <div id="divNoProduct" style="text-align:center;display:none;margin-top:20px;">
                       <img src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/figure/kosong_area.jpg" style="width:700px;">
+                      <br/>
+                      <h4>No product available in selected area ...</h4>
                     </div>
 
                     <!-- shop-products-wrap start -->

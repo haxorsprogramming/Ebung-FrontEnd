@@ -109,6 +109,15 @@ class DaerahCtr extends Controller
       ];
       return \Response::json($dr);
     }
+
+    public function updatekelurahanorder(Request $request)
+    {
+      $kdKelurahan = $request -> kelurahan;
+      session(['kelurahanOrder' => $kdKelurahan]);
+      $dr = ['status' => 'sukses', 'kdKelurahan' => $kdKelurahan];
+      return \Response::json($dr);
+    }
+
 }
 
 

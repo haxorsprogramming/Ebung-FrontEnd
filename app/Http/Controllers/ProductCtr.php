@@ -214,6 +214,7 @@ class ProductCtr extends Controller
 
     public function productdetails($idProduct)
     {
+        $kdKelurahan = session('kelurahanOrder');
         $dataProduct = ProdukMdl::where('slug', $idProduct) -> first();
         $dataVariant = VarianProductMdl::where('kd_product', $dataProduct -> kd_produk) -> get();
         $dataBranch = BranchSellerMdl::where('kd_branch', $dataProduct -> id_branch) -> first();
@@ -223,7 +224,14 @@ class ProductCtr extends Controller
         $dataKecamatan = KecamatanMdl::where('id_kab', $alamatEx[2]) -> get();
         $dataAlamat = ['namaProvinsi' => $dataProvinsi -> nama, 'namaKabupaten' => $dataKabupaten -> nama, 'dataKecamatan' => $dataKecamatan];
         $kategoriProduct = KategoriMdl::all();
-        $dr = ['kategori' => $kategoriProduct, 'page' => 'details_product', 'dataProduct' => $dataProduct, 'dataVariant' => $dataVariant, 'dataAlamat' => $dataAlamat];
+        $dr = [
+          'kategori' => $kategoriProduct,
+          'page' => 'details_product',
+          'dataProduct' => $dataProduct,
+          'dataVariant' => $dataVariant,
+          'dataAlamat' => $dataAlamat,
+          'kdKelurahan' => $kdKelurahan
+        ];
         return view('futala_product.details_product', $dr);
     }
 
