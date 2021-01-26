@@ -52,7 +52,6 @@ $("#txtDaerah").select2({
     divListProduk.kdKelurahanDipilih = kdKelurahan;
     searchKel(kdKelurahan);
     updateArea(kdKelurahan);
-
  });
 
 /**
@@ -142,7 +141,7 @@ function searchKel(kdKelurahan)
 {
   clearProduk();
   $('#divLoading').show();
-  $('#divListProduk').hide();
+  // $('#divListProduk').hide();
   $('#divNoProduct').hide();
     var ds = {'kategori':kategori, 'kelurahan':kdKelurahan}
     axios.post(rToDefaultProduct, ds).then(function(res){
@@ -154,6 +153,7 @@ function searchKel(kdKelurahan)
         $('#divNoProduct').show();
       }else{
         $('#divNoProduct').hide();
+        $('#divSearchCoverage').hide();
         let produk = dr.produk;
         produk.forEach(renderProduk);
         function renderProduk(item, index){
@@ -170,7 +170,7 @@ function searchKel(kdKelurahan)
     });
 
     setTimeout(function(){
-      $('#divListProduk').show();
+      $('#divShowProduct').show();
     }, 500);
 
     setTimeout(function(){

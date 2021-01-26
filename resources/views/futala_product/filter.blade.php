@@ -119,7 +119,7 @@
                     </div>
 
                     <!-- shop-products-wrap start -->
-                    <div class="shop-products-wrap" style="display: none;">
+                    <div class="shop-products-wrap" id="divShowProduct" style="display: none;">
                     <div class="tab-content">
                             <div class="tab-pane active" id="grid">
                                 <div class="shop-product-wrap">
