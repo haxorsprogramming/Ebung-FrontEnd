@@ -1,7 +1,7 @@
 @include('futala_layout.header')
 
 <!-- breadcrumb-area start -->
-<div class="breadcrumb-area section-ptb" style="background-image:url('https://s3-id-jkt-1.kilatstorage.id/ebunga/cover/cover-bunga.jpg')">
+<div class="breadcrumb-area section-ptb" style="background-image:url('https://s3-id-jkt-1.kilatstorage.id/ebunga/cover/cover-bunga.jpg');display:none;">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -29,7 +29,7 @@
                 <!-- shop-product-wrapper start -->
                 <div class="shop-product-wrapper" id="divListProduk">
                     <div class="form-group">
-                        <label style="font-size: 20px;">Untuk memudahkan pencarian, masukkan daerah tujuan pengiriman</label>
+                        <label style="font-size: 20px;">Choose the Destination</label>
                         <div class="input-group mb-3">
                         <select class="form-control" id="txtDaerah">
                         </select>
@@ -39,35 +39,38 @@
                         <div class="col">
                             <div class="form-group">
                                 <label>Provinsi</label>
-                                <select class="form-control">
-                                    <option>List provinsi</option>
+                                <select class="form-control" id="txtProvinsi">
+                                    <option v-for="prov in provinsiData" v-bind:value="prov.id_prov">@{{ prov.nama }}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col">
                         <div class="form-group">
                                 <label>Kabupaten</label>
-                                <select class="form-control">
-                                    <option>List kabupaten</option>
+                                <select class="form-control" id="txtKabupaten">
+                                    <option v-for="kab in kabupatenData" v-bind:value="kab.id_kab">@{{ kab.nama }}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col">
                         <div class="form-group">
                                 <label>Kecamatan</label>
-                                <select class="form-control">
-                                    <option>List kecamatan</option>
+                                <select class="form-control" id="txtKecamatan">
+                                    <option v-for="kec in kecamatanData" v-bind:value="kec.id_kec">@{{ kec.nama }}</option>
                                 </select>
                             </div>
                         </div>
+                        <div class="col">
+                          <div class="form-group">
+                                  <label>Kelurahan</label>
+                                  <select class="form-control" id="txtKelurahan">
+                                      <option v-for="kd in kelurahanData" v-bind:value="kd.id_kel">@{{ kd.nama }}</option>
+                                  </select>
+                              </div>
+                        </div>
                     </div>
                     <div>
-                      <div class="form-group">
-                              <label>Kelurahan</label>
-                              <select class="form-control" id="txtKelurahan">
-                                  <option v-for="kd in kelurahanData" v-bind:value="kd.id_kel">@{{ kd.nama }}</option>
-                              </select>
-                          </div>
+
                     </div>
                     <div class="row">
                         <div class="col">

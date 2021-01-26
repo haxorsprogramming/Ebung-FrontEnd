@@ -90,14 +90,22 @@ class DaerahCtr extends Controller
       $dataKelurahan = KelurahanMdl::where('id_kel', $kd_kelurahan) -> first();
       $dataKecamatan = KecamatanMdl::where('id_kec', $dataKelurahan -> id_kec) -> first();
       $dataKabupaten = KabupatenMdl::where('id_kab', $dataKecamatan -> id_kab) -> first();
-      // $dataProvinsi = Provinsi::where('id_prov')
+      $dataProvinsi = ProvinsiMdl::where('id_prov', $dataKabupaten -> id_prov) -> first();
       $dataAllKelurahan = KelurahanMdl::where('id_kec', $dataKelurahan -> id_kec) -> get();
+      $dataAllKecamatan = KecamatanMdl::where('id_kab', $dataKecamatan -> id_kab) -> get();
+      $dataAllKabupaten = KabupatenMdl::where('id_prov', $dataProvinsi -> id_prov) -> get();
+      $dataAllProvinsi = ProvinsiMdl::all();
+
       $dr = [
         'status' => 'sukses',
         'dataKelurahan' => $dataKelurahan,
         'dataKecamatan' => $dataKecamatan,
-        'dataKelurahanAll' => $dataAllKelurahan,
-        'dataKabupaten' => $dataKabupaten
+        'dataKabupaten' => $dataKabupaten,
+        'dataProvinsi' => $dataProvinsi,
+        'dataAllKelurahan' => $dataAllKelurahan,
+        'dataAllKecamatan' => $dataAllKecamatan,
+        'dataAllKabupaten' => $dataAllKabupaten,
+        'dataAllProvinsi' => $dataAllProvinsi
       ];
       return \Response::json($dr);
     }

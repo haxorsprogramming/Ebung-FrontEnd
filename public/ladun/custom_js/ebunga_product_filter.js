@@ -22,7 +22,6 @@ var divListProduk = new Vue({
   }
 });
 
-
 /**
  * Inisialisasi
  */
@@ -53,6 +52,7 @@ $("#txtDaerah").select2({
     divListProduk.kdKelurahanDipilih = kdKelurahan;
     searchKel(kdKelurahan);
     updateArea(kdKelurahan);
+
  });
 
 /**
@@ -60,17 +60,84 @@ $("#txtDaerah").select2({
  */
  function updateArea(kdKelurahan)
  {
+   clearProvinsi();
+   clearKabupaten();
+   clearKecamatan();
+   clearKelurahan();
    axios.get(rToGetForkDaerah+kdKelurahan).then(function(res){
      let data = res.data;
-     let kelurahan = data.dataKelurahanAll;
-     kelurahan.forEach(renderKelurahan);
-     function renderKelurahan(item, index){
-       divListProduk.kelurahanData.push({ nama:kelurahan[index].nama, id_kel : kelurahan[index].id_kel });
+     let kelurahan = data.dataKelurahan;
+     let kecamatan = data.dataKecamatan;
+     let kabupaten = data.dataKabupaten;
+     let provinsi = data.dataProvinsi;
+     let kelurahanAll = data.dataAllKelurahan;
+     let kecamatanAll = data.dataAllKecamatan;
+     let kabupatenAll = data.dataAllKabupaten;
+     let provinsiAll = data.dataAllProvinsi;
+
+     kelurahanAll.forEach(renderKelurahanAll);
+     kecamatanAll.forEach(renderKecamatanAll);
+     kabupatenAll.forEach(renderKabupatenAll);
+     provinsiAll.forEach(renderProvinsiAll);
+
+     function renderKelurahanAll(item, index){
+       divListProduk.kelurahanData.push({ nama:kelurahanAll[index].nama, id_kel:kelurahanAll[index].id_kel });
      }
-     document.querySelector('#txtKelurahan').selected = kdKelurahan;
-     console.log(data);
+     function renderKecamatanAll(item, index){
+       divListProduk.kecamatanData.push({ nama:kecamatanAll[index].nama, id_kec:kecamatanAll[index].id_kec });
+     }
+     function renderKabupatenAll(item, index){
+       divListProduk.kabupatenData.push({ nama:kabupatenAll[index].nama, id_kab:kabupatenAll[index].id_kab });
+     }
+     function renderProvinsiAll(item, index)
+     {
+       divListProduk.provinsiData.push({ nama:provinsiAll[index].nama, id_prov:provinsiAll[index].id_prov });
+     }
+     setTimeout(function(){
+       $('#txtKelurahan').val(kdKelurahan);
+       $('#txtKecamatan').val(kecamatan.id_kec);
+       $('#txtKabupaten').val(kabupaten.id_kab);
+       $('#txtProvinsi').val(provinsi.id_prov);
+     }, 500);
    });
  }
+
+function clearProvinsi()
+{
+  let pjg = divListProduk.provinsiData.length;
+  let i;
+  for(i = 0; i < pjg; i++){
+    divListProduk.provinsiData.splice(0,1);
+  }
+}
+
+function clearKabupaten()
+{
+  let pjg = divListProduk.kabupatenData.length;
+  let i;
+  for(i = 0; i < pjg; i++){
+    divListProduk.kabupatenData.splice(0,1);
+  }
+}
+
+function clearKecamatan()
+{
+  let pjg = divListProduk.kecamatanData.length;
+  let i;
+  for(i = 0; i < pjg; i++){
+    divListProduk.kecamatanData.splice(0,1);
+  }
+}
+
+function clearKelurahan()
+{
+  let pjg = divListProduk.kelurahanData.length;
+  let i;
+  for(i = 0; i < pjg; i++){
+    divListProduk.kelurahanData.splice(0,1);
+  }
+}
+
 function searchKel(kdKelurahan)
 {
   clearProduk();
