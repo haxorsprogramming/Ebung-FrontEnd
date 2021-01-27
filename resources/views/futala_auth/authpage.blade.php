@@ -1,7 +1,7 @@
 @include('futala_layout.header')
 
 <!-- breadcrumb-area start -->
-        <div class="breadcrumb-area section-ptb">
+        <div class="breadcrumb-area section-ptb" id="divBreadcumb">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -17,7 +17,12 @@
             </div>
         </div>
         <!-- breadcrumb-area end -->
+        <div id="divSuccessRegister" style="text-align:center;display:none;">
+          <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_4iPre3.json" mode="bounce" background="transparent" speed="1" style="width: 300px; height: 300px;margin:auto;" loop autoplay></lottie-player>
+          <h5>Thank for registering, please check your inbox mail to activate account.</h5>
+          <h6>Already activate account? u can <a href="{{ url('/auth/account') }}">login</a> now</h6>
 
+        </div>
         <!-- main-content-wrap start -->
         <div class="main-content-wrap section-ptb lagin-and-register-page" id="divAuth">
             <div class="container">
@@ -62,20 +67,35 @@
                                     <div class="login-form-container">
                                         <div class="login-register-form">
                                                 <div class="login-input-box">
-                                                    <input type="text" placeholder="Full Name">
-                                                    <input class="form-control" type="text" placeholder="Your phone number" id="txtPhoneNumber" value="(62)">
-                                                    <input name="user-email" placeholder="Email" type="email">
-                                                    <input type="password" name="user-password" placeholder="Password">
+                                                    <input type="text" id="txtFullNameReg" placeholder="Full Name">
+                                                    <input type="text" id="txtPhoneNumberReg" placeholder="Your phone number" id="txtPhoneNumber" value="(62)">
+                                                    <input type="text" id="txtEmailReg" placeholder="Email">
+                                                    <input type="password" id="txtPasswordReg" onkeyup="checkPassword()" placeholder="Password">
                                                 </div>
                                                 <div style="margin-top:20px;" id="capchaGoogle">
-                                                    {!! NoCaptcha::display(['data-theme' => 'white', 'data-callback' => 'recaptcha_callback']) !!}
+                                                    {!! NoCaptcha::display(['data-theme' => 'white', 'data-callback' => 'recaptcha_callback_register']) !!}
+                                                </div>
+                                                <div id="capNotifIsiField" style="padding-top:20px;color:red;font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;">
+                                                    @{{ capMessage }}
+                                                </div>
+                                                <div id="capPasswordStrength" style="padding-top:20px;font-weight:300px;font-family:Poppins;font-size:14px;line-height:20px;">
+                                                    <ul>
+                                                        <li id="passReg_1">Password length must greater than 4 character</li>
+                                                        <li id="passReg_2">Password must contain alphabet & number combination</li>
+                                                    </ul>
                                                 </div>
                                                 <div class="button-box">
-                                                    <a class="register-btn btn"><span>Register</span></a>
+                                                    <a class="register-btn btn" @click="registerAtc"><span>Register</span></a>
                                                 </div>
                                         </div>
                                     </div>
                                 </div>
+
+                                <div id="divLoading" style="text-align:center;display:none;">
+                                  <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_jryyrscd.json" mode="bounce" background="transparent" speed="1" style="width: 300px; height: 300px;margin:auto;" loop autoplay></lottie-player>
+                                  <h5 id="txtCapLoading"></h5>
+                                </div>
+
                             </div>
                         </div>
                     </div>

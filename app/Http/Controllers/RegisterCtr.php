@@ -77,15 +77,15 @@ class RegisterCtr extends Controller
 
         // create new ecash and give 5000 ecash
         $tokenTransaksi = Str::random(40);
-        DB::table('tbl_ecash') -> insert([
-          'token_transaction' => $tokenTransaksi,
-          'user' => $email,
-          'old_ecash' => '0',
-          'flow' => 'add',
-          'total' => '5000',
-          'new_balance' => '5000',
-          'waktu' => $waktu
-        ]);
+        // DB::table('tbl_ecash') -> insert([
+        //   'token_transaction' => $tokenTransaksi,
+        //   'user' => $email,
+        //   'old_ecash' => '0',
+        //   'flow' => 'add',
+        //   'total' => '5000',
+        //   'new_balance' => '5000',
+        //   'waktu' => $waktu
+        // ]);
         $dr = ['email' => $email, 'token_aktivasi' => $token_registrasi];
         $sr = ['status' => 'sukses'];
         Mail::to($email) -> send(new RegistrasiMail($dr));
