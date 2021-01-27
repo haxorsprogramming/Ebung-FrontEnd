@@ -1,7 +1,7 @@
-// Route 
+// Route
 var rToLogin = server + 'login/proses';
 
-// Vue Object 
+// Vue Object
 var divFormLogin = new Vue({
     el : '#divFormLogin',
     data : {
@@ -12,7 +12,7 @@ var divFormLogin = new Vue({
         {
             let username = document.querySelector('#txtUsername').value;
             let password = document.querySelector('#txtPassword').value;
-            
+
             if(this.capchaState === false){
 
             }else{
@@ -25,10 +25,11 @@ var divFormLogin = new Vue({
                     }
                 });
             }
-        }
+        },
+      
     }
 });
-// Inisialisasi 
+// Inisialisasi
 document.querySelector('#txtUsername').focus();
 
 $.ajaxSetup({
@@ -37,7 +38,7 @@ $.ajaxSetup({
     }
 });
 
-// Function 
+// Function
 function recaptcha_callback()
 {
     divFormLogin.capchaState = true;

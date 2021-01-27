@@ -21,10 +21,17 @@ class PageCtr extends Controller
 {
 
     public function home()
-    {   
+    {
         $kategori = KategoriMdl::all();
         $dr = ['kategori' => $kategori, 'page' => 'home'];
         return view('futala_home.home', $dr);
+    }
+
+    public function authpage()
+    {
+      $kategori = KategoriMdl::all();
+      $dr = ['kategori' => $kategori, 'page' => 'auth'];
+      return view('futala_auth.authpage', $dr);
     }
 
     public function listproduk($id_produk)
@@ -57,7 +64,7 @@ class PageCtr extends Controller
     public function logoutsilent(Request $request)
     {
         $request -> session() -> flush();
-        
+
         $dr = ['status' => 'sukses'];
 
         return \Response::json($dr);

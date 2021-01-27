@@ -44,7 +44,7 @@
                                 @if($referralStatus == 'yes')
                                     <input type="hidden" value="{{ $idReferral }}" id="txtReferralCode">
                                 @else
-                                <div>
+                                <div style="display:none;">
                                   <label for="txtReferralCode" class=" control-label">Referral Code</label>
                                   <input class="form-control" type="text" value="ebunga-seller" placeholder="Your referral code" id="txtReferralCode">
                                 </div>

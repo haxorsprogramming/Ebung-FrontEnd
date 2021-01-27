@@ -13,13 +13,15 @@ class TblECash extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_e_cash', function (Blueprint $table) {
+        Schema::create('tbl_ecash', function (Blueprint $table) {
             $table -> id();
-            $table -> char('kd_e_cash', 20);
+            $table -> char('token_transaction', 40);
             $table -> char('user', 100);
-            $table -> char('token_verify', 100);
-            $table -> char('next_token_verify');
+            $table -> integer('old_ecash');
+            $table -> char('flow', 30);
             $table -> integer('total');
+            $table -> integer('new_balance');
+            $table -> dateTime('waktu');
         });
     }
 
@@ -30,6 +32,6 @@ class TblECash extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_e_cash');
+        Schema::dropIfExists('tbl_ecash');
     }
 }

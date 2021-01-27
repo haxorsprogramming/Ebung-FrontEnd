@@ -26,6 +26,7 @@ class VerifyCsrfToken extends Middleware
         '/rest/product/list/default',
         '/order/submit/new-order',
         '/order/verify-payment-admin',
-        '/rest/approve-branch-seller'
+        '/rest/approve-branch-seller',
+        '/register/proses'
     ];
 }

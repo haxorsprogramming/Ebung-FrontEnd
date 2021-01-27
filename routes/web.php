@@ -28,15 +28,15 @@ Route::get('/', [PageCtr::class, 'home']);
 /**
  * Login
  */
-Route::get('/login', [LoginCtr::class, 'loginpage']);
-
-Route::post('/login/proses', [LoginCtr::class, 'loginproses']);
+Route::get('/auth/account', [PageCtr::class, 'authpage']);
+Route::post('/auth/login/proses', [LoginCtr::class, 'loginproses']);
+Route::post('/auth/register/proses', [RegisterCtr::class, 'registerproses']);
 /**
  * Register
  */
 Route::get('/register', [RegisterCtr::class, 'registerpage']);
 Route::get('/register/ref/{referral_id}', [RegisterCtr::class, 'registerwithreferral']);
-Route::post('/register/proses', [RegisterCtr::class, 'registerproses']);
+
 
 Route::get('/aktivasi-akun/{kodeaktivasi}', [RegisterCtr::class, 'aktivasiakun']);
 

@@ -1,12 +1,12 @@
-// ROUTE 
+// ROUTE
 const rToRegister = server + 'register/proses';
 
-// WEB WORKER 
+// WEB WORKER
 const ebungaWorkers = new Worker(server + "ladun/homepage/js_custom/ebunga_registrasi_worker.js");
 
 ebungaWorkers.onmessage = function(e) {}
 
-// VUE OBJECT 
+// VUE OBJECT
 var divRegister = new Vue({
     el : '#divRegister',
     data : {
@@ -42,7 +42,7 @@ var divRegister = new Vue({
                         divRegister.capMessage = 'Please fill the email & password!!';
                     }else{
                         if(this.statePassword === false){
-                            
+
                         }else{
                             if(this.stateAgree === false){
                                 pesanUmumApp('warning', 'Check agre', 'Please check this agreement for customer');
@@ -52,7 +52,7 @@ var divRegister = new Vue({
                                     divRegister.capMessage = 'Please fill the full name!!';
                                 }else{
                                     // start registration proses
-                                    let dataSend = {'email':email, 'password':password, 'fullname':fullname,'phoneNumber':phoneNumber, 'referralCode':referralCode} 
+                                    let dataSend = {'email':email, 'password':password, 'fullname':fullname,'phoneNumber':phoneNumber, 'referralCode':referralCode}
                                     $('#loaderLokasi').show();
                                     document.querySelector('#txtEmailRegistrasi').setAttribute("disabled", "disabled");
                                     document.querySelector('#txtPasswordRegistrasi').setAttribute("disabled", "disabled");
@@ -64,7 +64,7 @@ var divRegister = new Vue({
                                         $('#divCompleteRegistration').show();
                                     });
                                 }
-                                
+
                             }
                         }
                     }
@@ -89,7 +89,7 @@ var divRegister = new Vue({
     }
 });
 
-// INISIALISASI 
+// INISIALISASI
 $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -106,7 +106,7 @@ $('#divCompleteRegistration').hide();
 
 window.intlTelInput(phoneNumber, {
     initialCountry: "id",
-    utilsScript: "http://127.0.0.1:8000/ladun/registerpage/js/utils.js",
+    utilsScript: "https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/front-home-page/utils.js",
   });
 
 $('#txtEmailRegistrasi').click(function(){
@@ -121,7 +121,7 @@ $('#txtFullName').click(function(){
     $('#capNotifIsiField').hide();
 });
 
-// FUNCTION 
+// FUNCTION
 function recaptcha_callback()
 {
     $('#btnSignUp').show();
@@ -146,7 +146,7 @@ function checkPassword()
         divRegister.statePassword = false;
     }else{
         document.querySelector("#passReg_1").style.textDecoration  = "line-through";
-        
+
         if((password.match(/[a-z]/) && password.match(/\d+/))){
             document.querySelector("#passReg_2").style.textDecoration  = "line-through";
             divRegister.statePassword = true;
@@ -158,7 +158,7 @@ function checkPassword()
 
 }
 
-function ValidateEmail(mail) 
+function ValidateEmail(mail)
 {
  if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail))
   {

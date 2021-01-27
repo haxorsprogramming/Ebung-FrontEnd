@@ -1,4 +1,4 @@
-@php 
+@php
     $userLogin = session('userLogin');
     if($userLogin === null){
         $sessionUser = 'no';
@@ -80,7 +80,7 @@
                                                     <li><a href="#">Login in ({{ $userLogin }})</a></li>
                                                 @else
                                                     <li><a href="{{ url('/login')}}">You are not logged in, please login</a></a></li>
-                                                @endif                                               
+                                                @endif
                                             </ul>
                                         </div>
                                     </div>
@@ -156,8 +156,8 @@
                                 @if($sessionUser == 'yes')
                                     <a href="{{ url('/account') }}"><i class="ion-android-contact"></i></a>
                                 @else
-                                    <a href="{{ url('/login') }}"><i class="ion-android-person"></i></a>
-                                @endif  
+                                    <a href="{{ url('/auth/account') }}"><i class="ion-android-person"></i></a>
+                                @endif
                                 </div>
 
                                 <div class="shopping-cart-wrap">
@@ -324,4 +324,3 @@
 
 
         </header>
-

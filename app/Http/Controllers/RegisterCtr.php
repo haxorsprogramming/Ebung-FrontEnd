@@ -12,17 +12,16 @@ use Illuminate\Support\Carbon;
 * Import app
 */
 use App\Models\RegistrasiUserMdl;
+use App\Models\KategoriMdl;
 use App\Mail\RegistrasiMail;
 
 class RegisterCtr extends Controller
 {
     public function registerpage()
     {
-        $cssFile = 'style-about.css';
-        $jsFile = 'ebunga-register.js';
-        $page = 'Register';
-        $dr = ['referralStatus' => 'no', 'cssFile' => $cssFile, 'jsFile' => $jsFile, 'page' => $page];
-        return view('register.register', $dr);
+      $kategori = KategoriMdl::all();
+      $dr = ['kategori' => $kategori, 'page' => 'home'];
+        return view('futala_register.registerpage', $dr);
     }
 
     public function registerwithreferral($referral_id)
@@ -76,6 +75,17 @@ class RegisterCtr extends Controller
             'waktu' => $waktu
         ]);
 
+        // create new ecash and give 5000 ecash
+        $tokenTransaksi = Str::random(40);
+        DB::table('tbl_ecash') -> insert([
+          'token_transaction' => $tokenTransaksi,
+          'user' => $email,
+          'old_ecash' => '0',
+          'flow' => 'add',
+          'total' => '5000',
+          'new_balance' => '5000',
+          'waktu' => $waktu
+        ]);
         $dr = ['email' => $email, 'token_aktivasi' => $token_registrasi];
         $sr = ['status' => 'sukses'];
         Mail::to($email) -> send(new RegistrasiMail($dr));

@@ -99,9 +99,9 @@
 
     </div>
 
-    
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    
+
     <!-- Modernizer JS -->
     <script src="{{ asset('ladun/futala/') }}/js/vendor/modernizr-3.6.0.min.js"></script>
     <!-- jQuery JS -->
@@ -123,6 +123,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="https://s3-id-jkt-1.kilatstorage.id/ebunga/ebunga-cdn/js-lib/lottie/lottie-player.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
+
     <!-- Main JS -->
     <script>
         const server = "{{ url('/') }}/";
