@@ -79,7 +79,7 @@
                                                 @if($sessionUser == 'yes')
                                                     <li><a href="#">Login in ({{ $userLogin }})</a></li>
                                                 @else
-                                                    <li><a href="{{ url('/login')}}">You are not logged in, please login</a></a></li>
+                                                    <li><a href="{{ url('/auth/account')}}">You are not logged in, please login</a></a></li>
                                                 @endif
                                             </ul>
                                         </div>

@@ -30,6 +30,7 @@ class TblMember extends Migration
             $table -> char('npwp', 100);
             $table -> char('siup', 100);
             $table -> char('status', 100);
+            $table -> char('upline', 200);
             $table -> char('suspend', 1);
         });
     }

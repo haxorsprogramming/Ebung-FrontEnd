@@ -91,8 +91,14 @@ var divAuth = new Vue({
                         $('#divBreadcumb').hide();
                         $('#divAuth').hide();
                         $('#divSuccessRegister').show();
-                      }else if(dr === 'email_exist'){
-
+                      }else if(dr.status === 'email_exist'){
+                          grecaptcha.reset();
+                          pesanUmumApp('warning', 'Email exist', 'The email you registered has been used, please use another email!!!');
+                          $('#lg1').show();
+                          $('#lg2').show();
+                          $('#divLoading').hide();
+                          document.querySelector('#txtEmailReg').value = "";
+                          document.querySelector('#txtPasswordReg').value = "";
                       }else{
 
                       }

@@ -45,51 +45,49 @@ class RegisterCtr extends Controller
         $kd_registrasi = Str::random(20);
         $token_registrasi = Str::upper(Str::random(3)."-".Str::random(3)."-".Str::random(3)."-".Str::random(5));
 
-        /**
-         * Tabel timeline
-         */
-        DB::table('tbl_registrasi_user') -> insert([
-            'kd_registrasi' => $kd_registrasi,
-            'token_registrasi' => $token_registrasi,
-            'full_name' => $full_name,
-            'phone_number' => $phone_number,
-            'email' => $email,
-            'password' => $password_hash,
-            'referral_code' => $referral_code,
-            'status_aktivasi' => 'pending'
-        ]);
-
-        /**
-         * Tabel timeline
-         */
-        $kdTimeline = Str::random(50);
-        $caption = "User dengan email ".$email." telah melakukan registrasi";
-        $waktu = Carbon::now();
-        DB::table('tbl_timeline') -> insert([
-            'kd_timeline' => $kdTimeline,
-            'event' => 'registrasi_user',
-            'kd_subject' => $kd_registrasi,
-            'title' => 'Registrasi user baru',
-            'caption' => $caption,
-            'object' => $email,
+        // cek jumlah email
+        $jlhEmail = DB::table('tbl_user') -> where('username', $email) -> count();
+        if($jlhEmail == 1){
+          $sr = ['status' => 'email_exist'];
+          return \Response::json($sr);
+        }else{
+          DB::table('tbl_registrasi_user') -> insert([
+              'kd_registrasi' => $kd_registrasi,
+              'token_registrasi' => $token_registrasi,
+              'full_name' => $full_name,
+              'phone_number' => $phone_number,
+              'email' => $email,
+              'password' => $password_hash,
+              'referral_code' => $referral_code,
+              'status_aktivasi' => 'pending'
+          ]);
+          $kdTimeline = Str::random(50);
+          $caption = "User dengan email ".$email." telah melakukan registrasi";
+          $waktu = Carbon::now();
+          DB::table('tbl_timeline') -> insert([
+              'kd_timeline' => $kdTimeline,
+              'event' => 'registrasi_user',
+              'kd_subject' => $kd_registrasi,
+              'title' => 'Registrasi user baru',
+              'caption' => $caption,
+              'object' => $email,
+              'waktu' => $waktu
+          ]);
+          $tokenTransaksi = Str::random(40);
+          DB::table('tbl_ecash') -> insert([
+            'token_transaction' => $tokenTransaksi,
+            'user' => $email,
+            'old_ecash' => '0',
+            'flow' => 'add',
+            'total' => '5000',
+            'new_balance' => '5000',
             'waktu' => $waktu
-        ]);
-
-        // create new ecash and give 5000 ecash
-        $tokenTransaksi = Str::random(40);
-        // DB::table('tbl_ecash') -> insert([
-        //   'token_transaction' => $tokenTransaksi,
-        //   'user' => $email,
-        //   'old_ecash' => '0',
-        //   'flow' => 'add',
-        //   'total' => '5000',
-        //   'new_balance' => '5000',
-        //   'waktu' => $waktu
-        // ]);
-        $dr = ['email' => $email, 'token_aktivasi' => $token_registrasi];
-        $sr = ['status' => 'sukses'];
-        Mail::to($email) -> send(new RegistrasiMail($dr));
-        return \Response::json($sr);
+          ]);
+          $dr = ['email' => $email, 'token_aktivasi' => $token_registrasi];
+          $sr = ['status' => 'sukses'];
+          Mail::to($email) -> send(new RegistrasiMail($dr));
+          return \Response::json($sr);
+        }
     }
 
     public function aktivasiakun($kodeaktivasi)
@@ -120,13 +118,14 @@ class RegisterCtr extends Controller
                 'kecamatan' => '-',
                 'kelurahan' => '-',
                 'postal_code' => '-',
-                'phone' => '-',
+                'phone' => $dr -> phone_number,
                 'alamat' => '-',
                 'ktp' => '-',
                 'npwp' => '-',
                 'siup' => '-',
                 'status' => '-',
-                'suspend' => '-'
+                'upline' => 'addydr',
+                'suspend' => 'n'
             ]);
             $cssFile = 'style-about.css';
             $jsFile = 'ebunga-aktivasi-akun.js';
