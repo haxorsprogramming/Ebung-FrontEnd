@@ -26,6 +26,6 @@ class MailHelperCtr extends Controller
     public function newapprovenotif()
     {
       $dr = ['status' => 'success'];
-      return $dr;
-;    }
+        return $dr;
+    }
 }

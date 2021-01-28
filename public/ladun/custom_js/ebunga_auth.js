@@ -128,8 +128,11 @@ $.ajaxSetup({
     }
 });
 
-$('#txtPhoneNumberReg').mask('(00) 0000-0000-0000');
+$("#txtPhoneNumberReg").mask("(00) 0000-0000-0000");
 
+
+
+// fungsi
 function recaptcha_callback()
 {
   divAuth.statusCapcha = true;
@@ -140,7 +143,6 @@ function recaptcha_callback_register()
   divAuth.stateRegis = true;
 }
 
-// fungsi
 function checkPassword()
 {
     let password = document.querySelector('#txtPasswordReg').value;
