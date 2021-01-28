@@ -9,11 +9,23 @@ use Illuminate\Http\Request;
  * Import app
  */
 use App\Models\ProdukMdl;
+use App\Models\OrderProdukMdl;
+use App\Models\OrderProdukDetailsMdl;
 
 class CustomerCtr extends Controller
 {
     public function dashboard()
     {
         return view('account.customer.dashboard');
+    }
+
+    public function order()
+    {
+
+    }
+
+    public function orderDetails($kdOrder)
+    {
+
     }
 }

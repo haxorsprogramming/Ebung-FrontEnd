@@ -17,7 +17,7 @@
             </div>
         </div>
         <!-- breadcrumb-area end -->
-        <div id="divSuccessRegister" style="text-align:center;display:none;margin-bottom:20px;">
+        <div id="divSuccessRegister" style="text-align:center;display:none;margin-bottom:40px;">
           <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_4iPre3.json" mode="bounce" background="transparent" speed="1" style="width: 300px; height: 300px;margin:auto;" loop autoplay></lottie-player>
           <h5>Thank for registering, please check your inbox mail to activate account.</h5>
           <h6>Already activate account? u can <a href="{{ url('/auth/account') }}">login</a> now</h6>

@@ -103,7 +103,6 @@ class ProductSellerCtr extends Controller
             file_put_contents('ladun/ebunga_asset/image/product/'.$namaPic, $data);
             // Variant 1
             if($picVar1 == null){
-
             }else{
                 $imgVaArr1 = explode(";", $picVar1);
                 $imgData1 = explode(",", $imgVaArr1[1]);
@@ -120,7 +119,6 @@ class ProductSellerCtr extends Controller
             }
             // Variant 2
             if($picVar2 == null){
-
             }else{
                 $imgVaArr2 = explode(";", $picVar2);
                 $imgData2 = explode(",", $imgVaArr2[1]);
@@ -154,7 +152,6 @@ class ProductSellerCtr extends Controller
             }
             // Variant 4
             if($picVar4 == null){
-
             }else{
                 $imgVaArr4 = explode(";", $picVar4);
                 $imgData4 = explode(",", $imgVaArr4[1]);
@@ -188,7 +185,7 @@ class ProductSellerCtr extends Controller
         $price = $request -> price;
         $stock = $request -> stock;
         $picUtama = $request -> picUtama;
-        // create account data for adminstrator 
+        // create account data for adminstrator
         // clear currency format
         $priceFinal = str_replace(".","", $price);
         $priceUp = ($priceFinal * 20) / 100;
