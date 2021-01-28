@@ -214,7 +214,7 @@ class ProductCtr extends Controller
 
     public function productdetails($idProduct)
     {
-        // @session 
+        // @session
         $kdKelurahan = session('kelurahanOrder');
         $dataProduct = ProdukMdl::where('slug', $idProduct) -> first();
         $dataVariant = VarianProductMdl::where('kd_product', $dataProduct -> kd_produk) -> get();

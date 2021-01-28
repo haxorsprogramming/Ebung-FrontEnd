@@ -23,7 +23,7 @@
 					<img src="{{ asset('ladun/ebunga_asset/image/others/unicorn.png') }}" style="width: 200px;" alt="icon">
 				</div>
 				<h3>Thanks for activate account, u can login at Ebunga now</h3>
-				<p>U can login from <a href="{{ url('/login') }}" title="link"><strong>Login page </strong><i class="fa fa-angle-double-right"></i></a></p>
+				<p>U can login from <a href="{{ url('/auth/account') }}" title="link"><strong>Login page </strong><i class="fa fa-angle-double-right"></i></a></p>
 			</div>
 			<!-- End text -->
 		</div>

@@ -47,7 +47,7 @@ class ProductSellerCtr extends Controller
          */
         $dn = 'display:none;';
         /**
-         * 
+         *
          */
         $dr = ['dataProduct' => $dataProduct, 'kategoriProduct' => $kategoriProduct, 'dataBranch' => $dataBranch, 'divError' => $divInvalid, 'dn' => $dn];
         return view('account.seller.product.product_list', $dr);
@@ -70,7 +70,7 @@ class ProductSellerCtr extends Controller
         $picVar2 = $request -> var2;
         $picVar3 = $request -> var3;
         $picVar4 = $request -> var4;
-        // clear currency format 
+        // clear currency format
         $priceFinal = str_replace(".","", $price);
         // $priceFinalUp = $priceFinal
         $priceUpBath = $priceFinal * 0.2;
@@ -92,10 +92,11 @@ class ProductSellerCtr extends Controller
                 'harga' => $priceFinalFix,
                 'stok' => $stock,
                 'foto_utama' => $namaPic,
+                'approve' => '0',
                 'active' => '1'
-            ]); 
-            
-            // Foto utama 
+            ]);
+
+            // Foto utama
             $image_array_1 = explode(";", $picUtama);
             $image_array_2 = explode(",", $image_array_1[1]);
             $data = base64_decode($image_array_2[1]);
@@ -117,7 +118,7 @@ class ProductSellerCtr extends Controller
                     'active' => '1'
                 ]);
             }
-            // Variant 2 
+            // Variant 2
             if($picVar2 == null){
 
             }else{
@@ -134,7 +135,7 @@ class ProductSellerCtr extends Controller
                     'active' => '1'
                 ]);
             }
-            // Variant 3 
+            // Variant 3
             if($picVar3 == null){
 
             }else{
@@ -168,12 +169,10 @@ class ProductSellerCtr extends Controller
                     'active' => '1'
                 ]);
             }
-
             $dr = ['status' => 'success'];
         }else{
             $dr = ['status' => 'error_name_product'];
         }
-    //    $dr = ['status' => $picVar1];
         return \Response::json($dr);
     }
 
@@ -189,7 +188,7 @@ class ProductSellerCtr extends Controller
         $price = $request -> price;
         $stock = $request -> stock;
         $picUtama = $request -> picUtama;
-        // clear currency format 
+        // clear currency format
         $priceFinal = str_replace(".","", $price);
         $namaPic = $kdProduk.".jpg";
         $tipeSlug = rand(0, 50);
@@ -207,9 +206,10 @@ class ProductSellerCtr extends Controller
                 'harga' => $priceFinal,
                 'stock' => $stock,
                 'foto_utama' => $namaPic,
+                'approve' => '0',
                 'active' => '1'
             ]);
-            // Foto utama 
+            // Foto utama
             $namaPic = $kdProduk.".jpg";
             $image_array_1 = explode(";", $picUtama);
             $image_array_2 = explode(",", $image_array_1[1]);
@@ -231,7 +231,7 @@ class ProductSellerCtr extends Controller
         $nama = $request -> nama;
         $deks = $request -> deks;
         $harga = $request -> harga;
-        // clear currency format 
+        // clear currency format
         $priceFinal = str_replace(".","", $harga);
         $stock = $request -> stock;
         $pic = $request -> pic;
@@ -253,5 +253,5 @@ class ProductSellerCtr extends Controller
         return \Response::json($dr);
     }
 
-    
+
 }

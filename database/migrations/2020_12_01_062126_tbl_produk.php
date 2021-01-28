@@ -26,6 +26,7 @@ class TblProduk extends Migration
             $table -> integer('harga');
             $table -> integer('stock');
             $table -> char('foto_utama', 50);
+            $table -> char('approve', 1);
             $table -> char('active', 1);
         });
     }
