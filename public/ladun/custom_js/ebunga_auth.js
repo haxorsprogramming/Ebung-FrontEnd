@@ -39,7 +39,6 @@ var divAuth = new Vue({
             }
           });
         }, 4000);
-
       }
     },
     loginFormOpen : function()
