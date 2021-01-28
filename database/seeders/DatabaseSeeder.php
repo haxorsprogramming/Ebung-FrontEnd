@@ -253,6 +253,7 @@ class DatabaseSeeder extends Seeder
             'siup' => '-',
             'status' => '-',
             'upline' => 'owner',
+            'complete_profile' => '1',
             'suspend' => 'n'
         ]);
         DB::table('tbl_member') -> insert([
@@ -272,6 +273,7 @@ class DatabaseSeeder extends Seeder
             'siup' => '-',
             'status' => '-',
             'upline' => 'addydr',
+            'complete_profile' => '1',
             'suspend' => 'n'
         ]);
         DB::table('tbl_member') -> insert([
@@ -291,6 +293,7 @@ class DatabaseSeeder extends Seeder
             'siup' => '-',
             'status' => '-',
             'upline' => 'addydr',
+            'complete_profile' => '1',
             'suspend' => 'n'
         ]);
 

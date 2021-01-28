@@ -24,6 +24,7 @@ class TblProduk extends Migration
             $table -> char('id_branch', 50);
             $table -> char('id_seller', 50);
             $table -> integer('harga');
+            $table -> integer('harga_up');
             $table -> integer('stock');
             $table -> char('foto_utama', 50);
             $table -> char('approve', 1);

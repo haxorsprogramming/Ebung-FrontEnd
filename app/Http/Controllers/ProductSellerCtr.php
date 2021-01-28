@@ -188,8 +188,11 @@ class ProductSellerCtr extends Controller
         $price = $request -> price;
         $stock = $request -> stock;
         $picUtama = $request -> picUtama;
+        // create account data for adminstrator 
         // clear currency format
         $priceFinal = str_replace(".","", $price);
+        $priceUp = ($priceFinal * 20) / 100;
+        $priceUpFinal = $priceFinal + $priceUp;
         $namaPic = $kdProduk.".jpg";
         $tipeSlug = rand(0, 50);
         $cekNamaBunga = ProdukMdl::where('nama_produk', $nama) -> count();
@@ -204,6 +207,7 @@ class ProductSellerCtr extends Controller
                 'id_branch' => $branch,
                 'id_seller' => $userLogin,
                 'harga' => $priceFinal,
+                'harga_up' => $priceUpFinal,
                 'stock' => $stock,
                 'foto_utama' => $namaPic,
                 'approve' => '0',

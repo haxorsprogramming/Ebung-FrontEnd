@@ -125,6 +125,7 @@ class RegisterCtr extends Controller
                 'siup' => '-',
                 'status' => '-',
                 'upline' => 'addydr',
+                'complete_profile' => '0',
                 'suspend' => 'n'
             ]);
             $cssFile = 'style-about.css';

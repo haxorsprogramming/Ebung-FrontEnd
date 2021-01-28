@@ -31,6 +31,7 @@ class TblMember extends Migration
             $table -> char('siup', 100);
             $table -> char('status', 100);
             $table -> char('upline', 200);
+            $table -> char('complete_profile', 1);
             $table -> char('suspend', 1);
         });
     }
